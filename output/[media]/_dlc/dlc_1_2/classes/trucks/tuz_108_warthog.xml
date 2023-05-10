@@ -1,0 +1,688 @@
+  <_templates Include="trucks">
+      <Wheel>
+          <FrontWheel SteeringAngle="25" SteeringJointOffset="0.2" SteeringCastor="8" Location="front" Torque="full">
+
+          </FrontWheel>
+          <RearWheel ConnectedToHandbrake="true" Location="front" Torque="default">
+
+          </RearWheel>
+      </Wheel>
+      <Body>
+            <Mudguard Mass="10" Collisions="None">
+                <Constraint Type="Hinge" MinLimit="-45" MaxLimit="15" AxisLocal="(0; 0; 1)">
+                    <Motor Spring="10" Type="Spring" Damping="1">
+
+                    </Motor>
+                </Constraint>
+            </Mudguard>
+            <SideMirror Mass="1" Collisions="None">
+                  <Constraint Type="Hinge" MinLimit="-15" MaxLimit="15" AxisLocal="(0; 1; 0)">
+                      <Motor Spring="75" Type="Spring" Damping="5">
+
+                      </Motor>
+                  </Constraint>
+            </SideMirror>
+      </Body>
+      <Flare>
+              <IgnitionSignalOrange Size="0.1" DirAngle="135" Dir="(0; 1; 0)" ColorMultAtDay="0.6" AspectRatio="1.4" Color="g(255; 140; 0) x 0.3">
+
+              </IgnitionSignalOrange>
+      </Flare>
+  </_templates>
+  <Truck>
+        <ControlledConstraints>
+            <Constraint IsLinkedSteering="true" Id="chassis_steer" Name="TieRodSteer">
+
+            </Constraint>
+        </ControlledConstraints>
+        <Landmark MaxScale="2.5" Mesh="landmarks/tuz_108_warthog_lmk" MinScale="1.5">
+
+        </Landmark>
+        <GameData ExcludeAddons="trailer_log_pole" Country="RU,CAS" UnlockByExploration="true" Price="19900" UnlockByRank="1">
+                  <CraneSocket ParentFrame="BoneCabin_cdt" Pos="(2.979; 1.043; -0.394)">
+
+                  </CraneSocket>
+                  <CraneSocket ParentFrame="BoneCabin_cdt" Pos="(2.979; 1.043; 0.394)">
+
+                  </CraneSocket>
+                  <CraneSocket Pos="(-3.08; 1.07; 0)">
+
+                  </CraneSocket>
+                  <CraneSocket Pos="(-0.998; 1.026; -0.448)">
+
+                  </CraneSocket>
+                  <CraneSocket Pos="(-0.998; 1.026; 0.448)">
+
+                  </CraneSocket>
+                    <AddonSockets>
+                        <Socket Names="MinicraneRU" Offset="(-1.2; 1.141; 0)">
+                            <ExtraParent Offset="(0; 0; -0.02)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Offset="(0; 0; 0.02)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                        </Socket>
+                        <Socket Names="FrameAddonSideboard1" Offset="(-2.05; 1.141; 0)">
+
+                        </Socket>
+                        <Socket Names="FrameAddonTankSmallShort" Offset="(-1.98; 1.141; 0)">
+
+                        </Socket>
+                        <Socket Names="FrameAddonMaintainerSmall" Offset="(-2.05; 1.141; 0)" NamesBlock="tuz108warthogTrunk, tuz108warthogExhaustCabin, tuz108warthogBumperProtect">
+
+                        </Socket>
+                        <Socket Names="SaddleLow" Offset="(-1.89; 1.141; 0)">
+                            <ExtraParent Offset="(0; 0; 0)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Offset="(0; 0; 0)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Names="Semitrailer" Offset="(-1.89; 1.458; 0)">
+
+                        </Socket>
+                        <Socket Names="Trailer" Offset="(-3.065; 1.071; 0)" NamesBlock="FrameAddonMaintainerSmall">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="tuz_108_warthog_diff_lock_default">
+                      <Socket Names="TUZ108DiffLock" Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="tuz_108_warthog_bumper_default">
+                        <Socket Names="tuz108warthogBumper" Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt">
+
+                        </Socket>
+                        <Socket Names="tuz108warthogBumperExtra" Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt">
+                          <ExtraParent Frame="BoneCabin_cdt">
+
+                          </ExtraParent>
+                        </Socket>
+                        <Socket Names="tuz108warthogBumperProtect" Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt">
+                          <ExtraParent Frame="BoneCabin_cdt">
+
+                          </ExtraParent>
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="tuz108warthogSticker_1x1_01" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="tuz108warthogSticker_1x1_02" InCockpit="true" ParentFrame="BoneSunshieldLeft_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="tuz108warthogSticker_1x2_01" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="tuz108warthogSticker_1x2_02" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="tuz108warthogSticker_1x2_03" InCockpit="true" ParentFrame="BoneSunshieldRight_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="tuz108warthogSticker_1x4_01" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="tuz108warthogSticker_Roof" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="tuz108warthogSticker_Capote" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="tuz108warthogSticker_Door_L" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="tuz108warthogSticker_Door_R" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="tuz108warthogSticker_GlassTop" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="tuz108warthogSticker_GlassBottom" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(1.141; 2.618; 0.103)" InCockpit="true" ParentFrame="BoneCabin_cdt" Names="StuffAirfreshener">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="StuffCurtainTuz108Warthog" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(1.346; 1.939; 0.716)" InCockpit="true" ParentFrame="BoneCabin_cdt" Names="StuffDashboard">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="StuffHoodTuz108Warthog" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="tuz108warthogVisor" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="tuz108warthogTrunk" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="tuz_108_warthog_spot_light_default">
+                      <Socket Names="tuz108warthogSpotlight" NamesBlock="tuz108warthogTrunk" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Names="tuz108warthogSnorkel" ParentFrame="BoneCabin_cdt">
+
+                        </Socket>
+                        <Socket Names="tuz108warthogSnorkel2" NamesBlock="tuz108warthogBumperProtect" ParentFrame="BoneCabin_cdt">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="tuz_108_warthog_exhaust_default">
+                        <Socket Names="tuz108warthogExhaust">
+
+                        </Socket>
+                        <Socket Names="tuz108warthogExhaustCabin" ParentFrame="BoneChassis_cdt">
+                          <ExtraParent Frame="BoneCabin_cdt">
+
+                          </ExtraParent>
+                        </Socket>
+                    </AddonSockets>
+                <CustomizationCameras>
+                          <CameraPos FOV="32.0" Name="roof_sticker" Position="(6.674; 5.706; -0.086)" Interior="true" InterestPosition="(4.186; 1.747; -0.705)">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="sticker_1" Position="(5.008; 2.153; -0.422)" Interior="true" InterestPosition="(7.22; 3.809; 1.916)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(3.226; 1.433; 0)" Position="(-3.516; 3.26; 4.69)" MaxZoom="2" Name="addon_1" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(6.934; 1.878; 0)" Position="(9.341; 3.08; 2.824)" MaxZoom="2" Name="addon_2" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="mirror_mount" Position="(4.751; 2.340; -0.595)" Interior="true" InterestPosition="(7.452; 2.69; 1.723)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(4.058; 1.779; -0)" Position="(0.481; 3.48; -2.927)" MaxZoom="2" Name="side_r" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="sticker" Position="(5.37; 2.432; -0.088)" Interior="true" InterestPosition="(7.582; 0.452; 2.219)">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="glass_sticker" Position="(8.807; 2.839; 0.607)" Interior="true" InterestPosition="(6.42; 2.388; -0.787)">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="door_r_sticker" Position="(3.303; 1.731; 3.082)" Interior="true" InterestPosition="(5.809; 1.499; 0.853)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(5.485; 1.674; 0)" Position="(9.906; 3.406; -2.307)" MaxZoom="2" Name="roof" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="capote_sticker" Position="(8.953; 5.341; -0.216)" Interior="true" InterestPosition="(7.281; 1.653; -0.794)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(5.911; 1.31; 0)" Position="(11.91; 1.605; -3.122)" MaxZoom="2" Name="hoods" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="sticker_2" Position="(5.063; 2.172; -0.03)" Interior="true" InterestPosition="(7.956; 3.013; 2.301)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(6.436; 1.512; 0)" Position="(8.047; 2.935; 3.2)" MaxZoom="2" Name="side_l" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="bubble_head" Position="(5.063; 2.382; -0.553)" Interior="true" InterestPosition="(7.22; 1.301; 0.99)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(5.607; 0.411; -0.046)" Position="(8.377; 1.509; -3.571)" MaxZoom="2" Name="wheels" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(5.911; 1.31; 0)" Position="(11.91; 1.605; -3.122)" MaxZoom="2" Name="default" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(4.005; 1.062; 0)" Position="(-1.418; 2.066; 1.833)" MaxZoom="2" Name="rear" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="door_l_sticker" Position="(3.357; 1.816; -3.096)" Interior="true" InterestPosition="(4.175; 1.489; -0.057)">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="hood_ornament" Position="(8.557; 2.245; -1.231)" Interior="true" InterestPosition="(7.506; 1.929; -1.231)">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="curtain" Position="(4.751; 2.340; -0.595)" Interior="true" InterestPosition="(7.452; 2.69; 1.723)">
+
+                          </CameraPos>
+                </CustomizationCameras>
+                <UiDesc UiIcon40x40="offroadVehicleImg" UiDesc="UI_VEHICLE_TUZ_108_WARTHOG_DESC" UiIconLogo="TUZLogo80" UiIcon30x30="offroadVehicleImg30" UiIcon328x458="shopImgTUZ108Warthog" UiName="UI_VEHICLE_TUZ_108_WARTHOG_NAME">
+
+                </UiDesc>
+                          <WinchSocket ParentFrame="BoneCabin_cdt" Pos="(2.979; 1.043; -0.394)">
+
+                          </WinchSocket>
+                          <WinchSocket ParentFrame="BoneCabin_cdt" Pos="(2.979; 1.043; 0.394)">
+
+                          </WinchSocket>
+                          <WinchSocket Pos="(-3.08; 1.07; 0)">
+
+                          </WinchSocket>
+                          <WinchSocket Pos="(-0.998; 1.026; -0.448)">
+
+                          </WinchSocket>
+                          <WinchSocket Pos="(-0.998; 1.026; 0.448)">
+
+                          </WinchSocket>
+        </GameData>
+        <TruckData EngineIconScale="1" TruckImage="tuz108warthogmchr" EngineIconMesh="env/engine_default" DiffLockType="Installed" SteerSpeed="0.025" TruckType="OFFROAD" EngineStartDelay="0.8" ExhaustStartTime="0.9" Responsiveness="0.15" FuelCapacity="210" BackSteerSpeed="0.025">
+                    <LimitedFluid SizeX="0.936" Type="Box" SizeZ="0.522" Center="(-0.088; 0.965; 0.726)" SizeY="0.305">
+
+                    </LimitedFluid>
+                    <LimitedFluid SizeX="0.936" Type="Box" SizeZ="0.522" Center="(-0.088; 0.965; -0.726)" SizeY="0.305">
+
+                    </LimitedFluid>
+                      <CompatibleWheels OffsetZ="0.04" Type="wheels_medium_double_front" Scale="0.5" RearOffsetZ="0.06">
+
+                      </CompatibleWheels>
+                      <CompatibleWheels OffsetZ="0.13" Type="wheels_medium_mudtires_actaeon" Scale="0.5" RearOffsetZ="0.08">
+
+                      </CompatibleWheels>
+                      <CompatibleWheels OffsetZ="0.04" Type="wheels_medium_double_front" Scale="0.55" RearOffsetZ="0.06">
+
+                      </CompatibleWheels>
+                      <CompatibleWheels OffsetZ="0.13" Type="wheels_medium_mudtires_actaeon" Scale="0.55" RearOffsetZ="0.08">
+
+                      </CompatibleWheels>
+                      <CompatibleWheels OffsetZ="0.04" Type="wheels_medium_double_front" Scale="0.6" RearOffsetZ="0.06">
+
+                      </CompatibleWheels>
+                      <CompatibleWheels OffsetZ="0.18" Type="wheels_medium_mudtires_actaeon" Scale="0.6" RearOffsetZ="0.08">
+
+                      </CompatibleWheels>
+                  <Axles>
+                            <Axle Frame="BoneAxle1">
+
+                            </Axle>
+                            <Axle Frame="BoneAxle2">
+
+                            </Axle>
+                  </Axles>
+                  <Sounds AirHissInterval="12.0" DisableReversePitch="false" ParentFrame="BoneCabin_cdt" Origin="(1.78; 1.595; 0)" MinDist="15.0" _template="Default">
+                            <EngineAccel Sound="trucks/tuz_108_warthog/tuz_108_warthog_acc">
+
+                            </EngineAccel>
+                            <BrakePull Sound="trucks/tuz_108_warthog/tuz_108_warthog_brake_pull">
+
+                            </BrakePull>
+                            <EngineStop Sound="trucks/tuz_108_warthog/tuz_108_warthog_stop">
+
+                            </EngineStop>
+                            <EngineLow_2d IsSound2D="true" Sound="trucks/tuz_108_warthog/tuz_108_warthog_low_2d">
+
+                            </EngineLow_2d>
+                            <EngineIdle Sound="trucks/tuz_108_warthog/tuz_108_warthog_idle">
+
+                            </EngineIdle>
+                            <EngineIdle_2d IsSound2D="true" Sound="trucks/tuz_108_warthog/tuz_108_warthog_idle_2d">
+
+                            </EngineIdle_2d>
+                            <Honk Sound="trucks/tuz_108_warthog/tuz_108_warthog_honk">
+
+                            </Honk>
+                            <Reverse Sound="trucks/tuz_108_warthog/tuz_108_warthog_reverse">
+
+                            </Reverse>
+                            <EngineTrans Sound="">
+
+                            </EngineTrans>
+                            <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
+
+                            </AbruptStop>
+                            <BrakesSqueal Sound="trucks/tuz_108_warthog/tuz_108_warthog_brakes_squeal">
+
+                            </BrakesSqueal>
+                            <EngineHeavy_2d IsSound2D="true" Sound="trucks/tuz_108_warthog/tuz_108_warthog_heavy_2d">
+
+                            </EngineHeavy_2d>
+                            <EngineLow Sound="trucks/tuz_108_warthog/tuz_108_warthog_low">
+
+                            </EngineLow>
+                            <EngineHeavy Sound="trucks/tuz_108_warthog/tuz_108_warthog_heavy">
+
+                            </EngineHeavy>
+                            <EngineHigh_2d IsSound2D="true" Sound="trucks/tuz_108_warthog/tuz_108_warthog_high_2d">
+
+                            </EngineHigh_2d>
+                            <EngineHigh Sound="trucks/tuz_108_warthog/tuz_108_warthog_high">
+
+                            </EngineHigh>
+                            <EngineStart Sound="trucks/tuz_108_warthog/tuz_108_warthog_start">
+
+                            </EngineStart>
+                            <BrakeRelease Sound="trucks/tuz_108_warthog/tuz_108_warthog_brake_release">
+
+                            </BrakeRelease>
+                            <HandbrakeOff Sound="trucks/tuz_108_warthog/tuz_108_warthog_handbrake_off">
+
+                            </HandbrakeOff>
+                            <Handbrake Sound="trucks/tuz_108_warthog/tuz_108_warthog_handbrake_on">
+
+                            </Handbrake>
+                            <EngineRev Sound="trucks/tuz_108_warthog/tuz_108_warthog_rev">
+
+                            </EngineRev>
+                  </Sounds>
+                            <Steam Origin="(1.443; 1.294; 0)" ParentFrame="BoneCabin_cdt">
+
+                            </Steam>
+                            <Steam Origin="(-0.363; 1.005; 0)" ParentFrame="BoneCabin_cdt">
+
+                            </Steam>
+                  <SuspensionSocket MaxWheelRadiusWithoutSuspension="0.42" Default="tuz_108_warthog_suspension_default" Type="s_tuz_108_warthog">
+
+                  </SuspensionSocket>
+                  <Shafts>
+                                    <Shaft SocketPointB="Shaft1b" SocketPointA="Shaft1a">
+
+                                    </Shaft>
+                                    <Shaft SocketPointB="Shaft2b" SocketPointA="Shaft2a">
+
+                                    </Shaft>
+                                    <Shaft SocketPointB="Shaft3b" SocketPointA="Shaft3a">
+
+                                    </Shaft>
+                  </Shafts>
+                  <EngineSocket Default="ru_truck_modern_engine_0" Type="e_ru_truck_modern">
+
+                  </EngineSocket>
+                  <GearboxSocket Default="g_truck_default" Type="gearboxes_trucks">
+
+                  </GearboxSocket>
+                  <Shakers>
+                                        <Shaker MaxAngle="(3; 3; 3)" Frame="BoneGearstick" ParentFrame="BoneCabin_cdt" MaxFrequency="0.1">
+
+                                        </Shaker>
+                  </Shakers>
+                  <OcclusionMap HalfSizeZ="1.7" MinX="-3.35" MaxX="3.1">
+
+                  </OcclusionMap>
+                  <Damage SensationMin="(0.824; 2.547; -1.058)" SensationMax="(1.903; 1.972; 1.058)" Capacity="600" ParentFrame="BoneCabin_cdt">
+                                              <DamageArea Max="(2.666; 1.78; 0.571)" Min="(1.628; 1.305; -0.571)" ParentFrame="BoneCabin_cdt" Type="Engine">
+
+                                              </DamageArea>
+                                              <DamageArea Max="(0.374; 1.123; 0.984)" Min="(-0.544; 0.796; 0.463)" ParentFrame="BoneCabin_cdt" Type="FuelTank">
+
+                                              </DamageArea>
+                                              <DamageArea Max="(0.374; 1.123; -0.463)" Min="(-0.544; 0.796; -0.984)" ParentFrame="BoneCabin_cdt" Type="FuelTank">
+
+                                              </DamageArea>
+                  </Damage>
+                  <SoundsWheels _template="Default">
+
+                  </SoundsWheels>
+                  <SteeringRack RackHalfSizeZ="0.755" Frame="BoneRack" FrameSteerRight="BoneRackRight" FrameSteerLeft="BoneRackLeft">
+
+                  </SteeringRack>
+                  <Camera Center="(-1.25; 0; 0)" ParentFrame="BoneCabin_cdt">
+                                                  <Cockpit WindshieldDiffuseTexture="trucks/tuz108_warthog_glass__d_a.tga" WindshieldShadingTexture="trucks/tuz108_warthog_glass__sh_d.tga" _template="Default" ViewPos="(0.577; 2.337; 0.369)">
+                                                        <Mirror MeshFrame="mirror_left" FOVScale="1.8" Pos="(0.97; 2.294; 1.278)" ReflectionDir="(-0.845; -0.047; -0.532)" ClipDir="(-0.845; -0.047; -0.532)" Size="(0.20; 0.355)">
+
+                                                        </Mirror>
+                                                        <Mirror MeshFrame="mirror_right" ClipOffset="0.1" Size="(0.20; 0.355)" Pos="(0.968; 2.294; -1.277)" ReflectionDir="(-0.767; -0.029; 0.641)" ClipDir="(-0.767; -0.029; 0.641)" FOVScale="2.0">
+
+                                                        </Mirror>
+                                                  </Cockpit>
+                  </Camera>
+                  <SoundsDamage _template="Heavy">
+
+                  </SoundsDamage>
+                  <Wheels DefaultTire="highway_1" DefaultRim="rim_1" DefaultWheelType="wheels_medium_double_front">
+                                                        <Wheel _template="FrontWheel" Pos="(1.878; 0.597; 0.855)">
+
+                                                        </Wheel>
+                                                        <Wheel _template="FrontWheel" RightSide="true" Pos="(1.878; 0.597; 0.855)">
+
+                                                        </Wheel>
+                                                        <Wheel _template="RearWheel" Pos="(-1.892; 0.597; 0.855)">
+
+                                                        </Wheel>
+                                                        <Wheel _template="RearWheel" RightSide="true" Pos="(-1.892; 0.597; 0.855)">
+
+                                                        </Wheel>
+                  </Wheels>
+                  <SteeringWheel Frame="BoneSteering">
+
+                  </SteeringWheel>
+                  <Dashboard>
+                                                            <Gauge Dir="(-0.721; 0.693; 0)" Mesh="trucks/arrows/tuz_108_warthog_arrows_1" Org="(1.25; 1.924; 0.431)" Damping="0.99" InputType="rpm" InputRange="(0;1)" OutputAngles="(-114; 132)">
+
+                                                            </Gauge>
+                                                            <Gauge Mesh="trucks/arrows/tuz_108_warthog_arrows_1" InputRange="(0;120)" Dir="(-0.721; 0.693; 0.001)" Org="(1.251; 1.924; 0.292)" InputType="speed" OutputAngles="(-130; 131)">
+
+                                                            </Gauge>
+                                                            <Gauge Dir="(-0.72; 0.694; 0)" Mesh="trucks/arrows/tuz_108_warthog_arrows_2" Org="(1.188; 1.854; 0.624)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-43; -7)">
+
+                                                            </Gauge>
+                                                            <Gauge Dir="(-0.72; 0.694; 0)" Mesh="trucks/arrows/tuz_108_warthog_arrows_2" Org="(1.188; 1.854; 0.542)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-41; 11)">
+
+                                                            </Gauge>
+                                                            <Gauge Dir="(-0.72; 0.694; 0)" Mesh="trucks/arrows/tuz_108_warthog_arrows_2" Org="(1.25; 1.918; 0.543)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-44; 28)">
+
+                                                            </Gauge>
+                                                            <Gauge Dir="(-0.72; 0.694; 0)" Mesh="trucks/arrows/tuz_108_warthog_arrows_2" Org="(1.188; 1.855; 0.18)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-43; 35)">
+
+                                                            </Gauge>
+                                                            <Gauge Dir="(-0.72; 0.694; 0)" Mesh="trucks/arrows/tuz_108_warthog_arrows_2" Org="(1.188; 1.855; 0.098)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-43; 17)">
+
+                                                            </Gauge>
+                                                            <Gauge Dir="(-0.72; 0.694; 0)" Mesh="trucks/arrows/tuz_108_warthog_arrows_2" Org="(1.25; 1.918; 0.18)" Damping="0.99" InputType="fuel" InputRange="(0;1)" OutputAngles="(-44; 44)">
+
+                                                            </Gauge>
+                  </Dashboard>
+                  <Driver Pos="(0.681; 1.631; 0.369)" ParentFrame="BoneCabin_cdt" SteeringWheelPos="(1.031; 1.987; 0.363)" AnimationSet="HeavyTruck">
+
+                  </Driver>
+                  <FuelTank DamageCapacity="120">
+
+                  </FuelTank>
+                  <WinchUpgradeSocket IsUpgradable="true" Default="w_medium_trucks_default" Type="winches_medium_trucks">
+
+                  </WinchUpgradeSocket>
+                  <Intake Origin="(2.8; 1.499; 0)" Size="1" Dir="(1; 0; 0)">
+
+                  </Intake>
+        </TruckData>
+        <HeadLight _template="Default" ParentFrame="BoneCabin_cdt" Pos="(2.865; 1.326; 0)">
+
+        </HeadLight>
+        <ModelAttachments>
+                      <HeadLight>
+                            <Model _template="HeadLightRay" ParentFrame="BoneCabin_cdt" Org="(2.501; 1.32; -0.892)">
+
+                            </Model>
+                            <Model _template="HeadLightRay" ParentFrame="BoneCabin_cdt" Org="(2.501; 1.32; 0.892)">
+
+                            </Model>
+                              <Flare _template="HeadLight" Pos="(2.501; 1.32; -0.892)" ParentFrame="BoneCabin_cdt" Color="g(255; 235; 215) x 0.8" Size="0.3">
+
+                              </Flare>
+                              <Flare _template="HeadLight" Pos="(2.501; 1.32; 0.892)" ParentFrame="BoneCabin_cdt" Color="g(255; 235; 215) x 0.8" Size="0.3">
+
+                              </Flare>
+                      </HeadLight>
+                      <ReverseSignals>
+
+                      </ReverseSignals>
+                      <Ignition>
+                                <Light _template="IgnitionSignalRed" Color="g(255; 10; 10) x 0.4" Pos="(-3.007; 0.937; -0.436)">
+
+                                </Light>
+                                <Light _template="IgnitionSignalRed" Color="g(255; 10; 10) x 0.4" Pos="(-3.007; 0.937; 0.436)">
+
+                                </Light>
+                                <Light _template="IgnitionSignalWhite" Pos="(2.501; 1.32; -0.892)" Color="g(255; 186; 112) x .5" ParentFrame="BoneCabin_cdt">
+
+                                </Light>
+                                <Light _template="IgnitionSignalWhite" Pos="(2.501; 1.32; 0.892)" Color="g(255; 186; 112) x .5" ParentFrame="BoneCabin_cdt">
+
+                                </Light>
+                                  <Flare _template="IgnitionSignalRed" Pos="(-3.007; 0.937; 0.436)" Color="g(168; 12; 0) x 0.8" Size="0.3">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalRed" Pos="(-3.007; 0.937; -0.436)" Color="g(168; 12; 0) x 0.8" Size="0.3">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalWhite" Pos="(2.501; 1.32; -0.892)" Size="0.3" ParentFrame="BoneCabin_cdt">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalWhite" Pos="(2.501; 1.32; 0.892)" Size="0.3" ParentFrame="BoneCabin_cdt">
+
+                                  </Flare>
+                      </Ignition>
+                      <StopSignals>
+                                <Light _template="StopSignal" Pos="(-3.033; 0.936; 0.005)">
+
+                                </Light>
+                                    <Flare _template="StopSignal" Pos="(-3.007; 0.936; 0.352)" Color="g(168; 12; 0) x 0.8" Size="0.3">
+
+                                    </Flare>
+                                    <Flare _template="StopSignal" Pos="(-3.007; 0.936; -0.352)" Color="g(168; 12; 0) x 0.8" Size="0.3">
+
+                                    </Flare>
+                      </StopSignals>
+        </ModelAttachments>
+        <AutomaticIK>
+                          <IKBone ModelFrame="BoneTieRodIK1" ParentFrame="BoneTieRod_cdt">
+                            <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BoneTieRodIK2" AttachToFrame="BoneRackLeft" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(0; 0; 1)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ModelFrame="BonePistonFL" ParentFrame="BoneChassis_cdt">
+                            <IKJoint AxisLocal="(0; 1; 0)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BonePistonFL2" AttachToFrame="BoneAxle1" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(0; 1; 0)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ModelFrame="BonePistonFR" ParentFrame="BoneChassis_cdt">
+                            <IKJoint AxisLocal="(0; 1; 0)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BonePistonFR2" AttachToFrame="BoneAxle1" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(0; 1; 0)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ModelFrame="BonePistonRL" ParentFrame="BoneChassis_cdt">
+                            <IKJoint AxisLocal="(0; 1; 0)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BonePistonRL2" AttachToFrame="BoneAxle2" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(0; 1; 0)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ModelFrame="BonePistonRR" ParentFrame="BoneChassis_cdt">
+                            <IKJoint AxisLocal="(0; 1; 0)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BonePistonRR2" AttachToFrame="BoneAxle2" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(0; 1; 0)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+        </AutomaticIK>
+        <PhysicsModel Mesh="trucks/tuz_108_warthog">
+                          <Body ModelFrame="BoneChassis_cdt" NetSync="pv" Mass="2800" ImpactType="Truck" CenterOfMassOffset="(-0.3; 0.1; 0)">
+                              <Body ModelFrame="BoneCabin_cdt" NetSync="pv" Mass="1265" ImpactType="Truck" CenterOfMassOffset="(-0.2; 0.4; 0)">
+                                  <Constraint Type="Fixed">
+
+                                  </Constraint>
+                                      <Body _template="TieRod" ModelFrame="BoneTieRod_cdt">
+                                        <Constraint AxisLocal="(-1; 0; 0)" Name="TieRodSteer" MinLimit="-30" MaxLimit="30">
+
+                                        </Constraint>
+                                      </Body>
+                                      <Body _template="SideMirror" ModelFrame="BoneMirrorLeft_cdt">
+
+                                      </Body>
+                                      <Body _template="SideMirror" ModelFrame="BoneMirrorRight_cdt">
+
+                                      </Body>
+                                      <Body _template="Mudguard" ModelFrame="BoneMudguardLeft_cdt">
+
+                                      </Body>
+                                      <Body _template="Mudguard" ModelFrame="BoneMudguardRight_cdt">
+
+                                      </Body>
+                                      <Body ModelFrame="BoneSunshieldLeft_cdt" Mass="1" ImpactType="Truck" CenterOfMassOffset="(0; 0; 0)">
+                                        <Constraint AxisLocal="(0; 0; -1)" MaxLimit="1" MinLimit="-6" Type="Hinge" PivotOffset="(0; 0; 0)">
+                                            <Motor Spring="25" Type="Spring" Damping="1">
+
+                                            </Motor>
+                                        </Constraint>
+                                      </Body>
+                                      <Body ModelFrame="BoneSunshieldRight_cdt" Mass="1" ImpactType="Truck" CenterOfMassOffset="(0; 0; 0)">
+                                        <Constraint AxisLocal="(0; 0; -1)" MaxLimit="1" MinLimit="-6" Type="Hinge" PivotOffset="(0; 0; 0)">
+                                            <Motor Spring="25" Type="Spring" Damping="1">
+
+                                            </Motor>
+                                        </Constraint>
+                                      </Body>
+                                      <Body Mass="1" ModelFrame="BoneBelt_cdt" Collisions="None">
+                                        <Constraint Type="Prismatic" MinLimit="-0.05" MaxLimit="0.05" AxisLocal="(1; 0; 0)">
+                                            <Motor Spring="500" Type="Spring" Damping="50">
+
+                                            </Motor>
+                                        </Constraint>
+                                      </Body>
+                              </Body>
+                          </Body>
+                          <NetSync Legacy="false">
+
+                          </NetSync>
+        </PhysicsModel>
+  </Truck>

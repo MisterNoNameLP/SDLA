@@ -1,0 +1,714 @@
+  <_templates Include="trucks">
+      <Wheel>
+          <FrontWheel SteeringAngle="30" SteeringJointOffset="0.2" SteeringCastor="0" ParentFrame="BoneCabin_cdt" Location="front" Torque="default">
+
+          </FrontWheel>
+          <RearWheel ConnectedToHandbrake="true" Location="rear" Torque="default">
+
+          </RearWheel>
+      </Wheel>
+      <Body>
+            <Sunshield Mass="3" Collisions="None">
+                <Constraint Type="Hinge" MinLimit="-5" MaxLimit="10" AxisLocal="(0; 0; 1)">
+                    <Motor Spring="9" Type="Spring" Damping="0.3">
+
+                    </Motor>
+                </Constraint>
+            </Sunshield>
+            <Wire Mass="0.1" Collisions="None">
+                  <Constraint Type="Prismatic" MinLimit="-0.05" MaxLimit="0.05" AxisLocal="(0; 1; 0)">
+                      <Motor Spring="50" Type="Spring" Damping="0.5">
+
+                      </Motor>
+                  </Constraint>
+            </Wire>
+      </Body>
+  </_templates>
+  <Truck>
+        <ControlledConstraints>
+            <Constraint IsLinkedSteering="true" Id="chassis_steer" Name="TieRodSteer">
+
+            </Constraint>
+        </ControlledConstraints>
+        <Landmark MaxScale="3.8" Mesh="landmarks/step_39331_pike_lmk" MinScale="1.8">
+
+        </Landmark>
+        <GameData Country="RU,CAS" UnlockByExploration="true" Price="63000" UnlockByRank="1">
+                  <CraneSocket ParentFrame="BoneCabin_cdt" Pos="(3.43; 0.968; -0.451)">
+
+                  </CraneSocket>
+                  <CraneSocket ParentFrame="BoneCabin_cdt" Pos="(3.43; 0.968; 0.451)">
+
+                  </CraneSocket>
+                  <CraneSocket Pos="(-0.794; 1.028; -0.452)">
+
+                  </CraneSocket>
+                  <CraneSocket Pos="(-0.794; 1.028; 0.452)">
+
+                  </CraneSocket>
+                  <CraneSocket Pos="(-4.347; 1; -0.448)">
+
+                  </CraneSocket>
+                  <CraneSocket Pos="(-4.347; 1; 0.448)">
+
+                  </CraneSocket>
+                    <AddonSockets>
+                        <Socket Names="Semitrailer, SemitrailerOiltank" Offset="(-2.575; 1.4; 0)" NamesBlock="SaddleHigh">
+
+                        </Socket>
+                        <Socket Names="LargeSemitrailer, LargeSemitrailerOiltank" Offset="(-2.575; 1.56; 0)" NamesBlock="SaddleLow">
+
+                        </Socket>
+                        <Socket Names="Trailer" Offset="(-4.564; 0.994; 0)">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Names="LogLift" Offset="(0.586; 1.092; 0)" NamesBlock="BigCraneRu, SaddleHigh, SaddleLow, Step39331PikeSideboard, FrameAddonTank, FrameAddonKung, FrameAddonSeismicVibrator">
+                            <AddonsShift Offset="(-0.32; 0; 0)" Types="Step39331PikeWheelAddon">
+
+                            </AddonsShift>
+                            <AddonsShift Offset="(0; 0; 0)" TrailerNamesBlock="LogLift" Types="Step39331PikeWheelAddon, BunkLog">
+
+                            </AddonsShift>
+                            <AddonsShift Offset="(-0.12; 0; 0)" Types="Step39331PikeExhaust">
+
+                            </AddonsShift>
+                        </Socket>
+                        <Socket Names="MinicraneRU" Offset="(0.228; 1.087; 0)" NamesBlock="BigCraneRu, FrameAddonTank, FrameAddonKung, FrameAddonSeismicVibrator, SemitrailerOiltank">
+                            <AddonsShift Offset="(-0.5; 0; 0)" Types="Step39331PikeWheelAddon">
+
+                            </AddonsShift>
+                            <AddonsShift Offset="(-0.17; 0; 0)" Types="Step39331PikeExhaust">
+
+                            </AddonsShift>
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Names="BigCraneRu" Offset="(-2.745; 1.085; 0)">
+                          <AddonsShift Offset="(-0.4; 0; 0)" Types="Step39331PikeWheelAddon">
+
+                          </AddonsShift>
+                        </Socket>
+                        <Socket Names="BunkLog" Offset="(-6.071; 1.092; 0)">
+
+                        </Socket>
+                        <Socket Names="SaddleLow" Offset="(-2.572; 1.09; 0)">
+
+                        </Socket>
+                        <Socket Names="SaddleHigh" Offset="(-2.572; 1.09; 0)">
+                            <ExtraParent Offset="(0; 0; -0.01)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Offset="(0; 0; 0.01)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                        </Socket>
+                        <Socket Names="Step39331PikeSideboard" Offset="(-2.35; 1.20; 0)">
+                          <AddonsShift Offset="(-0.39; 0; 0)" TrailerNamesBlock="Step39331PikeWheelAddon" Types="MinicraneRU">
+
+                          </AddonsShift>
+                        </Socket>
+                        <Socket Names="FrameAddonTank" Offset="(-2.785; 1.085; 0)" NamesBlock="Step39331PikeSnorkel2">
+                            <AddonsShift Offset="(-0.15; 0; 0)" Types="Step39331PikeExhaust">
+
+                            </AddonsShift>
+                            <AddonsShift Offset="(-0.4; 0; 0)" Types="Step39331PikeWheelAddon">
+
+                            </AddonsShift>
+                            <AddonsShift Offset="(0; 0; 0)" TrailerNamesBlock="FrameAddonTank" Types="Step39331PikeWheelAddon, Trailer">
+
+                            </AddonsShift>
+                        </Socket>
+                        <Socket Names="FrameAddonKung" Offset="(-2.23; 1.171; 0)">
+                            <ExtraParent Offset="(0; 0; -0.1)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Offset="(0; 0; 0.1)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                        </Socket>
+                        <Socket Names="FrameAddonSeismicVibrator" Offset="(0.172; 1.092; 0)">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="step_39331_pike_bumper_default">
+                      <Socket Names="Step39331PikeBumper" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="step_39331_pike_exhaust_default">
+                        <Socket Names="Step39331PikeExhaustDefault" ParentFrame="BoneCabin_cdt">
+                          <ExtraParent Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                        </Socket>
+                        <Socket Names="Step39331PikeExhaust" ParentFrame="BoneCabinDamper_cdt">
+                            <ExtraParent Frame="BoneCabin_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Step39331PikeWheelAddon" ParentFrame="BoneChassis_cdt">
+                          <ExtraParent Frame="BoneCabin_cdt">
+
+                          </ExtraParent>
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Names="Step39331PikeRoofrack" NamesBlock="Step39331PikeBeacon" ParentFrame="BoneCabinDamper_cdt">
+
+                        </Socket>
+                        <Socket Names="Step39331PikeSpotlight" ParentFrame="BoneCabinDamper_cdt">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Names="Step39331PikeSnorkel1" ParentFrame="BoneCabinDamper_cdt">
+
+                        </Socket>
+                        <Socket Names="Step39331PikeSnorkel2" ParentFrame="BoneCabinDamper_cdt">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Step39331PikeBeacon" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Step39331PikeVisor" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Step39331PikeGabarite" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Step39331PikeHorn" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Step39331PikeSticker_1x1_01" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Step39331PikeSticker_1x1_02" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Step39331PikeSticker_1x1_03" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Step39331PikeSticker_1x2_01" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Step39331PikeSticker_1x2_02" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Step39331PikeSticker_1x4_01" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(1.741; 1.917; 0.159)" InCockpit="true" ParentFrame="BoneCabinDamper_cdt" Names="StuffDashboard">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(1.465; 2.521; 0.076)" InCockpit="true" ParentFrame="BoneCabinDamper_cdt" Names="StuffAirfreshener">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Step39331PikeSticker_Capote" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Step39331PikeSticker_Door_L" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Step39331PikeSticker_Door_R" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Step39331PikeSticker_GlassTop" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Step39331PikeSticker_GlassBottom" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="StuffHoodStep39331Pike" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                <CustomizationCameras>
+                          <CameraPos InterestPosition="(3.428; 1.213; 0.579)" Position="(-3.577; 2.742; 7.179)" MaxZoom="2" Name="addon_1" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(4.066; 0.523; -0.192)" Position="(8.434; 2.902; 5.717)" MaxZoom="2" Name="addon_2" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="mirror_mount" Position="(4.637; 2.4; -0.2)" Interior="true" InterestPosition="(8.187; 1.9; 1.2)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(4.728; 1.454; -0.64)" Position="(9.705; 1.637; 4.844)" MaxZoom="2" Name="side_r" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="hood_ornament" Position="(9.5; 2.2; -1.3)" Interior="true" InterestPosition="(3.5; 1.2; 1.2)">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="sticker" Position="(4.668; 2.024; 0.2)" Interior="true" InterestPosition="(8.316; 1.53; 1.7)">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="sticker_1" Position="(4.8; 2.4; -0.5)" Interior="true" InterestPosition="(7.5; 1; 0.8)">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="glass_sticker" Position="(9.826; 2.823; 0.846)" Interior="true" InterestPosition="(5.602; 1.31; -0.767)">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="door_r_sticker" Position="(3.5; 1.5; 3.895)" Interior="true" InterestPosition="(6.8; 1.1; 0.614)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(7.253; 1.607; -0.08)" Position="(12.521; 3.38; 3.017)" MaxZoom="2" Name="roof" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="capote_sticker" Position="(9.5; 3.9; -1.296)" Interior="true" InterestPosition="(5.823; 1; -0.407)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(6.507; 0.995; -0.954)" Position="(12.171; 1.377; -1.669)" MaxZoom="2" Name="hoods" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(2.983; 1.7; -2)" Position="(2.772; 1.7; -5)" MaxZoom="2" Name="side_l" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="bubble_head" Position="(4.668; 2.024; -0.3)" Interior="true" InterestPosition="(8.316; 1.53; 1.1)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(5.483; 0.419; -1.3)" Position="(6.772; 0.755; -4.200)" MaxZoom="2" Name="wheels" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(3.576; 0.544; 0.337)" Position="(12.728; 2.221; -2.176)" MaxZoom="2" Name="default" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(5.929; 0.792; -0.468)" Position="(-0.649; 1.605; 1.978)" MaxZoom="2" Name="rear" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="door_l_sticker" Position="(3.303; 1.6; -3.775)" Interior="true" InterestPosition="(4.688; 1.1; -0.206)">
+
+                          </CameraPos>
+                </CustomizationCameras>
+                <UiDesc UiIcon40x40="offroadVehicleImg" UiDesc="UI_VEHICLE_STEP_39331_PIKE_DESC" UiIconLogo="StepLogo80" UiIcon30x30="offroadVehicleImg30" UiIcon328x458="ShopImgStepPike" UiName="UI_VEHICLE_STEP_39331_PIKE_NAME">
+
+                </UiDesc>
+                          <WinchSocket ParentFrame="BoneCabin_cdt" Pos="(3.43; 0.968; -0.451)">
+
+                          </WinchSocket>
+                          <WinchSocket ParentFrame="BoneCabin_cdt" Pos="(3.43; 0.968; 0.451)">
+
+                          </WinchSocket>
+                          <WinchSocket Pos="(-0.794; 1.028; -0.452)">
+
+                          </WinchSocket>
+                          <WinchSocket Pos="(-0.794; 1.028; 0.452)">
+
+                          </WinchSocket>
+                          <WinchSocket Pos="(-4.347; 1; -0.448)">
+
+                          </WinchSocket>
+                          <WinchSocket Pos="(-4.347; 1; 0.448)">
+
+                          </WinchSocket>
+        </GameData>
+        <TruckData EngineIconScale="1.3" TruckImage="steppikemchr" EngineIconMesh="env/engine_default" DiffLockType="Always" SteerSpeed="0.03" TruckType="OFFROAD" EngineStartDelay="0.8" ExhaustStartTime="0.9" Responsiveness="0.15" FuelCapacity="340" BackSteerSpeed="0.03">
+                    <LimitedFluid SizeX="0.921" Type="Box" SizeZ="0.519" Center="(-0.068; 0.875; 0.84)" SizeY="0.271">
+
+                    </LimitedFluid>
+                    <LimitedFluid SizeX="0.921" Type="Box" SizeZ="0.519" Center="(-0.068; 0.875; -0.84)" SizeY="0.271">
+
+                    </LimitedFluid>
+                      <CompatibleWheels Scale="0.52" Type="wheels_step_39331_pike" RearOffsetZ="0.03">
+
+                      </CompatibleWheels>
+                      <CompatibleWheels OffsetZ="0.06" Type="wheels_heavy_single2" Scale="0.52" RearOffsetZ="0.01">
+
+                      </CompatibleWheels>
+                      <CompatibleWheels OffsetZ="0.06" Type="wheels_heavy_single2" Scale="0.55" RearOffsetZ="0.01">
+
+                      </CompatibleWheels>
+                      <CompatibleWheels OffsetZ="-0.001" Type="wheels_heavy_double1" Scale="0.52" RearOffsetZ="0.03">
+
+                      </CompatibleWheels>
+                      <CompatibleWheels OffsetZ="-0.001" Type="wheels_heavy_double1" Scale="0.55" RearOffsetZ="0.03">
+
+                      </CompatibleWheels>
+                  <Axles>
+                            <Axle Frame="BoneAxle1">
+
+                            </Axle>
+                            <Axle Frame="BoneAxle2">
+
+                            </Axle>
+                            <Axle Frame="BoneAxle3">
+
+                            </Axle>
+                  </Axles>
+                  <Sounds AirHissInterval="12.0" DisableReversePitch="false" ParentFrame="BoneCabin_cdt" Origin="(2; 1.5; 0)" MinDist="12.0" _template="Default">
+                            <EngineAccel Sound="trucks/step_39331_pike/step_39331_pike_acc">
+
+                            </EngineAccel>
+                            <BrakePull Sound="trucks/step_39331_pike/step_39331_pike_brake_pull">
+
+                            </BrakePull>
+                            <EngineStop Sound="trucks/step_39331_pike/step_39331_pike_stop">
+
+                            </EngineStop>
+                            <EngineLow_2d IsSound2D="true" Sound="trucks/step_39331_pike/step_39331_pike_low_2d">
+
+                            </EngineLow_2d>
+                            <EngineIdle Sound="trucks/step_39331_pike/step_39331_pike_idle">
+
+                            </EngineIdle>
+                            <Handbrake Sound="trucks/step_39331_pike/step_39331_pike_handbrake_on">
+
+                            </Handbrake>
+                            <ChassisStress Sound="trucks/common/truck_stress_rnd_set/truck_stress_rnd">
+
+                            </ChassisStress>
+                            <Gear Sound="trucks/step_39331_pike/step_39331_pike_gear_shift">
+
+                            </Gear>
+                            <Reverse Sound="">
+
+                            </Reverse>
+                            <GearFail Sound="trucks/step_39331_pike/step_39331_pike_gear_wrong">
+
+                            </GearFail>
+                            <AbruptStop Sound="trucks/common/truck_swing_big_old_rnd_set/truck_swing_big_old_rnd">
+
+                            </AbruptStop>
+                            <EngineTrans Sound="">
+
+                            </EngineTrans>
+                            <EngineHeavy_2d IsSound2D="true" Sound="">
+
+                            </EngineHeavy_2d>
+                            <HandbrakeOff Sound="trucks/step_39331_pike/step_39331_pike_handbrake_off">
+
+                            </HandbrakeOff>
+                            <EngineHeavy Sound="">
+
+                            </EngineHeavy>
+                            <EngineLow Sound="trucks/step_39331_pike/step_39331_pike_low">
+
+                            </EngineLow>
+                            <EngineHigh_2d IsSound2D="true" Sound="trucks/step_39331_pike/step_39331_pike_high_2d">
+
+                            </EngineHigh_2d>
+                            <EngineHigh Sound="trucks/step_39331_pike/step_39331_pike_high">
+
+                            </EngineHigh>
+                            <EngineIdle_2d IsSound2D="true" Sound="trucks/step_39331_pike/step_39331_pike_idle_2d">
+
+                            </EngineIdle_2d>
+                            <EngineStart Sound="trucks/step_39331_pike/step_39331_pike_start">
+
+                            </EngineStart>
+                            <BrakeRelease Sound="trucks/step_39331_pike/step_39331_pike_brake_release">
+
+                            </BrakeRelease>
+                            <BrakesSqueal Sound="trucks/step_39331_pike/step_39331_pike_brakes_squeal">
+
+                            </BrakesSqueal>
+                            <Honk Sound="trucks/step_39331_pike/step_39331_pike_honk">
+
+                            </Honk>
+                            <EngineRev Sound="trucks/step_39331_pike/step_39331_pike_rev">
+
+                            </EngineRev>
+                  </Sounds>
+                  <Steam Origin="(0.5; 1; 0)">
+
+                  </Steam>
+                  <SuspensionSocket MaxWheelRadiusWithoutSuspension="0.5" Default="step_39331_pike_suspension_default" Type="s_step_39331_pike">
+
+                  </SuspensionSocket>
+                  <Shafts>
+                                    <Shaft SocketPointB="Shaft1b" SocketPointA="Shaft1a">
+
+                                    </Shaft>
+                                    <Shaft SocketPointB="Shaft2b" SocketPointA="Shaft2a">
+
+                                    </Shaft>
+                                    <Shaft SocketPointB="Shaft3b" SocketPointA="Shaft3a">
+
+                                    </Shaft>
+                                    <Shaft SocketPointB="Shaft4b" SocketPointA="Shaft4a">
+
+                                    </Shaft>
+                  </Shafts>
+                  <EngineSocket Default="ru_truck_old_engine_0" Type="e_ru_truck_old">
+
+                  </EngineSocket>
+                  <GearboxSocket Default="g_truck_default" Type="gearboxes_trucks">
+
+                  </GearboxSocket>
+                  <Shakers>
+                                        <Shaker MaxAngle="(3; 3; 3)" Frame="BoneGearstick" ParentFrame="BoneCabinDamper_cdt" MinAngle="(1; 1; 1)" MaxFrequency="0.1">
+
+                                        </Shaker>
+                  </Shakers>
+                  <OcclusionMap HalfSizeZ="1.8" MinX="-4.5" MaxX="4">
+
+                  </OcclusionMap>
+                  <Damage>
+                                              <DamageArea Max="(3.3; 1.8; 0.43)" Min="(1.3; 0.8; -0.43)" ParentFrame="BoneCabin_cdt" Type="Engine">
+
+                                              </DamageArea>
+                                              <DamageArea Max="(0.45; 1.1; 1.2)" Min="(-0.6; 0.7; -1.2)" ParentFrame="BoneChassis_cdt" Type="FuelTank">
+
+                                              </DamageArea>
+                  </Damage>
+                  <SoundsWheels _template="Default">
+
+                  </SoundsWheels>
+                  <SteeringRack RackHalfSizeZ="0.681" Frame="BoneRack" FrameSteerRight="BoneRackR" FrameSteerLeft="BoneRackL">
+
+                  </SteeringRack>
+                  <Camera Center="(-1; 0; 0)" ParentFrame="BoneCabinDamper_cdt">
+                                                  <Cockpit WindshieldDiffuseTexture="trucks/step_39331_pike_glasses__d_a.tga" WindshieldShadingTexture="trucks/step_39331_pike_glasses__sh_d.tga" _template="Default" ViewPos="(1; 2.2; 0.532)">
+                                                        <Mirror MeshFrame="mirror_left" ClipOffset="0.1" Size="(0.19; 0.28)" Pos="(1.773; 2.127; 1.243)" ReflectionDir="(-0.934; 0; -0.358)" ClipDir="(-0.934; 0; -0.358)" FOVScale="2">
+
+                                                        </Mirror>
+                                                        <Mirror MeshFrame="mirror_right" ClipOffset="0.1" Size="(0.19; 0.28)" Pos="(1.813; 2.128; -1.288)" ReflectionDir="(-0.788; 0; 0.616)" ClipDir="(-0.788; 0; 0.616)" FOVScale="2">
+
+                                                        </Mirror>
+                                                        <Mirror MeshFrame="hp_cab_mirror" ClipOffset="0.1" Size="(0.22; 0.06)" Pos="(1.676; 2.476; 0)" ReflectionDir="(-0.908; -0.274; 0.317)" ClipDir="(-0.98; -0.199; 0)" FOVScale="1.5">
+
+                                                        </Mirror>
+                                                  </Cockpit>
+                  </Camera>
+                  <SoundsDamage _template="Heavy">
+
+                  </SoundsDamage>
+                  <Wheels DefaultTire="tire_1" DefaultRim="rim_1" DefaultWheelType="wheels_step_39331_pike">
+                                                        <Wheel _template="FrontWheel" Pos="(2.338; 0.523; 0.91)">
+
+                                                        </Wheel>
+                                                        <Wheel _template="FrontWheel" RightSide="true" Pos="(2.338; 0.523; 0.91)">
+
+                                                        </Wheel>
+                                                        <Wheel _template="RearWheel" Pos="(-1.865; 0.541; 0.983)">
+
+                                                        </Wheel>
+                                                        <Wheel _template="RearWheel" RightSide="true" Pos="(-1.865; 0.541; 0.983)">
+
+                                                        </Wheel>
+                                                        <Wheel _template="RearWheel" Pos="(-3.291; 0.541; 0.983)">
+
+                                                        </Wheel>
+                                                        <Wheel _template="RearWheel" RightSide="true" Pos="(-3.291; 0.541; 0.983)">
+
+                                                        </Wheel>
+                  </Wheels>
+                  <SteeringWheel Frame="BoneSteering">
+
+                  </SteeringWheel>
+                  <Dashboard>
+                                                            <Gauge Dir="(-0.977; 0.212; -0.007)" Mesh="trucks/arrows/step_39331_pike_arrow_1" Org="(1.642; 1.802; 0.601)" Damping="0.99" InputType="speed" InputRange="(0;140)" OutputAngles="(-125; 105)">
+
+                                                            </Gauge>
+                                                            <Gauge Dir="(-0.973; 0.07; -0.218)" Mesh="trucks/arrows/step_39331_pike_arrow_2" Org="(1.632; 1.777; 0.769)" Damping="0.99" InputType="rpm" InputRange="(0;1)" OutputAngles="(-90; 100)">
+
+                                                            </Gauge>
+                                                            <Gauge Dir="(-0.977; 0.213; -0.006)" Mesh="trucks/arrows/step_39331_pike_arrow_1" Org="(1.645; 1.809; 0.437)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-85; 30)">
+
+                                                            </Gauge>
+                                                            <Gauge Dir="(-0.977; 0.213; -0.006)" Mesh="trucks/arrows/step_39331_pike_arrow_1" Org="(1.642; 1.795; 0.437)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-90; -190)">
+
+                                                            </Gauge>
+                                                            <Gauge Dir="(-0.977; 0.212; -0.007)" Mesh="trucks/arrows/step_39331_pike_arrow_4" Org="(1.66; 1.821; 0.29)" Damping="0.99" InputType="fuel" InputRange="(0;1)" OutputAngles="(-143; -220)">
+
+                                                            </Gauge>
+                                                            <Gauge Dir="(-0.977; 0.212; -0.007)" Mesh="trucks/arrows/step_39331_pike_arrow_4" Org="(1.662; 1.82; 0.204)" Damping="0.99" InputType="fuel" InputRange="(0;1)" OutputAngles="(-143; -220)">
+
+                                                            </Gauge>
+                                                            <Gauge Dir="(-0.977; 0.212; -0.007)" Mesh="trucks/arrows/step_39331_pike_arrow_4" Org="(1.643; 1.747; 0.332)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-146; -190)">
+
+                                                            </Gauge>
+                                                            <Gauge Dir="(-0.977; 0.212; -0.007)" Mesh="trucks/arrows/step_39331_pike_arrow_4" Org="(1.644; 1.746; 0.246)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-146; -175)">
+
+                                                            </Gauge>
+                                                            <Gauge Dir="(-0.977; 0.213; -0.007)" Mesh="trucks/arrows/step_39331_pike_arrow_3" Org="(1.639; 1.721; 0.161)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-40; 0)">
+
+                                                            </Gauge>
+                  </Dashboard>
+                  <Driver Pos="(1.111; 1.525; 0.524)" ParentFrame="BoneCabinDamper_cdt" SteeringWheelPos="(1.48; 1.871; 0.525)" AnimationSet="HeavyTruck">
+
+                  </Driver>
+                  <FuelTank DamageCapacity="50">
+
+                  </FuelTank>
+                  <WinchUpgradeSocket IsUpgradable="true" Default="w_medium_trucks_default" Type="winches_medium_trucks">
+
+                  </WinchUpgradeSocket>
+                  <Intake Origin="(3.276; 1.354; 0)" Size="1" Dir="(1; 0; 0)">
+
+                  </Intake>
+        </TruckData>
+        <HeadLight _template="Default" Pos="(3.8; 0.8; 0)">
+
+        </HeadLight>
+        <ModelAttachments>
+                      <HeadLight>
+                            <Model _template="HeadLightRay" ParentFrame="BoneCabin_cdt" Org="(3.27; 1.395; -0.833)">
+
+                            </Model>
+                            <Model _template="HeadLightRay" ParentFrame="BoneCabin_cdt" Org="(3.27; 1.395; 0.833)">
+
+                            </Model>
+                              <Flare _template="HeadLight" ParentFrame="BoneCabin_cdt" Pos="(3.27; 1.395; -0.833)" Size="0.4" AspectRatio="1" Color="g(255; 235; 215) x 0.5">
+
+                              </Flare>
+                              <Flare _template="HeadLight" ParentFrame="BoneCabin_cdt" Pos="(3.27; 1.395; 0.833)" Size="0.4" AspectRatio="1" Color="g(255; 235; 215) x 0.5">
+
+                              </Flare>
+                              <Flare _template="BlueStreak" Dir="(1; 0; 0)" ParentFrame="BoneCabin_cdt" Size="0.5" Pos="(3.27; 1.395; -0.833)">
+
+                              </Flare>
+                              <Flare _template="BlueStreak" Dir="(1; 0; 0)" ParentFrame="BoneCabin_cdt" Size="0.5" Pos="(3.27; 1.395; 0.833)">
+
+                              </Flare>
+                      </HeadLight>
+                      <ReverseSignals>
+                            <Light _template="ReverseSignal" ParentFrame="BoneCabin_cdt" Pos="(-4.425; 1.005; -0.361)">
+
+                            </Light>
+                                <Flare _template="ReverseSignal" Pos="(-4.425; 1.005; -0.361)" Size="0.15" ParentFrame="BoneCabin_cdt">
+
+                                </Flare>
+                                <Flare _template="BlueStreak" ParentFrame="BoneCabin_cdt" Dir="(-1; 0; 0)" Pos="(-4.425; 1.005; -0.361)" Color="g(220; 220; 255) x 0.1" Size="0.3">
+
+                                </Flare>
+                      </ReverseSignals>
+                      <Ignition>
+                                <Light _template="IgnitionSignalRed" Pos="(-4.680; 1; 0)">
+
+                                </Light>
+                                <Light _template="IgnitionSignalWhite" Pos="(3.8; 0.8; 0)" Color="g(240; 200; 165) x 1.0" ParentFrame="BoneCabin_cdt">
+
+                                </Light>
+                                  <Flare _template="IgnitionSignalOrange" ParentFrame="BoneCabin_cdt" Pos="(1.516; 2.535; -0.79)" Dir="(0; 0; -1)" Size="0.3" AspectRatio="1" Color="g(255; 140; 0) x 0.5">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalOrange" ParentFrame="BoneCabin_cdt" Pos="(1.516; 2.535; 0.79)" Dir="(0.5; 0; 1)" Size="0.3" AspectRatio="1" Color="g(255; 140; 0) x 0.5">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalRed" Size="0.1" Pos="(-4.461; 1.006; -0.529)">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalRed" Size="0.1" Pos="(-4.461; 1.006; 0.529)">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalWhite" Pos="(3.27; 1.395; -0.833)" ParentFrame="BoneCabin_cdt" Color="g(255; 235; 215) x 0.5" Size="0.25">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalWhite" Pos="(3.27; 1.395; 0.833)" ParentFrame="BoneCabin_cdt" Color="g(255; 235; 215) x 0.5" Size="0.25">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalWhite" Pos="(3.245; 1.157; -0.946)" ParentFrame="BoneCabin_cdt" Color="g(255; 235; 215) x 0.5" Size="0.11">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalWhite" Pos="(3.245; 1.157; 0.946)" ParentFrame="BoneCabin_cdt" Color="g(255; 235; 215) x 0.5" Size="0.11">
+
+                                  </Flare>
+                      </Ignition>
+                      <StopSignals>
+                                <Light _template="StopSignal" Size="0.2" Pos="(-4.680; 1; 0)">
+
+                                </Light>
+                                    <Flare _template="StopSignal" ParentFrame="BoneCabin_cdt" Pos="(-4.538; 1.008; -0.653)" Size="0.15" AspectRatio="1" Color="g(255; 0; 0) x 1">
+
+                                    </Flare>
+                                    <Flare _template="StopSignal" ParentFrame="BoneCabin_cdt" Pos="(-4.538; 1.008; 0.653)" Size="0.15" AspectRatio="1" Color="g(255; 0; 0) x 1">
+
+                                    </Flare>
+                      </StopSignals>
+        </ModelAttachments>
+        <AutomaticIK>
+                        <IKBone ModelFrame="BoneTieRodHinge2" ParentFrame="BoneTieRod_cdt">
+                            <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BoneTieRodPrismatic" AttachToFrame="BoneRackL" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                        </IKBone>
+        </AutomaticIK>
+        <PhysicsModel Mesh="trucks/step_39331_pike">
+                          <Body ModelFrame="BoneChassis_cdt" NetSync="pv" Mass="3500" ImpactType="Truck" CenterOfMassOffset="(-2.5; 0; 0)">
+                              <Body ModelFrame="BoneCabin_cdt" NetSync="pv" Mass="2500" ImpactType="Truck" CenterOfMassOffset="(0; 0; 0)">
+                                  <Constraint Type="Hinge" MinLimit="-20" MaxLimit="20" AxisLocal="(1; 0; 0)">
+                                      <Motor Spring="300000" Type="Spring" Damping="15000">
+
+                                      </Motor>
+                                  </Constraint>
+                                      <Body ModelFrame="BoneCabinDamper_cdt" Mass="1000" ImpactType="Truck" CenterOfMassOffset="(0; 0; 0)">
+                                        <Constraint Type="Hinge" MinLimit="-3" MaxLimit="3" AxisLocal="(1; 0; 0)">
+                                            <Motor Spring="48000" Type="Spring" Damping="12000">
+
+                                            </Motor>
+                                        </Constraint>
+                                            <Body _template="Sunshield" ModelFrame="BoneSunshield_cdt">
+
+                                            </Body>
+                                            <Body _template="Wire" ModelFrame="BoneWire1_cdt">
+                                              <Body _template="Wire" ModelFrame="BoneWire2_cdt">
+
+                                              </Body>
+                                            </Body>
+                                            <Body Mass="0.2" ModelFrame="BoneKeyFobRing_cdt">
+                                              <Constraint Type="Hinge" MinLimit="-50" MaxLimit="50" AxisLocal="(0; 0; 1)">
+                                                  <Motor Spring="0.001" Type="Spring" Damping="0.001">
+
+                                                  </Motor>
+                                              </Constraint>
+                                            </Body>
+                                      </Body>
+                                      <Body _template="TieRod" ModelFrame="BoneTieRod_cdt">
+                                        <Constraint AxisLocal="(0; 0; 1)" Name="TieRodSteer" MinLimit="-25" MaxLimit="25">
+
+                                        </Constraint>
+                                      </Body>
+                              </Body>
+                          </Body>
+                          <NetSync Legacy="false">
+
+                          </NetSync>
+        </PhysicsModel>
+  </Truck>

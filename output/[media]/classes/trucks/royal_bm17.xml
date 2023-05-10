@@ -1,0 +1,786 @@
+  <_templates Include="trucks">
+      <Wheel>
+          <FrontWheel SteeringAngle="37" SteeringJointOffset="0.2" SteeringCastor="8" ParentFrame="BoneCabin_cdt" Location="front" Torque="full">
+
+          </FrontWheel>
+          <RearWheel ConnectedToHandbrake="true" Location="rear" Torque="default">
+
+          </RearWheel>
+      </Wheel>
+      <Body>
+            <Mudguard Mass="10" Collisions="None">
+                <Constraint Type="Hinge">
+                    <Motor Spring="10" Type="Spring" Damping="1">
+
+                    </Motor>
+                </Constraint>
+            </Mudguard>
+            <SideMirror Mass="5" Collisions="None">
+                  <Constraint Type="Hinge" MinLimit="-35" MaxLimit="35" AxisLocal="(0; 1; 0)">
+                      <Motor Spring="280" Type="Spring" Damping="5">
+
+                      </Motor>
+                  </Constraint>
+            </SideMirror>
+      </Body>
+      <Flare>
+              <IgnitionSignalOrange Size="0.1" DirAngle="135" Dir="(0; 1; 0)" ColorMultAtDay="0.6" AspectRatio="1.4" Color="g(255; 140; 0) x 0.3">
+
+              </IgnitionSignalOrange>
+      </Flare>
+  </_templates>
+  <Truck>
+        <ControlledConstraints>
+            <Constraint IsLinkedSteering="true" Id="chassis_steer" Name="TieRodSteer">
+
+            </Constraint>
+        </ControlledConstraints>
+        <Landmark MaxScale="2.5" Mesh="landmarks/royal_bm17_lmk" MinScale="1.5">
+
+        </Landmark>
+        <GameData Country="US" UnlockByExploration="true" Price="104500" UnlockByRank="1">
+                  <CraneSocket Pos="(-4.626; 0.933; 0)">
+
+                  </CraneSocket>
+                  <CraneSocket Pos="(-1.815; 1.229; -0.389)">
+
+                  </CraneSocket>
+                  <CraneSocket Pos="(-1.815; 1.229; 0.389)">
+
+                  </CraneSocket>
+                  <CraneSocket ParentFrame="BoneCabin_cdt" Pos="(3.792; 1.184; 0.641)">
+
+                  </CraneSocket>
+                  <CraneSocket ParentFrame="BoneCabin_cdt" Pos="(3.792; 1.184; -0.641)">
+
+                  </CraneSocket>
+                    <AddonSockets DefaultAddon="zikz_5368_diff_lock_default">
+                      <Socket Names="ZiKZ5368DiffLock" Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="RoyalBm17SpareWheel" Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt">
+                          <ExtraParent Frame="BoneCabin_cdt">
+
+                          </ExtraParent>
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Names="LargeSemitrailer" Offset="(-1.76; 1.84; 0)">
+
+                        </Socket>
+                        <Socket Names="LargeSemitrailer, LargeSemitrailerOiltank" Offset="(-1.76; 1.84; 0)">
+
+                        </Socket>
+                        <Socket Names="Semitrailer, SemitrailerOiltank" Offset="(-2.46; 1.67; 0)">
+
+                        </Socket>
+                        <Socket Names="Trailer" Offset="(-4.638; 0.932; 0)">
+                          <AddonsShift Offset="(0; 0; 0)" TrailerNamesBlock="Trailer" Types="MinicraneUS, FrameAddon">
+
+                          </AddonsShift>
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Names="LogLift" NamesBlock="MetalDetector, MinicraneUS" Offset="(-0.693; 1.345; 0)">
+
+                        </Socket>
+                        <Socket Names="BunkLog" NamesBlock="MinicraneUS, MetalDetector" Offset="(-6.611; 1.344; 0)">
+
+                        </Socket>
+                        <Socket Names="FrameAddonLogShort" Offset="(-2.18; 1.34; 0)" NamesBlock="MinicraneUS, MetalDetector, RoyalBM17CabinProtector">
+
+                        </Socket>
+                        <Socket Names="FrameAddonLogMedium" Offset="(-2.18; 1.34; 0)" NamesBlock="MinicraneUS, MetalDetector, RoyalBM17CabinProtector, Trailer">
+
+                        </Socket>
+                        <Socket Names="SaddleLowRoyalBm17" Offset="(-3.095; 1.34; 0)">
+                          <ExtraParent Frame="BoneCabin_cdt">
+
+                          </ExtraParent>
+                        </Socket>
+                        <Socket Names="SaddleHighRoyalBm17" Offset="(-2.365; 1.34; 0)">
+                          <ExtraParent Frame="BoneCabin_cdt">
+
+                          </ExtraParent>
+                          <AddonsShift Offset="(0; 0; 0)" TrailerNamesBlock="SaddleHighRoyalBm17" Types="MinicraneUS, RoyalBM17CabinProtector">
+
+                          </AddonsShift>
+                        </Socket>
+                        <Socket Offset="(-2.9; 1.339; 0)" ParentFrame="BoneChassis_cdt" Names="FrameAddonTow" NamesBlock="MinicraneUS, MetalDetector, Trailer">
+                          <AddonsShift Offset="(-0.5; 0; 0)" Types="RoyalBM17CabinProtector">
+
+                          </AddonsShift>
+                        </Socket>
+                        <Socket Names="FrameAddon" Offset="(-2.218; 1.339; 0)" ParentFrame="BoneChassis_cdt">
+                            <AddonsShift Offset="(-1.21; 0; 0)" Types="MinicraneUS">
+
+                            </AddonsShift>
+                            <AddonsShift Offset="(-0.545; 0; 0)" Types="RoyalBM17CabinProtector">
+
+                            </AddonsShift>
+                            <AddonsShift Offset="(0; 0; 0)" TrailerNamesBlock="FrameAddon" Types="MinicraneUS, RoyalBM17CabinProtector">
+
+                            </AddonsShift>
+                        </Socket>
+                        <Socket Names="FrameAddonKung" Offset="(-2.84; 1.413; 0)" ParentFrame="BoneChassis_cdt">
+                            <ExtraParent Offset="(0; 0; -0.08)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Offset="(0; 0; 0.08)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                        </Socket>
+                        <Socket Names="FrameAddonTank" Offset="(-3.165; 1.339; 0)" ParentFrame="BoneChassis_cdt">
+                          <AddonsShift Offset="(-0.588; 0; 0)" Types="RoyalBM17CabinProtector">
+
+                          </AddonsShift>
+                        </Socket>
+                        <Socket NamesBlock="Trailer, RoyalBM17CabinProtector" ParentFrame="BoneChassis_cdt" Names="FrameAddonMaintainer" Offset="(-2.85; 0.307; 0)">
+
+                        </Socket>
+                        <Socket NamesBlock="MinicraneUS, Trailer, RoyalBM17CabinProtector" ParentFrame="BoneChassis_cdt" Names="FrameAddonSeismicVibrator" Offset="(-0.08; 1.341; 0)">
+
+                        </Socket>
+                        <Socket Names="BigCraneUs" Offset="(-2.891; 1.442; 0)" NamesBlock="MetalDetector, MinicraneUS, Semitrailer, RoyalBM17CabinProtector">
+                            <ExtraParent Offset="(0; -0.1; 0)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Offset="(0; -0.1; 0)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket NamesBlock="SaddleLowRoyalBm17, FrameAddonKung, FrameAddonTank, FrameAddonSeismicVibrator, FrameAddon, SaddleHighRoyalBm17, RoyalBm17SpareWheel" ParentFrame="BoneChassis_cdt" Names="MetalDetector" Offset="(-1.256; 0.287; 0)">
+
+                        </Socket>
+                        <Socket Names="MinicraneUS" Offset="(-0.48; 1.343; 0)" NamesBlock="SemitrailerOiltank, LargeSemitrailerOiltank, FrameAddonKung, FrameAddonTank, FrameAddonMaintainer">
+                          <AddonsShift Offset="(-0.588; 0; 0)" Types="RoyalBM17CabinProtector">
+
+                          </AddonsShift>
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="RoyalBM17Bumper" Offset="(0; 0; 0)" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="RoyalBM17Horn" NamesBlock="RoyalBM17Horn2, RoyalBM17SpotLight2" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="RoyalBM17Horn2" Offset="(0; 0; 0)" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="royal_bm17_visor_default">
+                      <Socket Names="RoyalBM17Visor" Offset="(0; 0; 0)" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="RoyalBM17Beacon" Offset="(0; 0; 0)" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Names="RoyalBM17SpotLight2" NamesBlock="RoyalBM17Beacon" ParentFrame="BoneCabin_cdt">
+
+                        </Socket>
+                        <Socket Names="RoyalBM17SpotLight" ParentFrame="BoneCabin_cdt">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="RoyalBM17Gabarite" Offset="(0; 0; 0)" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="royal_bm17_air_conditioner_default">
+                      <Socket Names="RoyalBM17Conditioner" Offset="(0; 0; 0)" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="RoyalBM17CabinProtector" Offset="(-0.05; 0; 0)" ParentFrame="BoneCabin_cdt">
+                          <ExtraParent Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="royal_bm17_snorkel_default">
+                      <Socket Names="RoyalBM17Snorkel" Offset="(0; 0; 0)" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="royal_bm17_exhaust_default">
+                      <Socket Names="RoyalBM17Exhaust" Offset="(0; 0; 0)" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(1.907; 2.428; 0.016)" InCockpit="true" ParentFrame="BoneCabin_cdt" Names="StuffDashboard">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="royalBm17Sticker_1x1_01" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="royalBm17Sticker_1x1_02" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="royalBm17Sticker_1x1_03" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="royalBm17Sticker_1x1_04" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="royalBm17Sticker_1x2_01" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="royalBm17Sticker_1x4_01" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="royalBm17Sticker_GlassTop" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="royalBm17Sticker_GlassBottom" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="royalBm17Sticker_Door_L" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="royalBm17Sticker_Door_R" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="royalBm17Sticker_Capote" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="royalBm17Sticker_Roof" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Offset="(1.758; 3.008; 0.044)" InCockpit="true" ParentFrame="BoneCabin_cdt" Names="StuffAirfreshener">
+
+                        </Socket>
+                        <Socket Names="StuffCurtainRoyalBm17" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="StuffHoodRoyalBm17" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                <CustomizationCameras>
+                          <CameraPos FOV="32.0" Name="roof_sticker" Position="(6.453; 5.829; -0.285)" Interior="true" InterestPosition="(3.589; 0.674; -0.706)">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="sticker_1" Position="(4.474; 2.728; -0.212)" Interior="true" InterestPosition="(6.609; 1.277; 1.412)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(-0.508; 2.026; -0)" Position="(-9.259; 3.714; 6.213)" MaxZoom="2" Name="addon_1" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(3.496; 0.486; 0)" Position="(-0.029; 4.180; 4.334)" MaxZoom="2" Name="addon_2" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="mirror_mount" Position="(4.104; 2.885; -0.632)" Interior="true" InterestPosition="(6.438; 2.587; 1.715)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(4.764; 2.196; -0)" Position="(-0.590; 4.639; 3.718)" MaxZoom="2" Name="side_r" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="sticker" Position="(4.474; 2.728; -0.212)" Interior="true" InterestPosition="(6.726; 1.277; 2.848)">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="glass_sticker" Position="(8.46; 3.409; 0.655)" Interior="true" InterestPosition="(4.613; 2.54; -0.956)">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="door_r_sticker" Position="(3.984; 2.354; 3.093)" Interior="true" InterestPosition="(6.471; 1.745; 0)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(4.758; 2.358; -0)" Position="(10.787; 4.806; -3.717)" MaxZoom="2" Name="roof" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="capote_sticker" Position="(9.190; 5.504; -0.312)" Interior="true" InterestPosition="(5.454; 0.713; -0.581)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(5.716; 1.735; 0)" Position="(13.576; 1.402; -3.863)" MaxZoom="2" Name="hoods" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="sticker_2" Position="(4.651; 2.846; -0.267)" Interior="true" InterestPosition="(6.062; 1.277; 0.322)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(5.516; 1.36; 0)" Position="(10.32; 4.555; 4.896)" MaxZoom="2" Name="side_l" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="bubble_head" Position="(4.693; 2.899; -0.208)" Interior="true" InterestPosition="(6.609; 1.268; 1.367)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(4.925; 0.749; 0.052)" Position="(8.037; 2.025; -5.492)" MaxZoom="2" Name="wheels" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(5.716; 1.735; 0)" Position="(13.576; 1.402; -3.863)" MaxZoom="2" Name="default" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(-0.868; 1.09; -0)" Position="(-6.285; 2.053; 3.418)" MaxZoom="2" Name="rear" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="door_l_sticker" Position="(4.16; 2.415; -3.29)" Interior="true" InterestPosition="(4.476; 1.822; -0)">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="hood_ornament" Position="(8.557; 2.677; -1.52)" Interior="true" InterestPosition="(7.506; 2.361; -1.52)">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="curtain" Position="(4.104; 2.885; -0.632)" Interior="true" InterestPosition="(6.438; 2.587; 1.715)">
+
+                          </CameraPos>
+                </CustomizationCameras>
+                <UiDesc UiIcon40x40="offroadVehicleImg" UiDesc="UI_VEHICLE_ROYAL_BM17_DESC" UiIconLogo="RoyalLogo80" UiIcon30x30="offroadVehicleImg30" UiIcon328x458="shopImgScammell" UiName="UI_VEHICLE_ROYAL_BM17_NAME">
+
+                </UiDesc>
+                          <WinchSocket Pos="(-4.626; 0.933; 0)">
+
+                          </WinchSocket>
+                          <WinchSocket Pos="(-1.815; 1.229; -0.389)">
+
+                          </WinchSocket>
+                          <WinchSocket Pos="(-1.815; 1.229; 0.389)">
+
+                          </WinchSocket>
+                          <WinchSocket ParentFrame="BoneCabin_cdt" Pos="(3.792; 1.184; 0.641)">
+
+                          </WinchSocket>
+                          <WinchSocket ParentFrame="BoneCabin_cdt" Pos="(3.792; 1.184; -0.641)">
+
+                          </WinchSocket>
+        </GameData>
+        <TruckData EngineIconScale="1.3" TruckImage="royalbm17mchr" EngineIconMesh="env/engine_default" DiffLockType="Installed" SteerSpeed="0.025" TruckType="OFFROAD" EngineStartDelay="0.8" ExhaustStartTime="0.9" Responsiveness="0.15" FuelCapacity="817" BackSteerSpeed="0.025">
+                    <LimitedFluid Type="Cylinder" LengthX="1.05" ParentFrame="BoneChassis_cdt" RadiusZ="0.30" Center="(0.978; 1; -0.781)" RadiusY="0.30">
+
+                    </LimitedFluid>
+                    <LimitedFluid Type="Cylinder" LengthX="1.05" ParentFrame="BoneChassis_cdt" RadiusZ="0.300" Center="(0.975; 1; 0.79)" RadiusY="0.300">
+
+                    </LimitedFluid>
+                      <CompatibleWheels OffsetZ="0.04" Type="wheels_medium_double" Scale="0.6" RearOffsetZ="0.06">
+
+                      </CompatibleWheels>
+                      <CompatibleWheels Scale="0.65" Type="wheels_medium_double" RearOffsetZ="0.08">
+
+                      </CompatibleWheels>
+                  <Axles>
+                            <Axle Frame="BoneAxle1">
+
+                            </Axle>
+                            <Axle Frame="BoneAxle2">
+
+                            </Axle>
+                            <Axle Frame="BoneAxle3">
+
+                            </Axle>
+                  </Axles>
+                  <Sounds AirHissInterval="12.0" DisableReversePitch="false" ParentFrame="BoneCabin_cdt" Origin="(2.417; 1.737; 0)" MinDist="15.0" _template="Default">
+                            <EngineAccel Sound="trucks/royal_bm17/royal_bm17_acc">
+
+                            </EngineAccel>
+                            <BrakeRelease Sound="trucks/royal_bm17/royal_bm17_brake_release">
+
+                            </BrakeRelease>
+                            <EngineStop Sound="trucks/royal_bm17/royal_bm17_stop">
+
+                            </EngineStop>
+                            <EngineLow_2d IsSound2D="true" Sound="trucks/royal_bm17/royal_bm17_low_2d">
+
+                            </EngineLow_2d>
+                            <EngineIdle Sound="trucks/royal_bm17/royal_bm17_idle">
+
+                            </EngineIdle>
+                            <EngineIdle_2d IsSound2D="true" Sound="trucks/royal_bm17/royal_bm17_idle_2d">
+
+                            </EngineIdle_2d>
+                            <Honk Sound="trucks/royal_bm17/royal_bm17_honk">
+
+                            </Honk>
+                            <Reverse Sound="trucks/royal_bm17/royal_bm17_reverse">
+
+                            </Reverse>
+                            <EngineTrans Sound="">
+
+                            </EngineTrans>
+                            <EngineRev Sound="trucks/royal_bm17/royal_bm17_rev">
+
+                            </EngineRev>
+                            <EngineLow Sound="trucks/royal_bm17/royal_bm17_low">
+
+                            </EngineLow>
+                            <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
+
+                            </AbruptStop>
+                            <EngineHeavy_2d IsSound2D="true" Sound="trucks/royal_bm17/royal_bm17_heavy_2d">
+
+                            </EngineHeavy_2d>
+                            <EngineStart Sound="trucks/royal_bm17/royal_bm17_start">
+
+                            </EngineStart>
+                            <EngineHeavy Sound="trucks/royal_bm17/royal_bm17_heavy">
+
+                            </EngineHeavy>
+                            <BrakesSqueal Sound="trucks/royal_bm17/royal_bm17_brakes_squeal">
+
+                            </BrakesSqueal>
+                            <EngineHigh_2d IsSound2D="true" Sound="trucks/royal_bm17/royal_bm17_high_2d">
+
+                            </EngineHigh_2d>
+                            <EngineHigh Sound="trucks/royal_bm17/royal_bm17_high">
+
+                            </EngineHigh>
+                  </Sounds>
+                            <Steam Origin="(2.578; 1.405; 0)" ParentFrame="BoneCabin_cdt">
+
+                            </Steam>
+                            <Steam Origin="(0.937; 1.315; 0)" ParentFrame="BoneCabin_cdt">
+
+                            </Steam>
+                  <SuspensionSocket MaxWheelRadiusWithoutSuspension="0.53" Default="royal_bm17_suspension_default" Type="s_royal_bm17">
+
+                  </SuspensionSocket>
+                  <Shafts>
+                                    <Shaft SocketPointB="Shaft1b" SocketPointA="Shaft1a">
+
+                                    </Shaft>
+                                    <Shaft SocketPointB="Shaft2b" SocketPointA="Shaft2a">
+
+                                    </Shaft>
+                                    <Shaft SocketPointB="Shaft3b" SocketPointA="Shaft3a">
+
+                                    </Shaft>
+                                    <Shaft SocketPointB="Shaft4b" SocketPointA="Shaft4a">
+
+                                    </Shaft>
+                  </Shafts>
+                  <EngineSocket Default="us_truck_modern_engine_cat_royal" Type="e_us_truck_modern, e_us_truck_modern_catroyal">
+
+                  </EngineSocket>
+                  <GearboxSocket Default="g_truck_default" Type="gearboxes_trucks">
+
+                  </GearboxSocket>
+                  <Dashboard>
+                                          <Gauge Dir="(-0.769; 0.64; 0)" Mesh="trucks/arrows/royal_bm17_arrow1" Org="(1.794; 2.339; 0.743)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-125; 18)">
+
+                                          </Gauge>
+                                          <Gauge Dir="(-0.768; 0.64; 0)" Mesh="trucks/arrows/royal_bm17_arrow1" Org="(1.743; 2.277; 0.743)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-125; -19)">
+
+                                          </Gauge>
+                                          <Gauge Dir="(-0.776; 0.631; 0)" Mesh="trucks/arrows/royal_bm17_arrow2" Org="(1.76; 2.303; 0.639)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-128; 37)">
+
+                                          </Gauge>
+                                          <Gauge Dir="(-0.768; 0.64; 0)" Mesh="trucks/arrows/royal_bm17_arrow3" Org="(1.786; 2.327; 0.514)" Damping="0.99" InputType="rpm" InputRange="(0;1)" OutputAngles="(-120; 121)">
+
+                                          </Gauge>
+                                          <Gauge Dir="(-0.768; 0.64; 0)" Mesh="trucks/arrows/royal_bm17_arrow1" Org="(1.794; 2.339; 0.281)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-125; 77)">
+
+                                          </Gauge>
+                                          <Gauge Mesh="trucks/arrows/royal_bm17_arrow4" InputRange="(0;130)" Dir="(-0.768; 0.64; 0)" Org="(1.761; 2.304; 0.388)" InputType="speed" OutputAngles="(-139; 116)">
+
+                                          </Gauge>
+                                          <Gauge Dir="(-0.768; 0.64; 0)" Mesh="trucks/arrows/royal_bm17_arrow5" Org="(1.762; 2.303; 0.388)" Damping="0.99" InputType="none" InputRange="(0;1)" OutputAngles="(107; 107)">
+
+                                          </Gauge>
+                                          <Gauge Dir="(-0.768; 0.64; 0)" Mesh="trucks/arrows/royal_bm17_arrow6" Org="(1.763; 2.302; 0.388)" Damping="0.99" InputType="none" InputRange="(0;1)" OutputAngles="(-28; -28)">
+
+                                          </Gauge>
+                                          <Gauge Dir="(-0.79; 0.613; 0)" Mesh="trucks/arrows/royal_bm17_arrow7" Org="(1.741; 2.275; 0.639)" Damping="0.99" InputType="fuel" InputRange="(0;1)" OutputAngles="(-152; -208)">
+
+                                          </Gauge>
+                  </Dashboard>
+                  <OcclusionMap HalfSizeZ="1.7" MinX="-5.050" MaxX="4.300">
+
+                  </OcclusionMap>
+                  <Damage>
+                                              <DamageArea Max="(3.608; 2.314; 0.797)" Min="(2.01; 1.154; -0.797)" ParentFrame="BoneCabin_cdt" Type="Engine">
+
+                                              </DamageArea>
+                                              <DamageArea Max="(2.817; 1.452; 1.31)" Min="(0.345; 0.559; -1.31)" ParentFrame="BoneChassis_cdt" Type="FuelTank">
+
+                                              </DamageArea>
+                  </Damage>
+                  <SoundsWheels _template="Default">
+
+                  </SoundsWheels>
+                  <SteeringRack RackHalfSizeZ="0.750" Frame="BoneRack" FrameSteerRight="BoneRackRight" FrameSteerLeft="BoneRackLeft">
+
+                  </SteeringRack>
+                  <SoundsDamage _template="Heavy">
+
+                  </SoundsDamage>
+                  <Wheels DefaultTire="highway_1" DefaultRim="rim_1" DefaultWheelType="wheels_medium_double">
+                                                      <Wheel _template="FrontWheel" Pos="(2.307; 0.63; 1.04)">
+
+                                                      </Wheel>
+                                                      <Wheel _template="FrontWheel" RightSide="true" Pos="(2.307; 0.63; 1.04)">
+
+                                                      </Wheel>
+                                                      <Wheel _template="RearWheel" Pos="(-2.402; 0.63; 0.934)">
+
+                                                      </Wheel>
+                                                      <Wheel _template="RearWheel" RightSide="true" Pos="(-2.402; 0.63; 0.934)">
+
+                                                      </Wheel>
+                                                      <Wheel _template="RearWheel" Pos="(-3.798; 0.63; 0.934)">
+
+                                                      </Wheel>
+                                                      <Wheel _template="RearWheel" RightSide="true" Pos="(-3.798; 0.63; 0.934)">
+
+                                                      </Wheel>
+                  </Wheels>
+                  <SteeringWheel Frame="BoneSteering">
+
+                  </SteeringWheel>
+                  <Camera Center="(-1.7; 0; 0)" ParentFrame="BoneCabin_cdt">
+                                                        <Cockpit WindshieldDiffuseTexture="trucks/royal_bm17_glass__d_a.tga" WindshieldShadingTexture="trucks/royal_bm17_glass__sh_d.tga" _template="Default" ViewPos="(1.031; 2.786; 0.519)">
+                                                              <Mirror MeshFrame="mirror_left" ClipOffset="0.1" Size="(0.2; 0.38)" Pos="(1.576; 2.751; 1.44)" ReflectionDir="(-0.897; -0.089; -0.433)" ClipDir="(-0.897; -0.089; -0.433)" FOVScale="2">
+                                                                <SecondaryView MeshFrame="mirror_left_convex" FOVScale="1.5" CurveAngle="7" Pos="(1.578; 2.442; 1.435)" ClipDir="(-0.897; -0.089; -0.433)" Size="(0.24; 0.24)">
+
+                                                                </SecondaryView>
+                                                              </Mirror>
+                                                              <Mirror MeshFrame="mirror_right" ClipOffset="0.3" Size="(0.2; 0.38)" Pos="(1.577; 2.752; -1.438)" ReflectionDir="(-0.795; -0.102; 0.598)" ClipDir="(-0.795; -0.102; 0.598)" FOVScale="2.5">
+                                                                <SecondaryView MeshFrame="mirror_right_convex" ClipOffset="0.3" CurveAngle="7" Pos="(1.582; 2.444; -1.433)" Size="(0.24; 0.24)" ClipDir="(-0.795; -0.102; 0.598)" FOVScale="1.75">
+
+                                                                </SecondaryView>
+                                                              </Mirror>
+                                                        </Cockpit>
+                  </Camera>
+                  <Driver Pos="(1.045; 2.062; 0.51)" ParentFrame="BoneCabin_cdt" SteeringWheelPos="(1.441; 2.392; 0.516)" AnimationSet="HeavyTruck">
+
+                  </Driver>
+                  <WinchUpgradeSocket IsUpgradable="true" Default="w_medium_trucks_default" Type="winches_medium_trucks">
+
+                  </WinchUpgradeSocket>
+                  <FuelTank DamageCapacity="120">
+
+                  </FuelTank>
+                  <Intake Origin="(3.655; 1.617; 0)" Size="1" Dir="(1; 0; 0)">
+
+                  </Intake>
+        </TruckData>
+        <HeadLight _template="Default" ParentFrame="BoneCabin_cdt" Pos="(3.709; 1.056; 0)">
+
+        </HeadLight>
+        <ModelAttachments>
+                      <HeadLight>
+                            <Model _template="HeadLightRay" ParentFrame="BoneCabin_cdt" Org="(3.709; 1.056; -0.896)">
+
+                            </Model>
+                            <Model _template="HeadLightRay" ParentFrame="BoneCabin_cdt" Org="(3.709; 1.056; 0.896)">
+
+                            </Model>
+                              <Flare _template="HeadLight" Pos="(3.709; 1.056; -0.896)" ParentFrame="BoneCabin_cdt" Color="g(245; 225; 180) x 0.5" Size="0.45">
+
+                              </Flare>
+                              <Flare _template="HeadLight" Pos="(3.709; 1.056; 0.896)" ParentFrame="BoneCabin_cdt" Color="g(245; 225; 180) x 0.5" Size="0.45">
+
+                              </Flare>
+                              <Flare _template="BlueStreak" ParentFrame="BoneCabin_cdt" Pos="(3.709; 1.056; -0.896)">
+
+                              </Flare>
+                              <Flare _template="BlueStreak" ParentFrame="BoneCabin_cdt" Pos="(3.709; 1.056; 0.896)">
+
+                              </Flare>
+                      </HeadLight>
+                      <ReverseSignals>
+                            <Light _template="ReverseSignal" Pos="(-4.712; 1.237; 0)">
+
+                            </Light>
+                                <Flare _template="ReverseSignal" Size="0.7" Pos="(-4.675; 1.237; -0.728)">
+
+                                </Flare>
+                                <Flare _template="ReverseSignal" Size="0.7" Pos="(-4.675; 1.237; 0.728)">
+
+                                </Flare>
+                                <Flare _template="BlueStreak" Dir="(-1; 0; 0)" Pos="(-4.675; 1.237; -0.728)" Color="g(220; 220; 255) x 0.05" Size="0.4">
+
+                                </Flare>
+                                <Flare _template="BlueStreak" Dir="(-1; 0; 0)" Pos="(-4.675; 1.237; 0.728)" Color="g(220; 220; 255) x 0.05" Size="0.4">
+
+                                </Flare>
+                      </ReverseSignals>
+                      <Ignition>
+                                <Light _template="IgnitionSignalWhite" ParentFrame="BoneCabin_cdt" Pos="(3.8; 1.056; 1.060)">
+
+                                </Light>
+                                <Light _template="IgnitionSignalWhite" ParentFrame="BoneCabin_cdt" Pos="(3.8; 1.056; -1.060)">
+
+                                </Light>
+                                <Light _template="IgnitionSignalRed" Pos="(-4.712; 1.237; 0)">
+
+                                </Light>
+                                  <Flare _template="IgnitionSignalRed" Dir="(-1; 0; 0)" Size="0.1" Pos="(-4.675; 1.234; 0.853)">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalRed" Dir="(-1; 0; 0)" Size="0.1" Pos="(-4.675; 1.234; -0.853)">
+
+                                  </Flare>
+                                  <Flare _template="MarkerBeacon" Pos="(1.625; 3.184; -0.273)" Color="g(255; 174; 0) x 0.3" ParentFrame="BoneCabin_cdt">
+
+                                  </Flare>
+                                  <Flare _template="MarkerBeacon" Pos="(1.625; 3.184; 0)" Color="g(255; 174; 0) x 0.3" ParentFrame="BoneCabin_cdt">
+
+                                  </Flare>
+                                  <Flare _template="MarkerBeacon" Pos="(1.625; 3.184; 0.273)" Color="g(255; 174; 0) x 0.3" ParentFrame="BoneCabin_cdt">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalRed" ParentFrame="BoneCabin_cdt" Dir="(1; 0; 0)" Pos="(3.54; 1.055; -1.199)" Color="g(169; 0; 0) x 0.7" Size="0.1">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalRed" ParentFrame="BoneCabin_cdt" Dir="(1; 0; 0)" Pos="(3.54; 1.055; 1.199)" Color="g(169; 0; 0) x 0.7" Size="0.1">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalOrange" Dir="(0; 0; -1)" ParentFrame="BoneCabin_cdt" Pos="(1.952; 2.163; -0.999)">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalOrange" Dir="(0; 0; 1)" ParentFrame="BoneCabin_cdt" Pos="(1.952; 2.163; 0.999)">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalOrange" Dir="(1; 0; 0)" ParentFrame="BoneCabin_cdt" Pos="(1.64; 2.77; -1.471)">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalOrange" Dir="(1; 0; 0)" ParentFrame="BoneCabin_cdt" Pos="(1.64; 2.77; 1.471)">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalWhite" DirAngle="120" ParentFrame="BoneCabin_cdt" Size="0.2" Pos="(3.6; 1.056; -1.060)">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalWhite" DirAngle="120" ParentFrame="BoneCabin_cdt" Size="0.2" Pos="(3.6; 1.056; 1.060)">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalWhite" DirAngle="120" ParentFrame="BoneCabin_cdt" Size="0.2" Pos="(3.703; 1.056; -0.905)">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalWhite" DirAngle="120" ParentFrame="BoneCabin_cdt" Size="0.2" Pos="(3.703; 1.056; 0.905)">
+
+                                  </Flare>
+                      </Ignition>
+                      <StopSignals>
+                                <Light _template="StopSignal" Pos="(-4.712; 1.237; 0)">
+
+                                </Light>
+                                    <Flare _template="StopSignal" Pos="(-4.675; 1.237; -0.85)">
+
+                                    </Flare>
+                                    <Flare _template="StopSignal" Pos="(-4.675; 1.237; 0.85)">
+
+                                    </Flare>
+                      </StopSignals>
+        </ModelAttachments>
+        <AutomaticIK>
+                        <IKBone ModelFrame="BoneTieRod2" ParentFrame="BoneTieRod1_cdt">
+                            <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BoneTieRod3" AttachToFrame="BoneRackLeft" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                        </IKBone>
+        </AutomaticIK>
+        <PhysicsModel Mesh="trucks/royal_bm17">
+                          <Body ModelFrame="BoneChassis_cdt" NetSync="pv" Mass="5100" ImpactType="Truck" CenterOfMassOffset="(-0.5; 0; 0)">
+                              <Body ModelFrame="BoneCabin_cdt" NetSync="pv" Mass="4360" ImpactType="Truck" CenterOfMassOffset="(0.3; 0; 0)">
+                                  <Constraint AxisLocal="(1; 0; 0)" MaxLimit="10" MinLimit="-10" Type="Hinge" PivotOffset="(0; 0; 0)">
+                                      <Motor Spring="1800000" Type="Spring" Damping="90000">
+
+                                      </Motor>
+                                  </Constraint>
+                                      <Body _template="TieRod" ModelFrame="BoneTieRod1_cdt">
+                                        <Constraint AxisLocal="(0; -1; 0)" Name="TieRodSteer" MinLimit="-30" MaxLimit="30">
+
+                                        </Constraint>
+                                      </Body>
+                                      <Body _template="SideMirror" ModelFrame="BoneMirrorLeft_cdt">
+
+                                      </Body>
+                                      <Body _template="SideMirror" ModelFrame="BoneMirrorRight_cdt">
+
+                                      </Body>
+                                      <Body ModelFrame="BoneSunshieldLeft_cdt" Mass="5" ImpactType="Truck" CenterOfMassOffset="(0; 0; 0)">
+                                        <Constraint AxisLocal="(0; 0; -1)" MaxLimit="1" MinLimit="-11" Type="Hinge" PivotOffset="(0; 0; 0)">
+                                            <Motor Spring="40" Type="Spring" Damping="0.004">
+
+                                            </Motor>
+                                        </Constraint>
+                                      </Body>
+                                      <Body ModelFrame="BoneSunshieldRight_cdt" Mass="5" ImpactType="Truck" CenterOfMassOffset="(0; 0; 0)">
+                                        <Constraint AxisLocal="(0; 0; -1)" MaxLimit="1" MinLimit="-15" Type="Hinge" PivotOffset="(0; 0; 0)">
+                                            <Motor Spring="35" Type="Spring" Damping="0.001">
+
+                                            </Motor>
+                                        </Constraint>
+                                      </Body>
+                                      <Body _template="Mudguard" ModelFrame="BoneLeftFrontMudguard_cdt">
+                                        <Constraint MinLimit="-50" AxisLocal="(0; 0; 1)" MaxLimit="35">
+
+                                        </Constraint>
+                                      </Body>
+                                      <Body _template="Mudguard" ModelFrame="BoneRightFrontMudguard_cdt">
+                                        <Constraint MinLimit="-50" AxisLocal="(0; 0; 1)" MaxLimit="35">
+
+                                        </Constraint>
+                                      </Body>
+                                      <Body ModelFrame="SeatBealt_cdt" Mass="1" CenterOfMassOffset="(0; 0; 0)" Collisions="None">
+                                        <Constraint AxisLocal="(1; 0; 0)" MaxLimit="0.015" MinLimit="-0.03" Type="Prismatic" PivotOffset="(0; 0; 0)">
+                                            <Motor Spring="700" Type="Spring" Damping="70">
+
+                                            </Motor>
+                                        </Constraint>
+                                      </Body>
+                                      <Body ModelFrame="CordLeft_cdt" Mass="1" CenterOfMassOffset="(0; 0; 0)" Collisions="None">
+                                        <Constraint AxisLocal="(1; 0; 0)" MaxLimit="0.02" MinLimit="-0.04" Type="Prismatic" PivotOffset="(0; 0; 0)">
+                                            <Motor Spring="50" Type="Spring" Damping="3">
+
+                                            </Motor>
+                                        </Constraint>
+                                      </Body>
+                                      <Body ModelFrame="CordRight_cdt" Mass="1" CenterOfMassOffset="(0; 0; 0)" Collisions="None">
+                                        <Constraint AxisLocal="(1; 0; 0)" MaxLimit="0.02" MinLimit="-0.04" Type="Prismatic" PivotOffset="(0; 0; 0)">
+                                            <Motor Spring="40" Type="Spring" Damping="4">
+
+                                            </Motor>
+                                        </Constraint>
+                                      </Body>
+                              </Body>
+                          </Body>
+                          <NetSync Legacy="false">
+
+                          </NetSync>
+        </PhysicsModel>
+  </Truck>

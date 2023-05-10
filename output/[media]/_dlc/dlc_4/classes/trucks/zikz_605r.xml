@@ -1,0 +1,746 @@
+  <_templates Include="trucks">
+      <Wheel>
+          <FirstAxle SteeringAngle="36" SteeringCastor="12" Torque="default" Location="front" ConnectedToHandbrake="true">
+
+          </FirstAxle>
+          <RearAxle Location="rear" Torque="default">
+
+          </RearAxle>
+          <SecondAxle SteeringAngle="24" SteeringCastor="4" Torque="default" Location="front" ConnectedToHandbrake="true">
+
+          </SecondAxle>
+      </Wheel>
+      <Body>
+            <SideMirror Mass="5" Collisions="None">
+                <Constraint Type="Hinge" MinLimit="-1" MaxLimit="1" AxisLocal="(0; 0; 1)">
+                    <Motor Spring="250" Type="Spring" Damping="7.5">
+
+                    </Motor>
+                </Constraint>
+            </SideMirror>
+            <SunShield Mass="1" Collisions="None">
+                  <Constraint Type="Hinge" MinLimit="-5" MaxLimit="5" AxisLocal="(0; 0; 1)">
+                      <Motor Spring="18" Type="Spring" Damping="0.25">
+
+                      </Motor>
+                  </Constraint>
+            </SunShield>
+      </Body>
+  </_templates>
+  <Truck>
+        <HeadLight _template="Default" Pos="(5.052; 1.103; 0)">
+
+        </HeadLight>
+        <PhysicsModel Mesh="trucks/zikz_605r">
+              <Body ModelFrame="BoneChassis_cdt" NetSync="pv" Mass="13600" ImpactType="Truck" CenterOfMassOffset="(0; -0.25; 0)">
+                    <Body ModelFrame="BoneAddonAttachment_cdt" NetSync="pv" Mass="1000" ImpactType="Truck">
+                      <Constraint Type="Hinge" MaxLimit="5" CenterOfMassOffset="(0,0,0)" MinLimit="-5" AxisLocal="(1; 0; 0)">
+                          <Motor Spring="4500000" Type="Spring" Damping="100000">
+
+                          </Motor>
+                      </Constraint>
+                    </Body>
+                    <Body _template="SideMirror" ModelFrame="BoneMirrorL_cdt">
+
+                    </Body>
+                    <Body _template="SideMirror" ModelFrame="BoneMirrorR_cdt">
+
+                    </Body>
+                    <Body _template="SunShield" ModelFrame="BoneSunshieldL_cdt">
+
+                    </Body>
+                    <Body _template="SunShield" ModelFrame="BoneSunshieldR_cdt">
+
+                    </Body>
+                    <Body ModelFrame="BoneWire1_cdt" Mass="1" CenterOfMassOffset="(0; 0; 0)" Collisions="None">
+                      <Constraint AxisLocal="(1; 0; 0)" MaxLimit="15" MinLimit="-5" Type="Hinge" PivotOffset="(0; 0; 0)">
+                          <Motor Spring="1" Type="Spring" Damping=".1">
+
+                          </Motor>
+                      </Constraint>
+                      <Body ModelFrame="BoneWire2_cdt" Mass="1" CenterOfMassOffset="(0; 0; 0)" Collisions="None">
+                            <Constraint AxisLocal="(0; 0; 1)" MaxLimit="4" MinLimit="-20" Type="Hinge" PivotOffset="(0; 0; 0)">
+                                <Motor Spring=".25" Type="Spring" Damping=".025">
+
+                                </Motor>
+                            </Constraint>
+                      </Body>
+                    </Body>
+                    <Body ModelFrame="BoneChassisWireL_cdt" Mass="1" CenterOfMassOffset="(0; 0; 0)" Collisions="None">
+                      <Constraint AxisLocal="(0; 0; 1)" MaxLimit="30" MinLimit="-20" Type="Hinge" PivotOffset="(0; 0; 0)">
+                          <Motor Spring="1" Type="Spring" Damping=".1">
+
+                          </Motor>
+                      </Constraint>
+                    </Body>
+                    <Body ModelFrame="BoneChassisWireR_cdt" Mass="1" CenterOfMassOffset="(0; 0; 0)" Collisions="None">
+                      <Constraint AxisLocal="(0; 0; 1)" MaxLimit="30" MinLimit="-20" Type="Hinge" PivotOffset="(0; 0; 0)">
+                          <Motor Spring="1" Type="Spring" Damping=".1">
+
+                          </Motor>
+                      </Constraint>
+                    </Body>
+                    <Body ModelFrame="BoneSuspensionRockerLeft_cdt" AngularDamping="0.8" Mass="3500" ImpactType="Truck" Collisions="None">
+                      <Constraint Type="Hinge" MinLimit="-8" MaxLimit="8" AxisLocal="(0; 0; 1)">
+                          <Motor Spring="1500" Type="Spring" Damping="150">
+
+                          </Motor>
+                      </Constraint>
+                    </Body>
+                    <Body ModelFrame="BoneSuspensionRockerRight_cdt" AngularDamping="0.8" Mass="3500" ImpactType="Truck" Collisions="None">
+                      <Constraint Type="Hinge" MinLimit="-8" MaxLimit="8" AxisLocal="(0; 0; 1)">
+                          <Motor Spring="1500" Type="Spring" Damping="150">
+
+                          </Motor>
+                      </Constraint>
+                    </Body>
+              </Body>
+              <NetSync Legacy="false">
+
+              </NetSync>
+        </PhysicsModel>
+        <Landmark MaxScale="2.8" Mesh="landmarks/zikz_605r_lmk" MinScale="1.8">
+
+        </Landmark>
+        <ModelAttachments>
+                  <HeadLight>
+                        <Model _template="HeadLightRay" Org="(4.1; 1.757; 0.947)">
+
+                        </Model>
+                        <Model _template="HeadLightRay" Org="(4.1; 1.757; -0.947)">
+
+                        </Model>
+                          <Flare _template="HeadLight" Pos="(4.1; 1.757; 0.947)" Color="g(255; 235; 200) x 0.8" Size=".4">
+
+                          </Flare>
+                          <Flare _template="HeadLight" Pos="(4.1; 1.757; -0.947)" Color="g(255; 235; 200) x 0.8" Size=".4">
+
+                          </Flare>
+                          <Flare _template="BlueStreak" Pos="(4.1; 1.757; 0.947)">
+
+                          </Flare>
+                          <Flare _template="BlueStreak" Pos="(4.1; 1.757; -0.947)">
+
+                          </Flare>
+                  </HeadLight>
+                  <Ignition>
+                          <Light _template="IgnitionSignalWhite" Pos="(4.5; 1.057; -0.947)" Color="g(255; 190; 100) x 0.4" ParentFrame="BoneCabin_cdt">
+
+                          </Light>
+                          <Light _template="IgnitionSignalWhite" Pos="(4.5; 1.057; 0.947)" Color="g(255; 190; 100) x 0.4" ParentFrame="BoneCabin_cdt">
+
+                          </Light>
+                          <Light _template="IgnitionSignalRed" Color="g(102; 1; 1) x 4" Pos="(-4.712; 1.162; 0)">
+
+                          </Light>
+                            <Flare _template="IgnitionSignalOrange" Pos="(3.805; 2.866; 0.924)" Color="g(255; 140; 0) x 0.35" Size="0.25">
+
+                            </Flare>
+                            <Flare _template="IgnitionSignalOrange" Pos="(3.805; 2.866; -0.924)" Color="g(255; 140; 0) x 0.35" Size="0.25">
+
+                            </Flare>
+                            <Flare _template="IgnitionSignalRed" Dir="(-1; 0; 0)" Size="0.3" Pos="(-4.588; 1.278; 0.667)">
+
+                            </Flare>
+                            <Flare _template="IgnitionSignalRed" Dir="(-1; 0; 0)" Size="0.3" Pos="(-4.588; 1.278; -0.667)">
+
+                            </Flare>
+                            <Flare _template="IgnitionSignalWhite" Size="0.4" Pos="(4.1; 1.757; 0.947)">
+
+                            </Flare>
+                            <Flare _template="IgnitionSignalWhite" Size="0.4" Pos="(4.1; 1.757; -0.947)">
+
+                            </Flare>
+                  </Ignition>
+                  <StopSignals>
+                          <Light _template="StopSignal" Color="g(102; 1; 1) x 4" Pos="(-4.712; 1.162; 0)">
+
+                          </Light>
+                              <Flare _template="StopSignal" Size="0.3" Pos="(-4.588; 1.224; 0.667)">
+
+                              </Flare>
+                              <Flare _template="StopSignal" Size="0.3" Pos="(-4.588; 1.224; -0.667)">
+
+                              </Flare>
+                  </StopSignals>
+        </ModelAttachments>
+        <GameData ExcludeAddons="trailer_log_pole" Country="RU,CAS" UnlockByExploration="true" Price="165300" UnlockByRank="1">
+                      <CraneSocket Pos="(4.223; 1.21; 0)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-4.805; 0.826; 0)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.461; 1.662; 1.378)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.461; 1.662; -1.378)">
+
+                      </CraneSocket>
+                        <AddonSockets>
+                            <Socket Names="Trailer" Offset="(-4.823; 0.838; 0)">
+
+                            </Socket>
+                            <Socket Names="LargeSemitrailer, LargeSemitrailerOiltank" Offset="(-2.53; 1.718; 0)">
+
+                            </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                            <Socket Names="ZikzLogLift" ParentFrame="BoneAddonAttachment_cdt">
+                              <AddonsShift Offset="(-0.35; 0; 0)" Types="zikz605rTrunk">
+
+                              </AddonsShift>
+                            </Socket>
+                            <Socket Names="ZikzFrameAddon" ParentFrame="BoneAddonAttachment_cdt">
+
+                            </Socket>
+                            <Socket Names="ZikzBigCrane" ParentFrame="BoneAddonAttachment_cdt">
+
+                            </Socket>
+                            <Socket Names="ZikzSaddleHigh">
+
+                            </Socket>
+                            <Socket Names="FrameAddonKungZikz" ParentFrame="BoneAddonAttachment_cdt">
+
+                            </Socket>
+                            <Socket Names="FrameAddonSeismicVibratorZikz" ParentFrame="BoneAddonAttachment_cdt">
+
+                            </Socket>
+                            <Socket Names="FrameAddonTankZikz" ParentFrame="BoneAddonAttachment_cdt">
+
+                            </Socket>
+                            <Socket Names="FrameAddonLogShortZikz" Offset="(-2.849; 1.64; 0)" ParentFrame="BoneAddonAttachment_cdt">
+
+                            </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                          <Socket Names="zikz605rTrunk" NamesBlock="ZikzBigCrane, ZikzFrameAddon, LargeSemitrailerOiltank, FrameAddonKungZikz, FrameAddonSeismicVibratorZikz, FrameAddonTankZikz, FrameAddonLogShortZikz">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets DefaultAddon="zikz_605r_horn_default">
+                          <Socket Names="zikz605rHorn">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                          <Socket Names="zikz605rVisor">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets DefaultAddon="zikz_605r_spot_light_default">
+                          <Socket Names="zikz605rSpotLight">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                          <Socket Names="zikz605rBeacon">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                          <Socket Names="zikz605rSnorkel">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                          <Socket Names="zikz605rAirConditioner">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets DefaultAddon="zikz_605r_exhaust_default">
+                          <Socket Names="zikz605rExhaust">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets DefaultAddon="zikz_605r_bumper_default">
+                          <Socket Names="zikz605rBumper">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                          <Socket Names="zikz605rRoofRack" NamesBlock="zikz605rAirConditioner, zikz605rBeacon, zikz605rSpotLight">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                          <Socket Names="zikz605RSticker_1x1_01" InCockpit="true">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                          <Socket Names="zikz605RSticker_1x1_02" InCockpit="true">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                          <Socket Names="zikz605RSticker_1x1_03" InCockpit="true">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                          <Socket Names="zikz605RSticker_1x2_01" InCockpit="true">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                          <Socket Names="zikz605RSticker_1x2_02" InCockpit="true">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                          <Socket Names="zikz605RSticker_1x4_01" InCockpit="true">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                          <Socket Names="zikz605RSticker_Capote">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                          <Socket Names="zikz605RSticker_Roof">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                          <Socket Names="zikz605rSticker_GlassTop">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                          <Socket Names="zikz605rSticker_GlassBot">
+
+                          </Socket>
+                        </AddonSockets>
+                        <AddonSockets>
+                          <Socket Names="StuffAirfreshener" InCockpit="true" Offset="(3.613; 2.793; 0.122)">
+
+                          </Socket>
+                        </AddonSockets>
+                    <CustomizationCameras>
+                              <CameraPos InterestPosition="(7.033; 2.167; -0.956)" Name="roof_sticker" Position="(9.7; 5.925; -0.553)" FOV="32.0">
+
+                              </CameraPos>
+                              <CameraPos FOV="32.0" Name="sticker_1" Position="(6; 2.868; -0.533)" Interior="true" InterestPosition="(8.595; 0.767; 1.237)">
+
+                              </CameraPos>
+                              <CameraPos InterestPosition="(1.332; 1.692; -0)" Position="(-8.55; 4.273; 9.315)" MaxZoom="2" Name="addon_1" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                              </CameraPos>
+                              <CameraPos InterestPosition="(3.917; 2.341; -1.149)" Position="(9.628; 4.331; 1.437)" MaxZoom="2" Name="addon_2" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                              </CameraPos>
+                              <CameraPos FOV="32.0" Name="mirror_mount" Position="(5.714; 2.661; -0.37)" Interior="true" InterestPosition="(8.439; 2.221; 1.066)">
+
+                              </CameraPos>
+                              <CameraPos InterestPosition="(7.013; 2.118; -0.523)" Position="(12.239; 4.145; 2.722)" MaxZoom="2" Name="roofs" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                              </CameraPos>
+                              <CameraPos InterestPosition="(6.727; 2.16; -0.851)" Position="(9.918; 2.816; -1.653)" MaxZoom="2" Name="hood_ornament" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                              </CameraPos>
+                              <CameraPos FOV="32.0" Name="sticker" Position="(6.062; 2.498; -0.015)" Interior="true" InterestPosition="(8.595; 1.207; 2.389)">
+
+                              </CameraPos>
+                              <CameraPos InterestPosition="(7.178; 1.767; -0.683)" Name="capote_sticker" Position="(12.379; 3.126; -1.45)" FOV="32.0">
+
+                              </CameraPos>
+                              <CameraPos InterestPosition="(5.461; 1.397; -0.216)" Position="(13.151; 2.641; -2.289)" MaxZoom="2" Name="hoods" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                              </CameraPos>
+                              <CameraPos FOV="32.0" Name="sticker_2" Position="(6.401; 2.473; -0.527)" Interior="true" InterestPosition="(5.96; 1.482; 2.389)">
+
+                              </CameraPos>
+                              <CameraPos InterestPosition="(5.103; 1.419; -0.471)" Position="(11.101; 4.011; -3.352)" MaxZoom="2" Name="side_l" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                              </CameraPos>
+                              <CameraPos FOV="32.0" Name="bubble_head" Position="(5.907; 2.577; -0.716)" Interior="true" InterestPosition="(9.063; 1.667; 2.088)">
+
+                              </CameraPos>
+                              <CameraPos InterestPosition="(2.813; 0.409; 0.126)" Position="(8.853; 1.52; -5.155)" MaxZoom="2" Name="wheels" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                              </CameraPos>
+                              <CameraPos InterestPosition="(5.432; 1.554; 1.822)" Position="(0.74; 2.387; 4.944)" MaxZoom="2" Name="side_r" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                              </CameraPos>
+                              <CameraPos InterestPosition="(5.197; 1.735; -0.23)" Position="(13.641; 2.738; -4.536)" MaxZoom="2" Name="default" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                              </CameraPos>
+                              <CameraPos InterestPosition="(0.479; 0.992; -0)" Position="(-5.767; 1.805; 2.899)" MaxZoom="2" Name="rear" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                              </CameraPos>
+                              <CameraPos InterestPosition="(6.954; 1.85; -0.725)" Name="glass_sticker" Position="(11.7; 2.977; 1.399)" FOV="32.0">
+
+                              </CameraPos>
+                    </CustomizationCameras>
+                    <UiDesc UiIcon40x40="heavyVehicleImg" UiDesc="UI_VEHICLE_ZIKZ_605R_DESC" UiIconLogo="ZiKZLogo80" UiIcon30x30="heavyVehicleImg30" UiIcon328x458="shopImgZiKZ605R" UiName="UI_VEHICLE_ZIKZ_605R_NAME">
+
+                    </UiDesc>
+                              <WinchSocket Pos="(4.223; 1.21; 0)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-4.805; 0.826; 0)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-0.461; 1.662; 1.378)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-0.461; 1.662; -1.378)">
+
+                              </WinchSocket>
+        </GameData>
+        <AutomaticIK>
+                        <IKBone ModelFrame="SuspensionUpR1" ParentFrame="BoneChassis_cdt">
+                          <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                          </IKJoint>
+                          <IKBone ModelFrame="SuspensionUpR1_end" AttachToFrame="BoneSuspensionRockerRight_cdt" AttachOffset="(0; 0; 0)">
+                                <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                </IKJoint>
+                          </IKBone>
+                        </IKBone>
+                        <IKBone ModelFrame="SuspensionDnR1" ParentFrame="BoneChassis_cdt">
+                          <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                          </IKJoint>
+                          <IKBone ModelFrame="SuspensionDnR1_end" AttachToFrame="BoneSuspensionRockerRight_cdt" AttachOffset="(0; 0; 0)">
+                                <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                </IKJoint>
+                          </IKBone>
+                        </IKBone>
+                        <IKBone ModelFrame="SuspensionUpL1" ParentFrame="BoneChassis_cdt">
+                          <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                          </IKJoint>
+                          <IKBone ModelFrame="SuspensionUpL1_end" AttachToFrame="BoneSuspensionRockerLeft_cdt" AttachOffset="(0; 0; 0)">
+                                <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                </IKJoint>
+                          </IKBone>
+                        </IKBone>
+                        <IKBone ModelFrame="SuspensionDnL1" ParentFrame="BoneChassis_cdt">
+                          <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                          </IKJoint>
+                          <IKBone ModelFrame="SuspensionDnL1_end" AttachToFrame="BoneSuspensionRockerLeft_cdt" AttachOffset="(0; 0; 0)">
+                                <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                </IKJoint>
+                          </IKBone>
+                        </IKBone>
+                        <IKBone ModelFrame="AxleIkL" ParentFrame="BoneWheelLeft_1">
+                          <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge">
+
+                          </IKJoint>
+                          <IKBone ModelFrame="AxleIkL_End" AttachToFrame="BoneSuspensionRockerLeft_cdt" AttachOffset="(0; 0; 0)">
+                                <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                </IKJoint>
+                          </IKBone>
+                        </IKBone>
+                        <IKBone ModelFrame="AxleIkR" ParentFrame="BoneWheelRight_1">
+                          <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge">
+
+                          </IKJoint>
+                          <IKBone ModelFrame="AxleIkR_End" AttachToFrame="BoneSuspensionRockerRight_cdt" AttachOffset="(0; 0; 0)">
+                                <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                </IKJoint>
+                          </IKBone>
+                        </IKBone>
+                        <IKBone ModelFrame="SuspensionUpL1" ParentFrame="BoneChassis_cdt">
+                          <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge">
+
+                          </IKJoint>
+                          <IKBone ModelFrame="SuspensionUpL1_end" AttachToFrame="AxleIkL" AttachOffset="(0; 0; 0)">
+                                <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                </IKJoint>
+                          </IKBone>
+                        </IKBone>
+                        <IKBone ModelFrame="SuspensionUpR1" ParentFrame="BoneChassis_cdt">
+                          <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge">
+
+                          </IKJoint>
+                          <IKBone ModelFrame="SuspensionUpR1_end" AttachToFrame="AxleIkR" AttachOffset="(0; 0; 0)">
+                                <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                </IKJoint>
+                          </IKBone>
+                        </IKBone>
+                        <IKBone ModelFrame="SuspensionDnL1" ParentFrame="BoneChassis_cdt">
+                          <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge">
+
+                          </IKJoint>
+                          <IKBone ModelFrame="SuspensionDnL1_end" AttachToFrame="AxleIkL" AttachOffset="(0; 0; 0)">
+                                <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                </IKJoint>
+                          </IKBone>
+                        </IKBone>
+                        <IKBone ModelFrame="SuspensionDnR1" ParentFrame="BoneChassis_cdt">
+                          <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge">
+
+                          </IKJoint>
+                          <IKBone ModelFrame="SuspensionDnR1_end" AttachToFrame="AxleIkR" AttachOffset="(0; 0; 0)">
+                                <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                </IKJoint>
+                          </IKBone>
+                        </IKBone>
+        </AutomaticIK>
+        <TruckData EngineIconScale="0.8" TruckImage="zikz605rmchr" EngineIconMesh="env/engine_pacific_p16" DiffLockType="Always" SteerSpeed="0.016" TruckType="HEAVY" EngineStartDelay="3.2" ExhaustStartTime="2.8" Responsiveness="0.2" FuelCapacity="840" BackSteerSpeed="0.01">
+                        <LimitedFluid SizeX="0.932" Type="Box" SizeZ="0.192" Center="(-1.161; 1.101; -0.724)" SizeY="0.48">
+
+                        </LimitedFluid>
+                        <CompatibleWheels Type="wheels_zikz_605r_1" Scale="0.78">
+
+                        </CompatibleWheels>
+                        <Axles>
+                                  <Axle Frame="BoneAxleL1" IsIndependent="true">
+
+                                  </Axle>
+                                  <Axle Frame="BoneAxleR1" IsIndependent="true">
+
+                                  </Axle>
+                                  <Axle Frame="BoneAxleL2" IsIndependent="true">
+
+                                  </Axle>
+                                  <Axle Frame="BoneAxleR2" IsIndependent="true">
+
+                                  </Axle>
+                                  <Axle Frame="BoneWheelRight_1" IsIndependent="true">
+
+                                  </Axle>
+                                  <Axle Frame="BoneWheelRight_2" IsIndependent="true">
+
+                                  </Axle>
+                                  <Axle Frame="BoneWheelLeft_1" IsIndependent="true">
+
+                                  </Axle>
+                                  <Axle Frame="BoneWheelLeft_2" IsIndependent="true">
+
+                                  </Axle>
+                        </Axles>
+                        <Sounds _template="Default" DisableReversePitch="true" Origin="(-1.065; 2.04; 0)" MinDist="15.0">
+                                  <EngineAccel Sound="trucks/zikz_605r/zikz_605r_acc">
+
+                                  </EngineAccel>
+                                  <BrakeRelease Sound="trucks/zikz_605r/zikz_605r_brake_release">
+
+                                  </BrakeRelease>
+                                  <EngineStop Sound="trucks/zikz_605r/zikz_605r_stop">
+
+                                  </EngineStop>
+                                  <EngineLow_2d IsSound2D="true" Sound="trucks/zikz_605r/zikz_605r_low_2d">
+
+                                  </EngineLow_2d>
+                                  <EngineIdle Sound="trucks/zikz_605r/zikz_605r_idle">
+
+                                  </EngineIdle>
+                                  <EngineIdle_2d IsSound2D="true" Sound="trucks/zikz_605r/zikz_605r_idle_2d">
+
+                                  </EngineIdle_2d>
+                                  <ChassisStress Sound="trucks/common/truck_stress_rnd_set/truck_stress_rnd">
+
+                                  </ChassisStress>
+                                  <Honk Sound="trucks/zikz_605r/zikz_605r_honk">
+
+                                  </Honk>
+                                  <Reverse Sound="">
+
+                                  </Reverse>
+                                  <BrakesSqueal Sound="trucks/zikz_605r/zikz_605r_brakes_squeal">
+
+                                  </BrakesSqueal>
+                                  <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
+
+                                  </AbruptStop>
+                                  <EngineLow Sound="trucks/zikz_605r/zikz_605r_low">
+
+                                  </EngineLow>
+                                  <EngineHeavy_2d IsSound2D="true" Sound="trucks/zikz_605r/zikz_605r_heavy_2d">
+
+                                  </EngineHeavy_2d>
+                                  <EngineHeavy Sound="trucks/zikz_605r/zikz_605r_heavy">
+
+                                  </EngineHeavy>
+                                  <EngineHigh_2d IsSound2D="true" Sound="trucks/zikz_605r/zikz_605r_high_2d">
+
+                                  </EngineHigh_2d>
+                                  <EngineStart Sound="trucks/zikz_605r/zikz_605r_start">
+
+                                  </EngineStart>
+                                  <EngineHigh Sound="trucks/zikz_605r/zikz_605r_high">
+
+                                  </EngineHigh>
+                                  <HandbrakeOff Sound="trucks/zikz_605r/zikz_605r_handbrake_off">
+
+                                  </HandbrakeOff>
+                                  <Handbrake Sound="trucks/zikz_605r/zikz_605r_handbrake_on">
+
+                                  </Handbrake>
+                                  <EngineRev Sound="trucks/zikz_605r/zikz_605r_rev">
+
+                                  </EngineRev>
+                        </Sounds>
+                                  <Steam Origin="(-0.198; 1.683; 0)">
+
+                                  </Steam>
+                                  <Steam Origin="(1.465; 1.083; 0)" Scale="0.7">
+
+                                  </Steam>
+                        <SuspensionSocket MaxWheelRadiusWithoutSuspension="0.76" Default="zikz_605r_suspension_default" Type="s_zikz_605r">
+
+                        </SuspensionSocket>
+                        <Shafts>
+                                          <Shaft SocketPointB="Shaft1b" SocketPointA="Shaft1a">
+
+                                          </Shaft>
+                                          <Shaft SocketPointB="Shaft2b" SocketPointA="Shaft2a">
+
+                                          </Shaft>
+                                          <Shaft SocketPointB="Shaft3b" SocketPointA="Shaft3a">
+
+                                          </Shaft>
+                        </Shafts>
+                        <EngineSocket Default="ru_special_engine_0" Type="e_ru_special">
+
+                        </EngineSocket>
+                        <GearboxSocket Default="g_special_default" Type="gearboxes_special">
+
+                        </GearboxSocket>
+                        <Shakers>
+                                                <Shaker MaxAngle="(0; 0; 0.6)" Frame="BoneLever" MaxFrequency="0.2">
+
+                                                </Shaker>
+                                                <Shaker MaxAngle="(3; 0; 0)" Frame="BoneRadio" MaxFrequency="0.1">
+
+                                                </Shaker>
+                                                <Shaker MaxAngle="(8; 0; 0)" Frame="BoneHinch1" MaxFrequency="0.15">
+
+                                                </Shaker>
+                                                <Shaker MaxAngle="(5; 0; 0)" Frame="BoneHinch2" MaxFrequency="0.2">
+
+                                                </Shaker>
+                        </Shakers>
+                        <OcclusionMap HalfSizeZ="2.6" MinX="-5.5" MaxX="4.85">
+
+                        </OcclusionMap>
+                        <Damage>
+                                                    <DamageArea Max="(4; 2.100; 0.6)" Type="Engine" Min="(0.122; 1.1; -0.6)">
+
+                                                    </DamageArea>
+                                                    <DamageArea Max="(-0.6; 1.351; 0.822)" Type="FuelTank" Min="(-1.631; 0.55; -0.822)">
+
+                                                    </DamageArea>
+                        </Damage>
+                        <SoundsWheels _template="Default">
+
+                        </SoundsWheels>
+                                                    <SteeringRack RackHalfSizeZ="0.895" Frame="BoneRack1" FrameSteerRight="BoneRackR1" FrameSteerLeft="BoneRackL1">
+
+                                                    </SteeringRack>
+                                                    <SteeringRack RackHalfSizeZ="0.895" Frame="BoneRack2" FrameSteerRight="BoneRackR2" FrameSteerLeft="BoneRackL2">
+
+                                                    </SteeringRack>
+                        <Camera Center="(-1.7; 0; 0)" ParentFrame="BoneChassis_cdt">
+                                                        <Cockpit WindshieldDiffuseTexture="trucks/zikz_605r_glass__d_a.tga" WindshieldShadingTexture="trucks/zikz_605r_glass__sh_d.tga" _template="Default" ViewPos="(3.004; 2.517; 0.71)">
+                                                              <Mirror MeshFrame="mirror_left" FOVScale="1.5" Pos="(3.507; 2.419; 1.397)" ReflectionDir="(-0.915; -0.008; -0.404)" ClipDir="(-0.915; -0.008; -0.404)" Size="(0.18; 0.38)">
+
+                                                              </Mirror>
+                                                              <Mirror MeshFrame="mirror_right" ClipOffset="0.1" Size="(0.18; 0.38)" Pos="(3.509; 2.419; -1.388)" ReflectionDir="(-0.811; -0.019; 0.584)" ClipDir="(-0.811; -0.019; 0.584)" FOVScale="2.2">
+
+                                                              </Mirror>
+                                                        </Cockpit>
+                        </Camera>
+                        <SoundsDamage _template="Heavy">
+
+                        </SoundsDamage>
+                        <Wheels DefaultTire="mudtires_zikz605r_1" DefaultRim="rim_1" DefaultWheelType="wheels_zikz_605r_1">
+                                                              <Wheel _template="FirstAxle" Pos="(2.338; 0.781; 1.23)">
+
+                                                              </Wheel>
+                                                              <Wheel _template="FirstAxle" RightSide="true" Pos="(2.338; 0.781; 1.23)">
+
+                                                              </Wheel>
+                                                              <Wheel _template="SecondAxle" Pos="(0.638; 0.781; 1.23)">
+
+                                                              </Wheel>
+                                                              <Wheel _template="SecondAxle" RightSide="true" Pos="(0.638; 0.781; 1.23)">
+
+                                                              </Wheel>
+                                                              <Wheel _template="RearAxle" ParentFrame="BoneSuspensionRockerLeft_cdt" Pos="(-2.012; 0.781; 1.23)">
+
+                                                              </Wheel>
+                                                              <Wheel _template="RearAxle" Pos="(-2.012; 0.781; 1.23)" RightSide="true" ParentFrame="BoneSuspensionRockerRight_cdt">
+
+                                                              </Wheel>
+                                                              <Wheel _template="RearAxle" ParentFrame="BoneSuspensionRockerLeft_cdt" Pos="(-3.712; 0.781; 1.23)">
+
+                                                              </Wheel>
+                                                              <Wheel _template="RearAxle" Pos="(-3.712; 0.781; 1.23)" RightSide="true" ParentFrame="BoneSuspensionRockerRight_cdt">
+
+                                                              </Wheel>
+                        </Wheels>
+                        <SteeringWheel Frame="BoneSteering">
+
+                        </SteeringWheel>
+                        <Dashboard>
+                                                                  <Gauge Dir="(-0.83; 0.558; 0)" Mesh="trucks/arrows/zikz_605r_arrow_1" Org="(3.815; 2.072; 0.864)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-62; 14)">
+
+                                                                  </Gauge>
+                                                                  <Gauge Dir="(-0.83; 0.558; 0)" Mesh="trucks/arrows/zikz_605r_arrow_1" Org="(3.815; 2.072; 0.773)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-65; -8)">
+
+                                                                  </Gauge>
+                                                                  <Gauge Dir="(-0.83; 0.558; 0)" Mesh="trucks/arrows/zikz_605r_arrow_1" Org="(3.77; 2.005; 0.818)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-65; 6)">
+
+                                                                  </Gauge>
+                                                                  <Gauge Dir="(-0.83; 0.558; 0)" Mesh="trucks/arrows/zikz_605r_arrow_1" Org="(3.815; 2.072; 0.583)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-63; 36)">
+
+                                                                  </Gauge>
+                                                                  <Gauge Dir="(-0.83; 0.558; 0)" Mesh="trucks/arrows/zikz_605r_arrow_1" Org="(3.815; 2.072; 0.491)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-51; -5)">
+
+                                                                  </Gauge>
+                                                                  <Gauge Dir="(-0.83; 0.558; 0)" Mesh="trucks/arrows/zikz_605r_arrow_1" Org="(3.815; 2.072; 0.344)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-65; 10)">
+
+                                                                  </Gauge>
+                                                                  <Gauge Dir="(-0.83; 0.558; 0)" Mesh="trucks/arrows/zikz_605r_arrow_1" Org="(3.815; 2.072; 0.244)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-62; -20)">
+
+                                                                  </Gauge>
+                                                                  <Gauge Dir="(-0.83; 0.558; 0)" Mesh="trucks/arrows/zikz_605r_arrow_1" Org="(3.815; 2.072; 0.144)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-63; 38)">
+
+                                                                  </Gauge>
+                                                                  <Gauge Dir="(-0.83; 0.558; 0)" Mesh="trucks/arrows/zikz_605r_arrow_1" Org="(3.772; 2.007; 0.302)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-65; -33)">
+
+                                                                  </Gauge>
+                                                                  <Gauge Dir="(-0.83; 0.558; 0)" Mesh="trucks/arrows/zikz_605r_arrow_1" Org="(3.772; 2.007; 0.187)" Damping="0.99" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-65; 10)">
+
+                                                                  </Gauge>
+                                                                  <Gauge Dir="(-0.83; 0.558; 0)" Mesh="trucks/arrows/zikz_605r_arrows_2" Org="(3.777; 2.012; 0.537)" Damping="0.99" InputType="rpm" InputRange="(0;1)" OutputAngles="(-91; 165)">
+
+                                                                  </Gauge>
+                                                                  <Gauge Mesh="trucks/arrows/zikz_605r_arrows_3" InputRange="(0;120)" Dir="(-0.83; 0.558; 0)" Org="(3.807; 2.044; 0.678)" InputType="speed" OutputAngles="(-119; 136)">
+
+                                                                  </Gauge>
+                        </Dashboard>
+                        <Driver SteeringWheelPos="(3.451; 2.147; 0.703)" Pos="(3.067; 1.801; 0.707)" AnimationSet="HeavyTruck">
+
+                        </Driver>
+                        <FuelTank DamageCapacity="100">
+
+                        </FuelTank>
+                        <WinchUpgradeSocket IsUpgradable="true" Default="w_heavy_trucks_default" Type="winches_heavy_trucks">
+
+                        </WinchUpgradeSocket>
+                                                                      <Intake Origin="(2.205; 2.436; 1.183)" Size="0.75" Dir="(0.475; 0; 0.88)">
+
+                                                                      </Intake>
+                                                                      <Intake Origin="(2.205; 2.436; -1.183)" Size="0.75" Dir="(0.475; 0; -0.88)">
+
+                                                                      </Intake>
+        </TruckData>
+  </Truck>

@@ -1,0 +1,814 @@
+  <_templates Include="trucks">
+      <Wheel>
+          <FirstAxle SteeringAngle="30" SteeringJointOffset="0.25" SteeringCastor="0" ParentFrame="BoneCabin_cdt" Location="front" Torque="default">
+
+          </FirstAxle>
+          <RearAxle ConnectedToHandbrake="true" Location="rear" Torque="default">
+
+          </RearAxle>
+          <SecondAxle SteeringAngle="24" SteeringJointOffset="0.25" SteeringCastor="0" ParentFrame="BoneCabin_cdt" Location="front" Torque="default">
+
+          </SecondAxle>
+      </Wheel>
+      <Body>
+            <TieRod Mass="1">
+                <Constraint Type="Hinge" MinLimit="-25" MaxLimit="25" AxisLocal="(0; 0; 1)">
+                    <Motor Tau="1" Type="Position" Damping="1.0" Force="6000">
+
+                    </Motor>
+                </Constraint>
+            </TieRod>
+            <Mudguard Mass="1" Collisions="None">
+                  <Constraint Type="Hinge">
+                      <Motor Spring="1" Type="Spring" Damping=".1">
+
+                      </Motor>
+                  </Constraint>
+            </Mudguard>
+            <Mirror Mass="5" Collisions="None">
+                    <Constraint Type="Hinge" MinLimit="-3" MaxLimit="3" AxisLocal="(0; 1; 0)">
+                        <Motor Spring="150" Type="Spring" Damping="5">
+
+                        </Motor>
+                    </Constraint>
+            </Mirror>
+      </Body>
+  </_templates>
+  <Truck>
+        <ControlledConstraints>
+              <Constraint IsLinkedSteering="true" Id="chassis_steer" Name="TieRodSteer">
+
+              </Constraint>
+              <Constraint IsLinkedSteering="true" Id="chassis_steer" Name="TieRodSteer1">
+
+              </Constraint>
+        </ControlledConstraints>
+        <Landmark MaxScale="3.8" Mesh="landmarks/krs_58_bandit_lmk" MinScale="1.8">
+
+        </Landmark>
+        <GameData Country="RU,CAS" UnlockByExploration="false" Price="98500" UnlockByRank="1">
+                  <CraneSocket Pos="(4.617; 1.074; -0.607)">
+
+                  </CraneSocket>
+                  <CraneSocket Pos="(4.617; 1.074; 0.607)">
+
+                  </CraneSocket>
+                  <CraneSocket Pos="(0.42; 1.13; -0.448)">
+
+                  </CraneSocket>
+                  <CraneSocket Pos="(0.42; 1.13; 0.448)">
+
+                  </CraneSocket>
+                  <CraneSocket Pos="(-3.662; 1.034; 0)">
+
+                  </CraneSocket>
+                    <AddonSockets DefaultAddon="krs_58_bandit_bumper_default">
+                      <Socket Names="krs58banditBumper" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Names="krs58banditHorn1" ParentFrame="BoneCabin_cdt">
+
+                        </Socket>
+                        <Socket Names="krs58banditHorn2" ParentFrame="BoneCabin_cdt">
+
+                        </Socket>
+                        <Socket Names="krs58banditRoofRack" NamesBlock="krs58banditBeacon" ParentFrame="BoneCabin_cdt">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="krs_58_bandit_gabarite_default">
+                      <Socket Names="krs58banditGabarite" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="krs58banditVisor" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="krs58banditBeacon" NamesBlock="krs58banditHorn1" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="krs58banditSnorkel" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="crane_krs_58_bandit">
+                      <Socket Names="CraneKrs58Bandit" Offset="(0; 0; 0)">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="frame_addon_sideboard_2">
+                        <Socket Names="LogLift" Offset="(1.127; 1.357; 0)" NamesBlock="CraneKrs58Bandit">
+
+                        </Socket>
+                        <Socket Names="BunkLog" Offset="(-5.28; 1.36; 0)" NamesBlock="CraneKrs58Bandit">
+
+                        </Socket>
+                        <Socket Names="FrameAddonLogShort" Offset="(-1.2; 1.357; 0)" NamesBlock="CraneKrs58Bandit">
+
+                        </Socket>
+                        <Socket Names="SaddleLow" Offset="(-1.995; 1.347; 0)">
+
+                        </Socket>
+                        <Socket Names="SaddleHigh" Offset="(-1.995; 1.347; 0)">
+
+                        </Socket>
+                        <Socket Names="FrameAddonTowPlatform" NamesBlock="CraneKrs58Bandit, Trailer" Offset="(-0.73; 1.358; 0)">
+
+                        </Socket>
+                        <Socket Names="FrameAddon" Offset="(-1.336; 1.358; 0)" ParentFrame="BoneChassis_cdt">
+                            <ExtraParent Offset="(0; 0; 0)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Offset="(0; 0; 0)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                          <AddonsShift Offset="(-0.65; 0; 0)" Types="CraneKrs58Bandit">
+
+                          </AddonsShift>
+                        </Socket>
+                        <Socket Names="FrameAddonKung" Offset="(-1.8; 1.43; -0)" ParentFrame="BoneChassis_cdt">
+                            <ExtraParent Offset="(0; 0; -0.12)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Offset="(0; 0; 0.12)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                          <AddonsShift Offset="(-0.65; 0; 0)" Types="CraneKrs58Bandit">
+
+                          </AddonsShift>
+                        </Socket>
+                        <Socket NamesBlock="CraneKrs58Bandit, Trailer" ParentFrame="BoneChassis_cdt" Names="FrameAddonMaintainer" Offset="(-1.93; 0.33; 0)">
+
+                        </Socket>
+                        <Socket NamesBlock="CraneKrs58Bandit" ParentFrame="BoneChassis_cdt" Names="FrameAddonTank" Offset="(-2.3; 1.358; 0)">
+
+                        </Socket>
+                        <Socket NamesBlock="Trailer, CraneKrs58Bandit" ParentFrame="BoneChassis_cdt" Names="FrameAddonSeismicVibrator" Offset="(0.716; 1.349; 0)">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Names="Semitrailer, SemitrailerOiltank" Offset="(-1.995; 1.66; 0)">
+
+                        </Socket>
+                        <Socket Names="LargeSemitrailer, LargeSemitrailerOiltank" Offset="(-1.995; 1.79; 0)">
+
+                        </Socket>
+                        <Socket Names="Trailer" Offset="(-3.662; 1.014; 0)">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Krs58BanditSticker_1x1_01" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Krs58BanditSticker_1x1_02" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Krs58BanditSticker_1x2_01" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Krs58BanditSticker_1x2_02" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Krs58BanditSticker_1x4_01" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Krs58BanditSticker_GlassTop" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Krs58BanditSticker_GlassBottom" InCockpit="true" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Krs58BanditSticker_Roof" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Krs58BanditSticker_Capote" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Krs58BanditSticker_Door_L" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(3.967; 2.886; 0.207)" InCockpit="true" ParentFrame="BoneCabin_cdt" Names="StuffAirfreshener">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(3.725; 2.064; -0.125)" InCockpit="true" Dir="(0.832; 0; 0.555)" Names="StuffDashboard" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                <CustomizationCameras>
+                          <CameraPos FOV="32.0" Name="roof_sticker" Position="(8.177; 6.416; -0.261)" Interior="true" InterestPosition="(5.355; 0.652; -0.597)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(5.875; 0.563; 1.084)" Name="sticker_1" MaxXRotation="360" MaxZoom="2" MaxYRotation="360" Interior="true" Position="(5.81; 3.212; -0.941)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(1.036; 1.692; -0)" Position="(-6.923; 2.071; 10.147)" MaxZoom="2" Name="addon_1" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(4.991; 1.77; 0)" Position="(10.328; 3.173; 3.632)" MaxZoom="2" Name="addon_2" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(7.556; 2.541; -0.462)" Position="(12.512; 3.395; 2.269)" MaxZoom="2" Name="glass_sticker" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="mirror_mount" Position="(5.586; 2.774; -0.399)" Interior="true" InterestPosition="(7.736; 2.617; 0.891)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(4.679; 1.146; 0.131)" Position="(11.451; 4.564; -2.806)" MaxZoom="2" Name="side_r" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="sticker" Position="(5.548; 2.717; -0.148)" Interior="true" InterestPosition="(7.52; 3.035; 0.242)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(6.209; 2.787; -1.094)" Position="(10.306; 5.571; -1.465)" MaxZoom="2" Name="roof" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="capote_sticker" Position="(10.512; 2.904; -1.657)" Interior="true" InterestPosition="(7.932; 1.936; -1.472)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(5.787; 0.976; -0.396)" Position="(11.585; 2.202; -2.737)" MaxZoom="2" Name="hoods" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(6.733; 1.727; -0.307)" Position="(10.471; 2.809; 3.169)" MaxZoom="2" Name="side_l" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="bubble_head" Position="(5.812; 2.45; -0.885)" Interior="true" InterestPosition="(6.64; 1.526; 1.624)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(4.978; 0.411; -0.328)" Position="(8.636; 1.415; -5.738)" MaxZoom="2" Name="wheels" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(5.787; 0.976; 0)" Position="(11.091; 1.495; -3.925)" MaxZoom="2" Name="default" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(5.042; 0.956; 0)" Position="(-0.258; 1.601; 3.76)" MaxZoom="2" Name="rear" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="door_l_sticker" Position="(2.952; 2.773; -3.618)" Interior="true" InterestPosition="(3.787; 2.403; -0.496)">
+
+                          </CameraPos>
+                </CustomizationCameras>
+                <UiDesc UiIcon40x40="offroadVehicleImg" UiDesc="UI_VEHICLE_KRS_58_BANDIT_DESC" UiIconLogo="KRSLogo80" UiIcon30x30="offroadVehicleImg30" UiIcon328x458="shopImgBandit" UiName="UI_VEHICLE_KRS_58_BANDIT_NAME">
+
+                </UiDesc>
+                          <WinchSocket Pos="(4.617; 1.074; -0.607)">
+
+                          </WinchSocket>
+                          <WinchSocket Pos="(4.617; 1.074; 0.607)">
+
+                          </WinchSocket>
+                          <WinchSocket Pos="(0.42; 1.13; -0.448)">
+
+                          </WinchSocket>
+                          <WinchSocket Pos="(0.42; 1.13; 0.448)">
+
+                          </WinchSocket>
+                          <WinchSocket Pos="(-3.662; 1.034; 0)">
+
+                          </WinchSocket>
+        </GameData>
+        <TruckData EngineIconScale="1.35" TruckImage="banditmchr" EngineIconMesh="env/engine_default" DiffLockType="Always" SteerSpeed="0.035" TruckType="OFFROAD" EngineStartDelay="2" ExhaustStartTime="1.8" Responsiveness="0.55" FuelCapacity="500" BackSteerSpeed="0.05">
+                    <CompatibleWheels OffsetZ="0.04" Type="wheels_medium_double_front" Scale="0.65" RearOffsetZ="0.06">
+
+                    </CompatibleWheels>
+                    <CompatibleWheels OffsetZ="0.18" Type="wheels_medium_mudtires_actaeon" Scale="0.65" RearOffsetZ="0.08">
+
+                    </CompatibleWheels>
+                  <Axles>
+                          <Axle Frame="BoneAxle1">
+
+                          </Axle>
+                          <Axle Frame="BoneAxle2">
+
+                          </Axle>
+                          <Axle Frame="BoneAxle3">
+
+                          </Axle>
+                          <Axle Frame="BoneAxle4">
+
+                          </Axle>
+                  </Axles>
+                  <Sounds _template="Default" DisableReversePitch="false" Origin="(3.245; 1.366; 0)" MinDist="8.0">
+                          <EngineAccel Sound="trucks/krs_58_bandit/krs_58_bandit_acc">
+
+                          </EngineAccel>
+                          <EngineStop Sound="trucks/krs_58_bandit/krs_58_bandit_stop">
+
+                          </EngineStop>
+                          <EngineLow_2d IsSound2D="true" Sound="trucks/krs_58_bandit/krs_58_bandit_low_2d">
+
+                          </EngineLow_2d>
+                          <EngineIdle Sound="trucks/krs_58_bandit/krs_58_bandit_idle">
+
+                          </EngineIdle>
+                          <Handbrake Sound="trucks/common/truck_handbrake_switch_alt1">
+
+                          </Handbrake>
+                          <Gear Sound="trucks/common/truck_gear_shift_medium_rnd_set/truck_gear_shift_medium_rnd">
+
+                          </Gear>
+                          <Reverse Sound="trucks/krs_58_bandit/krs_58_bandit_reverse">
+
+                          </Reverse>
+                          <GearFail Sound="trucks/common/truck_gear_wrong/truck_gear_wrong_small_old">
+
+                          </GearFail>
+                          <EngineTrans Sound="">
+
+                          </EngineTrans>
+                          <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
+
+                          </AbruptStop>
+                          <BrakesSqueal Sound="trucks/krs_58_bandit/krs_58_bandit_brakes_squeal">
+
+                          </BrakesSqueal>
+                          <EngineHeavy_2d IsSound2D="true" Sound="">
+
+                          </EngineHeavy_2d>
+                          <EngineLow Sound="trucks/krs_58_bandit/krs_58_bandit_low">
+
+                          </EngineLow>
+                          <EngineHeavy Sound="">
+
+                          </EngineHeavy>
+                          <EngineHigh_2d IsSound2D="true" Sound="trucks/krs_58_bandit/krs_58_bandit_high_2d">
+
+                          </EngineHigh_2d>
+                          <EngineHigh Sound="trucks/krs_58_bandit/krs_58_bandit_high">
+
+                          </EngineHigh>
+                          <EngineStart Sound="trucks/krs_58_bandit/krs_58_bandit_start">
+
+                          </EngineStart>
+                          <HandbrakeOff Sound="trucks/common/truck_handbrake_switch_off">
+
+                          </HandbrakeOff>
+                          <EngineIdle_2d IsSound2D="true" Sound="trucks/krs_58_bandit/krs_58_bandit_idle_2d">
+
+                          </EngineIdle_2d>
+                          <EngineRev Sound="">
+
+                          </EngineRev>
+                          <Honk Sound="trucks/krs_58_bandit/krs_58_bandit_honk">
+
+                          </Honk>
+                  </Sounds>
+                  <Steam Origin="(4.647; 1.524; 0)">
+
+                  </Steam>
+                  <SuspensionSocket MaxWheelRadiusWithoutSuspension="0.7" Default="krs_58_bandit_suspension_default" Type="s_krs_58_bandit">
+
+                  </SuspensionSocket>
+                  <Shafts>
+                                  <Shaft SocketPointB="Shaft1b" SocketPointA="Shaft1a">
+
+                                  </Shaft>
+                                  <Shaft SocketPointB="Shaft2b" SocketPointA="Shaft2a">
+
+                                  </Shaft>
+                                  <Shaft SocketPointB="Shaft3b" SocketPointA="Shaft3a">
+
+                                  </Shaft>
+                                  <Shaft SocketPointB="Shaft4b" SocketPointA="Shaft4a">
+
+                                  </Shaft>
+                                  <Shaft SocketPointB="Shaft5b" SocketPointA="Shaft5a">
+
+                                  </Shaft>
+                                  <Shaft SocketPointB="Shaft6b" SocketPointA="Shaft6a">
+
+                                  </Shaft>
+                                  <Shaft SocketPointB="Shaft7b" SocketPointA="Shaft7a">
+
+                                  </Shaft>
+                  </Shafts>
+                  <EngineSocket Default="ru_truck_old_engine_0" Type="e_ru_truck_old">
+
+                  </EngineSocket>
+                  <GearboxSocket Default="g_truck_default" Type="gearboxes_trucks">
+
+                  </GearboxSocket>
+                  <Dashboard>
+                                        <Gauge Dir="(-0.71; 0.705; -0.001)" Mesh="trucks/arrows/krs_58_bandit_arrow_01" Org="(3.97; 2.153; 0.944)" Damping="0.9" InputType="speed" InputRange="(0;120)" OutputAngles="(-120;120)">
+
+                                        </Gauge>
+                                        <Gauge Dir="(-0.71; 0.705; -0.001)" Mesh="trucks/arrows/krs_58_bandit_arrow_02" Org="(4.002; 2.182; 0.806)" Damping="0.9" InputType="rpm" InputRange="(0;1)" OutputAngles="(-120;-20)">
+
+                                        </Gauge>
+                                        <Gauge Dir="(-0.71; 0.705; -0.001)" Mesh="trucks/arrows/krs_58_bandit_arrow_03" Org="(3.97; 2.153; 0.716)" Damping="0.9" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-130;-78)">
+
+                                        </Gauge>
+                                        <Gauge Dir="(-0.71; 0.705; -0.001)" Mesh="trucks/arrows/krs_58_bandit_arrow_03" Org="(3.97; 2.152; 0.622)" Damping="0.9" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(130;112)">
+
+                                        </Gauge>
+                                        <Gauge Dir="(-0.71; 0.705; -0.001)" Mesh="trucks/arrows/krs_58_bandit_arrow_03" Org="(4.007; 2.189; 0.669)" Damping="0.9" InputType="fuel" InputRange="(0;1)" OutputAngles="(-45;45)">
+
+                                        </Gauge>
+                                        <Gauge Dir="(-0.71; 0.705; -0.001)" Mesh="trucks/arrows/krs_58_bandit_arrow_03" Org="(3.939; 2.121; 0.669)" Damping="0.9" InputType="engineEnabled" InputRange="(0;1)" OutputAngles="(-146;-200">
+
+                                        </Gauge>
+                  </Dashboard>
+                  <OcclusionMap HalfSizeZ="1.7" MinX="-5" MaxX="5">
+
+                  </OcclusionMap>
+                  <Damage>
+                                            <DamageArea Max="(4.457; 2.017; 0.905)" Min="(3.457; 1.136; -0.905)" ParentFrame="BoneCabin_cdt" Type="Engine">
+
+                                            </DamageArea>
+                                            <DamageArea Max="(3.505; 1.638; 0.5)" Min="(1.521; 0.773; -0.5)" ParentFrame="BoneCabin_cdt" Type="FuelTank">
+
+                                            </DamageArea>
+                  </Damage>
+                  <SoundsWheels _template="Default">
+
+                  </SoundsWheels>
+                                            <SteeringRack RackHalfSizeZ="0.756" Frame="BoneRackFront" FrameSteerRight="BoneRackFrontR" FrameSteerLeft="BoneRackFrontL">
+
+                                            </SteeringRack>
+                                            <SteeringRack RackHalfSizeZ="0.756" Frame="BoneRackRear" FrameSteerRight="BoneRackRearR" FrameSteerLeft="BoneRackRearL">
+
+                                            </SteeringRack>
+                  <Camera Radius="1.2" Center="(-1.6; 0; 0)">
+                                                <Cockpit WindshieldDiffuseTexture="trucks/geolkom_krs_58bandit_glass__d_a.tga" WindshieldShadingTexture="trucks/geolkom_krs_58bandit_glass__sh_d.tga" WindshieldDetailDensity="6.0" _template="Default" ViewPos="(3.13; 2.616; 0.787)">
+                                                      <Mirror MeshFrame="mirror_l_1" ClipOffset="0.2" Size="(0.17; 0.33)" Pos="(4.165; 2.694; 1.577)" ReflectionDir="(-0.956; 0; -0.292)" ClipDir="(-0.956; 0; -0.292)" FOVScale="2">
+
+                                                      </Mirror>
+                                                      <Mirror MeshFrame="mirror_l_2" ClipOffset="0.1" Size="(0.18; 0.18)" Pos="(4.262; 2.348; 1.245)" ReflectionDir="(-0.359; -0.444; -0.821)" ClipDir="(-0.359; -0.444; -0.821)" FOVScale="2">
+
+                                                      </Mirror>
+                                                      <Mirror MeshFrame="mirror_r_1" ClipOffset="0.1" Size="(0.17; 0.33)" Pos="(4.161; 2.694; -1.529)" ReflectionDir="(-0.839; 0; 0.545)" ClipDir="(-0.839; 0; 0.545)" FOVScale="2">
+
+                                                      </Mirror>
+                                                      <Mirror MeshFrame="mirror_r_2" ClipOffset="0.1" Size="(0.18; 0.18)" Pos="(4.284; 2.348; -1.3)" ReflectionDir="(0; -0.446; 0.895)" ClipDir="(0; -0.446; 0.895)" FOVScale="2">
+
+                                                      </Mirror>
+                                                </Cockpit>
+                  </Camera>
+                  <SoundsDamage _template="Heavy">
+
+                  </SoundsDamage>
+                  <Wheels DefaultTire="highway_1" DefaultRim="rim_1" DefaultWheelType="wheels_medium_double_front">
+                                                      <Wheel _template="FirstAxle" Pos="(3.284; 0.597; 1.03)">
+
+                                                      </Wheel>
+                                                      <Wheel _template="FirstAxle" RightSide="true" Pos="(3.284; 0.597; 1.03)">
+
+                                                      </Wheel>
+                                                      <Wheel _template="SecondAxle" Pos="(1.781; 0.597; 1.03)">
+
+                                                      </Wheel>
+                                                      <Wheel _template="SecondAxle" RightSide="true" Pos="(1.781; 0.597; 1.03)">
+
+                                                      </Wheel>
+                                                      <Wheel _template="RearAxle" Pos="(-0.912; 0.597; 1.03)">
+
+                                                      </Wheel>
+                                                      <Wheel _template="RearAxle" RightSide="true" Pos="(-0.912; 0.597; 1.03)">
+
+                                                      </Wheel>
+                                                      <Wheel _template="RearAxle" Pos="(-2.608; 0.597; 1.03)">
+
+                                                      </Wheel>
+                                                      <Wheel _template="RearAxle" RightSide="true" Pos="(-2.608; 0.597; 1.03)">
+
+                                                      </Wheel>
+                  </Wheels>
+                  <SteeringWheel Frame="BoneSteering">
+
+                  </SteeringWheel>
+                  <Driver Pos="(3.257; 1.946; 0.787)" ParentFrame="BoneCabin_cdt" SteeringWheelPos="(3.644; 2.292; 0.787)" AnimationSet="HeavyTruck">
+
+                  </Driver>
+                  <Exhaust Origin="(0.432; 0.792; -0.694)" Speed="6.00" Dir="(-0; -0.192; -0.981)">
+
+                  </Exhaust>
+                  <WinchUpgradeSocket IsUpgradable="true" Default="w_medium_trucks_default" Type="winches_medium_trucks">
+
+                  </WinchUpgradeSocket>
+                  <FuelTank DamageCapacity="100">
+
+                  </FuelTank>
+                  <Intake Origin="(4.59; 1.524; 0)" Size="1" Dir="(1; 0; 0)">
+
+                  </Intake>
+        </TruckData>
+        <HeadLight _template="Default" ParentFrame="BoneCabin_cdt" Pos="(5.107; 0.573; 0)">
+
+        </HeadLight>
+        <ModelAttachments>
+                      <HeadLight>
+                            <Model _template="HeadLightRay" ParentFrame="BoneCabin_cdt" Org="(4.446; 1.572; -0.694)">
+
+                            </Model>
+                            <Model _template="HeadLightRay" ParentFrame="BoneCabin_cdt" Org="(4.446; 1.572; 0.694)">
+
+                            </Model>
+                            <Model _template="HeadLightRay" ParentFrame="BoneCabin_cdt" Org="(4.273; 2.969; 0)">
+
+                            </Model>
+                            <Model _template="HeadLightRay" ParentFrame="BoneCabin_cdt" Org="(4.001; 2.978; -0.95)">
+
+                            </Model>
+                            <Model _template="HeadLightRay" ParentFrame="BoneCabin_cdt" Org="(4.001; 2.978; 0.95)">
+
+                            </Model>
+                              <Flare _template="HeadLight" Pos="(4.444; 1.562; -0.853)" ParentFrame="BoneCabin_cdt" Color="g(235; 230; 220) x 0.3" Size="0.3">
+
+                              </Flare>
+                              <Flare _template="HeadLight" Pos="(4.444; 1.562; 0.853)" ParentFrame="BoneCabin_cdt" Color="g(235; 230; 220) x 0.3" Size="0.3">
+
+                              </Flare>
+                              <Flare _template="HeadLight" Pos="(4.233; 3.006; 0)" ParentFrame="BoneCabin_cdt" Color="g(235; 230; 220) x 0.5" Size="0.3">
+
+                              </Flare>
+                              <Flare _template="HeadLight" Pos="(4.001; 2.978; -0.95)" ParentFrame="BoneCabin_cdt" Color="g(235; 230; 220) x 0.5" Size="0.3">
+
+                              </Flare>
+                              <Flare _template="HeadLight" Pos="(4.001; 2.978; 0.95)" ParentFrame="BoneCabin_cdt" Color="g(235; 230; 220) x 0.5" Size="0.3">
+
+                              </Flare>
+                              <Flare _template="BlueStreak" Pos="(4.444; 1.562; -0.853)" Size="0.6" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                              <Flare _template="BlueStreak" Pos="(4.444; 1.562; 0.853)" Size="0.6" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                              <Flare _template="BlueStreak" Pos="(4.233; 3.006; 0)" Size="0.6" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                              <Flare _template="BlueStreak" Pos="(4.001; 2.978; -0.95)" Size="0.6" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                              <Flare _template="BlueStreak" Pos="(4.001; 2.978; 0.95)" Size="0.6" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                      </HeadLight>
+                      <ReverseSignals>
+                              <Light _template="ReverseSignal" Color="(102; 102; 102)" Pos="(-3.646; 1.261; -0.796)">
+
+                              </Light>
+                              <Light _template="ReverseSignal" Color="(102; 102; 102)" Pos="(-3.646; 1.261; 0.796)">
+
+                              </Light>
+                                <Flare _template="ReverseSignal" Size="0.4" Pos="(-3.646; 1.261; -0.796)">
+
+                                </Flare>
+                                <Flare _template="BlueStreak" Dir="(-1; 0; 0)" Pos="(-3.646; 1.261; -0.796)" Color="g(220; 220; 255) x 0.05" Size="0.4">
+
+                                </Flare>
+                                <Flare _template="ReverseSignal" Size="0.4" Pos="(-3.646; 1.261; 0.796)">
+
+                                </Flare>
+                                <Flare _template="BlueStreak" Dir="(-1; 0; 0)" Pos="(-3.646; 1.261; 0.796)" Color="g(220; 220; 255) x 0.05" Size="0.4">
+
+                                </Flare>
+                      </ReverseSignals>
+                      <Ignition>
+                                <Light _template="IgnitionSignalWhite" Pos="(4.446; 1.572; -0.853)" ParentFrame="BoneCabin_cdt" Color="g(255; 205; 145) x .5" Size=".5">
+
+                                </Light>
+                                <Light _template="IgnitionSignalWhite" Pos="(4.446; 1.572; 0.853)" ParentFrame="BoneCabin_cdt" Color="g(255; 205; 145) x .5" Size=".5">
+
+                                </Light>
+                                <Light _template="IgnitionSignalRed" Pos="(-3.646; 1.261; 0)">
+
+                                </Light>
+                                  <Flare _template="IgnitionSignalWhite" Pos="(4.446; 1.572; -0.853)" ParentFrame="BoneCabin_cdt" Color="g(165; 149; 130) x 1.7" Size="0.3">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalWhite" Pos="(4.446; 1.572; 0.853)" ParentFrame="BoneCabin_cdt" Color="g(165; 149; 130) x 1.7" Size="0.3">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalWhite" Pos="(4.414; 1.508; -1.061)" ParentFrame="BoneCabin_cdt" Color="g(165; 149; 130) x 1.3" Size="0.2">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalWhite" Pos="(4.414; 1.508; 1.061)" ParentFrame="BoneCabin_cdt" Color="g(165; 149; 130) x 1.3" Size="0.2">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalRed" Pos="(-3.646; 1.261; -0.987)">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalRed" Pos="(-3.646; 1.261; 0.987)">
+
+                                  </Flare>
+                      </Ignition>
+                      <StopSignals>
+                                <Light _template="StopSignal" Pos="(-3.646; 1.261; 0)">
+
+                                </Light>
+                                    <Flare _template="StopSignal" Size="0.3" Pos="(-3.646; 1.261; -0.987)">
+
+                                    </Flare>
+                                    <Flare _template="StopSignal" Size="0.3" Pos="(-3.646; 1.261; 0.987)">
+
+                                    </Flare>
+                      </StopSignals>
+        </ModelAttachments>
+        <AutomaticIK>
+                          <IKBone ModelFrame="BoneTieRodIK1" ParentFrame="BoneTieRod_cdt">
+                            <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BoneTieRodIK2" AttachToFrame="BoneRackFrontL" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ModelFrame="BoneTieRodIK1_1" ParentFrame="BoneTieRod_1_cdt">
+                            <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BoneTieRodIK2_1" AttachToFrame="BoneRackRearL" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ModelFrame="BonePistonFR" ParentFrame="BoneCabin_cdt">
+                            <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BonePistonFR2" AttachToFrame="BoneAxle1" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(0; 0; 1)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ModelFrame="BonePistonFL" ParentFrame="BoneCabin_cdt">
+                            <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BonePistonFL2" AttachToFrame="BoneAxle1" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(0; 0; 1)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ModelFrame="BonePistonRL" ParentFrame="BoneChassis_cdt">
+                            <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BonePistonRL2" AttachToFrame="BoneAxle4" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(0; 0; 1)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ModelFrame="BonePistonRR" ParentFrame="BoneChassis_cdt">
+                            <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BonePistonRR2" AttachToFrame="BoneAxle4" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(0; 0; 1)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ModelFrame="BonePistonM1L" ParentFrame="BoneChassis_cdt">
+                            <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BonePistonM1L2" AttachToFrame="BoneAxle2" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(0; 0; 1)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ModelFrame="BonePistonM1R" ParentFrame="BoneChassis_cdt">
+                            <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BonePistonM1R2" AttachToFrame="BoneAxle2" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(0; 0; 1)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ModelFrame="BonePistonM2L" ParentFrame="BoneChassis_cdt">
+                            <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BonePistonM2L2" AttachToFrame="BoneAxle3" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(0; 0; 1)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ModelFrame="BonePistonM2R" ParentFrame="BoneChassis_cdt">
+                            <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BonePistonM2R2" AttachToFrame="BoneAxle3" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(0; 0; 1)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+        </AutomaticIK>
+        <PhysicsModel Mesh="trucks/krs_58_bandit">
+                          <Body NetSync="pv" Mass="4000" ImpactType="Truck" CenterOfMassOffset="(0.3; 0; 0)">
+                                <Body ModelFrame="BoneCabin_cdt" NetSync="pv" Mass="3000" ImpactType="Truck" CenterOfMassOffset="(0.2; 0; 0)">
+                                  <Constraint AxisLocal="(1; 0; 0)" MaxLimit="25" MinLimit="-25" Type="Hinge" PivotOffset="(0; 0; 0)">
+                                      <Motor Spring="180000" Type="Spring" Damping="30000">
+
+                                      </Motor>
+                                  </Constraint>
+                                      <Body _template="TieRod" ModelFrame="BoneTieRod_cdt">
+                                        <Constraint Name="TieRodSteer">
+
+                                        </Constraint>
+                                      </Body>
+                                      <Body _template="TieRod" ModelFrame="BoneTieRod_1_cdt">
+                                        <Constraint Name="TieRodSteer1">
+
+                                        </Constraint>
+                                      </Body>
+                                      <Body _template="Mirror" ModelFrame="BoneMirrorL_cdt">
+
+                                      </Body>
+                                      <Body _template="Mirror" ModelFrame="BoneMirrorR_cdt">
+
+                                      </Body>
+                                      <Body Mass="0.4" ModelFrame="BoneWire1_cdt" Collisions="None">
+                                        <Constraint AxisLocal="(0; 1; 0)" MaxLimit="2" MinLimit="-2" Type="Hinge" PivotOffset="(0; 0; 0)">
+                                            <Motor Spring=".01" Type="Spring" Damping="100">
+
+                                            </Motor>
+                                        </Constraint>
+                                        <Body Mass="0.1" ModelFrame="BoneWire2_cdt" Collisions="None">
+                                              <Constraint Type="Ragdoll" PlaneMin="-20" TwistMin="-6" PlaneAxisLocal="(0; 0; 1)" TwistAxisLocal="(1; 0; 0)" ConeMin="-.1" ConeMax=".1" TwistMax="6" PlaneMax="20">
+                                                  <AllMotor Spring=".001" Type="Spring" Damping="30">
+
+                                                  </AllMotor>
+                                              </Constraint>
+                                        </Body>
+                                      </Body>
+                                      <Body Mass="0.4" ModelFrame="BoneCase_cdt" Collisions="None">
+                                        <Constraint Type="Hinge" MinLimit="-90" MaxLimit="8" AxisLocal="(0; 0; 1)">
+                                            <Motor Spring="1" Type="Spring" Damping=".1">
+
+                                            </Motor>
+                                        </Constraint>
+                                      </Body>
+                                      <Body Mass="3" ModelFrame="BoneJacket_cdt" Collisions="None">
+                                        <Constraint Type="Ragdoll" PlaneMin="-90" TwistMin="-90" PlaneAxisLocal="(1; 0; 0)" TwistAxisLocal="(0; 1; 0)" ConeMin="-30" ConeMax="20" TwistMax="20" PlaneMax="0">
+                                            <AllMotor Spring=".00001" Type="Spring" Damping="3">
+
+                                            </AllMotor>
+                                        </Constraint>
+                                      </Body>
+                                      <Body Mass="3" ModelFrame="BoneHelmet_cdt" Collisions="None">
+                                        <Constraint Type="Ragdoll" PlaneMin="-90" TwistMin="0" PlaneAxisLocal="(1; 0; 0)" TwistAxisLocal="(0; 1; 0)" ConeMin="-40" ConeMax="40" TwistMax="0" PlaneMax="0">
+                                            <AllMotor Spring=".00001" Type="Spring" Damping="1">
+
+                                            </AllMotor>
+                                        </Constraint>
+                                      </Body>
+                                </Body>
+                                <Body _template="Mudguard" ModelFrame="BoneMudguardL_cdt">
+                                  <Constraint MinLimit="-30" AxisLocal="(0; 0; 1)" MaxLimit="20">
+
+                                  </Constraint>
+                                </Body>
+                                <Body _template="Mudguard" ModelFrame="BoneMudguardR_cdt">
+                                  <Constraint MinLimit="-30" AxisLocal="(0; 0; 1)" MaxLimit="20">
+
+                                  </Constraint>
+                                </Body>
+                          </Body>
+                          <NetSync Legacy="false">
+
+                          </NetSync>
+        </PhysicsModel>
+  </Truck>

@@ -1,0 +1,689 @@
+  <_templates Include="trucks">
+      <Wheel>
+          <FrontWheel SteeringAngle="36" SteeringJointOffset="0.13" SteeringCastor="0" ParentFrame="BoneCabin_cdt" Location="front" Torque="connectable">
+
+          </FrontWheel>
+          <RearWheel ConnectedToHandbrake="true" Location="rear" Torque="default">
+
+          </RearWheel>
+      </Wheel>
+      <Body>
+            <Sunshield Mass="10" Collisions="None">
+                <Constraint Type="Hinge" MinLimit="-3" MaxLimit="3" AxisLocal="(0; 0; 1)">
+                    <Motor Spring="150" Type="Spring" Damping="1.5">
+
+                    </Motor>
+                </Constraint>
+            </Sunshield>
+            <Mudguard Mass="2" Collisions="None">
+                  <Constraint Type="Hinge" MinLimit="-40" MaxLimit="30" AxisLocal="(0; 0; 1)">
+                      <Motor Spring="2.5" Type="Spring" Damping="0.25">
+
+                      </Motor>
+                  </Constraint>
+            </Mudguard>
+            <Mirror Mass="10" Collisions="None">
+                    <Constraint Type="Hinge" MinLimit="-2" MaxLimit="2" AxisLocal="(0; 1; 0)">
+                        <Motor Spring="400" Type="Spring" Damping="12">
+
+                        </Motor>
+                    </Constraint>
+            </Mirror>
+      </Body>
+  </_templates>
+  <Truck>
+        <ControlledConstraints>
+            <Constraint IsLinkedSteering="true" Id="chassis_steer" Name="TieRodSteer">
+
+            </Constraint>
+        </ControlledConstraints>
+        <Landmark MaxScale="3.8" Mesh="landmarks/western_star_57x_lmk" MinScale="1.8">
+
+        </Landmark>
+        <GameData Country="US" UnlockByExploration="false" Price="115700" UnlockByRank="1">
+                  <CraneSocket ParentFrame="BoneCabin_cdt" Pos="(4.501; 0.439; 0)">
+
+                  </CraneSocket>
+                  <CraneSocket ParentFrame="BoneCabin_cdt" Pos="(-0.153; 0.802; -1.188)">
+
+                  </CraneSocket>
+                  <CraneSocket ParentFrame="BoneCabin_cdt" Pos="(-0.153; 0.802; 1.188)">
+
+                  </CraneSocket>
+                  <CraneSocket Pos="(-4.729; 0.854; 0)">
+
+                  </CraneSocket>
+                    <AddonSockets>
+                        <Socket Names="Trailer" Offset="(-4.73; 0.847; 0)">
+
+                        </Socket>
+                        <Socket Names="Semitrailer, SemitrailerOiltank" Offset="(-3.004; 1.425; 0)">
+
+                        </Socket>
+                        <Socket Names="LargeSemitrailer, LargeSemitrailerOiltank" Offset="(-3.004; 1.605; 0)">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Names="MinicraneNavistar" Offset="(-1.857; 1.068; 0)">
+
+                        </Socket>
+                        <Socket Names="BunkLog" Offset="(-6.398; 1.068; 0)">
+
+                        </Socket>
+                        <Socket Names="SaddleLow" Offset="(-3.008; 1.068; 0)">
+
+                        </Socket>
+                        <Socket Names="SaddleHigh" Offset="(-3.008; 1.068; 0)">
+                            <ExtraParent Offset="(0; 0; 0.02)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Offset="(0; 0; -0.02)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="western_star_57x_bumper_default">
+                      <Socket Names="ws57xBumper" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="western_star_57x_visor_default">
+                      <Socket Names="ws57xVisor" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="western_star_57x_exhaust_default">
+                      <Socket Names="ws57xExhaust" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="western_star_57x_wings_default">
+                      <Socket Names="ws57xWings" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="western_star_57x_side_bumper_default">
+                      <Socket Names="ws57xSideBumper" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="ws57xHorn" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="ws57xGabarite" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="ws57xWheelAddon" ParentFrame="BoneChassis_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="ws57xSnorkel" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="ws57xSpotlight" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="western_star_57x_diff_lock_default">
+                      <Socket Names="WesternStar57xDiffLock">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="western_star_57x_transferbox_default">
+                      <Socket Names="WesternStar57xTransferBox" Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="westernStar57XSticker_Door_R" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="westernStar57XSticker_Door_L" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="westernStar57XSticker_Capote" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="westernStar57XSticker_Roof" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="westernStar57XSticker_1x1_01" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="westernStar57XSticker_1x1_02" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="westernStar57XSticker_1x2_01" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="westernStar57XSticker_1x2_02" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="westernStar57XSticker_1x4_01" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="westernStar57XSticker_1x4_02" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="westernStar57XSticker_GlassBot" InCockpit="true" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(2.559; 2.7; 0)" InCockpit="true" ParentFrame="BoneCabinDamper_cdt" Names="StuffAirfreshener">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(2.67; 2.22; -0.13)" InCockpit="true" ParentFrame="BoneCabinDamper_cdt" Names="StuffDashboard">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="StuffHood57X" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                <CustomizationCameras>
+                          <CameraPos InterestPosition="(-3.124; 0.199; 0.419)" Name="roof_sticker" Position="(9.943; 5.542; -0.651)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="sticker_1" Position="(4.177; 2.577; -0.062)" Interior="true" InterestPosition="(5.901; 2.47; 1.044)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(1.352; 1.716; 0.504)" Position="(-7.165; 4.028; -6.18)" MaxZoom="2" Name="addon_1" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(5.265; 2.861; -0.327)" Position="(10.742; 5.075; 4.202)" MaxZoom="2" Name="addon_2" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="mirror_mount" Position="(4.221; 2.45; 0.032)" Interior="true" InterestPosition="(8.227; 2.348; 1.033)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(6.695; 1.797; 0.334)" Position="(13.06; 2.795; 4.364)" MaxZoom="2" Name="side_r" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(6.775; 1.887; -1.029)" Position="(9.426; 2.211; -1.391)" MaxZoom="2" Name="hood_ornament" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="sticker" Position="(4.471; 2.54; -0.479)" Interior="true" InterestPosition="(4.617; 1.238; 1.255)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(6.013; 1.912; -0.861)" Name="glass_sticker" Position="(10.844; 3.623; 1.35)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(6.632; 1.085; 0.401)" Position="(2.125; 2.631; 4.607)" MaxZoom="2" Name="door_r_sticker" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(4.807; 1.782; -0.506)" Position="(11.573; 5.499; 2.951)" MaxZoom="2" Name="roof" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(3.926; 0.661; -0.133)" Name="capote_sticker" Position="(11.077; 4.356; -1.442)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(4.917; 1.352; -0.38)" Position="(13.232; 1.502; -2.124)" MaxZoom="2" Name="hoods" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="sticker_2" Position="(4.648; 2.352; -0.754)" Interior="true" InterestPosition="(4.681; 2.799; 1.976)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(2.985; 2.087; 0.794)" Position="(-5.607; 3.22; -5.485)" MaxZoom="2" Name="side_l" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos FOV="32.0" Name="bubble_head" Position="(4.879; 2.576; -0.457)" Interior="true" InterestPosition="(7.723; 1.106; 2.815)">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(4.256; 0.191; 0.074)" Position="(9.425; 1.166; -3.857)" MaxZoom="2" Name="wheels" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(3.576; 0.962; 0.649)" Position="(13.078; 2.686; -3.232)" MaxZoom="2" Name="default" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(4.052; 1.902; 0.411)" Position="(-3.876; 3.135; 6.466)" MaxZoom="2" Name="rear" MaxYRotation="360" FOV="32.0" MaxXRotation="360">
+
+                          </CameraPos>
+                          <CameraPos InterestPosition="(3.745; 1.654; -1.317)" Name="door_l_sticker" Position="(2.471; 2.598; -4.668)" FOV="32.0">
+
+                          </CameraPos>
+                </CustomizationCameras>
+                <UiDesc UiIcon40x40="heavyVehicleImg" UiDesc="UI_VEHICLE_WESTERN_STAR_57X_DESC" UiIconLogo="WesternStarLogo80" UiIcon30x30="heavyVehicleImg30" UiIcon328x458="shopImgWs57x" UiName="UI_VEHICLE_WESTERN_STAR_57X_NAME">
+
+                </UiDesc>
+                          <WinchSocket ParentFrame="BoneCabin_cdt" Pos="(4.501; 0.439; 0)">
+
+                          </WinchSocket>
+                          <WinchSocket ParentFrame="BoneCabin_cdt" Pos="(-0.153; 0.802; -1.188)">
+
+                          </WinchSocket>
+                          <WinchSocket ParentFrame="BoneCabin_cdt" Pos="(-0.153; 0.802; 1.188)">
+
+                          </WinchSocket>
+                          <WinchSocket Pos="(-4.729; 0.854; 0)">
+
+                          </WinchSocket>
+        </GameData>
+        <TruckData EngineIconScale="1.4" TruckImage="ws57xmchr" EngineIconMesh="env/engine_default" DiffLockType="Uninstalled" SteerSpeed="0.02" TruckType="HIGHWAY" EngineStartDelay="3.2" ExhaustStartTime="2.8" Responsiveness="0.3" FuelCapacity="1134" BackSteerSpeed="0.025">
+                    <LimitedFluid LengthX="1.122" Type="Cylinder" RadiusZ="0.317" Center="(0.093; 0.71; 0.813)" RadiusY="0.317">
+
+                    </LimitedFluid>
+                    <LimitedFluid LengthX="1.122" Type="Cylinder" RadiusZ="0.317" Center="(0.093; 0.71; -0.803)" RadiusY="0.317">
+
+                    </LimitedFluid>
+                      <CompatibleWheels Scale="0.54" Type="wheels_medium_double" RearOffsetZ="0.07">
+
+                      </CompatibleWheels>
+                      <CompatibleWheels Scale="0.56" Type="wheels_medium_double" RearOffsetZ="0.07">
+
+                      </CompatibleWheels>
+                  <Axles>
+                            <Axle Frame="BoneAxle1">
+
+                            </Axle>
+                            <Axle Frame="BoneAxle2">
+
+                            </Axle>
+                            <Axle Frame="BoneAxle3">
+
+                            </Axle>
+                  </Axles>
+                  <Sounds _template="Default" DisableReversePitch="true" Origin="(3.289; 1.4; 0)" MinDist="15.0">
+                            <EngineAccel Sound="trucks/western_star_57x/western_star_57x_acc">
+
+                            </EngineAccel>
+                            <BrakePull Sound="trucks/western_star_57x/western_star_57x_brake_pull">
+
+                            </BrakePull>
+                            <EngineStop Sound="trucks/western_star_57x/western_star_57x_stop">
+
+                            </EngineStop>
+                            <EngineLow_2d IsSound2D="true" Sound="trucks/western_star_57x/western_star_57x_low_2d">
+
+                            </EngineLow_2d>
+                            <EngineIdle Sound="trucks/western_star_57x/western_star_57x_idle">
+
+                            </EngineIdle>
+                            <EngineIdle_2d IsSound2D="true" Sound="trucks/western_star_57x/western_star_57x_idle_2d">
+
+                            </EngineIdle_2d>
+                            <Honk Sound="trucks/western_star_57x/western_star_57x_honk">
+
+                            </Honk>
+                            <Reverse Sound="trucks/western_star_57x/western_star_57x_back_beeper">
+
+                            </Reverse>
+                            <EngineTrans Sound="trucks/common/truck_trans_forward_loop">
+
+                            </EngineTrans>
+                            <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
+
+                            </AbruptStop>
+                            <BrakesSqueal Sound="trucks/western_star_57x/western_star_57x_brakes_squeal">
+
+                            </BrakesSqueal>
+                            <EngineHeavy_2d IsSound2D="true" Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_heavy_2d">
+
+                            </EngineHeavy_2d>
+                            <EngineLow Sound="trucks/western_star_57x/western_star_57x_low">
+
+                            </EngineLow>
+                            <EngineHeavy Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_heavy">
+
+                            </EngineHeavy>
+                            <EngineHigh_2d IsSound2D="true" Sound="trucks/western_star_57x/western_star_57x_high_2d">
+
+                            </EngineHigh_2d>
+                            <EngineHigh Sound="trucks/western_star_57x/western_star_57x_high">
+
+                            </EngineHigh>
+                            <EngineStart Sound="trucks/western_star_57x/western_star_57x_start">
+
+                            </EngineStart>
+                            <BrakeRelease Sound="trucks/western_star_57x/western_star_57x_brake_release">
+
+                            </BrakeRelease>
+                            <HandbrakeOff Sound="trucks/western_star_57x/western_star_57x_handbrake_off">
+
+                            </HandbrakeOff>
+                            <Handbrake Sound="trucks/western_star_57x/western_star_57x_handbrake_on">
+
+                            </Handbrake>
+                            <EngineRev Sound="trucks/western_star_57x/western_star_57x_rev">
+
+                            </EngineRev>
+                  </Sounds>
+                  <Steam Origin="(1.972; 1.122; 0)" ParentFrame="BoneCabin_cdt">
+
+                  </Steam>
+                  <SuspensionSocket MaxWheelRadiusWithoutSuspension="0.47" Default="western_star_57x_suspension_default" Type="s_western_star_57x">
+
+                  </SuspensionSocket>
+                  <Shafts>
+                                    <Shaft SocketPointB="Shaft1b" SocketPointA="Shaft1a">
+
+                                    </Shaft>
+                                    <Shaft SocketPointB="Shaft2b" SocketPointA="Shaft2a">
+
+                                    </Shaft>
+                                    <Shaft SocketPointB="Shaft3b" SocketPointA="Shaft3a">
+
+                                    </Shaft>
+                                    <Shaft SocketPointB="Shaft4b" SocketPointA="Shaft4a">
+
+                                    </Shaft>
+                  </Shafts>
+                  <EngineSocket Default="us_truck_modern_engine_0" Type="e_us_truck_modern, e_us_truck_modern_ws_49x">
+
+                  </EngineSocket>
+                  <GearboxSocket Default="g_truck_default" Type="gearboxes_trucks">
+
+                  </GearboxSocket>
+                  <Dashboard>
+                                          <Gauge Mesh="trucks/arrows/western_star_57x_arrow_1" InputRange="(0;135)" Dir="(-0.917; 0.4; 0)" Org="(2.672; 2.096; 0.601)" InputType="speed" OutputAngles="(-118; 26)">
+
+                                          </Gauge>
+                                          <Gauge Dir="(-0.917; 0.4; 0)" Mesh="trucks/arrows/western_star_57x_arrow_1" Org="(2.672; 2.096; 0.602)" Damping="0.97" InputType="rpm" InputRange="(0;1)" OutputAngles="(119; 45)">
+
+                                          </Gauge>
+                  </Dashboard>
+                  <OcclusionMap HalfSizeZ="2" Texture="trucks/occlusion/chassis_small__s_d_a.tga" MinX="-5.5" MaxX="5.5">
+
+                  </OcclusionMap>
+                  <Damage>
+                                              <DamageArea Max="(4.493; 1.758; 1.008)" Min="(2.802; 0.929; -1.008)" ParentFrame="BoneCabinDamper_cdt" Type="Engine">
+
+                                              </DamageArea>
+                                              <DamageArea Max="(0.709; 1.03; 1.133)" Min="(-0.519; 0.389; -1.124)" ParentFrame="BoneCabin_cdt" Type="FuelTank">
+
+                                              </DamageArea>
+                  </Damage>
+                  <SoundsWheels _template="Default">
+
+                  </SoundsWheels>
+                  <SteeringRack RackHalfSizeZ="0.872" Frame="BoneRack" FrameSteerRight="BoneRackR" FrameSteerLeft="BoneRackL">
+
+                  </SteeringRack>
+                  <SoundsDamage _template="Heavy">
+
+                  </SoundsDamage>
+                  <Wheels DefaultTire="highway_1" DefaultRim="rim_2" DefaultWheelType="wheels_medium_double">
+                                                      <Wheel _template="FrontWheel" Pos="(3.285; 0.57; 1.068)">
+
+                                                      </Wheel>
+                                                      <Wheel _template="FrontWheel" RightSide="true" Pos="(3.285; 0.57; 1.068)">
+
+                                                      </Wheel>
+                                                      <Wheel _template="RearWheel" Pos="(-2.29; 0.529; 0.86)">
+
+                                                      </Wheel>
+                                                      <Wheel _template="RearWheel" RightSide="true" Pos="(-2.29; 0.529; 0.86)">
+
+                                                      </Wheel>
+                                                      <Wheel _template="RearWheel" Pos="(-3.686; 0.529; 0.86)">
+
+                                                      </Wheel>
+                                                      <Wheel _template="RearWheel" RightSide="true" Pos="(-3.686; 0.529; 0.86)">
+
+                                                      </Wheel>
+                  </Wheels>
+                  <SteeringWheel Frame="BoneSteering">
+
+                  </SteeringWheel>
+                  <Camera Center="(-1.5; 0; 0)" ParentFrame="BoneCabin_cdt">
+                                                        <Cockpit WindshieldDiffuseTexture="trucks/westernstar_57x_glass__d_a.tga" WindshieldShadingTexture="trucks/westernstar_57x_glass__sh_d.tga" _template="Default" ViewPos="(1.976; 2.451; 0.61)">
+                                                              <Mirror MeshFrame="mirror_left" ClipOffset="0.25" Size="(0.19; 0.32)" Pos="(2.526; 2.389; 1.398)" ReflectionDir="(-0.916; 0.021; -0.401)" ClipDir="(-0.916; 0.021; -0.401)" FOVScale="2">
+                                                                <SecondaryView MeshFrame="mirror_left_convex" ClipOffset="0.1" CurveAngle="20" Pos="(2.5; 2.155; 1.386)" Size="(0.19; 0.13)" ClipDir="(-0.916; 0.021; -0.401)" FOVScale="1.6">
+
+                                                                </SecondaryView>
+                                                              </Mirror>
+                                                              <Mirror MeshFrame="mirror_right" ClipOffset="0.25" Size="(0.19; 0.32)" Pos="(2.481; 2.383; -1.408)" ReflectionDir="(-0.804; -0.003; 0.594)" ClipDir="(-0.804; -0.003; 0.594)" FOVScale="2">
+                                                                <SecondaryView MeshFrame="mirror_right_convex" ClipOffset="0.1" CurveAngle="20" Pos="(2.47; 2.149; -1.393)" Size="(0.19; 0.13)" ClipDir="(-0.804; -0.003; 0.594)" FOVScale="1.6">
+
+                                                                </SecondaryView>
+                                                              </Mirror>
+                                                              <Mirror ClipOffset="0.1" CurveAngle="10" ReflectionDir="(-0.129; -0.804; 0.58)" MeshFrame="mirror_additional" FOVScale="2.5" Pos="(1.945; 2.591; -1.192)" ClipDir="(-0.129; -0.804; 0.58)" Size="(0.29; 0.2)">
+
+                                                              </Mirror>
+                                                              <Mirror MeshFrame="mirror_left_front" ClipOffset="0.15" Size="(0.23; 0.18)" Pos="(4.193; 2.021; 1.010)" ReflectionDir="(-0.988; 0.067; 0.138)" ClipDir="(-0.988; 0.067; 0.138)" FOVScale="2.6">
+
+                                                              </Mirror>
+                                                              <Mirror MeshFrame="mirror_right_front" ClipOffset="0.15" Size="(0.23; 0.18)" Pos="(4.188; 2.018; -1.008)" ReflectionDir="(-0.994; 0.047; 0.104)" ClipDir="(-0.994; 0.047; 0.104)" FOVScale="2.6">
+
+                                                              </Mirror>
+                                                        </Cockpit>
+                  </Camera>
+                  <Driver SteeringWheelPos="(2.354; 2.178; 0.602)" Pos="(1.92; 1.821; 0.609)">
+
+                  </Driver>
+                  <WinchUpgradeSocket IsUpgradable="true" Default="w_heavy_trucks_default" Type="winches_heavy_trucks">
+
+                  </WinchUpgradeSocket>
+                  <FuelTank DamageCapacity="100">
+
+                  </FuelTank>
+                  <Intake Origin="(4.544; 1.301; 0)" Size="0.8" Dir="(1; 0; 0)">
+
+                  </Intake>
+        </TruckData>
+        <HeadLight _template="Default" ParentFrame="BoneCabinDamper_cdt" Pos="(7.084; 1.180; 0)">
+
+        </HeadLight>
+        <ModelAttachments>
+                      <HeadLight>
+                            <Model _template="HeadLightRay" ParentFrame="BoneCabinDamper_cdt" Org="(4.158; 1.12; 1.025)">
+
+                            </Model>
+                            <Model _template="HeadLightRay" ParentFrame="BoneCabinDamper_cdt" Org="(4.158; 1.12; -1.025)">
+
+                            </Model>
+                              <Flare _template="HeadLight" Pos="(4.162; 1.12; 1.023)" ParentFrame="BoneCabinDamper_cdt" Color="g(255; 235; 215) x 1" Size="0.2">
+
+                              </Flare>
+                              <Flare _template="HeadLight" Pos="(4.162; 1.12; -1.023)" ParentFrame="BoneCabinDamper_cdt" Color="g(255; 235; 215) x 1" Size="0.2">
+
+                              </Flare>
+                              <Flare _template="HeadLight" Pos="(4.233; 1.12; 0.899)" ParentFrame="BoneCabinDamper_cdt" Color="g(255; 235; 215) x 1" Size="0.2">
+
+                              </Flare>
+                              <Flare _template="HeadLight" Pos="(4.233; 1.12; -0.899)" ParentFrame="BoneCabinDamper_cdt" Color="g(255; 235; 215) x 1" Size="0.2">
+
+                              </Flare>
+                              <Flare _template="BlueStreak" ParentFrame="BoneCabinDamper_cdt" Dir="(1; 0; 0)" Pos="(4.158; 1.12; 1.025)" Color="g(220; 220; 255) x 0.1" Size="0.8">
+
+                              </Flare>
+                              <Flare _template="BlueStreak" ParentFrame="BoneCabinDamper_cdt" Dir="(1; 0; 0)" Pos="(4.158; 1.12; -1.025)" Color="g(220; 220; 255) x 0.1" Size="0.8">
+
+                              </Flare>
+                      </HeadLight>
+                      <ReverseSignals>
+                            <Light _template="ReverseSignal" Pos="(-4.423; 0.691; 0)">
+
+                            </Light>
+                                <Flare _template="ReverseSignal" Size="0.2" Pos="(-4.418; 0.714; 0.289)">
+
+                                </Flare>
+                                <Flare _template="ReverseSignal" Size="0.2" Pos="(-4.418; 0.714; -0.289)">
+
+                                </Flare>
+                                <Flare _template="BlueStreak" Dir="(-1; 0; 0)" Pos="(-4.418; 0.714; 0.289)" Color="g(220; 220; 255) x 0.1" Size="0.3">
+
+                                </Flare>
+                                <Flare _template="BlueStreak" Dir="(-1; 0; 0)" Pos="(-4.418; 0.714; -0.289)" Color="g(220; 220; 255) x 0.1" Size="0.3">
+
+                                </Flare>
+                      </ReverseSignals>
+                      <Ignition>
+                                <Light _template="IgnitionSignalWhite" Pos="(5; 1.12; -1.025)" Color="g(255; 235; 215) x 1.0" ParentFrame="BoneCabinDamper_cdt">
+
+                                </Light>
+                                <Light _template="IgnitionSignalWhite" Pos="(5; 1.12; 1.025)" Color="g(255; 235; 215) x 1.0" ParentFrame="BoneCabinDamper_cdt">
+
+                                </Light>
+                                <Light _template="IgnitionSignalRed" Color="g(255; 10; 10) x 0.5" Pos="(-4.417; 0.685; 0)">
+
+                                </Light>
+                                  <Flare _template="IgnitionSignalOrange" ParentFrame="BoneCabinDamper_cdt" Pos="(3.325; 1.695; -1.059)" Dir="(1; 0; 0)" Size="0.7" AspectRatio="0.5" Color="g(255; 140; 0) x 0.5">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalOrange" ParentFrame="BoneCabinDamper_cdt" Pos="(3.325; 1.695; 1.059)" Dir="(1; 0; 0)" Size="0.7" AspectRatio="0.5" Color="g(255; 140; 0) x 0.5">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalOrange" ParentFrame="BoneCabinDamper_cdt" Pos="(4.242; 1.193; 0.97)" Dir="(1; 0; 0.8)" Size="0.2" AspectRatio="4" Color="g(255; 140; 0) x 0.5">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalOrange" ParentFrame="BoneCabinDamper_cdt" Pos="(4.242; 1.193; -0.97)" Dir="(1; 0; -0.8)" Size="0.2" AspectRatio="4" Color="g(255; 140; 0) x 0.5">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalOrange" ParentFrame="BoneCabinDamper_cdt" Pos="(3.268; 1.305; -1.259)" Dir="(0; 0; -1)" Size="0.2" AspectRatio="2" Color="g(255; 140; 0) x 0.5">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalOrange" ParentFrame="BoneCabinDamper_cdt" Pos="(3.268; 1.305; 1.259)" Dir="(0; 0; 1)" Size="0.2" AspectRatio="2" Color="g(255; 140; 0) x 0.5">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalRed" Dir="(-1; 0; 0)" AspectRatio="2" Pos="(-4.418; 0.667; 0.289)">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalRed" Dir="(-1; 0; 0)" AspectRatio="2" Pos="(-4.418; 0.667; -0.289)">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalWhite" Pos="(4.223; 1.12; 0.899)" ParentFrame="BoneCabinDamper_cdt" Color="g(255; 235; 215) x 0.2" Size="0.4">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalWhite" Pos="(4.223; 1.12; -0.899 " ParentFrame="BoneCabinDamper_cdt" Color="g(255; 235; 215) x 0.2" Size="0.4">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalWhite" Pos="(4.158; 1.12; 1.025)" ParentFrame="BoneCabinDamper_cdt" Color="g(255; 235; 215) x 0.2" Size="0.4">
+
+                                  </Flare>
+                                  <Flare _template="IgnitionSignalWhite" Pos="(4.158; 1.12; -1.025)" ParentFrame="BoneCabinDamper_cdt" Color="g(255; 235; 215) x 0.2" Size="0.4">
+
+                                  </Flare>
+                      </Ignition>
+                      <StopSignals>
+                                <Light _template="StopSignal" Pos="(-4.433; 0.641; 0)">
+
+                                </Light>
+                                    <Flare _template="StopSignal" Size="0.3" Pos="(-4.418; 0.667; 0.289)">
+
+                                    </Flare>
+                                    <Flare _template="StopSignal" Size="0.3" Pos="(-4.418; 0.667; -0.289)">
+
+                                    </Flare>
+                      </StopSignals>
+        </ModelAttachments>
+        <AutomaticIK>
+                        <IKBone ModelFrame="BoneTieRod2" ParentFrame="BoneTieRod1_cdt">
+                            <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone ModelFrame="BoneTieRod3" AttachToFrame="BoneRackL" AttachOffset="(0; 0; 0)">
+                                  <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                        </IKBone>
+        </AutomaticIK>
+        <PhysicsModel Mesh="trucks/western_star_57x">
+                          <Body NetSync="pv" Mass="3500" ImpactType="Truck" CenterOfMassOffset="(-1.5; -0.2; 0)">
+                                <Body _template="Mudguard" ModelFrame="BoneMudguardL_cdt">
+
+                                </Body>
+                                <Body _template="Mudguard" ModelFrame="BoneMudguardR_cdt">
+
+                                </Body>
+                                <Body ModelFrame="BoneCabin_cdt" NetSync="pv" Mass="2750" ImpactType="Truck" CenterOfMassOffset="(2.7; 0.4; 0)">
+                                  <Constraint Type="Hinge" MinLimit="-5" MaxLimit="5" AxisLocal="(1; 0; 0)">
+                                      <Motor Spring="600000" Type="Spring" Damping="30000">
+
+                                      </Motor>
+                                  </Constraint>
+                                      <Body ModelFrame="BoneCabinDamper_cdt" Mass="1250" ImpactType="Truck" CenterOfMassOffset="(-0.2; -0.8; 0)">
+                                        <Constraint PlaneAxisLocal="(1; 0; 0)" TwistAxisLocal="(0; 1; 0)" Type="Ragdoll" PlaneMin="-0.1" PlaneMax="1" Cone="2">
+                                            <PlaneMotor Spring="250000" Type="Spring" Damping="38500">
+
+                                            </PlaneMotor>
+                                            <ConeMotor Spring="350000" Type="Spring" Damping="42500">
+
+                                            </ConeMotor>
+                                        </Constraint>
+                                            <Body Mass="5" ModelFrame="BoneCurtain1_cdt">
+                                              <Constraint AxisLocal="(1; 0; 0)" MaxLimit="0.02" MinLimit="-0.02" Type="Prismatic" PivotOffset="(0; 0; 0)">
+                                                  <Motor Spring="800" Type="Spring" Damping="8">
+
+                                                  </Motor>
+                                              </Constraint>
+                                            </Body>
+                                            <Body Mass="10" ModelFrame="BoneCurtain2_cdt">
+                                              <Constraint AxisLocal="(1; 0; 0)" MaxLimit="0.05" MinLimit="-0.2" Type="Prismatic" PivotOffset="(0; 0; 0)">
+                                                  <Motor Spring="1800" Type="Spring" Damping="180">
+
+                                                  </Motor>
+                                              </Constraint>
+                                            </Body>
+                                            <Body _template="Mirror" ModelFrame="BoneMirrorL_cdt">
+
+                                            </Body>
+                                            <Body _template="Mirror" ModelFrame="BoneMirrorR_cdt">
+
+                                            </Body>
+                                            <Body _template="Mirror" ModelFrame="BoneMirrorFrontL_cdt">
+                                              <Constraint MinLimit="-1" MaxLimit="1">
+                                                  <Motor Spring="300" Type="Spring" Damping="10">
+
+                                                  </Motor>
+                                              </Constraint>
+                                            </Body>
+                                            <Body _template="Mirror" ModelFrame="BoneMirrorFrontR_cdt">
+                                              <Constraint MinLimit="-1" MaxLimit="1">
+                                                  <Motor Spring="300" Type="Spring" Damping="10">
+
+                                                  </Motor>
+                                              </Constraint>
+                                            </Body>
+                                            <Body _template="Sunshield" ModelFrame="BoneSunshieldL_cdt">
+
+                                            </Body>
+                                            <Body _template="Sunshield" ModelFrame="BoneSunshieldR_cdt">
+
+                                            </Body>
+                                      </Body>
+                                      <Body _template="TieRod" ModelFrame="BoneTieRod1_cdt">
+                                        <Constraint AxisLocal="(0; 0; 1)" Name="TieRodSteer" MinLimit="-30" MaxLimit="30">
+
+                                        </Constraint>
+                                      </Body>
+                                </Body>
+                          </Body>
+                          <NetSync Legacy="false">
+
+                          </NetSync>
+        </PhysicsModel>
+  </Truck>
