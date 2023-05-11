@@ -17,7 +17,7 @@ Clone this repository and install the [requirements](https://github.com/MisterNo
 ### Luarocks
 
 luafilesystem  
-xml2lua v1.5-1 (v1.5-2 procudes invalid xml files)
+xml2lua 1.5-1 (v1.5-2 procudes invalid xml files)
 
 # Usage
 
