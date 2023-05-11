@@ -1,677 +1,677 @@
+  <_templates Include="trucks">
+      <Wheel>
+          <Front ParentFrame="BoneCabin_cdt" SteeringAngle="25" Location="front" SteeringJointOffset="0.6" Torque="none" SteeringCastor="8">
+
+          </Front>
+          <Rear Location="rear" ConnectedToHandbrake="true" Torque="default">
+
+          </Rear>
+      </Wheel>
+      <Body>
+            <Mudguard Mass="10">
+                <Constraint Type="Hinge">
+                    <Motor Spring="20" Damping="30" Type="Spring">
+
+                    </Motor>
+                </Constraint>
+            </Mudguard>
+      </Body>
+  </_templates>
   <Truck>
-      <PhysicsModel Mesh="trucks/cat_770g">
-          <NetSync Legacy="false">
+        <HeadLight OuterCone="130" Dir="(1; -0.2; 0)" AttenStart="1" InnerCone="0" Color="g(255; 212; 154) x 8.5" Pos="(3.874; 2.305; 0)" AttenEnd="40">
 
-          </NetSync>
-          <Body CenterOfMassOffset="(-1.5; 0; 0)" ImpactType="Truck" NetSync="pv" ModelFrame="BoneChassis_cdt" Mass="12750">
-                <Body CenterOfMassOffset="(-0.5; -0.8; 0)" ImpactType="Truck" NetSync="pv" ModelFrame="BoneCabin_cdt" Mass="12250">
-                    <Constraint Type="Fixed">
+        </HeadLight>
+        <GameData UnlockByExploration="true" Price="143500" UnlockByRank="1" Country="US">
+              <CustomizationCameras>
+                    <CameraPos Name="roof_sticker" InterestPosition="(4.4457;1.7962;-0.5581)" Position="(7.6563;7.7975;-0.0651)" Interior="true" FOV="32.0">
 
-                    </Constraint>
-                        <Body _template="TieRod" ModelFrame="BoneTieRod_cdt">
-                          <Constraint MinLimit="-35" Name="TieRodSteer" MaxLimit="35" AxisLocal="(0; -1; 0)">
+                    </CameraPos>
+                    <CameraPos Name="sticker_1" InterestPosition="(3.99;2.2247;2.5343)" Position="(5.4516;3.3453;-0.7229)" Interior="true" FOV="32.0">
 
-                          </Constraint>
-                        </Body>
-                        <Body ModelFrame="BoneMirrorFrontL_cdt" Mass="10" ImpactType="Truck">
-                          <Constraint Type="Ragdoll" PlaneAxisLocal="(1; 0; 1)" PlaneMax="1" PlaneMin="-1" Cone="1" TwistAxisLocal="(0; 1; 0)">
-                              <AllMotor Spring="5500" Type="Spring" Damping="10">
+                    </CameraPos>
+                    <CameraPos MaxZoom="2" Name="addon_1" MaxYRotation="360" InterestPosition="(1.814; 1.692; 0)" Position="(-7.113; 4.445; 8.243)" MaxXRotation="360" FOV="32.0">
 
-                              </AllMotor>
-                          </Constraint>
-                        </Body>
-                        <Body ModelFrame="BoneMirrorFrontR_cdt" Mass="10" ImpactType="Truck">
-                          <Constraint Type="Ragdoll" PlaneAxisLocal="(1; 0; 1)" PlaneMax="1" PlaneMin="-1" Cone="2" TwistAxisLocal="(0; 1; 0)">
-                              <AllMotor Spring="5500" Type="Spring" Damping="1">
+                    </CameraPos>
+                    <CameraPos MaxZoom="2" Name="addon_2" MaxYRotation="360" InterestPosition="(3.1938;1.8074;0.0)" Position="(-8.0926;2.3374;-6.7182)" MaxXRotation="360" FOV="32.0">
 
-                              </AllMotor>
-                          </Constraint>
-                        </Body>
-                        <Body ModelFrame="BoneAntenna_cdt" Mass="3" ImpactType="Truck">
-                          <Constraint Type="Ragdoll" PlaneAxisLocal="(0; 0; 1)" PlaneMax="20" PlaneMin="-1" Cone="90" TwistAxisLocal="(0; 1; 0)">
-                              <AllMotor Spring="50" Type="Spring" Damping="1">
+                    </CameraPos>
+                    <CameraPos Name="mirror_mount" InterestPosition="(7.345;3.0025;1.4987)" Position="(4.5874;3.6803;0.0727)" Interior="true" FOV="32.0">
 
-                              </AllMotor>
-                          </Constraint>
-                        </Body>
-                        <Body _template="Mudguard" ModelFrame="BoneMudguardL_cdt">
-                          <Constraint MaxLimit="1" AxisLocal="(0; 0; 1)" MinLimit="-3">
+                    </CameraPos>
+                    <CameraPos MaxZoom="2" Name="side_r" MaxYRotation="360" InterestPosition="(4.7642;1.9696;-0.0)" Position="(-0.2259;4.9691;-4.5076)" MaxXRotation="360" FOV="32.0">
 
-                          </Constraint>
-                        </Body>
-                        <Body _template="Mudguard" ModelFrame="BoneMudguardR_cdt">
-                          <Constraint MaxLimit="2" AxisLocal="(0; 0; 1)" MinLimit="-10">
+                    </CameraPos>
+                    <CameraPos Name="sticker" InterestPosition="(7.2766;1.7382;-0.7342)" Position="(4.694;3.55;-0.1004)" Interior="true" FOV="32.0">
 
-                          </Constraint>
-                        </Body>
-                        <Body Collisions="None" ModelFrame="BoneMudguardL2_cdt" Mass="30">
-                          <Constraint MinLimit="-10" Type="Hinge" MaxLimit="10" AxisLocal="(1; 0; 0)">
-                              <Motor Spring="100" Type="Spring" Damping="1">
+                    </CameraPos>
+                    <CameraPos Name="door_r_sticker" InterestPosition="(6.3883;2.2248;0.5097)" Position="(4.0326;3.7016;3.9699)" Interior="true" FOV="32.0">
 
-                              </Motor>
-                          </Constraint>
-                        </Body>
-                        <Body Collisions="None" ModelFrame="BoneMudguardR2_cdt" Mass="30">
-                          <Constraint MinLimit="-10" Type="Hinge" MaxLimit="10" AxisLocal="(1; 0; 0)">
-                              <Motor Spring="200" Type="Spring" Damping="1">
+                    </CameraPos>
+                    <CameraPos MaxZoom="2" Name="roof" MaxYRotation="360" InterestPosition="(4.7579;2.3584;-0.0)" Position="(10.7871;4.8062;-3.7174)" MaxXRotation="360" FOV="32.0">
 
-                              </Motor>
-                          </Constraint>
-                        </Body>
-                        <Body Collisions="None" ModelFrame="BoneMudguardL3_cdt" Mass="20">
-                          <Constraint MinLimit="-30" Type="Hinge" MaxLimit="30" AxisLocal="(1; 0; 0)">
-                              <Motor Spring="200" Type="Spring" Damping="5">
+                    </CameraPos>
+                    <CameraPos Name="capote_sticker" InterestPosition="(6.071;1.8092;-0.6331)" Position="(9.0422;5.5084;-0.4206)" Interior="true" FOV="32.0">
 
-                              </Motor>
-                          </Constraint>
-                        </Body>
-                        <Body Collisions="None" ModelFrame="BoneMudguardL4_cdt" Mass="20">
-                          <Constraint MinLimit="-30" Type="Hinge" MaxLimit="30" AxisLocal="(0; 1; 0)">
-                              <Motor Spring="100" Type="Spring" Damping="2">
+                    </CameraPos>
+                    <CameraPos MaxZoom="2" Name="hoods" MaxYRotation="360" InterestPosition="(5.997;1.735;0.0)" Position="(13.57;1.44;-3.425)" MaxXRotation="360" FOV="32.0">
 
-                              </Motor>
-                          </Constraint>
-                        </Body>
-                        <Body Collisions="None" ModelFrame="BoneMudguardR3_cdt" Mass="20">
-                          <Constraint MinLimit="-30" Type="Hinge" MaxLimit="30" AxisLocal="(1; 0; 0)">
-                              <Motor Spring="200" Type="Spring" Damping="5">
+                    </CameraPos>
+                    <CameraPos MaxZoom="2" Name="side_l" MaxYRotation="360" InterestPosition="(6.27;2.278;0.0)" Position="(11.866;5.284;-4.55)" MaxXRotation="360" FOV="32.0">
 
-                              </Motor>
-                          </Constraint>
-                        </Body>
-                        <Body Collisions="None" ModelFrame="BoneMudguardR4_cdt" Mass="20">
-                          <Constraint MinLimit="-30" Type="Hinge" MaxLimit="30" AxisLocal="(0; 1; 0)">
-                              <Motor Spring="100" Type="Spring" Damping="2">
+                    </CameraPos>
+                    <CameraPos Name="bubble_head" InterestPosition="(7.4574;0.2866;3.293)" Position="(4.7774;3.8079;-0.2615)" Interior="true" FOV="32.0">
 
-                              </Motor>
-                          </Constraint>
-                        </Body>
-                        <Body ModelFrame="BoneChock1_cdt" Mass="30">
-                          <Constraint MinLimit="-6" Type="Hinge" MaxLimit="50" AxisLocal="(0; 0; 1)">
-                              <Motor Spring="300" Type="Spring" Damping="5">
+                    </CameraPos>
+                    <CameraPos MaxZoom="2" Name="wheels" MaxYRotation="360" InterestPosition="(3.2365;1.1327;-0.0)" Position="(5.9393;2.2174;-6.2555)" MaxXRotation="360" FOV="32.0">
 
-                              </Motor>
-                          </Constraint>
-                        </Body>
-                        <Body ModelFrame="BoneChock2_cdt" Mass="20">
-                          <Constraint MinLimit="-6" Type="Hinge" MaxLimit="50" AxisLocal="(0; 0; 1)">
-                              <Motor Spring="200" Type="Spring" Damping="15">
+                    </CameraPos>
+                    <CameraPos MaxZoom="2" Name="default" MaxYRotation="360" InterestPosition="(5.1967;1.735;-0.0)" Position="(13.6412;1.3843;-4.5364)" MaxXRotation="360" FOV="32.0">
 
-                              </Motor>
-                          </Constraint>
-                        </Body>
-                        <Body Collisions="None" ModelFrame="BoneLock_cdt" Mass="5">
-                          <Constraint MinLimit="-140" Type="Hinge" MaxLimit="10" AxisLocal="(1; 0; 0)">
-                              <Motor Spring="1" Type="Spring" Damping=".01">
+                    </CameraPos>
+                    <CameraPos MaxZoom="2" Name="rear" MaxYRotation="360" InterestPosition="(0.4787;0.9924;-0.0)" Position="(-5.7668;1.8049;2.8989)" MaxXRotation="360" FOV="32.0">
 
-                              </Motor>
-                          </Constraint>
-                        </Body>
-                        <Body Collisions="None" ModelFrame="BoneMirrorL_cdt" Mass="15">
-                          <Constraint MinLimit="-2" Type="Hinge" MaxLimit="2" AxisLocal="(0; 1; 0)">
-                              <Motor Spring="1000" Type="Spring" Damping="1">
+                    </CameraPos>
+                    <CameraPos Name="glass_sticker" InterestPosition="(3.8767;2.6219;-1.0871)" Position="(9.0056;4.7772;0.6588)" Interior="true" FOV="32.0">
 
-                              </Motor>
-                          </Constraint>
-                        </Body>
-                        <Body Collisions="None" ModelFrame="BoneMirrorR_cdt" Mass="15">
-                          <Constraint MinLimit="-2" Type="Hinge" MaxLimit="2" AxisLocal="(0; 1; 0)">
-                              <Motor Spring="1000" Type="Spring" Damping="1">
+                    </CameraPos>
+                    <CameraPos Name="curtain" InterestPosition="(7.345;3.0025;1.4987)" Position="(4.5874;3.6803;0.0727)" Interior="true" FOV="32.0">
 
-                              </Motor>
-                          </Constraint>
-                        </Body>
+                    </CameraPos>
+              </CustomizationCameras>
+              <UiDesc UiName="UI_VEHICLE_CAT_770G_NAME" UiDesc="UI_VEHICLE_CAT_770G_DESC" UiIconLogo="CatterpillarLogo80" UiIcon40x40="heavyVehicleImg" UiIcon30x30="heavyVehicleImg30" UiIcon328x458="shopImgCat770g">
+
+              </UiDesc>
+                    <AddonSockets>
+                        <Socket Offset="(0; 0; 0)" Names="Cat770gSaddle">
+
+                        </Socket>
+                        <Socket Offset="(0; 0; 0)" Names="Cat770gTank" NamesBlock="SemitrailerCat770g">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(-1.493; 2.04; 0)" Names="SemitrailerCat770g" ParentFrame="BoneChassis_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(2.333; 2.815; -0.626)" Names="StuffDashboard" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Names="cat770GSticker_1x1_01" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Names="cat770GSticker_1x1_02" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Names="cat770GSticker_1x1_03" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Names="cat770GSticker_1x2_01" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Names="cat770GSticker_1x2_02" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Names="cat770GSticker_1x4_01" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Names="cat770GSticker_GlassTop" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Names="cat770GSticker_GlassBottom" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="cat770GSticker_Door_R" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="cat770GSticker_Roof" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="cat770GSticker_Capote" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(2.147; 3.723; -0.248)" Names="StuffAirfreshener" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Names="StuffCurtainCat770g" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                      <CraneSocket Pos="(3.66; 0.869; -0.908)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(3.66; 0.869; 0.908)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(0.173; 1.63; -0.532)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(0.173; 1.63; 0.532)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-2.594; 1.57; 0)">
+
+                      </CraneSocket>
+                        <WinchSocket Pos="(3.66; 0.869; -0.908)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(3.66; 0.869; 0.908)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(0.173; 1.63; -0.532)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(0.173; 1.63; 0.532)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(-2.594; 1.57; 0)">
+
+                        </WinchSocket>
+        </GameData>
+        <PhysicsModel Mesh="trucks/cat_770g">
+                <Body NetSync="pv" CenterOfMassOffset="(-1.5; 0; 0)" ModelFrame="BoneChassis_cdt" Mass="12750" ImpactType="Truck">
+                    <Body NetSync="pv" CenterOfMassOffset="(-0.5; -0.8; 0)" ModelFrame="BoneCabin_cdt" Mass="12250" ImpactType="Truck">
+                        <Constraint Type="Fixed">
+
+                        </Constraint>
+                            <Body ModelFrame="BoneTieRod_cdt" _template="TieRod">
+                              <Constraint MaxLimit="35" AxisLocal="(0; -1; 0)" MinLimit="-35" Name="TieRodSteer">
+
+                              </Constraint>
+                            </Body>
+                            <Body ModelFrame="BoneMirrorFrontL_cdt" Mass="10" ImpactType="Truck">
+                              <Constraint Type="Ragdoll" PlaneMin="-1" PlaneMax="1" TwistAxisLocal="(0; 1; 0)" Cone="1" PlaneAxisLocal="(1; 0; 1)">
+                                  <AllMotor Spring="5500" Damping="10" Type="Spring">
+
+                                  </AllMotor>
+                              </Constraint>
+                            </Body>
+                            <Body ModelFrame="BoneMirrorFrontR_cdt" Mass="10" ImpactType="Truck">
+                              <Constraint Type="Ragdoll" PlaneMin="-1" PlaneMax="1" TwistAxisLocal="(0; 1; 0)" Cone="2" PlaneAxisLocal="(1; 0; 1)">
+                                  <AllMotor Spring="5500" Damping="1" Type="Spring">
+
+                                  </AllMotor>
+                              </Constraint>
+                            </Body>
+                            <Body ModelFrame="BoneAntenna_cdt" Mass="3" ImpactType="Truck">
+                              <Constraint Type="Ragdoll" PlaneMin="-1" PlaneMax="20" TwistAxisLocal="(0; 1; 0)" Cone="90" PlaneAxisLocal="(0; 0; 1)">
+                                  <AllMotor Spring="50" Damping="1" Type="Spring">
+
+                                  </AllMotor>
+                              </Constraint>
+                            </Body>
+                            <Body ModelFrame="BoneMudguardL_cdt" _template="Mudguard">
+                              <Constraint MinLimit="-3" MaxLimit="1" AxisLocal="(0; 0; 1)">
+
+                              </Constraint>
+                            </Body>
+                            <Body ModelFrame="BoneMudguardR_cdt" _template="Mudguard">
+                              <Constraint MinLimit="-10" MaxLimit="2" AxisLocal="(0; 0; 1)">
+
+                              </Constraint>
+                            </Body>
+                            <Body ModelFrame="BoneMudguardL2_cdt" Mass="30" Collisions="None">
+                              <Constraint Type="Hinge" MaxLimit="10" AxisLocal="(1; 0; 0)" MinLimit="-10">
+                                  <Motor Spring="100" Damping="1" Type="Spring">
+
+                                  </Motor>
+                              </Constraint>
+                            </Body>
+                            <Body ModelFrame="BoneMudguardR2_cdt" Mass="30" Collisions="None">
+                              <Constraint Type="Hinge" MaxLimit="10" AxisLocal="(1; 0; 0)" MinLimit="-10">
+                                  <Motor Spring="200" Damping="1" Type="Spring">
+
+                                  </Motor>
+                              </Constraint>
+                            </Body>
+                            <Body ModelFrame="BoneMudguardL3_cdt" Mass="20" Collisions="None">
+                              <Constraint Type="Hinge" MaxLimit="30" AxisLocal="(1; 0; 0)" MinLimit="-30">
+                                  <Motor Spring="200" Damping="5" Type="Spring">
+
+                                  </Motor>
+                              </Constraint>
+                            </Body>
+                            <Body ModelFrame="BoneMudguardL4_cdt" Mass="20" Collisions="None">
+                              <Constraint Type="Hinge" MaxLimit="30" AxisLocal="(0; 1; 0)" MinLimit="-30">
+                                  <Motor Spring="100" Damping="2" Type="Spring">
+
+                                  </Motor>
+                              </Constraint>
+                            </Body>
+                            <Body ModelFrame="BoneMudguardR3_cdt" Mass="20" Collisions="None">
+                              <Constraint Type="Hinge" MaxLimit="30" AxisLocal="(1; 0; 0)" MinLimit="-30">
+                                  <Motor Spring="200" Damping="5" Type="Spring">
+
+                                  </Motor>
+                              </Constraint>
+                            </Body>
+                            <Body ModelFrame="BoneMudguardR4_cdt" Mass="20" Collisions="None">
+                              <Constraint Type="Hinge" MaxLimit="30" AxisLocal="(0; 1; 0)" MinLimit="-30">
+                                  <Motor Spring="100" Damping="2" Type="Spring">
+
+                                  </Motor>
+                              </Constraint>
+                            </Body>
+                            <Body Mass="30" ModelFrame="BoneChock1_cdt">
+                              <Constraint Type="Hinge" MaxLimit="50" AxisLocal="(0; 0; 1)" MinLimit="-6">
+                                  <Motor Spring="300" Damping="5" Type="Spring">
+
+                                  </Motor>
+                              </Constraint>
+                            </Body>
+                            <Body Mass="20" ModelFrame="BoneChock2_cdt">
+                              <Constraint Type="Hinge" MaxLimit="50" AxisLocal="(0; 0; 1)" MinLimit="-6">
+                                  <Motor Spring="200" Damping="15" Type="Spring">
+
+                                  </Motor>
+                              </Constraint>
+                            </Body>
+                            <Body ModelFrame="BoneLock_cdt" Mass="5" Collisions="None">
+                              <Constraint Type="Hinge" MaxLimit="10" AxisLocal="(1; 0; 0)" MinLimit="-140">
+                                  <Motor Spring="1" Damping=".01" Type="Spring">
+
+                                  </Motor>
+                              </Constraint>
+                            </Body>
+                            <Body ModelFrame="BoneMirrorL_cdt" Mass="15" Collisions="None">
+                              <Constraint Type="Hinge" MaxLimit="2" AxisLocal="(0; 1; 0)" MinLimit="-2">
+                                  <Motor Spring="1000" Damping="1" Type="Spring">
+
+                                  </Motor>
+                              </Constraint>
+                            </Body>
+                            <Body ModelFrame="BoneMirrorR_cdt" Mass="15" Collisions="None">
+                              <Constraint Type="Hinge" MaxLimit="2" AxisLocal="(0; 1; 0)" MinLimit="-2">
+                                  <Motor Spring="1000" Damping="1" Type="Spring">
+
+                                  </Motor>
+                              </Constraint>
+                            </Body>
+                    </Body>
                 </Body>
-          </Body>
-      </PhysicsModel>
-      <GameData Country="US" Price="143500" UnlockByRank="1" UnlockByExploration="true">
-            <CustomizationCameras>
-                  <CameraPos InterestPosition="(4.4457;1.7962;-0.5581)" Interior="true" Position="(7.6563;7.7975;-0.0651)" FOV="32.0" Name="roof_sticker">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(3.99;2.2247;2.5343)" Interior="true" Position="(5.4516;3.3453;-0.7229)" FOV="32.0" Name="sticker_1">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(1.814; 1.692; 0)" Name="addon_1" MaxXRotation="360" Position="(-7.113; 4.445; 8.243)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(3.1938;1.8074;0.0)" Name="addon_2" MaxXRotation="360" Position="(-8.0926;2.3374;-6.7182)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(7.345;3.0025;1.4987)" Interior="true" Position="(4.5874;3.6803;0.0727)" FOV="32.0" Name="mirror_mount">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.7642;1.9696;-0.0)" Name="side_r" MaxXRotation="360" Position="(-0.2259;4.9691;-4.5076)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(7.2766;1.7382;-0.7342)" Interior="true" Position="(4.694;3.55;-0.1004)" FOV="32.0" Name="sticker">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(6.3883;2.2248;0.5097)" Interior="true" Position="(4.0326;3.7016;3.9699)" FOV="32.0" Name="door_r_sticker">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.7579;2.3584;-0.0)" Name="roof" MaxXRotation="360" Position="(10.7871;4.8062;-3.7174)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(6.071;1.8092;-0.6331)" Interior="true" Position="(9.0422;5.5084;-0.4206)" FOV="32.0" Name="capote_sticker">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.997;1.735;0.0)" Name="hoods" MaxXRotation="360" Position="(13.57;1.44;-3.425)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(6.27;2.278;0.0)" Name="side_l" MaxXRotation="360" Position="(11.866;5.284;-4.55)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(7.4574;0.2866;3.293)" Interior="true" Position="(4.7774;3.8079;-0.2615)" FOV="32.0" Name="bubble_head">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(3.2365;1.1327;-0.0)" Name="wheels" MaxXRotation="360" Position="(5.9393;2.2174;-6.2555)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.1967;1.735;-0.0)" Name="default" MaxXRotation="360" Position="(13.6412;1.3843;-4.5364)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(0.4787;0.9924;-0.0)" Name="rear" MaxXRotation="360" Position="(-5.7668;1.8049;2.8989)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(3.8767;2.6219;-1.0871)" Interior="true" Position="(9.0056;4.7772;0.6588)" FOV="32.0" Name="glass_sticker">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(7.345;3.0025;1.4987)" Interior="true" Position="(4.5874;3.6803;0.0727)" FOV="32.0" Name="curtain">
-
-                  </CameraPos>
-            </CustomizationCameras>
-                <CraneSocket Pos="(3.66; 0.869; -0.908)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(3.66; 0.869; 0.908)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(0.173; 1.63; -0.532)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(0.173; 1.63; 0.532)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(-2.594; 1.57; 0)">
-
-                </CraneSocket>
-                  <AddonSockets>
-                      <Socket Offset="(0; 0; 0)" Names="Cat770gSaddle">
-
-                      </Socket>
-                      <Socket Offset="(0; 0; 0)" NamesBlock="SemitrailerCat770g" Names="Cat770gTank">
-
-                      </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneChassis_cdt" Offset="(-1.493; 2.04; 0)" Names="SemitrailerCat770g">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="StuffDashboard" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(2.333; 2.815; -0.626)">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="cat770GSticker_1x1_01">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="cat770GSticker_1x1_02">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="cat770GSticker_1x1_03">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="cat770GSticker_1x2_01">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="cat770GSticker_1x2_02">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="cat770GSticker_1x4_01">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="cat770GSticker_GlassTop">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="cat770GSticker_GlassBottom">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" Names="cat770GSticker_Door_R">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" Names="cat770GSticker_Roof">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" Names="cat770GSticker_Capote">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="StuffAirfreshener" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(2.147; 3.723; -0.248)">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="StuffCurtainCat770g">
-
-                    </Socket>
-                  </AddonSockets>
-                    <WinchSocket Pos="(3.66; 0.869; -0.908)">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(3.66; 0.869; 0.908)">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(0.173; 1.63; -0.532)">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(0.173; 1.63; 0.532)">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(-2.594; 1.57; 0)">
-
-                    </WinchSocket>
-            <UiDesc UiDesc="UI_VEHICLE_CAT_770G_DESC" UiIcon30x30="heavyVehicleImg30" UiName="UI_VEHICLE_CAT_770G_NAME" UiIconLogo="CatterpillarLogo80" UiIcon40x40="heavyVehicleImg" UiIcon328x458="shopImgCat770g">
-
-            </UiDesc>
-      </GameData>
-      <ControlledConstraints>
-              <Constraint Name="TieRodSteer" IsLinkedSteering="true" Id="chassis_steer">
-
-              </Constraint>
-      </ControlledConstraints>
-      <HeadLight AttenEnd="40" OuterCone="130" AttenStart="1" Dir="(1; -0.2; 0)" InnerCone="0" Pos="(3.874; 2.305; 0)" Color="g(255; 212; 154) x 8.5">
-
-      </HeadLight>
-      <TruckData EngineIconMesh="env/engine_default" EngineStartDelay="0.6" TruckType="HEAVY" ExhaustStartTime="0.6" SteerSpeed="0.017" TruckImage="cat770gmchr" DiffLockType="Always" Responsiveness="0.05" FuelCapacity="530" EngineIconScale="1.7" BackSteerSpeed="0.015">
-                  <Driver Pos="(1.792; 2.714; -0.041)" SteeringWheelPos="(2.174; 3.042; -0.048)">
-
-                  </Driver>
-                  <Shafts>
-                        <Shaft SocketPointB="Shaft1b" SocketPointA="Shaft1a">
-
-                        </Shaft>
-                  </Shafts>
-                  <FuelTank DamageCapacity="100">
-
-                  </FuelTank>
-                  <Dashboard>
-                              <Gauge Org="(2.513; 3.033; -0.059)" OutputAngles="(-110; 110)" Mesh="trucks/arrows/cat_770g_arrow_01" Damping="0.99" InputRange="(0;1)" InputType="rpm" Dir="(-0.966; 0.255; -0.039)">
-
-                              </Gauge>
-                              <Gauge Org="(2.521; 3.06; -0.11)" OutputAngles="(121; 59)" Mesh="trucks/arrows/cat_770g_arrow_03" Damping="0.99" InputRange="(0;1)" InputType="fuel" Dir="(-0.966; 0.255; -0.039)">
-
-                              </Gauge>
-                              <Gauge Org="(2.507; 3.023; 0.023)" OutputAngles="(-45; -5)" Mesh="trucks/arrows/cat_770g_arrow_02" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.966; 0.255; -0.039)">
-
-                              </Gauge>
-                              <Gauge Org="(2.513; 3.022; -0.141)" OutputAngles="(-45; 5)" Mesh="trucks/arrows/cat_770g_arrow_02" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.966; 0.255; -0.039)">
-
-                              </Gauge>
-                              <Gauge Org="(2.514; 3.049; -0.001)" OutputAngles="(-46; -10)" Mesh="trucks/arrows/cat_770g_arrow_02" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.966; 0.255; -0.039)">
-
-                              </Gauge>
-                              <Gauge Org="(2.522; 3.06; -0.141)" OutputAngles="(119; 90)" Mesh="trucks/arrows/cat_770g_arrow_03" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.966; 0.255; -0.039)">
-
-                              </Gauge>
-                  </Dashboard>
-                  <SoundsWheels _template="Default">
-
-                  </SoundsWheels>
-                  <GearboxSocket Default="g_special_default" Type="gearboxes_special">
-
-                  </GearboxSocket>
-                                <Steam Origin="(2.3; 1.8; 0)">
-
-                                </Steam>
-                                <Steam Origin="(0.4; 1.75; 0)">
-
-                                </Steam>
-                  <Sounds DisableReversePitch="true" MinDist="15.0" Origin="(2.3; 1.8; 0)" _template="Default">
-                                    <BrakesSqueal Sound="trucks/cat_770g/cat_770g_brakes_squeal">
-
-                                    </BrakesSqueal>
-                                    <AbruptStop Sound="trucks/common/truck_swing_big_old_rnd_set/truck_swing_big_old_rnd">
-
-                                    </AbruptStop>
-                                    <EngineLow Sound="trucks/cat_770g/cat_770g_low">
-
-                                    </EngineLow>
-                                    <EngineRev Sound="trucks/cat_770g/cat_770g_rev">
-
-                                    </EngineRev>
-                                    <EngineAccel Sound="trucks/cat_770g/cat_770g_acc">
-
-                                    </EngineAccel>
-                                    <Honk Sound="trucks/cat_770g/cat_770g_honk">
-
-                                    </Honk>
-                                    <EngineStop Sound="trucks/cat_770g/cat_770g_stop">
-
-                                    </EngineStop>
-                                    <Handbrake Sound="trucks/cat_770g/cat_770g_handbrake_on">
-
-                                    </Handbrake>
-                                    <EngineIdle_2d IsSound2D="true" Sound="trucks/cat_770g/cat_770g_idle_2d">
-
-                                    </EngineIdle_2d>
-                                    <EngineTrans Sound="trucks/cat_770g/cat_770g_turbo">
-
-                                    </EngineTrans>
-                                    <EngineHeavy_2d IsSound2D="true" Sound="trucks/cat_770g/cat_770g_heavy_2d">
-
-                                    </EngineHeavy_2d>
-                                    <ChassisStress Sound="trucks/common/truck_stress_rnd_set/truck_stress_rnd">
-
-                                    </ChassisStress>
-                                                              <Reverse _inheritRemove="true">
-
-                                                              </Reverse>
-                                                              <Reverse Sound="trucks/cat_770g/cat_770g_back_beeper">
-
-                                                              </Reverse>
-                                    <EngineHigh_2d IsSound2D="true" Sound="trucks/cat_770g/cat_770g_high_2d">
-
-                                    </EngineHigh_2d>
-                                    <EngineIdle Sound="trucks/cat_770g/cat_770g_idle">
-
-                                    </EngineIdle>
-                                    <HandbrakeOff Sound="trucks/cat_770g/cat_770g_handbrake_off">
-
-                                    </HandbrakeOff>
-                                    <EngineHigh Sound="trucks/cat_770g/cat_770g_high">
-
-                                    </EngineHigh>
-                                    <EngineLow_2d IsSound2D="true" Sound="trucks/cat_770g/cat_770g_low_2d">
-
-                                    </EngineLow_2d>
-                                    <EngineHeavy Sound="trucks/cat_770g/cat_770g_heavy">
-
-                                    </EngineHeavy>
-                                    <BrakeRelease Sound="trucks/cat_770g/cat_770g_brake_release">
-
-                                    </BrakeRelease>
-                                    <EngineStart Sound="trucks/cat_770g/cat_770g_start">
-
-                                    </EngineStart>
-                  </Sounds>
-                  <Intake Size="1.2" Origin="(3.632; 1.845; 0)" Dir="(1; 0; 0)">
-
-                  </Intake>
-                  <SoundsDamage _template="Heavy">
-
-                  </SoundsDamage>
-                  <Damage>
-                                            <DamageArea Max="(3.7; 2.9; 0.9)" Type="Engine" ParentFrame="BoneCabin_cdt" Min="(2.6; 0.9; -0.9)">
-
-                                            </DamageArea>
-                                            <DamageArea Max="(0.4; 1.75; 1.3)" Type="FuelTank" ParentFrame="BoneChassis_cdt" Min="(-1.15; 0.65; -1.45)">
-
-                                            </DamageArea>
-                  </Damage>
-                  <Camera Center="(-1.5; 0; 0)" RadiusMultiplier="1.1">
-                                            <Cockpit WindshieldShadingTexture="trucks/cat_770g_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/cat_770g_glass__d_a.tga" _template="Default" ViewPos="(1.7; 3.381; -0.041)">
-                                                  <Mirror FOVScale="2.5" Pos="(2.147; 3.194; 2.189)" ClipDir="(-0.867; 0; -0.498)" ReflectionDir="(-0.821; 0.059; -0.567)" Size="(0.45; 0.6)" ClipOffset="0.5" MeshFrame="mirror_left">
-
-                                                  </Mirror>
-                                                  <Mirror FOVScale="10" Pos="(3.886; 3.002; 1.37)" ClipDir="(-0.728; -0.489; -0.481)" Size="(0.4; 0.2)" CurveAngle="15" MeshFrame="mirror_left_front" ReflectionDir="(-0.728; -0.489; -0.481)">
-
-                                                  </Mirror>
-                                                  <Mirror FOVScale="2.5" Pos="(2.147; 3.194; -2.189)" ClipDir="(-0.867; 0; 0.498)" ReflectionDir="(-0.835; 0.06; 0.547)" Size="(0.45; 0.6)" ClipOffset="0.5" MeshFrame="mirror_right">
-
-                                                  </Mirror>
-                                                  <Mirror FOVScale="10" Pos="(3.881; 3.011; -1.378)" ClipDir="(-0.723; -0.519; 0.456)" Size="(0.4; 0.2)" CurveAngle="15" MeshFrame="mirror_right_front" ReflectionDir="(-0.723; -0.519; 0.456)">
-
-                                                  </Mirror>
-                                                <Rear _inheritRemove="true">
-
-                                                </Rear>
-                                            </Cockpit>
-                  </Camera>
-                  <LimitedFluid Type="Box" SizeX="0.878" Center="(-0.414; 1.24; 0.935)" SizeY="0.743" SizeZ="0.675">
-
-                  </LimitedFluid>
-                  <SuspensionSocket Default="cat_770g_suspension_default" Type="s_cat_770g" MaxWheelRadiusWithoutSuspension="1">
-
-                  </SuspensionSocket>
-                  <Wheels DefaultTire="mudtires_1" DefaultWheelType="wheels_superheavy_cat770g_double" DefaultRim="rim_1">
-                                                    <Wheel _template="Front" Pos="(1.556; 0.952; 1.5)">
-
-                                                    </Wheel>
-                                                    <Wheel Pos="(1.556; 0.952; 1.5)" _template="Front" RightSide="true">
-
-                                                    </Wheel>
-                                                    <Wheel _template="Rear" Pos="(-2.287; 0.952; 1.307)">
-
-                                                    </Wheel>
-                                                    <Wheel Pos="(-2.287; 0.952; 1.307)" _template="Rear" RightSide="true">
-
-                                                    </Wheel>
-                  </Wheels>
-                  <Axles>
-                                                      <Axle IsIndependent="true" Frame="BoneAxleL1">
-
-                                                      </Axle>
-                                                      <Axle IsIndependent="true" Frame="BoneAxleR1">
-
-                                                      </Axle>
-                                                      <Axle Frame="BoneAxle2">
-
-                                                      </Axle>
-                  </Axles>
-                  <EngineSocket Default="us_special_engine_0" Type="e_us_special">
-
-                  </EngineSocket>
-                  <OcclusionMap HalfSizeZ="2.7" MinX="-4" MaxX="4.5">
-
-                  </OcclusionMap>
-                  <Exhaust IsLight="true" Dir="(0; 0.275; -0.961)" Origin="(0.551; 2.427; -1.8)" Speed="3.00">
-
-                  </Exhaust>
-                  <WinchUpgradeSocket Default="w_heavy_trucks_default" IsUpgradable="true" Type="winches_heavy_trucks">
-
-                  </WinchUpgradeSocket>
-                  <SteeringWheel Frame="BoneSteering">
-
-                  </SteeringWheel>
-                  <CompatibleWheels Scale="0.94" Type="wheels_superheavy_cat770g_double">
-
-                  </CompatibleWheels>
-                  <SteeringRack RackHalfSizeZ="1.05" Frame="BoneRack" FrameSteerLeft="BoneRackL" FrameSteerRight="BoneRackR">
-
-                  </SteeringRack>
-      </TruckData>
-      <Landmark Mesh="landmarks/cat_770g_lmk" MaxScale="3.8" MinScale="1.8">
-
-      </Landmark>
-      <AutomaticIK>
+                <NetSync Legacy="false">
+
+                </NetSync>
+        </PhysicsModel>
+        <ControlledConstraints>
+                  <Constraint IsLinkedSteering="true" Id="chassis_steer" Name="TieRodSteer">
+
+                  </Constraint>
+        </ControlledConstraints>
+        <Snorkel Origin="(2.335; 2.76; -1.632)">
+
+        </Snorkel>
+        <AutomaticIK>
                         <IKBone ParentFrame="BoneTieRod_cdt" ModelFrame="BonePistonLBase2">
-                          <IKBone AttachToFrame="BoneRackL" AttachOffset="(0; 0; 0)" ModelFrame="BonePistonL2">
-                              <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
-
-                              </IKJoint>
-                          </IKBone>
-                          <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+                          <IKJoint Type="Hinge2" AxisLocal="(1; 0; 0)">
 
                           </IKJoint>
+                          <IKBone AttachToFrame="BoneRackL" AttachOffset="(0; 0; 0)" ModelFrame="BonePistonL2">
+                                <IKJoint Type="Slider" AxisLocal="(1; 0; 0)">
+
+                                </IKJoint>
+                          </IKBone>
                         </IKBone>
                         <IKBone ParentFrame="BoneTieRod_cdt" ModelFrame="BonePistonRBase2">
-                          <IKBone AttachToFrame="BoneRackR" AttachOffset="(0; 0; 0)" ModelFrame="BonePistonR2">
-                              <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
-
-                              </IKJoint>
-                          </IKBone>
-                          <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+                          <IKJoint Type="Hinge2" AxisLocal="(1; 0; 0)">
 
                           </IKJoint>
+                          <IKBone AttachToFrame="BoneRackR" AttachOffset="(0; 0; 0)" ModelFrame="BonePistonR2">
+                                <IKJoint Type="Slider" AxisLocal="(1; 0; 0)">
+
+                                </IKJoint>
+                          </IKBone>
                         </IKBone>
                         <IKBone ParentFrame="BoneCabin_cdt" ModelFrame="BonePistonLBase">
-                          <IKBone AttachToFrame="BoneRackL" AttachOffset="(0; 0; 0)" ModelFrame="BonePistonL">
-                              <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
-
-                              </IKJoint>
-                          </IKBone>
-                          <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+                          <IKJoint Type="Hinge2" AxisLocal="(1; 0; 0)">
 
                           </IKJoint>
+                          <IKBone AttachToFrame="BoneRackL" AttachOffset="(0; 0; 0)" ModelFrame="BonePistonL">
+                                <IKJoint Type="Slider" AxisLocal="(1; 0; 0)">
+
+                                </IKJoint>
+                          </IKBone>
                         </IKBone>
                         <IKBone ParentFrame="BoneCabin_cdt" ModelFrame="BonePistonRBase">
-                          <IKBone AttachToFrame="BoneRackR" AttachOffset="(0; 0; 0)" ModelFrame="BonePistonR">
-                              <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
-
-                              </IKJoint>
-                          </IKBone>
-                          <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+                          <IKJoint Type="Hinge2" AxisLocal="(1; 0; 0)">
 
                           </IKJoint>
+                          <IKBone AttachToFrame="BoneRackR" AttachOffset="(0; 0; 0)" ModelFrame="BonePistonR">
+                                <IKJoint Type="Slider" AxisLocal="(1; 0; 0)">
+
+                                </IKJoint>
+                          </IKBone>
                         </IKBone>
-      </AutomaticIK>
-      <Snorkel Origin="(2.335; 2.76; -1.632)">
+        </AutomaticIK>
+        <Landmark MaxScale="3.8" Mesh="landmarks/cat_770g_lmk" MinScale="1.8">
 
-      </Snorkel>
-      <ModelAttachments>
+        </Landmark>
+        <ModelAttachments>
+                          <HeadLight>
+                                <Flare Pos="(3.488; 2.527; -0.525)" _template="HeadLight" Color="g(255; 235; 205) x 0.6" Size="0.2">
+
+                                </Flare>
+                                <Flare Pos="(3.488; 2.527; 0.525)" _template="HeadLight" Color="g(255; 235; 205) x 0.6" Size="0.2">
+
+                                </Flare>
+                                <Flare Pos="(3.488; 2.527; -0.387)" _template="HeadLight" Color="g(255; 235; 205) x 0.6" Size="0.2">
+
+                                </Flare>
+                                <Flare Pos="(3.488; 2.527; 0.387)" _template="HeadLight" Color="g(255; 235; 205) x 0.6" Size="0.2">
+
+                                </Flare>
+                                <Flare Pos="(3.523; 2.445; -0.649)" _template="BlueStreak">
+
+                                </Flare>
+                                <Flare Pos="(3.523; 2.445; 0.649)" _template="BlueStreak">
+
+                                </Flare>
+                                  <Model Org="(3.488; 2.527; -0.525)" _template="HeadLightRay">
+
+                                  </Model>
+                                  <Model Org="(3.488; 2.527; 0.525)" _template="HeadLightRay">
+
+                                  </Model>
+                          </HeadLight>
                           <StopSignals>
-                                <Flare Size="0.4" _template="StopSignal" Pos="(-2.623; 1.631; -0.239)">
+                                <Light Pos="(-3.269; 1.274; 0)" Dir="(-0.707; -0.707; 0)" _template="StopSignal">
 
-                                </Flare>
-                                <Flare Size="0.4" _template="StopSignal" Pos="(-2.623; 1.631; 0.239)">
+                                </Light>
+                                    <Flare Pos="(-2.623; 1.631; -0.239)" Size="0.4" _template="StopSignal">
 
-                                </Flare>
-                              <Light Pos="(-3.269; 1.274; 0)" _template="StopSignal" Dir="(-0.707; -0.707; 0)">
+                                    </Flare>
+                                    <Flare Pos="(-2.623; 1.631; 0.239)" Size="0.4" _template="StopSignal">
 
-                              </Light>
+                                    </Flare>
                           </StopSignals>
                           <Ignition>
-                                  <Flare Color="g(255; 235; 205) x 0.3" Pos="(3.488; 2.527; -0.525)" Size="0.2" _template="IgnitionSignalWhite">
-
-                                  </Flare>
-                                  <Flare Color="g(255; 235; 205) x 0.3" Pos="(3.488; 2.527; 0.525)" Size="0.2" _template="IgnitionSignalWhite">
-
-                                  </Flare>
-                                  <Flare Color="g(255; 235; 205) x 0.3" Pos="(3.488; 2.527; -0.387)" Size="0.2" _template="IgnitionSignalWhite">
-
-                                  </Flare>
-                                  <Flare Color="g(255; 235; 205) x 0.3" Pos="(3.488; 2.527; 0.387)" Size="0.2" _template="IgnitionSignalWhite">
-
-                                  </Flare>
-                                  <Flare AspectRatio="1.3" Size="0.25" _template="IgnitionSignalRed" Pos="(-2.621; 1.63; -0.238)">
-
-                                  </Flare>
-                                  <Flare AspectRatio="1.3" Size="0.25" _template="IgnitionSignalRed" Pos="(-2.621; 1.63; 0.238)">
-
-                                  </Flare>
-                                    <Light ParentFrame="BoneCabin_cdt" _template="IgnitionSignalWhite" Pos="(3.488; 2.527; -0.525)">
+                                    <Light Pos="(3.488; 2.527; -0.525)" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalWhite">
 
                                     </Light>
-                                    <Light ParentFrame="BoneCabin_cdt" _template="IgnitionSignalWhite" Pos="(3.488; 2.527; 0.525)">
+                                    <Light Pos="(3.488; 2.527; 0.525)" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalWhite">
 
                                     </Light>
-                                    <Light Pos="(-3.269; 1.087; 0)" _template="IgnitionSignalRed" Dir="(-0.707; -0.707; 0)">
+                                    <Light Pos="(-3.269; 1.087; 0)" Dir="(-0.707; -0.707; 0)" _template="IgnitionSignalRed">
 
                                     </Light>
+                                      <Flare Pos="(3.488; 2.527; -0.525)" _template="IgnitionSignalWhite" Color="g(255; 235; 205) x 0.3" Size="0.2">
+
+                                      </Flare>
+                                      <Flare Pos="(3.488; 2.527; 0.525)" _template="IgnitionSignalWhite" Color="g(255; 235; 205) x 0.3" Size="0.2">
+
+                                      </Flare>
+                                      <Flare Pos="(3.488; 2.527; -0.387)" _template="IgnitionSignalWhite" Color="g(255; 235; 205) x 0.3" Size="0.2">
+
+                                      </Flare>
+                                      <Flare Pos="(3.488; 2.527; 0.387)" _template="IgnitionSignalWhite" Color="g(255; 235; 205) x 0.3" Size="0.2">
+
+                                      </Flare>
+                                      <Flare Pos="(-2.621; 1.63; -0.238)" _template="IgnitionSignalRed" AspectRatio="1.3" Size="0.25">
+
+                                      </Flare>
+                                      <Flare Pos="(-2.621; 1.63; 0.238)" _template="IgnitionSignalRed" AspectRatio="1.3" Size="0.25">
+
+                                      </Flare>
                           </Ignition>
-                          <HeadLight>
-                                    <Flare Color="g(255; 235; 205) x 0.6" Pos="(3.488; 2.527; -0.525)" Size="0.2" _template="HeadLight">
-
-                                    </Flare>
-                                    <Flare Color="g(255; 235; 205) x 0.6" Pos="(3.488; 2.527; 0.525)" Size="0.2" _template="HeadLight">
-
-                                    </Flare>
-                                    <Flare Color="g(255; 235; 205) x 0.6" Pos="(3.488; 2.527; -0.387)" Size="0.2" _template="HeadLight">
-
-                                    </Flare>
-                                    <Flare Color="g(255; 235; 205) x 0.6" Pos="(3.488; 2.527; 0.387)" Size="0.2" _template="HeadLight">
-
-                                    </Flare>
-                                    <Flare _template="BlueStreak" Pos="(3.523; 2.445; -0.649)">
-
-                                    </Flare>
-                                    <Flare _template="BlueStreak" Pos="(3.523; 2.445; 0.649)">
-
-                                    </Flare>
-                                      <Model Org="(3.488; 2.527; -0.525)" _template="HeadLightRay">
-
-                                      </Model>
-                                      <Model Org="(3.488; 2.527; 0.525)" _template="HeadLightRay">
-
-                                      </Model>
-                          </HeadLight>
                           <ReverseSignals>
-                                      <Flare Color="g(235; 220; 205) x 0.65" Pos="(-2.747; 1.365; -0.201)" Size="0.3" _template="ReverseSignal">
+                                      <Light Pos="(-3; 1; 0)" Dir="(-0.707; -0.707; 0)" _template="ReverseSignal" Color="g(235; 220; 205) x 1.5">
 
-                                      </Flare>
-                                      <Flare Color="g(235; 220; 205) x 0.65" Pos="(-2.747; 1.365; 0.201)" Size="0.3" _template="ReverseSignal">
+                                      </Light>
+                                      <Light OuterCone="90" Dir="(0; -1; 0)" _template="ReverseSignal" InnerCone="70" Color="g(235; 220; 205) x 1.5" Pos="(-0.4; 2.176; -1.657)">
 
-                                      </Flare>
-                                      <Flare Color="g(235; 220; 205) x 0.6" Pos="(0.826; 2.204; -1.657)" Size="0.1" _template="ReverseSignal">
+                                      </Light>
+                                      <Light OuterCone="90" Dir="(0; -1; 0)" _template="ReverseSignal" InnerCone="70" Color="g(235; 220; 205) x 1.5" Pos="(-0.4; 2.176; 1.657)">
 
-                                      </Flare>
-                                      <Flare Color="g(235; 220; 205) x 0.6" Pos="(0.826; 2.15; -1.657)" Size="0.1" _template="ReverseSignal">
+                                      </Light>
+                                        <Flare Pos="(-2.747; 1.365; -0.201)" _template="ReverseSignal" Color="g(235; 220; 205) x 0.65" Size="0.3">
 
-                                      </Flare>
-                                      <Flare Color="g(235; 220; 205) x 0.6" Pos="(0.826; 2.204; 1.657)" Size="0.1" _template="ReverseSignal">
+                                        </Flare>
+                                        <Flare Pos="(-2.747; 1.365; 0.201)" _template="ReverseSignal" Color="g(235; 220; 205) x 0.65" Size="0.3">
 
-                                      </Flare>
-                                      <Flare Color="g(235; 220; 205) x 0.6" Pos="(0.826; 2.15; 1.657)" Size="0.1" _template="ReverseSignal">
+                                        </Flare>
+                                        <Flare Pos="(0.826; 2.204; -1.657)" _template="ReverseSignal" Color="g(235; 220; 205) x 0.6" Size="0.1">
 
-                                      </Flare>
-                                      <Flare Color="g(220; 220; 255) x 0.05" Pos="(-2.573; 1.53; -0.223)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
+                                        </Flare>
+                                        <Flare Pos="(0.826; 2.15; -1.657)" _template="ReverseSignal" Color="g(235; 220; 205) x 0.6" Size="0.1">
 
-                                      </Flare>
-                                      <Flare Color="g(220; 220; 255) x 0.05" Pos="(-2.573; 1.53; 0.223)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
+                                        </Flare>
+                                        <Flare Pos="(0.826; 2.204; 1.657)" _template="ReverseSignal" Color="g(235; 220; 205) x 0.6" Size="0.1">
 
-                                      </Flare>
-                                        <Light Color="g(235; 220; 205) x 1.5" Dir="(-0.707; -0.707; 0)" Pos="(-3; 1; 0)" _template="ReverseSignal">
+                                        </Flare>
+                                        <Flare Pos="(0.826; 2.15; 1.657)" _template="ReverseSignal" Color="g(235; 220; 205) x 0.6" Size="0.1">
 
-                                        </Light>
-                                        <Light Color="g(235; 220; 205) x 1.5" OuterCone="90" Pos="(-0.4; 2.176; -1.657)" Dir="(0; -1; 0)" InnerCone="70" _template="ReverseSignal">
+                                        </Flare>
+                                        <Flare Pos="(-2.573; 1.53; -0.223)" Dir="(-1; 0; 0)" _template="BlueStreak" Color="g(220; 220; 255) x 0.05" Size="0.4">
 
-                                        </Light>
-                                        <Light Color="g(235; 220; 205) x 1.5" OuterCone="90" Pos="(-0.4; 2.176; 1.657)" Dir="(0; -1; 0)" InnerCone="70" _template="ReverseSignal">
+                                        </Flare>
+                                        <Flare Pos="(-2.573; 1.53; 0.223)" Dir="(-1; 0; 0)" _template="BlueStreak" Color="g(220; 220; 255) x 0.05" Size="0.4">
 
-                                        </Light>
+                                        </Flare>
                           </ReverseSignals>
-      </ModelAttachments>
+        </ModelAttachments>
+        <TruckData SteerSpeed="0.017" EngineStartDelay="0.6" EngineIconMesh="env/engine_default" TruckType="HEAVY" Responsiveness="0.05" BackSteerSpeed="0.015" TruckImage="cat770gmchr" FuelCapacity="530" DiffLockType="Always" ExhaustStartTime="0.6" EngineIconScale="1.7">
+                            <Driver Pos="(1.792; 2.714; -0.041)" SteeringWheelPos="(2.174; 3.042; -0.048)">
+
+                            </Driver>
+                            <SoundsDamage _template="Heavy">
+
+                            </SoundsDamage>
+                            <OcclusionMap HalfSizeZ="2.7" MinX="-4" MaxX="4.5">
+
+                            </OcclusionMap>
+                            <FuelTank DamageCapacity="100">
+
+                            </FuelTank>
+                            <Intake Size="1.2" Dir="(1; 0; 0)" Origin="(3.632; 1.845; 0)">
+
+                            </Intake>
+                            <EngineSocket Type="e_us_special" Default="us_special_engine_0">
+
+                            </EngineSocket>
+                            <SuspensionSocket Type="s_cat_770g" MaxWheelRadiusWithoutSuspension="1" Default="cat_770g_suspension_default">
+
+                            </SuspensionSocket>
+                            <Dashboard>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.966; 0.255; -0.039)" InputType="rpm" Org="(2.513; 3.033; -0.059)" Damping="0.99" Mesh="trucks/arrows/cat_770g_arrow_01" OutputAngles="(-110; 110)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.966; 0.255; -0.039)" InputType="fuel" Org="(2.521; 3.06; -0.11)" Damping="0.99" Mesh="trucks/arrows/cat_770g_arrow_03" OutputAngles="(121; 59)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.966; 0.255; -0.039)" InputType="engineEnabled" Org="(2.507; 3.023; 0.023)" Damping="0.99" Mesh="trucks/arrows/cat_770g_arrow_02" OutputAngles="(-45; -5)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.966; 0.255; -0.039)" InputType="engineEnabled" Org="(2.513; 3.022; -0.141)" Damping="0.99" Mesh="trucks/arrows/cat_770g_arrow_02" OutputAngles="(-45; 5)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.966; 0.255; -0.039)" InputType="engineEnabled" Org="(2.514; 3.049; -0.001)" Damping="0.99" Mesh="trucks/arrows/cat_770g_arrow_02" OutputAngles="(-46; -10)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.966; 0.255; -0.039)" InputType="engineEnabled" Org="(2.522; 3.06; -0.141)" Damping="0.99" Mesh="trucks/arrows/cat_770g_arrow_03" OutputAngles="(119; 90)">
+
+                                                </Gauge>
+                            </Dashboard>
+                            <Axles>
+                                                  <Axle Frame="BoneAxleL1" IsIndependent="true">
+
+                                                  </Axle>
+                                                  <Axle Frame="BoneAxleR1" IsIndependent="true">
+
+                                                  </Axle>
+                                                  <Axle Frame="BoneAxle2">
+
+                                                  </Axle>
+                            </Axles>
+                            <Camera Center="(-1.5; 0; 0)" RadiusMultiplier="1.1">
+                                                  <Cockpit WindshieldDiffuseTexture="trucks/cat_770g_glass__d_a.tga" _template="Default" WindshieldShadingTexture="trucks/cat_770g_glass__sh_d.tga" ViewPos="(1.7; 3.381; -0.041)">
+                                                      <Rear _inheritRemove="true">
+
+                                                      </Rear>
+                                                          <Mirror FOVScale="2.5" ClipDir="(-0.867; 0; -0.498)" MeshFrame="mirror_left" Pos="(2.147; 3.194; 2.189)" ReflectionDir="(-0.821; 0.059; -0.567)" Size="(0.45; 0.6)" ClipOffset="0.5">
+
+                                                          </Mirror>
+                                                          <Mirror FOVScale="10" ClipDir="(-0.728; -0.489; -0.481)" MeshFrame="mirror_left_front" Pos="(3.886; 3.002; 1.37)" CurveAngle="15" Size="(0.4; 0.2)" ReflectionDir="(-0.728; -0.489; -0.481)">
+
+                                                          </Mirror>
+                                                          <Mirror FOVScale="2.5" ClipDir="(-0.867; 0; 0.498)" MeshFrame="mirror_right" Pos="(2.147; 3.194; -2.189)" ReflectionDir="(-0.835; 0.06; 0.547)" Size="(0.45; 0.6)" ClipOffset="0.5">
+
+                                                          </Mirror>
+                                                          <Mirror FOVScale="10" ClipDir="(-0.723; -0.519; 0.456)" MeshFrame="mirror_right_front" Pos="(3.881; 3.011; -1.378)" CurveAngle="15" Size="(0.4; 0.2)" ReflectionDir="(-0.723; -0.519; 0.456)">
+
+                                                          </Mirror>
+                                                  </Cockpit>
+                            </Camera>
+                            <CompatibleWheels Type="wheels_superheavy_cat770g_double" Scale="0.94">
+
+                            </CompatibleWheels>
+                            <LimitedFluid SizeX="0.878" Center="(-0.414; 1.24; 0.935)" Type="Box" SizeZ="0.675" SizeY="0.743">
+
+                            </LimitedFluid>
+                            <Exhaust IsLight="true" Dir="(0; 0.275; -0.961)" Speed="3.00" Origin="(0.551; 2.427; -1.8)">
+
+                            </Exhaust>
+                            <Sounds _template="Default" MinDist="15.0" Origin="(2.3; 1.8; 0)" DisableReversePitch="true">
+                                                            <Reverse _inheritRemove="true">
+
+                                                            </Reverse>
+                                                            <Reverse Sound="trucks/cat_770g/cat_770g_back_beeper">
+
+                                                            </Reverse>
+                                                          <EngineTrans Sound="trucks/cat_770g/cat_770g_turbo">
+
+                                                          </EngineTrans>
+                                                          <EngineLow Sound="trucks/cat_770g/cat_770g_low">
+
+                                                          </EngineLow>
+                                                          <EngineHigh Sound="trucks/cat_770g/cat_770g_high">
+
+                                                          </EngineHigh>
+                                                          <HandbrakeOff Sound="trucks/cat_770g/cat_770g_handbrake_off">
+
+                                                          </HandbrakeOff>
+                                                          <ChassisStress Sound="trucks/common/truck_stress_rnd_set/truck_stress_rnd">
+
+                                                          </ChassisStress>
+                                                          <AbruptStop Sound="trucks/common/truck_swing_big_old_rnd_set/truck_swing_big_old_rnd">
+
+                                                          </AbruptStop>
+                                                          <EngineRev Sound="trucks/cat_770g/cat_770g_rev">
+
+                                                          </EngineRev>
+                                                          <EngineHeavy_2d IsSound2D="true" Sound="trucks/cat_770g/cat_770g_heavy_2d">
+
+                                                          </EngineHeavy_2d>
+                                                          <EngineHeavy Sound="trucks/cat_770g/cat_770g_heavy">
+
+                                                          </EngineHeavy>
+                                                          <EngineHigh_2d IsSound2D="true" Sound="trucks/cat_770g/cat_770g_high_2d">
+
+                                                          </EngineHigh_2d>
+                                                          <EngineLow_2d IsSound2D="true" Sound="trucks/cat_770g/cat_770g_low_2d">
+
+                                                          </EngineLow_2d>
+                                                          <EngineIdle_2d IsSound2D="true" Sound="trucks/cat_770g/cat_770g_idle_2d">
+
+                                                          </EngineIdle_2d>
+                                                          <EngineStart Sound="trucks/cat_770g/cat_770g_start">
+
+                                                          </EngineStart>
+                                                          <Handbrake Sound="trucks/cat_770g/cat_770g_handbrake_on">
+
+                                                          </Handbrake>
+                                                          <BrakeRelease Sound="trucks/cat_770g/cat_770g_brake_release">
+
+                                                          </BrakeRelease>
+                                                          <EngineIdle Sound="trucks/cat_770g/cat_770g_idle">
+
+                                                          </EngineIdle>
+                                                          <Honk Sound="trucks/cat_770g/cat_770g_honk">
+
+                                                          </Honk>
+                                                          <EngineStop Sound="trucks/cat_770g/cat_770g_stop">
+
+                                                          </EngineStop>
+                                                          <EngineAccel Sound="trucks/cat_770g/cat_770g_acc">
+
+                                                          </EngineAccel>
+                                                          <BrakesSqueal Sound="trucks/cat_770g/cat_770g_brakes_squeal">
+
+                                                          </BrakesSqueal>
+                            </Sounds>
+                            <Wheels DefaultWheelType="wheels_superheavy_cat770g_double" DefaultTire="mudtires_1" DefaultRim="rim_1">
+                                                              <Wheel Pos="(1.556; 0.952; 1.5)" _template="Front">
+
+                                                              </Wheel>
+                                                              <Wheel RightSide="true" Pos="(1.556; 0.952; 1.5)" _template="Front">
+
+                                                              </Wheel>
+                                                              <Wheel Pos="(-2.287; 0.952; 1.307)" _template="Rear">
+
+                                                              </Wheel>
+                                                              <Wheel RightSide="true" Pos="(-2.287; 0.952; 1.307)" _template="Rear">
+
+                                                              </Wheel>
+                            </Wheels>
+                                                            <Steam Origin="(2.3; 1.8; 0)">
+
+                                                            </Steam>
+                                                            <Steam Origin="(0.4; 1.75; 0)">
+
+                                                            </Steam>
+                            <GearboxSocket Type="gearboxes_special" Default="g_special_default">
+
+                            </GearboxSocket>
+                            <WinchUpgradeSocket Type="winches_heavy_trucks" Default="w_heavy_trucks_default" IsUpgradable="true">
+
+                            </WinchUpgradeSocket>
+                            <SteeringRack Frame="BoneRack" RackHalfSizeZ="1.05" FrameSteerLeft="BoneRackL" FrameSteerRight="BoneRackR">
+
+                            </SteeringRack>
+                            <SteeringWheel Frame="BoneSteering">
+
+                            </SteeringWheel>
+                            <SoundsWheels _template="Default">
+
+                            </SoundsWheels>
+                            <Damage>
+                                                                            <DamageArea Min="(2.6; 0.9; -0.9)" ParentFrame="BoneCabin_cdt" Max="(3.7; 2.9; 0.9)" Type="Engine">
+
+                                                                            </DamageArea>
+                                                                            <DamageArea Min="(-1.15; 0.65; -1.45)" ParentFrame="BoneChassis_cdt" Max="(0.4; 1.75; 1.3)" Type="FuelTank">
+
+                                                                            </DamageArea>
+                            </Damage>
+                            <Shafts>
+                                                                            <Shaft SocketPointA="Shaft1a" SocketPointB="Shaft1b">
+
+                                                                            </Shaft>
+                            </Shafts>
+        </TruckData>
   </Truck>
-  <_templates Include="trucks">
-        <Wheel>
-            <Front SteeringCastor="8" Torque="none" ParentFrame="BoneCabin_cdt" SteeringJointOffset="0.6" SteeringAngle="25" Location="front">
-
-            </Front>
-            <Rear Torque="default" Location="rear" ConnectedToHandbrake="true">
-
-            </Rear>
-        </Wheel>
-        <Body>
-              <Mudguard Mass="10">
-                  <Constraint Type="Hinge">
-                      <Motor Spring="20" Type="Spring" Damping="30">
-
-                      </Motor>
-                  </Constraint>
-              </Mudguard>
-        </Body>
-  </_templates>

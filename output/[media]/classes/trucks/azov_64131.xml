@@ -1,790 +1,790 @@
-  <Truck>
-      <PhysicsModel Mesh="trucks/azov_64131">
-          <NetSync Legacy="false">
-
-          </NetSync>
-          <Body CenterOfMassOffset="(0; 0; 0)" ImpactType="Truck" NetSync="pv" Mass="11850">
-                  <Body CenterOfMassOffset="(-0.1; 0.45; 0)" ImpactType="Truck" NetSync="pv" ModelFrame="BoneCabin_cdt" Mass="4300">
-                    <Constraint CenterOfMassOffset="(0; 0; 0)" Type="Hinge" MaxLimit="10" MinLimit="-10" AxisLocal="(1; 0; 0)">
-                        <Motor Spring="525000" Type="Spring" Damping="52500">
-
-                        </Motor>
-                    </Constraint>
-                        <Body _template="SideMirror" ModelFrame="BoneMirrorRight_cdt">
-
-                        </Body>
-                        <Body _template="SideMirror" ModelFrame="BoneMirrorLeft_cdt">
-
-                        </Body>
-                        <Body _template="SideMirror" ModelFrame="BoneMirror_cdt">
-                          <Constraint AxisLocal="(0; 0; 1)">
-                              <Motor Spring="250">
-
-                              </Motor>
-                          </Constraint>
-                        </Body>
-                        <Body _template="Sunshield" ModelFrame="BoneSunShield1_cdt">
-                          <Constraint>
-                              <Motor Spring="30">
-
-                              </Motor>
-                          </Constraint>
-                        </Body>
-                        <Body _template="Sunshield" ModelFrame="BoneSunShield2_cdt">
-                          <Constraint>
-                              <Motor Spring="20">
-
-                              </Motor>
-                          </Constraint>
-                        </Body>
-                        <Body _template="Sunshield" ModelFrame="BoneSunShield3_cdt">
-                          <Constraint>
-                              <Motor Spring="15">
-
-                              </Motor>
-                          </Constraint>
-                        </Body>
-                        <Body CenterOfMassOffset="(0; 0; 0)" ModelFrame="BoneHook1_cdt" Collisions="None" Mass="0.1">
-                          <Constraint Type="Hinge" MaxLimit="80" PivotOffset="(0; 0; 0)" AxisLocal="(1; 0; 0)" MinLimit="-15">
-                              <Motor Spring="0.01" Type="Spring" Damping="0.001">
-
-                              </Motor>
-                          </Constraint>
-                          <Body CenterOfMassOffset="(0; 0; 0)" ModelFrame="BoneHook2_cdt" Collisions="None" Mass="0.1">
-                                <Constraint Type="Hinge" MaxLimit="80" PivotOffset="(0; 0; 0)" AxisLocal="(0; 0; 1)" MinLimit="-80">
-                                    <Motor Spring="0.001" Type="Spring" Damping="0.001">
-
-                                    </Motor>
-                                </Constraint>
-                          </Body>
-                        </Body>
-                        <Body CenterOfMassOffset="(0; 0; 0)" ModelFrame="BoneKey1_cdt" Collisions="None" Mass="0.1">
-                          <Constraint Type="Hinge" MaxLimit="25" PivotOffset="(0; 0; 0)" AxisLocal="(1; 0; 0)" MinLimit="-13">
-                              <Motor Spring="0.001" Type="Spring" Damping="0.0001">
-
-                              </Motor>
-                          </Constraint>
-                          <Body CenterOfMassOffset="(0; 0; 0)" ModelFrame="BoneKey2_cdt" Collisions="None" Mass="0.1">
-                                <Constraint Type="Hinge" MaxLimit="25" PivotOffset="(0; 0; 0)" AxisLocal="(1; 0; 0)" MinLimit="-13">
-                                    <Motor Spring="0.001" Type="Spring" Damping="0.001">
-
-                                    </Motor>
-                                </Constraint>
-                          </Body>
-                        </Body>
-                  </Body>
-                  <Body _template="TieRod" ModelFrame="BoneTieRod1_1_cdt">
-                    <Constraint MinLimit="-26" Name="TieRod1Rocker" MaxLimit="26" AxisLocal="(0; 0; 1)">
-
-                    </Constraint>
-                  </Body>
-                  <Body _template="TieRod" ModelFrame="BoneTieRod2_1_cdt">
-                    <Constraint MinLimit="-13" Name="TieRod2Rocker" MaxLimit="13" AxisLocal="(0; 0; 1)">
-
-                    </Constraint>
-                  </Body>
-                  <Body _template="Mudguard" ModelFrame="BoneLeftMudguard_cdt">
-
-                  </Body>
-                  <Body _template="Mudguard" ModelFrame="BoneRightMudguard_cdt">
-
-                  </Body>
-          </Body>
-      </PhysicsModel>
-      <GameData Country="RU,CAS" Price="69000" UnlockByRank="1" UnlockByExploration="false">
-            <CustomizationCameras>
-                  <CameraPos Interior="true" Position="(5.883; 2.373; -0.832)" FOV="32.0" InterestPosition="(8.061; 4.451; 1.421)" Name="sticker_1">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(-0.508; 2.026; -0)" Name="addon_1" MaxXRotation="360" Position="(-9.259; 3.714; 6.213)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.294; 1.744; 0)" Name="addon_2" MaxXRotation="360" Position="(0.557; 4.1; 3.247)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(5.676; 3.006; -0.661)" FOV="32.0" InterestPosition="(8.061; 2.646; 0.991)" Name="mirror_mount">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.764; 1.97; -0)" Name="side_r" MaxXRotation="360" Position="(-0.226; 4.969; -4.508)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(5.864; 3.051; -0.14)" FOV="32.0" InterestPosition="(7.671; 1.439; 1.955)" Name="sticker">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(4.916; 2.706; 3.172)" FOV="32.0" InterestPosition="(8.598; 1.658; 0)" Name="door_r_sticker">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.758; 2.358; -0)" Name="roof" MaxXRotation="360" Position="(10.787; 4.806; -3.717)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(10.325; 3.668; 0.998)" FOV="32.0" InterestPosition="(6.455; 2.666; -0.909)" Name="glass_sticker">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.716; 1.735; 0)" Name="hoods" MaxXRotation="360" Position="(13.576; 1.402; -3.863)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(5.221; 1.595; 0.03)" FOV="32.0" InterestPosition="(6.662; 0.61; 1.935)" Name="sticker_2">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(6.27; 2.278; 0)" Name="side_l" MaxXRotation="360" Position="(11.866; 5.284; -4.55)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(5.864; 3.051; -0.715)" FOV="32.0" InterestPosition="(7.671; 0.952; 1.577)" Name="bubble_head">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.284; 0.711; 0.052)" Name="wheels" MaxXRotation="360" Position="(7.913; 1.957; -5.151)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.716; 1.735; 0)" Name="default" MaxXRotation="360" Position="(13.576; 1.402; -3.863)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(-0.868; 1.09; -0)" Name="rear" MaxXRotation="360" Position="(-6.285; 2.053; 3.418)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(5.167; 2.83; -3.279)" FOV="32.0" InterestPosition="(7.161; 1.596; 0.841)" Name="door_l_sticker">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(5.676; 3.006; -0.661)" FOV="32.0" InterestPosition="(8.061; 2.646; 0.991)" Name="curtain">
-
-                  </CameraPos>
-            </CustomizationCameras>
-                <CraneSocket Pos="(4.258; 1.013; 0.363)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(4.258; 1.013; -0.363)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(-1.4; 1.104; 0.506)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(-1.4; 1.104; -0.506)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(-4.227; 1.086; 0)">
-
-                </CraneSocket>
-                  <AddonSockets>
-                      <Socket Offset="(-4.227; 1.083; 0)" Names="Trailer">
-                        <AddonsShift TrailerNamesBlock="Trailer" Types="MinicraneRU, FrameAddon" Offset="(0; 0; 0)">
-
-                        </AddonsShift>
-                      </Socket>
-                      <Socket Offset="(-2.735; 1.591; 0)" NamesBlock="SaddleHigh" Names="Semitrailer, SemitrailerOiltank">
-
-                      </Socket>
-                      <Socket Offset="(-1.864; 1.765; 0)" NamesBlock="SaddleLow" Names="LargeSemitrailer, LargeSemitrailerOiltank">
-
-                      </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                      <Socket Offset="(-6; 1.266; 0)" Names="BunkLog">
-
-                      </Socket>
-                      <Socket Offset="(-2.709; 1.266; 0)" Names="SaddleLow">
-                          <ExtraParent Offset="(0; 0; -0.05)" Frame="BoneChassis_cdt">
-
-                          </ExtraParent>
-                          <ExtraParent Offset="(0; 0; 0.05)" Frame="BoneChassis_cdt">
-
-                          </ExtraParent>
-                      </Socket>
-                      <Socket Offset="(-1.854; 1.267; 0)" Names="SaddleHigh">
-                          <ExtraParent Offset="(0; 0; -0.02)" Frame="BoneChassis_cdt">
-
-                          </ExtraParent>
-                          <ExtraParent Offset="(0; 0; 0.02)" Frame="BoneChassis_cdt">
-
-                          </ExtraParent>
-                      </Socket>
-                      <Socket Offset="(-2.165; 1.267; 0)" Names="FrameAddon">
-                        <AddonsShift Types="MinicraneRU" Offset="(-1.1; 0; 0)">
-
-                        </AddonsShift>
-                      </Socket>
-                      <Socket Offset="(-1.6; 1.267; 0)" NamesBlock="MinicraneRU, MetalDetector, Trailer" Names="FrameAddonTowPlatform">
-
-                      </Socket>
-                      <Socket Offset="(-3.2; 1.267; 0)" Names="FrameAddonTank">
-
-                      </Socket>
-                      <Socket NamesBlock="Trailer" Names="FrameAddonMaintainer" ParentFrame="BoneChassis_cdt" Offset="(-2.861; 0.238; 0)">
-
-                      </Socket>
-                      <Socket Offset="(0.2; 1.267; 0)" NamesBlock="Trailer" Names="FrameAddonSeismicVibrator">
-
-                      </Socket>
-                      <Socket ParentFrame="BoneChassis_cdt" Offset="(-2.22; 1.345; 0)" Names="FrameAddonKung">
-                          <ExtraParent Offset="(0; 0; -0.14)" Frame="BoneChassis_cdt">
-
-                          </ExtraParent>
-                          <ExtraParent Offset="(0; 0; 0.14)" Frame="BoneChassis_cdt">
-
-                          </ExtraParent>
-                      </Socket>
-                      <Socket Offset="(-2.95; 1.36; 0)" Names="BigCraneRu">
-                          <ExtraParent Offset="(0; -0.082; 0)" Frame="BoneChassis_cdt">
-
-                          </ExtraParent>
-                          <ExtraParent Offset="(0; -0.082; 0)" Frame="BoneChassis_cdt">
-
-                          </ExtraParent>
-                      </Socket>
-                      <Socket Offset="(0.035; 1.271; 0)" Names="LogLift">
-
-                      </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Offset="(-0.35; 1.27; 0)" NamesBlock="LogLift, BunkLog, FrameAddonTank, FrameAddonKung, BigCraneRu, BigCraneUs, FrameAddonMaintainer, FrameAddonSeismicVibrator, SemitrailerOiltank, LargeSemitrailerOiltank" Names="MinicraneRU">
-                          <ExtraParent Offset="(0; 0; -0.07)" Frame="BoneChassis_cdt">
-
-                          </ExtraParent>
-                          <ExtraParent Offset="(0; 0; 0.07)" Frame="BoneChassis_cdt">
-
-                          </ExtraParent>
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets DefaultAddon="azov_64131_exhaust_default">
-                    <Socket ParentFrame="BoneCabin_cdt" Names="Azov64131Exhaust">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets DefaultAddon="azov_64131_snorkel_default">
-                      <Socket ParentFrame="BoneCabin_cdt" Names="Azov64131Snorkel">
-
-                      </Socket>
-                      <Socket ParentFrame="BoneCabin_cdt" Names="Azov64131Snorkel2">
-
-                      </Socket>
-                  </AddonSockets>
-                  <AddonSockets DefaultAddon="azov_64131_beacon_default">
-                    <Socket ParentFrame="BoneCabin_cdt" NamesBlock="Azov64131Beacon2, Azov64131SpotLight" Names="Azov64131Beacon">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" Names="Azov64131Beacon2">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets DefaultAddon="azov_64131_wheel_addon_default">
-                    <Socket ParentFrame="BoneCabin_cdt" Names="azov64131WheelAddon">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets DefaultAddon="azov_64131_fender_default">
-                    <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="Azov64131Fender">
-                        <ExtraParent Frame="BoneCabin_cdt">
-
-                        </ExtraParent>
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" Names="Azov64131Visor">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" Names="Azov64131SpotLight">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" Names="Azov64131Bumper">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" Names="Azov64131Horn">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" Names="Azov64131Gabarite">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" Names="Azov64131AirConditioner">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="azov64131Sticker_GlassTop">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="azov64131Sticker_GlassBottom">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" Names="azov64131Sticker_Door_L">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" Names="azov64131Sticker_Door_R">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="Azov64131Sticker_1x1_01" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="Azov64131Sticker_1x1_02" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="Azov64131Sticker_1x1_03" InCockpit="true" ParentFrame="BoneSunShield1_cdt" Offset="(0; 0; 0)">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="Azov64131Sticker_1x2_01" InCockpit="true" ParentFrame="BoneSunShield1_cdt" Offset="(0; 0; 0)">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="Azov64131Sticker_1x4_01" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="Azov64131Sticker_1x4_02" InCockpit="true" ParentFrame="BoneSunShield2_cdt" Offset="(0; 0; 0)">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="StuffAirfreshener" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(3.459; 3.062; 0.405)">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="StuffDashboard" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(3.867; 2.481; 0.046)">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="StuffCurtainAzov64131">
-
-                    </Socket>
-                  </AddonSockets>
-                    <WinchSocket Pos="(4.258; 1.013; 0.363)">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(4.258; 1.013; -0.363)">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(-1.4; 1.104; 0.506)">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(-1.4; 1.104; -0.506)">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(-4.227; 1.086; 0)">
-
-                    </WinchSocket>
-            <UiDesc UiDesc="UI_VEHICLE_AZOV_64131_DESC" UiIcon30x30="offroadVehicleImg30" UiName="UI_VEHICLE_AZOV_64131_NAME" UiIconLogo="AzovLogo80" UiIcon40x40="offroadVehicleImg" UiIcon328x458="shopImgAzov64131">
-
-            </UiDesc>
-      </GameData>
-      <ControlledConstraints>
-                <Constraint Name="TieRod1Rocker" IsLinkedSteering="true" Id="chassis_steer">
-
-                </Constraint>
-                <Constraint Name="TieRod2Rocker" IsLinkedSteering="true" Id="chassis_steer">
-
-                </Constraint>
-      </ControlledConstraints>
-      <HeadLight ParentFrame="BoneCabin_cdt" _template="Default" Pos="(4.239; 1.202; 0)">
-
-      </HeadLight>
-      <Landmark Mesh="landmarks/azov_64131_lmk" MaxScale="2.5" MinScale="1.5">
-
-      </Landmark>
-      <AutomaticIK>
-                      <IKBone ParentFrame="BoneTieRod1_1_cdt" ModelFrame="BoneTieRod1_2">
-                        <IKBone AttachToFrame="BoneRackLeft1" AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRod1_3">
-                            <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
-
-                            </IKJoint>
-                        </IKBone>
-                        <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
-
-                        </IKJoint>
-                      </IKBone>
-                      <IKBone ParentFrame="BoneTieRod2_1_cdt" ModelFrame="BoneTieRod2_2">
-                        <IKBone AttachToFrame="BoneRackLeft2" AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRod2_3">
-                            <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
-
-                            </IKJoint>
-                        </IKBone>
-                        <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
-
-                        </IKJoint>
-                      </IKBone>
-                      <IKBone ParentFrame="BoneTieRod2_1_cdt" ModelFrame="BoneTieRod2_4">
-                        <IKBone AttachToFrame="BoneTieRod1_1_cdt" AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRod2_5">
-                            <IKJoint AxisLocal="(0; 1; 0)" Type="Slider">
-
-                            </IKJoint>
-                        </IKBone>
-                        <IKJoint AxisLocal="(0; 1; 0)" Type="Hinge2">
-
-                        </IKJoint>
-                      </IKBone>
-      </AutomaticIK>
-      <ModelAttachments>
-                      <HeadLight>
-                            <Flare Color="g(255; 235; 200) x 0.6" AspectRatio="2" ParentFrame="BoneCabin_cdt" Pos="(4.239; 1.202; -0.876)" DirAngle="140" Size=".35" _template="HeadLight">
-
-                            </Flare>
-                            <Flare Color="g(255; 235; 200) x 0.6" AspectRatio="2" ParentFrame="BoneCabin_cdt" Pos="(4.239; 1.202; 0.876)" DirAngle="140" Size=".35" _template="HeadLight">
-
-                            </Flare>
-                            <Flare ParentFrame="BoneCabin_cdt" _template="BlueStreak" Pos="(4.239; 1.202; -0.876)">
-
-                            </Flare>
-                            <Flare ParentFrame="BoneCabin_cdt" _template="BlueStreak" Pos="(4.239; 1.202; 0.876)">
-
-                            </Flare>
-                              <Model Org="(4.239; 1.202; -0.876)" _template="HeadLightRay" ParentFrame="BoneCabin_cdt">
-
-                              </Model>
-                              <Model Org="(4.239; 1.202; 0.876)" _template="HeadLightRay" ParentFrame="BoneCabin_cdt">
-
-                              </Model>
-                      </HeadLight>
-                      <Ignition>
-                              <Flare ParentFrame="BoneCabin_cdt" Size=".15" Pos="(4.259; 0.94; -0.87)" _template="IgnitionSignalWhite">
-
-                              </Flare>
-                              <Flare ParentFrame="BoneCabin_cdt" Size=".15" Pos="(4.259; 0.94; 0.87)" _template="IgnitionSignalWhite">
-
-                              </Flare>
-                              <Flare AspectRatio="2" ParentFrame="BoneCabin_cdt" Pos="(4.239; 1.202; -0.876)" _template="IgnitionSignalWhite">
-
-                              </Flare>
-                              <Flare AspectRatio="2" ParentFrame="BoneCabin_cdt" Pos="(4.239; 1.202; 0.876)" _template="IgnitionSignalWhite">
-
-                              </Flare>
-                              <Flare ParentFrame="BoneCabin_cdt" Size=".15" Pos="(4.259; 0.94; -0.68)" _template="IgnitionSignalWhite">
-
-                              </Flare>
-                              <Flare ParentFrame="BoneCabin_cdt" Size=".15" Pos="(4.259; 0.94; 0.68)" _template="IgnitionSignalWhite">
-
-                              </Flare>
-                              <Flare ParentFrame="BoneCabin_cdt" Size="0.3" Pos="(3.597; 1.067; -1.257)" _template="MarkerBeacon">
-
-                              </Flare>
-                              <Flare ParentFrame="BoneCabin_cdt" Size="0.3" Pos="(3.597; 1.067; 1.257)" _template="MarkerBeacon">
-
-                              </Flare>
-                              <Flare ParentFrame="BoneCabin_cdt" Size="0.3" Pos="(2.289; 1.281; -1.183)" _template="MarkerBeacon">
-
-                              </Flare>
-                              <Flare ParentFrame="BoneCabin_cdt" Size="0.3" Pos="(2.289; 1.281; 1.183)" _template="MarkerBeacon">
-
-                              </Flare>
-                              <Flare Color="g(255; 160; 10) x 0.3" Pos="(3.79; 3.255; -0.147)" ParentFrame="BoneCabin_cdt" Size="0.3" _template="IgnitionSignalOrange">
-
-                              </Flare>
-                              <Flare Color="g(255; 160; 10) x 0.3" Pos="(3.79; 3.255; 0)" ParentFrame="BoneCabin_cdt" Size="0.3" _template="IgnitionSignalOrange">
-
-                              </Flare>
-                              <Flare Color="g(255; 160; 10) x 0.3" Pos="(3.79; 3.255; 0.147)" ParentFrame="BoneCabin_cdt" Size="0.3" _template="IgnitionSignalOrange">
-
-                              </Flare>
-                                <Light ParentFrame="BoneCabin_cdt" _template="IgnitionSignalWhite" Pos="(4.55; 1.013; 0.7)">
-
-                                </Light>
-                                <Light ParentFrame="BoneCabin_cdt" _template="IgnitionSignalWhite" Pos="(4.55; 1.013; -0.7)">
-
-                                </Light>
-                                <Light _template="IgnitionSignalRed" Pos="(-4.8; 1.025; -0)">
-
-                                </Light>
-                      </Ignition>
-      </ModelAttachments>
-      <TruckData EngineIconMesh="env/engine_big" EngineStartDelay="0.6" TruckType="OFFROAD" ExhaustStartTime="0.6" SteerSpeed="0.02" TruckImage="azov64131mchr" DiffLockType="Always" Responsiveness="0.25" FuelCapacity="350" EngineIconScale="1.2" BackSteerSpeed="0.02">
-                        <Driver ParentFrame="BoneCabin_cdt" Pos="(3.203; 2.099; 0.585)" SteeringWheelPos="(3.585; 2.427; 0.584)">
-
-                        </Driver>
-                        <Shafts>
-                                <Shaft SocketPointB="Shaft1b" SocketPointA="Shaft1a">
-
-                                </Shaft>
-                                <Shaft SocketPointB="Shaft2b" SocketPointA="Shaft2a">
-
-                                </Shaft>
-                                <Shaft SocketPointB="Shaft3b" SocketPointA="Shaft3a">
-
-                                </Shaft>
-                                <Shaft SocketPointB="Shaft4b" SocketPointA="Shaft4a">
-
-                                </Shaft>
-                                <Shaft SocketPointB="Shaft5b" SocketPointA="Shaft5a">
-
-                                </Shaft>
-                        </Shafts>
-                        <FuelTank DamageCapacity="100">
-
-                        </FuelTank>
-                        <Dashboard>
-                                    <Gauge Org="(3.785; 2.382; 0.639)" OutputAngles="(-123; 131)" Mesh="trucks/arrows/azov_64131_arrow1" Damping="0.99" InputRange="(0;1)" InputType="rpm" Dir="(-0.966; 0.259; 0)">
-
-                                    </Gauge>
-                                    <Gauge Org="(3.785; 2.382; 0.524)" OutputAngles="(-130; 131)" Dir="(-0.966; 0.259; 0)" InputType="speed" Mesh="trucks/arrows/azov_64131_arrow1" InputRange="(0;125)">
-
-                                    </Gauge>
-                                    <Gauge Org="(3.796; 2.425; 0.724)" OutputAngles="(-46; 9)" Mesh="trucks/arrows/azov_64131_arrow2" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.966; 0.259; 0)">
-
-                                    </Gauge>
-                                    <Gauge Org="(3.785; 2.385; 0.724)" OutputAngles="(-45; -8)" Mesh="trucks/arrows/azov_64131_arrow2" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.966; 0.259; 0)">
-
-                                    </Gauge>
-                                    <Gauge Org="(3.785; 2.385; 0.766)" OutputAngles="(-46; 7)" Mesh="trucks/arrows/azov_64131_arrow2" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.966; 0.259; 0)">
-
-                                    </Gauge>
-                                    <Gauge Org="(3.786; 2.388; 0.439)" OutputAngles="(-46; 39)" Mesh="trucks/arrows/azov_64131_arrow2" Damping="0.99" InputRange="(0;1)" InputType="fuel" Dir="(-0.966; 0.259; 0)">
-
-                                    </Gauge>
-                                    <Gauge Org="(3.786; 2.388; 0.398)" OutputAngles="(-49; 17)" Mesh="trucks/arrows/azov_64131_arrow2" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.966; 0.259; 0)">
-
-                                    </Gauge>
-                                    <Gauge Org="(3.777; 2.355; 0.439)" OutputAngles="(-163; -21)" Mesh="trucks/arrows/azov_64131_arrow2" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.966; 0.259; 0)">
-
-                                    </Gauge>
-                                    <Gauge Org="(3.777; 2.355; 0.397)" OutputAngles="(-162; -42)" Mesh="trucks/arrows/azov_64131_arrow2" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.966; 0.259; 0)">
-
-                                    </Gauge>
-                                    <Gauge Org="(3.779; 2.360; 0.639)" OutputAngles="(0; -145)" Mesh="trucks/arrows/azov_64131_arrow3" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.966; 0.259; 0)">
-
-                                    </Gauge>
-                                    <Gauge Org="(3.779; 2.360; 0.639)" OutputAngles="(0; -48)" Mesh="trucks/arrows/azov_64131_arrow3" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.966; 0.259; 0)">
-
-                                    </Gauge>
-                        </Dashboard>
-                        <SoundsWheels _template="Default">
-
-                        </SoundsWheels>
-                        <GearboxSocket Default="g_special_default" Type="gearboxes_special">
-
-                        </GearboxSocket>
-                        <Steam Origin="(1.32; 1.389; 0)">
-
-                        </Steam>
-                        <Sounds DisableReversePitch="true" MinDist="15.0" Origin="(2.749; 1.505; 0)" _template="Default">
-                                          <BrakesSqueal Sound="trucks/azov_64131/azov_64131_brakes_squeal">
-
-                                          </BrakesSqueal>
-                                          <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
-
-                                          </AbruptStop>
-                                          <EngineLow Sound="trucks/azov_64131/azov_64131_low">
-
-                                          </EngineLow>
-                                          <EngineRev Sound="trucks/azov_64131/azov_64131_rev">
-
-                                          </EngineRev>
-                                          <EngineAccel Sound="trucks/azov_64131/azov_64131_acc">
-
-                                          </EngineAccel>
-                                          <Honk Sound="trucks/azov_64131/azov_64131_honk">
-
-                                          </Honk>
-                                          <EngineStop Sound="trucks/azov_64131/azov_64131_stop">
-
-                                          </EngineStop>
-                                          <Handbrake Sound="trucks/azov_64131/azov_64131_handbrake_on">
-
-                                          </Handbrake>
-                                          <EngineIdle_2d IsSound2D="true" Sound="trucks/azov_64131/azov_64131_idle_2d">
-
-                                          </EngineIdle_2d>
-                                          <HandbrakeOff Sound="trucks/azov_64131/azov_64131_handbrake_off">
-
-                                          </HandbrakeOff>
-                                          <EngineHeavy_2d IsSound2D="true" Sound="trucks/azov_4220_antarctic/azov_4220_antarctic_heavy_2d">
-
-                                          </EngineHeavy_2d>
-                                                                  <Reverse _inheritRemove="true">
-
-                                                                  </Reverse>
-                                                                  <Reverse Sound="trucks/azov_64131/azov_64131_back_beeper">
-
-                                                                  </Reverse>
-                                          <EngineHigh_2d IsSound2D="true" Sound="trucks/azov_64131/azov_64131_high_2d">
-
-                                          </EngineHigh_2d>
-                                          <EngineIdle Sound="trucks/azov_64131/azov_64131_idle">
-
-                                          </EngineIdle>
-                                          <EngineStart Sound="trucks/azov_64131/azov_64131_start">
-
-                                          </EngineStart>
-                                          <EngineHigh Sound="trucks/azov_64131/azov_64131_high">
-
-                                          </EngineHigh>
-                                          <BrakePull Sound="trucks/azov_64131/azov_64131_brake_pull">
-
-                                          </BrakePull>
-                                          <EngineLow_2d IsSound2D="true" Sound="trucks/azov_64131/azov_64131_low_2d">
-
-                                          </EngineLow_2d>
-                                          <EngineHeavy Sound="trucks/azov_4220_antarctic/azov_4220_antarctic_heavy">
-
-                                          </EngineHeavy>
-                                          <BrakeRelease Sound="trucks/azov_64131/azov_64131_brake_release">
-
-                                          </BrakeRelease>
-                                          <EngineTrans Sound="trucks/azov_64131/azov_64131_turbo">
-
-                                          </EngineTrans>
-                        </Sounds>
-                        <Intake Size="1.219" Origin="(4.215; 1.567; 0)" Dir="(1; 0; 0)">
-
-                        </Intake>
-                        <SoundsDamage _template="Heavy">
-
-                        </SoundsDamage>
-                        <Damage>
-                                                  <DamageArea Max="(4.1; 1.808; 0.5)" Type="Engine" ParentFrame="BoneChassis_cdt" Min="(2; 0.933; -0.5)">
-
-                                                  </DamageArea>
-                                                  <DamageArea Max="(0.303; 1.267; 1.165)" Type="FuelTank" ParentFrame="BoneChassis_cdt" Min="(-1.345; 0.564; -1.165)">
-
-                                                  </DamageArea>
-                        </Damage>
-                        <Camera ParentFrame="BoneCabin_cdt" Center="(-1.5; 0; 0)">
-                                                  <Cockpit WindshieldShadingTexture="trucks/azov_64131_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/azov_64131_glass__d_a.tga" _template="Default" ViewPos="(3.112; 2.799; 0.585)">
-                                                        <Mirror FOVScale="2" Pos="(3.806; 2.791; 1.414)" ClipDir="(-0.924; -0.107; -0.368)" ReflectionDir="(-0.924; -0.107; -0.368)" Size="(0.162; 0.311)" ClipOffset="0.1" MeshFrame="mirror_left">
-                                                          <SecondaryView FOVScale="1.5" Pos="(3.839; 2.544; 1.386)" ClipDir="(-0.924; -0.107; -0.368)" Size="(0.214; 0.155)" CurveAngle="10" ClipOffset="0" MeshFrame="mirror_left_1">
-
-                                                          </SecondaryView>
-                                                        </Mirror>
-                                                        <Mirror FOVScale="2.5" Pos="(3.809; 2.795; -1.408)" ClipDir="(-0.821; -0.065; 0.567)" ReflectionDir="(-0.821; -0.065; 0.567)" Size="(0.162; 0.311)" ClipOffset="0.1" MeshFrame="mirror_right">
-                                                          <SecondaryView FOVScale="1.75" Pos="(3.837; 2.544; -1.392)" ClipDir="(-0.821; -0.065; 0.567)" Size="(0.214; 0.155)" CurveAngle="10" ClipOffset="0" MeshFrame="mirror_right_1">
-
-                                                          </SecondaryView>
-                                                        </Mirror>
-                                                        <Mirror FOVScale="2.25" Pos="(4.076; 2.973; -1.085)" ClipDir="(-0.103; -0.641; 0.761)" ReflectionDir="(-0.103; -0.641; 0.761)" Size="(0.321; 0.321)" ClipOffset="0.1" MeshFrame="mirror_right_2">
-
-                                                        </Mirror>
-                                                  </Cockpit>
-                        </Camera>
-                        <Shakers>
-                                                    <Shaker Frame="BoneGearstick" ParentFrame="BoneCabin_cdt" MaxAngle="(3; 3; 3)" MaxFrequency="0.1">
-
-                                                    </Shaker>
-                        </Shakers>
-                        <SuspensionSocket Default="azov_64131_suspension_default" Type="s_azov_64131" MaxWheelRadiusWithoutSuspension="1">
-
-                        </SuspensionSocket>
-                        <Wheels DefaultTire="allterrain_1" DefaultWheelType="wheels_heavy_single" DefaultRim="rim_1">
-                                                          <Wheel _template="FirstAxle" Pos="(2.972; 0.547; 1.02)">
-
-                                                          </Wheel>
-                                                          <Wheel Pos="(2.972; 0.547; 1.02)" _template="FirstAxle" RightSide="true">
-
-                                                          </Wheel>
-                                                          <Wheel _template="SecondAxle" Pos="(1.014; 0.562; 1.02)">
-
-                                                          </Wheel>
-                                                          <Wheel Pos="(1.014; 0.562; 1.02)" _template="SecondAxle" RightSide="true">
-
-                                                          </Wheel>
-                                                          <Wheel _template="MiddleAxle" Pos="(-1.996; 0.576; 0.99)">
-
-                                                          </Wheel>
-                                                          <Wheel Pos="(-1.996; 0.576; 0.99)" _template="MiddleAxle" RightSide="true">
-
-                                                          </Wheel>
-                                                          <Wheel _template="MiddleAxle" Pos="(-3.429; 0.576; 0.99)">
-
-                                                          </Wheel>
-                                                          <Wheel Pos="(-3.429; 0.576; 0.99)" _template="MiddleAxle" RightSide="true">
-
-                                                          </Wheel>
-                        </Wheels>
-                        <Axles>
-                                                            <Axle Frame="BoneAxle1">
-
-                                                            </Axle>
-                                                            <Axle Frame="BoneAxle2">
-
-                                                            </Axle>
-                                                            <Axle Frame="BoneAxle3">
-
-                                                            </Axle>
-                                                            <Axle Frame="BoneAxle4">
-
-                                                            </Axle>
-                        </Axles>
-                        <EngineSocket Default="ru_truck_modern_engine_0" Type="e_ru_truck_modern">
-
-                        </EngineSocket>
-                        <OcclusionMap HalfSizeZ="2" MinX="-4.8" MaxX="4.7">
-
-                        </OcclusionMap>
-                                                              <LimitedFluid Type="Box" SizeX="1.35" Center="(-0.401; 0.905; 0.843)" SizeY="0.62" SizeZ="0.49">
-
-                                                              </LimitedFluid>
-                                                              <LimitedFluid Type="Box" SizeX="1.35" Center="(-0.401; 0.905; -0.845)" SizeY="0.62" SizeZ="0.49">
-
-                                                              </LimitedFluid>
-                        <WinchUpgradeSocket Default="w_medium_trucks_default" IsUpgradable="true" Type="winches_medium_trucks">
-
-                        </WinchUpgradeSocket>
-                        <SteeringWheel Frame="BoneSteering">
-
-                        </SteeringWheel>
-                        <CompatibleWheels Scale="0.6" Type="wheels_heavy_single">
-
-                        </CompatibleWheels>
-                                                                      <SteeringRack RackHalfSizeZ="0.753" Frame="BoneRack1" FrameSteerLeft="BoneRackLeft1" FrameSteerRight="BoneRackRight1">
-
-                                                                      </SteeringRack>
-                                                                      <SteeringRack RackHalfSizeZ="0.753" Frame="BoneRack2" FrameSteerLeft="BoneRackLeft2" FrameSteerRight="BoneRackRight2">
-
-                                                                      </SteeringRack>
-      </TruckData>
-  </Truck>
   <_templates Include="trucks">
-        <Wheel>
-            <SecondAxle SteeringCastor="0" Torque="default" ParentFrame="BoneCabin_cdt" SteeringJointOffset="0.25" SteeringAngle="20" Location="front">
+      <Wheel>
+          <MiddleAxle Location="rear" ConnectedToHandbrake="true" Torque="default">
 
-            </SecondAxle>
-            <MiddleAxle Torque="default" Location="rear" ConnectedToHandbrake="true">
+          </MiddleAxle>
+          <FirstAxle ParentFrame="BoneCabin_cdt" SteeringAngle="30" Location="front" SteeringJointOffset="0.25" Torque="default" SteeringCastor="0">
 
-            </MiddleAxle>
-            <FirstAxle SteeringCastor="0" Torque="default" ParentFrame="BoneCabin_cdt" SteeringJointOffset="0.25" SteeringAngle="30" Location="front">
+          </FirstAxle>
+          <SecondAxle ParentFrame="BoneCabin_cdt" SteeringAngle="20" Location="front" SteeringJointOffset="0.25" Torque="default" SteeringCastor="0">
 
-            </FirstAxle>
-        </Wheel>
-        <Body>
-              <SideMirror Collisions="None" Mass="5">
-                  <Constraint MinLimit="-15" Type="Hinge" MaxLimit="15" AxisLocal="(0; 1; 0)">
-                      <Motor Spring="80" Type="Spring" Damping="0.7">
+          </SecondAxle>
+      </Wheel>
+      <Body>
+            <SideMirror Mass="5" Collisions="None">
+                <Constraint Type="Hinge" MaxLimit="15" AxisLocal="(0; 1; 0)" MinLimit="-15">
+                    <Motor Spring="80" Damping="0.7" Type="Spring">
+
+                    </Motor>
+                </Constraint>
+            </SideMirror>
+            <Sunshield Mass="3" Collisions="None">
+                  <Constraint Type="Hinge" MaxLimit="10" AxisLocal="(0; 0; 1)" MinLimit="-14">
+                      <Motor Spring="1.5" Damping="0.75" Type="Spring">
 
                       </Motor>
                   </Constraint>
-              </SideMirror>
-              <Mudguard Collisions="None" AngularDamping="3.0" Mass="10">
-                    <Constraint MinLimit="-35" Type="Hinge" MaxLimit="25" AxisLocal="(0; 0; 1)">
+            </Sunshield>
+            <Mudguard Mass="10" AngularDamping="3.0" Collisions="None">
+                    <Constraint Type="Hinge" MaxLimit="25" AxisLocal="(0; 0; 1)" MinLimit="-35">
 
                     </Constraint>
-              </Mudguard>
-              <Sunshield Collisions="None" Mass="3">
-                      <Constraint MinLimit="-14" Type="Hinge" MaxLimit="10" AxisLocal="(0; 0; 1)">
-                          <Motor Spring="1.5" Type="Spring" Damping="0.75">
-
-                          </Motor>
-                      </Constraint>
-              </Sunshield>
-        </Body>
+            </Mudguard>
+      </Body>
   </_templates>
+  <Truck>
+        <HeadLight Pos="(4.239; 1.202; 0)" ParentFrame="BoneCabin_cdt" _template="Default">
+
+        </HeadLight>
+        <GameData UnlockByExploration="false" Price="69000" UnlockByRank="1" Country="RU,CAS">
+              <CustomizationCameras>
+                    <CameraPos Name="sticker_1" InterestPosition="(8.061; 4.451; 1.421)" Position="(5.883; 2.373; -0.832)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="addon_1" InterestPosition="(-0.508; 2.026; -0)" Position="(-9.259; 3.714; 6.213)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="addon_2" InterestPosition="(4.294; 1.744; 0)" Position="(0.557; 4.1; 3.247)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="mirror_mount" InterestPosition="(8.061; 2.646; 0.991)" Position="(5.676; 3.006; -0.661)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="side_r" InterestPosition="(4.764; 1.97; -0)" Position="(-0.226; 4.969; -4.508)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="sticker" InterestPosition="(7.671; 1.439; 1.955)" Position="(5.864; 3.051; -0.14)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="door_r_sticker" InterestPosition="(8.598; 1.658; 0)" Position="(4.916; 2.706; 3.172)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="roof" InterestPosition="(4.758; 2.358; -0)" Position="(10.787; 4.806; -3.717)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="glass_sticker" InterestPosition="(6.455; 2.666; -0.909)" Position="(10.325; 3.668; 0.998)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="hoods" InterestPosition="(5.716; 1.735; 0)" Position="(13.576; 1.402; -3.863)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="sticker_2" InterestPosition="(6.662; 0.61; 1.935)" Position="(5.221; 1.595; 0.03)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="side_l" InterestPosition="(6.27; 2.278; 0)" Position="(11.866; 5.284; -4.55)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="bubble_head" InterestPosition="(7.671; 0.952; 1.577)" Position="(5.864; 3.051; -0.715)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="wheels" InterestPosition="(4.284; 0.711; 0.052)" Position="(7.913; 1.957; -5.151)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="default" InterestPosition="(5.716; 1.735; 0)" Position="(13.576; 1.402; -3.863)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="rear" InterestPosition="(-0.868; 1.09; -0)" Position="(-6.285; 2.053; 3.418)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="door_l_sticker" InterestPosition="(7.161; 1.596; 0.841)" Position="(5.167; 2.83; -3.279)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="curtain" InterestPosition="(8.061; 2.646; 0.991)" Position="(5.676; 3.006; -0.661)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+              </CustomizationCameras>
+              <UiDesc UiName="UI_VEHICLE_AZOV_64131_NAME" UiDesc="UI_VEHICLE_AZOV_64131_DESC" UiIconLogo="AzovLogo80" UiIcon40x40="offroadVehicleImg" UiIcon30x30="offroadVehicleImg30" UiIcon328x458="shopImgAzov64131">
+
+              </UiDesc>
+                    <AddonSockets>
+                        <Socket Offset="(-4.227; 1.083; 0)" Names="Trailer">
+                          <AddonsShift Offset="(0; 0; 0)" Types="MinicraneRU, FrameAddon" TrailerNamesBlock="Trailer">
+
+                          </AddonsShift>
+                        </Socket>
+                        <Socket Offset="(-2.735; 1.591; 0)" Names="Semitrailer, SemitrailerOiltank" NamesBlock="SaddleHigh">
+
+                        </Socket>
+                        <Socket Offset="(-1.864; 1.765; 0)" Names="LargeSemitrailer, LargeSemitrailerOiltank" NamesBlock="SaddleLow">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Offset="(-6; 1.266; 0)" Names="BunkLog">
+
+                        </Socket>
+                        <Socket Offset="(-2.709; 1.266; 0)" Names="SaddleLow">
+                            <ExtraParent Offset="(0; 0; -0.05)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Offset="(0; 0; 0.05)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                        </Socket>
+                        <Socket Offset="(-1.854; 1.267; 0)" Names="SaddleHigh">
+                            <ExtraParent Offset="(0; 0; -0.02)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Offset="(0; 0; 0.02)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                        </Socket>
+                        <Socket Offset="(-2.165; 1.267; 0)" Names="FrameAddon">
+                          <AddonsShift Offset="(-1.1; 0; 0)" Types="MinicraneRU">
+
+                          </AddonsShift>
+                        </Socket>
+                        <Socket Offset="(-1.6; 1.267; 0)" Names="FrameAddonTowPlatform" NamesBlock="MinicraneRU, MetalDetector, Trailer">
+
+                        </Socket>
+                        <Socket Offset="(-3.2; 1.267; 0)" Names="FrameAddonTank">
+
+                        </Socket>
+                        <Socket ParentFrame="BoneChassis_cdt" Offset="(-2.861; 0.238; 0)" Names="FrameAddonMaintainer" NamesBlock="Trailer">
+
+                        </Socket>
+                        <Socket Offset="(0.2; 1.267; 0)" Names="FrameAddonSeismicVibrator" NamesBlock="Trailer">
+
+                        </Socket>
+                        <Socket Offset="(-2.22; 1.345; 0)" Names="FrameAddonKung" ParentFrame="BoneChassis_cdt">
+                            <ExtraParent Offset="(0; 0; -0.14)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Offset="(0; 0; 0.14)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                        </Socket>
+                        <Socket Offset="(-2.95; 1.36; 0)" Names="BigCraneRu">
+                            <ExtraParent Offset="(0; -0.082; 0)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Offset="(0; -0.082; 0)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                        </Socket>
+                        <Socket Offset="(0.035; 1.271; 0)" Names="LogLift">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(-0.35; 1.27; 0)" Names="MinicraneRU" NamesBlock="LogLift, BunkLog, FrameAddonTank, FrameAddonKung, BigCraneRu, BigCraneUs, FrameAddonMaintainer, FrameAddonSeismicVibrator, SemitrailerOiltank, LargeSemitrailerOiltank">
+                            <ExtraParent Offset="(0; 0; -0.07)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Offset="(0; 0; 0.07)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="azov_64131_exhaust_default">
+                      <Socket Names="Azov64131Exhaust" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="azov_64131_snorkel_default">
+                        <Socket Names="Azov64131Snorkel" ParentFrame="BoneCabin_cdt">
+
+                        </Socket>
+                        <Socket Names="Azov64131Snorkel2" ParentFrame="BoneCabin_cdt">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="azov_64131_beacon_default">
+                      <Socket NamesBlock="Azov64131Beacon2, Azov64131SpotLight" Names="Azov64131Beacon" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Azov64131Beacon2" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="azov_64131_wheel_addon_default">
+                      <Socket Names="azov64131WheelAddon" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="azov_64131_fender_default">
+                      <Socket Offset="(0; 0; 0)" Names="Azov64131Fender" ParentFrame="BoneChassis_cdt">
+                          <ExtraParent Frame="BoneCabin_cdt">
+
+                          </ExtraParent>
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Azov64131Visor" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Azov64131SpotLight" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Azov64131Bumper" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Azov64131Horn" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Azov64131Gabarite" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="Azov64131AirConditioner" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Names="azov64131Sticker_GlassTop" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Names="azov64131Sticker_GlassBottom" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="azov64131Sticker_Door_L" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="azov64131Sticker_Door_R" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Azov64131Sticker_1x1_01" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Azov64131Sticker_1x1_02" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneSunShield1_cdt" Offset="(0; 0; 0)" Names="Azov64131Sticker_1x1_03" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneSunShield1_cdt" Offset="(0; 0; 0)" Names="Azov64131Sticker_1x2_01" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Azov64131Sticker_1x4_01" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneSunShield2_cdt" Offset="(0; 0; 0)" Names="Azov64131Sticker_1x4_02" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(3.459; 3.062; 0.405)" Names="StuffAirfreshener" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(3.867; 2.481; 0.046)" Names="StuffDashboard" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Names="StuffCurtainAzov64131" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                      <CraneSocket Pos="(4.258; 1.013; 0.363)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(4.258; 1.013; -0.363)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-1.4; 1.104; 0.506)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-1.4; 1.104; -0.506)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-4.227; 1.086; 0)">
+
+                      </CraneSocket>
+                        <WinchSocket Pos="(4.258; 1.013; 0.363)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(4.258; 1.013; -0.363)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(-1.4; 1.104; 0.506)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(-1.4; 1.104; -0.506)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(-4.227; 1.086; 0)">
+
+                        </WinchSocket>
+        </GameData>
+        <PhysicsModel Mesh="trucks/azov_64131">
+                <Body CenterOfMassOffset="(0; 0; 0)" NetSync="pv" Mass="11850" ImpactType="Truck">
+                      <Body NetSync="pv" CenterOfMassOffset="(-0.1; 0.45; 0)" ModelFrame="BoneCabin_cdt" Mass="4300" ImpactType="Truck">
+                        <Constraint Type="Hinge" MaxLimit="10" AxisLocal="(1; 0; 0)" CenterOfMassOffset="(0; 0; 0)" MinLimit="-10">
+                            <Motor Spring="525000" Damping="52500" Type="Spring">
+
+                            </Motor>
+                        </Constraint>
+                            <Body ModelFrame="BoneMirrorRight_cdt" _template="SideMirror">
+
+                            </Body>
+                            <Body ModelFrame="BoneMirrorLeft_cdt" _template="SideMirror">
+
+                            </Body>
+                            <Body ModelFrame="BoneMirror_cdt" _template="SideMirror">
+                              <Constraint AxisLocal="(0; 0; 1)">
+                                  <Motor Spring="250">
+
+                                  </Motor>
+                              </Constraint>
+                            </Body>
+                            <Body ModelFrame="BoneSunShield1_cdt" _template="Sunshield">
+                              <Constraint>
+                                  <Motor Spring="30">
+
+                                  </Motor>
+                              </Constraint>
+                            </Body>
+                            <Body ModelFrame="BoneSunShield2_cdt" _template="Sunshield">
+                              <Constraint>
+                                  <Motor Spring="20">
+
+                                  </Motor>
+                              </Constraint>
+                            </Body>
+                            <Body ModelFrame="BoneSunShield3_cdt" _template="Sunshield">
+                              <Constraint>
+                                  <Motor Spring="15">
+
+                                  </Motor>
+                              </Constraint>
+                            </Body>
+                            <Body CenterOfMassOffset="(0; 0; 0)" ModelFrame="BoneHook1_cdt" Mass="0.1" Collisions="None">
+                              <Constraint Type="Hinge" MaxLimit="80" AxisLocal="(1; 0; 0)" MinLimit="-15" PivotOffset="(0; 0; 0)">
+                                  <Motor Spring="0.01" Damping="0.001" Type="Spring">
+
+                                  </Motor>
+                              </Constraint>
+                              <Body CenterOfMassOffset="(0; 0; 0)" ModelFrame="BoneHook2_cdt" Mass="0.1" Collisions="None">
+                                    <Constraint Type="Hinge" MaxLimit="80" AxisLocal="(0; 0; 1)" MinLimit="-80" PivotOffset="(0; 0; 0)">
+                                        <Motor Spring="0.001" Damping="0.001" Type="Spring">
+
+                                        </Motor>
+                                    </Constraint>
+                              </Body>
+                            </Body>
+                            <Body CenterOfMassOffset="(0; 0; 0)" ModelFrame="BoneKey1_cdt" Mass="0.1" Collisions="None">
+                              <Constraint Type="Hinge" MaxLimit="25" AxisLocal="(1; 0; 0)" MinLimit="-13" PivotOffset="(0; 0; 0)">
+                                  <Motor Spring="0.001" Damping="0.0001" Type="Spring">
+
+                                  </Motor>
+                              </Constraint>
+                              <Body CenterOfMassOffset="(0; 0; 0)" ModelFrame="BoneKey2_cdt" Mass="0.1" Collisions="None">
+                                    <Constraint Type="Hinge" MaxLimit="25" AxisLocal="(1; 0; 0)" MinLimit="-13" PivotOffset="(0; 0; 0)">
+                                        <Motor Spring="0.001" Damping="0.001" Type="Spring">
+
+                                        </Motor>
+                                    </Constraint>
+                              </Body>
+                            </Body>
+                      </Body>
+                      <Body ModelFrame="BoneTieRod1_1_cdt" _template="TieRod">
+                        <Constraint MaxLimit="26" AxisLocal="(0; 0; 1)" MinLimit="-26" Name="TieRod1Rocker">
+
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneTieRod2_1_cdt" _template="TieRod">
+                        <Constraint MaxLimit="13" AxisLocal="(0; 0; 1)" MinLimit="-13" Name="TieRod2Rocker">
+
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneLeftMudguard_cdt" _template="Mudguard">
+
+                      </Body>
+                      <Body ModelFrame="BoneRightMudguard_cdt" _template="Mudguard">
+
+                      </Body>
+                </Body>
+                <NetSync Legacy="false">
+
+                </NetSync>
+        </PhysicsModel>
+        <ControlledConstraints>
+                    <Constraint IsLinkedSteering="true" Id="chassis_steer" Name="TieRod1Rocker">
+
+                    </Constraint>
+                    <Constraint IsLinkedSteering="true" Id="chassis_steer" Name="TieRod2Rocker">
+
+                    </Constraint>
+        </ControlledConstraints>
+        <ModelAttachments>
+                    <HeadLight>
+                          <Flare Pos="(4.239; 1.202; -0.876)" ParentFrame="BoneCabin_cdt" _template="HeadLight" DirAngle="140" AspectRatio="2" Size=".35" Color="g(255; 235; 200) x 0.6">
+
+                          </Flare>
+                          <Flare Pos="(4.239; 1.202; 0.876)" ParentFrame="BoneCabin_cdt" _template="HeadLight" DirAngle="140" AspectRatio="2" Size=".35" Color="g(255; 235; 200) x 0.6">
+
+                          </Flare>
+                          <Flare Pos="(4.239; 1.202; -0.876)" ParentFrame="BoneCabin_cdt" _template="BlueStreak">
+
+                          </Flare>
+                          <Flare Pos="(4.239; 1.202; 0.876)" ParentFrame="BoneCabin_cdt" _template="BlueStreak">
+
+                          </Flare>
+                            <Model Org="(4.239; 1.202; -0.876)" ParentFrame="BoneCabin_cdt" _template="HeadLightRay">
+
+                            </Model>
+                            <Model Org="(4.239; 1.202; 0.876)" ParentFrame="BoneCabin_cdt" _template="HeadLightRay">
+
+                            </Model>
+                    </HeadLight>
+                    <Ignition>
+                            <Light Pos="(4.55; 1.013; 0.7)" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalWhite">
+
+                            </Light>
+                            <Light Pos="(4.55; 1.013; -0.7)" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalWhite">
+
+                            </Light>
+                            <Light Pos="(-4.8; 1.025; -0)" _template="IgnitionSignalRed">
+
+                            </Light>
+                              <Flare Pos="(4.259; 0.94; -0.87)" _template="IgnitionSignalWhite" Size=".15" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                              <Flare Pos="(4.259; 0.94; 0.87)" _template="IgnitionSignalWhite" Size=".15" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                              <Flare Pos="(4.239; 1.202; -0.876)" _template="IgnitionSignalWhite" AspectRatio="2" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                              <Flare Pos="(4.239; 1.202; 0.876)" _template="IgnitionSignalWhite" AspectRatio="2" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                              <Flare Pos="(4.259; 0.94; -0.68)" _template="IgnitionSignalWhite" Size=".15" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                              <Flare Pos="(4.259; 0.94; 0.68)" _template="IgnitionSignalWhite" Size=".15" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                              <Flare Pos="(3.597; 1.067; -1.257)" _template="MarkerBeacon" Size="0.3" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                              <Flare Pos="(3.597; 1.067; 1.257)" _template="MarkerBeacon" Size="0.3" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                              <Flare Pos="(2.289; 1.281; -1.183)" _template="MarkerBeacon" Size="0.3" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                              <Flare Pos="(2.289; 1.281; 1.183)" _template="MarkerBeacon" Size="0.3" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                              <Flare Pos="(3.79; 3.255; -0.147)" _template="IgnitionSignalOrange" Color="g(255; 160; 10) x 0.3" Size="0.3" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                              <Flare Pos="(3.79; 3.255; 0)" _template="IgnitionSignalOrange" Color="g(255; 160; 10) x 0.3" Size="0.3" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                              <Flare Pos="(3.79; 3.255; 0.147)" _template="IgnitionSignalOrange" Color="g(255; 160; 10) x 0.3" Size="0.3" ParentFrame="BoneCabin_cdt">
+
+                              </Flare>
+                    </Ignition>
+        </ModelAttachments>
+        <Landmark MaxScale="2.5" Mesh="landmarks/azov_64131_lmk" MinScale="1.5">
+
+        </Landmark>
+        <AutomaticIK>
+                          <IKBone ParentFrame="BoneTieRod1_1_cdt" ModelFrame="BoneTieRod1_2">
+                            <IKJoint Type="Hinge2" AxisLocal="(1; 0; 0)">
+
+                            </IKJoint>
+                            <IKBone AttachToFrame="BoneRackLeft1" AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRod1_3">
+                                  <IKJoint Type="Slider" AxisLocal="(1; 0; 0)">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ParentFrame="BoneTieRod2_1_cdt" ModelFrame="BoneTieRod2_2">
+                            <IKJoint Type="Hinge2" AxisLocal="(1; 0; 0)">
+
+                            </IKJoint>
+                            <IKBone AttachToFrame="BoneRackLeft2" AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRod2_3">
+                                  <IKJoint Type="Slider" AxisLocal="(1; 0; 0)">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ParentFrame="BoneTieRod2_1_cdt" ModelFrame="BoneTieRod2_4">
+                            <IKJoint Type="Hinge2" AxisLocal="(0; 1; 0)">
+
+                            </IKJoint>
+                            <IKBone AttachToFrame="BoneTieRod1_1_cdt" AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRod2_5">
+                                  <IKJoint Type="Slider" AxisLocal="(0; 1; 0)">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+        </AutomaticIK>
+        <TruckData SteerSpeed="0.02" EngineStartDelay="0.6" EngineIconMesh="env/engine_big" TruckType="OFFROAD" Responsiveness="0.25" BackSteerSpeed="0.02" TruckImage="azov64131mchr" FuelCapacity="350" DiffLockType="Always" ExhaustStartTime="0.6" EngineIconScale="1.2">
+                          <Driver Pos="(3.203; 2.099; 0.585)" ParentFrame="BoneCabin_cdt" SteeringWheelPos="(3.585; 2.427; 0.584)">
+
+                          </Driver>
+                          <SoundsDamage _template="Heavy">
+
+                          </SoundsDamage>
+                          <Shakers>
+                                  <Shaker MaxFrequency="0.1" MaxAngle="(3; 3; 3)" ParentFrame="BoneCabin_cdt" Frame="BoneGearstick">
+
+                                  </Shaker>
+                          </Shakers>
+                          <OcclusionMap HalfSizeZ="2" MinX="-4.8" MaxX="4.7">
+
+                          </OcclusionMap>
+                          <FuelTank DamageCapacity="100">
+
+                          </FuelTank>
+                          <Intake Size="1.219" Dir="(1; 0; 0)" Origin="(4.215; 1.567; 0)">
+
+                          </Intake>
+                          <EngineSocket Type="e_ru_truck_modern" Default="ru_truck_modern_engine_0">
+
+                          </EngineSocket>
+                          <SuspensionSocket Type="s_azov_64131" MaxWheelRadiusWithoutSuspension="1" Default="azov_64131_suspension_default">
+
+                          </SuspensionSocket>
+                          <Dashboard>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.966; 0.259; 0)" InputType="rpm" Org="(3.785; 2.382; 0.639)" Damping="0.99" Mesh="trucks/arrows/azov_64131_arrow1" OutputAngles="(-123; 131)">
+
+                                                </Gauge>
+                                                <Gauge InputType="speed" Dir="(-0.966; 0.259; 0)" Org="(3.785; 2.382; 0.524)" Mesh="trucks/arrows/azov_64131_arrow1" InputRange="(0;125)" OutputAngles="(-130; 131)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.966; 0.259; 0)" InputType="engineEnabled" Org="(3.796; 2.425; 0.724)" Damping="0.99" Mesh="trucks/arrows/azov_64131_arrow2" OutputAngles="(-46; 9)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.966; 0.259; 0)" InputType="engineEnabled" Org="(3.785; 2.385; 0.724)" Damping="0.99" Mesh="trucks/arrows/azov_64131_arrow2" OutputAngles="(-45; -8)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.966; 0.259; 0)" InputType="engineEnabled" Org="(3.785; 2.385; 0.766)" Damping="0.99" Mesh="trucks/arrows/azov_64131_arrow2" OutputAngles="(-46; 7)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.966; 0.259; 0)" InputType="fuel" Org="(3.786; 2.388; 0.439)" Damping="0.99" Mesh="trucks/arrows/azov_64131_arrow2" OutputAngles="(-46; 39)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.966; 0.259; 0)" InputType="engineEnabled" Org="(3.786; 2.388; 0.398)" Damping="0.99" Mesh="trucks/arrows/azov_64131_arrow2" OutputAngles="(-49; 17)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.966; 0.259; 0)" InputType="engineEnabled" Org="(3.777; 2.355; 0.439)" Damping="0.99" Mesh="trucks/arrows/azov_64131_arrow2" OutputAngles="(-163; -21)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.966; 0.259; 0)" InputType="engineEnabled" Org="(3.777; 2.355; 0.397)" Damping="0.99" Mesh="trucks/arrows/azov_64131_arrow2" OutputAngles="(-162; -42)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.966; 0.259; 0)" InputType="engineEnabled" Org="(3.779; 2.360; 0.639)" Damping="0.99" Mesh="trucks/arrows/azov_64131_arrow3" OutputAngles="(0; -145)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.966; 0.259; 0)" InputType="engineEnabled" Org="(3.779; 2.360; 0.639)" Damping="0.99" Mesh="trucks/arrows/azov_64131_arrow3" OutputAngles="(0; -48)">
+
+                                                </Gauge>
+                          </Dashboard>
+                          <Axles>
+                                                  <Axle Frame="BoneAxle1">
+
+                                                  </Axle>
+                                                  <Axle Frame="BoneAxle2">
+
+                                                  </Axle>
+                                                  <Axle Frame="BoneAxle3">
+
+                                                  </Axle>
+                                                  <Axle Frame="BoneAxle4">
+
+                                                  </Axle>
+                          </Axles>
+                          <Camera Center="(-1.5; 0; 0)" ParentFrame="BoneCabin_cdt">
+                                                  <Cockpit WindshieldDiffuseTexture="trucks/azov_64131_glass__d_a.tga" _template="Default" WindshieldShadingTexture="trucks/azov_64131_glass__sh_d.tga" ViewPos="(3.112; 2.799; 0.585)">
+                                                        <Mirror FOVScale="2" ClipDir="(-0.924; -0.107; -0.368)" MeshFrame="mirror_left" Pos="(3.806; 2.791; 1.414)" ReflectionDir="(-0.924; -0.107; -0.368)" Size="(0.162; 0.311)" ClipOffset="0.1">
+                                                          <SecondaryView FOVScale="1.5" ClipDir="(-0.924; -0.107; -0.368)" MeshFrame="mirror_left_1" Pos="(3.839; 2.544; 1.386)" CurveAngle="10" Size="(0.214; 0.155)" ClipOffset="0">
+
+                                                          </SecondaryView>
+                                                        </Mirror>
+                                                        <Mirror FOVScale="2.5" ClipDir="(-0.821; -0.065; 0.567)" MeshFrame="mirror_right" Pos="(3.809; 2.795; -1.408)" ReflectionDir="(-0.821; -0.065; 0.567)" Size="(0.162; 0.311)" ClipOffset="0.1">
+                                                          <SecondaryView FOVScale="1.75" ClipDir="(-0.821; -0.065; 0.567)" MeshFrame="mirror_right_1" Pos="(3.837; 2.544; -1.392)" CurveAngle="10" Size="(0.214; 0.155)" ClipOffset="0">
+
+                                                          </SecondaryView>
+                                                        </Mirror>
+                                                        <Mirror FOVScale="2.25" ClipDir="(-0.103; -0.641; 0.761)" MeshFrame="mirror_right_2" Pos="(4.076; 2.973; -1.085)" ReflectionDir="(-0.103; -0.641; 0.761)" Size="(0.321; 0.321)" ClipOffset="0.1">
+
+                                                        </Mirror>
+                                                  </Cockpit>
+                          </Camera>
+                          <CompatibleWheels Type="wheels_heavy_single" Scale="0.6">
+
+                          </CompatibleWheels>
+                                                    <LimitedFluid SizeX="1.35" Center="(-0.401; 0.905; 0.843)" Type="Box" SizeZ="0.49" SizeY="0.62">
+
+                                                    </LimitedFluid>
+                                                    <LimitedFluid SizeX="1.35" Center="(-0.401; 0.905; -0.845)" Type="Box" SizeZ="0.49" SizeY="0.62">
+
+                                                    </LimitedFluid>
+                          <Sounds _template="Default" MinDist="15.0" Origin="(2.749; 1.505; 0)" DisableReversePitch="true">
+                                                          <Reverse _inheritRemove="true">
+
+                                                          </Reverse>
+                                                          <Reverse Sound="trucks/azov_64131/azov_64131_back_beeper">
+
+                                                          </Reverse>
+                                                        <EngineTrans Sound="trucks/azov_64131/azov_64131_turbo">
+
+                                                        </EngineTrans>
+                                                        <EngineLow Sound="trucks/azov_64131/azov_64131_low">
+
+                                                        </EngineLow>
+                                                        <BrakePull Sound="trucks/azov_64131/azov_64131_brake_pull">
+
+                                                        </BrakePull>
+                                                        <EngineHigh Sound="trucks/azov_64131/azov_64131_high">
+
+                                                        </EngineHigh>
+                                                        <HandbrakeOff Sound="trucks/azov_64131/azov_64131_handbrake_off">
+
+                                                        </HandbrakeOff>
+                                                        <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
+
+                                                        </AbruptStop>
+                                                        <EngineRev Sound="trucks/azov_64131/azov_64131_rev">
+
+                                                        </EngineRev>
+                                                        <EngineHeavy_2d IsSound2D="true" Sound="trucks/azov_4220_antarctic/azov_4220_antarctic_heavy_2d">
+
+                                                        </EngineHeavy_2d>
+                                                        <EngineHeavy Sound="trucks/azov_4220_antarctic/azov_4220_antarctic_heavy">
+
+                                                        </EngineHeavy>
+                                                        <EngineHigh_2d IsSound2D="true" Sound="trucks/azov_64131/azov_64131_high_2d">
+
+                                                        </EngineHigh_2d>
+                                                        <EngineLow_2d IsSound2D="true" Sound="trucks/azov_64131/azov_64131_low_2d">
+
+                                                        </EngineLow_2d>
+                                                        <EngineIdle_2d IsSound2D="true" Sound="trucks/azov_64131/azov_64131_idle_2d">
+
+                                                        </EngineIdle_2d>
+                                                        <EngineStart Sound="trucks/azov_64131/azov_64131_start">
+
+                                                        </EngineStart>
+                                                        <Handbrake Sound="trucks/azov_64131/azov_64131_handbrake_on">
+
+                                                        </Handbrake>
+                                                        <BrakeRelease Sound="trucks/azov_64131/azov_64131_brake_release">
+
+                                                        </BrakeRelease>
+                                                        <Honk Sound="trucks/azov_64131/azov_64131_honk">
+
+                                                        </Honk>
+                                                        <EngineIdle Sound="trucks/azov_64131/azov_64131_idle">
+
+                                                        </EngineIdle>
+                                                        <EngineStop Sound="trucks/azov_64131/azov_64131_stop">
+
+                                                        </EngineStop>
+                                                        <BrakesSqueal Sound="trucks/azov_64131/azov_64131_brakes_squeal">
+
+                                                        </BrakesSqueal>
+                                                        <EngineAccel Sound="trucks/azov_64131/azov_64131_acc">
+
+                                                        </EngineAccel>
+                          </Sounds>
+                          <GearboxSocket Type="gearboxes_special" Default="g_special_default">
+
+                          </GearboxSocket>
+                          <Steam Origin="(1.32; 1.389; 0)">
+
+                          </Steam>
+                          <Wheels DefaultWheelType="wheels_heavy_single" DefaultTire="allterrain_1" DefaultRim="rim_1">
+                                                                <Wheel Pos="(2.972; 0.547; 1.02)" _template="FirstAxle">
+
+                                                                </Wheel>
+                                                                <Wheel RightSide="true" Pos="(2.972; 0.547; 1.02)" _template="FirstAxle">
+
+                                                                </Wheel>
+                                                                <Wheel Pos="(1.014; 0.562; 1.02)" _template="SecondAxle">
+
+                                                                </Wheel>
+                                                                <Wheel RightSide="true" Pos="(1.014; 0.562; 1.02)" _template="SecondAxle">
+
+                                                                </Wheel>
+                                                                <Wheel Pos="(-1.996; 0.576; 0.99)" _template="MiddleAxle">
+
+                                                                </Wheel>
+                                                                <Wheel RightSide="true" Pos="(-1.996; 0.576; 0.99)" _template="MiddleAxle">
+
+                                                                </Wheel>
+                                                                <Wheel Pos="(-3.429; 0.576; 0.99)" _template="MiddleAxle">
+
+                                                                </Wheel>
+                                                                <Wheel RightSide="true" Pos="(-3.429; 0.576; 0.99)" _template="MiddleAxle">
+
+                                                                </Wheel>
+                          </Wheels>
+                          <WinchUpgradeSocket Type="winches_medium_trucks" Default="w_medium_trucks_default" IsUpgradable="true">
+
+                          </WinchUpgradeSocket>
+                                                                <SteeringRack Frame="BoneRack1" RackHalfSizeZ="0.753" FrameSteerLeft="BoneRackLeft1" FrameSteerRight="BoneRackRight1">
+
+                                                                </SteeringRack>
+                                                                <SteeringRack Frame="BoneRack2" RackHalfSizeZ="0.753" FrameSteerLeft="BoneRackLeft2" FrameSteerRight="BoneRackRight2">
+
+                                                                </SteeringRack>
+                          <SteeringWheel Frame="BoneSteering">
+
+                          </SteeringWheel>
+                          <SoundsWheels _template="Default">
+
+                          </SoundsWheels>
+                          <Damage>
+                                                                          <DamageArea Min="(2; 0.933; -0.5)" ParentFrame="BoneChassis_cdt" Max="(4.1; 1.808; 0.5)" Type="Engine">
+
+                                                                          </DamageArea>
+                                                                          <DamageArea Min="(-1.345; 0.564; -1.165)" ParentFrame="BoneChassis_cdt" Max="(0.303; 1.267; 1.165)" Type="FuelTank">
+
+                                                                          </DamageArea>
+                          </Damage>
+                          <Shafts>
+                                                                            <Shaft SocketPointA="Shaft1a" SocketPointB="Shaft1b">
+
+                                                                            </Shaft>
+                                                                            <Shaft SocketPointA="Shaft2a" SocketPointB="Shaft2b">
+
+                                                                            </Shaft>
+                                                                            <Shaft SocketPointA="Shaft3a" SocketPointB="Shaft3b">
+
+                                                                            </Shaft>
+                                                                            <Shaft SocketPointA="Shaft4a" SocketPointB="Shaft4b">
+
+                                                                            </Shaft>
+                                                                            <Shaft SocketPointA="Shaft5a" SocketPointB="Shaft5b">
+
+                                                                            </Shaft>
+                          </Shafts>
+        </TruckData>
+  </Truck>

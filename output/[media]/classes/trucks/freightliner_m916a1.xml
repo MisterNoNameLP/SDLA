@@ -1,736 +1,736 @@
+  <_templates Include="trucks">
+      <Wheel>
+          <RearWheel Location="rear" ConnectedToHandbrake="true" Torque="default">
+
+          </RearWheel>
+          <FrontWheel SteeringAngle="40" Location="front" ParentFrame="BoneCabin_cdt" Torque="full" SteeringCastor="8">
+
+          </FrontWheel>
+      </Wheel>
+      <Body>
+            <Mirror Collisions="None">
+                <Constraint Type="Fixed" LinearLimitsY="(-.005; .02)" LinearLimitsX="(-.005;.005)" LinearLimitsZ="(0;0)">
+                    <Motor Spring="200" Damping="20" Type="Spring">
+
+                    </Motor>
+                </Constraint>
+            </Mirror>
+      </Body>
+  </_templates>
   <Truck>
-      <PhysicsModel Mesh="trucks/freightliner_m916a1">
-          <NetSync Legacy="false">
+        <HeadLight Pos="(4; 1.287; 0)" ParentFrame="BoneCabin_cdt" _template="Default">
 
-          </NetSync>
-          <Body CenterOfMassOffset="(-0.3; 0; 0)" ImpactType="Truck" NetSync="pv" ModelFrame="BoneChassis_cdt" Mass="6000">
-                  <Body Collisions="None" ModelFrame="BoneRope_cdt" Mass="2">
-                    <Constraint LinearLimitsZ="(-0.06;0.06)" Type="Fixed" LinearLimitsY="(-.03; .03)" LinearLimitsX="(-.05;0)">
-                        <Motor Spring="1000" Type="Spring" Damping="40">
+        </HeadLight>
+        <GameData ExcludeAddons="trailer_log_pole" UnlockByExploration="false" Price="74200" UnlockByRank="17" Country="US">
+              <CustomizationCameras>
+                    <CameraPos Name="sticker_1" InterestPosition="(7.926; 3.957; 1.695)" Position="(4.65; 2.53; -0.267)" Interior="true" FOV="32.0">
 
-                        </Motor>
-                    </Constraint>
-                  </Body>
-                  <Body Collisions="None" ModelFrame="BoneStick_cdt" Mass="10">
-                    <Constraint Type="Ragdoll" PlaneAxisLocal="(1; 0; 0)" PlaneMax="0" PlaneMin="-100" Cone="40" TwistAxisLocal="(0; 1; 0)">
-                        <AllMotor Spring="400" Type="Spring" Damping="500">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="addon_1" InterestPosition="(1.631; 1.547; -0)" Position="(-5.422; 3.19; 4.46)" MaxXRotation="360" FOV="32.0">
 
-                        </AllMotor>
-                    </Constraint>
-                        <Body Collisions="None" ModelFrame="BoneWire2_cdt" Mass="2">
-                          <Constraint Type="Ragdoll" PlaneAxisLocal="(1; 0; 0)" PlaneMax="100" PlaneMin="0" Cone="100" TwistAxisLocal="(0; 1; 0)">
-                              <AllMotor Spring="20" Type="Spring" Damping="10">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="addon_2" InterestPosition="(4.991; 1.77; 0)" Position="(10.328; 3.173; 3.632)" MaxXRotation="360" FOV="32.0">
 
-                              </AllMotor>
-                          </Constraint>
-                          <Body Collisions="None" ModelFrame="BoneWire2_1_cdt" Mass="2">
-                                <Constraint LinearLimitsY="(-.2; .2)" Type="Fixed">
-                                    <Motor Spring="300" Type="Spring" Damping="40">
+                    </CameraPos>
+                    <CameraPos Name="mirror_mount" InterestPosition="(7.926; 1.685; 1.667)" Position="(4.407; 2.886; -0.376)" Interior="true" FOV="32.0">
 
-                                    </Motor>
-                                </Constraint>
-                          </Body>
-                        </Body>
-                        <Body Collisions="None" ModelFrame="BoneWire1_cdt" Mass="2">
-                          <Constraint Type="Ragdoll" PlaneAxisLocal="(1; 0; 0)" PlaneMax="100" PlaneMin="0" Cone="100" TwistAxisLocal="(0; 1; 0)">
-                              <AllMotor Spring="20" Type="Spring" Damping="10">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="side_r" InterestPosition="(5.887; 1.57; 0)" Position="(9.085; 3.446; 4.298)" MaxXRotation="360" FOV="32.0">
 
-                              </AllMotor>
-                          </Constraint>
-                          <Body Collisions="None" ModelFrame="BoneWire1_1_cdt" Mass="2">
-                                <Constraint LinearLimitsY="(-.2; .2)" Type="Fixed">
-                                    <Motor Spring="300" Type="Spring" Damping="40">
+                    </CameraPos>
+                    <CameraPos Name="sticker" InterestPosition="(7.078; 0.61; 1.593)" Position="(4.804; 2.729; -0.558)" Interior="true" FOV="32.0">
 
-                                    </Motor>
-                                </Constraint>
-                          </Body>
-                        </Body>
-                  </Body>
-                  <Body CenterOfMassOffset="(0.5; -0.2; 0)" ImpactType="Truck" NetSync="pv" ModelFrame="BoneCabin_cdt" Mass="3000">
-                    <Constraint Type="Hinge" MaxLimit="22" PivotOffset="(0; 0; 0)" AxisLocal="(1; 0; 0)" MinLimit="-22">
-                        <Motor Spring="1200000" Type="Spring" Damping=".01">
+                    </CameraPos>
+                    <CameraPos Name="glass_sticker" InterestPosition="(5.211; 2.397; -1.051)" Position="(7.704; 3.274; 1.244)" Interior="true" FOV="32.0">
 
-                        </Motor>
-                    </Constraint>
-                        <Body CenterOfMassOffset="(0.3; -0.4; 0)" ImpactType="Truck" ModelFrame="BoneCabinDamper_cdt" Mass="2000">
-                          <Constraint Type="Ragdoll" PlaneAxisLocal="(1; 0; 0)" PlaneMax=".6" PlaneMin="-.6" Cone="2.5" TwistAxisLocal="(0; 1; 0)">
-                              <PlaneMotor Spring="800000" Type="Spring" Damping="420000">
+                    </CameraPos>
+                    <CameraPos Name="door_r_sticker" InterestPosition="(6.562; 1.862; 0.135)" Position="(3.612; 2.058; 3.194)" Interior="true" FOV="32.0">
 
-                              </PlaneMotor>
-                              <ConeMotor Spring="800000" Type="Spring" Damping="80000">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="roof" InterestPosition="(4.783; 2.216; -0)" Position="(-0.306; 3.85; 4.244)" MaxXRotation="360" FOV="32.0">
 
-                              </ConeMotor>
-                          </Constraint>
-                              <Body ModelFrame="BoneMirrorLeft_cdt" _template="Mirror" Mass="5.2">
+                    </CameraPos>
+                    <CameraPos Name="capote_sticker" InterestPosition="(5.454; 0.730; -0.251)" Position="(9.040; 4.845; -1.330)" Interior="true" FOV="32.0">
 
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="hoods" InterestPosition="(5.624; 1.662; 0)" Position="(12.883; 1.65; -4.259)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="sticker_2" InterestPosition="(4.125; 1.227; 3.276)" Position="(4.924; 2.53; -0.267)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="side_l" InterestPosition="(4.450; 2.27; -0)" Position="(10.255; 4.211; -2.821)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="bubble_head" InterestPosition="(8.156; 0.737; 3.514)" Position="(4.829; 2.669; 0.161)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="wheels" InterestPosition="(4.231; 0.904; -0)" Position="(-3.239; 2.543; -4.981)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="default" InterestPosition="(5.624; 1.662; 0)" Position="(12.883; 1.65; -4.259)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="rear" InterestPosition="(2.185; 1.475; 0)" Position="(-5.02; 1.643; 4.200)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="door_l_sticker" InterestPosition="(5.169; 1.777; 0.700)" Position="(3.522; 2.228; -3.092)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="hood_ornament" InterestPosition="(7.506; 2.194; -1.387)" Position="(8.557; 2.510; -1.387)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+              </CustomizationCameras>
+              <UiDesc UiName="UI_VEHICLE_FREIGHTLINER_M916A1_NAME" UiDesc="UI_VEHICLE_FREIGHTLINER_M916A1_DESC" UiIconLogo="FreightlinerLogo80" UiIcon40x40="offroadVehicleImg" UiIcon30x30="offroadVehicleImg30" UiIcon328x458="shopImgFreightlinerM916">
+
+              </UiDesc>
+                    <AddonSockets>
+                        <Socket Offset="(-1.9; 1.79; 0)" Names="LargeSemitrailer">
+
+                        </Socket>
+                        <Socket Offset="(-2.02; 1.576; 0)" Names="Semitrailer">
+
+                        </Socket>
+                        <Socket Offset="(-3.64; 0.915; -0)" Names="Trailer">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Offset="(-2.02; 1.276; -0)" Names="SaddleLow">
+                            <ExtraParent Offset="(0; 0; 0.09)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Offset="(0; 0; -0.09)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                        </Socket>
+                        <Socket Offset="(-1.9; 1.29; -0)" Names="SaddleHigh">
+                            <ExtraParent Offset="(0; 0; 0.08)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Offset="(0; 0; -0.08)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                        </Socket>
+                        <Socket Offset="(-2; 1.27; 0)" Names="MinicraneUS">
+                            <ExtraParent Offset="(0; 0; 0.07)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                            <ExtraParent Offset="(0; 0; -0.07)" Frame="BoneChassis_cdt">
+
+                            </ExtraParent>
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="freightliner_m916a1_bumper_default">
+                      <Socket Offset="(0; 0; 0)" Names="FreightlinerM916A1Bumper" ParentFrame="BoneCabin_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="freightliner_m916a1_horn_1">
+                      <Socket Offset="(0; 0; 0)" Names="FreightlinerM916A1Horn" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="FreightlinerM916A1Beacon" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="FreightlinerM916A1Visor" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="freightliner_m916a1_exhaust_default">
+                      <Socket Offset="(0; 0; 0)" Names="FreightlinerM916a1Exhaust" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="freightliner_m916a1_fender_default">
+                      <Socket Offset="(0; 0; 0)" Names="FreightlinerM916a1Fender">
+                          <ExtraParent Frame="BoneCabin_cdt">
+
+                          </ExtraParent>
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="FreightlinerM916A1Snorkel" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinDamper_cdt" Offset="(0; 0; 0)" Names="FreightlinerM916A1SpotLight" NamesBlock="FreightlinerM916A1Beacon">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinDamper_cdt" Names="freightlinerM916A1Sticker_1x1_01" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinDamper_cdt" Names="freightlinerM916A1Sticker_1x1_02" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinDamper_cdt" Names="freightlinerM916A1Sticker_1x2_01" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinDamper_cdt" Names="freightlinerM916A1Sticker_1x2_02" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinDamper_cdt" Names="freightlinerM916A1Sticker_1x2_03" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinDamper_cdt" Names="freightlinerM916A1Sticker_1x2_04" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinDamper_cdt" Names="freightlinerM916A1Sticker_GlassTop" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinDamper_cdt" Names="freightlinerM916A1Sticker_GlassBottom" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="freightlinerM916A1Sticker_Door_L" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="freightlinerM916A1Sticker_Door_R" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="freightlinerM916A1Sticker_Capote" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinDamper_cdt" Offset="(1.658; 2.276; -0.6)" Names="StuffDashboard" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinDamper_cdt" Offset="(1.605; 2.8; 0.113)" Names="StuffAirfreshener" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="StuffHoodFreightlinerM916A1" ParentFrame="BoneCabinDamper_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                      <CraneSocket Pos="(3.643; 1; -0.943)" ParentFrame="BoneCabin_cdt">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(3.643; 1; 0.943)" ParentFrame="BoneCabin_cdt">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(3.643; 0.8; -0.366)" ParentFrame="BoneCabin_cdt">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(3.643; 0.8; 0.366)" ParentFrame="BoneCabin_cdt">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-3.585; 0.92; 0)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.037; 1.138; -0.377)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.037; 1.138; 0.377)">
+
+                      </CraneSocket>
+                        <WinchSocket Pos="(3.643; 1; -0.943)" ParentFrame="BoneCabin_cdt">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(3.643; 1; 0.943)" ParentFrame="BoneCabin_cdt">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(3.643; 0.8; -0.366)" ParentFrame="BoneCabin_cdt">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(3.643; 0.8; 0.366)" ParentFrame="BoneCabin_cdt">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(-3.585; 0.92; 0)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(-0.037; 1.138; -0.377)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(-0.037; 1.138; 0.377)">
+
+                        </WinchSocket>
+        </GameData>
+        <PhysicsModel Mesh="trucks/freightliner_m916a1">
+                <Body NetSync="pv" CenterOfMassOffset="(-0.3; 0; 0)" ModelFrame="BoneChassis_cdt" Mass="6000" ImpactType="Truck">
+                      <Body ModelFrame="BoneRope_cdt" Mass="2" Collisions="None">
+                        <Constraint Type="Fixed" LinearLimitsY="(-.03; .03)" LinearLimitsX="(-.05;0)" LinearLimitsZ="(-0.06;0.06)">
+                            <Motor Spring="1000" Damping="40" Type="Spring">
+
+                            </Motor>
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneStick_cdt" Mass="10" Collisions="None">
+                        <Constraint Type="Ragdoll" PlaneMin="-100" PlaneMax="0" TwistAxisLocal="(0; 1; 0)" Cone="40" PlaneAxisLocal="(1; 0; 0)">
+                            <AllMotor Spring="400" Damping="500" Type="Spring">
+
+                            </AllMotor>
+                        </Constraint>
+                            <Body ModelFrame="BoneWire2_cdt" Mass="2" Collisions="None">
+                              <Constraint Type="Ragdoll" PlaneMin="0" PlaneMax="100" TwistAxisLocal="(0; 1; 0)" Cone="100" PlaneAxisLocal="(1; 0; 0)">
+                                  <AllMotor Spring="20" Damping="10" Type="Spring">
+
+                                  </AllMotor>
+                              </Constraint>
+                              <Body ModelFrame="BoneWire2_1_cdt" Mass="2" Collisions="None">
+                                    <Constraint Type="Fixed" LinearLimitsY="(-.2; .2)">
+                                        <Motor Spring="300" Damping="40" Type="Spring">
+
+                                        </Motor>
+                                    </Constraint>
                               </Body>
-                              <Body ModelFrame="BoneMirrorRight_cdt" _template="Mirror" Mass="4.8">
+                            </Body>
+                            <Body ModelFrame="BoneWire1_cdt" Mass="2" Collisions="None">
+                              <Constraint Type="Ragdoll" PlaneMin="0" PlaneMax="100" TwistAxisLocal="(0; 1; 0)" Cone="100" PlaneAxisLocal="(1; 0; 0)">
+                                  <AllMotor Spring="20" Damping="10" Type="Spring">
 
+                                  </AllMotor>
+                              </Constraint>
+                              <Body ModelFrame="BoneWire1_1_cdt" Mass="2" Collisions="None">
+                                    <Constraint Type="Fixed" LinearLimitsY="(-.2; .2)">
+                                        <Motor Spring="300" Damping="40" Type="Spring">
+
+                                        </Motor>
+                                    </Constraint>
                               </Body>
-                              <Body ModelFrame="BoneMirrorLeft1_cdt" _template="Mirror" Mass="5.3">
+                            </Body>
+                      </Body>
+                      <Body NetSync="pv" CenterOfMassOffset="(0.5; -0.2; 0)" ModelFrame="BoneCabin_cdt" Mass="3000" ImpactType="Truck">
+                        <Constraint Type="Hinge" MaxLimit="22" AxisLocal="(1; 0; 0)" MinLimit="-22" PivotOffset="(0; 0; 0)">
+                            <Motor Spring="1200000" Damping=".01" Type="Spring">
+
+                            </Motor>
+                        </Constraint>
+                            <Body CenterOfMassOffset="(0.3; -0.4; 0)" ModelFrame="BoneCabinDamper_cdt" Mass="2000" ImpactType="Truck">
+                              <Constraint Type="Ragdoll" PlaneMin="-.6" PlaneMax=".6" TwistAxisLocal="(0; 1; 0)" Cone="2.5" PlaneAxisLocal="(1; 0; 0)">
+                                  <ConeMotor Spring="800000" Damping="80000" Type="Spring">
 
-                              </Body>
-                              <Body ModelFrame="BoneMirrorRight1_cdt" _template="Mirror" Mass="5.5">
+                                  </ConeMotor>
+                                  <PlaneMotor Spring="800000" Damping="420000" Type="Spring">
 
-                              </Body>
-                              <Body Collisions="None" ModelFrame="BoneBelt_cdt" Mass="2">
-                                <Constraint MinLimit="-20" Type="Hinge" MaxLimit="0" AxisLocal="(1; 0; 0)">
-                                    <Motor Spring="0.01" Type="Spring" Damping="0.3">
+                                  </PlaneMotor>
+                              </Constraint>
+                                  <Body ModelFrame="BoneMirrorLeft_cdt" Mass="5.2" _template="Mirror">
 
-                                    </Motor>
-                                </Constraint>
-                              </Body>
-                        </Body>
-                        <Body _template="TieRod" ModelFrame="BoneTieRod_cdt">
-                          <Constraint MinLimit="-25" Name="TieRodSteer" MaxLimit="25" AxisLocal="(0; 0; -1)">
+                                  </Body>
+                                  <Body ModelFrame="BoneMirrorRight_cdt" Mass="4.8" _template="Mirror">
 
-                          </Constraint>
-                        </Body>
-                  </Body>
-          </Body>
-      </PhysicsModel>
-      <GameData Country="US" Price="74200" ExcludeAddons="trailer_log_pole" UnlockByRank="17" UnlockByExploration="false">
-            <CustomizationCameras>
-                  <CameraPos Interior="true" Position="(4.65; 2.53; -0.267)" FOV="32.0" InterestPosition="(7.926; 3.957; 1.695)" Name="sticker_1">
+                                  </Body>
+                                  <Body ModelFrame="BoneMirrorLeft1_cdt" Mass="5.3" _template="Mirror">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(1.631; 1.547; -0)" Name="addon_1" MaxXRotation="360" Position="(-5.422; 3.19; 4.46)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                                  </Body>
+                                  <Body ModelFrame="BoneMirrorRight1_cdt" Mass="5.5" _template="Mirror">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.991; 1.77; 0)" Name="addon_2" MaxXRotation="360" Position="(10.328; 3.173; 3.632)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                                  </Body>
+                                  <Body ModelFrame="BoneBelt_cdt" Mass="2" Collisions="None">
+                                    <Constraint Type="Hinge" MaxLimit="0" AxisLocal="(1; 0; 0)" MinLimit="-20">
+                                        <Motor Spring="0.01" Damping="0.3" Type="Spring">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(4.407; 2.886; -0.376)" FOV="32.0" InterestPosition="(7.926; 1.685; 1.667)" Name="mirror_mount">
+                                        </Motor>
+                                    </Constraint>
+                                  </Body>
+                            </Body>
+                            <Body ModelFrame="BoneTieRod_cdt" _template="TieRod">
+                              <Constraint MaxLimit="25" AxisLocal="(0; 0; -1)" MinLimit="-25" Name="TieRodSteer">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.887; 1.57; 0)" Name="side_r" MaxXRotation="360" Position="(9.085; 3.446; 4.298)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                              </Constraint>
+                            </Body>
+                      </Body>
+                </Body>
+                <NetSync Legacy="false">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(4.804; 2.729; -0.558)" FOV="32.0" InterestPosition="(7.078; 0.61; 1.593)" Name="sticker">
+                </NetSync>
+        </PhysicsModel>
+        <ControlledConstraints>
+                  <Constraint IsLinkedSteering="true" Id="chassis_steer" Name="TieRodSteer">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(7.704; 3.274; 1.244)" FOV="32.0" InterestPosition="(5.211; 2.397; -1.051)" Name="glass_sticker">
+                  </Constraint>
+        </ControlledConstraints>
+        <ModelAttachments>
+                    <HeadLight>
+                          <Flare Pos="(3.386; 1.287; -0.653)" _template="HeadLight" Color="g(255; 235; 200) x 0.8" Size=".3" ParentFrame="BoneCabin_cdt">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(3.612; 2.058; 3.194)" FOV="32.0" InterestPosition="(6.562; 1.862; 0.135)" Name="door_r_sticker">
+                          </Flare>
+                          <Flare Pos="(3.386; 1.287; 0.653)" _template="HeadLight" Color="g(255; 235; 200) x 0.8" Size=".3" ParentFrame="BoneCabin_cdt">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.783; 2.216; -0)" Name="roof" MaxXRotation="360" Position="(-0.306; 3.85; 4.244)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                          </Flare>
+                          <Flare Pos="(3.386; 1.287; -0.653)" ParentFrame="BoneCabin_cdt" _template="BlueStreak">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(9.040; 4.845; -1.330)" FOV="32.0" InterestPosition="(5.454; 0.730; -0.251)" Name="capote_sticker">
+                          </Flare>
+                          <Flare Pos="(3.386; 1.287; 0.653)" ParentFrame="BoneCabin_cdt" _template="BlueStreak">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.624; 1.662; 0)" Name="hoods" MaxXRotation="360" Position="(12.883; 1.65; -4.259)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                          </Flare>
+                            <Model Org="(3.386; 1.287; -0.653)" ParentFrame="BoneCabin_cdt" _template="HeadLightRay">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(4.924; 2.53; -0.267)" FOV="32.0" InterestPosition="(4.125; 1.227; 3.276)" Name="sticker_2">
+                            </Model>
+                            <Model Org="(3.386; 1.287; 0.653)" ParentFrame="BoneCabin_cdt" _template="HeadLightRay">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.450; 2.27; -0)" Name="side_l" MaxXRotation="360" Position="(10.255; 4.211; -2.821)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                            </Model>
+                    </HeadLight>
+                    <StopSignals>
+                            <Light Pos="(-3.566; 0.712; -0.259)" _template="StopSignal">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(4.829; 2.669; 0.161)" FOV="32.0" InterestPosition="(8.156; 0.737; 3.514)" Name="bubble_head">
+                            </Light>
+                            <Light Pos="(-3.566; 0.712; 0.259)" _template="StopSignal">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.231; 0.904; -0)" Name="wheels" MaxXRotation="360" Position="(-3.239; 2.543; -4.981)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                            </Light>
+                              <Flare Pos="(-3.466; 0.804; -0.259)" _template="StopSignal">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.624; 1.662; 0)" Name="default" MaxXRotation="360" Position="(12.883; 1.65; -4.259)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                              </Flare>
+                              <Flare Pos="(-3.466; 0.804; 0.259)" _template="StopSignal">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(2.185; 1.475; 0)" Name="rear" MaxXRotation="360" Position="(-5.02; 1.643; 4.200)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                              </Flare>
+                    </StopSignals>
+                    <Ignition>
+                              <Light Pos="(3.803; 1.287; -0.738)" ParentFrame="BoneCabinDamper_cdt" _template="IgnitionSignalWhite">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(3.522; 2.228; -3.092)" FOV="32.0" InterestPosition="(5.169; 1.777; 0.700)" Name="door_l_sticker">
+                              </Light>
+                              <Light Pos="(3.803; 1.287; 0.738)" ParentFrame="BoneCabinDamper_cdt" _template="IgnitionSignalWhite">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(8.557; 2.510; -1.387)" FOV="32.0" InterestPosition="(7.506; 2.194; -1.387)" Name="hood_ornament">
+                              </Light>
+                              <Light Pos="(-3.55; 0.804; 0)" Color="(102; 0; 0)" _template="IgnitionSignalRed">
 
-                  </CameraPos>
-            </CustomizationCameras>
-                <CraneSocket Pos="(3.643; 1; -0.943)" ParentFrame="BoneCabin_cdt">
+                              </Light>
+                                <Flare Pos="(1.247; 3.011; 0)" _template="MarkerBeacon" Size="0.4" ParentFrame="BoneCabinDamper_cdt">
 
-                </CraneSocket>
-                <CraneSocket Pos="(3.643; 1; 0.943)" ParentFrame="BoneCabin_cdt">
+                                </Flare>
+                                <Flare Pos="(1.247; 3.011; -0.205)" _template="MarkerBeacon" Size="0.4" ParentFrame="BoneCabinDamper_cdt">
 
-                </CraneSocket>
-                <CraneSocket Pos="(3.643; 0.8; -0.366)" ParentFrame="BoneCabin_cdt">
+                                </Flare>
+                                <Flare Pos="(1.247; 3.011; 0.205)" _template="MarkerBeacon" Size="0.4" ParentFrame="BoneCabinDamper_cdt">
 
-                </CraneSocket>
-                <CraneSocket Pos="(3.643; 0.8; 0.366)" ParentFrame="BoneCabin_cdt">
+                                </Flare>
+                                <Flare Pos="(1.247; 2.994; -0.616)" _template="MarkerBeacon" Size="0.4" ParentFrame="BoneCabinDamper_cdt">
 
-                </CraneSocket>
-                <CraneSocket Pos="(-3.585; 0.92; 0)">
+                                </Flare>
+                                <Flare Pos="(1.247; 2.994; 0.616)" _template="MarkerBeacon" Size="0.4" ParentFrame="BoneCabinDamper_cdt">
 
-                </CraneSocket>
-                <CraneSocket Pos="(-0.037; 1.138; -0.377)">
+                                </Flare>
+                                <Flare Pos="(3.334; 1.28; -0.967)" _template="IgnitionSignalOrange" Size="0.2" ParentFrame="BoneCabinDamper_cdt">
 
-                </CraneSocket>
-                <CraneSocket Pos="(-0.037; 1.138; 0.377)">
-
-                </CraneSocket>
-                  <AddonSockets>
-                      <Socket Offset="(-1.9; 1.79; 0)" Names="LargeSemitrailer">
-
-                      </Socket>
-                      <Socket Offset="(-2.02; 1.576; 0)" Names="Semitrailer">
-
-                      </Socket>
-                      <Socket Offset="(-3.64; 0.915; -0)" Names="Trailer">
-
-                      </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                      <Socket Offset="(-2.02; 1.276; -0)" Names="SaddleLow">
-                          <ExtraParent Offset="(0; 0; 0.09)" Frame="BoneChassis_cdt">
-
-                          </ExtraParent>
-                          <ExtraParent Offset="(0; 0; -0.09)" Frame="BoneChassis_cdt">
-
-                          </ExtraParent>
-                      </Socket>
-                      <Socket Offset="(-1.9; 1.29; -0)" Names="SaddleHigh">
-                          <ExtraParent Offset="(0; 0; 0.08)" Frame="BoneChassis_cdt">
-
-                          </ExtraParent>
-                          <ExtraParent Offset="(0; 0; -0.08)" Frame="BoneChassis_cdt">
-
-                          </ExtraParent>
-                      </Socket>
-                      <Socket Offset="(-2; 1.27; 0)" Names="MinicraneUS">
-                          <ExtraParent Offset="(0; 0; 0.07)" Frame="BoneChassis_cdt">
-
-                          </ExtraParent>
-                          <ExtraParent Offset="(0; 0; -0.07)" Frame="BoneChassis_cdt">
-
-                          </ExtraParent>
-                      </Socket>
-                  </AddonSockets>
-                  <AddonSockets DefaultAddon="freightliner_m916a1_bumper_default">
-                    <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="FreightlinerM916A1Bumper">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets DefaultAddon="freightliner_m916a1_horn_1">
-                    <Socket ParentFrame="BoneCabinDamper_cdt" Offset="(0; 0; 0)" Names="FreightlinerM916A1Horn">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabinDamper_cdt" Offset="(0; 0; 0)" Names="FreightlinerM916A1Beacon">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabinDamper_cdt" Offset="(0; 0; 0)" Names="FreightlinerM916A1Visor">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets DefaultAddon="freightliner_m916a1_exhaust_default">
-                    <Socket ParentFrame="BoneCabinDamper_cdt" Offset="(0; 0; 0)" Names="FreightlinerM916a1Exhaust">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets DefaultAddon="freightliner_m916a1_fender_default">
-                    <Socket Offset="(0; 0; 0)" Names="FreightlinerM916a1Fender">
-                        <ExtraParent Frame="BoneCabin_cdt">
-
-                        </ExtraParent>
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabinDamper_cdt" Offset="(0; 0; 0)" Names="FreightlinerM916A1Snorkel">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket NamesBlock="FreightlinerM916A1Beacon" Names="FreightlinerM916A1SpotLight" ParentFrame="BoneCabinDamper_cdt" Offset="(0; 0; 0)">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabinDamper_cdt" InCockpit="true" Names="freightlinerM916A1Sticker_1x1_01">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabinDamper_cdt" InCockpit="true" Names="freightlinerM916A1Sticker_1x1_02">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabinDamper_cdt" InCockpit="true" Names="freightlinerM916A1Sticker_1x2_01">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabinDamper_cdt" InCockpit="true" Names="freightlinerM916A1Sticker_1x2_02">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabinDamper_cdt" InCockpit="true" Names="freightlinerM916A1Sticker_1x2_03">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabinDamper_cdt" InCockpit="true" Names="freightlinerM916A1Sticker_1x2_04">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabinDamper_cdt" InCockpit="true" Names="freightlinerM916A1Sticker_GlassTop">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabinDamper_cdt" InCockpit="true" Names="freightlinerM916A1Sticker_GlassBottom">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabinDamper_cdt" Names="freightlinerM916A1Sticker_Door_L">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabinDamper_cdt" Names="freightlinerM916A1Sticker_Door_R">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabinDamper_cdt" Names="freightlinerM916A1Sticker_Capote">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="StuffDashboard" InCockpit="true" ParentFrame="BoneCabinDamper_cdt" Offset="(1.658; 2.276; -0.6)">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="StuffAirfreshener" InCockpit="true" ParentFrame="BoneCabinDamper_cdt" Offset="(1.605; 2.8; 0.113)">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneCabinDamper_cdt" Names="StuffHoodFreightlinerM916A1">
-
-                    </Socket>
-                  </AddonSockets>
-                    <WinchSocket Pos="(3.643; 1; -0.943)" ParentFrame="BoneCabin_cdt">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(3.643; 1; 0.943)" ParentFrame="BoneCabin_cdt">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(3.643; 0.8; -0.366)" ParentFrame="BoneCabin_cdt">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(3.643; 0.8; 0.366)" ParentFrame="BoneCabin_cdt">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(-3.585; 0.92; 0)">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(-0.037; 1.138; -0.377)">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(-0.037; 1.138; 0.377)">
-
-                    </WinchSocket>
-            <UiDesc UiDesc="UI_VEHICLE_FREIGHTLINER_M916A1_DESC" UiIcon30x30="offroadVehicleImg30" UiName="UI_VEHICLE_FREIGHTLINER_M916A1_NAME" UiIconLogo="FreightlinerLogo80" UiIcon40x40="offroadVehicleImg" UiIcon328x458="shopImgFreightlinerM916">
-
-            </UiDesc>
-      </GameData>
-      <ControlledConstraints>
-              <Constraint Name="TieRodSteer" IsLinkedSteering="true" Id="chassis_steer">
-
-              </Constraint>
-      </ControlledConstraints>
-      <HeadLight ParentFrame="BoneCabin_cdt" _template="Default" Pos="(4; 1.287; 0)">
-
-      </HeadLight>
-      <Landmark Mesh="landmarks/freightliner_m916a1_lmk" MaxScale="3.8" MinScale="1.8">
-
-      </Landmark>
-      <AutomaticIK>
-                    <IKBone ParentFrame="BoneTieRod_cdt" ModelFrame="BoneTieRodHinge2">
-                        <IKBone AttachToFrame="BoneRackLeft" AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRodPrismatic">
-                            <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+                                </Flare>
+                                <Flare Pos="(3.334; 1.28; 0.967)" _template="IgnitionSignalOrange" Size="0.2" ParentFrame="BoneCabinDamper_cdt">
+
+                                </Flare>
+                                <Flare Pos="(1.901; 1.333; -1.114)" Dir="(0; 0; -1)" _template="IgnitionSignalOrange" Size="0.3" ParentFrame="BoneCabinDamper_cdt">
+
+                                </Flare>
+                                <Flare Pos="(1.901; 1.333; 1.114)" Dir="(0; 0; 1)" _template="IgnitionSignalOrange" Size="0.3" ParentFrame="BoneCabinDamper_cdt">
+
+                                </Flare>
+                                <Flare Pos="(3.355; 1.287; -0.833)" _template="IgnitionSignalWhite" Size=".3" ParentFrame="BoneCabinDamper_cdt">
+
+                                </Flare>
+                                <Flare Pos="(3.355; 1.287; 0.833)" _template="IgnitionSignalWhite" Size=".3" ParentFrame="BoneCabinDamper_cdt">
+
+                                </Flare>
+                                <Flare Pos="(3.374; 1.287; 0.649)" _template="IgnitionSignalWhite" Size=".3" ParentFrame="BoneCabinDamper_cdt">
+
+                                </Flare>
+                                <Flare Pos="(3.374; 1.287; -0.649)" ParentFrame="BoneCabinDamper_cdt" _template="IgnitionSignalWhite">
+
+                                </Flare>
+                                <Flare Pos="(-3.466; 0.804; -0.259)" ParentFrame="BoneChassis_cdt" _template="IgnitionSignalRed">
+
+                                </Flare>
+                                <Flare Pos="(-3.466; 0.804; 0.259)" ParentFrame="BoneChassis_cdt" _template="IgnitionSignalRed">
+
+                                </Flare>
+                    </Ignition>
+                    <ReverseSignals>
+                                <Light Pos="(0.417; 2.876; -0.648)" ParentFrame="BoneCabinDamper_cdt" _template="ReverseSignal">
+
+                                </Light>
+                                <Light Pos="(0.417; 2.876; 0.648)" ParentFrame="BoneCabinDamper_cdt" _template="ReverseSignal">
+
+                                </Light>
+                                <Light Pos="(-3.471; 0.847; 0)" ParentFrame="BoneChassis_cdt" _template="ReverseSignal">
+
+                                </Light>
+                                  <Flare Pos="(0.39; 2.876; -0.648)" _template="ReverseSignal" Size="0.2" ParentFrame="BoneCabinDamper_cdt">
+
+                                  </Flare>
+                                  <Flare Pos="(0.39; 2.876; 0.648)" _template="ReverseSignal" Size="0.2" ParentFrame="BoneCabinDamper_cdt">
+
+                                  </Flare>
+                                  <Flare Pos="(0.385; 2.876; -0.648)" Dir="(-1; 0; 0)" _template="IgnitionSignalWhite" Size="0.6" ParentFrame="BoneCabinDamper_cdt">
+
+                                  </Flare>
+                                  <Flare Pos="(0.385; 2.876; 0.648)" Dir="(-1; 0; 0)" _template="IgnitionSignalWhite" Size="0.6" ParentFrame="BoneCabinDamper_cdt">
+
+                                  </Flare>
+                                  <Flare Pos="(0.417; 2.876; -0.648)" Dir="(-1; 0; 0)" _template="BlueStreak" Color="g(220; 220; 255) x 0.05" Size="0.4" ParentFrame="BoneCabinDamper_cdt">
+
+                                  </Flare>
+                                  <Flare Pos="(0.417; 2.876; 0.648)" Dir="(-1; 0; 0)" _template="BlueStreak" Color="g(220; 220; 255) x 0.05" Size="0.4" ParentFrame="BoneCabinDamper_cdt">
+
+                                  </Flare>
+                                  <Flare Pos="(-3.471; 0.847; -0.259)" _template="ReverseSignal" Size=".3" ParentFrame="BoneChassis_cdt">
+
+                                  </Flare>
+                                  <Flare Pos="(-3.471; 0.847; 0.259)" _template="ReverseSignal" Size=".3" ParentFrame="BoneChassis_cdt">
+
+                                  </Flare>
+                                  <Flare Pos="(-3.471; 0.847; -0.259)" Dir="(-1; 0; 0)" _template="BlueStreak" Color="g(220; 220; 255) x 0.05" Size="0.4" ParentFrame="BoneChassis_cdt">
+
+                                  </Flare>
+                                  <Flare Pos="(-3.471; 0.847; 0.259)" Dir="(-1; 0; 0)" _template="BlueStreak" Color="g(220; 220; 255) x 0.05" Size="0.4" ParentFrame="BoneChassis_cdt">
+
+                                  </Flare>
+                    </ReverseSignals>
+        </ModelAttachments>
+        <Landmark MaxScale="3.8" Mesh="landmarks/freightliner_m916a1_lmk" MinScale="1.8">
+
+        </Landmark>
+        <AutomaticIK>
+                        <IKBone ParentFrame="BoneTieRod_cdt" ModelFrame="BoneTieRodHinge2">
+                            <IKJoint Type="Hinge2" AxisLocal="(1; 0; 0)">
 
                             </IKJoint>
+                            <IKBone AttachToFrame="BoneRackLeft" AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRodPrismatic">
+                                  <IKJoint Type="Slider" AxisLocal="(1; 0; 0)">
+
+                                  </IKJoint>
+                            </IKBone>
                         </IKBone>
-                        <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+        </AutomaticIK>
+        <TruckData SteerSpeed="0.025" EngineStartDelay="0.8" EngineIconMesh="env/engine_default" TruckType="OFFROAD" Responsiveness="0.3" BackSteerSpeed="0.025" TruckImage="freightlinerM916A1mchr" FuelCapacity="200" DiffLockType="Always" ExhaustStartTime="0.9" EngineIconScale="1.3">
+                          <Driver Pos="(0.933; 1.994; 0.475)" ParentFrame="BoneCabin_cdt" AnimationSet="Truck" SteeringWheelPos="(1.315; 2.322; 0.468)">
 
-                        </IKJoint>
-                    </IKBone>
-      </AutomaticIK>
-      <ModelAttachments>
-                      <StopSignals>
-                            <Flare _template="StopSignal" Pos="(-3.466; 0.804; -0.259)">
+                          </Driver>
+                          <SoundsDamage _template="Heavy">
 
-                            </Flare>
-                            <Flare _template="StopSignal" Pos="(-3.466; 0.804; 0.259)">
+                          </SoundsDamage>
+                          <OcclusionMap HalfSizeZ="1.7" MinX="-4.1" MaxX="4.1">
 
-                            </Flare>
-                              <Light _template="StopSignal" Pos="(-3.566; 0.712; -0.259)">
+                          </OcclusionMap>
+                          <FuelTank DamageCapacity="50">
 
-                              </Light>
-                              <Light _template="StopSignal" Pos="(-3.566; 0.712; 0.259)">
+                          </FuelTank>
+                          <Intake Size="1" Dir="(1; 0; 0)" Origin="(3.437; 1.593; 0)">
 
-                              </Light>
-                      </StopSignals>
-                      <Ignition>
-                              <Flare ParentFrame="BoneCabinDamper_cdt" Size="0.4" Pos="(1.247; 3.011; 0)" _template="MarkerBeacon">
+                          </Intake>
+                          <EngineSocket Type="e_us_truck_modern" Default="us_truck_modern_engine_0">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabinDamper_cdt" Size="0.4" Pos="(1.247; 3.011; -0.205)" _template="MarkerBeacon">
+                          </EngineSocket>
+                          <SuspensionSocket Type="s_freightliner_m916a1" MaxWheelRadiusWithoutSuspension="0.67" Default="freightliner_m916a1_suspension_default">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabinDamper_cdt" Size="0.4" Pos="(1.247; 3.011; 0.205)" _template="MarkerBeacon">
+                          </SuspensionSocket>
+                          <Dashboard>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.741; 0.672; 0.007)" InputType="engineEnabled" Org="(1.572; 2.279; 0.683)" Damping="0" Mesh="trucks/arrows/freightliner_m916a1_arrow_01" OutputAngles="(-49.346;21.444)">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabinDamper_cdt" Size="0.4" Pos="(1.247; 2.994; -0.616)" _template="MarkerBeacon">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.741; 0.672; 0.007)" InputType="engineEnabled" Org="(1.575; 2.283; 0.626)" Damping="0" Mesh="trucks/arrows/freightliner_m916a1_arrow_01" OutputAngles="(-131.739;-10)">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabinDamper_cdt" Size="0.4" Pos="(1.247; 2.994; 0.616)" _template="MarkerBeacon">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.741; 0.672; 0.007)" InputType="engineEnabled" Org="(1.524; 2.226; 0.683)" Damping="0" Mesh="trucks/arrows/freightliner_m916a1_arrow_01" OutputAngles="(-131.428;13)">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabinDamper_cdt" Size="0.2" Pos="(3.334; 1.28; -0.967)" _template="IgnitionSignalOrange">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.741; 0.672; 0.007)" InputType="engineEnabled" Org="(1.521; 2.222; 0.625)" Damping="0" Mesh="trucks/arrows/freightliner_m916a1_arrow_01" OutputAngles="(-51.356;8)">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabinDamper_cdt" Size="0.2" _template="IgnitionSignalOrange" Pos="(3.334; 1.28; 0.967)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.741; 0.672; 0.007)" InputType="engineEnabled" Org="(1.523; 2.228; 0.554)" Damping="0" Mesh="trucks/arrows/freightliner_m916a1_arrow_02" OutputAngles="(-37.192;-13)">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabinDamper_cdt" Dir="(0; 0; -1)" Size="0.3" _template="IgnitionSignalOrange" Pos="(1.901; 1.333; -1.114)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.741; 0.672; 0.007)" InputType="engineEnabled" Org="(1.54; 2.246; 0.5)" Damping="0" Mesh="trucks/arrows/freightliner_m916a1_arrow_06" OutputAngles="(-49.172;-16)">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabinDamper_cdt" Dir="(0; 0; 1)" Size="0.3" _template="IgnitionSignalOrange" Pos="(1.901; 1.333; 1.114)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.741; 0.672; 0.007)" InputType="engineEnabled" Org="(1.54; 2.246; 0.44)" Damping="0" Mesh="trucks/arrows/freightliner_m916a1_arrow_06" OutputAngles="(-49.804;-2.5)">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabinDamper_cdt" Size=".3" Pos="(3.355; 1.287; -0.833)" _template="IgnitionSignalWhite">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.741; 0.672; 0.007)" InputType="fuel" Org="(1.526; 2.23; 0.386)" Damping="0" Mesh="trucks/arrows/freightliner_m916a1_arrow_06" OutputAngles="(-48.668;52.159)">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabinDamper_cdt" Size=".3" Pos="(3.355; 1.287; 0.833)" _template="IgnitionSignalWhite">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.741; 0.672; 0.007)" InputType="engineEnabled" Org="(1.572; 2.282; 0.311)" Damping="0" Mesh="trucks/arrows/freightliner_m916a1_arrow_01" OutputAngles="(-135.346;14.908)">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabinDamper_cdt" Size=".3" Pos="(3.374; 1.287; 0.649)" _template="IgnitionSignalWhite">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.741; 0.672; 0.007)" InputType="engineEnabled" Org="(1.521; 2.225; 0.311)" Damping="0" Mesh="trucks/arrows/freightliner_m916a1_arrow_01" OutputAngles="(-132.161;0)">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabinDamper_cdt" _template="IgnitionSignalWhite" Pos="(3.374; 1.287; -0.649)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.646; 0.484; 0.591)" InputType="rpm" Org="(1.366; 2.339; -0.049)" Damping="0" Mesh="trucks/arrows/freightliner_m916a1_arrow_03" OutputAngles="(-100;170)">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneChassis_cdt" _template="IgnitionSignalRed" Pos="(-3.466; 0.804; -0.259)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;120)" Dir="(-0.646; 0.484; 0.591)" InputType="speed" Org="(1.366; 2.339; -0.049)" Damping="0" Mesh="trucks/arrows/freightliner_m916a1_arrow_04" OutputAngles="(-100;170)">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneChassis_cdt" _template="IgnitionSignalRed" Pos="(-3.466; 0.804; 0.259)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.646; 0.484; 0.591)" InputType="none" Org="(1.366; 2.339; -0.049)" Damping="0" Mesh="trucks/arrows/freightliner_m916a1_arrow_05" OutputAngles="(206;206)">
 
-                              </Flare>
-                                <Light ParentFrame="BoneCabinDamper_cdt" _template="IgnitionSignalWhite" Pos="(3.803; 1.287; -0.738)">
+                                              </Gauge>
+                          </Dashboard>
+                          <Axles>
+                                                <Axle Frame="BoneAxle1">
 
-                                </Light>
-                                <Light ParentFrame="BoneCabinDamper_cdt" _template="IgnitionSignalWhite" Pos="(3.803; 1.287; 0.738)">
+                                                </Axle>
+                                                <Axle Frame="BoneAxle2">
 
-                                </Light>
-                                <Light Pos="(-3.55; 0.804; 0)" _template="IgnitionSignalRed" Color="(102; 0; 0)">
+                                                </Axle>
+                                                <Axle Frame="BoneAxle3">
 
-                                </Light>
-                      </Ignition>
-                      <HeadLight>
-                                <Flare Color="g(255; 235; 200) x 0.8" Pos="(3.386; 1.287; -0.653)" ParentFrame="BoneCabin_cdt" Size=".3" _template="HeadLight">
+                                                </Axle>
+                          </Axles>
+                          <Camera Center="(-1.1; 0; 0)" ParentFrame="BoneCabinDamper_cdt">
+                                                <Cockpit WindshieldDiffuseTexture="trucks/freightliner_m916a1_glass__d_a.tga" _template="Default" WindshieldShadingTexture="trucks/freightliner_m916a1_glass__sh_d.tga" ViewPos="(0.933; 2.64; 0.475)">
+                                                    <Rear ViewPosOffset="(0.15; -0.1; 0.7)">
 
-                                </Flare>
-                                <Flare Color="g(255; 235; 200) x 0.8" Pos="(3.386; 1.287; 0.653)" ParentFrame="BoneCabin_cdt" Size=".3" _template="HeadLight">
-
-                                </Flare>
-                                <Flare ParentFrame="BoneCabin_cdt" _template="BlueStreak" Pos="(3.386; 1.287; -0.653)">
-
-                                </Flare>
-                                <Flare ParentFrame="BoneCabin_cdt" _template="BlueStreak" Pos="(3.386; 1.287; 0.653)">
-
-                                </Flare>
-                                  <Model Org="(3.386; 1.287; -0.653)" _template="HeadLightRay" ParentFrame="BoneCabin_cdt">
-
-                                  </Model>
-                                  <Model Org="(3.386; 1.287; 0.653)" _template="HeadLightRay" ParentFrame="BoneCabin_cdt">
-
-                                  </Model>
-                      </HeadLight>
-                      <ReverseSignals>
-                                  <Flare ParentFrame="BoneCabinDamper_cdt" Size="0.2" Pos="(0.39; 2.876; -0.648)" _template="ReverseSignal">
-
-                                  </Flare>
-                                  <Flare ParentFrame="BoneCabinDamper_cdt" Size="0.2" Pos="(0.39; 2.876; 0.648)" _template="ReverseSignal">
-
-                                  </Flare>
-                                  <Flare ParentFrame="BoneCabinDamper_cdt" Dir="(-1; 0; 0)" Size="0.6" _template="IgnitionSignalWhite" Pos="(0.385; 2.876; -0.648)">
-
-                                  </Flare>
-                                  <Flare ParentFrame="BoneCabinDamper_cdt" Dir="(-1; 0; 0)" Size="0.6" _template="IgnitionSignalWhite" Pos="(0.385; 2.876; 0.648)">
-
-                                  </Flare>
-                                  <Flare Color="g(220; 220; 255) x 0.05" ParentFrame="BoneCabinDamper_cdt" Pos="(0.417; 2.876; -0.648)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
-
-                                  </Flare>
-                                  <Flare Color="g(220; 220; 255) x 0.05" ParentFrame="BoneCabinDamper_cdt" Pos="(0.417; 2.876; 0.648)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
-
-                                  </Flare>
-                                  <Flare ParentFrame="BoneChassis_cdt" Size=".3" Pos="(-3.471; 0.847; -0.259)" _template="ReverseSignal">
-
-                                  </Flare>
-                                  <Flare ParentFrame="BoneChassis_cdt" Size=".3" Pos="(-3.471; 0.847; 0.259)" _template="ReverseSignal">
-
-                                  </Flare>
-                                  <Flare Color="g(220; 220; 255) x 0.05" ParentFrame="BoneChassis_cdt" Pos="(-3.471; 0.847; -0.259)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
-
-                                  </Flare>
-                                  <Flare Color="g(220; 220; 255) x 0.05" ParentFrame="BoneChassis_cdt" Pos="(-3.471; 0.847; 0.259)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
-
-                                  </Flare>
-                                    <Light ParentFrame="BoneCabinDamper_cdt" _template="ReverseSignal" Pos="(0.417; 2.876; -0.648)">
-
-                                    </Light>
-                                    <Light ParentFrame="BoneCabinDamper_cdt" _template="ReverseSignal" Pos="(0.417; 2.876; 0.648)">
-
-                                    </Light>
-                                    <Light ParentFrame="BoneChassis_cdt" _template="ReverseSignal" Pos="(-3.471; 0.847; 0)">
-
-                                    </Light>
-                      </ReverseSignals>
-      </ModelAttachments>
-      <TruckData EngineIconMesh="env/engine_default" EngineStartDelay="0.8" TruckType="OFFROAD" ExhaustStartTime="0.9" SteerSpeed="0.025" TruckImage="freightlinerM916A1mchr" DiffLockType="Always" Responsiveness="0.3" FuelCapacity="200" EngineIconScale="1.3" BackSteerSpeed="0.025">
-                        <Driver ParentFrame="BoneCabin_cdt" SteeringWheelPos="(1.315; 2.322; 0.468)" Pos="(0.933; 1.994; 0.475)" AnimationSet="Truck">
-
-                        </Driver>
-                        <Shafts>
-                                <Shaft SocketPointB="Shaft1b" SocketPointA="Shaft1a">
-
-                                </Shaft>
-                                <Shaft SocketPointB="Shaft2b" SocketPointA="Shaft2a">
-
-                                </Shaft>
-                                <Shaft SocketPointB="Shaft3b" SocketPointA="Shaft3a">
-
-                                </Shaft>
-                                <Shaft SocketPointB="Shaft4b" SocketPointA="Shaft4a">
-
-                                </Shaft>
-                        </Shafts>
-                        <FuelTank DamageCapacity="50">
-
-                        </FuelTank>
-                        <Dashboard>
-                                    <Gauge Org="(1.572; 2.279; 0.683)" OutputAngles="(-49.346;21.444)" Mesh="trucks/arrows/freightliner_m916a1_arrow_01" Damping="0" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.741; 0.672; 0.007)">
-
-                                    </Gauge>
-                                    <Gauge Org="(1.575; 2.283; 0.626)" OutputAngles="(-131.739;-10)" Mesh="trucks/arrows/freightliner_m916a1_arrow_01" Damping="0" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.741; 0.672; 0.007)">
-
-                                    </Gauge>
-                                    <Gauge Org="(1.524; 2.226; 0.683)" OutputAngles="(-131.428;13)" Mesh="trucks/arrows/freightliner_m916a1_arrow_01" Damping="0" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.741; 0.672; 0.007)">
-
-                                    </Gauge>
-                                    <Gauge Org="(1.521; 2.222; 0.625)" OutputAngles="(-51.356;8)" Mesh="trucks/arrows/freightliner_m916a1_arrow_01" Damping="0" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.741; 0.672; 0.007)">
-
-                                    </Gauge>
-                                    <Gauge Org="(1.523; 2.228; 0.554)" OutputAngles="(-37.192;-13)" Mesh="trucks/arrows/freightliner_m916a1_arrow_02" Damping="0" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.741; 0.672; 0.007)">
-
-                                    </Gauge>
-                                    <Gauge Org="(1.54; 2.246; 0.5)" OutputAngles="(-49.172;-16)" Mesh="trucks/arrows/freightliner_m916a1_arrow_06" Damping="0" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.741; 0.672; 0.007)">
-
-                                    </Gauge>
-                                    <Gauge Org="(1.54; 2.246; 0.44)" OutputAngles="(-49.804;-2.5)" Mesh="trucks/arrows/freightliner_m916a1_arrow_06" Damping="0" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.741; 0.672; 0.007)">
-
-                                    </Gauge>
-                                    <Gauge Org="(1.526; 2.23; 0.386)" OutputAngles="(-48.668;52.159)" Mesh="trucks/arrows/freightliner_m916a1_arrow_06" Damping="0" InputRange="(0;1)" InputType="fuel" Dir="(-0.741; 0.672; 0.007)">
-
-                                    </Gauge>
-                                    <Gauge Org="(1.572; 2.282; 0.311)" OutputAngles="(-135.346;14.908)" Mesh="trucks/arrows/freightliner_m916a1_arrow_01" Damping="0" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.741; 0.672; 0.007)">
-
-                                    </Gauge>
-                                    <Gauge Org="(1.521; 2.225; 0.311)" OutputAngles="(-132.161;0)" Mesh="trucks/arrows/freightliner_m916a1_arrow_01" Damping="0" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.741; 0.672; 0.007)">
-
-                                    </Gauge>
-                                    <Gauge Org="(1.366; 2.339; -0.049)" OutputAngles="(-100;170)" Mesh="trucks/arrows/freightliner_m916a1_arrow_03" Damping="0" InputRange="(0;1)" InputType="rpm" Dir="(-0.646; 0.484; 0.591)">
-
-                                    </Gauge>
-                                    <Gauge Org="(1.366; 2.339; -0.049)" OutputAngles="(-100;170)" Mesh="trucks/arrows/freightliner_m916a1_arrow_04" Damping="0" InputRange="(0;120)" InputType="speed" Dir="(-0.646; 0.484; 0.591)">
-
-                                    </Gauge>
-                                    <Gauge Org="(1.366; 2.339; -0.049)" OutputAngles="(206;206)" Mesh="trucks/arrows/freightliner_m916a1_arrow_05" Damping="0" InputRange="(0;1)" InputType="none" Dir="(-0.646; 0.484; 0.591)">
-
-                                    </Gauge>
-                        </Dashboard>
-                        <SoundsWheels _template="Default">
-
-                        </SoundsWheels>
-                        <GearboxSocket Default="g_truck_unique_offroad" Type="gearboxes_trucks_unique_offroad, gearboxes_trucks_unique_m916a1_finetune">
-
-                        </GearboxSocket>
-                                      <Steam Origin="(1.268; 1.411; 0)">
-
-                                      </Steam>
-                                      <Steam ParentFrame="BoneCabinDamper_cdt" Origin="(3.352; 1.307; 0)" Scale="0.5">
-
-                                      </Steam>
-                        <Sounds DisableReversePitch="false" MinDist="12.0" Origin="(2.45; 1.64; 0)" ParentFrame="BoneCabin_cdt" AirHissInterval="12.0" _template="Default">
-                                          <BrakesSqueal Sound="trucks/freightliner_m916a1/freightliner_m916a1_brakes_squeal">
-
-                                          </BrakesSqueal>
-                                          <EngineHigh Sound="trucks/freightliner_m916a1/freightliner_m916a1_high">
-
-                                          </EngineHigh>
-                                          <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
-
-                                          </AbruptStop>
-                                          <EngineLow Sound="trucks/freightliner_m916a1/freightliner_m916a1_low">
-
-                                          </EngineLow>
-                                          <EngineRev Sound="trucks/freightliner_m916a1/freightliner_m916a1_rev">
-
-                                          </EngineRev>
-                                          <EngineHigh_2d IsSound2D="true" Sound="trucks/freightliner_m916a1/freightliner_m916a1_high_2d">
-
-                                          </EngineHigh_2d>
-                                          <EngineIdle Sound="trucks/freightliner_m916a1/freightliner_m916a1_idle">
-
-                                          </EngineIdle>
-                                          <EngineAccel Sound="trucks/freightliner_m916a1/freightliner_m916a1_acc">
-
-                                          </EngineAccel>
-                                          <Honk Sound="trucks/freightliner_m916a1/freightliner_m916a1_honk">
-
-                                          </Honk>
-                                          <EngineStop Sound="trucks/freightliner_m916a1/freightliner_m916a1_stop">
-
-                                          </EngineStop>
-                                          <EngineLow_2d IsSound2D="true" Sound="trucks/freightliner_m916a1/freightliner_m916a1_low_2d">
-
-                                          </EngineLow_2d>
-                                          <EngineIdle_2d IsSound2D="true" Sound="trucks/freightliner_m916a1/freightliner_m916a1_idle_2d">
-
-                                          </EngineIdle_2d>
-                                          <BrakeRelease Sound="trucks/freightliner_m916a1/freightliner_m916a1_brake_release">
-
-                                          </BrakeRelease>
-                                          <EngineStart Sound="trucks/freightliner_m916a1/freightliner_m916a1_start">
-
-                                          </EngineStart>
-                        </Sounds>
-                        <Intake Size="1" Origin="(3.437; 1.593; 0)" Dir="(1; 0; 0)">
-
-                        </Intake>
-                        <SoundsDamage _template="Heavy">
-
-                        </SoundsDamage>
-                        <LimitedFluid Type="Cylinder" Center="(0.852; 0.834; -0.641)" LengthX="0.923" RadiusZ="0.353" RadiusY="0.338">
-
-                        </LimitedFluid>
-                        <Camera ParentFrame="BoneCabinDamper_cdt" Center="(-1.1; 0; 0)">
-                                                  <Cockpit WindshieldShadingTexture="trucks/freightliner_m916a1_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/freightliner_m916a1_glass__d_a.tga" _template="Default" ViewPos="(0.933; 2.64; 0.475)">
-                                                        <Mirror FOVScale="2" ClipDir="(-0.906; 0; -0.423)" Pos="(1.369; 2.517; 1.247)" Size="(0.135; 0.425)" MeshFrame="mirror_left" ReflectionDir="(-0.906; 0; -0.423)">
-                                                          <SecondaryView FOVScale="1.25" ClipDir="(-0.906; 0; -0.423)" Pos="(1.359; 2.366; 1.239)" CurveAngle="70" MeshFrame="mirror_left_convex" Size="(0.16; 0.16)">
+                                                    </Rear>
+                                                        <Mirror FOVScale="2" ClipDir="(-0.906; 0; -0.423)" MeshFrame="mirror_left" Pos="(1.369; 2.517; 1.247)" Size="(0.135; 0.425)" ReflectionDir="(-0.906; 0; -0.423)">
+                                                          <SecondaryView FOVScale="1.25" ClipDir="(-0.906; 0; -0.423)" MeshFrame="mirror_left_convex" CurveAngle="70" Size="(0.16; 0.16)" Pos="(1.359; 2.366; 1.239)">
 
                                                           </SecondaryView>
                                                         </Mirror>
-                                                        <Mirror FOVScale="3.5" ClipDir="(-0.831; -0.024; 0.565)" Pos="(1.358; 2.516; -1.23)" Size="(0.135; 0.425)" MeshFrame="mirror_right" ReflectionDir="(-1; 0; 0.6)">
-                                                          <SecondaryView FOVScale="3" ClipDir="(-0.831; -0.024; 0.565)" Pos="(1.358; 2.366; -1.23)" CurveAngle="70" MeshFrame="mirror_right_convex" Size="(0.16; 0.16)">
+                                                        <Mirror FOVScale="3.5" ClipDir="(-0.831; -0.024; 0.565)" MeshFrame="mirror_right" Pos="(1.358; 2.516; -1.23)" Size="(0.135; 0.425)" ReflectionDir="(-1; 0; 0.6)">
+                                                          <SecondaryView FOVScale="3" ClipDir="(-0.831; -0.024; 0.565)" MeshFrame="mirror_right_convex" CurveAngle="70" Size="(0.16; 0.16)" Pos="(1.358; 2.366; -1.23)">
 
                                                           </SecondaryView>
                                                         </Mirror>
-                                                        <Mirror FOVScale="3.5" ClipDir="(-0.993; 0.012; 0.116)" Pos="(3.14; 2.228; -0.939)" Size="(0.18; 0.18)" MeshFrame="mirror_right_front" ReflectionDir="(-0.998; 0.006; 0.064)">
+                                                        <Mirror FOVScale="3.5" ClipDir="(-0.993; 0.012; 0.116)" MeshFrame="mirror_right_front" Pos="(3.14; 2.228; -0.939)" Size="(0.18; 0.18)" ReflectionDir="(-0.998; 0.006; 0.064)">
 
                                                         </Mirror>
-                                                        <Mirror FOVScale="1" ClipDir="(-0.993; 0.012; 0.116)" Size="(0.18; 0.18)" MeshFrame="mirror_left_front" Pos="(3.14; 2.228; 0.939)">
+                                                        <Mirror FOVScale="1" ClipDir="(-0.993; 0.012; 0.116)" MeshFrame="mirror_left_front" Size="(0.18; 0.18)" Pos="(3.14; 2.228; 0.939)">
 
                                                         </Mirror>
-                                                      <Rear ViewPosOffset="(0.15; -0.1; 0.7)">
+                                                </Cockpit>
+                          </Camera>
+                                                <CompatibleWheels Type="wheels_medium_double" Scale="0.55">
 
-                                                      </Rear>
-                                                  </Cockpit>
-                        </Camera>
-                        <SuspensionSocket Default="freightliner_m916a1_suspension_default" Type="s_freightliner_m916a1" MaxWheelRadiusWithoutSuspension="0.67">
+                                                </CompatibleWheels>
+                                                <CompatibleWheels Type="wheels_medium_double" Scale="0.60">
 
-                        </SuspensionSocket>
-                        <Wheels DefaultTire="highway_1" DefaultWheelType="wheels_medium_double" DefaultRim="rim_1">
-                                                        <Wheel _template="FrontWheel" Pos="(2.38; 0.556; 0.932)">
+                                                </CompatibleWheels>
+                          <LimitedFluid Type="Cylinder" Center="(0.852; 0.834; -0.641)" RadiusY="0.338" LengthX="0.923" RadiusZ="0.353">
 
-                                                        </Wheel>
-                                                        <Wheel Pos="(2.38; 0.556; 0.932)" _template="FrontWheel" RightSide="true">
+                          </LimitedFluid>
+                          <Sounds ParentFrame="BoneCabin_cdt" _template="Default" AirHissInterval="12.0" Origin="(2.45; 1.64; 0)" MinDist="12.0" DisableReversePitch="false">
+                                                      <EngineRev Sound="trucks/freightliner_m916a1/freightliner_m916a1_rev">
 
-                                                        </Wheel>
-                                                        <Wheel _template="RearWheel" Pos="(-1.354; 0.556; 0.849)">
+                                                      </EngineRev>
+                                                      <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
 
-                                                        </Wheel>
-                                                        <Wheel Pos="(-1.354; 0.556; 0.849)" _template="RearWheel" RightSide="true">
+                                                      </AbruptStop>
+                                                      <EngineHigh_2d IsSound2D="true" Sound="trucks/freightliner_m916a1/freightliner_m916a1_high_2d">
 
-                                                        </Wheel>
-                                                        <Wheel _template="RearWheel" Pos="(-2.79; 0.556; 0.849)">
+                                                      </EngineHigh_2d>
+                                                      <EngineLow Sound="trucks/freightliner_m916a1/freightliner_m916a1_low">
 
-                                                        </Wheel>
-                                                        <Wheel Pos="(-2.79; 0.556; 0.849)" _template="RearWheel" RightSide="true">
+                                                      </EngineLow>
+                                                      <EngineLow_2d IsSound2D="true" Sound="trucks/freightliner_m916a1/freightliner_m916a1_low_2d">
 
-                                                        </Wheel>
-                        </Wheels>
-                        <Axles>
-                                                          <Axle Frame="BoneAxle1">
+                                                      </EngineLow_2d>
+                                                      <EngineIdle_2d IsSound2D="true" Sound="trucks/freightliner_m916a1/freightliner_m916a1_idle_2d">
 
-                                                          </Axle>
-                                                          <Axle Frame="BoneAxle2">
+                                                      </EngineIdle_2d>
+                                                      <EngineStart Sound="trucks/freightliner_m916a1/freightliner_m916a1_start">
 
-                                                          </Axle>
-                                                          <Axle Frame="BoneAxle3">
+                                                      </EngineStart>
+                                                      <EngineHigh Sound="trucks/freightliner_m916a1/freightliner_m916a1_high">
 
-                                                          </Axle>
-                        </Axles>
-                        <Damage SensationMin="(0.448; 2.21; -0.879)" Capacity="600" ParentFrame="BoneCabinDamper_cdt" SensationMax="(1.781; 2.815; 0.879)">
-                                                            <DamageArea Max="(3.5; 2; 0.6)" Type="Engine" ParentFrame="BoneCabin_cdt" Min="(1.7; 0.75; -0.6)">
+                                                      </EngineHigh>
+                                                      <Honk Sound="trucks/freightliner_m916a1/freightliner_m916a1_honk">
 
-                                                            </DamageArea>
-                                                            <DamageArea Max="(1.397; 1.186; 1.15)" Type="FuelTank" ParentFrame="BoneCabin_cdt" Min="(0.307; 0.45; -1.15)">
+                                                      </Honk>
+                                                      <EngineIdle Sound="trucks/freightliner_m916a1/freightliner_m916a1_idle">
 
-                                                            </DamageArea>
-                        </Damage>
-                        <OcclusionMap HalfSizeZ="1.7" MinX="-4.1" MaxX="4.1">
+                                                      </EngineIdle>
+                                                      <BrakeRelease Sound="trucks/freightliner_m916a1/freightliner_m916a1_brake_release">
 
-                        </OcclusionMap>
-                        <EngineSocket Default="us_truck_modern_engine_0" Type="e_us_truck_modern">
+                                                      </BrakeRelease>
+                                                      <EngineStop Sound="trucks/freightliner_m916a1/freightliner_m916a1_stop">
 
-                        </EngineSocket>
-                        <WinchUpgradeSocket Default="w_medium_trucks_default" IsUpgradable="true" Type="winches_medium_trucks">
+                                                      </EngineStop>
+                                                      <EngineAccel Sound="trucks/freightliner_m916a1/freightliner_m916a1_acc">
 
-                        </WinchUpgradeSocket>
-                        <SteeringWheel Frame="BoneSteering">
+                                                      </EngineAccel>
+                                                      <BrakesSqueal Sound="trucks/freightliner_m916a1/freightliner_m916a1_brakes_squeal">
 
-                        </SteeringWheel>
-                                                                  <CompatibleWheels Scale="0.55" Type="wheels_medium_double">
+                                                      </BrakesSqueal>
+                          </Sounds>
+                          <Wheels DefaultWheelType="wheels_medium_double" DefaultTire="highway_1" DefaultRim="rim_1">
+                                                          <Wheel Pos="(2.38; 0.556; 0.932)" _template="FrontWheel">
 
-                                                                  </CompatibleWheels>
-                                                                  <CompatibleWheels Scale="0.60" Type="wheels_medium_double">
+                                                          </Wheel>
+                                                          <Wheel RightSide="true" Pos="(2.38; 0.556; 0.932)" _template="FrontWheel">
 
-                                                                  </CompatibleWheels>
-                        <SteeringRack RackHalfSizeZ="0.685" Frame="BoneRack" FrameSteerLeft="BoneRackLeft" FrameSteerRight="BoneRackRight">
+                                                          </Wheel>
+                                                          <Wheel Pos="(-1.354; 0.556; 0.849)" _template="RearWheel">
 
-                        </SteeringRack>
-      </TruckData>
+                                                          </Wheel>
+                                                          <Wheel RightSide="true" Pos="(-1.354; 0.556; 0.849)" _template="RearWheel">
+
+                                                          </Wheel>
+                                                          <Wheel Pos="(-2.79; 0.556; 0.849)" _template="RearWheel">
+
+                                                          </Wheel>
+                                                          <Wheel RightSide="true" Pos="(-2.79; 0.556; 0.849)" _template="RearWheel">
+
+                                                          </Wheel>
+                          </Wheels>
+                                                        <Steam Origin="(1.268; 1.411; 0)">
+
+                                                        </Steam>
+                                                        <Steam Scale="0.5" Origin="(3.352; 1.307; 0)" ParentFrame="BoneCabinDamper_cdt">
+
+                                                        </Steam>
+                          <GearboxSocket Type="gearboxes_trucks_unique_offroad, gearboxes_trucks_unique_m916a1_finetune" Default="g_truck_unique_offroad">
+
+                          </GearboxSocket>
+                          <WinchUpgradeSocket Type="winches_medium_trucks" Default="w_medium_trucks_default" IsUpgradable="true">
+
+                          </WinchUpgradeSocket>
+                          <SteeringRack Frame="BoneRack" RackHalfSizeZ="0.685" FrameSteerLeft="BoneRackLeft" FrameSteerRight="BoneRackRight">
+
+                          </SteeringRack>
+                          <SteeringWheel Frame="BoneSteering">
+
+                          </SteeringWheel>
+                          <SoundsWheels _template="Default">
+
+                          </SoundsWheels>
+                          <Damage ParentFrame="BoneCabinDamper_cdt" SensationMax="(1.781; 2.815; 0.879)" Capacity="600" SensationMin="(0.448; 2.21; -0.879)">
+                                                                        <DamageArea Min="(1.7; 0.75; -0.6)" ParentFrame="BoneCabin_cdt" Max="(3.5; 2; 0.6)" Type="Engine">
+
+                                                                        </DamageArea>
+                                                                        <DamageArea Min="(0.307; 0.45; -1.15)" ParentFrame="BoneCabin_cdt" Max="(1.397; 1.186; 1.15)" Type="FuelTank">
+
+                                                                        </DamageArea>
+                          </Damage>
+                          <Shafts>
+                                                                          <Shaft SocketPointA="Shaft1a" SocketPointB="Shaft1b">
+
+                                                                          </Shaft>
+                                                                          <Shaft SocketPointA="Shaft2a" SocketPointB="Shaft2b">
+
+                                                                          </Shaft>
+                                                                          <Shaft SocketPointA="Shaft3a" SocketPointB="Shaft3b">
+
+                                                                          </Shaft>
+                                                                          <Shaft SocketPointA="Shaft4a" SocketPointB="Shaft4b">
+
+                                                                          </Shaft>
+                          </Shafts>
+        </TruckData>
   </Truck>
-  <_templates Include="trucks">
-        <Wheel>
-            <RearWheel Torque="default" Location="rear" ConnectedToHandbrake="true">
-
-            </RearWheel>
-            <FrontWheel SteeringCastor="8" ParentFrame="BoneCabin_cdt" Torque="full" SteeringAngle="40" Location="front">
-
-            </FrontWheel>
-        </Wheel>
-        <Body>
-              <Mirror Collisions="None">
-                  <Constraint LinearLimitsZ="(0;0)" Type="Fixed" LinearLimitsY="(-.005; .02)" LinearLimitsX="(-.005;.005)">
-                      <Motor Spring="200" Type="Spring" Damping="20">
-
-                      </Motor>
-                  </Constraint>
-              </Mirror>
-        </Body>
-  </_templates>

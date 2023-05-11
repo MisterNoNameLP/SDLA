@@ -1,602 +1,602 @@
-  <Truck>
-      <PhysicsModel Mesh="trucks/khan_39_marshall">
-          <NetSync Legacy="false">
-
-          </NetSync>
-          <Body CenterOfMassOffset="(-0.3; -0.3; 0)" ImpactType="Truck" NetSync="pv" ModelFrame="BoneChassis_cdt" Mass="1500">
-                  <Body _template="TieRod" ModelFrame="BoneTieRod_cdt">
-                    <Constraint Name="TieRodSteer">
-
-                    </Constraint>
-                  </Body>
-                  <Body _template="SideMirror" ModelFrame="BoneMirrorRight_cdt">
-
-                  </Body>
-                  <Body _template="SideMirror" ModelFrame="BoneMirrorLeft_cdt">
-
-                  </Body>
-                  <Body _template="Sunshield" ModelFrame="BoneSunshieldRight_cdt">
-
-                  </Body>
-                  <Body _template="Sunshield" ModelFrame="BoneSunshieldLeft_cdt">
-
-                  </Body>
-                  <Body ModelFrame="BoneKey_cdt" Mass="0.2">
-                    <Constraint MinLimit="-30" Type="Hinge" MaxLimit="50" AxisLocal="(1; 0; 0)">
-                        <Motor Spring="0.001" Type="Spring" Damping="0.001">
-
-                        </Motor>
-                    </Constraint>
-                  </Body>
-                  <Body _template="Mudguard" ModelFrame="BoneMudguardLeftFront_cdt">
-                    <Constraint MaxLimit="18" AxisLocal="(0; 0; 1)" MinLimit="-50">
-
-                    </Constraint>
-                  </Body>
-                  <Body _template="Mudguard" ModelFrame="BoneMudguardRightFront_cdt">
-                    <Constraint MaxLimit="18" AxisLocal="(0; 0; 1)" MinLimit="-50">
-
-                    </Constraint>
-                  </Body>
-                  <Body _template="Mudguard" ModelFrame="BoneMudguardLeftRear_cdt">
-                    <Constraint MaxLimit="15" AxisLocal="(0; 0; 1)" MinLimit="-50">
-
-                    </Constraint>
-                  </Body>
-                  <Body _template="Mudguard" ModelFrame="BoneMudguardRightRear_cdt">
-                    <Constraint MaxLimit="15" AxisLocal="(0; 0; 1)" MinLimit="-50">
-
-                    </Constraint>
-                  </Body>
-                  <Body Collisions="None" ModelFrame="BoneBelt1_cdt" Mass="1">
-                    <Constraint MinLimit="-0.01" Type="Prismatic" MaxLimit="0.03" AxisLocal="(0; 0; 1)">
-                        <Motor Spring="200" Type="Spring" Damping="30">
-
-                        </Motor>
-                    </Constraint>
-                  </Body>
-                  <Body Collisions="None" ModelFrame="BoneBelt2_cdt" Mass="1">
-                    <Constraint MinLimit="-0.01" Type="Prismatic" MaxLimit="0.03" AxisLocal="(0; 0; 1)">
-                        <Motor Spring="200" Type="Spring" Damping="30">
-
-                        </Motor>
-                    </Constraint>
-                  </Body>
-                  <Body Collisions="None" ModelFrame="BoneBelt3_cdt" Mass="1">
-                    <Constraint Type="Hinge" MaxLimit="3" PivotOffset="(0; 0; 0)" AxisLocal="(0; 1; 0)" MinLimit="-3">
-                        <Motor Spring="1" Type="Spring" Damping="1">
-
-                        </Motor>
-                    </Constraint>
-                  </Body>
-          </Body>
-      </PhysicsModel>
-      <GameData Country="RU,CAS" Recallable="true" ExcludeAddons="scout_trailer_flatbed_1, scout_trailer_flatbed_2, scout_trailer_oiltank" Price="2700" UnlockByRank="1" UnlockByExploration="false">
-            <CustomizationCameras>
-                  <CameraPos InterestPosition="(4.616; 1.747; 0)" Name="addon_1" MaxXRotation="360" Position="(-0.75; 4.237; 5.28)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.049; 0.753; -0)" Name="addon_2" MaxXRotation="360" Position="(9.986; 2.494; -3.936)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(6.387; 1.501; 0)" Name="side_r" MaxXRotation="360" Position="(9.381; 2.79; 3.583)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(3.76; 2.358; -0)" Name="roof" MaxXRotation="360" Position="(9.194; 4.675; 5.039)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.274; 0.632; 0)" Name="side_l" MaxXRotation="360" Position="(0.952; 1.73; 2.678)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(6.197; 1.39; 0)" Name="hoods" MaxXRotation="360" Position="(12.073; 1.463; -3.949)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(6.041; 0.424; 0)" Name="wheels" MaxXRotation="360" Position="(9.302; 1.619; -3.565)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(6.197; 1.39; 0)" Name="default" MaxXRotation="360" Position="(12.073; 1.463; -3.949)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.646; 1.589; 0)" Name="rear" MaxXRotation="360" Position="(0.452; 2.566; 2.073)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(5.336; 2.076; -0.461)" FOV="32.0" InterestPosition="(7.736; 0.802; 0.916)" Name="sticker_1">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(8.557; 1.912; -1.231)" FOV="32.0" InterestPosition="(7.506; 1.596; -1.231)" Name="hood_ornament">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(8.721; 2.485; 0.569)" FOV="32.0" InterestPosition="(6.015; 1.929; -0.893)" Name="glass_sticker">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(6.817; 7.492; 0.032)" FOV="32.0" InterestPosition="(5.838; 2.705; -0.567)" Name="roof_sticker">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(5.095; 1.925; -0.461)" FOV="32.0" InterestPosition="(7.736; 1.681; 1.811)" Name="mirror_mount">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(5.095; 1.925; -0.461)" FOV="32.0" InterestPosition="(7.736; 2.894; 2.275)" Name="sticker">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(4.916; 1.776; 2.909)" FOV="32.0" InterestPosition="(7.245; 0.895; -0.013)" Name="door_r_sticker">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(8.860; 5.008; -0.202)" FOV="32.0" InterestPosition="(7.274; 1.476; -0.801)" Name="capote_sticker">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(5.171; 1.988; 0.167)" FOV="32.0" InterestPosition="(7.736; 1.164; 1.98)" Name="sticker_2">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(5.095; 1.925; -0.461)" FOV="32.0" InterestPosition="(7.736; 1.681; 1.811)" Name="bubble_head">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(4.94; 1.829; -2.884)" FOV="32.0" InterestPosition="(4.929; 1.208; -0.761)" Name="door_l_sticker">
-
-                  </CameraPos>
-            </CustomizationCameras>
-                <CraneSocket Pos="(-2.062; 1.043; 0)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(-0.163; 0.845; 0.862)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(-0.163; 0.845; -0.862)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(-0.2; 2.3; 0)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(2.120; 0.958; 0.315)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(2.120; 0.958; -0.315)">
-
-                </CraneSocket>
-                  <AddonSockets DefaultAddon="khan_39_marshall_snorkel_default">
-                    <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="KHAN39MarshallSnorkel">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets DefaultAddon="khan_39_marshall_bumper_default">
-                      <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="KHAN39MarshallBumper">
-
-                      </Socket>
-                      <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="KHAN39MarshallBumperCable">
-                        <ExtraParent Frame="BoneChassis_cdt">
-
-                        </ExtraParent>
-                      </Socket>
-                  </AddonSockets>
-                  <AddonSockets DefaultAddon="khan_39_marshall_bumper_rear_default">
-                      <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="KHAN39MarshallBumperRear">
-
-                      </Socket>
-                      <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="KHAN39MarshallBumperRear2">
-                        <ExtraParent Frame="BoneChassis_cdt">
-
-                        </ExtraParent>
-                      </Socket>
-                  </AddonSockets>
-                  <AddonSockets DefaultAddon="khan_39_marshall_wheel_addon_default">
-                    <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="KHAN39MarshallWheelAddon">
-                        <ExtraParent Frame="BoneChassis_cdt">
-
-                        </ExtraParent>
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets DefaultAddon="khan_39_marshall_diff_lock_default">
-                    <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="KHAN39MarshallDiffLock">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="KHAN39MarshallExpander">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="KHAN39MarshallThreshold">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="KHAN39MarshallRooftopTrunk">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneChassis_cdt" InCockpit="true" Names="khan39MarshallSticker_1x1_01">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneChassis_cdt" InCockpit="true" Names="khan39MarshallSticker_1x1_02">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneChassis_cdt" InCockpit="true" Names="khan39MarshallSticker_1x1_03">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneChassis_cdt" InCockpit="true" Names="khan39MarshallSticker_1x2_01">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneChassis_cdt" InCockpit="true" Names="khan39MarshallSticker_1x2_02">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneChassis_cdt" InCockpit="true" Names="khan39MarshallSticker_1x4_01">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneChassis_cdt" Names="khan39MarshallSticker_Roof">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneChassis_cdt" InCockpit="true" Names="khan39MarshallSticker_Capote">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneChassis_cdt" InCockpit="true" Names="khan39MarshallSticker_Door_L">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneChassis_cdt" Names="khan39MarshallSticker_Door_R">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneChassis_cdt" InCockpit="true" Names="khan39MarshallSticker_GlassTop">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="StuffAirfreshener" InCockpit="true" ParentFrame="BoneChassis_cdt" Offset="(0.473; 2.042; 0)">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneChassis_cdt" Names="StuffHoodKhan39Marshall">
-
-                    </Socket>
-                  </AddonSockets>
-                    <WinchSocket Pos="(-2.062; 1.043; 0)">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(-0.163; 0.845; 0.862)">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(-0.163; 0.845; -0.862)">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(2.120; 0.958; 0.315)">
-
-                    </WinchSocket>
-                    <WinchSocket Pos="(2.120; 0.958; -0.315)">
-
-                    </WinchSocket>
-            <UiDesc UiDesc="UI_VEHICLE_KHAN_39_MARSHALL_DESC" UiIcon30x30="scoutVehicleImg30" UiName="UI_VEHICLE_KHAN_39_MARSHALL_NAME" UiIconLogo="KhanLogo80" UiIcon40x40="scoutVehicleImg" UiIcon328x458="shopImgKhan39Marshal">
-
-            </UiDesc>
-      </GameData>
-      <ControlledConstraints>
-              <Constraint Name="TieRodSteer" IsLinkedSteering="true" Id="chassis_steer">
-
-              </Constraint>
-      </ControlledConstraints>
-      <HeadLight _template="Default" Pos="(2.178; 1.377; 0)">
-
-      </HeadLight>
-      <Landmark Mesh="landmarks/khan_39_marshall_lmk" MaxScale="3.8" MinScale="1.8">
-
-      </Landmark>
-      <TruckData EngineIconMesh="env/engine_small" EngineStartDelay="1.7" TruckType="SCOUT" ExhaustStartTime="1.6" SteerSpeed="0.03" SuspensionMarkerOffset="(1; -0.3; 0)" TruckImage="khanMarshallmchr" DiffLockType="Installed" Responsiveness="0.6" FueltankMarkerOffset="(1; 0.4; 0)" FuelCapacity="40" EngineIconScale="1" BackSteerSpeed="0.06">
-                    <Driver SteeringWheelPos="(0.371; 1.729; 0.417)" Pos="(0.099; 1.354; 0.414)" AnimationSet="Scout">
-
-                    </Driver>
-                    <Shafts>
-                            <Shaft Mesh="env/minishaft" SocketPointB="Shaft1b" SocketPointA="Shaft1a">
-
-                            </Shaft>
-                            <Shaft Mesh="env/minishaft" SocketPointB="Shaft2b" SocketPointA="Shaft2a">
-
-                            </Shaft>
-                    </Shafts>
-                    <FuelTank DamageCapacity="50">
-
-                    </FuelTank>
-                    <Dashboard>
-                                <Gauge Org="(0.539; 1.628; 0.097)" OutputAngles="(-56; 56)" Mesh="trucks/arrows/khan_39_marshall_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="fuel" Dir="(-0.884; 0.468; 0)">
-
-                                </Gauge>
-                                <Gauge Org="(0.539; 1.628; 0.03)" OutputAngles="(-56; 7)" Mesh="trucks/arrows/khan_39_marshall_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.884; 0.468; 0)">
-
-                                </Gauge>
-                                <Gauge Org="(0.539; 1.628; -0.03)" OutputAngles="(-52; -9)" Mesh="trucks/arrows/khan_39_marshall_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.884; 0.468; 0)">
-
-                                </Gauge>
-                                <Gauge Org="(0.539; 1.628; -0.097)" OutputAngles="(-50; 28)" Mesh="trucks/arrows/khan_39_marshall_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.884; 0.468; 0)">
-
-                                </Gauge>
-                                <Gauge Org="(0.553; 1.65; 0.191)" OutputAngles="(-121; 94)" Dir="(-0.881; 0.472; 0.008)" InputType="speed" Mesh="trucks/arrows/khan_39_marshall_arrow_2" InputRange="(0;160)">
-
-                                </Gauge>
-                                <Gauge Org="(0.553; 1.65; -0.191)" OutputAngles="(-120; 107)" Mesh="trucks/arrows/khan_39_marshall_arrow_2" Damping="0.99" InputRange="(0;1)" InputType="rpm" Dir="(-0.881; 0.472; 0.008)">
-
-                                </Gauge>
-                    </Dashboard>
-                    <SoundsWheels _template="Default">
-
-                    </SoundsWheels>
-                    <GearboxSocket Default="g_scout_default" Type="gearboxes_scouts">
-
-                    </GearboxSocket>
-                    <Steam Origin="(1.402; 0.639; 0)">
-
-                    </Steam>
-                    <Sounds DisableReversePitch="true" MinDist="8.0" Origin="(1.28; 1.3; 0)" _template="Default">
-                                      <BrakesSqueal Sound="trucks/khan_39_marshall/khan_39_marshall_brakes_squeal">
-
-                                      </BrakesSqueal>
-                                      <EngineLow Sound="trucks/khan_39_marshall/khan_39_marshall_low">
-
-                                      </EngineLow>
-                                      <EngineRev Sound="trucks/khan_39_marshall/khan_39_marshall_rev">
-
-                                      </EngineRev>
-                                      <EngineAccel Sound="trucks/khan_39_marshall/khan_39_marshall_acc">
-
-                                      </EngineAccel>
-                                      <Honk Sound="trucks/khan_39_marshall/khan_39_marshall_honk">
-
-                                      </Honk>
-                                      <EngineStop Sound="trucks/khan_39_marshall/khan_39_marshall_stop">
-
-                                      </EngineStop>
-                                      <Handbrake Sound="trucks/khan_39_marshall/khan_39_marshall_handbrake_on">
-
-                                      </Handbrake>
-                                      <Gear Sound="trucks/common/truck_gear_shift_light_rnd_set/truck_gear_shift_light_rnd">
-
-                                      </Gear>
-                                      <EngineIdle_2d IsSound2D="true" Sound="trucks/khan_39_marshall/khan_39_marshall_idle_2d">
-
-                                      </EngineIdle_2d>
-                                      <HandbrakeOff Sound="trucks/khan_39_marshall/khan_39_marshall_handbrake_off">
-
-                                      </HandbrakeOff>
-                                      <EngineHeavy_2d IsSound2D="true" Sound="">
-
-                                      </EngineHeavy_2d>
-                                      <Reverse Sound="">
-
-                                      </Reverse>
-                                      <EngineHigh_2d IsSound2D="true" Sound="trucks/khan_39_marshall/khan_39_marshall_high_2d">
-
-                                      </EngineHigh_2d>
-                                      <EngineIdle Sound="trucks/khan_39_marshall/khan_39_marshall_idle">
-
-                                      </EngineIdle>
-                                      <EngineStart Sound="trucks/khan_39_marshall/khan_39_marshall_start">
-
-                                      </EngineStart>
-                                      <EngineHigh Sound="trucks/khan_39_marshall/khan_39_marshall_high">
-
-                                      </EngineHigh>
-                                      <BrakePull Sound="">
-
-                                      </BrakePull>
-                                      <EngineLow_2d IsSound2D="true" Sound="trucks/khan_39_marshall/khan_39_marshall_low_2d">
-
-                                      </EngineLow_2d>
-                                      <EngineHeavy Sound="">
-
-                                      </EngineHeavy>
-                                      <BrakeRelease Sound="">
-
-                                      </BrakeRelease>
-                                      <GearFail Sound="trucks/common/truck_gear_wrong/truck_gear_wrong_small_old">
-
-                                      </GearFail>
-                    </Sounds>
-                    <Exhaust IsLight="true" Dir="(-0.808; -0.589; 0)" Origin="(-1.971; 0.701; 0.315)" Speed="2.0">
-
-                    </Exhaust>
-                    <SoundsDamage _template="Scout">
-
-                    </SoundsDamage>
-                    <Shakers>
-                                              <Shaker MinAngle="(0.5; 0.5; 0.5)" Frame="BoneExhaust" MaxAngle="(1.8; 1.8; 1.8)" MaxFrequency="3.8">
-
-                                              </Shaker>
-                                              <Shaker MinAngle="(0.6; 0.6; 0.6)" Frame="BoneGearstick" MaxAngle="(0.8; 0.8; 0.8)" MaxFrequency=".8">
-
-                                              </Shaker>
-                    </Shakers>
-                    <Camera Center="(-1.2; 0; 0)" RadiusMultiplier="0.8">
-                                              <Cockpit WindshieldShadingTexture="trucks/khan_39_marshall_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/khan_39_marshall_glass__d_a.tga" _template="Default" ViewPos="(-0.03; 2; 0.421)">
-                                                    <Mirror FOVScale="0.9" ClipDir="(-0.969; 0.066; -0.239)" Pos="(0.548; 1.759; 0.893)" Size="(0.17; 0.2)" MeshFrame="mirror_left" ReflectionDir="(-0.946; 0.137; -0.292)">
-
-                                                    </Mirror>
-                                                    <Mirror FOVScale="0.9" ClipDir="(-0.847; 0.02; 0.525)" Pos="(0.5; 1.759; -0.876)" Size="(0.17; 0.2)" MeshFrame="mirror_right" ReflectionDir="(-0.855; 0.088; 0.512)">
-
-                                                    </Mirror>
-                                                    <Mirror FOVScale="1.75" Pos="(0.435; 2.038; 0)" ClipDir="(-1; 0; 0)" ReflectionDir="(-0.937; -0.07; 0.342)" Size="(0.175; 0.08)" ClipOffset="0.1" MeshFrame="hp_cab_mirror">
-
-                                                    </Mirror>
-                                              </Cockpit>
-                    </Camera>
-                    <SuspensionSocket Default="khan_39_marshall_suspension_default" Type="s_khan_39_marshall" MaxWheelRadiusWithoutSuspension="1.2">
-
-                    </SuspensionSocket>
-                    <Wheels DefaultTire="mudtires_2" DefaultWheelType="wheels_scout_yar_871" DefaultRim="rim_1">
-                                                    <Wheel _template="FrontWheel" Pos="(1.412; 0.56; 0.76)">
-
-                                                    </Wheel>
-                                                    <Wheel Pos="(1.412; 0.56; 0.76)" _template="FrontWheel" RightSide="true">
-
-                                                    </Wheel>
-                                                    <Wheel _template="RearWheel" Pos="(-1.166; 0.519; 0.76)">
-
-                                                    </Wheel>
-                                                    <Wheel Pos="(-1.166; 0.519; 0.76)" _template="RearWheel" RightSide="true">
-
-                                                    </Wheel>
-                    </Wheels>
-                    <Axles>
-                                                      <Axle Frame="BoneAxle1">
-
-                                                      </Axle>
-                                                      <Axle Frame="BoneAxle2">
-
-                                                      </Axle>
-                    </Axles>
-                    <Damage>
-                                                        <DamageArea Max="(1.9; 1.544; 0.68)" Type="Engine" ParentFrame="BoneChassis_cdt" Min="(0.6; 1; -0.68)">
-
-                                                        </DamageArea>
-                                                        <DamageArea Max="(1; 1; 0.85)" Type="FuelTank" ParentFrame="BoneChassis_cdt" Min="(-1; 0.7; -0.85)">
-
-                                                        </DamageArea>
-                    </Damage>
-                    <OcclusionMap Texture="trucks/occlusion/chassis_small__s_d_a.tga" MaxX="2.35" MinX="-2.3" HalfSizeZ="1.4">
-
-                    </OcclusionMap>
-                    <EngineSocket Default="ru_scout_old_engine_0" Type="e_ru_scout_old, e_ru_scout_modern">
-
-                    </EngineSocket>
-                    <WinchUpgradeSocket Default="w_scout_default" IsUpgradable="true" Type="winches_scouts">
-
-                    </WinchUpgradeSocket>
-                    <SteeringWheel Frame="BoneSteering">
-
-                    </SteeringWheel>
-                    <CompatibleWheels OffsetZ=".1" Scale="0.56" Type="wheels_scout_yar_871">
-
-                    </CompatibleWheels>
-                    <SteeringRack RackHalfSizeZ="0.627" Frame="BoneRack" FrameSteerLeft="BoneRackLeft" FrameSteerRight="BoneRackRight">
-
-                    </SteeringRack>
-      </TruckData>
-      <Snorkel Origin="(1.92; 1.279; 0)">
-
-      </Snorkel>
-      <ModelAttachments>
-                        <StopSignals>
-                              <Flare ParentFrame="BoneChassis_cdt" Size="0.2" Pos="(-1.843; 1.467; -0.717)" _template="StopSignal">
-
-                              </Flare>
-                              <Flare ParentFrame="BoneChassis_cdt" Size="0.2" Pos="(-1.843; 1.467; 0.717)" _template="StopSignal">
-
-                              </Flare>
-                            <Light ParentFrame="BoneChassis_cdt" _template="StopSignal" Pos="(-1.969; 1.286; 0)">
-
-                            </Light>
-                        </StopSignals>
-                        <Ignition>
-                                <Flare Color="g(165; 149; 130) x .7" ParentFrame="BoneChassis_cdt" Pos="(1.907; 1.392; 0.525)" DirAngle="120" Size="0.3" _template="IgnitionSignalWhite">
-
-                                </Flare>
-                                <Flare Color="g(165; 149; 130) x .7" ParentFrame="BoneChassis_cdt" Pos="(1.907; 1.392; -0.525)" DirAngle="120" Size="0.3" _template="IgnitionSignalWhite">
-
-                                </Flare>
-                                <Flare ParentFrame="BoneChassis_cdt" Size="0.2" Pos="(-1.843; 1.393; -0.716)" _template="IgnitionSignalRed">
-
-                                </Flare>
-                                <Flare ParentFrame="BoneChassis_cdt" Size="0.2" Pos="(-1.843; 1.393; 0.716)" _template="IgnitionSignalRed">
-
-                                </Flare>
-                                  <Light ParentFrame="BoneChassis_cdt" _template="IgnitionSignalWhite" Pos="(1.907; 1.392; -0.525)">
-
-                                  </Light>
-                                  <Light ParentFrame="BoneChassis_cdt" _template="IgnitionSignalWhite" Pos="(1.907; 1.392; 0.525)">
-
-                                  </Light>
-                                  <Light ParentFrame="BoneChassis_cdt" _template="IgnitionSignalRed" Pos="(-1.843; 1.395; -0.716)">
-
-                                  </Light>
-                                  <Light ParentFrame="BoneChassis_cdt" _template="IgnitionSignalRed" Pos="(-1.843; 1.395; 0.716)">
-
-                                  </Light>
-                        </Ignition>
-                        <HeadLight>
-                                  <Flare Color="g(255; 235; 195) x 0.5" Pos="(1.907; 1.392; -0.525)" Size="0.5" _template="HeadLight">
-
-                                  </Flare>
-                                  <Flare Color="g(255; 235; 195) x 0.5" Pos="(1.907; 1.392; 0.525)" Size="0.5" _template="HeadLight">
-
-                                  </Flare>
-                                  <Flare Color="g(220; 220; 255) x 0.05" Pos="(1.907; 1.392; -0.525)" Size="0.5" _template="BlueStreak">
-
-                                  </Flare>
-                                  <Flare Color="g(220; 220; 255) x 0.05" Pos="(1.907; 1.392; 0.525)" Size="0.5" _template="BlueStreak">
-
-                                  </Flare>
-                                    <Model Org="(1.907; 1.392; 0.525)" _template="HeadLightRay">
-
-                                    </Model>
-                                    <Model Org="(1.907; 1.392; -0.525)" _template="HeadLightRay">
-
-                                    </Model>
-                        </HeadLight>
-                        <ReverseSignals>
-                                    <Flare ParentFrame="BoneChassis_cdt" Size="0.25" Pos="(-1.843; 1.323; -0.717)" _template="ReverseSignal">
-
-                                    </Flare>
-                                    <Flare ParentFrame="BoneChassis_cdt" Size="0.25" Pos="(-1.843; 1.323; 0.717)" _template="ReverseSignal">
-
-                                    </Flare>
-                                    <Flare Color="g(220; 220; 255) x 0.05" ParentFrame="BoneChassis_cdt" Pos="(-1.843; 1.323; -0.717)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
-
-                                    </Flare>
-                                    <Flare Color="g(220; 220; 255) x 0.05" ParentFrame="BoneChassis_cdt" Pos="(-1.843; 1.323; 0.717)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
-
-                                    </Flare>
-                                  <Light ParentFrame="BoneChassis_cdt" _template="ReverseSignal" Pos="(-1.969; 1.323; 0)">
-
-                                  </Light>
-                        </ReverseSignals>
-      </ModelAttachments>
-  </Truck>
   <_templates Include="trucks">
-        <Wheel>
-            <RearWheel Torque="default" Location="rear" ConnectedToHandbrake="true">
+      <Wheel>
+          <RearWheel Location="rear" ConnectedToHandbrake="true" Torque="default">
 
-            </RearWheel>
-            <FrontWheel SteeringCastor="5" Torque="default" ParentFrame="BoneChassis_cdt" SteeringJointOffset="0.3" SteeringAngle="28" Location="front">
+          </RearWheel>
+          <FrontWheel ParentFrame="BoneChassis_cdt" SteeringAngle="28" Location="front" SteeringJointOffset="0.3" Torque="default" SteeringCastor="5">
 
-            </FrontWheel>
-        </Wheel>
-        <Body>
-              <SideMirror Collisions="None" Mass="5">
-                  <Constraint MinLimit="-15" Type="Hinge" MaxLimit="15" AxisLocal="(0; 1; 0)">
-                      <Motor Spring="100" Type="Spring" Damping="0.1">
+          </FrontWheel>
+      </Wheel>
+      <Body>
+            <Sunshield CenterOfMassOffset="(0; 0; 0)" Mass="2.5" ImpactType="Truck" Collisions="None">
+                <Constraint Type="Hinge" MaxLimit="7" AxisLocal="(0; 0; 1)" MinLimit="-7">
+                    <Motor Spring="10" Damping=".05" Type="Spring">
+
+                    </Motor>
+                </Constraint>
+            </Sunshield>
+            <TieRod Mass="1">
+                  <Constraint Type="Hinge" MaxLimit="20" AxisLocal="(0; -1; 0)" MinLimit="-80">
+                      <Motor Type="Position" Force="6000" Damping="1.0" Tau="1">
 
                       </Motor>
                   </Constraint>
-              </SideMirror>
-              <TieRod Mass="1">
-                    <Constraint MinLimit="-80" Type="Hinge" MaxLimit="20" AxisLocal="(0; -1; 0)">
-                        <Motor Type="Position" Damping="1.0" Tau="1" Force="6000">
+            </TieRod>
+            <SideMirror Mass="5" Collisions="None">
+                    <Constraint Type="Hinge" MaxLimit="15" AxisLocal="(0; 1; 0)" MinLimit="-15">
+                        <Motor Spring="100" Damping="0.1" Type="Spring">
 
                         </Motor>
                     </Constraint>
-              </TieRod>
-              <Sunshield CenterOfMassOffset="(0; 0; 0)" ImpactType="Truck" Collisions="None" Mass="2.5">
-                      <Constraint MinLimit="-7" Type="Hinge" MaxLimit="7" AxisLocal="(0; 0; 1)">
-                          <Motor Spring="10" Type="Spring" Damping=".05">
-
-                          </Motor>
-                      </Constraint>
-              </Sunshield>
-        </Body>
+            </SideMirror>
+      </Body>
   </_templates>
+  <Truck>
+        <HeadLight Pos="(2.178; 1.377; 0)" _template="Default">
+
+        </HeadLight>
+        <GameData Recallable="true" ExcludeAddons="scout_trailer_flatbed_1, scout_trailer_flatbed_2, scout_trailer_oiltank" UnlockByExploration="false" Price="2700" UnlockByRank="1" Country="RU,CAS">
+              <CustomizationCameras>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="addon_1" InterestPosition="(4.616; 1.747; 0)" Position="(-0.75; 4.237; 5.28)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="addon_2" InterestPosition="(5.049; 0.753; -0)" Position="(9.986; 2.494; -3.936)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="side_r" InterestPosition="(6.387; 1.501; 0)" Position="(9.381; 2.79; 3.583)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="roof" InterestPosition="(3.76; 2.358; -0)" Position="(9.194; 4.675; 5.039)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="side_l" InterestPosition="(5.274; 0.632; 0)" Position="(0.952; 1.73; 2.678)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="hoods" InterestPosition="(6.197; 1.39; 0)" Position="(12.073; 1.463; -3.949)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="wheels" InterestPosition="(6.041; 0.424; 0)" Position="(9.302; 1.619; -3.565)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="default" InterestPosition="(6.197; 1.39; 0)" Position="(12.073; 1.463; -3.949)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="rear" InterestPosition="(4.646; 1.589; 0)" Position="(0.452; 2.566; 2.073)" MaxXRotation="360" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="sticker_1" InterestPosition="(7.736; 0.802; 0.916)" Position="(5.336; 2.076; -0.461)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="hood_ornament" InterestPosition="(7.506; 1.596; -1.231)" Position="(8.557; 1.912; -1.231)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="glass_sticker" InterestPosition="(6.015; 1.929; -0.893)" Position="(8.721; 2.485; 0.569)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="roof_sticker" InterestPosition="(5.838; 2.705; -0.567)" Position="(6.817; 7.492; 0.032)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="mirror_mount" InterestPosition="(7.736; 1.681; 1.811)" Position="(5.095; 1.925; -0.461)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="sticker" InterestPosition="(7.736; 2.894; 2.275)" Position="(5.095; 1.925; -0.461)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="door_r_sticker" InterestPosition="(7.245; 0.895; -0.013)" Position="(4.916; 1.776; 2.909)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="capote_sticker" InterestPosition="(7.274; 1.476; -0.801)" Position="(8.860; 5.008; -0.202)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="sticker_2" InterestPosition="(7.736; 1.164; 1.98)" Position="(5.171; 1.988; 0.167)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="bubble_head" InterestPosition="(7.736; 1.681; 1.811)" Position="(5.095; 1.925; -0.461)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+                    <CameraPos Name="door_l_sticker" InterestPosition="(4.929; 1.208; -0.761)" Position="(4.94; 1.829; -2.884)" Interior="true" FOV="32.0">
+
+                    </CameraPos>
+              </CustomizationCameras>
+              <UiDesc UiName="UI_VEHICLE_KHAN_39_MARSHALL_NAME" UiDesc="UI_VEHICLE_KHAN_39_MARSHALL_DESC" UiIconLogo="KhanLogo80" UiIcon40x40="scoutVehicleImg" UiIcon30x30="scoutVehicleImg30" UiIcon328x458="shopImgKhan39Marshal">
+
+              </UiDesc>
+                    <AddonSockets DefaultAddon="khan_39_marshall_snorkel_default">
+                      <Socket Offset="(0; 0; 0)" Names="KHAN39MarshallSnorkel" ParentFrame="BoneChassis_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="khan_39_marshall_bumper_default">
+                        <Socket Offset="(0; 0; 0)" Names="KHAN39MarshallBumper" ParentFrame="BoneChassis_cdt">
+
+                        </Socket>
+                        <Socket Offset="(0; 0; 0)" Names="KHAN39MarshallBumperCable" ParentFrame="BoneChassis_cdt">
+                          <ExtraParent Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="khan_39_marshall_bumper_rear_default">
+                        <Socket Offset="(0; 0; 0)" Names="KHAN39MarshallBumperRear" ParentFrame="BoneChassis_cdt">
+
+                        </Socket>
+                        <Socket Offset="(0; 0; 0)" Names="KHAN39MarshallBumperRear2" ParentFrame="BoneChassis_cdt">
+                          <ExtraParent Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="khan_39_marshall_wheel_addon_default">
+                      <Socket Offset="(0; 0; 0)" Names="KHAN39MarshallWheelAddon" ParentFrame="BoneChassis_cdt">
+                          <ExtraParent Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="khan_39_marshall_diff_lock_default">
+                      <Socket Offset="(0; 0; 0)" Names="KHAN39MarshallDiffLock" ParentFrame="BoneChassis_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="KHAN39MarshallExpander" ParentFrame="BoneChassis_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="KHAN39MarshallThreshold" ParentFrame="BoneChassis_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="KHAN39MarshallRooftopTrunk" ParentFrame="BoneChassis_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneChassis_cdt" Names="khan39MarshallSticker_1x1_01" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneChassis_cdt" Names="khan39MarshallSticker_1x1_02" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneChassis_cdt" Names="khan39MarshallSticker_1x1_03" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneChassis_cdt" Names="khan39MarshallSticker_1x2_01" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneChassis_cdt" Names="khan39MarshallSticker_1x2_02" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneChassis_cdt" Names="khan39MarshallSticker_1x4_01" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="khan39MarshallSticker_Roof" ParentFrame="BoneChassis_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneChassis_cdt" Names="khan39MarshallSticker_Capote" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneChassis_cdt" Names="khan39MarshallSticker_Door_L" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="khan39MarshallSticker_Door_R" ParentFrame="BoneChassis_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneChassis_cdt" Names="khan39MarshallSticker_GlassTop" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneChassis_cdt" Offset="(0.473; 2.042; 0)" Names="StuffAirfreshener" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="StuffHoodKhan39Marshall" ParentFrame="BoneChassis_cdt">
+
+                      </Socket>
+                    </AddonSockets>
+                      <CraneSocket Pos="(-2.062; 1.043; 0)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.163; 0.845; 0.862)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.163; 0.845; -0.862)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.2; 2.3; 0)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(2.120; 0.958; 0.315)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(2.120; 0.958; -0.315)">
+
+                      </CraneSocket>
+                        <WinchSocket Pos="(-2.062; 1.043; 0)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(-0.163; 0.845; 0.862)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(-0.163; 0.845; -0.862)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(2.120; 0.958; 0.315)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(2.120; 0.958; -0.315)">
+
+                        </WinchSocket>
+        </GameData>
+        <PhysicsModel Mesh="trucks/khan_39_marshall">
+                <Body NetSync="pv" CenterOfMassOffset="(-0.3; -0.3; 0)" ModelFrame="BoneChassis_cdt" Mass="1500" ImpactType="Truck">
+                      <Body ModelFrame="BoneTieRod_cdt" _template="TieRod">
+                        <Constraint Name="TieRodSteer">
+
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneMirrorRight_cdt" _template="SideMirror">
+
+                      </Body>
+                      <Body ModelFrame="BoneMirrorLeft_cdt" _template="SideMirror">
+
+                      </Body>
+                      <Body ModelFrame="BoneSunshieldRight_cdt" _template="Sunshield">
+
+                      </Body>
+                      <Body ModelFrame="BoneSunshieldLeft_cdt" _template="Sunshield">
+
+                      </Body>
+                      <Body Mass="0.2" ModelFrame="BoneKey_cdt">
+                        <Constraint Type="Hinge" MaxLimit="50" AxisLocal="(1; 0; 0)" MinLimit="-30">
+                            <Motor Spring="0.001" Damping="0.001" Type="Spring">
+
+                            </Motor>
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneMudguardLeftFront_cdt" _template="Mudguard">
+                        <Constraint MinLimit="-50" MaxLimit="18" AxisLocal="(0; 0; 1)">
+
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneMudguardRightFront_cdt" _template="Mudguard">
+                        <Constraint MinLimit="-50" MaxLimit="18" AxisLocal="(0; 0; 1)">
+
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneMudguardLeftRear_cdt" _template="Mudguard">
+                        <Constraint MinLimit="-50" MaxLimit="15" AxisLocal="(0; 0; 1)">
+
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneMudguardRightRear_cdt" _template="Mudguard">
+                        <Constraint MinLimit="-50" MaxLimit="15" AxisLocal="(0; 0; 1)">
+
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneBelt1_cdt" Mass="1" Collisions="None">
+                        <Constraint Type="Prismatic" MaxLimit="0.03" AxisLocal="(0; 0; 1)" MinLimit="-0.01">
+                            <Motor Spring="200" Damping="30" Type="Spring">
+
+                            </Motor>
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneBelt2_cdt" Mass="1" Collisions="None">
+                        <Constraint Type="Prismatic" MaxLimit="0.03" AxisLocal="(0; 0; 1)" MinLimit="-0.01">
+                            <Motor Spring="200" Damping="30" Type="Spring">
+
+                            </Motor>
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneBelt3_cdt" Mass="1" Collisions="None">
+                        <Constraint Type="Hinge" MaxLimit="3" AxisLocal="(0; 1; 0)" MinLimit="-3" PivotOffset="(0; 0; 0)">
+                            <Motor Spring="1" Damping="1" Type="Spring">
+
+                            </Motor>
+                        </Constraint>
+                      </Body>
+                </Body>
+                <NetSync Legacy="false">
+
+                </NetSync>
+        </PhysicsModel>
+        <ControlledConstraints>
+                  <Constraint IsLinkedSteering="true" Id="chassis_steer" Name="TieRodSteer">
+
+                  </Constraint>
+        </ControlledConstraints>
+        <Snorkel Origin="(1.92; 1.279; 0)">
+
+        </Snorkel>
+        <Landmark MaxScale="3.8" Mesh="landmarks/khan_39_marshall_lmk" MinScale="1.8">
+
+        </Landmark>
+        <ModelAttachments>
+                        <HeadLight>
+                              <Flare Pos="(1.907; 1.392; -0.525)" _template="HeadLight" Color="g(255; 235; 195) x 0.5" Size="0.5">
+
+                              </Flare>
+                              <Flare Pos="(1.907; 1.392; 0.525)" _template="HeadLight" Color="g(255; 235; 195) x 0.5" Size="0.5">
+
+                              </Flare>
+                              <Flare Pos="(1.907; 1.392; -0.525)" _template="BlueStreak" Color="g(220; 220; 255) x 0.05" Size="0.5">
+
+                              </Flare>
+                              <Flare Pos="(1.907; 1.392; 0.525)" _template="BlueStreak" Color="g(220; 220; 255) x 0.05" Size="0.5">
+
+                              </Flare>
+                                <Model Org="(1.907; 1.392; 0.525)" _template="HeadLightRay">
+
+                                </Model>
+                                <Model Org="(1.907; 1.392; -0.525)" _template="HeadLightRay">
+
+                                </Model>
+                        </HeadLight>
+                        <StopSignals>
+                              <Light Pos="(-1.969; 1.286; 0)" ParentFrame="BoneChassis_cdt" _template="StopSignal">
+
+                              </Light>
+                                  <Flare Pos="(-1.843; 1.467; -0.717)" _template="StopSignal" Size="0.2" ParentFrame="BoneChassis_cdt">
+
+                                  </Flare>
+                                  <Flare Pos="(-1.843; 1.467; 0.717)" _template="StopSignal" Size="0.2" ParentFrame="BoneChassis_cdt">
+
+                                  </Flare>
+                        </StopSignals>
+                        <Ignition>
+                                  <Light Pos="(1.907; 1.392; -0.525)" ParentFrame="BoneChassis_cdt" _template="IgnitionSignalWhite">
+
+                                  </Light>
+                                  <Light Pos="(1.907; 1.392; 0.525)" ParentFrame="BoneChassis_cdt" _template="IgnitionSignalWhite">
+
+                                  </Light>
+                                  <Light Pos="(-1.843; 1.395; -0.716)" ParentFrame="BoneChassis_cdt" _template="IgnitionSignalRed">
+
+                                  </Light>
+                                  <Light Pos="(-1.843; 1.395; 0.716)" ParentFrame="BoneChassis_cdt" _template="IgnitionSignalRed">
+
+                                  </Light>
+                                    <Flare Pos="(1.907; 1.392; 0.525)" _template="IgnitionSignalWhite" ParentFrame="BoneChassis_cdt" Color="g(165; 149; 130) x .7" Size="0.3" DirAngle="120">
+
+                                    </Flare>
+                                    <Flare Pos="(1.907; 1.392; -0.525)" _template="IgnitionSignalWhite" ParentFrame="BoneChassis_cdt" Color="g(165; 149; 130) x .7" Size="0.3" DirAngle="120">
+
+                                    </Flare>
+                                    <Flare Pos="(-1.843; 1.393; -0.716)" _template="IgnitionSignalRed" Size="0.2" ParentFrame="BoneChassis_cdt">
+
+                                    </Flare>
+                                    <Flare Pos="(-1.843; 1.393; 0.716)" _template="IgnitionSignalRed" Size="0.2" ParentFrame="BoneChassis_cdt">
+
+                                    </Flare>
+                        </Ignition>
+                        <ReverseSignals>
+                                  <Light Pos="(-1.969; 1.323; 0)" ParentFrame="BoneChassis_cdt" _template="ReverseSignal">
+
+                                  </Light>
+                                      <Flare Pos="(-1.843; 1.323; -0.717)" _template="ReverseSignal" Size="0.25" ParentFrame="BoneChassis_cdt">
+
+                                      </Flare>
+                                      <Flare Pos="(-1.843; 1.323; 0.717)" _template="ReverseSignal" Size="0.25" ParentFrame="BoneChassis_cdt">
+
+                                      </Flare>
+                                      <Flare Pos="(-1.843; 1.323; -0.717)" Dir="(-1; 0; 0)" _template="BlueStreak" Color="g(220; 220; 255) x 0.05" Size="0.4" ParentFrame="BoneChassis_cdt">
+
+                                      </Flare>
+                                      <Flare Pos="(-1.843; 1.323; 0.717)" Dir="(-1; 0; 0)" _template="BlueStreak" Color="g(220; 220; 255) x 0.05" Size="0.4" ParentFrame="BoneChassis_cdt">
+
+                                      </Flare>
+                        </ReverseSignals>
+        </ModelAttachments>
+        <TruckData SteerSpeed="0.03" EngineStartDelay="1.7" EngineIconMesh="env/engine_small" TruckType="SCOUT" Responsiveness="0.6" BackSteerSpeed="0.06" TruckImage="khanMarshallmchr" SuspensionMarkerOffset="(1; -0.3; 0)" FueltankMarkerOffset="(1; 0.4; 0)" FuelCapacity="40" DiffLockType="Installed" ExhaustStartTime="1.6" EngineIconScale="1">
+                          <Driver Pos="(0.099; 1.354; 0.414)" AnimationSet="Scout" SteeringWheelPos="(0.371; 1.729; 0.417)">
+
+                          </Driver>
+                          <SoundsDamage _template="Scout">
+
+                          </SoundsDamage>
+                          <Shakers>
+                                    <Shaker MaxFrequency="3.8" Frame="BoneExhaust" MinAngle="(0.5; 0.5; 0.5)" MaxAngle="(1.8; 1.8; 1.8)">
+
+                                    </Shaker>
+                                    <Shaker MaxFrequency=".8" Frame="BoneGearstick" MinAngle="(0.6; 0.6; 0.6)" MaxAngle="(0.8; 0.8; 0.8)">
+
+                                    </Shaker>
+                          </Shakers>
+                          <OcclusionMap MinX="-2.3" Texture="trucks/occlusion/chassis_small__s_d_a.tga" HalfSizeZ="1.4" MaxX="2.35">
+
+                          </OcclusionMap>
+                          <FuelTank DamageCapacity="50">
+
+                          </FuelTank>
+                          <CompatibleWheels Type="wheels_scout_yar_871" Scale="0.56" OffsetZ=".1">
+
+                          </CompatibleWheels>
+                          <EngineSocket Type="e_ru_scout_old, e_ru_scout_modern" Default="ru_scout_old_engine_0">
+
+                          </EngineSocket>
+                          <SuspensionSocket Type="s_khan_39_marshall" MaxWheelRadiusWithoutSuspension="1.2" Default="khan_39_marshall_suspension_default">
+
+                          </SuspensionSocket>
+                          <Dashboard>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.884; 0.468; 0)" InputType="fuel" Org="(0.539; 1.628; 0.097)" Damping="0.99" Mesh="trucks/arrows/khan_39_marshall_arrow_1" OutputAngles="(-56; 56)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.884; 0.468; 0)" InputType="engineEnabled" Org="(0.539; 1.628; 0.03)" Damping="0.99" Mesh="trucks/arrows/khan_39_marshall_arrow_1" OutputAngles="(-56; 7)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.884; 0.468; 0)" InputType="engineEnabled" Org="(0.539; 1.628; -0.03)" Damping="0.99" Mesh="trucks/arrows/khan_39_marshall_arrow_1" OutputAngles="(-52; -9)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.884; 0.468; 0)" InputType="engineEnabled" Org="(0.539; 1.628; -0.097)" Damping="0.99" Mesh="trucks/arrows/khan_39_marshall_arrow_1" OutputAngles="(-50; 28)">
+
+                                                </Gauge>
+                                                <Gauge InputType="speed" Dir="(-0.881; 0.472; 0.008)" Org="(0.553; 1.65; 0.191)" Mesh="trucks/arrows/khan_39_marshall_arrow_2" InputRange="(0;160)" OutputAngles="(-121; 94)">
+
+                                                </Gauge>
+                                                <Gauge InputRange="(0;1)" Dir="(-0.881; 0.472; 0.008)" InputType="rpm" Org="(0.553; 1.65; -0.191)" Damping="0.99" Mesh="trucks/arrows/khan_39_marshall_arrow_2" OutputAngles="(-120; 107)">
+
+                                                </Gauge>
+                          </Dashboard>
+                          <Axles>
+                                                  <Axle Frame="BoneAxle1">
+
+                                                  </Axle>
+                                                  <Axle Frame="BoneAxle2">
+
+                                                  </Axle>
+                          </Axles>
+                          <Camera Center="(-1.2; 0; 0)" RadiusMultiplier="0.8">
+                                                  <Cockpit WindshieldDiffuseTexture="trucks/khan_39_marshall_glass__d_a.tga" _template="Default" WindshieldShadingTexture="trucks/khan_39_marshall_glass__sh_d.tga" ViewPos="(-0.03; 2; 0.421)">
+                                                        <Mirror FOVScale="0.9" ClipDir="(-0.969; 0.066; -0.239)" MeshFrame="mirror_left" Pos="(0.548; 1.759; 0.893)" Size="(0.17; 0.2)" ReflectionDir="(-0.946; 0.137; -0.292)">
+
+                                                        </Mirror>
+                                                        <Mirror FOVScale="0.9" ClipDir="(-0.847; 0.02; 0.525)" MeshFrame="mirror_right" Pos="(0.5; 1.759; -0.876)" Size="(0.17; 0.2)" ReflectionDir="(-0.855; 0.088; 0.512)">
+
+                                                        </Mirror>
+                                                        <Mirror FOVScale="1.75" ClipDir="(-1; 0; 0)" MeshFrame="hp_cab_mirror" Pos="(0.435; 2.038; 0)" ReflectionDir="(-0.937; -0.07; 0.342)" Size="(0.175; 0.08)" ClipOffset="0.1">
+
+                                                        </Mirror>
+                                                  </Cockpit>
+                          </Camera>
+                          <Exhaust IsLight="true" Dir="(-0.808; -0.589; 0)" Speed="2.0" Origin="(-1.971; 0.701; 0.315)">
+
+                          </Exhaust>
+                          <Sounds _template="Default" MinDist="8.0" Origin="(1.28; 1.3; 0)" DisableReversePitch="true">
+                                                      <Reverse Sound="">
+
+                                                      </Reverse>
+                                                      <EngineHeavy_2d IsSound2D="true" Sound="">
+
+                                                      </EngineHeavy_2d>
+                                                      <EngineLow Sound="trucks/khan_39_marshall/khan_39_marshall_low">
+
+                                                      </EngineLow>
+                                                      <BrakePull Sound="">
+
+                                                      </BrakePull>
+                                                      <EngineHigh Sound="trucks/khan_39_marshall/khan_39_marshall_high">
+
+                                                      </EngineHigh>
+                                                      <HandbrakeOff Sound="trucks/khan_39_marshall/khan_39_marshall_handbrake_off">
+
+                                                      </HandbrakeOff>
+                                                      <Gear Sound="trucks/common/truck_gear_shift_light_rnd_set/truck_gear_shift_light_rnd">
+
+                                                      </Gear>
+                                                      <EngineRev Sound="trucks/khan_39_marshall/khan_39_marshall_rev">
+
+                                                      </EngineRev>
+                                                      <EngineHeavy Sound="">
+
+                                                      </EngineHeavy>
+                                                      <EngineLow_2d IsSound2D="true" Sound="trucks/khan_39_marshall/khan_39_marshall_low_2d">
+
+                                                      </EngineLow_2d>
+                                                      <EngineHigh_2d IsSound2D="true" Sound="trucks/khan_39_marshall/khan_39_marshall_high_2d">
+
+                                                      </EngineHigh_2d>
+                                                      <EngineAccel Sound="trucks/khan_39_marshall/khan_39_marshall_acc">
+
+                                                      </EngineAccel>
+                                                      <EngineIdle_2d IsSound2D="true" Sound="trucks/khan_39_marshall/khan_39_marshall_idle_2d">
+
+                                                      </EngineIdle_2d>
+                                                      <EngineStart Sound="trucks/khan_39_marshall/khan_39_marshall_start">
+
+                                                      </EngineStart>
+                                                      <Handbrake Sound="trucks/khan_39_marshall/khan_39_marshall_handbrake_on">
+
+                                                      </Handbrake>
+                                                      <BrakesSqueal Sound="trucks/khan_39_marshall/khan_39_marshall_brakes_squeal">
+
+                                                      </BrakesSqueal>
+                                                      <GearFail Sound="trucks/common/truck_gear_wrong/truck_gear_wrong_small_old">
+
+                                                      </GearFail>
+                                                      <EngineIdle Sound="trucks/khan_39_marshall/khan_39_marshall_idle">
+
+                                                      </EngineIdle>
+                                                      <EngineStop Sound="trucks/khan_39_marshall/khan_39_marshall_stop">
+
+                                                      </EngineStop>
+                                                      <BrakeRelease Sound="">
+
+                                                      </BrakeRelease>
+                                                      <Honk Sound="trucks/khan_39_marshall/khan_39_marshall_honk">
+
+                                                      </Honk>
+                          </Sounds>
+                          <GearboxSocket Type="gearboxes_scouts" Default="g_scout_default">
+
+                          </GearboxSocket>
+                          <Steam Origin="(1.402; 0.639; 0)">
+
+                          </Steam>
+                          <Wheels DefaultWheelType="wheels_scout_yar_871" DefaultTire="mudtires_2" DefaultRim="rim_1">
+                                                              <Wheel Pos="(1.412; 0.56; 0.76)" _template="FrontWheel">
+
+                                                              </Wheel>
+                                                              <Wheel RightSide="true" Pos="(1.412; 0.56; 0.76)" _template="FrontWheel">
+
+                                                              </Wheel>
+                                                              <Wheel Pos="(-1.166; 0.519; 0.76)" _template="RearWheel">
+
+                                                              </Wheel>
+                                                              <Wheel RightSide="true" Pos="(-1.166; 0.519; 0.76)" _template="RearWheel">
+
+                                                              </Wheel>
+                          </Wheels>
+                          <WinchUpgradeSocket Type="winches_scouts" Default="w_scout_default" IsUpgradable="true">
+
+                          </WinchUpgradeSocket>
+                          <SteeringRack Frame="BoneRack" RackHalfSizeZ="0.627" FrameSteerLeft="BoneRackLeft" FrameSteerRight="BoneRackRight">
+
+                          </SteeringRack>
+                          <SteeringWheel Frame="BoneSteering">
+
+                          </SteeringWheel>
+                          <SoundsWheels _template="Default">
+
+                          </SoundsWheels>
+                          <Damage>
+                                                                        <DamageArea Min="(0.6; 1; -0.68)" ParentFrame="BoneChassis_cdt" Max="(1.9; 1.544; 0.68)" Type="Engine">
+
+                                                                        </DamageArea>
+                                                                        <DamageArea Min="(-1; 0.7; -0.85)" ParentFrame="BoneChassis_cdt" Max="(1; 1; 0.85)" Type="FuelTank">
+
+                                                                        </DamageArea>
+                          </Damage>
+                          <Shafts>
+                                                                          <Shaft SocketPointA="Shaft1a" Mesh="env/minishaft" SocketPointB="Shaft1b">
+
+                                                                          </Shaft>
+                                                                          <Shaft SocketPointA="Shaft2a" Mesh="env/minishaft" SocketPointB="Shaft2b">
+
+                                                                          </Shaft>
+                          </Shafts>
+        </TruckData>
+  </Truck>

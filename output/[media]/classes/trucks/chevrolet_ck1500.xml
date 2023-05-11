@@ -1,458 +1,480 @@
+  <_templates Include="trucks">
+      <Wheel>
+          <RearWheel Torque="default" Location="rear" ConnectedToHandbrake="true" ParentFrame="BoneBack_cdt">
+
+          </RearWheel>
+          <FrontWheel SteeringAngle="36" Location="front" SteeringJointOffset="0.2" Torque="full" SteeringCastor="5">
+
+          </FrontWheel>
+      </Wheel>
+  </_templates>
   <Truck>
-      <PhysicsModel Mesh="trucks/chevrolet_ck1500">
-          <NetSync Legacy="false">
+        <HeadLight Pos="(2.166; 1.038; 0)" _template="Default">
 
-          </NetSync>
-          <Body CenterOfMassOffset="(-0.1; 0; 0)" ImpactType="Truck" NetSync="pv" Mass="1000">
-                  <Body CenterOfMassOffset="(-0.2; -0.2; 0)" ImpactType="Truck" NetSync="pv" ModelFrame="BoneBack_cdt" Mass="1000">
-                    <Constraint Type="Fixed">
+        </HeadLight>
+        <GameData ExcludeAddons="stuff_hula_girl, stuff_masha" UnlockByExploration="false" Price="3000" UnlockByRank="1" Country="US">
+              <CustomizationCameras>
+                    <CameraPos Name="roof_sticker" InterestPosition="(4.817; 0.922; -0.735)" Position="(7.521; 4.279; -0.072)" Interior="true" FOV="32.0">
 
-                    </Constraint>
-                  </Body>
-                  <Body _template="SideMirror" ModelFrame="BoneMirrorLeft_cdt">
-                    <Constraint AxisLocal="(0; 1; 0)">
+                    </CameraPos>
+                    <CameraPos Name="sticker_1" InterestPosition="(6.603; 3.106; 2.078)" Position="(5.023; 1.438; -0.484)" Interior="true" FOV="32.0">
 
-                    </Constraint>
-                  </Body>
-                  <Body _template="SideMirror" ModelFrame="BoneMirrorRight_cdt">
-                    <Constraint AxisLocal="(0; 1; 0)">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="addon_1" InterestPosition="(4.773; 2.016; 0)" Position="(10.09; 3.448; -3.7)" MaxXRotation="360" FOV="32.0">
 
-                    </Constraint>
-                  </Body>
-                  <Body AngularDamping="2.0" ModelFrame="BoneTrigger_cdt" Collisions="None" Mass="1">
-                    <Constraint MinLimit="-15" Type="Hinge" MaxLimit="15" AxisLocal="(1; 0; 0)">
-                        <Motor Spring="10" Type="Spring" Damping="5">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="addon_2" InterestPosition="(6.278; 1.008; 0)" Position="(7.786; 2.148; 3.136)" MaxXRotation="360" FOV="32.0">
 
-                        </Motor>
-                    </Constraint>
-                  </Body>
-                  <Body Collisions="None" ModelFrame="BoneBelt_cdt" Mass="1">
-                    <Constraint MinLimit="-0.01" Type="Prismatic" MaxLimit="0.01" AxisLocal="(1; 0; 0)">
-                        <Motor Spring="600" Type="Spring" Damping="50">
+                    </CameraPos>
+                    <CameraPos Name="mirror_mount" InterestPosition="(7.736; 1.436; 2.408)" Position="(4.737; 1.631; -0.715)" Interior="true" FOV="32.0">
 
-                        </Motor>
-                    </Constraint>
-                  </Body>
-          </Body>
-      </PhysicsModel>
-      <GameData Country="US" ExcludeAddons="stuff_hula_girl, stuff_masha" Price="3000" UnlockByRank="1" UnlockByExploration="false">
-            <CustomizationCameras>
-                  <CameraPos Interior="true" Position="(7.521; 4.279; -0.072)" FOV="32.0" InterestPosition="(4.817; 0.922; -0.735)" Name="roof_sticker">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="side_r" InterestPosition="(5.601; 1.97; 0)" Position="(3.352; 1.747; -7.216)" MaxXRotation="360" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(5.023; 1.438; -0.484)" FOV="32.0" InterestPosition="(6.603; 3.106; 2.078)" Name="sticker_1">
+                    </CameraPos>
+                    <CameraPos Name="sticker" InterestPosition="(6.662; 0.61; 1.935)" Position="(5.221; 1.595; 0.03)" Interior="true" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.773; 2.016; 0)" Name="addon_1" MaxXRotation="360" Position="(10.09; 3.448; -3.7)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                    </CameraPos>
+                    <CameraPos Name="glass_sticker" InterestPosition="(6.271; 1.651; -0.782)" Position="(8.258; 2.827; 0.559)" Interior="true" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(6.278; 1.008; 0)" Name="addon_2" MaxXRotation="360" Position="(7.786; 2.148; 3.136)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                    </CameraPos>
+                    <CameraPos Name="door_r_sticker" InterestPosition="(6.959; 0.5; 0.354)" Position="(4.074; 1.337; 2.862)" Interior="true" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(4.737; 1.631; -0.715)" FOV="32.0" InterestPosition="(7.736; 1.436; 2.408)" Name="mirror_mount">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="roof" InterestPosition="(5.023; 1.645; -0)" Position="(9.925; 3.01; -2.006)" MaxXRotation="360" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.601; 1.97; 0)" Name="side_r" MaxXRotation="360" Position="(3.352; 1.747; -7.216)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                    </CameraPos>
+                    <CameraPos Name="capote_sticker" InterestPosition="(6.708; 0.662; -0.826)" Position="(9.299; 3.937; -0.485)" Interior="true" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(5.221; 1.595; 0.03)" FOV="32.0" InterestPosition="(6.662; 0.61; 1.935)" Name="sticker">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="hoods" InterestPosition="(5.581; 0.865; 0)" Position="(11.06; 1.496; -3.289)" MaxXRotation="360" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(8.258; 2.827; 0.559)" FOV="32.0" InterestPosition="(6.271; 1.651; -0.782)" Name="glass_sticker">
+                    </CameraPos>
+                    <CameraPos Name="sticker_2" InterestPosition="(6.662; 0.61; 1.935)" Position="(5.221; 1.595; 0.03)" Interior="true" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(4.074; 1.337; 2.862)" FOV="32.0" InterestPosition="(6.959; 0.5; 0.354)" Name="door_r_sticker">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="side_l" InterestPosition="(5.426; 1.664; 0)" Position="(-0.932; 2.13; -4.911)" MaxXRotation="360" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.023; 1.645; -0)" Name="roof" MaxXRotation="360" Position="(9.925; 3.01; -2.006)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                    </CameraPos>
+                    <CameraPos Name="bubble_head" InterestPosition="(7.736; 0.816; 1.568)" Position="(5.1; 1.56; -0.11)" Interior="true" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(9.299; 3.937; -0.485)" FOV="32.0" InterestPosition="(6.708; 0.662; -0.826)" Name="capote_sticker">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="wheels" InterestPosition="(5.797; 0.672; -0.938)" Position="(8.178; 1.462; -3.752)" MaxXRotation="360" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.581; 0.865; 0)" Name="hoods" MaxXRotation="360" Position="(11.06; 1.496; -3.289)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="default" InterestPosition="(5.581; 0.865; 0)" Position="(11.06; 1.496; -3.289)" MaxXRotation="360" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(5.221; 1.595; 0.03)" FOV="32.0" InterestPosition="(6.662; 0.61; 1.935)" Name="sticker_2">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="rear" InterestPosition="(4.333; 0.92; -0)" Position="(-1.104; 2.037; 3.756)" MaxXRotation="360" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.426; 1.664; 0)" Name="side_l" MaxXRotation="360" Position="(-0.932; 2.13; -4.911)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                    </CameraPos>
+                    <CameraPos Name="door_l_sticker" InterestPosition="(4.877; 0.661; 0.012)" Position="(4.184; 1.328; -2.854)" Interior="true" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(5.1; 1.56; -0.11)" FOV="32.0" InterestPosition="(7.736; 0.816; 1.568)" Name="bubble_head">
+                    </CameraPos>
+                    <CameraPos Name="hood_ornament" InterestPosition="(7.65; 1.302; -1.244)" Position="(8.807; 1.65; -1.244)" Interior="true" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.797; 0.672; -0.938)" Name="wheels" MaxXRotation="360" Position="(8.178; 1.462; -3.752)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                    </CameraPos>
+              </CustomizationCameras>
+              <UiDesc UiName="UI_VEHICLE_CHEVROLET_CK1500_NAME" UiDesc="UI_VEHICLE_CHEVROLET_CK1500_DESC" UiIconLogo="ChevroletLogo80" UiIcon40x40="scoutVehicleImg" UiIcon30x30="scoutVehicleImg30" UiIcon328x458="shopImgChevroletCK1500">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.581; 0.865; 0)" Name="default" MaxXRotation="360" Position="(11.06; 1.496; -3.289)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.333; 0.92; -0)" Name="rear" MaxXRotation="360" Position="(-1.104; 2.037; 3.756)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(4.184; 1.328; -2.854)" FOV="32.0" InterestPosition="(4.877; 0.661; 0.012)" Name="door_l_sticker">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(8.807; 1.65; -1.244)" FOV="32.0" InterestPosition="(7.65; 1.302; -1.244)" Name="hood_ornament">
-
-                  </CameraPos>
-            </CustomizationCameras>
-                <CraneSocket Pos="(2.267; 0.597; -0.438)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(2.267; 0.597; 0.438)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(0.2; 1.9; 0)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(-2.585; 0.733; 0)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(-0.373; 0.62; -0.992)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(-0.373; 0.62; 0.992)">
-
-                </CraneSocket>
-                  <AddonSockets>
-                    <Socket Offset="(0; 0; 0)" Names="ChevroletCk1500TrunkStuff">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets DefaultAddon="chevrolet_ck1500_bumper_rear_default" ParentFrame="BoneBack_cdt">
-                      <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500rearBumper">
+              </UiDesc>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="ChevroletCk1500TrunkStuff">
 
                       </Socket>
-                      <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500rearBumper1">
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="chevrolet_ck1500_bumper_rear_default" ParentFrame="BoneBack_cdt">
+                        <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500rearBumper">
+
+                        </Socket>
+                        <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500rearBumper1">
+
+                        </Socket>
+                        <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500rearBumper2">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="chevrolet_ck1500_bumper_front_default">
+                      <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500frontBumper">
 
                       </Socket>
-                      <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500rearBumper2">
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="chevrolet_ck1500_diff_lock_default">
+                      <Socket Offset="(0; 0; 0)" Names="ChevroletCK1500DiffLock" ParentFrame="BoneBack_cdt">
 
                       </Socket>
-                  </AddonSockets>
-                  <AddonSockets DefaultAddon="chevrolet_ck1500_bumper_front_default">
-                    <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500frontBumper">
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(-2.59; 0.75; 0)" Names="ScautTrailer">
+                            <AddonsShift Offset="(-0.069; 0; 0)" Types="chevrolet_ck1500rearBumper1">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets DefaultAddon="chevrolet_ck1500_diff_lock_default">
-                    <Socket ParentFrame="BoneBack_cdt" Offset="(0; 0; 0)" Names="ChevroletCK1500DiffLock">
+                            </AddonsShift>
+                            <AddonsShift Offset="(-0.205; 0; 0)" Types="chevrolet_ck1500rearBumper2">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Offset="(-2.59; 0.75; 0)" Names="ScautTrailer">
-                          <AddonsShift Types="chevrolet_ck1500rearBumper1" Offset="(-0.069; 0; 0)">
+                            </AddonsShift>
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneBack_cdt" Offset="(0; 0; 0)" Names="ChevroletCK1500RooftopTrunk" NamesBlock="chevrolet_ck1500SpotLight, chevrolet_ck1500Beacon">
 
-                          </AddonsShift>
-                          <AddonsShift Types="chevrolet_ck1500rearBumper2" Offset="(-0.205; 0; 0)">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500Horn">
 
-                          </AddonsShift>
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket NamesBlock="chevrolet_ck1500SpotLight, chevrolet_ck1500Beacon" Names="ChevroletCK1500RooftopTrunk" ParentFrame="BoneBack_cdt" Offset="(0; 0; 0)">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500Gabarite">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500Horn">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500Beacon" NamesBlock="chevrolet_ck1500Gabarite">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500Gabarite">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500SpotLight" NamesBlock="chevrolet_ck1500Beacon">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Offset="(0; 0; 0)" NamesBlock="chevrolet_ck1500Gabarite" Names="chevrolet_ck1500Beacon">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500Visor">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Offset="(0; 0; 0)" NamesBlock="chevrolet_ck1500Beacon" Names="chevrolet_ck1500SpotLight">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500Threshold">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500Visor">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500Snorkel">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500Threshold">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="ChevroletCk1500Sticker_1x1_01" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Offset="(0; 0; 0)" Names="chevrolet_ck1500Snorkel">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="ChevroletCk1500Sticker_1x1_02" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Offset="(0; 0; 0)" InCockpit="true" Names="ChevroletCk1500Sticker_1x1_01">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="ChevroletCk1500Sticker_1x1_03" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Offset="(0; 0; 0)" InCockpit="true" Names="ChevroletCk1500Sticker_1x1_02">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="ChevroletCk1500Sticker_1x1_04" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Offset="(0; 0; 0)" InCockpit="true" Names="ChevroletCk1500Sticker_1x1_03">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="ChevroletCk1500Sticker_1x1_05" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Offset="(0; 0; 0)" InCockpit="true" Names="ChevroletCk1500Sticker_1x1_04">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="ChevroletCk1500Sticker_1x1_06" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Offset="(0; 0; 0)" InCockpit="true" Names="ChevroletCk1500Sticker_1x1_05">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0.62; 1.691; 0)" Names="StuffAirfreshener" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Offset="(0; 0; 0)" InCockpit="true" Names="ChevroletCk1500Sticker_1x1_06">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(0.941; 1.363; -0.084)" Names="StuffDashboard" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Offset="(0.62; 1.691; 0)" InCockpit="true" Names="StuffAirfreshener">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="ChevroletCk1500Sticker_Roof">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Offset="(0.941; 1.363; -0.084)" InCockpit="true" Names="StuffDashboard">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="ChevroletCk1500Sticker_Capote" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="ChevroletCk1500Sticker_Roof">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="ChevroletCk1500Sticker_Door_L" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket InCockpit="true" Names="ChevroletCk1500Sticker_Capote">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="ChevroletCk1500Sticker_Door_R">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket InCockpit="true" Names="ChevroletCk1500Sticker_Door_L">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="ChevroletCk1500Sticker_GlassTop" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="ChevroletCk1500Sticker_Door_R">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Names="StuffHoodChevroletCk1500">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket InCockpit="true" Names="ChevroletCk1500Sticker_GlassTop">
+                      </Socket>
+                    </AddonSockets>
+                      <CraneSocket Pos="(2.267; 0.597; -0.438)">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="StuffHoodChevroletCk1500">
+                      </CraneSocket>
+                      <CraneSocket Pos="(2.267; 0.597; 0.438)">
 
-                    </Socket>
-                  </AddonSockets>
-                    <WinchSocket Pos="(2.267; 0.597; -0.438)">
+                      </CraneSocket>
+                      <CraneSocket Pos="(0.2; 1.9; 0)">
 
-                    </WinchSocket>
-                    <WinchSocket Pos="(2.267; 0.597; 0.438)">
+                      </CraneSocket>
+                      <CraneSocket Pos="(-2.585; 0.733; 0)">
 
-                    </WinchSocket>
-                    <WinchSocket Pos="(-2.585; 0.733; 0)">
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.373; 0.62; -0.992)">
 
-                    </WinchSocket>
-                    <WinchSocket Pos="(-0.373; 0.62; -0.992)">
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.373; 0.62; 0.992)">
 
-                    </WinchSocket>
-                    <WinchSocket Pos="(-0.373; 0.62; 0.992)">
+                      </CraneSocket>
+                        <WinchSocket Pos="(2.267; 0.597; -0.438)">
 
-                    </WinchSocket>
-            <UiDesc UiDesc="UI_VEHICLE_CHEVROLET_CK1500_DESC" UiIcon30x30="scoutVehicleImg30" UiName="UI_VEHICLE_CHEVROLET_CK1500_NAME" UiIconLogo="ChevroletLogo80" UiIcon40x40="scoutVehicleImg" UiIcon328x458="shopImgChevroletCK1500">
+                        </WinchSocket>
+                        <WinchSocket Pos="(2.267; 0.597; 0.438)">
 
-            </UiDesc>
-      </GameData>
-      <HeadLight _template="Default" Pos="(2.166; 1.038; 0)">
+                        </WinchSocket>
+                        <WinchSocket Pos="(-2.585; 0.733; 0)">
 
-      </HeadLight>
-              <BreakableLight Max="(3; 1; 0)" Pos="(2.185; 0.868; 0.6)" Min="(1; 0; -1)" BreakThreshold=".1">
+                        </WinchSocket>
+                        <WinchSocket Pos="(-0.373; 0.62; -0.992)">
 
-              </BreakableLight>
-              <BreakableLight Max="(3; 1; 0)" Pos="(2.185; 0.868; -0.6)" Min="(1; 0; -1)" BreakThreshold=".1">
+                        </WinchSocket>
+                        <WinchSocket Pos="(-0.373; 0.62; 0.992)">
 
-              </BreakableLight>
-              <BreakableLight Max="(3; 1; 0)" Pos="(-2.46; 0.925; -0.762)" Min="(1; 0; -1)" BreakThreshold=".1">
+                        </WinchSocket>
+        </GameData>
+              <BreakableLight Min="(1; 0; -1)" BreakThreshold=".1" Max="(3; 1; 0)" Pos="(2.185; 0.868; 0.6)">
 
               </BreakableLight>
-              <BreakableLight Max="(3; 1; 0)" Pos="(-2.46; 0.925; 0.762)" Min="(1; 0; -1)" BreakThreshold=".1">
+              <BreakableLight Min="(1; 0; -1)" BreakThreshold=".1" Max="(3; 1; 0)" Pos="(2.185; 0.868; -0.6)">
 
               </BreakableLight>
-      <TruckData EngineIconMesh="env/engine_small" EngineStartDelay="1.7" TruckType="SCOUT" ExhaustStartTime="1.6" SteerSpeed="0.03" TruckImage="chvr1500mchr" DiffLockType="Uninstalled" Responsiveness="0.6" FuelCapacity="80" EngineIconScale="1.15" BackSteerSpeed="0.06">
-                  <Driver SteeringWheelPos="(0.48; 1.328; 0.435)" Pos="(0.174; 0.941; 0.438)" AnimationSet="Scout">
+              <BreakableLight Min="(1; 0; -1)" BreakThreshold=".1" Max="(3; 1; 0)" Pos="(-2.46; 0.925; -0.762)">
 
-                  </Driver>
-                  <Shafts>
-                          <Shaft Mesh="env/minishaft" SocketPointB="Shaft1b" SocketPointA="Shaft1a">
+              </BreakableLight>
+              <BreakableLight Min="(1; 0; -1)" BreakThreshold=".1" Max="(3; 1; 0)" Pos="(-2.46; 0.925; 0.762)">
 
-                          </Shaft>
-                          <Shaft Mesh="env/minishaft" SocketPointB="Shaft2b" SocketPointA="Shaft2a">
+              </BreakableLight>
+        <PhysicsModel Mesh="trucks/chevrolet_ck1500">
+                  <Body CenterOfMassOffset="(-0.1; 0; 0)" NetSync="pv" Mass="1000" ImpactType="Truck">
+                        <Body NetSync="pv" CenterOfMassOffset="(-0.2; -0.2; 0)" ModelFrame="BoneBack_cdt" Mass="1000" ImpactType="Truck">
+                          <Constraint Type="Fixed">
 
-                          </Shaft>
-                  </Shafts>
-                  <FuelTank DamageCapacity="50">
+                          </Constraint>
+                        </Body>
+                        <Body ModelFrame="BoneMirrorLeft_cdt" _template="SideMirror">
+                          <Constraint AxisLocal="(0; 1; 0)">
 
-                  </FuelTank>
-                  <Dashboard>
-                              <Gauge Org="(0.796; 1.289; 0.43)" OutputAngles="(-73;73)" Mesh="trucks/arrows/chevrolet_ck1500_arrow_01" Damping="0.7" InputRange="(0;90)" InputType="speed" Dir="(-0.97; 0.242; -0)">
+                          </Constraint>
+                        </Body>
+                        <Body ModelFrame="BoneMirrorRight_cdt" _template="SideMirror">
+                          <Constraint AxisLocal="(0; 1; 0)">
 
-                              </Gauge>
-                              <Gauge Org="(0.801; 1.297; 0.318)" Mesh="trucks/arrows/chevrolet_ck1500_arrow_01" Scale=".8" OutputAngles="(-35;35)" Dir="(-0.97; 0.242; -0)" InputType="fuel" Damping="0" InputRange="(0;1)">
+                          </Constraint>
+                        </Body>
+                        <Body ModelFrame="BoneTrigger_cdt" Mass="1" AngularDamping="2.0" Collisions="None">
+                          <Constraint Type="Hinge" MaxLimit="15" AxisLocal="(1; 0; 0)" MinLimit="-15">
+                              <Motor Spring="10" Damping="5" Type="Spring">
 
-                              </Gauge>
-                              <Gauge Org="(0.782; 1.232; 0.318)" Mesh="trucks/arrows/chevrolet_ck1500_arrow_01" Scale=".8" OutputAngles="(-31;1)" Dir="(-0.97; 0.242; -0)" InputType="engineEnabled" Damping="0" InputRange="(0;1)">
+                              </Motor>
+                          </Constraint>
+                        </Body>
+                        <Body ModelFrame="BoneBelt_cdt" Mass="1" Collisions="None">
+                          <Constraint Type="Prismatic" MaxLimit="0.01" AxisLocal="(1; 0; 0)" MinLimit="-0.01">
+                              <Motor Spring="600" Damping="50" Type="Spring">
 
-                              </Gauge>
-                              <Gauge Org="(0.782; 1.232; 0.543)" Mesh="trucks/arrows/chevrolet_ck1500_arrow_01" Scale=".8" OutputAngles="(-34;8)" Dir="(-0.97; 0.242; -0)" InputType="engineEnabled" Damping=".9" InputRange="(0;1)">
+                              </Motor>
+                          </Constraint>
+                        </Body>
+                  </Body>
+                  <NetSync Legacy="false">
 
-                              </Gauge>
-                              <Gauge Org="(0.801; 1.297; 0.543)" Mesh="trucks/arrows/chevrolet_ck1500_arrow_01" Scale=".8" OutputAngles="(-36;-6)" Dir="(-0.97; 0.242; -0)" InputType="engineEnabled" Damping="0.9993" InputRange="(0;1)">
+                  </NetSync>
+        </PhysicsModel>
+        <Snorkel Origin="(2.365; 0.953; 0)">
 
-                              </Gauge>
-                  </Dashboard>
-                  <SoundsWheels _template="Default">
+        </Snorkel>
+        <AutomaticIK>
+                      <IKBone ParentFrame="BoneRackRight" ModelFrame="BoneRackSlider">
+                          <IKJoint Type="Hinge" AxisLocal="(0; 1; 0)">
 
-                  </SoundsWheels>
-                  <GearboxSocket Default="g_scout_default" Type="gearboxes_scouts">
+                          </IKJoint>
+                          <IKBone AttachToFrame="BoneRackLeft" AttachOffset="(0; 0; 0)" ModelFrame="BoneRackHinge">
+                                <IKJoint Type="Slider" AxisLocal="(0; 0; 1)">
 
-                  </GearboxSocket>
-                  <Steam Origin="(1.544; 0.943; 0)">
+                                </IKJoint>
+                          </IKBone>
+                      </IKBone>
+        </AutomaticIK>
+        <Landmark MaxScale="3.8" Mesh="landmarks/chevrolet_ck1500_lmk" MinScale="1.8">
 
-                  </Steam>
-                  <Sounds DisableReversePitch="false" MinDist="8.0" Origin="(1.4; 0.9; 0)" _template="Default">
-                                    <BrakesSqueal Sound="trucks/int_scout_800/int_scout_800_brakes_squeal">
+        </Landmark>
+        <ModelAttachments>
+                          <HeadLight>
+                                <Flare Pos="(2.25; 1.038; -0.585)" _template="HeadLight">
 
-                                    </BrakesSqueal>
-                                    <AbruptStop Sound="">
+                                </Flare>
+                                <Flare Pos="(2.25; 1.038; 0.585)" _template="HeadLight">
 
-                                    </AbruptStop>
-                                    <EngineLow Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_low">
+                                </Flare>
+                                <Flare Pos="(2.25; 1.038; -0.73)" _template="BlueStreak" Color="g(220; 220; 255) x 0.07" Size="0.7">
 
-                                    </EngineLow>
-                                    <EngineRev Sound="">
+                                </Flare>
+                                <Flare Pos="(2.25; 1.038; 0.73)" _template="BlueStreak" Color="g(220; 220; 255) x 0.07" Size="0.7">
 
-                                    </EngineRev>
-                                    <EngineAccel Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_acc">
+                                </Flare>
+                                  <Model Org="(2.25; 1.038; -0.585)" _template="HeadLightRay">
 
-                                    </EngineAccel>
-                                    <Honk Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_honk">
+                                  </Model>
+                                  <Model Org="(2.25; 1.038; 0.585)" _template="HeadLightRay">
 
-                                    </Honk>
-                                    <EngineStop Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_stop">
+                                  </Model>
+                          </HeadLight>
+                          <StopSignals>
+                                <Light Pos="(-2.479; 1.044; 0)" _template="StopSignal">
 
-                                    </EngineStop>
-                                    <Handbrake Sound="trucks/common/truck_handbrake_switch_alt1">
+                                </Light>
+                                    <Flare Pos="(-2.452; 1.044; -0.756)" Size="0.3" _template="StopSignal">
 
-                                    </Handbrake>
-                                    <Gear Sound="trucks/common/truck_gear_shift_light_rnd_set/truck_gear_shift_light_rnd">
+                                    </Flare>
+                                    <Flare Pos="(-2.452; 1.044; 0.756)" Size="0.3" _template="StopSignal">
 
-                                    </Gear>
-                                    <EngineIdle_2d IsSound2D="true" Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_idle_2d">
+                                    </Flare>
+                          </StopSignals>
+                          <Ignition>
+                                    <Light Pos="(2.185; 0.868; 0.6)" _template="IgnitionSignalWhite">
 
-                                    </EngineIdle_2d>
-                                    <EngineHigh Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_high">
+                                    </Light>
+                                    <Light Pos="(2.185; 0.868; -0.6)" _template="IgnitionSignalWhite">
 
-                                    </EngineHigh>
-                                    <EngineHeavy_2d IsSound2D="true" Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_heavy_2d">
+                                    </Light>
+                                    <Light Pos="(-2.467; 0.868; 0)" _template="IgnitionSignalRed">
 
-                                    </EngineHeavy_2d>
-                                    <ChassisStress Sound="trucks/common/truck_swing_small_rnd_set/truck_swing_small_rnd">
+                                    </Light>
+                                      <Flare Pos="(2.19; 0.868; -0.58)" _template="IgnitionSignalWhiteWarm" Color="g(210; 163; 50) x 0.3" Size="0.2">
 
-                                    </ChassisStress>
-                                    <Reverse Sound="">
+                                      </Flare>
+                                      <Flare Pos="(2.19; 0.868; 0.58)" _template="IgnitionSignalWhiteWarm" Color="g(210; 163; 50) x 0.3" Size="0.2">
 
-                                    </Reverse>
-                                    <EngineHigh_2d IsSound2D="true" Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_high_2d">
+                                      </Flare>
+                                      <Flare Pos="(2.135; 0.868; -0.733)" _template="IgnitionSignalWhiteWarm" Color="g(210; 163; 50) x 0.3" Size="0.2">
 
-                                    </EngineHigh_2d>
-                                    <EngineIdle Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_idle">
+                                      </Flare>
+                                      <Flare Pos="(2.135; 0.868; 0.733)" _template="IgnitionSignalWhiteWarm" Color="g(210; 163; 50) x 0.3" Size="0.2">
 
-                                    </EngineIdle>
-                                    <EngineStart Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_start">
+                                      </Flare>
+                                      <Flare Pos="(2.146; 0.87; 0.858)" _template="IgnitionSignalOrange" Color="g(235; 165; 10) x 0.2" Size="0.2">
 
-                                    </EngineStart>
-                                    <BrakePull Sound="">
+                                      </Flare>
+                                      <Flare Pos="(2.146; 0.87; -0.858)" _template="IgnitionSignalOrange" Color="g(235; 165; 10) x 0.2" Size="0.2">
 
-                                    </BrakePull>
-                                    <EngineLow_2d IsSound2D="true" Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_low_2d">
+                                      </Flare>
+                                      <Flare Pos="(2.166; 1.038; -0.73)" _template="IgnitionSignalWhite">
 
-                                    </EngineLow_2d>
-                                    <EngineHeavy Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_heavy">
+                                      </Flare>
+                                      <Flare Pos="(2.166; 1.038; 0.73)" _template="IgnitionSignalWhite">
 
-                                    </EngineHeavy>
-                                    <BrakeRelease Sound="">
+                                      </Flare>
+                                      <Flare Pos="(-2.467; 1.044; -0.771)" Dir="(-1; 0; 0)" _template="IgnitionSignalRed" Size="0.3">
 
-                                    </BrakeRelease>
-                                    <GearFail Sound="trucks/common/truck_gear_wrong/truck_gear_wrong_small_old">
+                                      </Flare>
+                                      <Flare Pos="(-2.467; 1.044; 0.771)" Dir="(-1; 0; 0)" _template="IgnitionSignalRed" Size="0.3">
 
-                                    </GearFail>
-                  </Sounds>
-                  <Exhaust IsLight="true" Dir="(-0.178; 0; -0.984)" Origin="(-2.134; 0.469; -0.869)" Speed="2.0">
+                                      </Flare>
+                          </Ignition>
+                          <ReverseSignals>
+                                    <Light OuterCone="160" _template="ReverseSignal" Color="(80; 80; 80)" Pos="(-2.686; 0.925; 0)">
 
-                  </Exhaust>
-                  <SoundsDamage _template="Scout">
+                                    </Light>
+                                        <Flare Pos="(-2.46; 0.925; -0.762)" _template="ReverseSignal" Size="0.4" DirAngle="135">
 
-                  </SoundsDamage>
-                  <Shakers>
-                                            <Shaker MaxFrequency="4" MaxAngle="(1.5; 1.5; 1.5)" Frame="BoneExhaust1">
+                                        </Flare>
+                                        <Flare Pos="(-2.46; 0.925; 0.762)" _template="ReverseSignal" Size="0.4" DirAngle="135">
 
-                                            </Shaker>
-                                            <Shaker MaxFrequency="4" MaxAngle="(1.5; 1.5; 1.5)" Frame="BoneExhaust2">
+                                        </Flare>
+                                        <Flare Pos="(-2.46; 0.925; -0.762)" Dir="(-1; 0; 0)" _template="BlueStreak" Color="g(220; 220; 255) x 0.05" Size="0.4">
 
-                                            </Shaker>
-                  </Shakers>
-                  <Camera Center="(-1; 0; 0)" RadiusMultiplier="0.8">
-                                            <Cockpit WindshieldShadingTexture="trucks/chevrolet_ck1500_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/chevrolet_ck1500_glass__d_a.tga" _template="Default" ViewPos="(0.083; 1.63; 0.431)">
-                                                  <Mirror FOVScale="1.4" ClipDir="(-0.966; 0; -0.259)" Pos="(0.739; 1.426; 1.028)" Size="(0.229; 0.17)" MeshFrame="mirror_left" ReflectionDir="(-0.966; 0; -0.259)">
+                                        </Flare>
+                                        <Flare Pos="(-2.46; 0.925; 0.762)" Dir="(-1; 0; 0)" _template="BlueStreak" Color="g(220; 220; 255) x 0.05" Size="0.4">
 
-                                                  </Mirror>
-                                                  <Mirror FOVScale="1.4" ClipDir="(-0.866; 0; 0.5)" Pos="(0.717; 1.426; -1.014)" Size="(0.229; 0.17)" MeshFrame="mirror_right" ReflectionDir="(-0.866; 0; 0.5)">
+                                        </Flare>
+                          </ReverseSignals>
+        </ModelAttachments>
+        <TruckData SteerSpeed="0.03" EngineStartDelay="1.7" EngineIconMesh="env/engine_small" TruckType="SCOUT" Responsiveness="0.6" BackSteerSpeed="0.06" TruckImage="chvr1500mchr" FuelCapacity="80" DiffLockType="Uninstalled" ExhaustStartTime="1.6" EngineIconScale="1.15">
+                            <Driver Pos="(0.174; 0.941; 0.438)" AnimationSet="Scout" SteeringWheelPos="(0.48; 1.328; 0.435)">
 
-                                                  </Mirror>
-                                                  <Mirror FOVScale="1.3" Pos="(0.585; 1.662; 0.002)" ClipDir="(-0.94; -0.072; 0.333)" ReflectionDir="(-0.94; -0.072; 0.333)" Size="(0.22; 0.08)" ClipOffset="0.1" MeshFrame="hp_cab_mirror">
+                            </Driver>
+                            <SoundsDamage _template="Scout">
 
-                                                  </Mirror>
-                                                <Rear HorTransitionEnd="-1.2" ViewPosOffset="(0.2; -0.1; 0.55)" HorTransitionStart="-1.1">
+                            </SoundsDamage>
+                            <Shakers>
+                                      <Shaker MaxFrequency="4" Frame="BoneExhaust1" MaxAngle="(1.5; 1.5; 1.5)">
 
-                                                </Rear>
-                                            </Cockpit>
-                  </Camera>
-                  <SuspensionSocket Default="chevrolet_ck1500_suspension_default" Type="s_chevrolet_ck1500" MaxWheelRadiusWithoutSuspension="0.3">
+                                      </Shaker>
+                                      <Shaker MaxFrequency="4" Frame="BoneExhaust2" MaxAngle="(1.5; 1.5; 1.5)">
 
-                  </SuspensionSocket>
-                  <Wheels DefaultTire="highway_1" DefaultWheelType="wheels_scout1" DefaultRim="rim_1">
-                                                  <Wheel _template="FrontWheel" Pos="(1.535; 0.367; 0.835)">
+                                      </Shaker>
+                            </Shakers>
+                            <OcclusionMap MinX="-2.8" Texture="trucks/occlusion/chassis_small__s_d_a.tga" HalfSizeZ="1.6" MaxX="2.5">
 
-                                                  </Wheel>
-                                                  <Wheel Pos="(1.535; 0.367; 0.835)" _template="FrontWheel" RightSide="true">
+                            </OcclusionMap>
+                            <FuelTank DamageCapacity="50">
 
-                                                  </Wheel>
-                                                  <Wheel _template="RearWheel" Pos="(-1.425; 0.367; 0.835)">
+                            </FuelTank>
+                                        <CompatibleWheels Type="wheels_scout1" Scale="0.40">
 
-                                                  </Wheel>
-                                                  <Wheel Pos="(-1.425; 0.367; 0.835)" _template="RearWheel" RightSide="true">
+                                        </CompatibleWheels>
+                                        <CompatibleWheels Type="wheels_scout2" Scale="0.40">
 
-                                                  </Wheel>
-                  </Wheels>
-                  <Axles>
+                                        </CompatibleWheels>
+                                        <CompatibleWheels Type="wheels_scout1" Scale="0.45">
+
+                                        </CompatibleWheels>
+                                        <CompatibleWheels Type="wheels_scout2" Scale="0.45">
+
+                                        </CompatibleWheels>
+                                        <CompatibleWheels Type="wheels_scout2" Scale="0.48">
+
+                                        </CompatibleWheels>
+                            <EngineSocket Type="e_us_scout_old, e_us_scout_old_ck1500" Default="us_scout_old_engine_0">
+
+                            </EngineSocket>
+                            <SuspensionSocket Type="s_chevrolet_ck1500" MaxWheelRadiusWithoutSuspension="0.3" Default="chevrolet_ck1500_suspension_default">
+
+                            </SuspensionSocket>
+                            <Dashboard>
+                                                  <Gauge InputRange="(0;90)" Dir="(-0.97; 0.242; -0)" InputType="speed" Org="(0.796; 1.289; 0.43)" Damping="0.7" Mesh="trucks/arrows/chevrolet_ck1500_arrow_01" OutputAngles="(-73;73)">
+
+                                                  </Gauge>
+                                                  <Gauge Dir="(-0.97; 0.242; -0)" Mesh="trucks/arrows/chevrolet_ck1500_arrow_01" OutputAngles="(-35;35)" InputType="fuel" Org="(0.801; 1.297; 0.318)" Damping="0" Scale=".8" InputRange="(0;1)">
+
+                                                  </Gauge>
+                                                  <Gauge Dir="(-0.97; 0.242; -0)" Mesh="trucks/arrows/chevrolet_ck1500_arrow_01" OutputAngles="(-31;1)" InputType="engineEnabled" Org="(0.782; 1.232; 0.318)" Damping="0" Scale=".8" InputRange="(0;1)">
+
+                                                  </Gauge>
+                                                  <Gauge Dir="(-0.97; 0.242; -0)" Mesh="trucks/arrows/chevrolet_ck1500_arrow_01" OutputAngles="(-34;8)" InputType="engineEnabled" Org="(0.782; 1.232; 0.543)" Damping=".9" Scale=".8" InputRange="(0;1)">
+
+                                                  </Gauge>
+                                                  <Gauge Dir="(-0.97; 0.242; -0)" Mesh="trucks/arrows/chevrolet_ck1500_arrow_01" OutputAngles="(-36;-6)" InputType="engineEnabled" Org="(0.801; 1.297; 0.543)" Damping="0.9993" Scale=".8" InputRange="(0;1)">
+
+                                                  </Gauge>
+                            </Dashboard>
+                            <Axles>
                                                     <Axle Frame="BoneAxleFrontLeft">
 
                                                     </Axle>
@@ -462,163 +484,141 @@
                                                     <Axle Frame="BoneAxleRear">
 
                                                     </Axle>
-                  </Axles>
-                  <Damage>
-                                                      <DamageArea Max="(2.3; 1.3; 0.5)" Type="Engine" ParentFrame="BoneChassis_cdt" Min="(1.15; 0.55; -0.5)">
+                            </Axles>
+                            <Camera Center="(-1; 0; 0)" RadiusMultiplier="0.8">
+                                                    <Cockpit WindshieldDiffuseTexture="trucks/chevrolet_ck1500_glass__d_a.tga" _template="Default" WindshieldShadingTexture="trucks/chevrolet_ck1500_glass__sh_d.tga" ViewPos="(0.083; 1.63; 0.431)">
+                                                        <Rear HorTransitionEnd="-1.2" ViewPosOffset="(0.2; -0.1; 0.55)" HorTransitionStart="-1.1">
 
-                                                      </DamageArea>
-                                                      <DamageArea Max="(1; 0.7; 0.85)" Type="FuelTank" ParentFrame="BoneChassis_cdt" Min="(-1; 0.35; -0.85)">
+                                                        </Rear>
+                                                            <Mirror FOVScale="1.4" ClipDir="(-0.966; 0; -0.259)" MeshFrame="mirror_left" Pos="(0.739; 1.426; 1.028)" Size="(0.229; 0.17)" ReflectionDir="(-0.966; 0; -0.259)">
 
-                                                      </DamageArea>
-                  </Damage>
-                  <OcclusionMap Texture="trucks/occlusion/chassis_small__s_d_a.tga" MaxX="2.5" MinX="-2.8" HalfSizeZ="1.6">
+                                                            </Mirror>
+                                                            <Mirror FOVScale="1.4" ClipDir="(-0.866; 0; 0.5)" MeshFrame="mirror_right" Pos="(0.717; 1.426; -1.014)" Size="(0.229; 0.17)" ReflectionDir="(-0.866; 0; 0.5)">
 
-                  </OcclusionMap>
-                  <EngineSocket Default="us_scout_old_engine_0" Type="e_us_scout_old, e_us_scout_old_ck1500">
+                                                            </Mirror>
+                                                            <Mirror FOVScale="1.3" ClipDir="(-0.94; -0.072; 0.333)" MeshFrame="hp_cab_mirror" Pos="(0.585; 1.662; 0.002)" ReflectionDir="(-0.94; -0.072; 0.333)" Size="(0.22; 0.08)" ClipOffset="0.1">
 
-                  </EngineSocket>
-                  <WinchUpgradeSocket Default="w_scout_default" IsUpgradable="true" Type="winches_scouts">
+                                                            </Mirror>
+                                                    </Cockpit>
+                            </Camera>
+                            <Exhaust IsLight="true" Dir="(-0.178; 0; -0.984)" Speed="2.0" Origin="(-2.134; 0.469; -0.869)">
 
-                  </WinchUpgradeSocket>
-                  <SteeringWheel Frame="BoneSteering">
+                            </Exhaust>
+                            <Sounds _template="Default" MinDist="8.0" Origin="(1.4; 0.9; 0)" DisableReversePitch="false">
+                                                        <Reverse Sound="">
 
-                  </SteeringWheel>
-                                                            <CompatibleWheels Scale="0.40" Type="wheels_scout1">
+                                                        </Reverse>
+                                                        <EngineHeavy_2d IsSound2D="true" Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_heavy_2d">
 
-                                                            </CompatibleWheels>
-                                                            <CompatibleWheels Scale="0.40" Type="wheels_scout2">
+                                                        </EngineHeavy_2d>
+                                                        <EngineLow Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_low">
 
-                                                            </CompatibleWheels>
-                                                            <CompatibleWheels Scale="0.45" Type="wheels_scout1">
+                                                        </EngineLow>
+                                                        <BrakePull Sound="">
 
-                                                            </CompatibleWheels>
-                                                            <CompatibleWheels Scale="0.45" Type="wheels_scout2">
+                                                        </BrakePull>
+                                                        <EngineHigh Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_high">
 
-                                                            </CompatibleWheels>
-                                                            <CompatibleWheels Scale="0.48" Type="wheels_scout2">
+                                                        </EngineHigh>
+                                                        <Gear Sound="trucks/common/truck_gear_shift_light_rnd_set/truck_gear_shift_light_rnd">
 
-                                                            </CompatibleWheels>
-                  <SteeringRack RackHalfSizeZ="0.763" Frame="BoneRack" FrameSteerLeft="BoneRackLeft" FrameSteerRight="BoneRackRight">
+                                                        </Gear>
+                                                        <ChassisStress Sound="trucks/common/truck_swing_small_rnd_set/truck_swing_small_rnd">
 
-                  </SteeringRack>
-      </TruckData>
-      <Landmark Mesh="landmarks/chevrolet_ck1500_lmk" MaxScale="3.8" MinScale="1.8">
+                                                        </ChassisStress>
+                                                        <AbruptStop Sound="">
 
-      </Landmark>
-      <AutomaticIK>
-                      <IKBone ParentFrame="BoneRackRight" ModelFrame="BoneRackSlider">
-                          <IKBone AttachToFrame="BoneRackLeft" AttachOffset="(0; 0; 0)" ModelFrame="BoneRackHinge">
-                              <IKJoint AxisLocal="(0; 0; 1)" Type="Slider">
+                                                        </AbruptStop>
+                                                        <EngineRev Sound="">
 
-                              </IKJoint>
-                          </IKBone>
-                          <IKJoint AxisLocal="(0; 1; 0)" Type="Hinge">
+                                                        </EngineRev>
+                                                        <EngineHeavy Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_heavy">
 
-                          </IKJoint>
-                      </IKBone>
-      </AutomaticIK>
-      <Snorkel Origin="(2.365; 0.953; 0)">
+                                                        </EngineHeavy>
+                                                        <EngineLow_2d IsSound2D="true" Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_low_2d">
 
-      </Snorkel>
-      <ModelAttachments>
-                          <StopSignals>
-                                <Flare Size="0.3" _template="StopSignal" Pos="(-2.452; 1.044; -0.756)">
+                                                        </EngineLow_2d>
+                                                        <EngineHigh_2d IsSound2D="true" Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_high_2d">
 
-                                </Flare>
-                                <Flare Size="0.3" _template="StopSignal" Pos="(-2.452; 1.044; 0.756)">
+                                                        </EngineHigh_2d>
+                                                        <EngineIdle Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_idle">
 
-                                </Flare>
-                              <Light _template="StopSignal" Pos="(-2.479; 1.044; 0)">
+                                                        </EngineIdle>
+                                                        <EngineIdle_2d IsSound2D="true" Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_idle_2d">
 
-                              </Light>
-                          </StopSignals>
-                          <Ignition>
-                                  <Flare Color="g(210; 163; 50) x 0.3" Pos="(2.19; 0.868; -0.58)" Size="0.2" _template="IgnitionSignalWhiteWarm">
+                                                        </EngineIdle_2d>
+                                                        <EngineStart Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_start">
 
-                                  </Flare>
-                                  <Flare Color="g(210; 163; 50) x 0.3" Pos="(2.19; 0.868; 0.58)" Size="0.2" _template="IgnitionSignalWhiteWarm">
+                                                        </EngineStart>
+                                                        <Handbrake Sound="trucks/common/truck_handbrake_switch_alt1">
 
-                                  </Flare>
-                                  <Flare Color="g(210; 163; 50) x 0.3" Pos="(2.135; 0.868; -0.733)" Size="0.2" _template="IgnitionSignalWhiteWarm">
+                                                        </Handbrake>
+                                                        <BrakeRelease Sound="">
 
-                                  </Flare>
-                                  <Flare Color="g(210; 163; 50) x 0.3" Pos="(2.135; 0.868; 0.733)" Size="0.2" _template="IgnitionSignalWhiteWarm">
+                                                        </BrakeRelease>
+                                                        <GearFail Sound="trucks/common/truck_gear_wrong/truck_gear_wrong_small_old">
 
-                                  </Flare>
-                                  <Flare Color="g(235; 165; 10) x 0.2" Pos="(2.146; 0.87; 0.858)" Size="0.2" _template="IgnitionSignalOrange">
+                                                        </GearFail>
+                                                        <Honk Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_honk">
 
-                                  </Flare>
-                                  <Flare Color="g(235; 165; 10) x 0.2" Pos="(2.146; 0.87; -0.858)" Size="0.2" _template="IgnitionSignalOrange">
+                                                        </Honk>
+                                                        <EngineStop Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_stop">
 
-                                  </Flare>
-                                  <Flare _template="IgnitionSignalWhite" Pos="(2.166; 1.038; -0.73)">
+                                                        </EngineStop>
+                                                        <BrakesSqueal Sound="trucks/int_scout_800/int_scout_800_brakes_squeal">
 
-                                  </Flare>
-                                  <Flare _template="IgnitionSignalWhite" Pos="(2.166; 1.038; 0.73)">
+                                                        </BrakesSqueal>
+                                                        <EngineAccel Sound="trucks/chevrolet_ck1500/chevrolet_ck1500_acc">
 
-                                  </Flare>
-                                  <Flare Dir="(-1; 0; 0)" Size="0.3" _template="IgnitionSignalRed" Pos="(-2.467; 1.044; -0.771)">
+                                                        </EngineAccel>
+                            </Sounds>
+                            <GearboxSocket Type="gearboxes_scouts" Default="g_scout_default">
 
-                                  </Flare>
-                                  <Flare Dir="(-1; 0; 0)" Size="0.3" _template="IgnitionSignalRed" Pos="(-2.467; 1.044; 0.771)">
+                            </GearboxSocket>
+                            <Steam Origin="(1.544; 0.943; 0)">
 
-                                  </Flare>
-                                    <Light _template="IgnitionSignalWhite" Pos="(2.185; 0.868; 0.6)">
+                            </Steam>
+                            <Wheels DefaultWheelType="wheels_scout1" DefaultTire="highway_1" DefaultRim="rim_1">
+                                                                <Wheel Pos="(1.535; 0.367; 0.835)" _template="FrontWheel">
 
-                                    </Light>
-                                    <Light _template="IgnitionSignalWhite" Pos="(2.185; 0.868; -0.6)">
+                                                                </Wheel>
+                                                                <Wheel RightSide="true" Pos="(1.535; 0.367; 0.835)" _template="FrontWheel">
 
-                                    </Light>
-                                    <Light _template="IgnitionSignalRed" Pos="(-2.467; 0.868; 0)">
+                                                                </Wheel>
+                                                                <Wheel Pos="(-1.425; 0.367; 0.835)" _template="RearWheel">
 
-                                    </Light>
-                          </Ignition>
-                          <HeadLight>
-                                    <Flare _template="HeadLight" Pos="(2.25; 1.038; -0.585)">
+                                                                </Wheel>
+                                                                <Wheel RightSide="true" Pos="(-1.425; 0.367; 0.835)" _template="RearWheel">
 
-                                    </Flare>
-                                    <Flare _template="HeadLight" Pos="(2.25; 1.038; 0.585)">
+                                                                </Wheel>
+                            </Wheels>
+                            <WinchUpgradeSocket Type="winches_scouts" Default="w_scout_default" IsUpgradable="true">
 
-                                    </Flare>
-                                    <Flare Color="g(220; 220; 255) x 0.07" Pos="(2.25; 1.038; -0.73)" Size="0.7" _template="BlueStreak">
+                            </WinchUpgradeSocket>
+                            <SteeringRack Frame="BoneRack" RackHalfSizeZ="0.763" FrameSteerLeft="BoneRackLeft" FrameSteerRight="BoneRackRight">
 
-                                    </Flare>
-                                    <Flare Color="g(220; 220; 255) x 0.07" Pos="(2.25; 1.038; 0.73)" Size="0.7" _template="BlueStreak">
+                            </SteeringRack>
+                            <SteeringWheel Frame="BoneSteering">
 
-                                    </Flare>
-                                      <Model Org="(2.25; 1.038; -0.585)" _template="HeadLightRay">
+                            </SteeringWheel>
+                            <SoundsWheels _template="Default">
 
-                                      </Model>
-                                      <Model Org="(2.25; 1.038; 0.585)" _template="HeadLightRay">
+                            </SoundsWheels>
+                            <Damage>
+                                                                          <DamageArea Min="(1.15; 0.55; -0.5)" ParentFrame="BoneChassis_cdt" Max="(2.3; 1.3; 0.5)" Type="Engine">
 
-                                      </Model>
-                          </HeadLight>
-                          <ReverseSignals>
-                                      <Flare DirAngle="135" Size="0.4" _template="ReverseSignal" Pos="(-2.46; 0.925; -0.762)">
+                                                                          </DamageArea>
+                                                                          <DamageArea Min="(-1; 0.35; -0.85)" ParentFrame="BoneChassis_cdt" Max="(1; 0.7; 0.85)" Type="FuelTank">
 
-                                      </Flare>
-                                      <Flare DirAngle="135" Size="0.4" _template="ReverseSignal" Pos="(-2.46; 0.925; 0.762)">
+                                                                          </DamageArea>
+                            </Damage>
+                            <Shafts>
+                                                                            <Shaft SocketPointA="Shaft1a" Mesh="env/minishaft" SocketPointB="Shaft1b">
 
-                                      </Flare>
-                                      <Flare Color="g(220; 220; 255) x 0.05" Pos="(-2.46; 0.925; -0.762)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
+                                                                            </Shaft>
+                                                                            <Shaft SocketPointA="Shaft2a" Mesh="env/minishaft" SocketPointB="Shaft2b">
 
-                                      </Flare>
-                                      <Flare Color="g(220; 220; 255) x 0.05" Pos="(-2.46; 0.925; 0.762)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
-
-                                      </Flare>
-                                    <Light Color="(80; 80; 80)" OuterCone="160" Pos="(-2.686; 0.925; 0)" _template="ReverseSignal">
-
-                                    </Light>
-                          </ReverseSignals>
-      </ModelAttachments>
+                                                                            </Shaft>
+                            </Shafts>
+        </TruckData>
   </Truck>
-  <_templates Include="trucks">
-        <Wheel>
-            <RearWheel Torque="default" ConnectedToHandbrake="true" ParentFrame="BoneBack_cdt" Location="rear">
-
-            </RearWheel>
-            <FrontWheel SteeringCastor="5" Torque="full" SteeringJointOffset="0.2" SteeringAngle="36" Location="front">
-
-            </FrontWheel>
-        </Wheel>
-  </_templates>

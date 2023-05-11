@@ -1,528 +1,528 @@
+  <_templates Include="trucks">
+      <Wheel>
+          <RearWheel Torque="default" Location="rear" ConnectedToHandbrake="true" ParentFrame="BoneBack_cdt">
+
+          </RearWheel>
+          <FrontWheel Torque="default" Location="front" ConnectedToHandbrake="true" ParentFrame="BoneFront_cdt">
+
+          </FrontWheel>
+      </Wheel>
+      <Body>
+            <Sunshield Mass="5" Collisions="None">
+                <Constraint Type="Hinge" MaxLimit="10" AxisLocal="(0; 0; 1)" MinLimit="-5">
+                    <Motor Spring="20" Damping="0.7" Type="Spring">
+
+                    </Motor>
+                </Constraint>
+            </Sunshield>
+      </Body>
+  </_templates>
   <Truck>
-      <PhysicsModel Mesh="trucks/kirovets_k700">
-          <NetSync Legacy="false">
+        <HeadLight Pos="(3.6; 1.2; 0)" ParentFrame="BoneFront_cdt" _template="Default">
 
-          </NetSync>
-          <Body CenterOfMassOffset="(-0.5; -0.5; 0)" ImpactType="Truck" NetSync="pv" ModelFrame="BoneFront_cdt" Mass="4000">
-                  <Body CenterOfMassOffset="(0; 0; 0)" ModelFrame="BoneSteering_cdt" NetSync="pv" Collisions="None" Mass="2000">
-                    <Constraint Name="ChassisSteer" Type="Hinge" MaxLimit="25" AxisLocal="(0; 1; 0)" MinLimit="-25">
-                        <Motor Type="Position" Damping="1.0" Tau="0.03" Force="135000">
+        </HeadLight>
+        <GameData UnlockByExploration="true" Price="126100" UnlockByRank="1" Country="RU,CAS">
+              <CustomizationCameras>
+                    <CameraPos Name="roof_sticker" InterestPosition="(3.212; 3.213; -0.647)" Position="(7.639; 8.289; -0.694)" Interior="true" FOV="32.0">
 
-                        </Motor>
-                    </Constraint>
-                    <Body CenterOfMassOffset="(-0.2; 0; 0)" ImpactType="Truck" NetSync="pv" ModelFrame="BoneBack_cdt" Mass="6000">
-                          <Constraint Type="Hinge" MaxLimit="12" PivotOffset="(0; 0; 0)" AxisLocal="(1; 0; 0)" MinLimit="-12">
-                              <Motor Spring="10000" Type="Spring" Damping="800000">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="addon_1" InterestPosition="(2.514; 1.31; -0.551)" Position="(-7.271; 3.91; 6.234)" MaxXRotation="360" FOV="32.0">
 
-                              </Motor>
-                          </Constraint>
-                    </Body>
-                  </Body>
-                  <Body AngularDamping="1" ModelFrame="BoneHandle_cdt" Collisions="None" Mass="3">
-                    <Constraint MinLimit="0" Type="Hinge" MaxLimit="90" AxisLocal="(-1; 0; 0)">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="addon_2" InterestPosition="(5.759; 2.49; 0)" Position="(10.793; 4.409; -3.424)" MaxXRotation="360" FOV="32.0">
 
-                    </Constraint>
-                  </Body>
-                  <Body _template="Sunshield" ModelFrame="BoneSunshieldLeft_cdt">
+                    </CameraPos>
+                    <CameraPos Name="mirror_mount" InterestPosition="(6.388; 2.379; 1.159)" Position="(3.631; 3.057; -0.267)" Interior="true" FOV="32.0">
 
-                  </Body>
-                  <Body _template="Sunshield" ModelFrame="BoneSunshieldRight_cdt">
-                    <Constraint>
-                        <Motor Damping="1">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="side_r" InterestPosition="(4.494; 3.503; -0)" Position="(6.861; 5.817; -6.504)" MaxXRotation="360" FOV="32.0">
 
-                        </Motor>
-                    </Constraint>
-                  </Body>
-          </Body>
-      </PhysicsModel>
-      <GameData Country="RU,CAS" Price="126100" UnlockByRank="1" UnlockByExploration="true">
-            <CustomizationCameras>
-                  <CameraPos Interior="true" Position="(7.639; 8.289; -0.694)" FOV="32.0" InterestPosition="(3.212; 3.213; -0.647)" Name="roof_sticker">
+                    </CameraPos>
+                    <CameraPos Name="sticker" InterestPosition="(6.961; 0.994; 0.703)" Position="(4.384; 2.942; 0)" Interior="true" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(2.514; 1.31; -0.551)" Name="addon_1" MaxXRotation="360" Position="(-7.271; 3.91; 6.234)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                    </CameraPos>
+                    <CameraPos Name="glass_sticker" InterestPosition="(6.321; 2.828; -0.786)" Position="(10.575; 3.974; 0.816)" Interior="true" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.759; 2.49; 0)" Name="addon_2" MaxXRotation="360" Position="(10.793; 4.409; -3.424)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                    </CameraPos>
+                    <CameraPos Name="door_r_sticker" InterestPosition="(5.745; 1.723; 0)" Position="(4.617; 2.581; 2.916)" Interior="true" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(3.631; 3.057; -0.267)" FOV="32.0" InterestPosition="(6.388; 2.379; 1.159)" Name="mirror_mount">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="roof" InterestPosition="(5.118; 3.503; 0)" Position="(11.064; 5.516; -4.015)" MaxXRotation="360" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.494; 3.503; -0)" Name="side_r" MaxXRotation="360" Position="(6.861; 5.817; -6.504)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                    </CameraPos>
+                    <CameraPos Name="capote_sticker" InterestPosition="(6.172; 1.809; -0.834)" Position="(8.674; 5.508; 0)" Interior="true" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(4.384; 2.942; 0)" FOV="32.0" InterestPosition="(6.961; 0.994; 0.703)" Name="sticker">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="hoods" InterestPosition="(5.451; 1.818; 0)" Position="(13.951; 1.253; -5.017)" MaxXRotation="360" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(10.575; 3.974; 0.816)" FOV="32.0" InterestPosition="(6.321; 2.828; -0.786)" Name="glass_sticker">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="side_l" InterestPosition="(4.494; 3.503; 0)" Position="(5.841; 5.84; 6.957)" MaxXRotation="360" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(4.617; 2.581; 2.916)" FOV="32.0" InterestPosition="(5.745; 1.723; 0)" Name="door_r_sticker">
+                    </CameraPos>
+                    <CameraPos Name="bubble_head" InterestPosition="(6.924; 1.845; 0.356)" Position="(4.462; 2.763; -0.286)" Interior="true" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.118; 3.503; 0)" Name="roof" MaxXRotation="360" Position="(11.064; 5.516; -4.015)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="wheels" InterestPosition="(3.874; 0.602; -0)" Position="(7.632; 1.697; -6.129)" MaxXRotation="360" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(8.674; 5.508; 0)" FOV="32.0" InterestPosition="(6.172; 1.809; -0.834)" Name="capote_sticker">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="default" InterestPosition="(5.451; 1.818; 0)" Position="(13.951; 1.253; -5.017)" MaxXRotation="360" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.451; 1.818; 0)" Name="hoods" MaxXRotation="360" Position="(13.951; 1.253; -5.017)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="rear" InterestPosition="(2.457; 1.622; -1.058)" Position="(-3.789; 2.434; 3.957)" MaxXRotation="360" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.494; 3.503; 0)" Name="side_l" MaxXRotation="360" Position="(5.841; 5.84; 6.957)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                    </CameraPos>
+                    <CameraPos Name="door_l_sticker" InterestPosition="(3.082; 1.723; 0)" Position="(5.584; 2.581; -2.916)" Interior="true" FOV="32.0">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(4.462; 2.763; -0.286)" FOV="32.0" InterestPosition="(6.924; 1.845; 0.356)" Name="bubble_head">
+                    </CameraPos>
+              </CustomizationCameras>
+              <UiDesc UiName="UI_VEHICLE_KIROVETS_K700_NAME" UiDesc="UI_VEHICLE_KIROVETS_K700_DESC" UiIconLogo="KirovetsLogo80" UiIcon40x40="heavyVehicleImg" UiIcon30x30="heavyVehicleImg30" UiIcon328x458="shopImgKirovets_k700">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(3.874; 0.602; -0)" Name="wheels" MaxXRotation="360" Position="(7.632; 1.697; -6.129)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+              </UiDesc>
+                    <AddonSockets RequiredAddonIfNoConflicts="kirovets_k700_coupler" DefaultAddon="kirovets_k700_coupler">
+                        <Socket Names="KirovetsK700Kung" ParentFrame="BoneBack_cdt">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.451; 1.818; 0)" Name="default" MaxXRotation="360" Position="(13.951; 1.253; -5.017)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                        </Socket>
+                        <Socket Offset="(0; 0; 0)" Names="K700Coupler" ParentFrame="BoneBack_cdt">
 
-                  </CameraPos>
-                  <CameraPos InterestPosition="(2.457; 1.622; -1.058)" Name="rear" MaxXRotation="360" Position="(-3.789; 2.434; 3.957)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
+                        </Socket>
+                        <Socket Names="KirovetsK700Manipulator" ParentFrame="BoneBack_cdt">
 
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(5.584; 2.581; -2.916)" FOV="32.0" InterestPosition="(3.082; 1.723; 0)" Name="door_l_sticker">
-
-                  </CameraPos>
-            </CustomizationCameras>
-                <CraneSocket Pos="(3.396; 1.162; -0.707)" ParentFrame="BoneFront_cdt">
-
-                </CraneSocket>
-                <CraneSocket Pos="(3.396; 1.162; 0.707)" ParentFrame="BoneFront_cdt">
-
-                </CraneSocket>
-                <CraneSocket Pos="(-0.039; 1.65; -0.55)" ParentFrame="BoneFront_cdt">
-
-                </CraneSocket>
-                <CraneSocket Pos="(-0.039; 1.65; 0.55)" ParentFrame="BoneFront_cdt">
-
-                </CraneSocket>
-                <CraneSocket Pos="(-2.370; 1.015; -0.498)" ParentFrame="BoneBack_cdt">
-
-                </CraneSocket>
-                <CraneSocket Pos="(-2.370; 1.015; 0.498)" ParentFrame="BoneBack_cdt">
-
-                </CraneSocket>
-                  <AddonSockets DefaultAddon="kirovets_k700_coupler" RequiredAddonIfNoConflicts="kirovets_k700_coupler">
-                      <Socket ParentFrame="BoneBack_cdt" Names="KirovetsK700Kung">
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="kirovets_k700_fender">
+                      <Socket NamesBlock="KirovetsK700Manipulator" Names="KirovetsK700Fender" ParentFrame="BoneBack_cdt">
 
                       </Socket>
-                      <Socket ParentFrame="BoneBack_cdt" Offset="(0; 0; 0)" Names="K700Coupler">
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Offset="(-3.578; 1.033; 0)" Names="TrailerFarm" ParentFrame="BoneBack_cdt">
+
+                        </Socket>
+                        <Socket ParentFrame="BoneBack_cdt" Offset="(-3.578; 1.033; 0)" Names="Trailer" NamesBlock="KirovetsK700Manipulator">
+                          <AddonsShift Offset="(-1.035; 0.168; 0)" Types="KirovetsK700Kung">
+
+                          </AddonsShift>
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK700Sticker_1x1_01" InCockpit="true">
 
                       </Socket>
-                      <Socket ParentFrame="BoneBack_cdt" Names="KirovetsK700Manipulator">
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK700Sticker_1x1_02" InCockpit="true">
 
                       </Socket>
-                  </AddonSockets>
-                  <AddonSockets DefaultAddon="kirovets_k700_fender">
-                    <Socket ParentFrame="BoneBack_cdt" NamesBlock="KirovetsK700Manipulator" Names="KirovetsK700Fender">
-
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                      <Socket ParentFrame="BoneBack_cdt" Offset="(-3.578; 1.033; 0)" Names="TrailerFarm">
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK700Sticker_1x1_03" InCockpit="true">
 
                       </Socket>
-                      <Socket NamesBlock="KirovetsK700Manipulator" Names="Trailer" ParentFrame="BoneBack_cdt" Offset="(-3.578; 1.033; 0)">
-                        <AddonsShift Types="KirovetsK700Kung" Offset="(-1.035; 0.168; 0)">
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK700Sticker_1x2_01" InCockpit="true">
 
-                        </AddonsShift>
                       </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneFront_cdt" InCockpit="true" Names="KirovetsK700Sticker_1x1_01">
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK700Sticker_1x2_02" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneFront_cdt" InCockpit="true" Names="KirovetsK700Sticker_1x1_02">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK700Sticker_1x4_01" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneFront_cdt" InCockpit="true" Names="KirovetsK700Sticker_1x1_03">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneFront_cdt" Offset="(1.236; 2.473; 0.381)" Names="StuffDashboard" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneFront_cdt" InCockpit="true" Names="KirovetsK700Sticker_1x2_01">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneFront_cdt" Offset="(1.2; 3; 0)" Names="StuffAirfreshener" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneFront_cdt" InCockpit="true" Names="KirovetsK700Sticker_1x2_02">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK700Sticker_Capote" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneFront_cdt" InCockpit="true" Names="KirovetsK700Sticker_1x4_01">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK700Sticker_Door_L" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="StuffDashboard" InCockpit="true" ParentFrame="BoneFront_cdt" Offset="(1.236; 2.473; 0.381)">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK700Sticker_Door_R" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket Names="StuffAirfreshener" InCockpit="true" ParentFrame="BoneFront_cdt" Offset="(1.2; 3; 0)">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK700Sticker_GlassTop" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneFront_cdt" InCockpit="true" Names="KirovetsK700Sticker_Capote">
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK700Sticker_GlassBottom" InCockpit="true">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneFront_cdt" InCockpit="true" Names="KirovetsK700Sticker_Door_L">
+                      </Socket>
+                    </AddonSockets>
+                      <CraneSocket Pos="(3.396; 1.162; -0.707)" ParentFrame="BoneFront_cdt">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneFront_cdt" InCockpit="true" Names="KirovetsK700Sticker_Door_R">
+                      </CraneSocket>
+                      <CraneSocket Pos="(3.396; 1.162; 0.707)" ParentFrame="BoneFront_cdt">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneFront_cdt" InCockpit="true" Names="KirovetsK700Sticker_GlassTop">
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.039; 1.65; -0.55)" ParentFrame="BoneFront_cdt">
 
-                    </Socket>
-                  </AddonSockets>
-                  <AddonSockets>
-                    <Socket ParentFrame="BoneFront_cdt" InCockpit="true" Names="KirovetsK700Sticker_GlassBottom">
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.039; 1.65; 0.55)" ParentFrame="BoneFront_cdt">
 
-                    </Socket>
-                  </AddonSockets>
-                    <WinchSocket Pos="(3.396; 1.162; -0.707)" ParentFrame="BoneFront_cdt">
+                      </CraneSocket>
+                      <CraneSocket Pos="(-2.370; 1.015; -0.498)" ParentFrame="BoneBack_cdt">
 
-                    </WinchSocket>
-                    <WinchSocket Pos="(3.396; 1.162; 0.707)" ParentFrame="BoneFront_cdt">
+                      </CraneSocket>
+                      <CraneSocket Pos="(-2.370; 1.015; 0.498)" ParentFrame="BoneBack_cdt">
 
-                    </WinchSocket>
-                    <WinchSocket Pos="(-0.039; 1.65; -0.55)" ParentFrame="BoneFront_cdt">
+                      </CraneSocket>
+                        <WinchSocket Pos="(3.396; 1.162; -0.707)" ParentFrame="BoneFront_cdt">
 
-                    </WinchSocket>
-                    <WinchSocket Pos="(-0.039; 1.65; 0.55)" ParentFrame="BoneFront_cdt">
+                        </WinchSocket>
+                        <WinchSocket Pos="(3.396; 1.162; 0.707)" ParentFrame="BoneFront_cdt">
 
-                    </WinchSocket>
-                    <WinchSocket Pos="(-2.370; 1.015; -0.498)" ParentFrame="BoneBack_cdt">
+                        </WinchSocket>
+                        <WinchSocket Pos="(-0.039; 1.65; -0.55)" ParentFrame="BoneFront_cdt">
 
-                    </WinchSocket>
-                    <WinchSocket Pos="(-2.370; 1.015; 0.498)" ParentFrame="BoneBack_cdt">
+                        </WinchSocket>
+                        <WinchSocket Pos="(-0.039; 1.65; 0.55)" ParentFrame="BoneFront_cdt">
 
-                    </WinchSocket>
-            <UiDesc UiDesc="UI_VEHICLE_KIROVETS_K700_DESC" UiIcon30x30="heavyVehicleImg30" UiName="UI_VEHICLE_KIROVETS_K700_NAME" UiIconLogo="KirovetsLogo80" UiIcon40x40="heavyVehicleImg" UiIcon328x458="shopImgKirovets_k700">
+                        </WinchSocket>
+                        <WinchSocket Pos="(-2.370; 1.015; -0.498)" ParentFrame="BoneBack_cdt">
 
-            </UiDesc>
-      </GameData>
-      <ControlledConstraints>
-              <Constraint Name="ChassisSteer" IsLinkedSteering="true" Id="chassis_steer">
+                        </WinchSocket>
+                        <WinchSocket Pos="(-2.370; 1.015; 0.498)" ParentFrame="BoneBack_cdt">
 
-              </Constraint>
-      </ControlledConstraints>
-      <Landmark Mesh="landmarks/kirovets_k700_lmk" MaxScale="2.8" MinScale="1.8">
+                        </WinchSocket>
+        </GameData>
+        <PhysicsModel Mesh="trucks/kirovets_k700">
+                <Body NetSync="pv" CenterOfMassOffset="(-0.5; -0.5; 0)" ModelFrame="BoneFront_cdt" Mass="4000" ImpactType="Truck">
+                      <Body NetSync="pv" CenterOfMassOffset="(0; 0; 0)" ModelFrame="BoneSteering_cdt" Mass="2000" Collisions="None">
+                        <Constraint Type="Hinge" MaxLimit="25" AxisLocal="(0; 1; 0)" MinLimit="-25" Name="ChassisSteer">
+                            <Motor Type="Position" Force="135000" Damping="1.0" Tau="0.03">
 
-      </Landmark>
-      <TruckData EngineIconMesh="env/engine_default" EngineStartDelay="0.6" TruckType="HEAVY" ExhaustStartTime="0.6" SteerSpeed="0.015" TruckImage="kirovets_k700_mchr" DiffLockType="Always" Responsiveness="0.4" FuelCapacity="340" EngineIconScale="1.6" BackSteerSpeed="0.02">
-                  <Driver ParentFrame="BoneFront_cdt" Pos="(0.335; 2.209; -0.443)" SteeringWheelPos="(0.718; 2.537; -0.45)">
+                            </Motor>
+                        </Constraint>
+                        <Body NetSync="pv" CenterOfMassOffset="(-0.2; 0; 0)" ModelFrame="BoneBack_cdt" Mass="6000" ImpactType="Truck">
+                              <Constraint Type="Hinge" MaxLimit="12" AxisLocal="(1; 0; 0)" MinLimit="-12" PivotOffset="(0; 0; 0)">
+                                  <Motor Spring="10000" Damping="800000" Type="Spring">
 
-                  </Driver>
-                  <Shafts>
-                          <Shaft SocketPointB="Shaft1b" SocketPointA="Shaft1a">
+                                  </Motor>
+                              </Constraint>
+                        </Body>
+                      </Body>
+                      <Body ModelFrame="BoneHandle_cdt" Mass="3" AngularDamping="1" Collisions="None">
+                        <Constraint Type="Hinge" MaxLimit="90" AxisLocal="(-1; 0; 0)" MinLimit="0">
 
-                          </Shaft>
-                          <Shaft SocketPointB="Shaft2b" SocketPointA="Shaft2a">
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneSunshieldLeft_cdt" _template="Sunshield">
 
-                          </Shaft>
-                          <Shaft SocketPointB="Shaft3b" SocketPointA="Shaft3a">
+                      </Body>
+                      <Body ModelFrame="BoneSunshieldRight_cdt" _template="Sunshield">
+                        <Constraint>
+                            <Motor Damping="1">
 
-                          </Shaft>
-                          <Shaft SocketPointB="Shaft4b" SocketPointA="Shaft4a">
+                            </Motor>
+                        </Constraint>
+                      </Body>
+                </Body>
+                <NetSync Legacy="false">
 
-                          </Shaft>
-                  </Shafts>
-                  <FuelTank DamageCapacity="50">
+                </NetSync>
+        </PhysicsModel>
+        <ControlledConstraints>
+                  <Constraint IsLinkedSteering="true" Id="chassis_steer" Name="ChassisSteer">
 
-                  </FuelTank>
-                  <Dashboard>
-                              <Gauge Org="(1.124; 2.408; 0.113)" OutputAngles="(100; 265)" Mesh="trucks/arrows/kirovets_k700_arrow_1" Damping="0" InputRange="(0;40)" InputType="speed" Dir="(-0.701; 0.713; -0.001)">
+                  </Constraint>
+        </ControlledConstraints>
+        <Snorkel Origin="(1.452; 3.078; 0)" ParentFrame="BoneFront_cdt">
 
-                              </Gauge>
-                              <Gauge Org="(1.124; 2.408; 0.113)" OutputAngles="(-82; 85)" Mesh="trucks/arrows/kirovets_k700_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="rpm" Dir="(-0.701; 0.713; -0.001)">
+        </Snorkel>
+        <AutomaticIK>
+                        <IKBone ParentFrame="BoneFront_cdt" ModelFrame="BoneBackPistonLBase">
+                          <IKJoint Type="Hinge" AxisLocal="(0; 0; 1)">
 
-                              </Gauge>
-                              <Gauge Org="(1.108; 2.394; 0.313)" OutputAngles="(0; 10)" Mesh="trucks/arrows/kirovets_k700_arrow_2" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.702; 0.712; 0.004)">
+                          </IKJoint>
+                          <IKBone AttachToFrame="BoneSteering_cdt" AttachOffset="(0; 0; 0)" ModelFrame="BoneBackPistonL">
+                                <IKJoint Type="Slider" AxisLocal="(1; 0; 0)">
 
-                              </Gauge>
-                              <Gauge Org="(1.108; 2.394; 0.217)" OutputAngles="(-35; -14)" Mesh="trucks/arrows/kirovets_k700_arrow_2" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.702; 0.712; 0.004)">
+                                </IKJoint>
+                          </IKBone>
+                        </IKBone>
+                        <IKBone ParentFrame="BoneFront_cdt" ModelFrame="BoneBackPistonRBase">
+                          <IKJoint Type="Hinge" AxisLocal="(0; 0; 1)">
 
-                              </Gauge>
-                              <Gauge Org="(1.107; 2.395; 0.009)" OutputAngles="(-40; -20)" Mesh="trucks/arrows/kirovets_k700_arrow_2" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.702; 0.712; 0.004)">
+                          </IKJoint>
+                          <IKBone AttachToFrame="BoneSteering_cdt" AttachOffset="(0; 0; 0)" ModelFrame="BoneBackPistonR">
+                                <IKJoint Type="Slider" AxisLocal="(1; 0; 0)">
 
-                              </Gauge>
-                              <Gauge Org="(1.107; 2.395; -0.087)" OutputAngles="(-40; -14)" Mesh="trucks/arrows/kirovets_k700_arrow_2" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.702; 0.712; 0.004)">
+                                </IKJoint>
+                          </IKBone>
+                        </IKBone>
+        </AutomaticIK>
+        <Landmark MaxScale="2.8" Mesh="landmarks/kirovets_k700_lmk" MinScale="1.8">
 
-                              </Gauge>
-                              <Gauge Org="(1.062; 2.347; 0.167)" OutputAngles="(-35; -14)" Mesh="trucks/arrows/kirovets_k700_arrow_3" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.704; 0.71; 0.003)">
+        </Landmark>
+        <Rotator RotationSpeed="12" Frame="BoneRotatorFan">
 
-                              </Gauge>
-                              <Gauge Org="(1.062; 2.348; 0.059)" OutputAngles="(-35; -10)" Mesh="trucks/arrows/kirovets_k700_arrow_3" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.704; 0.71; 0.003)">
+        </Rotator>
+        <ModelAttachments>
+                            <Ignition>
+                                  <Flare Pos="(3.38; 1.583; -0.69)" ParentFrame="BoneFront_cdt" _template="IgnitionSignalWhite">
 
-                              </Gauge>
-                              <Gauge Org="(1.062; 2.347; -0.035)" OutputAngles="(-35; -10)" Mesh="trucks/arrows/kirovets_k700_arrow_3" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.704; 0.71; 0.003)">
+                                  </Flare>
+                                  <Flare Pos="(3.38; 1.583; 0.69)" ParentFrame="BoneFront_cdt" _template="IgnitionSignalWhite">
 
-                              </Gauge>
-                  </Dashboard>
-                  <SoundsWheels _template="Default">
+                                  </Flare>
+                            </Ignition>
+                            <HeadLight>
+                                    <Flare Pos="(3.38; 1.583; -0.69)" ParentFrame="BoneFront_cdt" _template="HeadLight">
 
-                  </SoundsWheels>
-                  <GearboxSocket Default="g_special_default" Type="gearboxes_special">
+                                    </Flare>
+                                    <Flare Pos="(3.38; 1.583; 0.69)" ParentFrame="BoneFront_cdt" _template="HeadLight">
 
-                  </GearboxSocket>
-                  <Steam Origin="(-0.3; 1.65; 0)">
+                                    </Flare>
+                                    <Flare Pos="(3.4; 1.583; -0.69)" ParentFrame="BoneFront_cdt" _template="BlueStreak">
 
-                  </Steam>
-                  <Sounds DisableReversePitch="true" MinDist="15.0" ParentFrame="BoneFront_cdt" Origin="(1.8; 1.8; 0)" _template="Default">
-                                    <BrakesSqueal Sound="trucks/kirovets_k700/kirovets_k700_brakes_squeal">
+                                    </Flare>
+                                    <Flare Pos="(3.4; 1.583; 0.69)" ParentFrame="BoneFront_cdt" _template="BlueStreak">
 
-                                    </BrakesSqueal>
-                                    <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
+                                    </Flare>
+                                      <Model Org="(3.38; 1.583; -0.69)" ParentFrame="BoneFront_cdt" _template="HeadLightRay">
 
-                                    </AbruptStop>
-                                    <EngineLow Sound="trucks/kirovets_k700/kirovets_k700_low">
+                                      </Model>
+                                      <Model Org="(3.38; 1.583; 0.69)" ParentFrame="BoneFront_cdt" _template="HeadLightRay">
 
-                                    </EngineLow>
-                                    <EngineRev Sound="trucks/kirovets_k700/kirovets_k700_rev">
+                                      </Model>
+                            </HeadLight>
+                            <ReverseSignals>
+                                    <Light Pos="(-0.5; 0.7; 0)" ParentFrame="BoneBack_cdt" _template="ReverseSignal">
 
-                                    </EngineRev>
-                                    <EngineAccel Sound="trucks/kirovets_k700/kirovets_k700_acc">
+                                    </Light>
+                                        <Flare Pos="(-0.078; 3.03; -0.993)" _template="ReverseSignal" Size="0.4" ParentFrame="BoneFront_cdt">
 
-                                    </EngineAccel>
-                                    <Honk Sound="trucks/kirovets_k700/kirovets_k700_honk">
+                                        </Flare>
+                                        <Flare Pos="(-0.078; 3.03; 0.993)" _template="ReverseSignal" Size="0.4" ParentFrame="BoneFront_cdt">
 
-                                    </Honk>
-                                    <EngineStop Sound="trucks/kirovets_k700/kirovets_k700_stop">
+                                        </Flare>
+                            </ReverseSignals>
+        </ModelAttachments>
+        <TruckData SteerSpeed="0.015" EngineStartDelay="0.6" EngineIconMesh="env/engine_default" TruckType="HEAVY" Responsiveness="0.4" BackSteerSpeed="0.02" TruckImage="kirovets_k700_mchr" FuelCapacity="340" DiffLockType="Always" ExhaustStartTime="0.6" EngineIconScale="1.6">
+                              <Driver Pos="(0.335; 2.209; -0.443)" ParentFrame="BoneFront_cdt" SteeringWheelPos="(0.718; 2.537; -0.45)">
 
-                                    </EngineStop>
-                                    <Handbrake Sound="trucks/kirovets_k700/kirovets_k700_handbrake_on">
+                              </Driver>
+                              <SoundsDamage _template="Heavy">
 
-                                    </Handbrake>
-                                    <EngineIdle_2d IsSound2D="true" Sound="trucks/kirovets_k700/kirovets_k700_idle_2d">
+                              </SoundsDamage>
+                              <Shakers>
+                                        <Shaker MaxFrequency="5" Frame="BoneExhaust" MinAngle="(0.2; 0.2; 0.2)" MaxAngle="(0.4; 0.4; 0.4)">
 
-                                    </EngineIdle_2d>
-                                    <EngineTrans Sound="">
+                                        </Shaker>
+                                        <Shaker MaxFrequency="0.15" Frame="BoneExhaustCap" ParentFrame="BoneExhaust" MinAngle="(0; 20; 0)" MaxAngle="(0; 130; 0)" LimitDirectionY="Positive">
 
-                                    </EngineTrans>
-                                    <EngineHeavy_2d IsSound2D="true" Sound="">
+                                        </Shaker>
+                              </Shakers>
+                              <OcclusionMap MinX="-3" ParentFrame="BoneBack_cdt" HalfSizeZ="2" MaxX="3">
 
-                                    </EngineHeavy_2d>
+                              </OcclusionMap>
+                              <FuelTank DamageCapacity="50">
+
+                              </FuelTank>
+                                          <CompatibleWheels Type="wheels_kirovets_k700" Scale="0.8">
+
+                                          </CompatibleWheels>
+                                          <CompatibleWheels Type="wheels_superheavy_single" Scale="0.8">
+
+                                          </CompatibleWheels>
+                              <EngineSocket Type="e_ru_kirovets_k700_special" Default="ru_kirovets_k700_engine_0">
+
+                              </EngineSocket>
+                              <SuspensionSocket Type="s_kirovets_k700" MaxWheelRadiusWithoutSuspension="1" Default="kirovets_k700_suspension_default">
+
+                              </SuspensionSocket>
+                              <Dashboard>
+                                                    <Gauge InputRange="(0;40)" Dir="(-0.701; 0.713; -0.001)" InputType="speed" Org="(1.124; 2.408; 0.113)" Damping="0" Mesh="trucks/arrows/kirovets_k700_arrow_1" OutputAngles="(100; 265)">
+
+                                                    </Gauge>
+                                                    <Gauge InputRange="(0;1)" Dir="(-0.701; 0.713; -0.001)" InputType="rpm" Org="(1.124; 2.408; 0.113)" Damping="0.99" Mesh="trucks/arrows/kirovets_k700_arrow_1" OutputAngles="(-82; 85)">
+
+                                                    </Gauge>
+                                                    <Gauge InputRange="(0;1)" Dir="(-0.702; 0.712; 0.004)" InputType="engineEnabled" Org="(1.108; 2.394; 0.313)" Damping="0.99" Mesh="trucks/arrows/kirovets_k700_arrow_2" OutputAngles="(0; 10)">
+
+                                                    </Gauge>
+                                                    <Gauge InputRange="(0;1)" Dir="(-0.702; 0.712; 0.004)" InputType="engineEnabled" Org="(1.108; 2.394; 0.217)" Damping="0.99" Mesh="trucks/arrows/kirovets_k700_arrow_2" OutputAngles="(-35; -14)">
+
+                                                    </Gauge>
+                                                    <Gauge InputRange="(0;1)" Dir="(-0.702; 0.712; 0.004)" InputType="engineEnabled" Org="(1.107; 2.395; 0.009)" Damping="0.99" Mesh="trucks/arrows/kirovets_k700_arrow_2" OutputAngles="(-40; -20)">
+
+                                                    </Gauge>
+                                                    <Gauge InputRange="(0;1)" Dir="(-0.702; 0.712; 0.004)" InputType="engineEnabled" Org="(1.107; 2.395; -0.087)" Damping="0.99" Mesh="trucks/arrows/kirovets_k700_arrow_2" OutputAngles="(-40; -14)">
+
+                                                    </Gauge>
+                                                    <Gauge InputRange="(0;1)" Dir="(-0.704; 0.71; 0.003)" InputType="engineEnabled" Org="(1.062; 2.347; 0.167)" Damping="0.99" Mesh="trucks/arrows/kirovets_k700_arrow_3" OutputAngles="(-35; -14)">
+
+                                                    </Gauge>
+                                                    <Gauge InputRange="(0;1)" Dir="(-0.704; 0.71; 0.003)" InputType="engineEnabled" Org="(1.062; 2.348; 0.059)" Damping="0.99" Mesh="trucks/arrows/kirovets_k700_arrow_3" OutputAngles="(-35; -10)">
+
+                                                    </Gauge>
+                                                    <Gauge InputRange="(0;1)" Dir="(-0.704; 0.71; 0.003)" InputType="engineEnabled" Org="(1.062; 2.347; -0.035)" Damping="0.99" Mesh="trucks/arrows/kirovets_k700_arrow_3" OutputAngles="(-35; -10)">
+
+                                                    </Gauge>
+                              </Dashboard>
+                              <Axles>
+                                                    <Axle Frame="BoneAxle1">
+
+                                                    </Axle>
+                              </Axles>
+                              <Camera Center="(-1; 0; 0)" RadiusMultiplier="1.1" ParentFrame="BoneFront_cdt">
+                                                      <Cockpit WindshieldDiffuseTexture="trucks/kirovets_k700_glass__d_a.tga" _template="Default" WindshieldShadingTexture="trucks/kirovets_k700_glass__sh_d.tga" ViewPos="(0.3; 2.919; -0.442)">
+                                                          <Rear _inheritRemove="true">
+
+                                                          </Rear>
+                                                          <Mirror FOVScale="2.2" ClipDir="(-0.966; 0; -0.259)" MeshFrame="hp_cab_mirror" Pos="(1.193; 3.038; -0.006)" ReflectionDir="(-0.957; -0.134; -0.259)" Size="(0.23; 0.08)" ClipOffset="0.1">
+
+                                                          </Mirror>
+                                                      </Cockpit>
+                              </Camera>
+                              <Exhaust IsLight="true" Dir="(0.665; 0.338; 0.665)" ParentFrame="BoneFront_cdt" Speed="3.00" Origin="(1.476; 3.279; 0.851)">
+
+                              </Exhaust>
+                              <Sounds _template="Default" ParentFrame="BoneFront_cdt" MinDist="15.0" Origin="(1.8; 1.8; 0)" DisableReversePitch="true">
                                                             <Reverse _inheritRemove="true">
 
                                                             </Reverse>
                                                             <Reverse Sound="trucks/kirovets_k700/kirovets_k700_back_beeper">
 
                                                             </Reverse>
-                                    <EngineHigh_2d IsSound2D="true" Sound="trucks/kirovets_k700/kirovets_k700_high_2d">
+                                                          <EngineTrans Sound="">
 
-                                    </EngineHigh_2d>
-                                    <EngineIdle Sound="trucks/kirovets_k700/kirovets_k700_idle">
+                                                          </EngineTrans>
+                                                          <EngineLow Sound="trucks/kirovets_k700/kirovets_k700_low">
 
-                                    </EngineIdle>
-                                    <HandbrakeOff Sound="trucks/kirovets_k700/kirovets_k700_handbrake_off">
+                                                          </EngineLow>
+                                                          <EngineHigh Sound="trucks/kirovets_k700/kirovets_k700_high">
 
-                                    </HandbrakeOff>
-                                    <EngineHigh Sound="trucks/kirovets_k700/kirovets_k700_high">
+                                                          </EngineHigh>
+                                                          <HandbrakeOff Sound="trucks/kirovets_k700/kirovets_k700_handbrake_off">
 
-                                    </EngineHigh>
-                                    <EngineLow_2d IsSound2D="true" Sound="trucks/kirovets_k700/kirovets_k700_low_2d">
+                                                          </HandbrakeOff>
+                                                          <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
 
-                                    </EngineLow_2d>
-                                    <EngineHeavy Sound="">
+                                                          </AbruptStop>
+                                                          <EngineRev Sound="trucks/kirovets_k700/kirovets_k700_rev">
 
-                                    </EngineHeavy>
-                                    <BrakeRelease Sound="trucks/common/truck_brake_release_alt2_rnd_set/truck_brake_release_alt2_rnd">
+                                                          </EngineRev>
+                                                          <EngineHeavy_2d IsSound2D="true" Sound="">
 
-                                    </BrakeRelease>
-                                    <EngineStart Sound="trucks/kirovets_k700/kirovets_k700_start">
+                                                          </EngineHeavy_2d>
+                                                          <EngineHeavy Sound="">
 
-                                    </EngineStart>
-                  </Sounds>
-                                    <LimitedFluid Type="Box" SizeX="0.605" Center="(-0.159; 1.059; -0.748)" ParentFrame="BoneFront_cdt" SizeY="0.541" SizeZ="0.262">
+                                                          </EngineHeavy>
+                                                          <EngineHigh_2d IsSound2D="true" Sound="trucks/kirovets_k700/kirovets_k700_high_2d">
 
-                                    </LimitedFluid>
-                                    <LimitedFluid Type="Box" SizeX="0.605" Center="(-0.159; 1.059; 0.748)" ParentFrame="BoneFront_cdt" SizeY="0.541" SizeZ="0.262">
+                                                          </EngineHigh_2d>
+                                                          <EngineLow_2d IsSound2D="true" Sound="trucks/kirovets_k700/kirovets_k700_low_2d">
 
-                                    </LimitedFluid>
-                                    <LimitedFluid Type="Box" SizeX="0.682" Center="(-0.554; 1.948; -0.605)" ParentFrame="BoneFront_cdt" SizeY="0.387" SizeZ="0.300">
+                                                          </EngineLow_2d>
+                                                          <EngineIdle_2d IsSound2D="true" Sound="trucks/kirovets_k700/kirovets_k700_idle_2d">
 
-                                    </LimitedFluid>
-                  <SoundsDamage _template="Heavy">
+                                                          </EngineIdle_2d>
+                                                          <EngineStart Sound="trucks/kirovets_k700/kirovets_k700_start">
 
-                  </SoundsDamage>
-                  <Exhaust IsLight="true" Dir="(0.665; 0.338; 0.665)" ParentFrame="BoneFront_cdt" Origin="(1.476; 3.279; 0.851)" Speed="3.00">
+                                                          </EngineStart>
+                                                          <Handbrake Sound="trucks/kirovets_k700/kirovets_k700_handbrake_on">
 
-                  </Exhaust>
-                  <Camera ParentFrame="BoneFront_cdt" Center="(-1; 0; 0)" RadiusMultiplier="1.1">
-                                            <Cockpit WindshieldShadingTexture="trucks/kirovets_k700_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/kirovets_k700_glass__d_a.tga" _template="Default" ViewPos="(0.3; 2.919; -0.442)">
-                                                <Mirror FOVScale="2.2" Pos="(1.193; 3.038; -0.006)" ClipDir="(-0.966; 0; -0.259)" ReflectionDir="(-0.957; -0.134; -0.259)" Size="(0.23; 0.08)" ClipOffset="0.1" MeshFrame="hp_cab_mirror">
+                                                          </Handbrake>
+                                                          <Honk Sound="trucks/kirovets_k700/kirovets_k700_honk">
 
-                                                </Mirror>
-                                                <Rear _inheritRemove="true">
+                                                          </Honk>
+                                                          <EngineIdle Sound="trucks/kirovets_k700/kirovets_k700_idle">
 
-                                                </Rear>
-                                            </Cockpit>
-                  </Camera>
-                  <SuspensionSocket Default="kirovets_k700_suspension_default" Type="s_kirovets_k700" MaxWheelRadiusWithoutSuspension="1">
+                                                          </EngineIdle>
+                                                          <BrakesSqueal Sound="trucks/kirovets_k700/kirovets_k700_brakes_squeal">
 
-                  </SuspensionSocket>
-                  <Wheels DefaultTire="tire" DefaultWheelType="wheels_kirovets_k700" DefaultRim="rim">
-                                                  <Wheel _template="FrontWheel" Pos="(1.218; 0.811; 1)">
+                                                          </BrakesSqueal>
+                                                          <EngineStop Sound="trucks/kirovets_k700/kirovets_k700_stop">
 
-                                                  </Wheel>
-                                                  <Wheel Pos="(1.218; 0.811; 1)" _template="FrontWheel" RightSide="true">
+                                                          </EngineStop>
+                                                          <BrakeRelease Sound="trucks/common/truck_brake_release_alt2_rnd_set/truck_brake_release_alt2_rnd">
 
-                                                  </Wheel>
-                                                  <Wheel _template="RearWheel" Pos="(-1.836; 0.811; 1)">
+                                                          </BrakeRelease>
+                                                          <EngineAccel Sound="trucks/kirovets_k700/kirovets_k700_acc">
 
-                                                  </Wheel>
-                                                  <Wheel Pos="(-1.836; 0.811; 1)" _template="RearWheel" RightSide="true">
+                                                          </EngineAccel>
+                              </Sounds>
+                              <GearboxSocket Type="gearboxes_special" Default="g_special_default">
 
-                                                  </Wheel>
-                  </Wheels>
-                  <Axles>
-                                                  <Axle Frame="BoneAxle1">
+                              </GearboxSocket>
+                              <Steam Origin="(-0.3; 1.65; 0)">
 
-                                                  </Axle>
-                  </Axles>
-                  <Damage>
-                                                      <DamageArea Max="(3.4; 2.2; 0.6)" Type="Engine" ParentFrame="BoneFront_cdt" Min="(1.25; 1.2; -0.6)">
+                              </Steam>
+                              <Wheels DefaultWheelType="wheels_kirovets_k700" DefaultTire="tire" DefaultRim="rim">
+                                                                  <Wheel Pos="(1.218; 0.811; 1)" _template="FrontWheel">
 
-                                                      </DamageArea>
-                                                      <DamageArea Max="(0.17; 1.35; 0.9)" Type="FuelTank" ParentFrame="BoneFront_cdt" Min="(-0.48; 0.76; -0.9)">
+                                                                  </Wheel>
+                                                                  <Wheel RightSide="true" Pos="(1.218; 0.811; 1)" _template="FrontWheel">
 
-                                                      </DamageArea>
-                  </Damage>
-                  <OcclusionMap HalfSizeZ="2" ParentFrame="BoneBack_cdt" MaxX="3" MinX="-3">
+                                                                  </Wheel>
+                                                                  <Wheel Pos="(-1.836; 0.811; 1)" _template="RearWheel">
 
-                  </OcclusionMap>
-                  <EngineSocket Default="ru_kirovets_k700_engine_0" Type="e_ru_kirovets_k700_special">
+                                                                  </Wheel>
+                                                                  <Wheel RightSide="true" Pos="(-1.836; 0.811; 1)" _template="RearWheel">
 
-                  </EngineSocket>
-                  <WinchUpgradeSocket Default="w_heavy_trucks_default" IsUpgradable="true" Type="winches_heavy_trucks">
+                                                                  </Wheel>
+                              </Wheels>
+                              <WinchUpgradeSocket Type="winches_heavy_trucks" Default="w_heavy_trucks_default" IsUpgradable="true">
 
-                  </WinchUpgradeSocket>
-                  <SteeringWheel Frame="BoneSteering">
+                              </WinchUpgradeSocket>
+                              <Shafts>
+                                                                      <Shaft SocketPointA="Shaft1a" SocketPointB="Shaft1b">
 
-                  </SteeringWheel>
-                                                            <CompatibleWheels Scale="0.8" Type="wheels_kirovets_k700">
+                                                                      </Shaft>
+                                                                      <Shaft SocketPointA="Shaft2a" SocketPointB="Shaft2b">
 
-                                                            </CompatibleWheels>
-                                                            <CompatibleWheels Scale="0.8" Type="wheels_superheavy_single">
+                                                                      </Shaft>
+                                                                      <Shaft SocketPointA="Shaft3a" SocketPointB="Shaft3b">
 
-                                                            </CompatibleWheels>
-                  <Shakers>
-                                                                  <Shaker MinAngle="(0.2; 0.2; 0.2)" Frame="BoneExhaust" MaxAngle="(0.4; 0.4; 0.4)" MaxFrequency="5">
+                                                                      </Shaft>
+                                                                      <Shaft SocketPointA="Shaft4a" SocketPointB="Shaft4b">
 
-                                                                  </Shaker>
-                                                                  <Shaker MinAngle="(0; 20; 0)" Frame="BoneExhaustCap" LimitDirectionY="Positive" ParentFrame="BoneExhaust" MaxAngle="(0; 130; 0)" MaxFrequency="0.15">
+                                                                      </Shaft>
+                              </Shafts>
+                              <SteeringWheel Frame="BoneSteering">
 
-                                                                  </Shaker>
-                  </Shakers>
-      </TruckData>
-      <Rotator RotationSpeed="12" Frame="BoneRotatorFan">
+                              </SteeringWheel>
+                              <SoundsWheels _template="Default">
 
-      </Rotator>
-      <HeadLight ParentFrame="BoneFront_cdt" _template="Default" Pos="(3.6; 1.2; 0)">
+                              </SoundsWheels>
+                              <Damage>
+                                                                            <DamageArea Min="(1.25; 1.2; -0.6)" ParentFrame="BoneFront_cdt" Max="(3.4; 2.2; 0.6)" Type="Engine">
 
-      </HeadLight>
-      <AutomaticIK>
-                          <IKBone ParentFrame="BoneFront_cdt" ModelFrame="BoneBackPistonLBase">
-                            <IKBone AttachToFrame="BoneSteering_cdt" AttachOffset="(0; 0; 0)" ModelFrame="BoneBackPistonL">
-                                <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+                                                                            </DamageArea>
+                                                                            <DamageArea Min="(-0.48; 0.76; -0.9)" ParentFrame="BoneFront_cdt" Max="(0.17; 1.35; 0.9)" Type="FuelTank">
 
-                                </IKJoint>
-                            </IKBone>
-                            <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge">
+                                                                            </DamageArea>
+                              </Damage>
+                                                                          <LimitedFluid SizeX="0.605" ParentFrame="BoneFront_cdt" Center="(-0.159; 1.059; -0.748)" Type="Box" SizeZ="0.262" SizeY="0.541">
 
-                            </IKJoint>
-                          </IKBone>
-                          <IKBone ParentFrame="BoneFront_cdt" ModelFrame="BoneBackPistonRBase">
-                            <IKBone AttachToFrame="BoneSteering_cdt" AttachOffset="(0; 0; 0)" ModelFrame="BoneBackPistonR">
-                                <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+                                                                          </LimitedFluid>
+                                                                          <LimitedFluid SizeX="0.605" ParentFrame="BoneFront_cdt" Center="(-0.159; 1.059; 0.748)" Type="Box" SizeZ="0.262" SizeY="0.541">
 
-                                </IKJoint>
-                            </IKBone>
-                            <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge">
+                                                                          </LimitedFluid>
+                                                                          <LimitedFluid SizeX="0.682" ParentFrame="BoneFront_cdt" Center="(-0.554; 1.948; -0.605)" Type="Box" SizeZ="0.300" SizeY="0.387">
 
-                            </IKJoint>
-                          </IKBone>
-      </AutomaticIK>
-      <Snorkel Origin="(1.452; 3.078; 0)" ParentFrame="BoneFront_cdt">
-
-      </Snorkel>
-      <ModelAttachments>
-                            <ReverseSignals>
-                                  <Flare ParentFrame="BoneFront_cdt" Size="0.4" Pos="(-0.078; 3.03; -0.993)" _template="ReverseSignal">
-
-                                  </Flare>
-                                  <Flare ParentFrame="BoneFront_cdt" Size="0.4" Pos="(-0.078; 3.03; 0.993)" _template="ReverseSignal">
-
-                                  </Flare>
-                                <Light ParentFrame="BoneBack_cdt" _template="ReverseSignal" Pos="(-0.5; 0.7; 0)">
-
-                                </Light>
-                            </ReverseSignals>
-                            <Ignition>
-                                    <Flare ParentFrame="BoneFront_cdt" _template="IgnitionSignalWhite" Pos="(3.38; 1.583; -0.69)">
-
-                                    </Flare>
-                                    <Flare ParentFrame="BoneFront_cdt" _template="IgnitionSignalWhite" Pos="(3.38; 1.583; 0.69)">
-
-                                    </Flare>
-                            </Ignition>
-                            <HeadLight>
-                                      <Flare ParentFrame="BoneFront_cdt" _template="HeadLight" Pos="(3.38; 1.583; -0.69)">
-
-                                      </Flare>
-                                      <Flare ParentFrame="BoneFront_cdt" _template="HeadLight" Pos="(3.38; 1.583; 0.69)">
-
-                                      </Flare>
-                                      <Flare ParentFrame="BoneFront_cdt" _template="BlueStreak" Pos="(3.4; 1.583; -0.69)">
-
-                                      </Flare>
-                                      <Flare ParentFrame="BoneFront_cdt" _template="BlueStreak" Pos="(3.4; 1.583; 0.69)">
-
-                                      </Flare>
-                                        <Model Org="(3.38; 1.583; -0.69)" _template="HeadLightRay" ParentFrame="BoneFront_cdt">
-
-                                        </Model>
-                                        <Model Org="(3.38; 1.583; 0.69)" _template="HeadLightRay" ParentFrame="BoneFront_cdt">
-
-                                        </Model>
-                            </HeadLight>
-      </ModelAttachments>
+                                                                          </LimitedFluid>
+        </TruckData>
   </Truck>
-  <_templates Include="trucks">
-        <Wheel>
-            <RearWheel Torque="default" ConnectedToHandbrake="true" ParentFrame="BoneBack_cdt" Location="rear">
-
-            </RearWheel>
-            <FrontWheel Torque="default" ConnectedToHandbrake="true" ParentFrame="BoneFront_cdt" Location="front">
-
-            </FrontWheel>
-        </Wheel>
-        <Body>
-              <Sunshield Collisions="None" Mass="5">
-                  <Constraint MinLimit="-5" Type="Hinge" MaxLimit="10" AxisLocal="(0; 0; 1)">
-                      <Motor Spring="20" Type="Spring" Damping="0.7">
-
-                      </Motor>
-                  </Constraint>
-              </Sunshield>
-        </Body>
-  </_templates>

@@ -1,394 +1,235 @@
+  <_templates Include="trucks">
+      <Wheel>
+          <RearAxle Location="rear" ConnectedToHandbrake="true" Torque="default">
+
+          </RearAxle>
+          <FirstAxle SuspensionMin="-0.3" SteeringAngle="40" Location="front" ParentFrame="BoneCabin_cdt" Torque="connectable" SteeringCastor="10">
+
+          </FirstAxle>
+          <SecondAxle SteeringCastor="6" SteeringAngle="32" _template="FirstAxle">
+
+          </SecondAxle>
+      </Wheel>
+      <Body>
+            <SunShield Mass="2" Collisions="None">
+                <Constraint Type="Hinge" MaxLimit="10" AxisLocal="(0; 0; 1)" MinLimit="-6">
+                    <Motor Spring="60" Damping="0.06" Type="Spring">
+
+                    </Motor>
+                </Constraint>
+            </SunShield>
+            <TieRod Mass="1">
+                  <Constraint Type="Hinge" MaxLimit="25" AxisLocal="(0; 0; 1)" MinLimit="-25">
+                      <Motor Type="Position" Force="6000" Damping="1.0" Tau="1">
+
+                      </Motor>
+                  </Constraint>
+            </TieRod>
+            <Twist CenterOfMassOffset="(0; 0; 0)" Mass="3300" ImpactType="Truck">
+                    <Constraint Type="Hinge" MaxLimit="7" AxisLocal="(1; 0; 0)" MinLimit="-7" PivotOffset="(0; 0; 0)">
+                        <Motor Spring="6000000" Damping="100000" Type="Spring">
+
+                        </Motor>
+                    </Constraint>
+            </Twist>
+      </Body>
+      <Flare>
+              <MarkerBeacon ColorMultAtDay="0.5" AttenStart="1" Color="g(255; 174; 0) x 0.12" Size="0.175" AttenEnd="200">
+
+              </MarkerBeacon>
+              <IgnitionSignalOrange ColorMultAtDay="0.6" Dir="(0; 1; 0)" DirAngle="135" Color="g(255; 140; 0) x 0.3" Size="0.1" AspectRatio="1.4">
+
+              </IgnitionSignalOrange>
+              <IgnitionSignalRedSmall ColorMultAtDay="0.3" Dir="(-1; 0; 0)" DirAngle="90" Color="g(169; 0; 0) x 0.8" Size="0.12" AspectRatio="1.4">
+
+              </IgnitionSignalRedSmall>
+      </Flare>
+  </_templates>
   <Truck>
-      <PhysicsModel Mesh="trucks/ws_6900xd_twin">
-          <NetSync Legacy="false">
+        <HeadLight Pos="(8.318; 1.103; 0)" ParentFrame="BoneCabin_cdt" _template="Default">
 
-          </NetSync>
-          <Body CenterOfMassOffset="(0; 0; 0)" ImpactType="Truck" NetSync="pv" ModelFrame="BoneChassis_cdt" Mass="10200">
-                  <Body Collisions="None" ModelFrame="BoneCord1_cdt" Mass="2">
-                    <Constraint MinLimit="-0.1" Type="Prismatic" MaxLimit="1.0" AxisLocal="(0; 0; 1)">
-                        <Motor Spring="1.0" Type="Spring" Damping="25">
+        </HeadLight>
+        <GameData ExcludedCargoTypes="CargoPlane, CargoWing1, CargoWing2" UnlockByExploration="false" Price="90300" UnlockByRank="1" Country="US">
+              <CustomizationCameras>
+                    <CameraPos Name="roof_sticker" InterestPosition="(4.152; 2.538; -0.812)" Position="(6.963; 6.154; 0.013)" Interior="true" FOV="32.0">
 
-                        </Motor>
-                    </Constraint>
-                  </Body>
-                  <Body Collisions="None" ModelFrame="BoneCord2_cdt" Mass="2">
-                    <Constraint MinLimit="-1.2" Type="Prismatic" MaxLimit="0.4" AxisLocal="(0; 0; 1)">
-                        <Motor Spring="1.0" Type="Spring" Damping="25">
+                    </CameraPos>
+                    <CameraPos Name="sticker_1" InterestPosition="(6.888; 5.658; 2.147)" Position="(4.539; 2.753; -0.547)" Interior="true" FOV="32.0">
 
-                        </Motor>
-                    </Constraint>
-                  </Body>
-                  <Body _template="Mudguard" ModelFrame="BoneLeftMudguard_cdt">
-                    <Constraint MaxLimit="5" AxisLocal="(0; 0; 1)" MinLimit="-45">
-                        <Motor Spring="30" Type="Spring" Damping="0">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="addon_1" InterestPosition="(4.314; 3.258; 0)" Position="(9.801; 5.301; -2.523)" MaxXRotation="360" FOV="32.0">
 
-                        </Motor>
-                    </Constraint>
-                    <Body _template="Mudguard" ModelFrame="BoneLeftMudguard2_cdt">
-                          <Constraint MaxLimit="9" AxisLocal="(0; 0; 1)" MinLimit="-35">
-                              <Motor Spring="10" Type="Spring" Damping="0">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="addon_2" InterestPosition="(4.591; 2.162; 0)" Position="(9.949; 3.893; -3.787)" MaxXRotation="360" FOV="32.0">
 
-                              </Motor>
-                          </Constraint>
-                    </Body>
-                  </Body>
-                  <Body AngularDamping="1.0" _template="Mudguard" ModelFrame="BoneRightMudguard_cdt">
-                    <Constraint MaxLimit="5" AxisLocal="(0; 0; 1)" MinLimit="-45">
-                        <Motor Spring="5" Type="Spring" Damping="0">
+                    </CameraPos>
+                    <CameraPos Name="mirror_mount" InterestPosition="(6.006; 2.657; 1.394)" Position="(3.878; 3.246; -0.366)" Interior="true" FOV="32.0">
 
-                        </Motor>
-                    </Constraint>
-                    <Body _template="Mudguard" ModelFrame="BoneRightMudguard2_cdt">
-                          <Constraint MaxLimit="9" AxisLocal="(0; 0; 1)" MinLimit="-35">
-                              <Motor Spring="10" Type="Spring" Damping="0">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="side_r" InterestPosition="(5.601; 1.97; 0)" Position="(3.352; 1.747; -7.216)" MaxXRotation="360" FOV="32.0">
 
-                              </Motor>
-                          </Constraint>
-                    </Body>
-                  </Body>
-                  <Body _template="Mudguard" ModelFrame="BoneRightMudguard3_cdt">
-                    <Constraint MaxLimit="45" AxisLocal="(0; 0; 1)" MinLimit="-30">
-                        <Motor Spring="30" Type="Spring" Damping="0">
+                    </CameraPos>
+                    <CameraPos Name="sticker" InterestPosition="(6.006; 1.516; 1.742)" Position="(4.431; 3.204; -0.187)" Interior="true" FOV="32.0">
 
-                        </Motor>
-                    </Constraint>
-                  </Body>
-                  <Body _template="Mudguard" ModelFrame="BoneLeftMudguard3_cdt">
-                    <Constraint MaxLimit="45" AxisLocal="(0; 0; 1)" MinLimit="-30">
-                        <Motor Spring="30" Type="Spring" Damping="0">
+                    </CameraPos>
+                    <CameraPos Name="glass_sticker" InterestPosition="(4.188; 2.739; -0.925)" Position="(8.755; 3.874; 0.771)" Interior="true" FOV="32.0">
 
-                        </Motor>
-                    </Constraint>
-                  </Body>
-                  <Body _template="Mudguard" ModelFrame="BoneFlapLeft1_cdt">
-                    <Constraint MaxLimit="6" AxisLocal="(1; 0; 0)" MinLimit="-35">
+                    </CameraPos>
+                    <CameraPos Name="door_r_sticker" InterestPosition="(5.985; 2.115; 0.826)" Position="(3.448; 2.703; 2.894)" Interior="true" FOV="32.0">
 
-                    </Constraint>
-                  </Body>
-                  <Body _template="Mudguard" ModelFrame="BoneFlapLeft2_cdt">
-                    <Constraint MaxLimit="5" AxisLocal="(1; 0; 0)" MinLimit="-25">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="roof" InterestPosition="(4.44; 2.399; -0)" Position="(-1.623; 5.6; -4.08)" MaxXRotation="360" FOV="32.0">
 
-                    </Constraint>
-                  </Body>
-                  <Body _template="Mudguard" ModelFrame="BoneFlapLeft3_cdt">
-                    <Constraint MaxLimit="7" AxisLocal="(1; 0; 0)" MinLimit="-30">
+                    </CameraPos>
+                    <CameraPos Name="capote_sticker" InterestPosition="(5.211; 0.662; -0.518)" Position="(9.710; 5.634; -0.279)" Interior="true" FOV="32.0">
 
-                    </Constraint>
-                  </Body>
-                  <Body _template="Mudguard" ModelFrame="BoneFlapRight1_cdt">
-                    <Constraint MaxLimit="5" AxisLocal="(-1; 0; 0)" MinLimit="-40">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="hoods" InterestPosition="(5.028; 1.818; 0)" Position="(14.108; 1.267; -4.602)" MaxXRotation="360" FOV="32.0">
 
-                    </Constraint>
-                  </Body>
-                  <Body _template="Mudguard" ModelFrame="BoneFlapRight2_cdt">
-                    <Constraint MaxLimit="7" AxisLocal="(-1; 0; 0)" MinLimit="-27">
+                    </CameraPos>
+                    <CameraPos Name="sticker_2" InterestPosition="(3.255; 3.424; 3.219)" Position="(4.642; 3.001; -0.596)" Interior="true" FOV="32.0">
 
-                    </Constraint>
-                  </Body>
-                  <Body _template="Mudguard" ModelFrame="BoneFlapRight3_cdt">
-                    <Constraint MaxLimit="6" AxisLocal="(-1; 0; 0)" MinLimit="-33">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="side_l" InterestPosition="(5.426; 1.664; 0)" Position="(-0.932; 2.13; -4.911)" MaxXRotation="360" FOV="32.0">
 
-                    </Constraint>
-                  </Body>
-                  <Body _template="Mudguard" ModelFrame="BoneFlapRight4_cdt">
-                    <Constraint MaxLimit="9" AxisLocal="(-1; 0; 0)" MinLimit="-38">
+                    </CameraPos>
+                    <CameraPos Name="bubble_head" InterestPosition="(6.006; 2.143; 1.603)" Position="(4.48; 3.034; -0.203)" Interior="true" FOV="32.0">
 
-                    </Constraint>
-                  </Body>
-                  <Body _template="Mudguard" ModelFrame="BoneFlapRight5_cdt">
-                    <Constraint MaxLimit="6" AxisLocal="(-1; 0; 0)" MinLimit="-25">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="wheels" InterestPosition="(4.388; 1; -0)" Position="(8.845; 1.705; -6.183)" MaxXRotation="360" FOV="32.0">
 
-                    </Constraint>
-                  </Body>
-                  <Body NetSync="pv" _template="Twist" ModelFrame="BoneChassis1_cdt">
-                    <Body NetSync="pv" _template="Twist" ModelFrame="BoneChassis2_cdt">
-                        <Body CenterOfMassOffset="(0.467; -0.3; 0)" ModelFrame="BoneCabin_cdt" NetSync="pv" _template="Twist">
-                              <Body _template="Mudguard" ModelFrame="BoneRightMudguard4_cdt">
-                                <Constraint MaxLimit="17" AxisLocal="(0; 0; 1)" MinLimit="-3">
-                                    <Motor Spring="30" Type="Spring" Damping="0">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="default" InterestPosition="(5.028; 1.818; 0)" Position="(14.108; 1.267; -4.602)" MaxXRotation="360" FOV="32.0">
 
-                                    </Motor>
-                                </Constraint>
-                              </Body>
-                              <Body _template="Mudguard" ModelFrame="BoneLeftMudguard4_cdt">
-                                <Constraint MaxLimit="17" AxisLocal="(0; 0; 1)" MinLimit="-3">
-                                    <Motor Spring="30" Type="Spring" Damping="0">
+                    </CameraPos>
+                    <CameraPos MaxYRotation="360" MaxZoom="2" Name="rear" InterestPosition="(0.788; 1.117; -0)" Position="(-0.701; 2.508; -4.833)" MaxXRotation="360" FOV="32.0">
 
-                                    </Motor>
-                                </Constraint>
-                              </Body>
-                              <Body _template="Mudguard" ModelFrame="BoneRightMudguard5_cdt">
-                                <Constraint MaxLimit="50" AxisLocal="(0; 0; 1)" MinLimit="-50">
-                                    <Motor Spring="30" Type="Spring" Damping="0">
+                    </CameraPos>
+                    <CameraPos Name="door_l_sticker" InterestPosition="(4.101; 2.223; -0.174)" Position="(3.521; 2.549; -3.022)" Interior="true" FOV="32.0">
 
-                                    </Motor>
-                                </Constraint>
-                              </Body>
-                              <Body _template="Mudguard" ModelFrame="BoneLeftMudguard5_cdt">
-                                <Constraint MaxLimit="50" AxisLocal="(0; 0; 1)" MinLimit="-50">
-                                    <Motor Spring="30" Type="Spring" Damping="0">
+                    </CameraPos>
+                    <CameraPos Name="hood_ornament" InterestPosition="(7.974; 2.607; -1.643)" Position="(9.026; 2.923; -1.643)" Interior="true" FOV="32.0">
 
-                                    </Motor>
-                                </Constraint>
-                              </Body>
-                              <Body _template="SunShield" ModelFrame="BoneSunshieldLeft_cdt">
+                    </CameraPos>
+                    <CameraPos Name="curtain" InterestPosition="(6.006; 2.657; 1.394)" Position="(3.878; 3.246; -0.366)" Interior="true" FOV="32.0">
 
-                              </Body>
-                              <Body _template="SunShield" ModelFrame="BoneSunshieldRight_cdt">
+                    </CameraPos>
+              </CustomizationCameras>
+              <UiDesc UiName="UI_VEHICLE_WS_6900XD_TWIN_NAME" UiDesc="UI_VEHICLE_WS_6900XD_TWIN_DESC" UiIconLogo="WesternStarLogo80" UiIcon40x40="heavyVehicleImg" UiIcon30x30="heavyVehicleImg30" UiIcon328x458="shopImgWStwinStar">
 
-                              </Body>
-                              <Body _template="TieRod" ModelFrame="BoneTieRod_Hinge_R">
-                                <Constraint Name="TieRodSteerR">
-
-                                </Constraint>
-                              </Body>
-                              <Body _template="TieRod" ModelFrame="BoneTieRod_Hinge_L">
-                                <Constraint Name="TieRodSteerL" AxisLocal="(0; 0; -1)">
-
-                                </Constraint>
-                              </Body>
-                              <Body _template="TieRod" ModelFrame="BoneTieRod_Hinge_L1">
-                                <Constraint Name="TieRodSteerL1" AxisLocal="(0; 0; -1)">
-
-                                </Constraint>
-                              </Body>
-                              <Body _template="TieRod" ModelFrame="BoneTieRod_Hinge_R1">
-                                <Constraint Name="TieRodSteerR1">
-
-                                </Constraint>
-                              </Body>
-                              <Body _template="SideMirror" ModelFrame="BoneMirrorLeft_cdt">
-
-                              </Body>
-                              <Body _template="SideMirror" ModelFrame="BoneMirrorRight_cdt">
-
-                              </Body>
-                              <Body ModelFrame="BoneKeyFob_cdt" Mass="0.2">
-                                <Constraint Type="Hinge" MaxLimit="50" PivotOffset="(0; 0; 0)" AxisLocal="(1; 0; 0)" MinLimit="-50">
-                                    <Motor Spring=".001" Type="Spring" Damping="0.001">
-
-                                    </Motor>
-                                </Constraint>
-                              </Body>
-                              <Body ModelFrame="BoneRadioWireHinge_cdt" Mass="1">
-                                <Constraint MinLimit="-40" Type="Hinge" MaxLimit="25" AxisLocal="(0; 0; 1)">
-                                    <Motor Spring=".0001" Type="Spring" Damping="0.001">
-
-                                    </Motor>
-                                </Constraint>
-                                <Body ModelFrame="BoneRadioWirePrismatic_cdt" Mass="0.02">
-                                      <Constraint MinLimit="-0.1" Type="Prismatic" MaxLimit="0.1" AxisLocal="(0; 1; 0)">
-                                          <Motor Spring="5" Type="Spring" Damping="0.1">
-
-                                          </Motor>
-                                      </Constraint>
-                                </Body>
-                              </Body>
-                              <Body ModelFrame="BoneSeat_cdt" Mass="5">
-                                <Constraint MinLimit="-0.2" Type="Prismatic" MaxLimit="0.1" AxisLocal="(0; 1; 0)">
-                                    <Motor Spring="2000" Type="Spring" Damping="100">
-
-                                    </Motor>
-                                </Constraint>
-                              </Body>
-                        </Body>
-                    </Body>
-                  </Body>
-          </Body>
-      </PhysicsModel>
-      <GameData Country="US" ExcludedCargoTypes="CargoPlane, CargoWing1, CargoWing2" Price="90300" UnlockByRank="1" UnlockByExploration="false">
-            <CustomizationCameras>
-                  <CameraPos Interior="true" Position="(6.963; 6.154; 0.013)" FOV="32.0" InterestPosition="(4.152; 2.538; -0.812)" Name="roof_sticker">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(4.539; 2.753; -0.547)" FOV="32.0" InterestPosition="(6.888; 5.658; 2.147)" Name="sticker_1">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.314; 3.258; 0)" Name="addon_1" MaxXRotation="360" Position="(9.801; 5.301; -2.523)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.591; 2.162; 0)" Name="addon_2" MaxXRotation="360" Position="(9.949; 3.893; -3.787)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(3.878; 3.246; -0.366)" FOV="32.0" InterestPosition="(6.006; 2.657; 1.394)" Name="mirror_mount">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.601; 1.97; 0)" Name="side_r" MaxXRotation="360" Position="(3.352; 1.747; -7.216)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(4.431; 3.204; -0.187)" FOV="32.0" InterestPosition="(6.006; 1.516; 1.742)" Name="sticker">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(8.755; 3.874; 0.771)" FOV="32.0" InterestPosition="(4.188; 2.739; -0.925)" Name="glass_sticker">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(3.448; 2.703; 2.894)" FOV="32.0" InterestPosition="(5.985; 2.115; 0.826)" Name="door_r_sticker">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.44; 2.399; -0)" Name="roof" MaxXRotation="360" Position="(-1.623; 5.6; -4.08)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(9.710; 5.634; -0.279)" FOV="32.0" InterestPosition="(5.211; 0.662; -0.518)" Name="capote_sticker">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.028; 1.818; 0)" Name="hoods" MaxXRotation="360" Position="(14.108; 1.267; -4.602)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(4.642; 3.001; -0.596)" FOV="32.0" InterestPosition="(3.255; 3.424; 3.219)" Name="sticker_2">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.426; 1.664; 0)" Name="side_l" MaxXRotation="360" Position="(-0.932; 2.13; -4.911)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(4.48; 3.034; -0.203)" FOV="32.0" InterestPosition="(6.006; 2.143; 1.603)" Name="bubble_head">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(4.388; 1; -0)" Name="wheels" MaxXRotation="360" Position="(8.845; 1.705; -6.183)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(5.028; 1.818; 0)" Name="default" MaxXRotation="360" Position="(14.108; 1.267; -4.602)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos InterestPosition="(0.788; 1.117; -0)" Name="rear" MaxXRotation="360" Position="(-0.701; 2.508; -4.833)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(3.521; 2.549; -3.022)" FOV="32.0" InterestPosition="(4.101; 2.223; -0.174)" Name="door_l_sticker">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(9.026; 2.923; -1.643)" FOV="32.0" InterestPosition="(7.974; 2.607; -1.643)" Name="hood_ornament">
-
-                  </CameraPos>
-                  <CameraPos Interior="true" Position="(3.878; 3.246; -0.366)" FOV="32.0" InterestPosition="(6.006; 2.657; 1.394)" Name="curtain">
-
-                  </CameraPos>
-            </CustomizationCameras>
-                <CraneSocket Pos="(7.981; 1.048; -0.053)" ParentFrame="BoneCabin">
-
-                </CraneSocket>
-                <CraneSocket Pos="(-7.786; 0.732; 0)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(1.616; 1.71; 1.45)">
-
-                </CraneSocket>
-                <CraneSocket Pos="(1.616; 1.71; -1.45)">
-
-                </CraneSocket>
-            <AddonSlots OffsetStep="(-2.559; 0; 0)" ParentFrames="BoneCabin_cdt,BoneChassis2_cdt,BoneChassis1_cdt,BoneChassis_cdt" InitialOffset="(1.157; 1.86; 0)" Quantity="4">
-
-            </AddonSlots>
+              </UiDesc>
                     <AddonSockets>
-                      <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="Ws6900xdTwinSpareWheel">
+                      <Socket Offset="(0; 0; 0)" Names="Ws6900xdTwinSpareWheel" ParentFrame="BoneChassis_cdt">
                           <ExtraParent Frame="BoneCabin_cdt">
 
                           </ExtraParent>
                       </Socket>
                     </AddonSockets>
                     <AddonSockets DefaultAddon="ws_6900xd_twin_bumper_default">
-                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="WS6900XDTwinBumper">
+                      <Socket Offset="(0; 0; 0)" Names="WS6900XDTwinBumper" ParentFrame="BoneCabin_cdt">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets DefaultAddon="ws_6900xd_twin_visor_default">
-                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="WS6900XDTwinVisor">
+                      <Socket Offset="(0; 0; 0)" Names="WS6900XDTwinVisor" ParentFrame="BoneCabin_cdt">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets>
-                        <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="WS6900XDTwinSpotLight1">
+                        <Socket Offset="(0; 0; 0)" Names="WS6900XDTwinSpotLight1" ParentFrame="BoneCabin_cdt">
 
                         </Socket>
-                        <Socket NamesBlock="WS6900XDTwinBeacon" Names="WS6900XDTwinSpotLight2" ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)">
+                        <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="WS6900XDTwinSpotLight2" NamesBlock="WS6900XDTwinBeacon">
 
                         </Socket>
                     </AddonSockets>
                     <AddonSockets DefaultAddon="ws_6900xd_twin_beacon_default">
-                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="WS6900XDTwinBeacon">
+                      <Socket Offset="(0; 0; 0)" Names="WS6900XDTwinBeacon" ParentFrame="BoneCabin_cdt">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets DefaultAddon="ws_6900xd_twin_gabarite_default">
-                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="WS6900XDTwinGabarite">
+                      <Socket Offset="(0; 0; 0)" Names="WS6900XDTwinGabarite" ParentFrame="BoneCabin_cdt">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets DefaultAddon="ws_6900xd_twin_exhaust_default">
-                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="WS6900XDTwinExhaust">
+                      <Socket Offset="(0; 0; 0)" Names="WS6900XDTwinExhaust" ParentFrame="BoneCabin_cdt">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets DefaultAddon="ws_6900xd_twin_horn_default">
-                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="WS6900XDTwinHorn">
+                      <Socket Offset="(0; 0; 0)" Names="WS6900XDTwinHorn" ParentFrame="BoneCabin_cdt">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets DefaultAddon="ws_6900xd_twin_snorkel_default">
-                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="WS6900XDTwinSnorkel">
+                      <Socket Offset="(0; 0; 0)" Names="WS6900XDTwinSnorkel" ParentFrame="BoneCabin_cdt">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets DefaultAddon="ws_6900xd_twin_diff_lock_default">
-                      <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="ws_6900xd_twinDiffLock">
+                      <Socket Offset="(0; 0; 0)" Names="ws_6900xd_twinDiffLock" ParentFrame="BoneChassis_cdt">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets>
-                      <Socket Names="WS6900XDTwinSticker_1x1_01" InCockpit="true" ParentFrame="BoneSunshieldLeft_cdt" Offset="(0; 0; 0)">
+                      <Socket ParentFrame="BoneSunshieldLeft_cdt" Offset="(0; 0; 0)" Names="WS6900XDTwinSticker_1x1_01" InCockpit="true">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets>
-                      <Socket Names="WS6900XDTwinSticker_1x1_02" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)">
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="WS6900XDTwinSticker_1x1_02" InCockpit="true">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets>
-                      <Socket Names="WS6900XDTwinSticker_1x1_03" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)">
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="WS6900XDTwinSticker_1x1_03" InCockpit="true">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets>
-                      <Socket Names="WS6900XDTwinSticker_1x2_01" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)">
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="WS6900XDTwinSticker_1x2_01" InCockpit="true">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets>
-                      <Socket Names="WS6900XDTwinSticker_1x4_01" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)">
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="WS6900XDTwinSticker_1x4_01" InCockpit="true">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets>
-                      <Socket Names="ws6900XdTwinSticker_GlassTop" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)">
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="ws6900XdTwinSticker_GlassTop" InCockpit="true">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets>
-                      <Socket Names="ws6900XdTwinSticker_GlassBottom" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)">
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="ws6900XdTwinSticker_GlassBottom" InCockpit="true">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets>
-                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="ws6900XdTwinSticker_Door_L">
+                      <Socket Offset="(0; 0; 0)" Names="ws6900XdTwinSticker_Door_L" ParentFrame="BoneCabin_cdt">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets>
-                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="ws6900XdTwinSticker_Door_R">
+                      <Socket Offset="(0; 0; 0)" Names="ws6900XdTwinSticker_Door_R" ParentFrame="BoneCabin_cdt">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets>
-                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="ws6900XdTwinSticker_Roof">
+                      <Socket Offset="(0; 0; 0)" Names="ws6900XdTwinSticker_Roof" ParentFrame="BoneCabin_cdt">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets>
-                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="ws6900XdTwinSticker_Capote">
+                      <Socket Offset="(0; 0; 0)" Names="ws6900XdTwinSticker_Capote" ParentFrame="BoneCabin_cdt">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets DefaultAddon="ws_6900xd_twin_transferbox_default">
-                      <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="WS6900XDTwinTransferBox">
+                      <Socket Offset="(0; 0; 0)" Names="WS6900XDTwinTransferBox" ParentFrame="BoneChassis_cdt">
                             <ExtraParent Frame="BoneChassis1_cdt">
 
                             </ExtraParent>
@@ -413,563 +254,722 @@
                       </Socket>
                     </AddonSockets>
                     <AddonSockets>
-                      <Socket Names="StuffDashboard" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(5.397; 2.667; -0.131)">
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(5.397; 2.667; -0.131)" Names="StuffDashboard" InCockpit="true">
 
                       </Socket>
                     </AddonSockets>
                     <AddonSockets>
-                        <Socket Names="StuffAirfreshener" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(5.282; 3.23; 0)">
+                        <Socket ParentFrame="BoneCabin_cdt" Offset="(5.282; 3.23; 0)" Names="StuffAirfreshener" InCockpit="true">
 
                         </Socket>
-                        <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="StuffCurtainWS6900XDTwin">
+                        <Socket ParentFrame="BoneCabin_cdt" Names="StuffCurtainWS6900XDTwin" InCockpit="true">
 
                         </Socket>
                     </AddonSockets>
                     <AddonSockets>
-                      <Socket ParentFrame="BoneCabin_cdt" Names="StuffHoodWS6900XDTwin">
+                      <Socket Names="StuffHoodWS6900XDTwin" ParentFrame="BoneCabin_cdt">
 
                       </Socket>
                     </AddonSockets>
-                      <WinchSocket Pos="(7.981; 1.048; -0.053)" ParentFrame="BoneCabin">
+                      <CraneSocket Pos="(7.981; 1.048; -0.053)" ParentFrame="BoneCabin">
 
-                      </WinchSocket>
-                      <WinchSocket Pos="(-7.786; 0.732; 0)">
+                      </CraneSocket>
+                      <CraneSocket Pos="(-7.786; 0.732; 0)">
 
-                      </WinchSocket>
-                      <WinchSocket Pos="(1.616; 1.71; 1.45)">
+                      </CraneSocket>
+                      <CraneSocket Pos="(1.616; 1.71; 1.45)">
 
-                      </WinchSocket>
-                      <WinchSocket Pos="(1.616; 1.71; -1.45)">
+                      </CraneSocket>
+                      <CraneSocket Pos="(1.616; 1.71; -1.45)">
 
-                      </WinchSocket>
-            <UiDesc UiDesc="UI_VEHICLE_WS_6900XD_TWIN_DESC" UiIcon30x30="heavyVehicleImg30" UiName="UI_VEHICLE_WS_6900XD_TWIN_NAME" UiIconLogo="WesternStarLogo80" UiIcon40x40="heavyVehicleImg" UiIcon328x458="shopImgWStwinStar">
+                      </CraneSocket>
+              <AddonSlots OffsetStep="(-2.559; 0; 0)" InitialOffset="(1.157; 1.86; 0)" ParentFrames="BoneCabin_cdt,BoneChassis2_cdt,BoneChassis1_cdt,BoneChassis_cdt" Quantity="4">
 
-            </UiDesc>
-      </GameData>
-      <ControlledConstraints>
-                <Constraint Name="TieRodSteerR" IsLinkedSteering="true" Id="chassis_steer">
+              </AddonSlots>
+                          <WinchSocket Pos="(7.981; 1.048; -0.053)" ParentFrame="BoneCabin">
 
-                </Constraint>
-                <Constraint Name="TieRodSteerL" IsLinkedSteering="true" Id="chassis_steer">
+                          </WinchSocket>
+                          <WinchSocket Pos="(-7.786; 0.732; 0)">
 
-                </Constraint>
-                <Constraint Name="TieRodSteerR1" IsLinkedSteering="true" Id="chassis_steer">
+                          </WinchSocket>
+                          <WinchSocket Pos="(1.616; 1.71; 1.45)">
 
-                </Constraint>
-                <Constraint Name="TieRodSteerL1" IsLinkedSteering="true" Id="chassis_steer">
+                          </WinchSocket>
+                          <WinchSocket Pos="(1.616; 1.71; -1.45)">
 
-                </Constraint>
-      </ControlledConstraints>
-      <HeadLight ParentFrame="BoneCabin_cdt" _template="Default" Pos="(8.318; 1.103; 0)">
+                          </WinchSocket>
+        </GameData>
+        <PhysicsModel Mesh="trucks/ws_6900xd_twin">
+                <Body NetSync="pv" CenterOfMassOffset="(0; 0; 0)" ModelFrame="BoneChassis_cdt" Mass="10200" ImpactType="Truck">
+                      <Body ModelFrame="BoneCord1_cdt" Mass="2" Collisions="None">
+                        <Constraint Type="Prismatic" MaxLimit="1.0" AxisLocal="(0; 0; 1)" MinLimit="-0.1">
+                            <Motor Spring="1.0" Damping="25" Type="Spring">
 
-      </HeadLight>
-      <Landmark Mesh="landmarks/ws_6900xd_twin_lmk" MaxScale="2.5" MinScale="1.5">
+                            </Motor>
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneCord2_cdt" Mass="2" Collisions="None">
+                        <Constraint Type="Prismatic" MaxLimit="0.4" AxisLocal="(0; 0; 1)" MinLimit="-1.2">
+                            <Motor Spring="1.0" Damping="25" Type="Spring">
 
-      </Landmark>
-      <AutomaticIK>
-                      <IKBone ParentFrame="BoneAxle3" ModelFrame="BoneRearSuspensionL">
-                        <IKBone AttachToFrame="BoneAxle4" AttachOffset="(0; 0; 0)" ModelFrame="BoneRearSuspensionL1">
-                            <IKJoint AxisLocal="(0; 1; 0)" Type="Slider">
+                            </Motor>
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneLeftMudguard_cdt" _template="Mudguard">
+                        <Constraint MinLimit="-45" MaxLimit="5" AxisLocal="(0; 0; 1)">
+                            <Motor Spring="30" Damping="0" Type="Spring">
 
-                            </IKJoint>
-                        </IKBone>
-                        <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge">
+                            </Motor>
+                        </Constraint>
+                        <Body ModelFrame="BoneLeftMudguard2_cdt" _template="Mudguard">
+                              <Constraint MinLimit="-35" MaxLimit="9" AxisLocal="(0; 0; 1)">
+                                  <Motor Spring="10" Damping="0" Type="Spring">
 
-                        </IKJoint>
-                      </IKBone>
-                      <IKBone ParentFrame="BoneAxle3" ModelFrame="BoneRearSuspensionR">
-                        <IKBone AttachToFrame="BoneAxle4" AttachOffset="(0; 0; 0)" ModelFrame="BoneRearSuspensionR1">
-                            <IKJoint AxisLocal="(0; 1; 0)" Type="Slider">
+                                  </Motor>
+                              </Constraint>
+                        </Body>
+                      </Body>
+                      <Body ModelFrame="BoneRightMudguard_cdt" AngularDamping="1.0" _template="Mudguard">
+                        <Constraint MinLimit="-45" MaxLimit="5" AxisLocal="(0; 0; 1)">
+                            <Motor Spring="5" Damping="0" Type="Spring">
 
-                            </IKJoint>
-                        </IKBone>
-                        <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge">
+                            </Motor>
+                        </Constraint>
+                        <Body ModelFrame="BoneRightMudguard2_cdt" _template="Mudguard">
+                              <Constraint MinLimit="-35" MaxLimit="9" AxisLocal="(0; 0; 1)">
+                                  <Motor Spring="10" Damping="0" Type="Spring">
 
-                        </IKJoint>
-                      </IKBone>
-      </AutomaticIK>
-      <ModelAttachments>
-                      <StopSignals>
-                            <Flare Size="0.5" _template="StopSignal" Pos="(-7.894; 1.329; -0.319)">
+                                  </Motor>
+                              </Constraint>
+                        </Body>
+                      </Body>
+                      <Body ModelFrame="BoneRightMudguard3_cdt" _template="Mudguard">
+                        <Constraint MinLimit="-30" MaxLimit="45" AxisLocal="(0; 0; 1)">
+                            <Motor Spring="30" Damping="0" Type="Spring">
 
-                            </Flare>
-                            <Flare Size="0.5" _template="StopSignal" Pos="(-7.894; 1.329; 0.319)">
+                            </Motor>
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneLeftMudguard3_cdt" _template="Mudguard">
+                        <Constraint MinLimit="-30" MaxLimit="45" AxisLocal="(0; 0; 1)">
+                            <Motor Spring="30" Damping="0" Type="Spring">
 
-                            </Flare>
-                          <Light _template="StopSignal" Pos="(-8.079; 1.21; 0)">
+                            </Motor>
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneFlapLeft1_cdt" _template="Mudguard">
+                        <Constraint MinLimit="-35" MaxLimit="6" AxisLocal="(1; 0; 0)">
+
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneFlapLeft2_cdt" _template="Mudguard">
+                        <Constraint MinLimit="-25" MaxLimit="5" AxisLocal="(1; 0; 0)">
+
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneFlapLeft3_cdt" _template="Mudguard">
+                        <Constraint MinLimit="-30" MaxLimit="7" AxisLocal="(1; 0; 0)">
+
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneFlapRight1_cdt" _template="Mudguard">
+                        <Constraint MinLimit="-40" MaxLimit="5" AxisLocal="(-1; 0; 0)">
+
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneFlapRight2_cdt" _template="Mudguard">
+                        <Constraint MinLimit="-27" MaxLimit="7" AxisLocal="(-1; 0; 0)">
+
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneFlapRight3_cdt" _template="Mudguard">
+                        <Constraint MinLimit="-33" MaxLimit="6" AxisLocal="(-1; 0; 0)">
+
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneFlapRight4_cdt" _template="Mudguard">
+                        <Constraint MinLimit="-38" MaxLimit="9" AxisLocal="(-1; 0; 0)">
+
+                        </Constraint>
+                      </Body>
+                      <Body ModelFrame="BoneFlapRight5_cdt" _template="Mudguard">
+                        <Constraint MinLimit="-25" MaxLimit="6" AxisLocal="(-1; 0; 0)">
+
+                        </Constraint>
+                      </Body>
+                      <Body NetSync="pv" ModelFrame="BoneChassis1_cdt" _template="Twist">
+                        <Body NetSync="pv" ModelFrame="BoneChassis2_cdt" _template="Twist">
+                            <Body _template="Twist" CenterOfMassOffset="(0.467; -0.3; 0)" NetSync="pv" ModelFrame="BoneCabin_cdt">
+                                  <Body ModelFrame="BoneRightMudguard4_cdt" _template="Mudguard">
+                                    <Constraint MinLimit="-3" MaxLimit="17" AxisLocal="(0; 0; 1)">
+                                        <Motor Spring="30" Damping="0" Type="Spring">
+
+                                        </Motor>
+                                    </Constraint>
+                                  </Body>
+                                  <Body ModelFrame="BoneLeftMudguard4_cdt" _template="Mudguard">
+                                    <Constraint MinLimit="-3" MaxLimit="17" AxisLocal="(0; 0; 1)">
+                                        <Motor Spring="30" Damping="0" Type="Spring">
+
+                                        </Motor>
+                                    </Constraint>
+                                  </Body>
+                                  <Body ModelFrame="BoneRightMudguard5_cdt" _template="Mudguard">
+                                    <Constraint MinLimit="-50" MaxLimit="50" AxisLocal="(0; 0; 1)">
+                                        <Motor Spring="30" Damping="0" Type="Spring">
+
+                                        </Motor>
+                                    </Constraint>
+                                  </Body>
+                                  <Body ModelFrame="BoneLeftMudguard5_cdt" _template="Mudguard">
+                                    <Constraint MinLimit="-50" MaxLimit="50" AxisLocal="(0; 0; 1)">
+                                        <Motor Spring="30" Damping="0" Type="Spring">
+
+                                        </Motor>
+                                    </Constraint>
+                                  </Body>
+                                  <Body ModelFrame="BoneSunshieldLeft_cdt" _template="SunShield">
+
+                                  </Body>
+                                  <Body ModelFrame="BoneSunshieldRight_cdt" _template="SunShield">
+
+                                  </Body>
+                                  <Body ModelFrame="BoneTieRod_Hinge_R" _template="TieRod">
+                                    <Constraint Name="TieRodSteerR">
+
+                                    </Constraint>
+                                  </Body>
+                                  <Body ModelFrame="BoneTieRod_Hinge_L" _template="TieRod">
+                                    <Constraint Name="TieRodSteerL" AxisLocal="(0; 0; -1)">
+
+                                    </Constraint>
+                                  </Body>
+                                  <Body ModelFrame="BoneTieRod_Hinge_L1" _template="TieRod">
+                                    <Constraint Name="TieRodSteerL1" AxisLocal="(0; 0; -1)">
+
+                                    </Constraint>
+                                  </Body>
+                                  <Body ModelFrame="BoneTieRod_Hinge_R1" _template="TieRod">
+                                    <Constraint Name="TieRodSteerR1">
+
+                                    </Constraint>
+                                  </Body>
+                                  <Body ModelFrame="BoneMirrorLeft_cdt" _template="SideMirror">
+
+                                  </Body>
+                                  <Body ModelFrame="BoneMirrorRight_cdt" _template="SideMirror">
+
+                                  </Body>
+                                  <Body Mass="0.2" ModelFrame="BoneKeyFob_cdt">
+                                    <Constraint Type="Hinge" MaxLimit="50" AxisLocal="(1; 0; 0)" MinLimit="-50" PivotOffset="(0; 0; 0)">
+                                        <Motor Spring=".001" Damping="0.001" Type="Spring">
+
+                                        </Motor>
+                                    </Constraint>
+                                  </Body>
+                                  <Body Mass="1" ModelFrame="BoneRadioWireHinge_cdt">
+                                    <Constraint Type="Hinge" MaxLimit="25" AxisLocal="(0; 0; 1)" MinLimit="-40">
+                                        <Motor Spring=".0001" Damping="0.001" Type="Spring">
+
+                                        </Motor>
+                                    </Constraint>
+                                    <Body Mass="0.02" ModelFrame="BoneRadioWirePrismatic_cdt">
+                                          <Constraint Type="Prismatic" MaxLimit="0.1" AxisLocal="(0; 1; 0)" MinLimit="-0.1">
+                                              <Motor Spring="5" Damping="0.1" Type="Spring">
+
+                                              </Motor>
+                                          </Constraint>
+                                    </Body>
+                                  </Body>
+                                  <Body Mass="5" ModelFrame="BoneSeat_cdt">
+                                    <Constraint Type="Prismatic" MaxLimit="0.1" AxisLocal="(0; 1; 0)" MinLimit="-0.2">
+                                        <Motor Spring="2000" Damping="100" Type="Spring">
+
+                                        </Motor>
+                                    </Constraint>
+                                  </Body>
+                            </Body>
+                        </Body>
+                      </Body>
+                </Body>
+                <NetSync Legacy="false">
+
+                </NetSync>
+        </PhysicsModel>
+        <ControlledConstraints>
+                    <Constraint IsLinkedSteering="true" Id="chassis_steer" Name="TieRodSteerR">
+
+                    </Constraint>
+                    <Constraint IsLinkedSteering="true" Id="chassis_steer" Name="TieRodSteerL">
+
+                    </Constraint>
+                    <Constraint IsLinkedSteering="true" Id="chassis_steer" Name="TieRodSteerR1">
+
+                    </Constraint>
+                    <Constraint IsLinkedSteering="true" Id="chassis_steer" Name="TieRodSteerL1">
+
+                    </Constraint>
+        </ControlledConstraints>
+        <ModelAttachments>
+                    <HeadLight>
+                          <Flare Pos="(7.206; 1.437; -0.972)" _template="HeadLight" ParentFrame="BoneCabin_cdt" Size="0.4" DirAngle="135">
+
+                          </Flare>
+                          <Flare Pos="(7.206; 1.437; 0.972)" _template="HeadLight" ParentFrame="BoneCabin_cdt" Size="0.4" DirAngle="135">
+
+                          </Flare>
+                          <Flare Pos="(7.192; 1.437; -1.067)" ParentFrame="BoneCabin_cdt" _template="BlueStreak">
+
+                          </Flare>
+                          <Flare Pos="(7.192; 1.437; 1.067)" ParentFrame="BoneCabin_cdt" _template="BlueStreak">
+
+                          </Flare>
+                            <Model Org="(7.206; 1.437; -1.156)" ParentFrame="BoneCabin_cdt" _template="HeadLightRay">
+
+                            </Model>
+                            <Model Org="(7.206; 1.437; 1.156)" ParentFrame="BoneCabin_cdt" _template="HeadLightRay">
+
+                            </Model>
+                    </HeadLight>
+                    <StopSignals>
+                          <Light Pos="(-8.079; 1.21; 0)" _template="StopSignal">
 
                           </Light>
-                      </StopSignals>
-                      <Ignition>
-                              <Flare ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall" Pos="(3.901; 3.35; 0)">
+                              <Flare Pos="(-7.894; 1.329; -0.319)" Size="0.5" _template="StopSignal">
 
                               </Flare>
-                              <Flare ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall" Pos="(3.901; 3.35; -0.165)">
+                              <Flare Pos="(-7.894; 1.329; 0.319)" Size="0.5" _template="StopSignal">
 
                               </Flare>
-                              <Flare ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall" Pos="(3.901; 3.35; 0.165)">
+                    </StopSignals>
+                    <Ignition>
+                              <Light Pos="(7.361; 1.437; -1.1)" _template="IgnitionSignalWhite" Color="g(255; 205; 145) x 1" ParentFrame="BoneCabin_cdt">
 
-                              </Flare>
-                              <Flare Color="g(225; 210; 190) x 0.5" Pos="(7.206; 1.437; -0.972)" ParentFrame="BoneCabin_cdt" Size="0.25" _template="IgnitionSignalWhite">
+                              </Light>
+                              <Light Pos="(7.361; 1.437; 1.1)" _template="IgnitionSignalWhite" Color="g(255; 205; 145) x 1" ParentFrame="BoneCabin_cdt">
 
-                              </Flare>
-                              <Flare Color="g(225; 210; 190) x 0.5" Pos="(7.206; 1.437; 0.972)" ParentFrame="BoneCabin_cdt" Size="0.25" _template="IgnitionSignalWhite">
+                              </Light>
+                              <Light Pos="(-8.25; 1.025; 0)" Color="g(255; 0; 0) x 1" _template="IgnitionSignalRed">
 
-                              </Flare>
-                              <Flare Color="g(235; 210; 185) x 0.5" Pos="(7.206; 1.437; -1.156)" ParentFrame="BoneCabin_cdt" Size="0.25" _template="IgnitionSignalWhite">
+                              </Light>
+                                <Flare Pos="(3.901; 3.35; 0)" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall">
 
-                              </Flare>
-                              <Flare Color="g(235; 210; 185) x 0.5" Pos="(7.206; 1.437; 1.156)" ParentFrame="BoneCabin_cdt" Size="0.25" _template="IgnitionSignalWhite">
+                                </Flare>
+                                <Flare Pos="(3.901; 3.35; -0.165)" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall">
 
-                              </Flare>
-                              <Flare Dir="(0; 0; -1)" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalOrange" Pos="(6.998; 1.593; -1.39)">
+                                </Flare>
+                                <Flare Pos="(3.901; 3.35; 0.165)" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall">
 
-                              </Flare>
-                              <Flare Dir="(0; 0; 1)" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalOrange" Pos="(6.998; 1.593; 1.39)">
+                                </Flare>
+                                <Flare Pos="(7.206; 1.437; -0.972)" _template="IgnitionSignalWhite" Color="g(225; 210; 190) x 0.5" Size="0.25" ParentFrame="BoneCabin_cdt">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall" Pos="(3.906; 3.35; -0.802)">
+                                </Flare>
+                                <Flare Pos="(7.206; 1.437; 0.972)" _template="IgnitionSignalWhite" Color="g(225; 210; 190) x 0.5" Size="0.25" ParentFrame="BoneCabin_cdt">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall" Pos="(3.906; 3.349; -0.653)">
+                                </Flare>
+                                <Flare Pos="(7.206; 1.437; -1.156)" _template="IgnitionSignalWhite" Color="g(235; 210; 185) x 0.5" Size="0.25" ParentFrame="BoneCabin_cdt">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall" Pos="(3.906; 3.349; -0.505)">
+                                </Flare>
+                                <Flare Pos="(7.206; 1.437; 1.156)" _template="IgnitionSignalWhite" Color="g(235; 210; 185) x 0.5" Size="0.25" ParentFrame="BoneCabin_cdt">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall" Pos="(3.906; 3.349; 0.505)">
+                                </Flare>
+                                <Flare Pos="(6.998; 1.593; -1.39)" Dir="(0; 0; -1)" _template="IgnitionSignalOrange" ParentFrame="BoneCabin_cdt">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall" Pos="(3.906; 3.349; 0.653)">
+                                </Flare>
+                                <Flare Pos="(6.998; 1.593; 1.39)" Dir="(0; 0; 1)" _template="IgnitionSignalOrange" ParentFrame="BoneCabin_cdt">
 
-                              </Flare>
-                              <Flare ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall" Pos="(3.906; 3.35; 0.802)">
+                                </Flare>
+                                <Flare Pos="(3.906; 3.35; -0.802)" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall">
 
-                              </Flare>
-                              <Flare Dir="(0.707; 0; 0.707)" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalOrange" Pos="(1.454; 1.578; 1.383)">
+                                </Flare>
+                                <Flare Pos="(3.906; 3.349; -0.653)" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall">
 
-                              </Flare>
-                              <Flare Dir="(-0.707; 0; 0.707)" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalOrange" Pos="(1.343; 1.578; 1.384)">
+                                </Flare>
+                                <Flare Pos="(3.906; 3.349; -0.505)" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall">
 
-                              </Flare>
-                              <Flare Pos="(-3.912; 1.578; 1.383)" _template="IgnitionSignalOrange" Dir="(0.707; 0; 0.707)">
+                                </Flare>
+                                <Flare Pos="(3.906; 3.349; 0.505)" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall">
 
-                              </Flare>
-                              <Flare Pos="(-4.024; 1.578; 1.384)" _template="IgnitionSignalOrange" Dir="(-0.707; 0; 0.707)">
+                                </Flare>
+                                <Flare Pos="(3.906; 3.349; 0.653)" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall">
 
-                              </Flare>
-                              <Flare Pos="(-3.912; 1.578; -1.383)" _template="IgnitionSignalOrange" Dir="(0.707; 0; -0.707)">
+                                </Flare>
+                                <Flare Pos="(3.906; 3.35; 0.802)" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalRedSmall">
 
-                              </Flare>
-                              <Flare Pos="(-4.024; 1.578; -1.384)" _template="IgnitionSignalOrange" Dir="(-0.707; 0; -0.707)">
+                                </Flare>
+                                <Flare Pos="(1.454; 1.578; 1.383)" Dir="(0.707; 0; 0.707)" _template="IgnitionSignalOrange" ParentFrame="BoneCabin_cdt">
 
-                              </Flare>
-                              <Flare _template="IgnitionSignalRedSmall" Pos="(-7.86; 1.498; -1.316)">
+                                </Flare>
+                                <Flare Pos="(1.343; 1.578; 1.384)" Dir="(-0.707; 0; 0.707)" _template="IgnitionSignalOrange" ParentFrame="BoneCabin_cdt">
 
-                              </Flare>
-                              <Flare _template="IgnitionSignalRedSmall" Pos="(-7.837; 1.501; -0.159)">
+                                </Flare>
+                                <Flare Pos="(-3.912; 1.578; 1.383)" Dir="(0.707; 0; 0.707)" _template="IgnitionSignalOrange">
 
-                              </Flare>
-                              <Flare _template="IgnitionSignalRedSmall" Pos="(-7.837; 1.501; 0)">
+                                </Flare>
+                                <Flare Pos="(-4.024; 1.578; 1.384)" Dir="(-0.707; 0; 0.707)" _template="IgnitionSignalOrange">
 
-                              </Flare>
-                              <Flare _template="IgnitionSignalRedSmall" Pos="(-7.837; 1.501; 0.159)">
+                                </Flare>
+                                <Flare Pos="(-3.912; 1.578; -1.383)" Dir="(0.707; 0; -0.707)" _template="IgnitionSignalOrange">
 
-                              </Flare>
-                              <Flare _template="IgnitionSignalRedSmall" Pos="(-7.86; 1.498; 1.316)">
+                                </Flare>
+                                <Flare Pos="(-4.024; 1.578; -1.384)" Dir="(-0.707; 0; -0.707)" _template="IgnitionSignalOrange">
 
-                              </Flare>
-                              <Flare Size="0.3" _template="IgnitionSignalRedSmall" Pos="(-7.894; 1.329; -0.319)">
+                                </Flare>
+                                <Flare Pos="(-7.86; 1.498; -1.316)" _template="IgnitionSignalRedSmall">
 
-                              </Flare>
-                              <Flare Size="0.3" _template="IgnitionSignalRedSmall" Pos="(-7.894; 1.329; 0.319)">
+                                </Flare>
+                                <Flare Pos="(-7.837; 1.501; -0.159)" _template="IgnitionSignalRedSmall">
 
-                              </Flare>
-                                <Light Color="g(255; 205; 145) x 1" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalWhite" Pos="(7.361; 1.437; -1.1)">
+                                </Flare>
+                                <Flare Pos="(-7.837; 1.501; 0)" _template="IgnitionSignalRedSmall">
+
+                                </Flare>
+                                <Flare Pos="(-7.837; 1.501; 0.159)" _template="IgnitionSignalRedSmall">
+
+                                </Flare>
+                                <Flare Pos="(-7.86; 1.498; 1.316)" _template="IgnitionSignalRedSmall">
+
+                                </Flare>
+                                <Flare Pos="(-7.894; 1.329; -0.319)" Size="0.3" _template="IgnitionSignalRedSmall">
+
+                                </Flare>
+                                <Flare Pos="(-7.894; 1.329; 0.319)" Size="0.3" _template="IgnitionSignalRedSmall">
+
+                                </Flare>
+                    </Ignition>
+                    <ReverseSignals>
+                                <Light Pos="(-7.904; 1.091; 0)" _template="ReverseSignal">
 
                                 </Light>
-                                <Light Color="g(255; 205; 145) x 1" ParentFrame="BoneCabin_cdt" _template="IgnitionSignalWhite" Pos="(7.361; 1.437; 1.1)">
+                                <Light Pos="(3.922; 3.486; -1.035)" ParentFrame="BoneCabin_cdt" _template="ReverseSignal">
 
                                 </Light>
-                                <Light Pos="(-8.25; 1.025; 0)" _template="IgnitionSignalRed" Color="g(255; 0; 0) x 1">
+                                <Light Pos="(3.922; 3.486; 1.035)" ParentFrame="BoneCabin_cdt" _template="ReverseSignal">
 
                                 </Light>
-                      </Ignition>
-                      <HeadLight>
-                                <Flare ParentFrame="BoneCabin_cdt" DirAngle="135" Size="0.4" _template="HeadLight" Pos="(7.206; 1.437; -0.972)">
+                                <Light Pos="(3.814; 3.356; 0.307)" Dir="(-0.587; -0.652; -0.48)" _template="ReverseSignal" ParentFrame="BoneCabin_cdt">
 
-                                </Flare>
-                                <Flare ParentFrame="BoneCabin_cdt" DirAngle="135" Size="0.4" _template="HeadLight" Pos="(7.206; 1.437; 0.972)">
-
-                                </Flare>
-                                <Flare ParentFrame="BoneCabin_cdt" _template="BlueStreak" Pos="(7.192; 1.437; -1.067)">
-
-                                </Flare>
-                                <Flare ParentFrame="BoneCabin_cdt" _template="BlueStreak" Pos="(7.192; 1.437; 1.067)">
-
-                                </Flare>
-                                  <Model Org="(7.206; 1.437; -1.156)" _template="HeadLightRay" ParentFrame="BoneCabin_cdt">
-
-                                  </Model>
-                                  <Model Org="(7.206; 1.437; 1.156)" _template="HeadLightRay" ParentFrame="BoneCabin_cdt">
-
-                                  </Model>
-                      </HeadLight>
-                      <ReverseSignals>
-                                  <Flare Size="0.7" _template="ReverseSignal" Pos="(-7.904; 1.091; -0.319)">
+                                </Light>
+                                  <Flare Pos="(-7.904; 1.091; -0.319)" Size="0.7" _template="ReverseSignal">
 
                                   </Flare>
-                                  <Flare Size="0.7" _template="ReverseSignal" Pos="(-7.904; 1.091; 0.319)">
+                                  <Flare Pos="(-7.904; 1.091; 0.319)" Size="0.7" _template="ReverseSignal">
 
                                   </Flare>
-                                  <Flare Color="g(220; 220; 255) x 0.05" Pos="(-7.904; 1.091; -0.319)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
+                                  <Flare Pos="(-7.904; 1.091; -0.319)" Dir="(-1; 0; 0)" _template="BlueStreak" Color="g(220; 220; 255) x 0.05" Size="0.4">
 
                                   </Flare>
-                                  <Flare Color="g(220; 220; 255) x 0.05" Pos="(-7.904; 1.091; 0.319)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
+                                  <Flare Pos="(-7.904; 1.091; 0.319)" Dir="(-1; 0; 0)" _template="BlueStreak" Color="g(220; 220; 255) x 0.05" Size="0.4">
 
                                   </Flare>
-                                  <Flare ParentFrame="BoneCabin_cdt" Size="0.2" Pos="(3.922; 3.486; -1.035)" _template="ReverseSignal">
+                                  <Flare Pos="(3.922; 3.486; -1.035)" _template="ReverseSignal" Size="0.2" ParentFrame="BoneCabin_cdt">
 
                                   </Flare>
-                                  <Flare ParentFrame="BoneCabin_cdt" Size="0.2" Pos="(3.922; 3.486; 1.035)" _template="ReverseSignal">
+                                  <Flare Pos="(3.922; 3.486; 1.035)" _template="ReverseSignal" Size="0.2" ParentFrame="BoneCabin_cdt">
 
                                   </Flare>
-                                  <Flare ParentFrame="BoneCabin_cdt" Dir="(-1; 0; 0)" Size="0.6" _template="IgnitionSignalWhite" Pos="(3.922; 3.486; -1.035)">
+                                  <Flare Pos="(3.922; 3.486; -1.035)" Dir="(-1; 0; 0)" _template="IgnitionSignalWhite" Size="0.6" ParentFrame="BoneCabin_cdt">
 
                                   </Flare>
-                                  <Flare ParentFrame="BoneCabin_cdt" Dir="(-1; 0; 0)" Size="0.6" _template="IgnitionSignalWhite" Pos="(3.922; 3.486; 1.035)">
+                                  <Flare Pos="(3.922; 3.486; 1.035)" Dir="(-1; 0; 0)" _template="IgnitionSignalWhite" Size="0.6" ParentFrame="BoneCabin_cdt">
 
                                   </Flare>
-                                  <Flare Color="g(220; 220; 255) x 0.05" ParentFrame="BoneCabin_cdt" Pos="(3.922; 3.486; -1.035)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
+                                  <Flare Pos="(3.922; 3.486; -1.035)" Dir="(-1; 0; 0)" _template="BlueStreak" Color="g(220; 220; 255) x 0.05" Size="0.4" ParentFrame="BoneCabin_cdt">
 
                                   </Flare>
-                                  <Flare Color="g(220; 220; 255) x 0.05" ParentFrame="BoneCabin_cdt" Pos="(3.922; 3.486; 1.035)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
+                                  <Flare Pos="(3.922; 3.486; 1.035)" Dir="(-1; 0; 0)" _template="BlueStreak" Color="g(220; 220; 255) x 0.05" Size="0.4" ParentFrame="BoneCabin_cdt">
 
                                   </Flare>
-                                  <Flare ParentFrame="BoneCabin_cdt" Dir="(-0.587; -0.652; -0.48)" Size="0.2" _template="ReverseSignal" Pos="(3.814; 3.356; 0.307)">
+                                  <Flare Pos="(3.814; 3.356; 0.307)" Dir="(-0.587; -0.652; -0.48)" _template="ReverseSignal" Size="0.2" ParentFrame="BoneCabin_cdt">
 
                                   </Flare>
-                                  <Flare ParentFrame="BoneCabin_cdt" Dir="(-0.587; -0.652; -0.48)" Size="0.6" _template="IgnitionSignalWhite" Pos="(3.814; 3.356; 0.307)">
+                                  <Flare Pos="(3.814; 3.356; 0.307)" Dir="(-0.587; -0.652; -0.48)" _template="IgnitionSignalWhite" Size="0.6" ParentFrame="BoneCabin_cdt">
 
                                   </Flare>
-                                  <Flare Color="g(220; 220; 255) x 0.05" ParentFrame="BoneCabin_cdt" Pos="(3.814; 3.356; 0.307)" Dir="(-0.587; -0.652; -0.48)" Size="0.4" _template="BlueStreak">
+                                  <Flare Pos="(3.814; 3.356; 0.307)" Dir="(-0.587; -0.652; -0.48)" _template="BlueStreak" Color="g(220; 220; 255) x 0.05" Size="0.4" ParentFrame="BoneCabin_cdt">
 
                                   </Flare>
-                                    <Light _template="ReverseSignal" Pos="(-7.904; 1.091; 0)">
+                    </ReverseSignals>
+        </ModelAttachments>
+        <Landmark MaxScale="2.5" Mesh="landmarks/ws_6900xd_twin_lmk" MinScale="1.5">
 
-                                    </Light>
-                                    <Light ParentFrame="BoneCabin_cdt" _template="ReverseSignal" Pos="(3.922; 3.486; -1.035)">
+        </Landmark>
+        <AutomaticIK>
+                          <IKBone ParentFrame="BoneAxle3" ModelFrame="BoneRearSuspensionL">
+                            <IKJoint Type="Hinge" AxisLocal="(0; 0; 1)">
 
-                                    </Light>
-                                    <Light ParentFrame="BoneCabin_cdt" _template="ReverseSignal" Pos="(3.922; 3.486; 1.035)">
+                            </IKJoint>
+                            <IKBone AttachToFrame="BoneAxle4" AttachOffset="(0; 0; 0)" ModelFrame="BoneRearSuspensionL1">
+                                  <IKJoint Type="Slider" AxisLocal="(0; 1; 0)">
 
-                                    </Light>
-                                    <Light Dir="(-0.587; -0.652; -0.48)" ParentFrame="BoneCabin_cdt" _template="ReverseSignal" Pos="(3.814; 3.356; 0.307)">
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ParentFrame="BoneAxle3" ModelFrame="BoneRearSuspensionR">
+                            <IKJoint Type="Hinge" AxisLocal="(0; 0; 1)">
 
-                                    </Light>
-                      </ReverseSignals>
-      </ModelAttachments>
-      <TruckData EngineIconMesh="env/engine_big" EngineStartDelay="3.2" TruckType="HEAVY" ExhaustStartTime="2.8" SteerSpeed="0.024" TruckImage="ws6900tweeensteermchr" DiffLockType="Installed" Responsiveness="0.15" FuelCapacity="360" EngineIconScale="1.5" BackSteerSpeed="0.016">
-                        <Driver ParentFrame="BoneSeat_cdt" SteeringWheelPos="(5.103; 2.594; 0.501)" Pos="(4.704; 2.255; 0.497)" AnimationSet="HeavyTruck">
+                            </IKJoint>
+                            <IKBone AttachToFrame="BoneAxle4" AttachOffset="(0; 0; 0)" ModelFrame="BoneRearSuspensionR1">
+                                  <IKJoint Type="Slider" AxisLocal="(0; 1; 0)">
 
-                        </Driver>
-                        <Shafts>
-                              <Shaft SocketPointB="ShaftWheel2WheelB" SocketPointA="ShaftWheel2WheelA">
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+        </AutomaticIK>
+        <TruckData SteerSpeed="0.024" EngineStartDelay="3.2" EngineIconMesh="env/engine_big" TruckType="HEAVY" Responsiveness="0.15" BackSteerSpeed="0.016" TruckImage="ws6900tweeensteermchr" FuelCapacity="360" DiffLockType="Installed" ExhaustStartTime="2.8" EngineIconScale="1.5">
+                          <Driver Pos="(4.704; 2.255; 0.497)" ParentFrame="BoneSeat_cdt" AnimationSet="HeavyTruck" SteeringWheelPos="(5.103; 2.594; 0.501)">
 
-                              </Shaft>
-                        </Shafts>
-                        <FuelTank DamageCapacity="100">
+                          </Driver>
+                          <SoundsDamage _template="Heavy">
 
-                        </FuelTank>
-                        <Dashboard>
-                                    <Gauge Org="(5.3; 2.46; 0.823)" OutputAngles="(-50;-5)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" Damping="0.9" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.879; 0.39; -0.274)">
+                          </SoundsDamage>
+                          <OcclusionMap HalfSizeZ="2.5" MinX="-9" MaxX="8.5">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.265; 2.381; 0.822)" OutputAngles="(-50;10)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" Damping="0.9" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.879; 0.39; -0.274)">
+                          </OcclusionMap>
+                          <FuelTank DamageCapacity="100">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.334; 2.49; 0.759)" OutputAngles="(-50;0)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" Damping="0.9" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.879; 0.39; -0.274)">
+                          </FuelTank>
+                          <Intake Size="0.8" Dir="(1; 0; 0)" Origin="(7.534; 1.877; 0)">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.3; 2.413; 0.756)" OutputAngles="(-50;0)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" Damping="0.9994" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.879; 0.39; -0.274)">
+                          </Intake>
+                          <EngineSocket Type="e_us_special" Default="us_special_engine_0">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.265; 2.335; 0.757)" OutputAngles="(-50;5)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" Damping="0.9996" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.879; 0.39; -0.274)">
+                          </EngineSocket>
+                          <SuspensionSocket Type="s_ws_6900xd_twin" MaxWheelRadiusWithoutSuspension="0.6" Default="ws_6900xd_twin_suspension_default">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.362; 2.523; 0.679)" OutputAngles="(-50;50)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" Damping="0.9" InputRange="(0;1)" InputType="fuel" Dir="(-0.913; 0.409; 0)">
+                          </SuspensionSocket>
+                          <Dashboard>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.879; 0.39; -0.274)" InputType="engineEnabled" Org="(5.3; 2.46; 0.823)" Damping="0.9" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" OutputAngles="(-50;-5)">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.329; 2.451; 0.679)" OutputAngles="(-50;-5)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" Damping="0.9993" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.913; 0.409; 0)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.879; 0.39; -0.274)" InputType="engineEnabled" Org="(5.265; 2.381; 0.822)" Damping="0.9" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" OutputAngles="(-50;10)">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.297; 2.378; 0.679)" OutputAngles="(-50;140)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" Damping="0.9" InputRange="(0.2;1)" InputType="rpm" Dir="(-0.913; 0.409; 0)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.879; 0.39; -0.274)" InputType="engineEnabled" Org="(5.334; 2.49; 0.759)" Damping="0.9" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" OutputAngles="(-50;0)">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.348; 2.502; 0.582)" OutputAngles="(-120;120)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_02" Damping="0.9" InputRange="(0;1)" InputType="rpm" Dir="(-0.913; 0.409; 0)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.879; 0.39; -0.274)" InputType="engineEnabled" Org="(5.3; 2.413; 0.756)" Damping="0.9994" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" OutputAngles="(-50;0)">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.348; 2.502; 0.449)" OutputAngles="(-120;120)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_02" Damping="0.9" InputRange="(0;160)" InputType="speed" Dir="(-0.913; 0.409; 0)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.879; 0.39; -0.274)" InputType="engineEnabled" Org="(5.265; 2.335; 0.757)" Damping="0.9996" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" OutputAngles="(-50;5)">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.364; 2.528; 0.355)" OutputAngles="(-40;20)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" Damping="0.9" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.913; 0.409; 0)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.913; 0.409; 0)" InputType="fuel" Org="(5.362; 2.523; 0.679)" Damping="0.9" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" OutputAngles="(-50;50)">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.326; 2.443; 0.354)" OutputAngles="(-50;-10)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" Damping="0.9994" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.913; 0.409; 0)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.913; 0.409; 0)" InputType="engineEnabled" Org="(5.329; 2.451; 0.679)" Damping="0.9993" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" OutputAngles="(-50;-5)">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.288; 2.358; 0.355)" OutputAngles="(-50;-5)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" Damping="0.9994" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.913; 0.409; 0)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0.2;1)" Dir="(-0.913; 0.409; 0)" InputType="rpm" Org="(5.297; 2.378; 0.679)" Damping="0.9" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" OutputAngles="(-50;140)">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.383; 2.57; 0.293)" OutputAngles="(-40;20)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" Damping="0.9" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.913; 0.409; 0)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.913; 0.409; 0)" InputType="rpm" Org="(5.348; 2.502; 0.582)" Damping="0.9" Mesh="trucks/arrows/ws_6900xd_twin_arrow_02" OutputAngles="(-120;120)">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.346; 2.487; 0.293)" OutputAngles="(-50;10)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" Damping="0.9" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.913; 0.409; 0)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;160)" Dir="(-0.913; 0.409; 0)" InputType="speed" Org="(5.348; 2.502; 0.449)" Damping="0.9" Mesh="trucks/arrows/ws_6900xd_twin_arrow_02" OutputAngles="(-120;120)">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.307; 2.4; 0.294)" OutputAngles="(-50;0)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" Damping="0.9994" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.913; 0.409; 0)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.913; 0.409; 0)" InputType="engineEnabled" Org="(5.364; 2.528; 0.355)" Damping="0.9" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" OutputAngles="(-40;20)">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.364; 2.529; 0.23)" OutputAngles="(-50;20)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" Damping="0.9" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.913; 0.409; 0)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.913; 0.409; 0)" InputType="engineEnabled" Org="(5.326; 2.443; 0.354)" Damping="0.9994" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" OutputAngles="(-50;-10)">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.326; 2.443; 0.23)" OutputAngles="(-50;20)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" Damping="0.9" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.913; 0.409; 0)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.913; 0.409; 0)" InputType="engineEnabled" Org="(5.288; 2.358; 0.355)" Damping="0.9994" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" OutputAngles="(-50;-5)">
 
-                                    </Gauge>
-                                    <Gauge Org="(5.288; 2.359; 0.23)" OutputAngles="(-50;20)" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" Damping="0.9" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.913; 0.409; 0)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.913; 0.409; 0)" InputType="engineEnabled" Org="(5.383; 2.57; 0.293)" Damping="0.9" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" OutputAngles="(-40;20)">
 
-                                    </Gauge>
-                        </Dashboard>
-                        <SoundsWheels _template="Default">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.913; 0.409; 0)" InputType="engineEnabled" Org="(5.346; 2.487; 0.293)" Damping="0.9" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" OutputAngles="(-50;10)">
 
-                        </SoundsWheels>
-                        <GearboxSocket Default="g_truck_default" Type="gearboxes_trucks">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.913; 0.409; 0)" InputType="engineEnabled" Org="(5.307; 2.4; 0.294)" Damping="0.9994" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" OutputAngles="(-50;0)">
 
-                        </GearboxSocket>
-                                      <Steam Origin="(3.886; 1.856; 0)">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.913; 0.409; 0)" InputType="engineEnabled" Org="(5.364; 2.529; 0.23)" Damping="0.9" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" OutputAngles="(-50;20)">
 
-                                      </Steam>
-                                      <Steam ParentFrame="BoneCabin_cdt" Origin="(5.79; 1.189; 0)" Scale="0.7">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.913; 0.409; 0)" InputType="engineEnabled" Org="(5.326; 2.443; 0.23)" Damping="0.9" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" OutputAngles="(-50;20)">
 
-                                      </Steam>
-                        <Sounds DisableReversePitch="true" MinDist="15.0" Origin="(5.9; 2.05; 0)" _template="Default">
-                                          <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
+                                              </Gauge>
+                                              <Gauge InputRange="(0;1)" Dir="(-0.913; 0.409; 0)" InputType="engineEnabled" Org="(5.288; 2.359; 0.23)" Damping="0.9" Mesh="trucks/arrows/ws_6900xd_twin_arrow_01" OutputAngles="(-50;20)">
 
-                                          </AbruptStop>
-                                          <EngineLow Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_low">
+                                              </Gauge>
+                          </Dashboard>
+                          <Axles>
+                                                <Axle Frame="BoneAxle1">
 
-                                          </EngineLow>
-                                          <EngineRev Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_rev">
+                                                </Axle>
+                                                <Axle Frame="BoneAxle2">
 
-                                          </EngineRev>
-                                          <EngineAccel Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_acc">
+                                                </Axle>
+                                                <Axle Frame="BoneAxle3">
 
-                                          </EngineAccel>
-                                          <Honk Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_honk">
+                                                </Axle>
+                                                <Axle Frame="BoneAxle4">
 
-                                          </Honk>
-                                          <EngineStop Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_stop">
+                                                </Axle>
+                          </Axles>
+                          <Camera Center="(-2; 0; 0)" RadiusMultiplier="1.4" ParentFrame="BoneCabin_cdt">
+                                                <Cockpit WindshieldDiffuseTexture="trucks/ws_6900_twinsteer_glass__d_a.tga" _template="Default" WindshieldShadingTexture="trucks/ws_6900_twinsteer_glass__sh_d.tga" ViewPos="(4.635; 2.942; 0.497)">
+                                                    <Rear ViewPosOffset="(0.15; -0.1; 0.7)">
 
-                                          </EngineStop>
-                                          <Handbrake Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_handbrake_on">
-
-                                          </Handbrake>
-                                          <EngineLow_2d IsSound2D="true" Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_low_2d">
-
-                                          </EngineLow_2d>
-                                          <EngineTrans Sound="trucks/common/truck_trans_forward_loop">
-
-                                          </EngineTrans>
-                                          <EngineHeavy_2d IsSound2D="true" Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_heavy_2d">
-
-                                          </EngineHeavy_2d>
-                                          <Reverse Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_back_beeper">
-
-                                          </Reverse>
-                                          <EngineHigh_2d IsSound2D="true" Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_high_2d">
-
-                                          </EngineHigh_2d>
-                                          <EngineIdle Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_idle">
-
-                                          </EngineIdle>
-                                          <HandbrakeOff Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_handbrake_off">
-
-                                          </HandbrakeOff>
-                                          <EngineHigh Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_high">
-
-                                          </EngineHigh>
-                                          <EngineIdle_2d IsSound2D="true" Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_idle_2d">
-
-                                          </EngineIdle_2d>
-                                          <EngineHeavy Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_heavy">
-
-                                          </EngineHeavy>
-                                          <BrakeRelease Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_brake_release">
-
-                                          </BrakeRelease>
-                                          <EngineStart Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_start">
-
-                                          </EngineStart>
-                        </Sounds>
-                        <Intake Size="0.8" Origin="(7.534; 1.877; 0)" Dir="(1; 0; 0)">
-
-                        </Intake>
-                        <SoundsDamage _template="Heavy">
-
-                        </SoundsDamage>
-                                              <LimitedFluid Type="Cylinder" Center="(0.995; 1.23; -0.891)" LengthX="1.59" RadiusZ="0.39" RadiusY="0.39">
-
-                                              </LimitedFluid>
-                                              <LimitedFluid Type="Cylinder" Center="(-2.596; 1.23; -0.891)" LengthX="2.215" RadiusZ="0.39" RadiusY="0.39">
-
-                                              </LimitedFluid>
-                                              <LimitedFluid Type="Cylinder" Center="(-2.596; 1.23; 0.891)" LengthX="2.215" RadiusZ="0.39" RadiusY="0.39">
-
-                                              </LimitedFluid>
-                        <Camera ParentFrame="BoneCabin_cdt" Center="(-2; 0; 0)" RadiusMultiplier="1.4">
-                                                  <Cockpit WindshieldShadingTexture="trucks/ws_6900_twinsteer_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/ws_6900_twinsteer_glass__d_a.tga" _template="Default" ViewPos="(4.635; 2.942; 0.497)">
-                                                        <Mirror FOVScale="1.9" Pos="(5.111; 2.89; 1.389)" ClipDir="(-0.895; 0; -0.445)" ReflectionDir="(-0.895; 0; -0.445)" Size="(0.16; 0.46)" ClipOffset=".2" MeshFrame="mirror_left">
-                                                          <SecondaryView FOVScale="1.4" Pos="(5.04; 2.525; 1.35)" ClipDir="(-0.895; 0; -0.445)" Size="(0.185; 0.185)" CurveAngle="7" ClipOffset=".1" MeshFrame="mirror_left_convex">
+                                                    </Rear>
+                                                        <Mirror FOVScale="1.9" ClipDir="(-0.895; 0; -0.445)" MeshFrame="mirror_left" Pos="(5.111; 2.89; 1.389)" ReflectionDir="(-0.895; 0; -0.445)" Size="(0.16; 0.46)" ClipOffset=".2">
+                                                          <SecondaryView FOVScale="1.4" ClipDir="(-0.895; 0; -0.445)" MeshFrame="mirror_left_convex" Pos="(5.04; 2.525; 1.35)" CurveAngle="7" Size="(0.185; 0.185)" ClipOffset=".1">
 
                                                           </SecondaryView>
                                                         </Mirror>
-                                                        <Mirror FOVScale="2.5" Pos="(5.112; 2.89; -1.386)" ClipDir="(-0.808; -0; 0.590)" ReflectionDir="(-0.808; -0; 0.590)" Size="(0.16; 0.46)" ClipOffset=".2" MeshFrame="mirror_right">
-                                                          <SecondaryView FOVScale="1.6" Pos="(5.04; 2.525; -1.332)" ClipDir="(-0.808; -0; 0.590)" Size="(0.185; 0.185)" CurveAngle="7" ClipOffset=".1" MeshFrame="mirror_right_convex">
+                                                        <Mirror FOVScale="2.5" ClipDir="(-0.808; -0; 0.590)" MeshFrame="mirror_right" Pos="(5.112; 2.89; -1.386)" ReflectionDir="(-0.808; -0; 0.590)" Size="(0.16; 0.46)" ClipOffset=".2">
+                                                          <SecondaryView FOVScale="1.6" ClipDir="(-0.808; -0; 0.590)" MeshFrame="mirror_right_convex" Pos="(5.04; 2.525; -1.332)" CurveAngle="7" Size="(0.185; 0.185)" ClipOffset=".1">
 
                                                           </SecondaryView>
                                                         </Mirror>
-                                                      <Rear ViewPosOffset="(0.15; -0.1; 0.7)">
+                                                </Cockpit>
+                          </Camera>
+                                                <CompatibleWheels Type="wheels_heavy_single" Scale="0.7">
 
-                                                      </Rear>
-                                                  </Cockpit>
-                        </Camera>
-                        <SuspensionSocket Default="ws_6900xd_twin_suspension_default" Type="s_ws_6900xd_twin" MaxWheelRadiusWithoutSuspension="0.6">
+                                                </CompatibleWheels>
+                                                <CompatibleWheels Type="wheels_heavy_single" Scale="0.8">
 
-                        </SuspensionSocket>
-                        <Wheels DefaultTire="allterrain_1" DefaultWheelType="wheels_heavy_single" DefaultRim="rim_1">
-                                                        <Wheel _template="FirstAxle" Pos="(6.184; 0.658; 1.164)">
+                                                </CompatibleWheels>
+                                                <CompatibleWheels Type="wheels_heavy_double1" Scale="0.7" OffsetZ="-0.1">
 
-                                                        </Wheel>
-                                                        <Wheel Pos="(6.184; 0.658; 1.164)" _template="FirstAxle" RightSide="true">
+                                                </CompatibleWheels>
+                                                <CompatibleWheels Type="wheels_heavy_double2" Scale="0.7" OffsetZ="-0.01">
 
-                                                        </Wheel>
-                                                        <Wheel _template="SecondAxle" Pos="(4.355; 0.658; 1.164)">
+                                                </CompatibleWheels>
+                                                  <LimitedFluid Type="Cylinder" Center="(0.995; 1.23; -0.891)" RadiusY="0.39" LengthX="1.59" RadiusZ="0.39">
 
-                                                        </Wheel>
-                                                        <Wheel Pos="(4.355; 0.658; 1.164)" _template="SecondAxle" RightSide="true">
+                                                  </LimitedFluid>
+                                                  <LimitedFluid Type="Cylinder" Center="(-2.596; 1.23; -0.891)" RadiusY="0.39" LengthX="2.215" RadiusZ="0.39">
 
-                                                        </Wheel>
-                                                        <Wheel _template="RearAxle" Pos="(-5.334; 0.658; 1.055)">
+                                                  </LimitedFluid>
+                                                  <LimitedFluid Type="Cylinder" Center="(-2.596; 1.23; 0.891)" RadiusY="0.39" LengthX="2.215" RadiusZ="0.39">
 
-                                                        </Wheel>
-                                                        <Wheel Pos="(-5.334; 0.658; 1.055)" _template="RearAxle" RightSide="true">
+                                                  </LimitedFluid>
+                          <Sounds _template="Default" MinDist="15.0" Origin="(5.9; 2.05; 0)" DisableReversePitch="true">
+                                                      <Reverse Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_back_beeper">
 
-                                                        </Wheel>
-                                                        <Wheel _template="RearAxle" Pos="(-6.985; 0.658; 1.055)">
+                                                      </Reverse>
+                                                      <EngineTrans Sound="trucks/common/truck_trans_forward_loop">
 
-                                                        </Wheel>
-                                                        <Wheel Pos="(-6.985; 0.658; 1.055)" _template="RearAxle" RightSide="true">
+                                                      </EngineTrans>
+                                                      <EngineLow Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_low">
 
-                                                        </Wheel>
-                        </Wheels>
-                        <Axles>
-                                                          <Axle Frame="BoneAxle1">
+                                                      </EngineLow>
+                                                      <EngineHigh Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_high">
 
-                                                          </Axle>
-                                                          <Axle Frame="BoneAxle2">
+                                                      </EngineHigh>
+                                                      <HandbrakeOff Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_handbrake_off">
 
-                                                          </Axle>
-                                                          <Axle Frame="BoneAxle3">
+                                                      </HandbrakeOff>
+                                                      <EngineRev Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_rev">
 
-                                                          </Axle>
-                                                          <Axle Frame="BoneAxle4">
+                                                      </EngineRev>
+                                                      <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
 
-                                                          </Axle>
-                        </Axles>
-                        <Damage>
-                                                            <DamageArea Max="(7.5; 2.5; 0.8)" Type="Engine" ParentFrame="BoneCabin_cdt" Min="(5.5; 1; -0.8)">
+                                                      </AbruptStop>
+                                                      <EngineHeavy_2d IsSound2D="true" Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_heavy_2d">
 
-                                                            </DamageArea>
-                                                            <DamageArea Max="(1.8; 1.6; 1.4)" Type="FuelTank" ParentFrame="BoneChassis_cdt" Min="(-3.75; 0.65; -1.4)">
+                                                      </EngineHeavy_2d>
+                                                      <EngineHigh_2d IsSound2D="true" Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_high_2d">
 
-                                                            </DamageArea>
-                        </Damage>
-                        <OcclusionMap HalfSizeZ="2.5" MinX="-9" MaxX="8.5">
+                                                      </EngineHigh_2d>
+                                                      <EngineHeavy Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_heavy">
 
-                        </OcclusionMap>
-                        <EngineSocket Default="us_special_engine_0" Type="e_us_special">
+                                                      </EngineHeavy>
+                                                      <EngineIdle_2d IsSound2D="true" Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_idle_2d">
 
-                        </EngineSocket>
-                        <WinchUpgradeSocket Default="w_heavy_trucks_default" IsUpgradable="true" Type="winches_heavy_trucks">
+                                                      </EngineIdle_2d>
+                                                      <EngineIdle Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_idle">
 
-                        </WinchUpgradeSocket>
-                        <SteeringWheel Frame="BoneSteering">
+                                                      </EngineIdle>
+                                                      <Handbrake Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_handbrake_on">
 
-                        </SteeringWheel>
-                                                                  <CompatibleWheels Scale="0.7" Type="wheels_heavy_single">
+                                                      </Handbrake>
+                                                      <BrakeRelease Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_brake_release">
 
-                                                                  </CompatibleWheels>
-                                                                  <CompatibleWheels Scale="0.8" Type="wheels_heavy_single">
+                                                      </BrakeRelease>
+                                                      <EngineLow_2d IsSound2D="true" Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_low_2d">
 
-                                                                  </CompatibleWheels>
-                                                                  <CompatibleWheels OffsetZ="-0.1" Scale="0.7" Type="wheels_heavy_double1">
+                                                      </EngineLow_2d>
+                                                      <EngineStart Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_start">
 
-                                                                  </CompatibleWheels>
-                                                                  <CompatibleWheels OffsetZ="-0.01" Scale="0.7" Type="wheels_heavy_double2">
+                                                      </EngineStart>
+                                                      <EngineStop Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_stop">
 
-                                                                  </CompatibleWheels>
-                                                                    <SteeringRack RackHalfSizeZ="0.835" Frame="BoneRack1" FrameSteerLeft="BoneRackL1" FrameSteerRight="BoneRackR1">
+                                                      </EngineStop>
+                                                      <EngineAccel Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_acc">
 
-                                                                    </SteeringRack>
-                                                                    <SteeringRack RackHalfSizeZ="0.835" Frame="BoneRack2" FrameSteerLeft="BoneRackL2" FrameSteerRight="BoneRackR2">
+                                                      </EngineAccel>
+                                                      <Honk Sound="trucks/ws_6900xd_twin/ws_6900xd_twin_honk">
 
-                                                                    </SteeringRack>
-      </TruckData>
+                                                      </Honk>
+                          </Sounds>
+                          <Wheels DefaultWheelType="wheels_heavy_single" DefaultTire="allterrain_1" DefaultRim="rim_1">
+                                                          <Wheel Pos="(6.184; 0.658; 1.164)" _template="FirstAxle">
+
+                                                          </Wheel>
+                                                          <Wheel RightSide="true" Pos="(6.184; 0.658; 1.164)" _template="FirstAxle">
+
+                                                          </Wheel>
+                                                          <Wheel Pos="(4.355; 0.658; 1.164)" _template="SecondAxle">
+
+                                                          </Wheel>
+                                                          <Wheel RightSide="true" Pos="(4.355; 0.658; 1.164)" _template="SecondAxle">
+
+                                                          </Wheel>
+                                                          <Wheel Pos="(-5.334; 0.658; 1.055)" _template="RearAxle">
+
+                                                          </Wheel>
+                                                          <Wheel RightSide="true" Pos="(-5.334; 0.658; 1.055)" _template="RearAxle">
+
+                                                          </Wheel>
+                                                          <Wheel Pos="(-6.985; 0.658; 1.055)" _template="RearAxle">
+
+                                                          </Wheel>
+                                                          <Wheel RightSide="true" Pos="(-6.985; 0.658; 1.055)" _template="RearAxle">
+
+                                                          </Wheel>
+                          </Wheels>
+                                                        <Steam Origin="(3.886; 1.856; 0)">
+
+                                                        </Steam>
+                                                        <Steam Scale="0.7" Origin="(5.79; 1.189; 0)" ParentFrame="BoneCabin_cdt">
+
+                                                        </Steam>
+                          <GearboxSocket Type="gearboxes_trucks" Default="g_truck_default">
+
+                          </GearboxSocket>
+                          <WinchUpgradeSocket Type="winches_heavy_trucks" Default="w_heavy_trucks_default" IsUpgradable="true">
+
+                          </WinchUpgradeSocket>
+                                                              <SteeringRack Frame="BoneRack1" RackHalfSizeZ="0.835" FrameSteerLeft="BoneRackL1" FrameSteerRight="BoneRackR1">
+
+                                                              </SteeringRack>
+                                                              <SteeringRack Frame="BoneRack2" RackHalfSizeZ="0.835" FrameSteerLeft="BoneRackL2" FrameSteerRight="BoneRackR2">
+
+                                                              </SteeringRack>
+                          <SteeringWheel Frame="BoneSteering">
+
+                          </SteeringWheel>
+                          <SoundsWheels _template="Default">
+
+                          </SoundsWheels>
+                          <Damage>
+                                                                        <DamageArea Min="(5.5; 1; -0.8)" ParentFrame="BoneCabin_cdt" Max="(7.5; 2.5; 0.8)" Type="Engine">
+
+                                                                        </DamageArea>
+                                                                        <DamageArea Min="(-3.75; 0.65; -1.4)" ParentFrame="BoneChassis_cdt" Max="(1.8; 1.6; 1.4)" Type="FuelTank">
+
+                                                                        </DamageArea>
+                          </Damage>
+                          <Shafts>
+                                                                        <Shaft SocketPointA="ShaftWheel2WheelA" SocketPointB="ShaftWheel2WheelB">
+
+                                                                        </Shaft>
+                          </Shafts>
+        </TruckData>
   </Truck>
-  <_templates Include="trucks">
-        <Wheel>
-            <RearAxle Torque="default" Location="rear" ConnectedToHandbrake="true">
-
-            </RearAxle>
-            <SecondAxle SteeringCastor="6" _template="FirstAxle" SteeringAngle="32">
-
-            </SecondAxle>
-            <FirstAxle SteeringCastor="10" SuspensionMin="-0.3" ParentFrame="BoneCabin_cdt" Torque="connectable" SteeringAngle="40" Location="front">
-
-            </FirstAxle>
-        </Wheel>
-        <Body>
-              <Twist Mass="3300" CenterOfMassOffset="(0; 0; 0)" ImpactType="Truck">
-                  <Constraint Type="Hinge" MaxLimit="7" PivotOffset="(0; 0; 0)" AxisLocal="(1; 0; 0)" MinLimit="-7">
-                      <Motor Spring="6000000" Type="Spring" Damping="100000">
-
-                      </Motor>
-                  </Constraint>
-              </Twist>
-              <SunShield Collisions="None" Mass="2">
-                    <Constraint MinLimit="-6" Type="Hinge" MaxLimit="10" AxisLocal="(0; 0; 1)">
-                        <Motor Spring="60" Type="Spring" Damping="0.06">
-
-                        </Motor>
-                    </Constraint>
-              </SunShield>
-              <TieRod Mass="1">
-                      <Constraint MinLimit="-25" Type="Hinge" MaxLimit="25" AxisLocal="(0; 0; 1)">
-                          <Motor Type="Position" Damping="1.0" Tau="1" Force="6000">
-
-                          </Motor>
-                      </Constraint>
-              </TieRod>
-        </Body>
-        <Flare>
-                <IgnitionSignalRedSmall Color="g(169; 0; 0) x 0.8" AspectRatio="1.4" DirAngle="90" Dir="(-1; 0; 0)" Size="0.12" ColorMultAtDay="0.3">
-
-                </IgnitionSignalRedSmall>
-                <MarkerBeacon AttenEnd="200" AttenStart="1" Color="g(255; 174; 0) x 0.12" Size="0.175" ColorMultAtDay="0.5">
-
-                </MarkerBeacon>
-                <IgnitionSignalOrange Color="g(255; 140; 0) x 0.3" AspectRatio="1.4" DirAngle="135" Dir="(0; 1; 0)" Size="0.1" ColorMultAtDay="0.6">
-
-                </IgnitionSignalOrange>
-        </Flare>
-  </_templates>

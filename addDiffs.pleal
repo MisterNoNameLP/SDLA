@@ -1,4 +1,4 @@
-local version = "1"
+local version = "1.1"
 
 package.path = package.path .. ";libs/?.lua"
 
@@ -17,6 +17,30 @@ local diffLockAddonSocket = {
 		}
 	}
 }
+local modifiedDiffLockPath = "./output/[media]/classes/trucks/zikz_5368_tuning"
+local modifiedDiffLockName = "zikz_5368_diff_lock.xml"
+local modifiedDiffLock = [[
+<_templates Include="trucks" />
+<TruckAddon>
+	<TruckData DiffLockInstalled="true" />
+	<PhysicsModel _template="Invisible" />
+	<GameData
+		CameraPreset="hoods"
+		Category="diff_lock"
+		Price="4300"
+		UnlockByExploration="false"
+		UnlockByRank="1"
+	>
+		<UiDesc
+			UiDesc="UI_UPGRADE_DIFF_LOCK_SWITCHABLE_DESC"
+			UiIcon30x30=""
+			UiIcon40x40=""
+			UiName="UI_UPGRADE_DIFF_LOCK_SWITCHABLE_NAME"
+		/>
+		<InstallSocket Type="ZiKZ5368DiffLock" />
+	</GameData>
+</TruckAddon>
+]]
 
 local function copyTable(org)
 	local copy
@@ -110,5 +134,13 @@ print("Starting difflock adder v$version")
 
 parseInitial("initial")
 parseInitial("mods")
+
+do
+	lfs.mkdir(modifiedDiffLockPath)
+	local file = io.open("$modifiedDiffLockPath/$modifiedDiffLockName", "w")
+	file:write(modifiedDiffLock)
+	file:flush()
+	file:close()
+end
 
 print("Done!")
