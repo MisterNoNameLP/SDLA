@@ -1,744 +1,744 @@
   <Truck>
-      <ControlledConstraints>
-          <Constraint Name="TieRodSteer" IsLinkedSteering="true" Id="chassis_steer">
-
-          </Constraint>
-      </ControlledConstraints>
       <PhysicsModel Mesh="trucks/gmc_8000">
-            <NetSync Legacy="false">
+          <NetSync Legacy="false">
 
-            </NetSync>
-            <Body ModelFrame="BoneChassis_cdt" ImpactType="Truck" Mass="4000" NetSync="pv" CenterOfMassOffset="(-2.2; 0; 0)">
-                  <Body ModelFrame="BoneCabin_cdt" ImpactType="Truck" Mass="1500" NetSync="pv" CenterOfMassOffset="(-0.3; 0; 0)">
-                      <Constraint AxisLocal="(1; 0; 0)" MaxLimit="1.5" MinLimit="-1.5" Type="Hinge">
-                          <Motor Type="Spring" Spring="240000" Damping="24000">
+          </NetSync>
+          <Body CenterOfMassOffset="(-2.2; 0; 0)" ImpactType="Truck" NetSync="pv" ModelFrame="BoneChassis_cdt" Mass="4000">
+                <Body CenterOfMassOffset="(-0.3; 0; 0)" ImpactType="Truck" NetSync="pv" ModelFrame="BoneCabin_cdt" Mass="1500">
+                    <Constraint MinLimit="-1.5" Type="Hinge" MaxLimit="1.5" AxisLocal="(1; 0; 0)">
+                        <Motor Spring="240000" Type="Spring" Damping="24000">
 
-                          </Motor>
-                      </Constraint>
-                          <Body ModelFrame="BoneCabinRagdoll_cdt" ImpactType="Truck" Mass="1500" CenterOfMassOffset="(-0.5; -0.5; 0)">
-                            <Constraint Cone="2.5" PlaneMin="-1.5" Type="Ragdoll" TwistAxisLocal="(0; 1; 0)" PlaneMax="1.5" PlaneAxisLocal="(1; 0; 0)">
-                                <ConeMotor Type="Spring" Spring="1500000" Damping="700000">
+                        </Motor>
+                    </Constraint>
+                        <Body CenterOfMassOffset="(-0.5; -0.5; 0)" ImpactType="Truck" ModelFrame="BoneCabinRagdoll_cdt" Mass="1500">
+                          <Constraint Type="Ragdoll" PlaneAxisLocal="(1; 0; 0)" PlaneMax="1.5" PlaneMin="-1.5" Cone="2.5" TwistAxisLocal="(0; 1; 0)">
+                              <PlaneMotor Spring="3500000" Type="Spring" Damping="200000">
 
-                                </ConeMotor>
-                                <PlaneMotor Type="Spring" Spring="3500000" Damping="200000">
+                              </PlaneMotor>
+                              <ConeMotor Spring="1500000" Type="Spring" Damping="700000">
 
-                                </PlaneMotor>
-                            </Constraint>
-                                <Body Mass="2" Collisions="None" ModelFrame="BoneBelt1_cdt">
-                                  <Constraint AxisLocal="(0; 1; 0)" MaxLimit="10" MinLimit="-20" PivotOffset="(0; 0; 0)" Type="Hinge">
-                                      <Motor Type="Spring" Spring="10" Damping="10">
+                              </ConeMotor>
+                          </Constraint>
+                              <Body Collisions="None" ModelFrame="BoneBelt1_cdt" Mass="2">
+                                <Constraint Type="Hinge" MaxLimit="10" PivotOffset="(0; 0; 0)" AxisLocal="(0; 1; 0)" MinLimit="-20">
+                                    <Motor Spring="10" Type="Spring" Damping="10">
 
-                                      </Motor>
-                                  </Constraint>
-                                </Body>
-                                <Body Mass="1" Collisions="None" ModelFrame="BoneBelt2_cdt">
-                                  <Constraint AxisLocal="(0; 1; 0)" MaxLimit="5" MinLimit="-15" PivotOffset="(0; 0; 0)" Type="Hinge">
-                                      <Motor Type="Spring" Spring="2" Damping="2">
+                                    </Motor>
+                                </Constraint>
+                              </Body>
+                              <Body Collisions="None" ModelFrame="BoneBelt2_cdt" Mass="1">
+                                <Constraint Type="Hinge" MaxLimit="5" PivotOffset="(0; 0; 0)" AxisLocal="(0; 1; 0)" MinLimit="-15">
+                                    <Motor Spring="2" Type="Spring" Damping="2">
 
-                                      </Motor>
-                                  </Constraint>
-                                </Body>
-                                <Body ModelFrame="BoneSunshieldRight_cdt" _template="Sunshield">
+                                    </Motor>
+                                </Constraint>
+                              </Body>
+                              <Body _template="Sunshield" ModelFrame="BoneSunshieldRight_cdt">
 
-                                </Body>
-                                <Body ModelFrame="BoneSunshieldLeft_cdt" _template="Sunshield">
+                              </Body>
+                              <Body _template="Sunshield" ModelFrame="BoneSunshieldLeft_cdt">
 
-                                </Body>
-                                <Body Mass="0.2" ModelFrame="BoneKeyFob_cdt">
-                                  <Constraint AxisLocal="(1; 0; 0)" MaxLimit="50" MinLimit="-50" PivotOffset="(0; 0; 0)" Type="Hinge">
-                                      <Motor Type="Spring" Spring="0.001" Damping="0.001">
+                              </Body>
+                              <Body ModelFrame="BoneKeyFob_cdt" Mass="0.2">
+                                <Constraint Type="Hinge" MaxLimit="50" PivotOffset="(0; 0; 0)" AxisLocal="(1; 0; 0)" MinLimit="-50">
+                                    <Motor Spring="0.001" Type="Spring" Damping="0.001">
 
-                                      </Motor>
-                                  </Constraint>
-                                </Body>
-                                <Body ModelFrame="BoneMirrorLeft_cdt" _template="SideMirror">
+                                    </Motor>
+                                </Constraint>
+                              </Body>
+                              <Body _template="SideMirror" ModelFrame="BoneMirrorLeft_cdt">
 
-                                </Body>
-                                <Body ModelFrame="BoneMirrorRight_cdt" _template="SideMirror">
+                              </Body>
+                              <Body _template="SideMirror" ModelFrame="BoneMirrorRight_cdt">
 
-                                </Body>
-                          </Body>
-                          <Body ModelFrame="BoneTieRod_cdt" _template="TieRod">
-                            <Constraint AxisLocal="(0; 0; 1)" MaxLimit="25" Name="TieRodSteer" MinLimit="-25">
+                              </Body>
+                        </Body>
+                        <Body _template="TieRod" ModelFrame="BoneTieRod_cdt">
+                          <Constraint MinLimit="-25" Name="TieRodSteer" MaxLimit="25" AxisLocal="(0; 0; 1)">
 
-                            </Constraint>
-                          </Body>
-                  </Body>
-            </Body>
+                          </Constraint>
+                        </Body>
+                </Body>
+          </Body>
       </PhysicsModel>
-      <TruckData BackSteerSpeed="0.01" DiffLockType="None" EngineIconScale="1.2" TruckType="HEAVY_DUTY" FuelCapacity="285" EngineStartDelay="0.8" SteerSpeed="0.02" ExhaustStartTime="0.9" Responsiveness="0.25" TruckImage="gmcBrigadier8000mchr" EngineIconMesh="env/engine_default">
-                <Steam Origin="(0.144; 0.961; 0)">
+      <GameData Country="US" Price="90000" UnlockByRank="1" UnlockByExploration="false">
+            <CustomizationCameras>
+                  <CameraPos Interior="true" Position="(7.6; 4.352; -0.303)" FOV="32.0" InterestPosition="(3.6; 0.363; -0.642)" Name="roof_sticker">
 
-                </Steam>
-                <Steam ParentFrame="BoneCabin_cdt" Scale="0.5" Origin="(1.568; 1.171; 0)">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(2; 1.563; -0)" Name="addon_1" MaxXRotation="360" Position="(-7; 3.802; 4.913)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                </Steam>
-              <Intake Size="1" Dir="(1; 0; 0)" Origin="(2.377; 1.39; 0)">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(2.9; 0.525; -0.002)" Name="addon_2" MaxXRotation="360" Position="(5.258; 2.509; 4.431)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-              </Intake>
-              <GearboxSocket Default="g_truck_default" Type="gearboxes_trucks">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(5; 2.2; -0.72)" FOV="32.0" InterestPosition="(6.942; 2.145; 1.677)" Name="mirror_mount">
 
-              </GearboxSocket>
-              <Wheels DefaultRim="rim_1" DefaultWheelType="wheels_medium_double" DefaultTire="highway_1">
-                          <Wheel Pos="(-4.536; 0.491; 0.893)" _template="RearWheel">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(4.764; 1.865; -0)" Name="side_r" MaxXRotation="360" Position="(-0.317; 4.306; -4.556)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                          </Wheel>
-                          <Wheel Pos="(-4.536; 0.491; 0.893)" _template="RearWheel" RightSide="true">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(5.3; 2.412; -0.5)" FOV="32.0" InterestPosition="(6.729; 1.3; 1.4)" Name="sticker">
 
-                          </Wheel>
-                          <Wheel Pos="(-3.095; 0.491; 0.893)" _template="RearWheel">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(5; 2.094; -0.4)" FOV="32.0" InterestPosition="(7.3; 3.196; 1.5)" Name="sticker_1">
 
-                          </Wheel>
-                          <Wheel Pos="(-3.095; 0.491; 0.893)" _template="RearWheel" RightSide="true">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(5.2; 2.212; 0)" FOV="32.0" InterestPosition="(6.8; 1.3; 1.9)" Name="sticker_2">
 
-                          </Wheel>
-                          <Wheel Pos="(1.715; 0.49; 1.02)" _template="FrontWheel">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(8.384; 2.7; 0.6)" FOV="32.0" InterestPosition="(4.545; 1.5; -1.3)" Name="glass_sticker">
 
-                          </Wheel>
-                          <Wheel Pos="(1.715; 0.49; 1.02)" _template="FrontWheel" RightSide="true">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(4; 1.862; 3.197)" FOV="32.0" InterestPosition="(7; 1.203; 0.54)" Name="door_r_sticker">
 
-                          </Wheel>
-              </Wheels>
-              <WinchUpgradeSocket Default="w_medium_trucks_default" Type="winches_medium_trucks" IsUpgradable="true">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(5.165; 1.74; -0)" Name="roof" MaxXRotation="360" Position="(10.418; 3.866; -3.312)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-              </WinchUpgradeSocket>
-              <SteeringWheel Frame="BoneSteering">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(9.116; 4.392; -0.492)" FOV="32.0" InterestPosition="(5.918; 0.655; -0.737)" Name="capote_sticker">
 
-              </SteeringWheel>
-              <Damage SensationMax="(1.222; 2.489; 0.988)" Capacity="600" ParentFrame="BoneCabin_cdt" SensationMin="(-0.023; 1.818; -0.988)">
-                                <DamageArea Max="(2.100; 1.9; 0.6)" ParentFrame="BoneCabin_cdt" Min="(1.1; 0.62; -0.6)" Type="Engine">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(5.997; 1.735; 0)" Name="hoods" MaxXRotation="360" Position="(13.57; 1.44; -3.425)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                                </DamageArea>
-                                <DamageArea Max="(0.93; 0.93; 1.12)" ParentFrame="BoneCabin_cdt" Min="(-0.71; 0.24; -1.12)" Type="FuelTank">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(5.111; 1.443; 0)" Name="side_l" MaxXRotation="360" Position="(10.666; 3.491; 4.263)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                                </DamageArea>
-              </Damage>
-                              <LimitedFluid RadiusY="0.33" Center="(-0.3; 0.612; 0.815)" RadiusZ="0.33" LengthX="0.806" Type="Cylinder">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(5.3; 2.412; -0.5)" FOV="32.0" InterestPosition="(6.729; 1.3; 1.4)" Name="bubble_head">
 
-                              </LimitedFluid>
-                              <LimitedFluid RadiusY="0.33" Center="(0.104; 0.612; -0.815)" RadiusZ="0.33" LengthX="1.61" Type="Cylinder">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(4.213; 1.133; 0.3)" Name="wheels" MaxXRotation="360" Position="(-3.583; 1.9; -4.3)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                              </LimitedFluid>
-              <EngineSocket Default="us_truck_old_engine_0" Type="e_us_truck_old, e_us_truck_old_gmc8000">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(5.997; 1.735; 0)" Name="default" MaxXRotation="360" Position="(13.57; 1.44; -3.425)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-              </EngineSocket>
-              <SoundsDamage _template="Heavy">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(0.612; 0.86; -0)" Name="rear" MaxXRotation="360" Position="(-5.27; 2.54; 3.142)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-              </SoundsDamage>
-              <Camera Center="(-2.3; 0; 0)" ParentFrame="BoneCabin_cdt">
-                                      <Cockpit WindshieldShadingTexture="trucks/gmc8000_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/gmc8000_glass__d_a.tga" ViewPos="(0.43; 2.193; 0.496)" _template="Default">
-                                            <Mirror ClipDir="(-0.94; 0; -0.342)" MeshFrame="mirror_left" Size="(0.251; 0.553)" ClipOffset="0.18" FOVScale="2" Pos="(0.82; 2.095; 1.363)" ReflectionDir="(-0.854; 0; -0.52)" LookAtOffset="(0; 0; 0.05)">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(4.3; 1.835; -3.217)" FOV="32.0" InterestPosition="(5.3; 1.225; 0.224)" Name="door_l_sticker">
 
-                                            </Mirror>
-                                            <Mirror Pos="(0.82; 2.095; -1.363)" MeshFrame="mirror_right" FOVScale="2" Size="(0.251; 0.553)" ReflectionDir="(-0.714; 0; 0.6)" ClipDir="(-0.714; 0; 0.7)" ClipOffset="0.1">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(9.091; 2.279; -1.556)" FOV="32.0" InterestPosition="(7.878; 1.915; -1.556)" Name="hood_ornament">
 
-                                            </Mirror>
-                                          <Rear ViewPosOffset="(-0.05; -0.1; 0.7)">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(5; 2.2; -0.72)" FOV="32.0" InterestPosition="(6.942; 2.145; 1.677)" Name="curtain">
 
-                                          </Rear>
-                                      </Cockpit>
-              </Camera>
-              <Shafts>
-                                        <Shaft SocketPointA="ShaftWheel2WheelA" SocketPointB="ShaftWheel2WheelB">
+                  </CameraPos>
+            </CustomizationCameras>
+                <CraneSocket Pos="(2.383; 0.712; 0.496)" ParentFrame="BoneCabin_cdt">
 
-                                        </Shaft>
-              </Shafts>
-              <FuelTank DamageCapacity="50">
+                </CraneSocket>
+                <CraneSocket Pos="(2.383; 0.712; -0.496)" ParentFrame="BoneCabin_cdt">
 
-              </FuelTank>
-              <SoundsWheels _template="Default">
+                </CraneSocket>
+                <CraneSocket Pos="(-5.889; 0.816; 0)">
 
-              </SoundsWheels>
-              <SuspensionSocket Default="gmc8000_suspension_default" MaxWheelRadiusWithoutSuspension="0.4" Type="s_gmc8000">
+                </CraneSocket>
+                <CraneSocket Pos="(-1.85; 0.767; 0.42)">
 
-              </SuspensionSocket>
-              <Axles>
-                                                  <Axle Frame="BoneAxle1">
+                </CraneSocket>
+                <CraneSocket Pos="(-1.85; 0.767; -0.42)">
 
-                                                  </Axle>
-                                                  <Axle Frame="BoneAxle2">
+                </CraneSocket>
+                  <AddonSockets>
+                    <Socket NamesBlock="MetalDetector" Names="Gmc8000SpareWheel" ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)">
+                        <ExtraParent Frame="BoneCabin_cdt">
 
-                                                  </Axle>
-                                                  <Axle Frame="BoneAxle3">
+                        </ExtraParent>
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                      <Socket Offset="(-3.814; 1.47; 0)" Names="Semitrailer, SemitrailerOiltank">
 
-                                                  </Axle>
-              </Axles>
-                                                <CompatibleWheels Scale="0.5" Type="wheels_medium_double">
+                      </Socket>
+                      <Socket Offset="(-3.188; 1.47; 0)" Names="LargeSemitrailer, LargeSemitrailerOiltank">
 
-                                                </CompatibleWheels>
-                                                <CompatibleWheels Scale="0.55" Type="wheels_medium_double">
+                      </Socket>
+                      <Socket Offset="(-5.921; 0.828; 0)" Names="Trailer">
 
-                                                </CompatibleWheels>
-                                                <CompatibleWheels Scale="0.58" RearOffsetZ="0.02" Type="wheels_medium_double">
+                      </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket Offset="(-0.509; 0.992; 0)" NamesBlock="SaddleLow1, SaddleHigh, BigCraneUs, MinicraneUS, MetalDetector, FrameAddonLogShort, FrameAddon, FrameAddonKung, FrameAddonTank, FrameAddonSeismicVibrator, FrameAddonMaintainer, FrameAddonTow" Names="LogLift">
 
-                                                </CompatibleWheels>
-              <Sounds DisableReversePitch="false" ParentFrame="BoneCabin_cdt" MinDist="10.0" AirHissInterval="12.0" _template="Default" Origin="(1.38; 1.426; 0)">
-                                                    <EngineHigh Sound="trucks/gmc_8000/gmc_8000_high">
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                      <Socket Offset="(-7.317; 0.992; 0)" NamesBlock="MinicraneUS, MetalDetector, Gmc8000FenderLarge, Gmc8000FenderSmall" Names="BunkLog">
 
-                                                    </EngineHigh>
-                                                    <ChassisStress Sound="trucks/common/truck_stress_rnd_set/truck_stress_rnd">
+                      </Socket>
+                      <Socket Offset="(-3.06; 0.987; 0)" NamesBlock="MinicraneUS, MetalDetector, Gmc8000FenderLarge, Gmc8000FenderSmall" Names="FrameAddonLogShort">
+
+                      </Socket>
+                      <Socket Offset="(-3.811; 0.987; 0)" Names="SaddleLow1">
+                          <ExtraParent Offset="(0; 0; 0.03)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                          <ExtraParent Offset="(0; 0; -0.03)" Frame="BoneChassis_cdt">
 
-                                                    </ChassisStress>
-                                                    <EngineRev Sound="trucks/gmc_8000/gmc_8000_rev">
-
-                                                    </EngineRev>
-                                                    <Honk Sound="trucks/gmc_8000/gmc_8000_honk">
-
-                                                    </Honk>
-                                                    <EngineTrans Sound="">
-
-                                                    </EngineTrans>
-                                                    <EngineLow_2d IsSound2D="true" Sound="trucks/gmc_8000/gmc_8000_low_2d">
-
-                                                    </EngineLow_2d>
-                                                    <AbruptStop Sound="trucks/common/truck_swing_big_old_rnd_set/truck_swing_big_old_rnd">
-
-                                                    </AbruptStop>
-                                                    <EngineHigh_2d IsSound2D="true" Sound="trucks/gmc_8000/gmc_8000_high_2d">
-
-                                                    </EngineHigh_2d>
-                                                    <EngineLow Sound="trucks/gmc_8000/gmc_8000_low">
-
-                                                    </EngineLow>
-                                                    <EngineIdle_2d IsSound2D="true" Sound="trucks/gmc_8000/gmc_8000_idle_2d">
-
-                                                    </EngineIdle_2d>
-                                                    <EngineStop Sound="trucks/gmc_8000/gmc_8000_stop">
-
-                                                    </EngineStop>
-                                                    <EngineIdle Sound="trucks/gmc_8000/gmc_8000_idle">
-
-                                                    </EngineIdle>
-                                                    <EngineHeavy_2d IsSound2D="true" Sound="trucks/gmc_8000/gmc_8000_heavy_2d">
-
-                                                    </EngineHeavy_2d>
-                                                    <Reverse Sound="">
-
-                                                    </Reverse>
-                                                    <EngineHeavy Sound="trucks/gmc_8000/gmc_8000_heavy">
-
-                                                    </EngineHeavy>
-                                                    <EngineAccel Sound="trucks/gmc_8000/gmc_8000_acc">
-
-                                                    </EngineAccel>
-                                                    <EngineStart Sound="trucks/gmc_8000/gmc_8000_start">
-
-                                                    </EngineStart>
-              </Sounds>
-              <Driver SteeringWheelPos="(0.826; 1.816; 0.497)" Pos="(0.45; 1.5; 0.495)" ParentFrame="BoneCabin_cdt" AnimationSet="HeavyTruck">
-
-              </Driver>
-              <Dashboard>
-                                                          <Gauge Mesh="trucks/arrows/gmc_8000_arrow_01" Org="(1.117; 1.725; 0.672)" OutputAngles="(-138;60)" InputType="none" Dir="(-0.998; 0.058; -0.009)" InputRange="(0;1)" Damping="0.99">
-
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/gmc_8000_arrow_01" Org="(1.122; 1.802; 0.673)" OutputAngles="(-138;67)" InputType="engineEnabled" Dir="(-0.998; 0.008; 0.059)" InputRange="(0;1)" Damping="0.9">
-
-                                                          </Gauge>
-                                                          <Gauge Org="(1.12; 1.777; 0.564)" OutputAngles="(-135;100)" Mesh="trucks/arrows/gmc_8000_arrow_02" InputRange="(0;160)" Dir="(-0.707; 0.022; 0.021)" InputType="speed">
-
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/gmc_8000_arrow_02" Org="(1.118; 1.777; 0.431)" OutputAngles="(-135;100)" InputType="rpm" Dir="(-0.707; 0.017; 0.026)" InputRange="(0;1)" Damping="0.9">
-
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/gmc_8000_arrow_01" Org="(1.116; 1.797; 0.32)" OutputAngles="(-42;5)" InputType="engineEnabled" Dir="(-0.7; -0.003; 0.03)" InputRange="(0;1)" Damping="0.9996">
-
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/gmc_8000_arrow_01" Org="(1.111; 1.72; 0.32)" OutputAngles="(-39;39)" InputType="fuel" Dir="(-0.997; 0.049; 0.056)" InputRange="(0;1)" Damping="0.9">
-
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/gmc_8000_arrow_01" Org="(1.11; 1.798; 0.238)" OutputAngles="(-41;22)" InputType="engineEnabled" Dir="(-0.707; -0; 0.03)" InputRange="(0;1)" Damping="0.9">
-
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/gmc_8000_arrow_01" Org="(1.106; 1.72; 0.238)" OutputAngles="(-43;10)" InputType="engineEnabled" Dir="(-0.708; -0; 0.03)" InputRange="(0;1)" Damping="0.9">
-
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/gmc_8000_arrow_01" Org="(1.12; 1.803; 0.747)" OutputAngles="(-139;65)" InputType="none" Dir="(-0.998; 0.008; 0.059)" InputRange="(0;1)" Damping="0.9">
-
-                                                          </Gauge>
-              </Dashboard>
-              <SteeringRack FrameSteerRight="BoneRackRight" Frame="BoneRack" FrameSteerLeft="BoneRackLeft" RackHalfSizeZ="0.831">
-
-              </SteeringRack>
-              <OcclusionMap MaxX="3.048" HalfSizeZ="1.8" MinX="-5.944">
-
-              </OcclusionMap>
-      </TruckData>
-      <ModelAttachments>
-                <StopSignals>
-                    <Light Pos="(-5.951; 0.71; 0)" _template="StopSignal">
-
-                    </Light>
-                        <Flare Size=".6" _template="StopSignal" Pos="(-5.851; 0.779; 0.276)">
-
-                        </Flare>
-                        <Flare Size=".6" _template="StopSignal" Pos="(-5.851; 0.779; -0.276)">
-
-                        </Flare>
-                </StopSignals>
-                    <Ignition>
-                        <Flare ParentFrame="BoneCabinRagdoll_cdt" Size="0.5" Pos="(2.24; 1.339; 1.050)" Color="g(255; 192; 0) x 0.17" _template="Beacon">
-
-                        </Flare>
-                        <Flare ParentFrame="BoneCabinRagdoll_cdt" Size="0.5" Pos="(2.24; 1.339; -1.050)" Color="g(255; 192; 0) x 0.17" _template="Beacon">
-
-                        </Flare>
-                        <Flare Pos="(-5.851; 0.779; 0.276)" _template="IgnitionSignalRed">
-
-                        </Flare>
-                        <Flare Pos="(-5.851; 0.779; -0.276)" _template="IgnitionSignalRed">
-
-                        </Flare>
-                    </Ignition>
-                    <Ignition>
-                        <Light Pos="(-5.95; 0.88; 0)" _template="IgnitionSignalRed">
-
-                        </Light>
-                        <Light ParentFrame="BoneCabinRagdoll_cdt" Pos="(2.615; 0.945; 1.050)" Color="g(255; 205; 145) x 0.8" _template="IgnitionSignalWhite">
-
-                        </Light>
-                        <Light ParentFrame="BoneCabinRagdoll_cdt" Pos="(2.615; 0.945; -1.050)" Color="g(255; 205; 145) x 0.8" _template="IgnitionSignalWhite">
-
-                        </Light>
-                          <Flare ParentFrame="BoneCabinRagdoll_cdt" Pos="(2.32; 1.161; -1.050)" DirAngle="180" Color="g(165; 149; 130) x 0.85" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                          <Flare ParentFrame="BoneCabinRagdoll_cdt" Pos="(2.32; 1.161; 1.050)" DirAngle="180" Color="g(165; 149; 130) x 0.85" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                    </Ignition>
-                <HeadLight>
-                          <Model _template="HeadLightRay" Org="(2.32; 1.161; -1.050)" ParentFrame="BoneCabinRagdoll_cdt">
-
-                          </Model>
-                          <Model _template="HeadLightRay" Org="(2.32; 1.161; 1.050)" ParentFrame="BoneCabinRagdoll_cdt">
-
-                          </Model>
-                            <Flare ParentFrame="BoneCabinRagdoll_cdt" Size="0.5" Pos="(2.32; 1.161; -1.050)" DirAngle="135" _template="HeadLight">
-
-                            </Flare>
-                            <Flare ParentFrame="BoneCabinRagdoll_cdt" Size="0.5" Pos="(2.32; 1.161; 1.050)" DirAngle="135" _template="HeadLight">
-
-                            </Flare>
-                            <Flare Pos="(2.32; 1.161; -1.050)" _template="BlueStreak" ParentFrame="BoneCabinRagdoll_cdt">
-
-                            </Flare>
-                            <Flare Pos="(2.32; 1.161; 1.050)" _template="BlueStreak" ParentFrame="BoneCabinRagdoll_cdt">
-
-                            </Flare>
-                </HeadLight>
-                <ReverseSignals>
-                          <Light Pos="(-5.851; 0.85; 0)" _template="ReverseSignal">
-
-                          </Light>
-                              <Flare Size="0.4" _template="ReverseSignal" Pos="(-5.851; 0.85; -0.276)">
-
-                              </Flare>
-                              <Flare Size="0.4" _template="ReverseSignal" Pos="(-5.851; 0.85; 0.276)">
-
-                              </Flare>
-                              <Flare Pos="(-5.851; 0.85; -0.276)" Size="0.4" Dir="(-1; 0; 0)" Color="g(220; 220; 255) x 0.05" _template="BlueStreak">
-
-                              </Flare>
-                              <Flare Pos="(-5.851; 0.85; 0.276)" Size="0.4" Dir="(-1; 0; 0)" Color="g(220; 220; 255) x 0.05" _template="BlueStreak">
-
-                              </Flare>
-                </ReverseSignals>
-      </ModelAttachments>
-      <HeadLight Pos="(2.513; 1.167; 0)" _template="Default">
+                          </ExtraParent>
+                      </Socket>
+                      <Socket Offset="(-3.185; 0.987; 0)" Names="SaddleHigh">
+                          <ExtraParent Offset="(0; 0; 0.03)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                          <ExtraParent Offset="(0; 0; -0.03)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                      </Socket>
+                      <Socket Offset="(-3.05; 0.987; 0)" Names="FrameAddon">
+                          <ExtraParent Offset="(0; 0; 0.06)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                          <ExtraParent Offset="(0; 0; -0.06)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                            <AddonsShift Types="MinicraneUS" Offset="(-0.95; 0; 0)">
+
+                            </AddonsShift>
+                            <AddonsShift Types="MetalDetector" Offset="(-0.9; 0; 0)">
+
+                            </AddonsShift>
+                      </Socket>
+                      <Socket NamesBlock="MinicraneUS, MetalDetector, Trailer" Offset="(-3.5; 0.987; 0)" Names="FrameAddonTow">
+
+                      </Socket>
+                      <Socket ParentFrame="BoneChassis_cdt" Offset="(-3.35; 1.073; 0)" Names="FrameAddonKung">
+                          <ExtraParent Offset="(0; 0; -0.06)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                          <ExtraParent Offset="(0; 0; 0.06)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                      </Socket>
+                      <Socket Offset="(-3.74; 0.987; 0)" NamesBlock="Gmc8000FenderLarge" Names="FrameAddonTank">
+                          <ExtraParent Offset="(0; 0; 0.11)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                          <ExtraParent Offset="(0; 0; -0.11)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                      </Socket>
+                      <Socket Offset="(-3.4; 0.998; 0)" NamesBlock="MetalDetector, MinicraneUS, Gmc8000FenderLarge, Gmc8000FenderSmall" Names="BigCraneUs">
+                          <ExtraParent Offset="(0; -0.01; 0.057)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                          <ExtraParent Offset="(0; -0.01; -0.057)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                      </Socket>
+                      <Socket NamesBlock="MetalDetector, MinicraneUS" Names="FrameAddonSeismicVibrator" ParentFrame="BoneChassis_cdt" Offset="(-0.887; 0.987; 0)">
+
+                      </Socket>
+                      <Socket NamesBlock="MetalDetector, MinicraneUS, Trailer" Names="FrameAddonMaintainer" ParentFrame="BoneChassis_cdt" Offset="(-3.55; -0.042; 0)">
+
+                      </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                      <Socket NamesBlock="FrameAddonKung, FrameAddonTank" Names="MetalDetector" ParentFrame="BoneChassis_cdt" Offset="(-1.124; -0.06; 0)">
+
+                      </Socket>
+                      <Socket Offset="(-1.1; 0.99; 0)" NamesBlock="FrameAddonKung, FrameAddonTank" Names="MinicraneUS">
+                          <ExtraParent Offset="(0; 0; 0.045)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                          <ExtraParent Offset="(0; 0; -0.045)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                      </Socket>
+                  </AddonSockets>
+                  <AddonSockets DefaultAddon="gmc_8000_transferbox_default">
+                    <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Gmc8000TransferBox">
+                          <ExtraParent Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                          <ExtraParent Frame="BoneAxle1">
+
+                          </ExtraParent>
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets DefaultAddon="gmc_8000_exhaust_default">
+                    <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Gmc8000Exhaust">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets DefaultAddon="gmc_8000_bumper_default">
+                    <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="Gmc8000Bumper">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets DefaultAddon="gmc_8000_diff_lock_default">
+                    <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="GMC8000DiffLock">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets DefaultAddon="gmc_8000_horn_default">
+                    <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="Gmc8000Horn">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets DefaultAddon="gmc_8000_gabarite_default">
+                    <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="Gmc8000Gabarite">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="Gmc8000Spotlight">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="Gmc8000Visor">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="Gmc8000Snorkel">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket NamesBlock="Gmc8000FenderSmall" Names="Gmc8000FenderLarge" ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket NamesBlock="Gmc8000FenderLarge" Names="Gmc8000FenderSmall" ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabinRagdoll_cdt" InCockpit="true" Names="gmc8000Sticker_1x1_01">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabinRagdoll_cdt" InCockpit="true" Names="gmc8000Sticker_1x1_02">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabinRagdoll_cdt" InCockpit="true" Names="gmc8000Sticker_1x1_03">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneSunshieldLeft_cdt" InCockpit="true" Names="gmc8000Sticker_1x2_01">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneSunshieldRight_cdt" InCockpit="true" Names="gmc8000Sticker_1x2_02">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabinRagdoll_cdt" InCockpit="true" Names="gmc8000Sticker_1x4_01">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabinRagdoll_cdt" InCockpit="true" Names="gmc8000Sticker_GlassTop">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabinRagdoll_cdt" InCockpit="true" Names="gmc8000Sticker_GlassBottom">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="gmc8000Sticker_Door_L">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="gmc8000Sticker_Door_R">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="gmc8000Sticker_Roof">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="gmc8000Sticker_Capote">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket Names="StuffDashboard" InCockpit="true" ParentFrame="BoneCabinRagdoll_cdt" Offset="(1.13; 1.903; -0.16)">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                      <Socket Names="StuffAirfreshener" InCockpit="true" ParentFrame="BoneCabinRagdoll_cdt" Offset="(0.885; 2.411; 0.203)">
+
+                      </Socket>
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" InCockpit="true" Names="StuffCurtainGmc8000">
+
+                      </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="StuffHoodGmc8000">
+
+                    </Socket>
+                  </AddonSockets>
+                    <WinchSocket Pos="(2.383; 0.712; 0.496)" ParentFrame="BoneCabin_cdt">
+
+                    </WinchSocket>
+                    <WinchSocket Pos="(2.383; 0.712; -0.496)" ParentFrame="BoneCabin_cdt">
+
+                    </WinchSocket>
+                    <WinchSocket Pos="(-5.889; 0.816; 0)">
+
+                    </WinchSocket>
+                    <WinchSocket Pos="(-1.85; 0.767; 0.42)">
+
+                    </WinchSocket>
+                    <WinchSocket Pos="(-1.85; 0.767; -0.42)">
+
+                    </WinchSocket>
+            <UiDesc UiDesc="UI_VEHICLE_GMC_8000_DESC" UiIcon30x30="highwayVehicleImg30" UiName="UI_VEHICLE_GMC_8000_NAME" UiIconLogo="GMLogoAlt80" UiIcon40x40="highwayVehicleImg" UiIcon328x458="shopImgGmcBrigadier">
+
+            </UiDesc>
+      </GameData>
+      <ControlledConstraints>
+              <Constraint Name="TieRodSteer" IsLinkedSteering="true" Id="chassis_steer">
+
+              </Constraint>
+      </ControlledConstraints>
+      <HeadLight _template="Default" Pos="(2.513; 1.167; 0)">
 
       </HeadLight>
-      <GameData Price="90000" Country="US" UnlockByExploration="false" UnlockByRank="1">
-                      <CraneSocket Pos="(2.383; 0.712; 0.496)" ParentFrame="BoneCabin_cdt">
-
-                      </CraneSocket>
-                      <CraneSocket Pos="(2.383; 0.712; -0.496)" ParentFrame="BoneCabin_cdt">
-
-                      </CraneSocket>
-                      <CraneSocket Pos="(-5.889; 0.816; 0)">
-
-                      </CraneSocket>
-                      <CraneSocket Pos="(-1.85; 0.767; 0.42)">
-
-                      </CraneSocket>
-                      <CraneSocket Pos="(-1.85; 0.767; -0.42)">
-
-                      </CraneSocket>
-                    <UiDesc UiIcon30x30="highwayVehicleImg30" UiName="UI_VEHICLE_GMC_8000_NAME" UiIcon328x458="shopImgGmcBrigadier" UiIconLogo="GMLogoAlt80" UiDesc="UI_VEHICLE_GMC_8000_DESC" UiIcon40x40="highwayVehicleImg">
-
-                    </UiDesc>
-                          <AddonSockets>
-                            <Socket Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="MetalDetector" Names="Gmc8000SpareWheel">
-                                <ExtraParent Frame="BoneCabin_cdt">
-
-                                </ExtraParent>
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                              <Socket Offset="(-3.814; 1.47; 0)" Names="Semitrailer, SemitrailerOiltank">
-
-                              </Socket>
-                              <Socket Offset="(-3.188; 1.47; 0)" Names="LargeSemitrailer, LargeSemitrailerOiltank">
-
-                              </Socket>
-                              <Socket Offset="(-5.921; 0.828; 0)" Names="Trailer">
-
-                              </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(-0.509; 0.992; 0)" NamesBlock="SaddleLow1, SaddleHigh, BigCraneUs, MinicraneUS, MetalDetector, FrameAddonLogShort, FrameAddon, FrameAddonKung, FrameAddonTank, FrameAddonSeismicVibrator, FrameAddonMaintainer, FrameAddonTow" Names="LogLift">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                              <Socket Offset="(-7.317; 0.992; 0)" NamesBlock="MinicraneUS, MetalDetector, Gmc8000FenderLarge, Gmc8000FenderSmall" Names="BunkLog">
-
-                              </Socket>
-                              <Socket Offset="(-3.06; 0.987; 0)" NamesBlock="MinicraneUS, MetalDetector, Gmc8000FenderLarge, Gmc8000FenderSmall" Names="FrameAddonLogShort">
-
-                              </Socket>
-                              <Socket Offset="(-3.811; 0.987; 0)" Names="SaddleLow1">
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.03)">
-
-                                  </ExtraParent>
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.03)">
-
-                                  </ExtraParent>
-                              </Socket>
-                              <Socket Offset="(-3.185; 0.987; 0)" Names="SaddleHigh">
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.03)">
-
-                                  </ExtraParent>
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.03)">
-
-                                  </ExtraParent>
-                              </Socket>
-                              <Socket Offset="(-3.05; 0.987; 0)" Names="FrameAddon">
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.06)">
-
-                                  </ExtraParent>
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.06)">
-
-                                  </ExtraParent>
-                                    <AddonsShift Offset="(-0.95; 0; 0)" Types="MinicraneUS">
-
-                                    </AddonsShift>
-                                    <AddonsShift Offset="(-0.9; 0; 0)" Types="MetalDetector">
-
-                                    </AddonsShift>
-                              </Socket>
-                              <Socket NamesBlock="MinicraneUS, MetalDetector, Trailer" Offset="(-3.5; 0.987; 0)" Names="FrameAddonTow">
-
-                              </Socket>
-                              <Socket ParentFrame="BoneChassis_cdt" Offset="(-3.35; 1.073; 0)" Names="FrameAddonKung">
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.06)">
-
-                                  </ExtraParent>
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.06)">
-
-                                  </ExtraParent>
-                              </Socket>
-                              <Socket Offset="(-3.74; 0.987; 0)" NamesBlock="Gmc8000FenderLarge" Names="FrameAddonTank">
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.11)">
-
-                                  </ExtraParent>
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.11)">
-
-                                  </ExtraParent>
-                              </Socket>
-                              <Socket Offset="(-3.4; 0.998; 0)" NamesBlock="MetalDetector, MinicraneUS, Gmc8000FenderLarge, Gmc8000FenderSmall" Names="BigCraneUs">
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; -0.01; 0.057)">
-
-                                  </ExtraParent>
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; -0.01; -0.057)">
-
-                                  </ExtraParent>
-                              </Socket>
-                              <Socket Offset="(-0.887; 0.987; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="MetalDetector, MinicraneUS" Names="FrameAddonSeismicVibrator">
-
-                              </Socket>
-                              <Socket Offset="(-3.55; -0.042; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="MetalDetector, MinicraneUS, Trailer" Names="FrameAddonMaintainer">
-
-                              </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                              <Socket Offset="(-1.124; -0.06; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="FrameAddonKung, FrameAddonTank" Names="MetalDetector">
-
-                              </Socket>
-                              <Socket Offset="(-1.1; 0.99; 0)" NamesBlock="FrameAddonKung, FrameAddonTank" Names="MinicraneUS">
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.045)">
-
-                                  </ExtraParent>
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.045)">
-
-                                  </ExtraParent>
-                              </Socket>
-                          </AddonSockets>
-                          <AddonSockets DefaultAddon="gmc_8000_transferbox_default">
-                            <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Gmc8000TransferBox">
-                                  <ExtraParent Frame="BoneChassis_cdt">
-
-                                  </ExtraParent>
-                                  <ExtraParent Frame="BoneAxle1">
-
-                                  </ExtraParent>
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets DefaultAddon="gmc_8000_exhaust_default">
-                            <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Gmc8000Exhaust">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets DefaultAddon="gmc_8000_bumper_default">
-                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="Gmc8000Bumper">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets DefaultAddon="gmc_8000_diff_lock_default">
-                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="GMC8000DiffLock">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets DefaultAddon="gmc_8000_horn_default">
-                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="Gmc8000Horn">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets DefaultAddon="gmc_8000_gabarite_default">
-                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="Gmc8000Gabarite">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="Gmc8000Spotlight">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="Gmc8000Visor">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="Gmc8000Snorkel">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="Gmc8000FenderSmall" Names="Gmc8000FenderLarge">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="Gmc8000FenderLarge" Names="Gmc8000FenderSmall">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="gmc8000Sticker_1x1_01" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="gmc8000Sticker_1x1_02" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="gmc8000Sticker_1x1_03" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneSunshieldLeft_cdt" Names="gmc8000Sticker_1x2_01" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneSunshieldRight_cdt" Names="gmc8000Sticker_1x2_02" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="gmc8000Sticker_1x4_01" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="gmc8000Sticker_GlassTop" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="gmc8000Sticker_GlassBottom" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="gmc8000Sticker_Door_L">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="gmc8000Sticker_Door_R">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="gmc8000Sticker_Roof">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="gmc8000Sticker_Capote">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(1.13; 1.903; -0.16)" ParentFrame="BoneCabinRagdoll_cdt" Names="StuffDashboard" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                              <Socket Offset="(0.885; 2.411; 0.203)" ParentFrame="BoneCabinRagdoll_cdt" Names="StuffAirfreshener" InCockpit="true">
-
-                              </Socket>
-                              <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="StuffCurtainGmc8000" InCockpit="true">
-
-                              </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="StuffHoodGmc8000">
-
-                            </Socket>
-                          </AddonSockets>
-                    <CustomizationCameras>
-                                <CameraPos Interior="true" Position="(7.6; 4.352; -0.303)" Name="roof_sticker" InterestPosition="(3.6; 0.363; -0.642)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-7; 3.802; 4.913)" MaxXRotation="360" Name="addon_1" InterestPosition="(2; 1.563; -0)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(5.258; 2.509; 4.431)" MaxXRotation="360" Name="addon_2" InterestPosition="(2.9; 0.525; -0.002)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(5; 2.2; -0.72)" Name="mirror_mount" InterestPosition="(6.942; 2.145; 1.677)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-0.317; 4.306; -4.556)" MaxXRotation="360" Name="side_r" InterestPosition="(4.764; 1.865; -0)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(5.3; 2.412; -0.5)" Name="sticker" InterestPosition="(6.729; 1.3; 1.4)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(5; 2.094; -0.4)" Name="sticker_1" InterestPosition="(7.3; 3.196; 1.5)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(5.2; 2.212; 0)" Name="sticker_2" InterestPosition="(6.8; 1.3; 1.9)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(8.384; 2.7; 0.6)" Name="glass_sticker" InterestPosition="(4.545; 1.5; -1.3)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(4; 1.862; 3.197)" Name="door_r_sticker" InterestPosition="(7; 1.203; 0.54)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(10.418; 3.866; -3.312)" MaxXRotation="360" Name="roof" InterestPosition="(5.165; 1.74; -0)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(9.116; 4.392; -0.492)" Name="capote_sticker" InterestPosition="(5.918; 0.655; -0.737)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(13.57; 1.44; -3.425)" MaxXRotation="360" Name="hoods" InterestPosition="(5.997; 1.735; 0)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(10.666; 3.491; 4.263)" MaxXRotation="360" Name="side_l" InterestPosition="(5.111; 1.443; 0)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(5.3; 2.412; -0.5)" Name="bubble_head" InterestPosition="(6.729; 1.3; 1.4)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-3.583; 1.9; -4.3)" MaxXRotation="360" Name="wheels" InterestPosition="(4.213; 1.133; 0.3)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(13.57; 1.44; -3.425)" MaxXRotation="360" Name="default" InterestPosition="(5.997; 1.735; 0)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-5.27; 2.54; 3.142)" MaxXRotation="360" Name="rear" InterestPosition="(0.612; 0.86; -0)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(4.3; 1.835; -3.217)" Name="door_l_sticker" InterestPosition="(5.3; 1.225; 0.224)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(9.091; 2.279; -1.556)" Name="hood_ornament" InterestPosition="(7.878; 1.915; -1.556)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(5; 2.2; -0.72)" Name="curtain" InterestPosition="(6.942; 2.145; 1.677)" FOV="32.0">
-
-                                </CameraPos>
-                    </CustomizationCameras>
-                              <WinchSocket Pos="(2.383; 0.712; 0.496)" ParentFrame="BoneCabin_cdt">
-
-                              </WinchSocket>
-                              <WinchSocket Pos="(2.383; 0.712; -0.496)" ParentFrame="BoneCabin_cdt">
-
-                              </WinchSocket>
-                              <WinchSocket Pos="(-5.889; 0.816; 0)">
-
-                              </WinchSocket>
-                              <WinchSocket Pos="(-1.85; 0.767; 0.42)">
-
-                              </WinchSocket>
-                              <WinchSocket Pos="(-1.85; 0.767; -0.42)">
-
-                              </WinchSocket>
-      </GameData>
-      <Landmark MaxScale="3.8" MinScale="1.8" Mesh="landmarks/gmc_8000_lmk">
+      <Landmark Mesh="landmarks/gmc_8000_lmk" MaxScale="3.8" MinScale="1.8">
 
       </Landmark>
       <AutomaticIK>
-                          <IKBone ModelFrame="BonePistonBase" ParentFrame="BoneCabin_cdt">
-                            <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge">
+                      <IKBone ParentFrame="BoneCabin_cdt" ModelFrame="BonePistonBase">
+                        <IKBone AttachToFrame="BoneTieRod_cdt" AttachOffset="(0; 0; 0)" ModelFrame="BonePiston">
+                            <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
 
                             </IKJoint>
-                            <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BonePiston" AttachToFrame="BoneTieRod_cdt">
-                                  <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+                        </IKBone>
+                        <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge">
 
-                                  </IKJoint>
-                            </IKBone>
-                          </IKBone>
-                          <IKBone ModelFrame="BoneTieRodHinge2" ParentFrame="BoneTieRod_cdt">
-                            <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+                        </IKJoint>
+                      </IKBone>
+                      <IKBone ParentFrame="BoneTieRod_cdt" ModelFrame="BoneTieRodHinge2">
+                        <IKBone AttachToFrame="BoneRackLeft" AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRodPrismatic">
+                            <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
 
                             </IKJoint>
-                            <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRodPrismatic" AttachToFrame="BoneRackLeft">
-                                  <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+                        </IKBone>
+                        <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
 
-                                  </IKJoint>
-                            </IKBone>
-                          </IKBone>
+                        </IKJoint>
+                      </IKBone>
       </AutomaticIK>
+      <ModelAttachments>
+                      <StopSignals>
+                            <Flare Size=".6" _template="StopSignal" Pos="(-5.851; 0.779; 0.276)">
+
+                            </Flare>
+                            <Flare Size=".6" _template="StopSignal" Pos="(-5.851; 0.779; -0.276)">
+
+                            </Flare>
+                          <Light _template="StopSignal" Pos="(-5.951; 0.71; 0)">
+
+                          </Light>
+                      </StopSignals>
+                          <Ignition>
+                              <Flare Color="g(255; 192; 0) x 0.17" Pos="(2.24; 1.339; 1.050)" ParentFrame="BoneCabinRagdoll_cdt" Size="0.5" _template="Beacon">
+
+                              </Flare>
+                              <Flare Color="g(255; 192; 0) x 0.17" Pos="(2.24; 1.339; -1.050)" ParentFrame="BoneCabinRagdoll_cdt" Size="0.5" _template="Beacon">
+
+                              </Flare>
+                              <Flare _template="IgnitionSignalRed" Pos="(-5.851; 0.779; 0.276)">
+
+                              </Flare>
+                              <Flare _template="IgnitionSignalRed" Pos="(-5.851; 0.779; -0.276)">
+
+                              </Flare>
+                          </Ignition>
+                          <Ignition>
+                              <Flare Color="g(165; 149; 130) x 0.85" ParentFrame="BoneCabinRagdoll_cdt" DirAngle="180" Pos="(2.32; 1.161; -1.050)" _template="IgnitionSignalWhite">
+
+                              </Flare>
+                              <Flare Color="g(165; 149; 130) x 0.85" ParentFrame="BoneCabinRagdoll_cdt" DirAngle="180" Pos="(2.32; 1.161; 1.050)" _template="IgnitionSignalWhite">
+
+                              </Flare>
+                                <Light _template="IgnitionSignalRed" Pos="(-5.95; 0.88; 0)">
+
+                                </Light>
+                                <Light Color="g(255; 205; 145) x 0.8" ParentFrame="BoneCabinRagdoll_cdt" _template="IgnitionSignalWhite" Pos="(2.615; 0.945; 1.050)">
+
+                                </Light>
+                                <Light Color="g(255; 205; 145) x 0.8" ParentFrame="BoneCabinRagdoll_cdt" _template="IgnitionSignalWhite" Pos="(2.615; 0.945; -1.050)">
+
+                                </Light>
+                          </Ignition>
+                      <HeadLight>
+                                <Flare ParentFrame="BoneCabinRagdoll_cdt" DirAngle="135" Size="0.5" _template="HeadLight" Pos="(2.32; 1.161; -1.050)">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabinRagdoll_cdt" DirAngle="135" Size="0.5" _template="HeadLight" Pos="(2.32; 1.161; 1.050)">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabinRagdoll_cdt" _template="BlueStreak" Pos="(2.32; 1.161; -1.050)">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabinRagdoll_cdt" _template="BlueStreak" Pos="(2.32; 1.161; 1.050)">
+
+                                </Flare>
+                                  <Model Org="(2.32; 1.161; -1.050)" _template="HeadLightRay" ParentFrame="BoneCabinRagdoll_cdt">
+
+                                  </Model>
+                                  <Model Org="(2.32; 1.161; 1.050)" _template="HeadLightRay" ParentFrame="BoneCabinRagdoll_cdt">
+
+                                  </Model>
+                      </HeadLight>
+                      <ReverseSignals>
+                                  <Flare Size="0.4" _template="ReverseSignal" Pos="(-5.851; 0.85; -0.276)">
+
+                                  </Flare>
+                                  <Flare Size="0.4" _template="ReverseSignal" Pos="(-5.851; 0.85; 0.276)">
+
+                                  </Flare>
+                                  <Flare Color="g(220; 220; 255) x 0.05" Pos="(-5.851; 0.85; -0.276)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
+
+                                  </Flare>
+                                  <Flare Color="g(220; 220; 255) x 0.05" Pos="(-5.851; 0.85; 0.276)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
+
+                                  </Flare>
+                                <Light _template="ReverseSignal" Pos="(-5.851; 0.85; 0)">
+
+                                </Light>
+                      </ReverseSignals>
+      </ModelAttachments>
+      <TruckData EngineIconMesh="env/engine_default" EngineStartDelay="0.8" TruckType="HEAVY_DUTY" ExhaustStartTime="0.9" SteerSpeed="0.02" TruckImage="gmcBrigadier8000mchr" DiffLockType="None" Responsiveness="0.25" FuelCapacity="285" EngineIconScale="1.2" BackSteerSpeed="0.01">
+                        <Driver ParentFrame="BoneCabin_cdt" SteeringWheelPos="(0.826; 1.816; 0.497)" Pos="(0.45; 1.5; 0.495)" AnimationSet="HeavyTruck">
+
+                        </Driver>
+                        <Shafts>
+                              <Shaft SocketPointB="ShaftWheel2WheelB" SocketPointA="ShaftWheel2WheelA">
+
+                              </Shaft>
+                        </Shafts>
+                        <FuelTank DamageCapacity="50">
+
+                        </FuelTank>
+                        <Dashboard>
+                                    <Gauge Org="(1.117; 1.725; 0.672)" OutputAngles="(-138;60)" Mesh="trucks/arrows/gmc_8000_arrow_01" Damping="0.99" InputRange="(0;1)" InputType="none" Dir="(-0.998; 0.058; -0.009)">
+
+                                    </Gauge>
+                                    <Gauge Org="(1.122; 1.802; 0.673)" OutputAngles="(-138;67)" Mesh="trucks/arrows/gmc_8000_arrow_01" Damping="0.9" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.998; 0.008; 0.059)">
+
+                                    </Gauge>
+                                    <Gauge Org="(1.12; 1.777; 0.564)" OutputAngles="(-135;100)" Dir="(-0.707; 0.022; 0.021)" InputType="speed" Mesh="trucks/arrows/gmc_8000_arrow_02" InputRange="(0;160)">
+
+                                    </Gauge>
+                                    <Gauge Org="(1.118; 1.777; 0.431)" OutputAngles="(-135;100)" Mesh="trucks/arrows/gmc_8000_arrow_02" Damping="0.9" InputRange="(0;1)" InputType="rpm" Dir="(-0.707; 0.017; 0.026)">
+
+                                    </Gauge>
+                                    <Gauge Org="(1.116; 1.797; 0.32)" OutputAngles="(-42;5)" Mesh="trucks/arrows/gmc_8000_arrow_01" Damping="0.9996" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.7; -0.003; 0.03)">
+
+                                    </Gauge>
+                                    <Gauge Org="(1.111; 1.72; 0.32)" OutputAngles="(-39;39)" Mesh="trucks/arrows/gmc_8000_arrow_01" Damping="0.9" InputRange="(0;1)" InputType="fuel" Dir="(-0.997; 0.049; 0.056)">
+
+                                    </Gauge>
+                                    <Gauge Org="(1.11; 1.798; 0.238)" OutputAngles="(-41;22)" Mesh="trucks/arrows/gmc_8000_arrow_01" Damping="0.9" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.707; -0; 0.03)">
+
+                                    </Gauge>
+                                    <Gauge Org="(1.106; 1.72; 0.238)" OutputAngles="(-43;10)" Mesh="trucks/arrows/gmc_8000_arrow_01" Damping="0.9" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.708; -0; 0.03)">
+
+                                    </Gauge>
+                                    <Gauge Org="(1.12; 1.803; 0.747)" OutputAngles="(-139;65)" Mesh="trucks/arrows/gmc_8000_arrow_01" Damping="0.9" InputRange="(0;1)" InputType="none" Dir="(-0.998; 0.008; 0.059)">
+
+                                    </Gauge>
+                        </Dashboard>
+                        <SoundsWheels _template="Default">
+
+                        </SoundsWheels>
+                        <GearboxSocket Default="g_truck_default" Type="gearboxes_trucks">
+
+                        </GearboxSocket>
+                                      <Steam Origin="(0.144; 0.961; 0)">
+
+                                      </Steam>
+                                      <Steam ParentFrame="BoneCabin_cdt" Origin="(1.568; 1.171; 0)" Scale="0.5">
+
+                                      </Steam>
+                        <Sounds DisableReversePitch="false" MinDist="10.0" Origin="(1.38; 1.426; 0)" ParentFrame="BoneCabin_cdt" AirHissInterval="12.0" _template="Default">
+                                          <AbruptStop Sound="trucks/common/truck_swing_big_old_rnd_set/truck_swing_big_old_rnd">
+
+                                          </AbruptStop>
+                                          <EngineLow Sound="trucks/gmc_8000/gmc_8000_low">
+
+                                          </EngineLow>
+                                          <EngineRev Sound="trucks/gmc_8000/gmc_8000_rev">
+
+                                          </EngineRev>
+                                          <EngineAccel Sound="trucks/gmc_8000/gmc_8000_acc">
+
+                                          </EngineAccel>
+                                          <Honk Sound="trucks/gmc_8000/gmc_8000_honk">
+
+                                          </Honk>
+                                          <EngineStop Sound="trucks/gmc_8000/gmc_8000_stop">
+
+                                          </EngineStop>
+                                          <EngineIdle_2d IsSound2D="true" Sound="trucks/gmc_8000/gmc_8000_idle_2d">
+
+                                          </EngineIdle_2d>
+                                          <EngineHigh Sound="trucks/gmc_8000/gmc_8000_high">
+
+                                          </EngineHigh>
+                                          <EngineHeavy_2d IsSound2D="true" Sound="trucks/gmc_8000/gmc_8000_heavy_2d">
+
+                                          </EngineHeavy_2d>
+                                          <ChassisStress Sound="trucks/common/truck_stress_rnd_set/truck_stress_rnd">
+
+                                          </ChassisStress>
+                                          <Reverse Sound="">
+
+                                          </Reverse>
+                                          <EngineHigh_2d IsSound2D="true" Sound="trucks/gmc_8000/gmc_8000_high_2d">
+
+                                          </EngineHigh_2d>
+                                          <EngineIdle Sound="trucks/gmc_8000/gmc_8000_idle">
+
+                                          </EngineIdle>
+                                          <EngineLow_2d IsSound2D="true" Sound="trucks/gmc_8000/gmc_8000_low_2d">
+
+                                          </EngineLow_2d>
+                                          <EngineHeavy Sound="trucks/gmc_8000/gmc_8000_heavy">
+
+                                          </EngineHeavy>
+                                          <EngineStart Sound="trucks/gmc_8000/gmc_8000_start">
+
+                                          </EngineStart>
+                                          <EngineTrans Sound="">
+
+                                          </EngineTrans>
+                        </Sounds>
+                        <Intake Size="1" Origin="(2.377; 1.39; 0)" Dir="(1; 0; 0)">
+
+                        </Intake>
+                        <SoundsDamage _template="Heavy">
+
+                        </SoundsDamage>
+                                              <LimitedFluid Type="Cylinder" Center="(-0.3; 0.612; 0.815)" LengthX="0.806" RadiusZ="0.33" RadiusY="0.33">
+
+                                              </LimitedFluid>
+                                              <LimitedFluid Type="Cylinder" Center="(0.104; 0.612; -0.815)" LengthX="1.61" RadiusZ="0.33" RadiusY="0.33">
+
+                                              </LimitedFluid>
+                        <Camera ParentFrame="BoneCabin_cdt" Center="(-2.3; 0; 0)">
+                                                  <Cockpit WindshieldShadingTexture="trucks/gmc8000_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/gmc8000_glass__d_a.tga" _template="Default" ViewPos="(0.43; 2.193; 0.496)">
+                                                        <Mirror LookAtOffset="(0; 0; 0.05)" ClipDir="(-0.94; 0; -0.342)" ClipOffset="0.18" FOVScale="2" ReflectionDir="(-0.854; 0; -0.52)" Size="(0.251; 0.553)" MeshFrame="mirror_left" Pos="(0.82; 2.095; 1.363)">
+
+                                                        </Mirror>
+                                                        <Mirror FOVScale="2" Pos="(0.82; 2.095; -1.363)" ClipDir="(-0.714; 0; 0.7)" ReflectionDir="(-0.714; 0; 0.6)" Size="(0.251; 0.553)" ClipOffset="0.1" MeshFrame="mirror_right">
+
+                                                        </Mirror>
+                                                      <Rear ViewPosOffset="(-0.05; -0.1; 0.7)">
+
+                                                      </Rear>
+                                                  </Cockpit>
+                        </Camera>
+                        <SuspensionSocket Default="gmc8000_suspension_default" Type="s_gmc8000" MaxWheelRadiusWithoutSuspension="0.4">
+
+                        </SuspensionSocket>
+                        <Wheels DefaultTire="highway_1" DefaultWheelType="wheels_medium_double" DefaultRim="rim_1">
+                                                        <Wheel _template="RearWheel" Pos="(-4.536; 0.491; 0.893)">
+
+                                                        </Wheel>
+                                                        <Wheel Pos="(-4.536; 0.491; 0.893)" _template="RearWheel" RightSide="true">
+
+                                                        </Wheel>
+                                                        <Wheel _template="RearWheel" Pos="(-3.095; 0.491; 0.893)">
+
+                                                        </Wheel>
+                                                        <Wheel Pos="(-3.095; 0.491; 0.893)" _template="RearWheel" RightSide="true">
+
+                                                        </Wheel>
+                                                        <Wheel _template="FrontWheel" Pos="(1.715; 0.49; 1.02)">
+
+                                                        </Wheel>
+                                                        <Wheel Pos="(1.715; 0.49; 1.02)" _template="FrontWheel" RightSide="true">
+
+                                                        </Wheel>
+                        </Wheels>
+                        <Axles>
+                                                          <Axle Frame="BoneAxle1">
+
+                                                          </Axle>
+                                                          <Axle Frame="BoneAxle2">
+
+                                                          </Axle>
+                                                          <Axle Frame="BoneAxle3">
+
+                                                          </Axle>
+                        </Axles>
+                        <Damage SensationMin="(-0.023; 1.818; -0.988)" Capacity="600" ParentFrame="BoneCabin_cdt" SensationMax="(1.222; 2.489; 0.988)">
+                                                            <DamageArea Max="(2.100; 1.9; 0.6)" Type="Engine" ParentFrame="BoneCabin_cdt" Min="(1.1; 0.62; -0.6)">
+
+                                                            </DamageArea>
+                                                            <DamageArea Max="(0.93; 0.93; 1.12)" Type="FuelTank" ParentFrame="BoneCabin_cdt" Min="(-0.71; 0.24; -1.12)">
+
+                                                            </DamageArea>
+                        </Damage>
+                        <OcclusionMap HalfSizeZ="1.8" MinX="-5.944" MaxX="3.048">
+
+                        </OcclusionMap>
+                        <EngineSocket Default="us_truck_old_engine_0" Type="e_us_truck_old, e_us_truck_old_gmc8000">
+
+                        </EngineSocket>
+                        <WinchUpgradeSocket Default="w_medium_trucks_default" IsUpgradable="true" Type="winches_medium_trucks">
+
+                        </WinchUpgradeSocket>
+                        <SteeringWheel Frame="BoneSteering">
+
+                        </SteeringWheel>
+                                                                  <CompatibleWheels Scale="0.5" Type="wheels_medium_double">
+
+                                                                  </CompatibleWheels>
+                                                                  <CompatibleWheels Scale="0.55" Type="wheels_medium_double">
+
+                                                                  </CompatibleWheels>
+                                                                  <CompatibleWheels Type="wheels_medium_double" RearOffsetZ="0.02" Scale="0.58">
+
+                                                                  </CompatibleWheels>
+                        <SteeringRack RackHalfSizeZ="0.831" Frame="BoneRack" FrameSteerLeft="BoneRackLeft" FrameSteerRight="BoneRackRight">
+
+                        </SteeringRack>
+      </TruckData>
   </Truck>
   <_templates Include="trucks">
         <Wheel>
-            <FrontWheel SteeringJointOffset="0.2" Location="front" ParentFrame="BoneCabin_cdt" SteeringCastor="8" Torque="connectable" SteeringAngle="40">
-
-            </FrontWheel>
             <RearWheel Torque="default" Location="rear" ConnectedToHandbrake="true">
 
             </RearWheel>
+            <FrontWheel SteeringCastor="8" Torque="connectable" ParentFrame="BoneCabin_cdt" SteeringAngle="40" Location="front" SteeringJointOffset="0.2">
+
+            </FrontWheel>
         </Wheel>
         <Body>
-              <SideMirror Mass="5" Collisions="None">
-                  <Constraint AxisLocal="(0; 1; 0)" MaxLimit="15" MinLimit="-15" Type="Hinge">
-                      <Motor Type="Spring" Spring="250" Damping="1">
+              <SideMirror Collisions="None" Mass="5">
+                  <Constraint MinLimit="-15" Type="Hinge" MaxLimit="15" AxisLocal="(0; 1; 0)">
+                      <Motor Spring="250" Type="Spring" Damping="1">
 
                       </Motor>
                   </Constraint>
               </SideMirror>
-              <Sunshield Mass="3" Collisions="None">
-                    <Constraint AxisLocal="(0; 0; 1)" MaxLimit="8" MinLimit="-5" Type="Hinge">
-                        <Motor Type="Spring" Spring="10" Damping=".1">
+              <Sunshield Collisions="None" Mass="3">
+                    <Constraint MinLimit="-5" Type="Hinge" MaxLimit="8" AxisLocal="(0; 0; 1)">
+                        <Motor Spring="10" Type="Spring" Damping=".1">
 
                         </Motor>
                     </Constraint>

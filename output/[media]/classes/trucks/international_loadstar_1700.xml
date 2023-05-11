@@ -1,620 +1,620 @@
   <Truck>
-      <ControlledConstraints>
-            <Constraint Name="TieRodSteer" IsLinkedSteering="true" Id="chassis_steer">
-
-            </Constraint>
-            <Constraint Name="TieRodSteerDriver" IsLinkedSteering="true" Id="chassis_steer">
-
-            </Constraint>
-      </ControlledConstraints>
       <PhysicsModel Mesh="trucks/international_loadstar_1700">
-            <NetSync Legacy="false">
+          <NetSync Legacy="false">
 
-            </NetSync>
-            <Body ImpactType="Truck" Mass="2000" NetSync="pv" CenterOfMassOffset="(-0.4; 0; 0)">
-                  <Body ModelFrame="BoneCabin_cdt" ImpactType="Truck" Mass="2500" NetSync="pv" CenterOfMassOffset="(0.3; -0.4; 0)">
-                      <Constraint Type="Fixed">
+          </NetSync>
+          <Body CenterOfMassOffset="(-0.4; 0; 0)" ImpactType="Truck" NetSync="pv" Mass="2000">
+                <Body CenterOfMassOffset="(0.3; -0.4; 0)" ImpactType="Truck" NetSync="pv" ModelFrame="BoneCabin_cdt" Mass="2500">
+                    <Constraint Type="Fixed">
 
-                      </Constraint>
-                          <Body AngularDamping="2" _template="BoneSunshield" ModelFrame="BoneSunshieldR_cdt">
+                    </Constraint>
+                        <Body AngularDamping="2" _template="BoneSunshield" ModelFrame="BoneSunshieldR_cdt">
 
-                          </Body>
-                          <Body ModelFrame="BoneSunshieldL_cdt" _template="BoneSunshield">
+                        </Body>
+                        <Body _template="BoneSunshield" ModelFrame="BoneSunshieldL_cdt">
 
-                          </Body>
-                          <Body ModelFrame="BoneMirrorLeft_cdt" _template="SideMirror">
-                            <Constraint AxisLocal="(0; 1; 0)">
+                        </Body>
+                        <Body _template="SideMirror" ModelFrame="BoneMirrorLeft_cdt">
+                          <Constraint AxisLocal="(0; 1; 0)">
 
-                            </Constraint>
-                          </Body>
-                          <Body ModelFrame="BoneMirrorRight_cdt" _template="SideMirror">
-                            <Constraint AxisLocal="(0; 1; 0)">
+                          </Constraint>
+                        </Body>
+                        <Body _template="SideMirror" ModelFrame="BoneMirrorRight_cdt">
+                          <Constraint AxisLocal="(0; 1; 0)">
 
-                            </Constraint>
-                          </Body>
-                          <Body ModelFrame="BoneTieRod_cdt" _template="TieRod">
-                            <Constraint AxisLocal="(0; 0; 1)" MaxLimit="30" Name="TieRodSteer" MinLimit="-30">
+                          </Constraint>
+                        </Body>
+                        <Body _template="TieRod" ModelFrame="BoneTieRod_cdt">
+                          <Constraint MinLimit="-30" Name="TieRodSteer" MaxLimit="30" AxisLocal="(0; 0; 1)">
 
-                            </Constraint>
-                          </Body>
-                          <Body ModelFrame="BoneTieRodDriver_cdt" _template="TieRod">
-                            <Constraint AxisLocal="(1; 0; 0)" MaxLimit="300" Name="TieRodSteerDriver" MinLimit="-300">
+                          </Constraint>
+                        </Body>
+                        <Body _template="TieRod" ModelFrame="BoneTieRodDriver_cdt">
+                          <Constraint MinLimit="-300" Name="TieRodSteerDriver" MaxLimit="300" AxisLocal="(1; 0; 0)">
 
-                            </Constraint>
-                          </Body>
-                  </Body>
-            </Body>
+                          </Constraint>
+                        </Body>
+                </Body>
+          </Body>
       </PhysicsModel>
-      <TruckData BackSteerSpeed="0.06" DiffLockType="Always" EngineIconScale="1" TruckType="SCOUT" FuelCapacity="130" EngineStartDelay="1.7" SteerSpeed="0.03" ExhaustStartTime="1.6" Responsiveness="0.6" TruckImage="interloadstarmchr" EngineIconMesh="env/engine_default">
-              <Shakers>
-                  <Shaker MaxFrequency="1.9" Frame="BoneGearstick" ParentFrame="BoneCabin_cdt" MaxAngle="(1; 0; 1)">
+      <GameData Country="US" Price="28200" Recallable="true" UnlockByRank="1" UnlockByExploration="false">
+            <CustomizationCameras>
+                  <CameraPos Interior="true" Position="(6.619; 4.534; -0.619)" FOV="32.0" InterestPosition="(3.043; -0.11; -0.044)" Name="roof_sticker">
 
-                  </Shaker>
-              </Shakers>
-              <GearboxSocket Default="g_truck_default" Type="gearboxes_trucks">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(5.461; 1.888; -0.234)" FOV="32.0" InterestPosition="(7.325; 3.098; 1.324)" Name="sticker_1">
 
-              </GearboxSocket>
-              <Wheels DefaultRim="rim_1" DefaultWheelType="wheels_medium_double" DefaultTire="highway_1">
-                        <Wheel Pos="(2.16; 0.376; 1.01)" _template="FrontWheel">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(2.286; 1.403; -0)" Name="addon_1" MaxXRotation="360" Position="(-4.558; 3.486; 3.933)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                        </Wheel>
-                        <Wheel Pos="(2.16; 0.376; 1.01)" _template="FrontWheel" RightSide="true">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(3.194; 1.807; 0)" Name="addon_2" MaxXRotation="360" Position="(-8.093; 2.337; -6.718)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                        </Wheel>
-                        <Wheel Pos="(-1.665; 0.376; 0.9)" _template="RearWheel">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(5.142; 1.99; -0.387)" FOV="32.0" InterestPosition="(7.699; 2.048; 1.567)" Name="mirror_mount">
 
-                        </Wheel>
-                        <Wheel Pos="(-1.665; 0.376; 0.9)" _template="RearWheel" RightSide="true">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(5.601; 1.97; 0)" Name="side_r" MaxXRotation="360" Position="(3.352; 1.747; -7.216)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                        </Wheel>
-              </Wheels>
-              <WinchUpgradeSocket Default="w_scout_default" Type="winches_scouts" IsUpgradable="true">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(5.382; 1.921; -0.172)" FOV="32.0" InterestPosition="(7.325; 0.781; 1.705)" Name="sticker">
 
-              </WinchUpgradeSocket>
-              <SteeringWheel Frame="BoneSteering">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(8.327; 2.780; 1.09)" FOV="32.0" InterestPosition="(5.694; 1.66; -1.048)" Name="glass_sticker">
 
-              </SteeringWheel>
-              <Damage>
-                              <DamageArea Max="(2.8; 1.629; 0.55)" ParentFrame="BoneChassis_cdt" Min="(1.605; 0.51; -0.55)" Type="Engine">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(4.532; 1.457; 2.502)" FOV="32.0" InterestPosition="(7.029; 0.987; 0.747)" Name="door_r_sticker">
 
-                              </DamageArea>
-                              <DamageArea Max="(1.5; 0.863; 1.2)" ParentFrame="BoneChassis_cdt" Min="(-0.5; 0.25; -1.2)" Type="FuelTank">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(5.003; 1.463; -0)" Name="roof" MaxXRotation="360" Position="(10.134; 3.517; -2.653)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                              </DamageArea>
-              </Damage>
-                            <LimitedFluid Center="(0.057; 0.507; 0.784)" Type="Box" SizeX="0.925" SizeZ="0.567" SizeY="0.399">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(8.230; 3.194; -1.239)" FOV="32.0" InterestPosition="(4.837; -0.228; 0.797)" Name="capote_sticker">
 
-                            </LimitedFluid>
-                            <LimitedFluid Center="(0.057; 0.507; -0.784)" Type="Box" SizeX="0.925" SizeZ="0.567" SizeY="0.399">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(5.997; 1.195; 0)" Name="hoods" MaxXRotation="360" Position="(12.848; 1.434; -3.468)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                            </LimitedFluid>
-              <EngineSocket Default="us_truck_old_engine_0" Type="e_us_truck_old">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(5.221; 1.595; 0.03)" FOV="32.0" InterestPosition="(6.662; 0.61; 1.935)" Name="sticker_2">
 
-              </EngineSocket>
-              <SoundsDamage _template="Heavy">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(5.887; 1.319; 0)" Name="side_l" MaxXRotation="360" Position="(9.383; 2.733; 3.915)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-              </SoundsDamage>
-              <Axles>
-                                      <Axle Frame="BoneAxle1">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(5.425; 1.969; -0.335)" FOV="32.0" InterestPosition="(7.692; 1.172; 1.41)" Name="bubble_head">
 
-                                      </Axle>
-                                      <Axle Frame="BoneAxle2">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(5.432; 0.77; -0)" Name="wheels" MaxXRotation="360" Position="(-0.234; 0.966; -3.937)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                                      </Axle>
-              </Axles>
-              <Camera Center="(-1.2; 0; 0)" RadiusMultiplier="0.8">
-                                      <Cockpit WindshieldShadingTexture="trucks/international_loadstar_1700_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/international_loadstar_1700_glass__d_a.tga" ViewPos="(0.866; 2.013; 0.442)" _template="Default">
-                                            <Mirror Pos="(1.244; 1.861; 1.14)" MeshFrame="mirror_left" FOVScale="1.2" Size="(0.193; 0.471)" ReflectionDir="(-0.899; 0; -0.438)" ClipDir="(-0.899; 0; -0.438)" ClipOffset="0.13">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(5.997; 1.195; 0)" Name="default" MaxXRotation="360" Position="(12.848; 1.434; -3.468)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                                            </Mirror>
-                                            <Mirror Pos="(1.189; 1.861; -1.139)" MeshFrame="mirror_right" FOVScale="1.4" Size="(0.193; 0.471)" ReflectionDir="(-0.788; 0; 0.616)" ClipDir="(-0.788; 0; 0.616)" ClipOffset="0.13">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(0.479; 0.992; -0)" Name="rear" MaxXRotation="360" Position="(-5.767; 1.805; 2.899)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                                            </Mirror>
-                                          <Rear ViewPosOffset="(0.05; -0.1; 0.7)">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(4.51; 1.215; -2.475)" FOV="32.0" InterestPosition="(5.111; 1.176; -0.332)" Name="door_l_sticker">
 
-                                          </Rear>
-                                      </Cockpit>
-              </Camera>
-              <Shafts>
-                                          <Shaft SocketPointA="Shaft1a" SocketPointB="Shaft1b">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(8.271; 1.908; -0.812)" FOV="32.0" InterestPosition="(7.114; 1.56; -0.812)" Name="hood_ornament">
 
-                                          </Shaft>
-                                          <Shaft SocketPointA="Shaft2a" SocketPointB="Shaft2b">
+                  </CameraPos>
+            </CustomizationCameras>
+                <CraneSocket Pos="(2.706; 0.482; -0.487)">
 
-                                          </Shaft>
-                                          <Shaft SocketPointA="Shaft3a" SocketPointB="Shaft3b">
+                </CraneSocket>
+                <CraneSocket Pos="(2.706; 0.482; 0.487)">
 
-                                          </Shaft>
-              </Shafts>
-              <FuelTank DamageCapacity="50">
+                </CraneSocket>
+                <CraneSocket Pos="(0.8; 2.3; 0)">
 
-              </FuelTank>
-                                          <CompatibleWheels Scale="0.45" Type="wheels_medium_double">
+                </CraneSocket>
+                <CraneSocket Pos="(-0.596; 0.691; -0.449)">
 
-                                          </CompatibleWheels>
-                                          <CompatibleWheels Type="wheels_medium_double" Scale="0.52" OffsetZ="0.05">
+                </CraneSocket>
+                <CraneSocket Pos="(-0.596; 0.691; 0.449)">
 
-                                          </CompatibleWheels>
-              <SoundsWheels _template="Default">
+                </CraneSocket>
+                <CraneSocket Pos="(-3.21; 0.734; 0)">
 
-              </SoundsWheels>
-              <SuspensionSocket Default="international_loadstar_1700_suspension_default" MaxWheelRadiusWithoutSuspension="0.25" Type="s_international_loadstar_1700">
+                </CraneSocket>
+                  <AddonSockets>
+                    <Socket Offset="(-3.21; 0.76; 0)" Names="ScautTrailer">
+                        <AddonsShift Types="InternationalLoadstar1700ServiceBody" Offset="(-0.283; -0.055; 0)">
 
-              </SuspensionSocket>
-              <Dashboard>
-                                                    <Gauge Mesh="trucks/arrows/international_loadstar_1700_arrow_1" Org="(1.496; 1.577; 0.506)" OutputAngles="(-133; 133)" InputType="rpm" Dir="(-0.995; 0.095; 0.008)" InputRange="(0;1)" Damping="0.99">
+                        </AddonsShift>
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket Offset="(0; 0; 0)" NamesBlock="InternationalLoadstar1700Spotlight2" Names="InternationalLoadstar1700Flasher">
 
-                                                    </Gauge>
-                                                    <Gauge Org="(1.496; 1.577; 0.363)" OutputAngles="(-114; 113)" Mesh="trucks/arrows/international_loadstar_1700_arrow_1" InputRange="(0;80)" Dir="(-0.997; 0.08; 0.007)" InputType="speed">
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700Spotlight1, InternationalLoadstar1700Spotlight2">
 
-                                                    </Gauge>
-                                                    <Gauge Mesh="trucks/arrows/international_loadstar_1700_arrow_2" Org="(1.491; 1.507; 0.578)" OutputAngles="(-36; 14)" InputType="engineEnabled" Dir="(-0.995; 0.101; -0.001)" InputRange="(0;1)" Damping="0.99">
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700Searchlight">
 
-                                                    </Gauge>
-                                                    <Gauge Mesh="trucks/arrows/international_loadstar_1700_arrow_2" Org="(1.491; 1.507; 0.654)" OutputAngles="(-33; 22)" InputType="engineEnabled" Dir="(-0.995; 0.101; -0.001)" InputRange="(0;1)" Damping="0.99">
-
-                                                    </Gauge>
-                                                    <Gauge Mesh="trucks/arrows/international_loadstar_1700_arrow_2" Org="(1.498; 1.58; 0.619)" OutputAngles="(-29; -3)" InputType="engineEnabled" Dir="(-0.995; 0.102; -0.001)" InputRange="(0;1)" Damping="0.99">
-
-                                                    </Gauge>
-                                                    <Gauge Mesh="trucks/arrows/international_loadstar_1700_arrow_2" Org="(1.498; 1.58; 0.25)" OutputAngles="(-35; 36)" InputType="fuel" Dir="(-0.995; 0.095; 0.001)" InputRange="(0;1)" Damping="0.99">
-
-                                                    </Gauge>
-                                                    <Gauge Mesh="trucks/arrows/international_loadstar_1700_arrow_3" Org="(1.491; 1.521; 0.289)" OutputAngles="(-36; 96)" InputType="engineEnabled" Dir="(-0.995; 0.101; 0.001)" InputRange="(0;1)" Damping="0.99">
-
-                                                    </Gauge>
-                                                    <Gauge Mesh="trucks/arrows/international_loadstar_1700_arrow_3" Org="(1.492; 1.52; 0.211)" OutputAngles="(-36; 96)" InputType="engineEnabled" Dir="(-0.996; 0.094; 0.001)" InputRange="(0;1)" Damping="0.99">
-
-                                                    </Gauge>
-              </Dashboard>
-                                                  <Steam ParentFrame="BoneCabin_cdt" Scale="0.2" Origin="(-0.057; 0.722; 0)">
-
-                                                  </Steam>
-                                                  <Steam ParentFrame="BoneCabin_cdt" Scale="0.5" Origin="(2.038; 1.076; 0)">
-
-                                                  </Steam>
-              <Sounds _template="Default" DisableReversePitch="false" Origin="(1.853; 1.205; 0)" MinDist="8.0">
-                                                      <EngineHigh Sound="trucks/int_loadstar_1700/int_loadstar_1700_high">
-
-                                                      </EngineHigh>
-                                                      <ChassisStress Sound="trucks/common/truck_stress_rnd_set/truck_stress_rnd">
-
-                                                      </ChassisStress>
-                                                      <GearFail Sound="trucks/common/truck_gear_wrong/truck_gear_wrong_big_old">
-
-                                                      </GearFail>
-                                                      <EngineRev Sound="trucks/int_loadstar_1700/int_loadstar_1700_rev">
-
-                                                      </EngineRev>
-                                                      <BrakesSqueal Sound="trucks/int_transtar_4070a/int_transtar_4070a_brakes_squeal">
-
-                                                      </BrakesSqueal>
-                                                      <EngineStart Sound="trucks/int_loadstar_1700/int_loadstar_1700_start">
-
-                                                      </EngineStart>
-                                                      <AbruptStop Sound="trucks/common/truck_swing_big_old_rnd_set/truck_swing_big_old_rnd">
-
-                                                      </AbruptStop>
-                                                      <Reverse Sound="trucks/int_loadstar_1700/int_loadstar_1700_reverse">
-
-                                                      </Reverse>
-                                                      <EngineHeavy_2d IsSound2D="true" Sound="">
-
-                                                      </EngineHeavy_2d>
-                                                      <EngineHeavy Sound="">
-
-                                                      </EngineHeavy>
-                                                      <EngineLow_2d IsSound2D="true" Sound="trucks/int_loadstar_1700/int_loadstar_1700_low_2d">
-
-                                                      </EngineLow_2d>
-                                                      <EngineHigh_2d IsSound2D="true" Sound="trucks/int_loadstar_1700/int_loadstar_1700_high_2d">
-
-                                                      </EngineHigh_2d>
-                                                      <EngineLow Sound="trucks/int_loadstar_1700/int_loadstar_1700_low">
-
-                                                      </EngineLow>
-                                                      <EngineIdle_2d IsSound2D="true" Sound="trucks/int_loadstar_1700/int_loadstar_1700_idle_2d">
-
-                                                      </EngineIdle_2d>
-                                                      <EngineStop Sound="trucks/int_loadstar_1700/int_loadstar_1700_stop">
-
-                                                      </EngineStop>
-                                                      <EngineIdle Sound="trucks/int_loadstar_1700/int_loadstar_1700_idle">
-
-                                                      </EngineIdle>
-                                                      <BrakeRelease Sound="trucks/common/truck_brake_release_alt1_rnd_set/truck_brake_release_alt1_rnd">
-
-                                                      </BrakeRelease>
-                                                      <Honk Sound="trucks/int_loadstar_1700/int_loadstar_1700_honk">
-
-                                                      </Honk>
-                                                      <Handbrake Sound="trucks/common/truck_handbrake_switch_alt1">
-
-                                                      </Handbrake>
-                                                      <EngineAccel Sound="trucks/int_loadstar_1700/int_loadstar_1700_acc">
-
-                                                      </EngineAccel>
-                                                      <Gear Sound="trucks/common/truck_gear_shift_medium_rnd_set/truck_gear_shift_medium_rnd">
-
-                                                      </Gear>
-              </Sounds>
-              <Driver Pos="(0.866; 1.304; 0.442)" SteeringWheelPos="(1.261; 1.626; 0.439)">
-
-              </Driver>
-              <Exhaust Speed="2.0" IsLight="true" Dir="(-1; 0; 0)" Origin="(-0.683; 0.617; -0.387)">
-
-              </Exhaust>
-              <SteeringRack FrameSteerRight="BoneRackRight" Frame="BoneRack" FrameSteerLeft="BoneRackLeft" RackHalfSizeZ="0.797">
-
-              </SteeringRack>
-              <OcclusionMap HalfSizeZ="1.8" Texture="trucks/occlusion/chassis_small__s_d_a.tga" MaxX="3.3" MinX="-3">
-
-              </OcclusionMap>
-      </TruckData>
-      <ModelAttachments>
-                <StopSignals>
-                    <Light Pos="(-3.46; 0.745; 0)" _template="StopSignal">
-
-                    </Light>
-                        <Flare Pos="(-3.088; 0.601; -0.518)" _template="StopSignal">
-
-                        </Flare>
-                        <Flare Pos="(-3.088; 0.601; 0.518)" _template="StopSignal">
-
-                        </Flare>
-                </StopSignals>
-                <Ignition>
-                        <Light Pos="(3.2; 1.013; 0.7)" _template="IgnitionSignalWhite">
-
-                        </Light>
-                        <Light Pos="(3.2; 1.013; -0.7)" _template="IgnitionSignalWhite">
-
-                        </Light>
-                        <Light Pos="(-3; 1.025; -0)" _template="IgnitionSignalRed">
-
-                        </Light>
-                          <Flare Size="0.3" Pos="(2.747; 1; -0.875)" DirAngle="120" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                          <Flare Size="0.3" Pos="(2.747; 1; 0.875)" DirAngle="120" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                          <Flare Size="0.2" _template="IgnitionSignalRed" Pos="(-3.088; 0.601; -0.518)">
-
-                          </Flare>
-                          <Flare Size="0.2" _template="IgnitionSignalRed" Pos="(-3.088; 0.601; 0.518)">
-
-                          </Flare>
-                          <Flare Pos="(1.223; 2.244; -0.655)" _template="Beacon">
-
-                          </Flare>
-                          <Flare Pos="(1.223; 2.244; 0.655)" _template="Beacon">
-
-                          </Flare>
-                          <Flare Pos="(1.222; 2.268; -0.244)" _template="Beacon">
-
-                          </Flare>
-                          <Flare Pos="(1.222; 2.268; 0.244)" _template="Beacon">
-
-                          </Flare>
-                          <Flare Pos="(1.222; 2.268; 0)" _template="Beacon">
-
-                          </Flare>
-                          <Flare Pos="(2.508; 1.286; -0.962)" _template="Beacon" Color="g(169; 115; 0) x 0.5">
-
-                          </Flare>
-                          <Flare Pos="(2.508; 1.286; 0.962)" _template="Beacon" Color="g(169; 115; 0) x 0.5">
-
-                          </Flare>
-                </Ignition>
-                <HeadLight>
-                          <Model _template="HeadLightRay" Org="(2.742; 1; -0.875)">
-
-                          </Model>
-                          <Model _template="HeadLightRay" Org="(2.742; 1; 0.875)">
-
-                          </Model>
-                            <Flare Size="0.4" _template="HeadLight" Pos="(2.742; 1; -0.875)">
-
-                            </Flare>
-                            <Flare Size="0.4" _template="HeadLight" Pos="(2.742; 1; 0.875)">
-
-                            </Flare>
-                            <Flare Pos="(2.742; 1; -0.875)" _template="BlueStreak">
-
-                            </Flare>
-                            <Flare Pos="(2.742; 1; 0.875)" _template="BlueStreak">
-
-                            </Flare>
-                </HeadLight>
-                <ReverseSignals>
-                          <Light Pos="(-3.5; 0.601; 0)" _template="ReverseSignal">
-
-                          </Light>
-                              <Flare Size="0.25" _template="ReverseSignal" Pos="(-3.088; 0.65; -0.518)">
-
-                              </Flare>
-                              <Flare Size="0.25" _template="ReverseSignal" Pos="(-3.088; 0.65; 0.518)">
-
-                              </Flare>
-                              <Flare Pos="(-3.088; 0.65; -0.518)" Size="0.4" Dir="(-1; 0; 0)" Color="g(220; 220; 255) x 0.05" _template="BlueStreak">
-
-                              </Flare>
-                              <Flare Pos="(-3.088; 0.65; 0.518)" Size="0.4" Dir="(-1; 0; 0)" Color="g(220; 220; 255) x 0.05" _template="BlueStreak">
-
-                              </Flare>
-                </ReverseSignals>
-      </ModelAttachments>
-      <HeadLight Pos="(3.294; 0.961; 0)" _template="Default">
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700Horn">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700Gabarite">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets DefaultAddon="international_loadstar_1700_bumper_default">
+                    <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700Bumper">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700Snorkel">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                      <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700ServiceBody">
+
+                      </Socket>
+                      <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700Pickup">
+
+                      </Socket>
+                      <Socket Offset="(-1; 0.82; 0)" Names="MinicraneLoadstar">
+
+                      </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700Visor">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket Names="StuffDashboard" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(1.563; 1.713; 0.112)">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="internationalLoadstar1700Sticker_1x1_01">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="internationalLoadstar1700Sticker_1x1_02">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="internationalLoadstar1700Sticker_1x2_01">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneSunshieldL_cdt" InCockpit="true" Names="internationalLoadstar1700Sticker_1x2_02">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneSunshieldR_cdt" InCockpit="true" Names="internationalLoadstar1700Sticker_1x2_03">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="internationalLoadstar1700Sticker_1x4_01">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="internationalLoadstar1700Sticker_GlassTop">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" Names="internationalLoadstar1700Sticker_Door_R">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" Names="internationalLoadstar1700Sticker_Door_L">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" Names="internationalLoadstar1700Sticker_Roof">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" Names="internationalLoadstar1700Sticker_Capote">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket Names="StuffAirfreshener" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(1.441; 2.163; 0.058)">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" Names="StuffHoodInternationalLoadstar1700">
+
+                    </Socket>
+                  </AddonSockets>
+                    <WinchSocket Pos="(2.706; 0.482; -0.487)">
+
+                    </WinchSocket>
+                    <WinchSocket Pos="(2.706; 0.482; 0.487)">
+
+                    </WinchSocket>
+                    <WinchSocket Pos="(-0.596; 0.691; -0.449)">
+
+                    </WinchSocket>
+                    <WinchSocket Pos="(-0.596; 0.691; 0.449)">
+
+                    </WinchSocket>
+                    <WinchSocket Pos="(-3.21; 0.734; 0)">
+
+                    </WinchSocket>
+            <UiDesc UiDesc="UI_VEHICLE_INTERNATIONAL_LOADSTAR_1700_DESC" UiIcon30x30="scoutVehicleImg30" UiName="UI_VEHICLE_INTERNATIONAL_LOADSTAR_1700_NAME" UiIconLogo="InternationalNavistarLogo80" UiIcon40x40="scoutVehicleImg" UiIcon328x458="shopImgLoadStar">
+
+            </UiDesc>
+      </GameData>
+      <ControlledConstraints>
+                <Constraint Name="TieRodSteer" IsLinkedSteering="true" Id="chassis_steer">
+
+                </Constraint>
+                <Constraint Name="TieRodSteerDriver" IsLinkedSteering="true" Id="chassis_steer">
+
+                </Constraint>
+      </ControlledConstraints>
+      <HeadLight _template="Default" Pos="(3.294; 0.961; 0)">
 
       </HeadLight>
-      <GameData Price="28200" Country="US" UnlockByExploration="false" UnlockByRank="1" Recallable="true">
-                      <CraneSocket Pos="(2.706; 0.482; -0.487)">
+      <TruckData EngineIconMesh="env/engine_default" EngineStartDelay="1.7" TruckType="SCOUT" ExhaustStartTime="1.6" SteerSpeed="0.03" TruckImage="interloadstarmchr" DiffLockType="Always" Responsiveness="0.6" FuelCapacity="130" EngineIconScale="1" BackSteerSpeed="0.06">
+                  <Driver Pos="(0.866; 1.304; 0.442)" SteeringWheelPos="(1.261; 1.626; 0.439)">
 
-                      </CraneSocket>
-                      <CraneSocket Pos="(2.706; 0.482; 0.487)">
+                  </Driver>
+                  <Shafts>
+                          <Shaft SocketPointB="Shaft1b" SocketPointA="Shaft1a">
 
-                      </CraneSocket>
-                      <CraneSocket Pos="(0.8; 2.3; 0)">
+                          </Shaft>
+                          <Shaft SocketPointB="Shaft2b" SocketPointA="Shaft2a">
 
-                      </CraneSocket>
-                      <CraneSocket Pos="(-0.596; 0.691; -0.449)">
+                          </Shaft>
+                          <Shaft SocketPointB="Shaft3b" SocketPointA="Shaft3a">
 
-                      </CraneSocket>
-                      <CraneSocket Pos="(-0.596; 0.691; 0.449)">
+                          </Shaft>
+                  </Shafts>
+                  <FuelTank DamageCapacity="50">
 
-                      </CraneSocket>
-                      <CraneSocket Pos="(-3.21; 0.734; 0)">
+                  </FuelTank>
+                  <Dashboard>
+                              <Gauge Org="(1.496; 1.577; 0.506)" OutputAngles="(-133; 133)" Mesh="trucks/arrows/international_loadstar_1700_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="rpm" Dir="(-0.995; 0.095; 0.008)">
 
-                      </CraneSocket>
-                    <UiDesc UiIcon30x30="scoutVehicleImg30" UiName="UI_VEHICLE_INTERNATIONAL_LOADSTAR_1700_NAME" UiIcon328x458="shopImgLoadStar" UiIconLogo="InternationalNavistarLogo80" UiDesc="UI_VEHICLE_INTERNATIONAL_LOADSTAR_1700_DESC" UiIcon40x40="scoutVehicleImg">
+                              </Gauge>
+                              <Gauge Org="(1.496; 1.577; 0.363)" OutputAngles="(-114; 113)" Dir="(-0.997; 0.08; 0.007)" InputType="speed" Mesh="trucks/arrows/international_loadstar_1700_arrow_1" InputRange="(0;80)">
 
-                    </UiDesc>
-                          <AddonSockets>
-                            <Socket Offset="(-3.21; 0.76; 0)" Names="ScautTrailer">
-                                <AddonsShift Offset="(-0.283; -0.055; 0)" Types="InternationalLoadstar1700ServiceBody">
+                              </Gauge>
+                              <Gauge Org="(1.491; 1.507; 0.578)" OutputAngles="(-36; 14)" Mesh="trucks/arrows/international_loadstar_1700_arrow_2" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.995; 0.101; -0.001)">
 
-                                </AddonsShift>
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(0; 0; 0)" NamesBlock="InternationalLoadstar1700Spotlight2" Names="InternationalLoadstar1700Flasher">
+                              </Gauge>
+                              <Gauge Org="(1.491; 1.507; 0.654)" OutputAngles="(-33; 22)" Mesh="trucks/arrows/international_loadstar_1700_arrow_2" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.995; 0.101; -0.001)">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700Spotlight1, InternationalLoadstar1700Spotlight2">
+                              </Gauge>
+                              <Gauge Org="(1.498; 1.58; 0.619)" OutputAngles="(-29; -3)" Mesh="trucks/arrows/international_loadstar_1700_arrow_2" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.995; 0.102; -0.001)">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700Searchlight">
+                              </Gauge>
+                              <Gauge Org="(1.498; 1.58; 0.25)" OutputAngles="(-35; 36)" Mesh="trucks/arrows/international_loadstar_1700_arrow_2" Damping="0.99" InputRange="(0;1)" InputType="fuel" Dir="(-0.995; 0.095; 0.001)">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700Horn">
+                              </Gauge>
+                              <Gauge Org="(1.491; 1.521; 0.289)" OutputAngles="(-36; 96)" Mesh="trucks/arrows/international_loadstar_1700_arrow_3" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.995; 0.101; 0.001)">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700Gabarite">
+                              </Gauge>
+                              <Gauge Org="(1.492; 1.52; 0.211)" OutputAngles="(-36; 96)" Mesh="trucks/arrows/international_loadstar_1700_arrow_3" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.996; 0.094; 0.001)">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets DefaultAddon="international_loadstar_1700_bumper_default">
-                            <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700Bumper">
+                              </Gauge>
+                  </Dashboard>
+                  <SoundsWheels _template="Default">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700Snorkel">
+                  </SoundsWheels>
+                  <GearboxSocket Default="g_truck_default" Type="gearboxes_trucks">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                              <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700ServiceBody">
+                  </GearboxSocket>
+                                <Steam ParentFrame="BoneCabin_cdt" Origin="(-0.057; 0.722; 0)" Scale="0.2">
 
-                              </Socket>
-                              <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700Pickup">
+                                </Steam>
+                                <Steam ParentFrame="BoneCabin_cdt" Origin="(2.038; 1.076; 0)" Scale="0.5">
 
-                              </Socket>
-                              <Socket Offset="(-1; 0.82; 0)" Names="MinicraneLoadstar">
+                                </Steam>
+                  <Sounds DisableReversePitch="false" MinDist="8.0" Origin="(1.853; 1.205; 0)" _template="Default">
+                                    <BrakesSqueal Sound="trucks/int_transtar_4070a/int_transtar_4070a_brakes_squeal">
 
-                              </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(0; 0; 0)" Names="InternationalLoadstar1700Visor">
+                                    </BrakesSqueal>
+                                    <AbruptStop Sound="trucks/common/truck_swing_big_old_rnd_set/truck_swing_big_old_rnd">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(1.563; 1.713; 0.112)" ParentFrame="BoneCabin_cdt" Names="StuffDashboard" InCockpit="true">
+                                    </AbruptStop>
+                                    <EngineLow Sound="trucks/int_loadstar_1700/int_loadstar_1700_low">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="internationalLoadstar1700Sticker_1x1_01" InCockpit="true">
+                                    </EngineLow>
+                                    <EngineRev Sound="trucks/int_loadstar_1700/int_loadstar_1700_rev">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="internationalLoadstar1700Sticker_1x1_02" InCockpit="true">
+                                    </EngineRev>
+                                    <EngineAccel Sound="trucks/int_loadstar_1700/int_loadstar_1700_acc">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="internationalLoadstar1700Sticker_1x2_01" InCockpit="true">
+                                    </EngineAccel>
+                                    <Honk Sound="trucks/int_loadstar_1700/int_loadstar_1700_honk">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneSunshieldL_cdt" Names="internationalLoadstar1700Sticker_1x2_02" InCockpit="true">
+                                    </Honk>
+                                    <EngineStop Sound="trucks/int_loadstar_1700/int_loadstar_1700_stop">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneSunshieldR_cdt" Names="internationalLoadstar1700Sticker_1x2_03" InCockpit="true">
+                                    </EngineStop>
+                                    <Handbrake Sound="trucks/common/truck_handbrake_switch_alt1">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="internationalLoadstar1700Sticker_1x4_01" InCockpit="true">
+                                    </Handbrake>
+                                    <Gear Sound="trucks/common/truck_gear_shift_medium_rnd_set/truck_gear_shift_medium_rnd">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="internationalLoadstar1700Sticker_GlassTop" InCockpit="true">
+                                    </Gear>
+                                    <EngineIdle_2d IsSound2D="true" Sound="trucks/int_loadstar_1700/int_loadstar_1700_idle_2d">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="internationalLoadstar1700Sticker_Door_R">
+                                    </EngineIdle_2d>
+                                    <EngineHigh Sound="trucks/int_loadstar_1700/int_loadstar_1700_high">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="internationalLoadstar1700Sticker_Door_L">
+                                    </EngineHigh>
+                                    <EngineHeavy_2d IsSound2D="true" Sound="">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="internationalLoadstar1700Sticker_Roof">
+                                    </EngineHeavy_2d>
+                                    <ChassisStress Sound="trucks/common/truck_stress_rnd_set/truck_stress_rnd">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="internationalLoadstar1700Sticker_Capote">
+                                    </ChassisStress>
+                                    <Reverse Sound="trucks/int_loadstar_1700/int_loadstar_1700_reverse">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(1.441; 2.163; 0.058)" ParentFrame="BoneCabin_cdt" Names="StuffAirfreshener" InCockpit="true">
+                                    </Reverse>
+                                    <EngineHigh_2d IsSound2D="true" Sound="trucks/int_loadstar_1700/int_loadstar_1700_high_2d">
 
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="StuffHoodInternationalLoadstar1700">
+                                    </EngineHigh_2d>
+                                    <EngineIdle Sound="trucks/int_loadstar_1700/int_loadstar_1700_idle">
 
-                            </Socket>
-                          </AddonSockets>
-                    <CustomizationCameras>
-                                <CameraPos Interior="true" Position="(6.619; 4.534; -0.619)" Name="roof_sticker" InterestPosition="(3.043; -0.11; -0.044)" FOV="32.0">
+                                    </EngineIdle>
+                                    <EngineStart Sound="trucks/int_loadstar_1700/int_loadstar_1700_start">
 
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(5.461; 1.888; -0.234)" Name="sticker_1" InterestPosition="(7.325; 3.098; 1.324)" FOV="32.0">
+                                    </EngineStart>
+                                    <EngineLow_2d IsSound2D="true" Sound="trucks/int_loadstar_1700/int_loadstar_1700_low_2d">
 
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-4.558; 3.486; 3.933)" MaxXRotation="360" Name="addon_1" InterestPosition="(2.286; 1.403; -0)" FOV="32.0">
+                                    </EngineLow_2d>
+                                    <EngineHeavy Sound="">
 
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-8.093; 2.337; -6.718)" MaxXRotation="360" Name="addon_2" InterestPosition="(3.194; 1.807; 0)" FOV="32.0">
+                                    </EngineHeavy>
+                                    <BrakeRelease Sound="trucks/common/truck_brake_release_alt1_rnd_set/truck_brake_release_alt1_rnd">
 
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(5.142; 1.99; -0.387)" Name="mirror_mount" InterestPosition="(7.699; 2.048; 1.567)" FOV="32.0">
+                                    </BrakeRelease>
+                                    <GearFail Sound="trucks/common/truck_gear_wrong/truck_gear_wrong_big_old">
 
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(3.352; 1.747; -7.216)" MaxXRotation="360" Name="side_r" InterestPosition="(5.601; 1.97; 0)" FOV="32.0">
+                                    </GearFail>
+                  </Sounds>
+                                    <LimitedFluid Type="Box" SizeX="0.925" Center="(0.057; 0.507; 0.784)" SizeY="0.399" SizeZ="0.567">
 
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(5.382; 1.921; -0.172)" Name="sticker" InterestPosition="(7.325; 0.781; 1.705)" FOV="32.0">
+                                    </LimitedFluid>
+                                    <LimitedFluid Type="Box" SizeX="0.925" Center="(0.057; 0.507; -0.784)" SizeY="0.399" SizeZ="0.567">
 
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(8.327; 2.780; 1.09)" Name="glass_sticker" InterestPosition="(5.694; 1.66; -1.048)" FOV="32.0">
+                                    </LimitedFluid>
+                  <SoundsDamage _template="Heavy">
 
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(4.532; 1.457; 2.502)" Name="door_r_sticker" InterestPosition="(7.029; 0.987; 0.747)" FOV="32.0">
+                  </SoundsDamage>
+                  <Damage>
+                                            <DamageArea Max="(2.8; 1.629; 0.55)" Type="Engine" ParentFrame="BoneChassis_cdt" Min="(1.605; 0.51; -0.55)">
 
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(10.134; 3.517; -2.653)" MaxXRotation="360" Name="roof" InterestPosition="(5.003; 1.463; -0)" FOV="32.0">
+                                            </DamageArea>
+                                            <DamageArea Max="(1.5; 0.863; 1.2)" Type="FuelTank" ParentFrame="BoneChassis_cdt" Min="(-0.5; 0.25; -1.2)">
 
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(8.230; 3.194; -1.239)" Name="capote_sticker" InterestPosition="(4.837; -0.228; 0.797)" FOV="32.0">
+                                            </DamageArea>
+                  </Damage>
+                  <Camera Center="(-1.2; 0; 0)" RadiusMultiplier="0.8">
+                                            <Cockpit WindshieldShadingTexture="trucks/international_loadstar_1700_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/international_loadstar_1700_glass__d_a.tga" _template="Default" ViewPos="(0.866; 2.013; 0.442)">
+                                                  <Mirror FOVScale="1.2" Pos="(1.244; 1.861; 1.14)" ClipDir="(-0.899; 0; -0.438)" ReflectionDir="(-0.899; 0; -0.438)" Size="(0.193; 0.471)" ClipOffset="0.13" MeshFrame="mirror_left">
 
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(12.848; 1.434; -3.468)" MaxXRotation="360" Name="hoods" InterestPosition="(5.997; 1.195; 0)" FOV="32.0">
+                                                  </Mirror>
+                                                  <Mirror FOVScale="1.4" Pos="(1.189; 1.861; -1.139)" ClipDir="(-0.788; 0; 0.616)" ReflectionDir="(-0.788; 0; 0.616)" Size="(0.193; 0.471)" ClipOffset="0.13" MeshFrame="mirror_right">
 
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(5.221; 1.595; 0.03)" Name="sticker_2" InterestPosition="(6.662; 0.61; 1.935)" FOV="32.0">
+                                                  </Mirror>
+                                                <Rear ViewPosOffset="(0.05; -0.1; 0.7)">
 
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(9.383; 2.733; 3.915)" MaxXRotation="360" Name="side_l" InterestPosition="(5.887; 1.319; 0)" FOV="32.0">
+                                                </Rear>
+                                            </Cockpit>
+                  </Camera>
+                  <Shakers>
+                                              <Shaker Frame="BoneGearstick" ParentFrame="BoneCabin_cdt" MaxAngle="(1; 0; 1)" MaxFrequency="1.9">
 
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(5.425; 1.969; -0.335)" Name="bubble_head" InterestPosition="(7.692; 1.172; 1.41)" FOV="32.0">
+                                              </Shaker>
+                  </Shakers>
+                  <SuspensionSocket Default="international_loadstar_1700_suspension_default" Type="s_international_loadstar_1700" MaxWheelRadiusWithoutSuspension="0.25">
 
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-0.234; 0.966; -3.937)" MaxXRotation="360" Name="wheels" InterestPosition="(5.432; 0.77; -0)" FOV="32.0">
+                  </SuspensionSocket>
+                  <Wheels DefaultTire="highway_1" DefaultWheelType="wheels_medium_double" DefaultRim="rim_1">
+                                                    <Wheel _template="FrontWheel" Pos="(2.16; 0.376; 1.01)">
 
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(12.848; 1.434; -3.468)" MaxXRotation="360" Name="default" InterestPosition="(5.997; 1.195; 0)" FOV="32.0">
+                                                    </Wheel>
+                                                    <Wheel Pos="(2.16; 0.376; 1.01)" _template="FrontWheel" RightSide="true">
 
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-5.767; 1.805; 2.899)" MaxXRotation="360" Name="rear" InterestPosition="(0.479; 0.992; -0)" FOV="32.0">
+                                                    </Wheel>
+                                                    <Wheel _template="RearWheel" Pos="(-1.665; 0.376; 0.9)">
 
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(4.51; 1.215; -2.475)" Name="door_l_sticker" InterestPosition="(5.111; 1.176; -0.332)" FOV="32.0">
+                                                    </Wheel>
+                                                    <Wheel Pos="(-1.665; 0.376; 0.9)" _template="RearWheel" RightSide="true">
 
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(8.271; 1.908; -0.812)" Name="hood_ornament" InterestPosition="(7.114; 1.56; -0.812)" FOV="32.0">
+                                                    </Wheel>
+                  </Wheels>
+                  <Axles>
+                                                      <Axle Frame="BoneAxle1">
 
-                                </CameraPos>
-                    </CustomizationCameras>
-                              <WinchSocket Pos="(2.706; 0.482; -0.487)">
+                                                      </Axle>
+                                                      <Axle Frame="BoneAxle2">
 
-                              </WinchSocket>
-                              <WinchSocket Pos="(2.706; 0.482; 0.487)">
+                                                      </Axle>
+                  </Axles>
+                  <EngineSocket Default="us_truck_old_engine_0" Type="e_us_truck_old">
 
-                              </WinchSocket>
-                              <WinchSocket Pos="(-0.596; 0.691; -0.449)">
+                  </EngineSocket>
+                  <OcclusionMap Texture="trucks/occlusion/chassis_small__s_d_a.tga" MaxX="3.3" MinX="-3" HalfSizeZ="1.8">
 
-                              </WinchSocket>
-                              <WinchSocket Pos="(-0.596; 0.691; 0.449)">
+                  </OcclusionMap>
+                  <Exhaust IsLight="true" Dir="(-1; 0; 0)" Origin="(-0.683; 0.617; -0.387)" Speed="2.0">
 
-                              </WinchSocket>
-                              <WinchSocket Pos="(-3.21; 0.734; 0)">
+                  </Exhaust>
+                  <WinchUpgradeSocket Default="w_scout_default" IsUpgradable="true" Type="winches_scouts">
 
-                              </WinchSocket>
-      </GameData>
-      <Landmark MaxScale="3.8" MinScale="1.8" Mesh="landmarks/international_loadstar_1700_lmk">
+                  </WinchUpgradeSocket>
+                  <SteeringWheel Frame="BoneSteering">
+
+                  </SteeringWheel>
+                                                              <CompatibleWheels Scale="0.45" Type="wheels_medium_double">
+
+                                                              </CompatibleWheels>
+                                                              <CompatibleWheels OffsetZ="0.05" Scale="0.52" Type="wheels_medium_double">
+
+                                                              </CompatibleWheels>
+                  <SteeringRack RackHalfSizeZ="0.797" Frame="BoneRack" FrameSteerLeft="BoneRackLeft" FrameSteerRight="BoneRackRight">
+
+                  </SteeringRack>
+      </TruckData>
+      <Landmark Mesh="landmarks/international_loadstar_1700_lmk" MaxScale="3.8" MinScale="1.8">
 
       </Landmark>
+      <AutomaticIK>
+                      <IKBone ParentFrame="BoneTieRod_cdt" ModelFrame="BoneBeamHinge">
+                          <IKBone AttachToFrame="BoneRackLeft" AttachOffset="(0; 0; 0)" ModelFrame="BoneBeamSlider">
+                              <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                              </IKJoint>
+                          </IKBone>
+                          <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+
+                          </IKJoint>
+                      </IKBone>
+      </AutomaticIK>
       <Snorkel Origin="(2.547; 1.089; 0)">
 
       </Snorkel>
-      <AutomaticIK>
-                          <IKBone ModelFrame="BoneBeamHinge" ParentFrame="BoneTieRod_cdt">
-                              <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+      <ModelAttachments>
+                          <StopSignals>
+                                <Flare _template="StopSignal" Pos="(-3.088; 0.601; -0.518)">
 
-                              </IKJoint>
-                              <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneBeamSlider" AttachToFrame="BoneRackLeft">
-                                    <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+                                </Flare>
+                                <Flare _template="StopSignal" Pos="(-3.088; 0.601; 0.518)">
 
-                                    </IKJoint>
-                              </IKBone>
-                          </IKBone>
-      </AutomaticIK>
+                                </Flare>
+                              <Light _template="StopSignal" Pos="(-3.46; 0.745; 0)">
+
+                              </Light>
+                          </StopSignals>
+                          <Ignition>
+                                  <Flare DirAngle="120" Size="0.3" _template="IgnitionSignalWhite" Pos="(2.747; 1; -0.875)">
+
+                                  </Flare>
+                                  <Flare DirAngle="120" Size="0.3" _template="IgnitionSignalWhite" Pos="(2.747; 1; 0.875)">
+
+                                  </Flare>
+                                  <Flare Size="0.2" _template="IgnitionSignalRed" Pos="(-3.088; 0.601; -0.518)">
+
+                                  </Flare>
+                                  <Flare Size="0.2" _template="IgnitionSignalRed" Pos="(-3.088; 0.601; 0.518)">
+
+                                  </Flare>
+                                  <Flare _template="Beacon" Pos="(1.223; 2.244; -0.655)">
+
+                                  </Flare>
+                                  <Flare _template="Beacon" Pos="(1.223; 2.244; 0.655)">
+
+                                  </Flare>
+                                  <Flare _template="Beacon" Pos="(1.222; 2.268; -0.244)">
+
+                                  </Flare>
+                                  <Flare _template="Beacon" Pos="(1.222; 2.268; 0.244)">
+
+                                  </Flare>
+                                  <Flare _template="Beacon" Pos="(1.222; 2.268; 0)">
+
+                                  </Flare>
+                                  <Flare Pos="(2.508; 1.286; -0.962)" _template="Beacon" Color="g(169; 115; 0) x 0.5">
+
+                                  </Flare>
+                                  <Flare Pos="(2.508; 1.286; 0.962)" _template="Beacon" Color="g(169; 115; 0) x 0.5">
+
+                                  </Flare>
+                                    <Light _template="IgnitionSignalWhite" Pos="(3.2; 1.013; 0.7)">
+
+                                    </Light>
+                                    <Light _template="IgnitionSignalWhite" Pos="(3.2; 1.013; -0.7)">
+
+                                    </Light>
+                                    <Light _template="IgnitionSignalRed" Pos="(-3; 1.025; -0)">
+
+                                    </Light>
+                          </Ignition>
+                          <HeadLight>
+                                    <Flare Size="0.4" _template="HeadLight" Pos="(2.742; 1; -0.875)">
+
+                                    </Flare>
+                                    <Flare Size="0.4" _template="HeadLight" Pos="(2.742; 1; 0.875)">
+
+                                    </Flare>
+                                    <Flare _template="BlueStreak" Pos="(2.742; 1; -0.875)">
+
+                                    </Flare>
+                                    <Flare _template="BlueStreak" Pos="(2.742; 1; 0.875)">
+
+                                    </Flare>
+                                      <Model Org="(2.742; 1; -0.875)" _template="HeadLightRay">
+
+                                      </Model>
+                                      <Model Org="(2.742; 1; 0.875)" _template="HeadLightRay">
+
+                                      </Model>
+                          </HeadLight>
+                          <ReverseSignals>
+                                      <Flare Size="0.25" _template="ReverseSignal" Pos="(-3.088; 0.65; -0.518)">
+
+                                      </Flare>
+                                      <Flare Size="0.25" _template="ReverseSignal" Pos="(-3.088; 0.65; 0.518)">
+
+                                      </Flare>
+                                      <Flare Color="g(220; 220; 255) x 0.05" Pos="(-3.088; 0.65; -0.518)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
+
+                                      </Flare>
+                                      <Flare Color="g(220; 220; 255) x 0.05" Pos="(-3.088; 0.65; 0.518)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
+
+                                      </Flare>
+                                    <Light _template="ReverseSignal" Pos="(-3.5; 0.601; 0)">
+
+                                    </Light>
+                          </ReverseSignals>
+      </ModelAttachments>
   </Truck>
   <_templates Include="trucks">
-        <Body>
-            <BoneSunshield Mass="1" Collisions="None">
-                <Constraint AxisLocal="(0; 0; 1)" MaxLimit="30" MinLimit="-1" Type="Hinge">
-                    <Motor Type="Spring" Spring="15" Damping="0.04">
-
-                    </Motor>
-                </Constraint>
-            </BoneSunshield>
-        </Body>
         <Wheel>
-              <FrontWheel SteeringJointOffset="0.23" ParentFrame="BoneCabin_cdt" SteeringCastor="0" Torque="default" Location="front" SteeringAngle="40">
+            <RearWheel Torque="default" Location="rear" ConnectedToHandbrake="true">
 
-              </FrontWheel>
-              <RearWheel Torque="default" Location="rear" ConnectedToHandbrake="true">
+            </RearWheel>
+            <FrontWheel SteeringCastor="0" Torque="default" ParentFrame="BoneCabin_cdt" SteeringJointOffset="0.23" SteeringAngle="40" Location="front">
 
-              </RearWheel>
+            </FrontWheel>
         </Wheel>
+        <Body>
+              <BoneSunshield Collisions="None" Mass="1">
+                  <Constraint MinLimit="-1" Type="Hinge" MaxLimit="30" AxisLocal="(0; 0; 1)">
+                      <Motor Spring="15" Type="Spring" Damping="0.04">
+
+                      </Motor>
+                  </Constraint>
+              </BoneSunshield>
+        </Body>
         <Flare>
-                <Beacon SizeMultAtDay="0.5" DirAngle="180" Size="0.2" ColorMultAtDay="0.3" Color="g(169; 99; 0) x 0.8" AspectRatio="1.4">
+                <Beacon Color="g(169; 99; 0) x 0.8" AspectRatio="1.4" SizeMultAtDay="0.5" DirAngle="180" Size="0.2" ColorMultAtDay="0.3">
 
                 </Beacon>
         </Flare>

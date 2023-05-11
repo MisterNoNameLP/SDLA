@@ -1,830 +1,830 @@
   <Truck>
-      <ControlledConstraints>
-            <Constraint Name="TieRodSteer" IsLinkedSteering="true" Id="chassis_steer">
-
-            </Constraint>
-            <Constraint Name="TieRodSteer2" IsLinkedSteering="true" Id="chassis_steer">
-
-            </Constraint>
-      </ControlledConstraints>
-      <PhysicsModel Mesh="trucks/pacific_p512">
-            <NetSync Legacy="false">
-
-            </NetSync>
-            <Body ModelFrame="BoneChassis_cdt" ImpactType="Truck" Mass="7000" NetSync="pv" CenterOfMassOffset="(-0.5; 0; 0)">
-                    <Body ModelFrame="BoneCabin_cdt" ImpactType="Truck" Mass="4500" NetSync="pv" CenterOfMassOffset="(0.2; 0.7; 0)">
-                      <Constraint AxisLocal="(1; 0; 0)" MaxLimit="32" MinLimit="-32" PivotOffset="(0; 0; 0)" Type="Hinge">
-                          <Motor Type="Spring" Spring="500000" Damping="20000">
-
-                          </Motor>
-                      </Constraint>
-                          <Body Mass="2" Collisions="None" ModelFrame="BoneAntenna_cdt">
-                            <Constraint Cone="10" PlaneMin="-10" Type="Ragdoll" TwistAxisLocal="(0; 1; 0)" PlaneMax="10" PlaneAxisLocal="(0; 0; 1)">
-                                <ConeMotor Type="Spring" Spring="350" Damping="7">
-
-                                </ConeMotor>
-                                <PlaneMotor Type="Spring" Spring="350" Damping="7">
-
-                                </PlaneMotor>
-                            </Constraint>
-                          </Body>
-                          <Body ModelFrame="BoneMirrorL_cdt" _template="Mirror">
-                            <Body ModelFrame="boneMirrorCordL_cdt" _template="MirrorCord">
-
-                            </Body>
-                          </Body>
-                          <Body ModelFrame="BoneMirrorR_cdt" _template="Mirror">
-                            <Body ModelFrame="boneMirrorCordR_cdt" _template="MirrorCord">
+      <TruckData EngineIconMesh="env/engine_default" EngineStartDelay="0.8" TruckType="HEAVY" ExhaustStartTime="0.9" SteerSpeed="0.03" TruckImage="pacificp512mchr" DiffLockType="Installed" Responsiveness="0.15" FuelCapacity="200" EngineIconScale="1.2" BackSteerSpeed="0.015">
+          <Driver ParentFrame="BoneCabin_cdt" SteeringWheelPos="(2.262; 2.424; 0.375)" Pos="(1.876; 2.078; 0.37)" AnimationSet="HeavyTruck">
 
-                            </Body>
-                          </Body>
-                          <Body Mass="2" Collisions="None" ModelFrame="BoneChain_cdt">
-                            <Constraint AxisLocal="(1; 0; 0)" MaxLimit="40" MinLimit="-40" Type="Hinge">
-                                <Motor Type="Spring" Spring="0.05" Damping="0.01">
+          </Driver>
+          <Shafts>
+                  <Shaft SocketPointB="Shaft1b" SocketPointA="Shaft1a">
 
-                                </Motor>
-                            </Constraint>
-                          </Body>
-                          <Body ModelFrame="BoneTieRod1_1_cdt" _template="TieRod">
-                            <Constraint AxisLocal="(0; 0; 1)" MaxLimit="27" Name="TieRodSteer" MinLimit="-27">
+                  </Shaft>
+                  <Shaft SocketPointB="Shaft2b" SocketPointA="Shaft2a">
 
-                            </Constraint>
-                          </Body>
-                          <Body ModelFrame="BoneTieRod2_1_cdt" _template="TieRod">
-                            <Constraint AxisLocal="(0; 0; 1)" MaxLimit="20" Name="TieRodSteer2" MinLimit="-20">
-
-                            </Constraint>
-                          </Body>
-                          <Body ModelFrame="boneChassisCord1_cdt" _template="ChassisCord">
-
-                          </Body>
-                          <Body ModelFrame="BoneSunshieldR_cdt" _template="Sunshield">
+                  </Shaft>
+                  <Shaft SocketPointB="Shaft3b" SocketPointA="Shaft3a">
 
-                          </Body>
-                          <Body ModelFrame="BoneSunshieldL_cdt" _template="Sunshield">
+                  </Shaft>
+          </Shafts>
+          <FuelTank DamageCapacity="50">
 
-                          </Body>
-                          <Body ModelFrame="boneMudguardL_cdt" _template="Mudguard">
+          </FuelTank>
+          <Dashboard>
+                      <Gauge Org="(2.485; 2.402; 0.665)" OutputAngles="(-51; 9)" Mesh="trucks/arrows/pacific_p512_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.92; 0.296; -0.256)">
 
-                          </Body>
-                          <Body ModelFrame="boneMudguardR_cdt" _template="Mudguard">
+                      </Gauge>
+                      <Gauge Org="(2.501; 2.397; 0.603)" OutputAngles="(-54; -7)" Mesh="trucks/arrows/pacific_p512_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.92; 0.296; -0.256)">
 
-                          </Body>
-                    </Body>
-                    <Body ModelFrame="boneChassisCord2_cdt" _template="ChassisCord">
-                      <Constraint MaxLimit="1" MinLimit="-0.8">
+                      </Gauge>
+                      <Gauge Org="(2.465; 2.339; 0.663)" OutputAngles="(-55; 28)" Mesh="trucks/arrows/pacific_p512_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.92; 0.296; -0.256)">
 
-                      </Constraint>
-                    </Body>
-                    <Body ModelFrame="boneChassisCord3_cdt" _template="ChassisCord">
-                      <Constraint MaxLimit="0.75" MinLimit="-0.75">
+                      </Gauge>
+                      <Gauge Org="(2.481; 2.334; 0.601)" OutputAngles="(-55; 4)" Mesh="trucks/arrows/pacific_p512_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.92; 0.296; -0.256)">
 
-                      </Constraint>
-                    </Body>
-            </Body>
-      </PhysicsModel>
-      <TruckData BackSteerSpeed="0.015" DiffLockType="Installed" EngineIconScale="1.2" TruckType="HEAVY" FuelCapacity="200" EngineStartDelay="0.8" SteerSpeed="0.03" ExhaustStartTime="0.9" Responsiveness="0.15" TruckImage="pacificp512mchr" EngineIconMesh="env/engine_default">
-                <Steam Origin="(1.556; 1.284; 0)">
+                      </Gauge>
+                      <Gauge Org="(2.441; 2.26; 0.66)" OutputAngles="(-44; -18)" Mesh="trucks/arrows/pacific_p512_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.92; 0.296; -0.256)">
 
-                </Steam>
-                <Steam ParentFrame="BoneCabin_cdt" Scale="0.5" Origin="(3.747; 1.284; 0)">
+                      </Gauge>
+                      <Gauge Org="(2.456; 2.255; 0.598)" OutputAngles="(-139; 31)" Mesh="trucks/arrows/pacific_p512_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.92; 0.296; -0.256)">
 
-                </Steam>
-              <Intake Size="1" Dir="(1; 0; 0)" Origin="(4.734; 1.792; 0)">
+                      </Gauge>
+                      <Gauge Org="(2.512; 2.394; 0.518)" OutputAngles="(-136; 48)" Mesh="trucks/arrows/pacific_p512_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.952; 0.307; -0.003)">
 
-              </Intake>
-              <GearboxSocket Default="g_truck_default" Type="gearboxes_trucks">
+                      </Gauge>
+                      <Gauge Org="(2.512; 2.394; 0.44)" OutputAngles="(-38; 26)" Mesh="trucks/arrows/pacific_p512_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.952; 0.307; -0.003)">
 
-              </GearboxSocket>
-              <Wheels DefaultRim="rim" DefaultWheelType="wheels_heavy_offroad_p512" DefaultTire="offroad">
-                          <Wheel Pos="(3.729; 0.638; 1.013)" _template="FrontWheel">
+                      </Gauge>
+                      <Gauge Org="(2.512; 2.394; 0.324)" OutputAngles="(-59; 7)" Mesh="trucks/arrows/pacific_p512_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.952; 0.307; -0.003)">
 
-                          </Wheel>
-                          <Wheel Pos="(3.729; 0.638; 1.013)" _template="FrontWheel" RightSide="true">
+                      </Gauge>
+                      <Gauge Org="(2.513; 2.394; 0.245)" OutputAngles="(-58; 56)" Mesh="trucks/arrows/pacific_p512_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="fuel" Dir="(-0.952; 0.307; -0.003)">
 
-                          </Wheel>
-                          <Wheel Pos="(-1.981; 0.638; 1.085)" _template="RearWheel">
+                      </Gauge>
+                      <Gauge Org="(2.503; 2.396; 0.159)" OutputAngles="(-135; -13)" Mesh="trucks/arrows/pacific_p512_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.937; 0.291; 0.192)">
 
-                          </Wheel>
-                          <Wheel Pos="(-1.981; 0.638; 1.085)" _template="RearWheel" RightSide="true">
+                      </Gauge>
+                      <Gauge Org="(2.49; 2.4; 0.093)" OutputAngles="(-136; 39)" Mesh="trucks/arrows/pacific_p512_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.937; 0.291; 0.192)">
 
-                          </Wheel>
-                          <Wheel Pos="(-3.768; 0.638; 1.085)" _template="RearWheel">
+                      </Gauge>
+                      <Gauge Org="(2.478; 2.404; 0.028)" OutputAngles="(-136; 7)" Mesh="trucks/arrows/pacific_p512_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.937; 0.291; 0.192)">
 
-                          </Wheel>
-                          <Wheel Pos="(-3.768; 0.638; 1.085)" _template="RearWheel" RightSide="true">
+                      </Gauge>
+                      <Gauge Org="(2.467; 2.408; -0.037)" OutputAngles="(-135; 59)" Mesh="trucks/arrows/pacific_p512_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.94; 0.292; 0.178)">
 
-                          </Wheel>
-              </Wheels>
-              <WinchUpgradeSocket Default="w_medium_trucks_default" Type="winches_medium_trucks" IsUpgradable="true">
+                      </Gauge>
+                      <Gauge Org="(2.444; 2.469; -0.132)" OutputAngles="(-135; -17)" Mesh="trucks/arrows/pacific_p512_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.781; 0.249; 0.572)">
 
-              </WinchUpgradeSocket>
-              <SteeringWheel Frame="BoneSteering">
+                      </Gauge>
+                      <Gauge Org="(2.407; 2.481; -0.187)" OutputAngles="(-135; 7)" Mesh="trucks/arrows/pacific_p512_arrow_1" Damping="0.99" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.781; 0.249; 0.572)">
 
-              </SteeringWheel>
-              <Damage>
-                                <DamageArea Min="(3.263; 1.068; -0.644)" Max="(4.656; 2.27; 0.644)" Type="Engine">
+                      </Gauge>
+                      <Gauge Org="(2.481; 2.301; 0.456)" OutputAngles="(-125; 121)" Mesh="trucks/arrows/pacific_p512_arrow_2" Damping="0.99" InputRange="(0;1)" InputType="rpm" Dir="(-0.953; 0.302; -0.004)">
 
-                                </DamageArea>
-                                <DamageArea Min="(1.353; 0.609; -1.082)" Max="(2.853; 1.37; 1.082)" Type="FuelTank">
+                      </Gauge>
+                      <Gauge Org="(2.482; 2.301; 0.309)" OutputAngles="(-125; 121)" Dir="(-0.953; 0.302; -0.004)" InputType="speed" Mesh="trucks/arrows/pacific_p512_arrow_2" InputRange="(0;140)">
 
-                                </DamageArea>
-              </Damage>
-                              <LimitedFluid RadiusY="0.311" Center="(2.097; 1.054; -0.773)" RadiusZ="0.310" LengthX="1.323" Type="Cylinder">
+                      </Gauge>
+          </Dashboard>
+          <SoundsWheels _template="Default">
 
-                              </LimitedFluid>
-                              <LimitedFluid RadiusY="0.311" Center="(2.097; 1.054; 0.773)" RadiusZ="0.310" LengthX="1.323" Type="Cylinder">
+          </SoundsWheels>
+          <GearboxSocket Default="g_truck_default" Type="gearboxes_trucks">
 
-                              </LimitedFluid>
-              <EngineSocket Default="us_truck_old_heavy_engine_0" Type="e_us_truck_old_heavy">
+          </GearboxSocket>
+                        <Steam Origin="(1.556; 1.284; 0)">
 
-              </EngineSocket>
-              <SoundsDamage _template="Heavy">
+                        </Steam>
+                        <Steam ParentFrame="BoneCabin_cdt" Origin="(3.747; 1.284; 0)" Scale="0.5">
 
-              </SoundsDamage>
-              <Camera Center="(-1.2; 0; 0)" ParentFrame="BoneCabin_cdt">
-                                      <Cockpit WindshieldShadingTexture="trucks\pacific_p512pf_glass__sh_d.tga" WindshieldDiffuseTexture="trucks\pacific_p512pf_glass__d_a.tga" ViewPos="(1.876; 2.777; 0.37)" _template="Default">
-                                            <Mirror Pos="(2.375; 2.663; 1.407)" MeshFrame="mirror_l" FOVScale="2" Size="(0.17; 0.39)" ReflectionDir="(-0.882; -0.003; -0.471)" ClipDir="(-0.882; -0.003; -0.471)" ClipOffset="0.2">
+                        </Steam>
+          <Sounds DisableReversePitch="false" MinDist="12.0" Origin="(3.699; 1.797; 0)" ParentFrame="BoneCabin_cdt" AirHissInterval="12.0" _template="Default">
+                            <BrakesSqueal Sound="trucks/pacific_p512/pacific_p512_brakes_squeal">
 
-                                            </Mirror>
-                                            <Mirror Pos="(2.26; 2.663; -1.381)" MeshFrame="mirror_r" FOVScale="2" Size="(0.17; 0.39)" ReflectionDir="(-0.805; -0.013; 0.593)" ClipDir="(-0.805; -0.013; 0.593)" ClipOffset="0.2">
+                            </BrakesSqueal>
+                            <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
 
-                                            </Mirror>
-                                      </Cockpit>
-              </Camera>
-              <Shafts>
-                                          <Shaft SocketPointA="Shaft1a" SocketPointB="Shaft1b">
+                            </AbruptStop>
+                            <EngineLow Sound="trucks/pacific_p512/pacific_p512_low">
 
-                                          </Shaft>
-                                          <Shaft SocketPointA="Shaft2a" SocketPointB="Shaft2b">
+                            </EngineLow>
+                            <EngineRev Sound="trucks/pacific_p512/pacific_p512_rev">
 
-                                          </Shaft>
-                                          <Shaft SocketPointA="Shaft3a" SocketPointB="Shaft3b">
+                            </EngineRev>
+                            <EngineAccel Sound="trucks/pacific_p512/pacific_p512_acc">
 
-                                          </Shaft>
-              </Shafts>
-              <FuelTank DamageCapacity="50">
+                            </EngineAccel>
+                            <Honk Sound="trucks/pacific_p512/pacific_p512_honk">
 
-              </FuelTank>
-              <SoundsWheels _template="Default">
+                            </Honk>
+                            <EngineStop Sound="trucks/pacific_p512/pacific_p512_stop">
 
-              </SoundsWheels>
-              <SuspensionSocket Default="pacific_p512_suspension_default" MaxWheelRadiusWithoutSuspension="0.75" Type="s_pacific_p512">
+                            </EngineStop>
+                            <Handbrake Sound="trucks/pacific_p512/pacific_p512_handbrake_on">
 
-              </SuspensionSocket>
-              <Axles>
-                                                  <Axle Frame="BoneAxle1">
+                            </Handbrake>
+                            <EngineIdle_2d IsSound2D="true" Sound="trucks/pacific_p512/pacific_p512_idle_2d">
 
-                                                  </Axle>
-                                                  <Axle Frame="BoneAxle2">
+                            </EngineIdle_2d>
+                            <EngineTrans Sound="">
 
-                                                  </Axle>
-                                                  <Axle Frame="BoneAxle3">
+                            </EngineTrans>
+                            <EngineHeavy_2d IsSound2D="true" Sound="trucks/pacific_p512/pacific_p512_heavy_2d">
 
-                                                  </Axle>
-              </Axles>
-              <CompatibleWheels Scale="0.646" Type="wheels_heavy_offroad_p512">
+                            </EngineHeavy_2d>
+                            <ChassisStress Sound="trucks/common/truck_stress_rnd_set/truck_stress_rnd">
 
-              </CompatibleWheels>
-              <Sounds DisableReversePitch="false" ParentFrame="BoneCabin_cdt" MinDist="12.0" AirHissInterval="12.0" _template="Default" Origin="(3.699; 1.797; 0)">
-                                                    <EngineHigh Sound="trucks/pacific_p512/pacific_p512_high">
+                            </ChassisStress>
+                            <Reverse Sound="">
 
-                                                    </EngineHigh>
-                                                    <ChassisStress Sound="trucks/common/truck_stress_rnd_set/truck_stress_rnd">
+                            </Reverse>
+                            <EngineHigh_2d IsSound2D="true" Sound="trucks/pacific_p512/pacific_p512_high_2d">
 
-                                                    </ChassisStress>
-                                                    <HandbrakeOff Sound="trucks/pacific_p512/pacific_p512_handbrake_off">
+                            </EngineHigh_2d>
+                            <EngineIdle Sound="trucks/pacific_p512/pacific_p512_idle">
 
-                                                    </HandbrakeOff>
-                                                    <BrakesSqueal Sound="trucks/pacific_p512/pacific_p512_brakes_squeal">
+                            </EngineIdle>
+                            <HandbrakeOff Sound="trucks/pacific_p512/pacific_p512_handbrake_off">
 
-                                                    </BrakesSqueal>
-                                                    <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
+                            </HandbrakeOff>
+                            <EngineHigh Sound="trucks/pacific_p512/pacific_p512_high">
 
-                                                    </AbruptStop>
-                                                    <EngineTrans Sound="">
+                            </EngineHigh>
+                            <EngineLow_2d IsSound2D="true" Sound="trucks/pacific_p512/pacific_p512_low_2d">
 
-                                                    </EngineTrans>
-                                                    <EngineHeavy_2d IsSound2D="true" Sound="trucks/pacific_p512/pacific_p512_heavy_2d">
+                            </EngineLow_2d>
+                            <EngineHeavy Sound="trucks/pacific_p512/pacific_p512_heavy">
 
-                                                    </EngineHeavy_2d>
-                                                    <Reverse Sound="">
+                            </EngineHeavy>
+                            <BrakeRelease Sound="trucks/common/truck_brake_release_alt2_rnd_set/truck_brake_release_alt2_rnd">
 
-                                                    </Reverse>
-                                                    <EngineHeavy Sound="trucks/pacific_p512/pacific_p512_heavy">
+                            </BrakeRelease>
+                            <EngineStart Sound="trucks/pacific_p512/pacific_p512_start">
 
-                                                    </EngineHeavy>
-                                                    <EngineStart Sound="trucks/pacific_p512/pacific_p512_start">
+                            </EngineStart>
+          </Sounds>
+          <Intake Size="1" Origin="(4.734; 1.792; 0)" Dir="(1; 0; 0)">
 
-                                                    </EngineStart>
-                                                    <EngineLow_2d IsSound2D="true" Sound="trucks/pacific_p512/pacific_p512_low_2d">
+          </Intake>
+          <SoundsDamage _template="Heavy">
 
-                                                    </EngineLow_2d>
-                                                    <EngineHigh_2d IsSound2D="true" Sound="trucks/pacific_p512/pacific_p512_high_2d">
+          </SoundsDamage>
+                                <LimitedFluid Type="Cylinder" Center="(2.097; 1.054; -0.773)" LengthX="1.323" RadiusZ="0.310" RadiusY="0.311">
 
-                                                    </EngineHigh_2d>
-                                                    <EngineLow Sound="trucks/pacific_p512/pacific_p512_low">
+                                </LimitedFluid>
+                                <LimitedFluid Type="Cylinder" Center="(2.097; 1.054; 0.773)" LengthX="1.323" RadiusZ="0.310" RadiusY="0.311">
 
-                                                    </EngineLow>
-                                                    <EngineIdle_2d IsSound2D="true" Sound="trucks/pacific_p512/pacific_p512_idle_2d">
+                                </LimitedFluid>
+          <Camera ParentFrame="BoneCabin_cdt" Center="(-1.2; 0; 0)">
+                                    <Cockpit WindshieldShadingTexture="trucks\pacific_p512pf_glass__sh_d.tga" WindshieldDiffuseTexture="trucks\pacific_p512pf_glass__d_a.tga" _template="Default" ViewPos="(1.876; 2.777; 0.37)">
+                                          <Mirror FOVScale="2" Pos="(2.375; 2.663; 1.407)" ClipDir="(-0.882; -0.003; -0.471)" ReflectionDir="(-0.882; -0.003; -0.471)" Size="(0.17; 0.39)" ClipOffset="0.2" MeshFrame="mirror_l">
 
-                                                    </EngineIdle_2d>
-                                                    <EngineStop Sound="trucks/pacific_p512/pacific_p512_stop">
+                                          </Mirror>
+                                          <Mirror FOVScale="2" Pos="(2.26; 2.663; -1.381)" ClipDir="(-0.805; -0.013; 0.593)" ReflectionDir="(-0.805; -0.013; 0.593)" Size="(0.17; 0.39)" ClipOffset="0.2" MeshFrame="mirror_r">
 
-                                                    </EngineStop>
-                                                    <EngineIdle Sound="trucks/pacific_p512/pacific_p512_idle">
+                                          </Mirror>
+                                    </Cockpit>
+          </Camera>
+          <SuspensionSocket Default="pacific_p512_suspension_default" Type="s_pacific_p512" MaxWheelRadiusWithoutSuspension="0.75">
 
-                                                    </EngineIdle>
-                                                    <Handbrake Sound="trucks/pacific_p512/pacific_p512_handbrake_on">
+          </SuspensionSocket>
+          <Wheels DefaultTire="offroad" DefaultWheelType="wheels_heavy_offroad_p512" DefaultRim="rim">
+                                          <Wheel _template="FrontWheel" Pos="(3.729; 0.638; 1.013)">
 
-                                                    </Handbrake>
-                                                    <Honk Sound="trucks/pacific_p512/pacific_p512_honk">
+                                          </Wheel>
+                                          <Wheel Pos="(3.729; 0.638; 1.013)" _template="FrontWheel" RightSide="true">
 
-                                                    </Honk>
-                                                    <EngineRev Sound="trucks/pacific_p512/pacific_p512_rev">
+                                          </Wheel>
+                                          <Wheel _template="RearWheel" Pos="(-1.981; 0.638; 1.085)">
 
-                                                    </EngineRev>
-                                                    <EngineAccel Sound="trucks/pacific_p512/pacific_p512_acc">
+                                          </Wheel>
+                                          <Wheel Pos="(-1.981; 0.638; 1.085)" _template="RearWheel" RightSide="true">
 
-                                                    </EngineAccel>
-                                                    <BrakeRelease Sound="trucks/common/truck_brake_release_alt2_rnd_set/truck_brake_release_alt2_rnd">
+                                          </Wheel>
+                                          <Wheel _template="RearWheel" Pos="(-3.768; 0.638; 1.085)">
 
-                                                    </BrakeRelease>
-              </Sounds>
-              <Driver SteeringWheelPos="(2.262; 2.424; 0.375)" Pos="(1.876; 2.078; 0.37)" ParentFrame="BoneCabin_cdt" AnimationSet="HeavyTruck">
+                                          </Wheel>
+                                          <Wheel Pos="(-3.768; 0.638; 1.085)" _template="RearWheel" RightSide="true">
 
-              </Driver>
-              <Dashboard>
-                                                          <Gauge Mesh="trucks/arrows/pacific_p512_arrow_1" Org="(2.485; 2.402; 0.665)" OutputAngles="(-51; 9)" InputType="engineEnabled" Dir="(-0.92; 0.296; -0.256)" InputRange="(0;1)" Damping="0.99">
+                                          </Wheel>
+          </Wheels>
+          <Axles>
+                                            <Axle Frame="BoneAxle1">
 
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/pacific_p512_arrow_1" Org="(2.501; 2.397; 0.603)" OutputAngles="(-54; -7)" InputType="engineEnabled" Dir="(-0.92; 0.296; -0.256)" InputRange="(0;1)" Damping="0.99">
+                                            </Axle>
+                                            <Axle Frame="BoneAxle2">
 
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/pacific_p512_arrow_1" Org="(2.465; 2.339; 0.663)" OutputAngles="(-55; 28)" InputType="engineEnabled" Dir="(-0.92; 0.296; -0.256)" InputRange="(0;1)" Damping="0.99">
+                                            </Axle>
+                                            <Axle Frame="BoneAxle3">
 
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/pacific_p512_arrow_1" Org="(2.481; 2.334; 0.601)" OutputAngles="(-55; 4)" InputType="engineEnabled" Dir="(-0.92; 0.296; -0.256)" InputRange="(0;1)" Damping="0.99">
+                                            </Axle>
+          </Axles>
+          <Damage>
+                                              <DamageArea Max="(4.656; 2.27; 0.644)" Type="Engine" Min="(3.263; 1.068; -0.644)">
 
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/pacific_p512_arrow_1" Org="(2.441; 2.26; 0.66)" OutputAngles="(-44; -18)" InputType="engineEnabled" Dir="(-0.92; 0.296; -0.256)" InputRange="(0;1)" Damping="0.99">
+                                              </DamageArea>
+                                              <DamageArea Max="(2.853; 1.37; 1.082)" Type="FuelTank" Min="(1.353; 0.609; -1.082)">
 
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/pacific_p512_arrow_1" Org="(2.456; 2.255; 0.598)" OutputAngles="(-139; 31)" InputType="engineEnabled" Dir="(-0.92; 0.296; -0.256)" InputRange="(0;1)" Damping="0.99">
+                                              </DamageArea>
+          </Damage>
+          <OcclusionMap HalfSizeZ="1.9" MinX="-5.2" MaxX="5.4">
 
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/pacific_p512_arrow_1" Org="(2.512; 2.394; 0.518)" OutputAngles="(-136; 48)" InputType="engineEnabled" Dir="(-0.952; 0.307; -0.003)" InputRange="(0;1)" Damping="0.99">
+          </OcclusionMap>
+          <EngineSocket Default="us_truck_old_heavy_engine_0" Type="e_us_truck_old_heavy">
 
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/pacific_p512_arrow_1" Org="(2.512; 2.394; 0.44)" OutputAngles="(-38; 26)" InputType="engineEnabled" Dir="(-0.952; 0.307; -0.003)" InputRange="(0;1)" Damping="0.99">
+          </EngineSocket>
+          <WinchUpgradeSocket Default="w_medium_trucks_default" IsUpgradable="true" Type="winches_medium_trucks">
 
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/pacific_p512_arrow_1" Org="(2.512; 2.394; 0.324)" OutputAngles="(-59; 7)" InputType="engineEnabled" Dir="(-0.952; 0.307; -0.003)" InputRange="(0;1)" Damping="0.99">
+          </WinchUpgradeSocket>
+          <SteeringWheel Frame="BoneSteering">
 
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/pacific_p512_arrow_1" Org="(2.513; 2.394; 0.245)" OutputAngles="(-58; 56)" InputType="fuel" Dir="(-0.952; 0.307; -0.003)" InputRange="(0;1)" Damping="0.99">
+          </SteeringWheel>
+          <CompatibleWheels Scale="0.646" Type="wheels_heavy_offroad_p512">
 
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/pacific_p512_arrow_1" Org="(2.503; 2.396; 0.159)" OutputAngles="(-135; -13)" InputType="engineEnabled" Dir="(-0.937; 0.291; 0.192)" InputRange="(0;1)" Damping="0.99">
+          </CompatibleWheels>
+          <SteeringRack RackHalfSizeZ="0.703" Frame="BoneRack" FrameSteerLeft="BoneRackL" FrameSteerRight="BoneRackR">
 
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/pacific_p512_arrow_1" Org="(2.49; 2.4; 0.093)" OutputAngles="(-136; 39)" InputType="engineEnabled" Dir="(-0.937; 0.291; 0.192)" InputRange="(0;1)" Damping="0.99">
-
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/pacific_p512_arrow_1" Org="(2.478; 2.404; 0.028)" OutputAngles="(-136; 7)" InputType="engineEnabled" Dir="(-0.937; 0.291; 0.192)" InputRange="(0;1)" Damping="0.99">
-
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/pacific_p512_arrow_1" Org="(2.467; 2.408; -0.037)" OutputAngles="(-135; 59)" InputType="engineEnabled" Dir="(-0.94; 0.292; 0.178)" InputRange="(0;1)" Damping="0.99">
-
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/pacific_p512_arrow_1" Org="(2.444; 2.469; -0.132)" OutputAngles="(-135; -17)" InputType="engineEnabled" Dir="(-0.781; 0.249; 0.572)" InputRange="(0;1)" Damping="0.99">
-
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/pacific_p512_arrow_1" Org="(2.407; 2.481; -0.187)" OutputAngles="(-135; 7)" InputType="engineEnabled" Dir="(-0.781; 0.249; 0.572)" InputRange="(0;1)" Damping="0.99">
-
-                                                          </Gauge>
-                                                          <Gauge Mesh="trucks/arrows/pacific_p512_arrow_2" Org="(2.481; 2.301; 0.456)" OutputAngles="(-125; 121)" InputType="rpm" Dir="(-0.953; 0.302; -0.004)" InputRange="(0;1)" Damping="0.99">
-
-                                                          </Gauge>
-                                                          <Gauge Org="(2.482; 2.301; 0.309)" OutputAngles="(-125; 121)" Mesh="trucks/arrows/pacific_p512_arrow_2" InputRange="(0;140)" Dir="(-0.953; 0.302; -0.004)" InputType="speed">
-
-                                                          </Gauge>
-              </Dashboard>
-              <SteeringRack FrameSteerRight="BoneRackR" Frame="BoneRack" FrameSteerLeft="BoneRackL" RackHalfSizeZ="0.703">
-
-              </SteeringRack>
-              <OcclusionMap MaxX="5.4" HalfSizeZ="1.9" MinX="-5.2">
-
-              </OcclusionMap>
+          </SteeringRack>
       </TruckData>
-      <ModelAttachments>
-                <StopSignals>
-                    <Light Pos="(-4.823; 1.126; 0)" _template="StopSignal">
+      <GameData Country="US" Price="108300" UnlockByRank="1" UnlockByExploration="true">
+            <CustomizationCameras>
+                  <CameraPos Interior="true" Position="(7.238; 6.111; -0.596)" FOV="32.0" InterestPosition="(4.262; 2.356; -0.794)" Name="roof_sticker">
 
-                    </Light>
-                        <Flare Size="0.4" _template="StopSignal" Pos="(-4.67; 1.176; -0.235)">
+                  </CameraPos>
+                  <CameraPos Name="sticker_1" MaxZoom="2" MaxYRotation="360" InterestPosition="(5.056; 1.675; 1.297)" Interior="true" Position="(4.223; 2.817; -0.416)" FOV="32.0" MaxXRotation="360">
 
-                        </Flare>
-                        <Flare Size="0.4" _template="StopSignal" Pos="(-4.67; 1.176; 0.235)">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(-0.697; 2.256; 1.55)" Name="addon_1" MaxXRotation="360" Position="(-9.257; 5.579; 9.919)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                        </Flare>
-                </StopSignals>
-                <Ignition>
-                        <Light Pos="(5; 1.579; -1.029)" _template="IgnitionSignalWhite" ParentFrame="BoneCabin_cdt">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(3.194; 1.807; 0)" Name="addon_2" MaxXRotation="360" Position="(-8.093; 2.337; -6.718)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                        </Light>
-                        <Light Pos="(5; 1.579; 1.029)" _template="IgnitionSignalWhite" ParentFrame="BoneCabin_cdt">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(4.113; 2.917; -0.358)" FOV="32.0" InterestPosition="(6.067; 2.924; 1.03)" Name="mirror_mount">
 
-                        </Light>
-                        <Light Pos="(-4.823; 1.126; 0)" _template="IgnitionSignalRed">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(4.553; 2.114; 0.508)" Name="side_r" MaxXRotation="360" Position="(-1.309; 3.85; 3.87)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                        </Light>
-                          <Flare ParentFrame="BoneCabin_cdt" Pos="(4.549; 1.579; -1.029)" Size=".2" _template="IgnitionSignalWhite">
+                  </CameraPos>
+                  <CameraPos Name="hood_ornament" MaxZoom="2" MaxYRotation="360" InterestPosition="(7.565; 2.313; -1.111)" Interior="true" Position="(8.762; 2.755; -0.905)" FOV="32.0" MaxXRotation="360">
 
-                          </Flare>
-                          <Flare ParentFrame="BoneCabin_cdt" Pos="(4.549; 1.579; 1.029)" Size=".2" _template="IgnitionSignalWhite">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(4.609; 3.157; 0.403)" FOV="32.0" InterestPosition="(6.135; 1.698; 0.398)" Name="sticker">
 
-                          </Flare>
-                          <Flare ParentFrame="BoneCabin_cdt" Pos="(4.549; 1.579; -0.856)" Size=".2" _template="IgnitionSignalWhite">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(8.867; 3.529; 0.71)" FOV="32.0" InterestPosition="(4.39; 2.625; -0.831)" Name="glass_sticker">
 
-                          </Flare>
-                          <Flare ParentFrame="BoneCabin_cdt" Pos="(4.549; 1.579; 0.856)" Size=".2" _template="IgnitionSignalWhite">
+                  </CameraPos>
+                  <CameraPos Name="door_r_sticker" MaxZoom="2" MaxYRotation="360" InterestPosition="(5.655; 1.962; 0.862)" Interior="true" Position="(3.133; 2.711; 3.727)" FOV="32.0" MaxXRotation="360">
 
-                          </Flare>
-                          <Flare Pos="(-4.67; 1.176; -0.235)" _template="IgnitionSignalRed">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(4.917; 2.867; -1.1)" Name="roof" MaxXRotation="360" Position="(8.783; 4.714; -1.952)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                          </Flare>
-                          <Flare Pos="(-4.67; 1.176; 0.235)" _template="IgnitionSignalRed">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(10.359; 6.227; -0.719)" FOV="32.0" InterestPosition="(6.556; 2.022; -0.716)" Name="capote_sticker">
 
-                          </Flare>
-                          <Flare Pos="(2.4; 3.248; -0.639)" _template="MarkerBeacon" ParentFrame="BoneCabin_cdt">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(6.557; 1.338; -0.466)" Name="hoods" MaxXRotation="360" Position="(12.419; 1.899; -2.148)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                          </Flare>
-                          <Flare Pos="(2.4; 3.248; 0.639)" _template="MarkerBeacon" ParentFrame="BoneCabin_cdt">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(5.809; 1.905; -0.207)" Name="side_l" MaxXRotation="360" Position="(10.150; 3.597; 3.415)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                          </Flare>
-                          <Flare Pos="(2.488; 3.248; -0.167)" _template="MarkerBeacon" ParentFrame="BoneCabin_cdt">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(4.217; 2.831; -0.39)" FOV="32.0" InterestPosition="(6.611; 1.914; 1.454)" Name="bubble_head">
 
-                          </Flare>
-                          <Flare Pos="(2.488; 3.248; 0.167)" _template="MarkerBeacon" ParentFrame="BoneCabin_cdt">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(5.394; 0.655; -0.801)" Name="wheels" MaxXRotation="360" Position="(9.43; 1.241; -4.453)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                          </Flare>
-                          <Flare Pos="(2.531; 3.245; 0)" _template="MarkerBeacon" ParentFrame="BoneCabin_cdt">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(5.197; 1.735; -0)" Name="default" MaxXRotation="360" Position="(13.641; 1.384; -4.536)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                          </Flare>
-                          <Flare ParentFrame="BoneCabin_cdt" Pos="(4.518; 1.426; -0.941)" Size="0.2" _template="IgnitionSignalOrange">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(0.479; 0.992; -0)" Name="rear" MaxXRotation="360" Position="(-5.767; 1.805; 2.899)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                          </Flare>
-                          <Flare ParentFrame="BoneCabin_cdt" Pos="(4.518; 1.426; 0.941)" Size="0.2" _template="IgnitionSignalOrange">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(2.776; 2.655; -4.430)" FOV="32.0" InterestPosition="(4.113; 1.995; -0.56)" Name="door_l_sticker">
 
-                          </Flare>
-                          <Flare ParentFrame="BoneMirrorR_cdt" Size="0.1" Dir="(0.5; 0; -0.5)" Pos="(2.291; 2.692; -1.41)" _template="IgnitionSignalOrange">
+                  </CameraPos>
+            </CustomizationCameras>
+                <CraneSocket Pos="(4.824; 1.103; 0)" ParentFrame="BoneCabin_cdt">
 
-                          </Flare>
-                          <Flare ParentFrame="BoneMirrorL_cdt" Size="0.1" Dir="(0.5; 0; 0.5)" Pos="(2.412; 2.698; 1.43)" _template="IgnitionSignalOrange">
+                </CraneSocket>
+                <CraneSocket Pos="(-4.813; 1.185; 0)">
 
-                          </Flare>
-                          <Flare ParentFrame="BoneMirrorR_cdt" Size="0.1" Dir="(0.5; 0; -0.5)" Pos="(2.292; 2.618; -1.409)" _template="IgnitionSignalOrange">
+                </CraneSocket>
+                <CraneSocket Pos="(0.012; 1.185; 0.425)">
 
-                          </Flare>
-                          <Flare ParentFrame="BoneMirrorL_cdt" Size="0.1" Dir="(0.5; 0; 0.5)" Pos="(2.412; 2.618; 1.43)" _template="IgnitionSignalOrange">
+                </CraneSocket>
+                <CraneSocket Pos="(0.012; 1.185; -0.425)">
 
-                          </Flare>
-                          <Flare ParentFrame="BoneCabin_cdt" Pos="(4.196; 1.764; -0.946)" Size="0.5" _template="Beacon">
+                </CraneSocket>
+                  <AddonSockets>
+                      <Socket Offset="(-2.878; 1.81; 0)" Names="LargeSemitrailer, LargeSemitrailerOiltank">
 
-                          </Flare>
-                          <Flare ParentFrame="BoneCabin_cdt" Pos="(4.196; 1.764; 0.946)" Size="0.5" _template="Beacon">
+                      </Socket>
+                      <Socket Offset="(-2.878; 1.642; 0)" Names="Semitrailer, SemitrailerOiltank">
 
-                          </Flare>
-                </Ignition>
-                <HeadLight>
-                          <Model _template="HeadLightRay" Org="(4.59; 1.579; -1.029)" ParentFrame="BoneCabin_cdt">
+                      </Socket>
+                      <Socket Offset="(-4.813; 1.189; 0)" Names="Trailer">
+                        <AddonsShift TrailerNamesBlock="Trailer" Types="FrameAddonLogMedium, Pacific512CabinProtector" Offset="(0; 0; 0)">
 
-                          </Model>
-                          <Model _template="HeadLightRay" Org="(4.59; 1.579; 1.029)" ParentFrame="BoneCabin_cdt">
+                        </AddonsShift>
+                      </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket Offset="(0.6; 1.324; 0)" NamesBlock="FrameAddonKung, BigCraneUs, MinicraneUS, SaddleLow, SaddleHigh, FrameAddon, FrameAddonTank, FrameAddonMaintainer, FrameAddonSeismicVibrator, Pacific512SpareWheel" Names="LogLift">
 
-                          </Model>
-                            <Flare Pos="(4.548; 1.579; -1.035)" ParentFrame="BoneCabin_cdt" Size=".15" DirAngle="135" Color="g(255; 235; 205) x 0.7" _template="HeadLight">
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                      <Socket NamesBlock="MetalDetector, MinicraneUS" Names="FrameAddonKung" ParentFrame="BoneChassis_cdt" Offset="(-2.4; 1.41; 0)">
+                          <ExtraParent Offset="(0; 0; -0.07)" Frame="BoneChassis_cdt">
 
-                            </Flare>
-                            <Flare Pos="(4.548; 1.579; 1.035)" ParentFrame="BoneCabin_cdt" Size=".15" DirAngle="135" Color="g(255; 235; 205) x 0.7" _template="HeadLight">
+                          </ExtraParent>
+                          <ExtraParent Offset="(0; 0; 0.07)" Frame="BoneChassis_cdt">
 
-                            </Flare>
-                            <Flare Pos="(4.548; 1.579; -0.852)" ParentFrame="BoneCabin_cdt" Size=".15" DirAngle="135" Color="g(255; 235; 205) x 0.7" _template="HeadLight">
+                          </ExtraParent>
+                      </Socket>
+                      <Socket Offset="(-6.5; 1.33; 0)" Names="BunkLog">
 
-                            </Flare>
-                            <Flare Pos="(4.548; 1.579; 0.852)" ParentFrame="BoneCabin_cdt" Size=".15" DirAngle="135" Color="g(255; 235; 205) x 0.7" _template="HeadLight">
-
-                            </Flare>
-                            <Flare Pos="(4.551; 1.581; -1.035)" _template="BlueStreak" ParentFrame="BoneCabin_cdt">
-
-                            </Flare>
-                            <Flare Pos="(4.551; 1.581; 1.035)" _template="BlueStreak" ParentFrame="BoneCabin_cdt">
-
-                            </Flare>
-                </HeadLight>
-                <ReverseSignals>
-                          <Light Pos="(-4.823; 1.234; 0)" _template="ReverseSignal">
-
-                          </Light>
-                              <Flare Size="0.4" _template="ReverseSignal" Pos="(-4.67; 1.234; -0.235)">
-
-                              </Flare>
-                              <Flare Size="0.4" _template="ReverseSignal" Pos="(-4.67; 1.234; 0.235)">
-
-                              </Flare>
-                              <Flare Pos="(-4.67; 1.234; -0.235)" Size="0.4" Dir="(-1; 0; 0)" Color="g(220; 220; 255) x 0.05" _template="BlueStreak">
-
-                              </Flare>
-                              <Flare Pos="(-4.67; 1.234; 0.235)" Size="0.4" Dir="(-1; 0; 0)" Color="g(220; 220; 255) x 0.05" _template="BlueStreak">
-
-                              </Flare>
-                </ReverseSignals>
-      </ModelAttachments>
-      <HeadLight Pos="(5.292; 0.982; 0)" _template="Default">
-
-      </HeadLight>
-      <GameData Price="108300" Country="US" UnlockByExploration="true" UnlockByRank="1">
-                      <CraneSocket Pos="(4.824; 1.103; 0)" ParentFrame="BoneCabin_cdt">
-
-                      </CraneSocket>
-                      <CraneSocket Pos="(-4.813; 1.185; 0)">
-
-                      </CraneSocket>
-                      <CraneSocket Pos="(0.012; 1.185; 0.425)">
-
-                      </CraneSocket>
-                      <CraneSocket Pos="(0.012; 1.185; -0.425)">
-
-                      </CraneSocket>
-                    <UiDesc UiIcon30x30="offroadVehicleImg30" UiName="UI_VEHICLE_PACIFIC_P512_NAME" UiIcon328x458="shopImgPacificP512" UiIconLogo="PacificLogo80" UiDesc="UI_VEHICLE_PACIFIC_P512_DESC" UiIcon40x40="offroadVehicleImg">
-
-                    </UiDesc>
-                          <AddonSockets>
-                              <Socket Offset="(-2.878; 1.81; 0)" Names="LargeSemitrailer, LargeSemitrailerOiltank">
-
-                              </Socket>
-                              <Socket Offset="(-2.878; 1.642; 0)" Names="Semitrailer, SemitrailerOiltank">
-
-                              </Socket>
-                              <Socket Offset="(-4.813; 1.189; 0)" Names="Trailer">
-                                <AddonsShift Types="FrameAddonLogMedium, Pacific512CabinProtector" Offset="(0; 0; 0)" TrailerNamesBlock="Trailer">
-
-                                </AddonsShift>
-                              </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(0.6; 1.324; 0)" NamesBlock="FrameAddonKung, BigCraneUs, MinicraneUS, SaddleLow, SaddleHigh, FrameAddon, FrameAddonTank, FrameAddonMaintainer, FrameAddonSeismicVibrator, Pacific512SpareWheel" Names="LogLift">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                              <Socket Offset="(-2.4; 1.41; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="MetalDetector, MinicraneUS" Names="FrameAddonKung">
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.07)">
-
-                                  </ExtraParent>
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.07)">
-
-                                  </ExtraParent>
-                              </Socket>
-                              <Socket Offset="(-6.5; 1.33; 0)" Names="BunkLog">
-
-                              </Socket>
-                              <Socket Offset="(-1.455; 1.324; 0)" NamesBlock="MinicraneUS, MetalDetector, LogLift, Pacific512SpareWheel" Names="FrameAddonLogShort">
-                                <AddonsShift Offset="(-0.25; 0; 0)" Types="Pacific512CabinProtector">
-
-                                </AddonsShift>
-                              </Socket>
-                              <Socket Offset="(-1.455; 1.324; 0)" NamesBlock="MinicraneUS, MetalDetector, LogLift, Pacific512SpareWheel" Names="FrameAddonLogMedium">
-                                <AddonsShift Offset="(-0.25; 0; 0)" Types="Pacific512CabinProtector">
-
-                                </AddonsShift>
-                              </Socket>
-                              <Socket Offset="(-3.07; 1.324; 0)" Names="BigCraneUs">
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.03)">
-
-                                  </ExtraParent>
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.03)">
-
-                                  </ExtraParent>
-                              </Socket>
-                              <Socket Offset="(-2.875; 1.324; 0)" Names="SaddleLow">
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.03)">
-
-                                  </ExtraParent>
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.03)">
-
-                                  </ExtraParent>
-                              </Socket>
-                              <Socket Offset="(-2.875; 1.324; 0)" Names="SaddleHigh">
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.015)">
-
-                                  </ExtraParent>
-                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.015)">
-
-                                  </ExtraParent>
-                              </Socket>
-                              <Socket Offset="(-0.82; 1.324; 0)" NamesBlock="Pacific512CabinProtector, LogLift, MetalDetector, MinicraneUS, Pacific512SpareWheel, Trailer" Names="FrameAddonTowPlatform">
-
-                              </Socket>
-                              <Socket Offset="(-1.87; 1.324; 0)" NamesBlock="Pacific512SpareWheel" Names="FrameAddon">
-                                <AddonsShift Offset="(-0.48; 0; 0)" Types="MinicraneUS">
-
-                                </AddonsShift>
-                              </Socket>
-                              <Socket Offset="(-2.38; 1.324; 0)" NamesBlock="Pacific512SpareWheel, Pacific512CabinProtector" Names="FrameAddonTank">
-
-                              </Socket>
-                              <Socket Offset="(-2; 0.298; 0)" NamesBlock="Trailer, MinicraneUS, MetalDetector, Pacific512SpareWheel, Pacific512CabinProtector" Names="FrameAddonMaintainer">
-
-                              </Socket>
-                              <Socket Offset="(0.174; 1.324; 0)" NamesBlock="Trailer, MinicraneUS, MetalDetector" Names="FrameAddonSeismicVibrator">
-
-                              </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                              <Socket Offset="(0.657; 1.327; 0)" ParentFrame="BoneCabin_cdt" NamesBlock="BigCraneUs, LogLift, FrameAddonTank, Pacific512SpareWheel, Pacific512CabinProtector" Names="MinicraneUS">
-
-                              </Socket>
-                              <Socket Offset="(-0.52; 0.272; 0)" NamesBlock="BigCraneUs, LogLift, FrameAddonTank, FrameAddon" Names="MetalDetector">
-
-                              </Socket>
-                          </AddonSockets>
-                          <AddonSockets DefaultAddon="pacific512_bumper_default">
-                            <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512Bumper">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets DefaultAddon="pacific512_visor_default">
-                            <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512Visor">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets DefaultAddon="pacific512_horn_default">
-                            <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512Horns">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets DefaultAddon="pacific512_snorkel_default">
-                            <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512Snorkel">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets DefaultAddon="pacific512_exhaust_default">
-                            <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512Exhaust">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets DefaultAddon="pacific512_air_conditioner_default">
-                            <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512AirConditioner">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512SpotLight">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512Beacon">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                              <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512CabinProtector">
-                                <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0)">
-
-                                </ExtraParent>
-                              </Socket>
-                              <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512SpareWheel">
-                                <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0)">
-
-                                </ExtraParent>
-                              </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="pacificP512Sticker_1x1_01" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="pacificP512Sticker_1x1_02" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="pacificP512Sticker_1x1_03" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="pacificP512Sticker_1x2_01" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="pacificP512Sticker_1x2_02" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="pacificP512Sticker_1x4_01" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="pacificP512Sticker_GlassTop" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="pacificP512Sticker_GlassBottom" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="pacificP512Sticker_Door_R">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="pacificP512Sticker_Door_L">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="pacificP512Sticker_Roof">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="pacificP512Sticker_Capote">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(2.423; 3.097; 0.153)" ParentFrame="BoneCabin_cdt" Names="StuffAirfreshener" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(2.656; 2.455; -0.057)" ParentFrame="BoneCabin_cdt" UpDir="(-0.061; 0.998; 0)" Names="StuffDashboard" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneCabin_cdt" Names="StuffHoodPacificP512">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets DefaultAddon="pacific512_diff_lock_default">
-                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="PacificP512DiffLock">
-
-                            </Socket>
-                          </AddonSockets>
-                    <CustomizationCameras>
-                                <CameraPos Interior="true" Position="(7.238; 6.111; -0.596)" Name="roof_sticker" InterestPosition="(4.262; 2.356; -0.794)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" InterestPosition="(5.056; 1.675; 1.297)" FOV="32.0" Interior="true" Position="(4.223; 2.817; -0.416)" MaxXRotation="360" Name="sticker_1">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-9.257; 5.579; 9.919)" MaxXRotation="360" Name="addon_1" InterestPosition="(-0.697; 2.256; 1.55)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-8.093; 2.337; -6.718)" MaxXRotation="360" Name="addon_2" InterestPosition="(3.194; 1.807; 0)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(4.113; 2.917; -0.358)" Name="mirror_mount" InterestPosition="(6.067; 2.924; 1.03)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-1.309; 3.85; 3.87)" MaxXRotation="360" Name="side_r" InterestPosition="(4.553; 2.114; 0.508)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" InterestPosition="(7.565; 2.313; -1.111)" FOV="32.0" Interior="true" Position="(8.762; 2.755; -0.905)" MaxXRotation="360" Name="hood_ornament">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(4.609; 3.157; 0.403)" Name="sticker" InterestPosition="(6.135; 1.698; 0.398)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(8.867; 3.529; 0.71)" Name="glass_sticker" InterestPosition="(4.39; 2.625; -0.831)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" InterestPosition="(5.655; 1.962; 0.862)" FOV="32.0" Interior="true" Position="(3.133; 2.711; 3.727)" MaxXRotation="360" Name="door_r_sticker">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(8.783; 4.714; -1.952)" MaxXRotation="360" Name="roof" InterestPosition="(4.917; 2.867; -1.1)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(10.359; 6.227; -0.719)" Name="capote_sticker" InterestPosition="(6.556; 2.022; -0.716)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(12.419; 1.899; -2.148)" MaxXRotation="360" Name="hoods" InterestPosition="(6.557; 1.338; -0.466)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(10.150; 3.597; 3.415)" MaxXRotation="360" Name="side_l" InterestPosition="(5.809; 1.905; -0.207)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(4.217; 2.831; -0.39)" Name="bubble_head" InterestPosition="(6.611; 1.914; 1.454)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(9.43; 1.241; -4.453)" MaxXRotation="360" Name="wheels" InterestPosition="(5.394; 0.655; -0.801)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(13.641; 1.384; -4.536)" MaxXRotation="360" Name="default" InterestPosition="(5.197; 1.735; -0)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-5.767; 1.805; 2.899)" MaxXRotation="360" Name="rear" InterestPosition="(0.479; 0.992; -0)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(2.776; 2.655; -4.430)" Name="door_l_sticker" InterestPosition="(4.113; 1.995; -0.56)" FOV="32.0">
-
-                                </CameraPos>
-                    </CustomizationCameras>
-                              <WinchSocket Pos="(4.824; 1.103; 0)" ParentFrame="BoneCabin_cdt">
-
-                              </WinchSocket>
-                              <WinchSocket Pos="(-4.813; 1.185; 0)">
-
-                              </WinchSocket>
-                              <WinchSocket Pos="(0.012; 1.185; 0.425)">
-
-                              </WinchSocket>
-                              <WinchSocket Pos="(0.012; 1.185; -0.425)">
-
-                              </WinchSocket>
+                      </Socket>
+                      <Socket Offset="(-1.455; 1.324; 0)" NamesBlock="MinicraneUS, MetalDetector, LogLift, Pacific512SpareWheel" Names="FrameAddonLogShort">
+                        <AddonsShift Types="Pacific512CabinProtector" Offset="(-0.25; 0; 0)">
+
+                        </AddonsShift>
+                      </Socket>
+                      <Socket Offset="(-1.455; 1.324; 0)" NamesBlock="MinicraneUS, MetalDetector, LogLift, Pacific512SpareWheel" Names="FrameAddonLogMedium">
+                        <AddonsShift Types="Pacific512CabinProtector" Offset="(-0.25; 0; 0)">
+
+                        </AddonsShift>
+                      </Socket>
+                      <Socket Offset="(-3.07; 1.324; 0)" Names="BigCraneUs">
+                          <ExtraParent Offset="(0; 0; 0.03)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                          <ExtraParent Offset="(0; 0; -0.03)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                      </Socket>
+                      <Socket Offset="(-2.875; 1.324; 0)" Names="SaddleLow">
+                          <ExtraParent Offset="(0; 0; 0.03)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                          <ExtraParent Offset="(0; 0; -0.03)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                      </Socket>
+                      <Socket Offset="(-2.875; 1.324; 0)" Names="SaddleHigh">
+                          <ExtraParent Offset="(0; 0; 0.015)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                          <ExtraParent Offset="(0; 0; -0.015)" Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                      </Socket>
+                      <Socket Offset="(-0.82; 1.324; 0)" NamesBlock="Pacific512CabinProtector, LogLift, MetalDetector, MinicraneUS, Pacific512SpareWheel, Trailer" Names="FrameAddonTowPlatform">
+
+                      </Socket>
+                      <Socket Offset="(-1.87; 1.324; 0)" NamesBlock="Pacific512SpareWheel" Names="FrameAddon">
+                        <AddonsShift Types="MinicraneUS" Offset="(-0.48; 0; 0)">
+
+                        </AddonsShift>
+                      </Socket>
+                      <Socket Offset="(-2.38; 1.324; 0)" NamesBlock="Pacific512SpareWheel, Pacific512CabinProtector" Names="FrameAddonTank">
+
+                      </Socket>
+                      <Socket Offset="(-2; 0.298; 0)" NamesBlock="Trailer, MinicraneUS, MetalDetector, Pacific512SpareWheel, Pacific512CabinProtector" Names="FrameAddonMaintainer">
+
+                      </Socket>
+                      <Socket Offset="(0.174; 1.324; 0)" NamesBlock="Trailer, MinicraneUS, MetalDetector" Names="FrameAddonSeismicVibrator">
+
+                      </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                      <Socket NamesBlock="BigCraneUs, LogLift, FrameAddonTank, Pacific512SpareWheel, Pacific512CabinProtector" Names="MinicraneUS" ParentFrame="BoneCabin_cdt" Offset="(0.657; 1.327; 0)">
+
+                      </Socket>
+                      <Socket Offset="(-0.52; 0.272; 0)" NamesBlock="BigCraneUs, LogLift, FrameAddonTank, FrameAddon" Names="MetalDetector">
+
+                      </Socket>
+                  </AddonSockets>
+                  <AddonSockets DefaultAddon="pacific512_bumper_default">
+                    <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512Bumper">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets DefaultAddon="pacific512_visor_default">
+                    <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512Visor">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets DefaultAddon="pacific512_horn_default">
+                    <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512Horns">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets DefaultAddon="pacific512_snorkel_default">
+                    <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512Snorkel">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets DefaultAddon="pacific512_exhaust_default">
+                    <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512Exhaust">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets DefaultAddon="pacific512_air_conditioner_default">
+                    <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512AirConditioner">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512SpotLight">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512Beacon">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512CabinProtector">
+                        <ExtraParent Offset="(0; 0; 0)" Frame="BoneChassis_cdt">
+
+                        </ExtraParent>
+                      </Socket>
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="Pacific512SpareWheel">
+                        <ExtraParent Offset="(0; 0; 0)" Frame="BoneChassis_cdt">
+
+                        </ExtraParent>
+                      </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="pacificP512Sticker_1x1_01">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="pacificP512Sticker_1x1_02">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="pacificP512Sticker_1x1_03">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="pacificP512Sticker_1x2_01">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="pacificP512Sticker_1x2_02">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="pacificP512Sticker_1x4_01">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="pacificP512Sticker_GlassTop">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" InCockpit="true" Names="pacificP512Sticker_GlassBottom">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" Names="pacificP512Sticker_Door_R">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" Names="pacificP512Sticker_Door_L">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" Names="pacificP512Sticker_Roof">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" Names="pacificP512Sticker_Capote">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket Names="StuffAirfreshener" InCockpit="true" ParentFrame="BoneCabin_cdt" Offset="(2.423; 3.097; 0.153)">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket Names="StuffDashboard" InCockpit="true" ParentFrame="BoneCabin_cdt" UpDir="(-0.061; 0.998; 0)" Offset="(2.656; 2.455; -0.057)">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneCabin_cdt" Names="StuffHoodPacificP512">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets DefaultAddon="pacific512_diff_lock_default">
+                    <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="PacificP512DiffLock">
+
+                    </Socket>
+                  </AddonSockets>
+                    <WinchSocket Pos="(4.824; 1.103; 0)" ParentFrame="BoneCabin_cdt">
+
+                    </WinchSocket>
+                    <WinchSocket Pos="(-4.813; 1.185; 0)">
+
+                    </WinchSocket>
+                    <WinchSocket Pos="(0.012; 1.185; 0.425)">
+
+                    </WinchSocket>
+                    <WinchSocket Pos="(0.012; 1.185; -0.425)">
+
+                    </WinchSocket>
+            <UiDesc UiDesc="UI_VEHICLE_PACIFIC_P512_DESC" UiIcon30x30="offroadVehicleImg30" UiName="UI_VEHICLE_PACIFIC_P512_NAME" UiIconLogo="PacificLogo80" UiIcon40x40="offroadVehicleImg" UiIcon328x458="shopImgPacificP512">
+
+            </UiDesc>
       </GameData>
-      <Landmark MaxScale="2.5" MinScale="1.5" Mesh="landmarks/pacific_p512_lmk">
+      <ControlledConstraints>
+                <Constraint Name="TieRodSteer" IsLinkedSteering="true" Id="chassis_steer">
+
+                </Constraint>
+                <Constraint Name="TieRodSteer2" IsLinkedSteering="true" Id="chassis_steer">
+
+                </Constraint>
+      </ControlledConstraints>
+      <Landmark Mesh="landmarks/pacific_p512_lmk" MaxScale="2.5" MinScale="1.5">
 
       </Landmark>
+      <HeadLight _template="Default" Pos="(5.292; 0.982; 0)">
+
+      </HeadLight>
       <Rotator Frame="BoneFan" RotationAxis="(-1; 0; 0)" RotationSpeed="15" EngineTorqueFactor="0">
 
       </Rotator>
       <AutomaticIK>
-                            <IKBone ModelFrame="BoneTieRod1_2" ParentFrame="BoneTieRod1_1_cdt">
-                              <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+                        <IKBone ParentFrame="BoneTieRod1_1_cdt" ModelFrame="BoneTieRod1_2">
+                          <IKBone AttachToFrame="BoneRackL" AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRod1_3">
+                              <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
 
                               </IKJoint>
-                              <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRod1_3" AttachToFrame="BoneRackL">
-                                    <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+                          </IKBone>
+                          <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
 
-                                    </IKJoint>
-                              </IKBone>
-                            </IKBone>
-                            <IKBone ModelFrame="BoneTieRod2_2" ParentFrame="BoneTieRod2_1_cdt">
-                              <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+                          </IKJoint>
+                        </IKBone>
+                        <IKBone ParentFrame="BoneTieRod2_1_cdt" ModelFrame="BoneTieRod2_2">
+                          <IKBone AttachToFrame="BoneTieRod1_1_cdt" AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRod2_3">
+                              <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
 
                               </IKJoint>
-                              <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRod2_3" AttachToFrame="BoneTieRod1_1_cdt">
-                                    <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+                          </IKBone>
+                          <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
 
-                                    </IKJoint>
-                              </IKBone>
-                            </IKBone>
+                          </IKJoint>
+                        </IKBone>
       </AutomaticIK>
+      <ModelAttachments>
+                        <StopSignals>
+                              <Flare Size="0.4" _template="StopSignal" Pos="(-4.67; 1.176; -0.235)">
+
+                              </Flare>
+                              <Flare Size="0.4" _template="StopSignal" Pos="(-4.67; 1.176; 0.235)">
+
+                              </Flare>
+                            <Light _template="StopSignal" Pos="(-4.823; 1.126; 0)">
+
+                            </Light>
+                        </StopSignals>
+                        <Ignition>
+                                <Flare ParentFrame="BoneCabin_cdt" Size=".2" Pos="(4.549; 1.579; -1.029)" _template="IgnitionSignalWhite">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabin_cdt" Size=".2" Pos="(4.549; 1.579; 1.029)" _template="IgnitionSignalWhite">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabin_cdt" Size=".2" Pos="(4.549; 1.579; -0.856)" _template="IgnitionSignalWhite">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabin_cdt" Size=".2" Pos="(4.549; 1.579; 0.856)" _template="IgnitionSignalWhite">
+
+                                </Flare>
+                                <Flare _template="IgnitionSignalRed" Pos="(-4.67; 1.176; -0.235)">
+
+                                </Flare>
+                                <Flare _template="IgnitionSignalRed" Pos="(-4.67; 1.176; 0.235)">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabin_cdt" _template="MarkerBeacon" Pos="(2.4; 3.248; -0.639)">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabin_cdt" _template="MarkerBeacon" Pos="(2.4; 3.248; 0.639)">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabin_cdt" _template="MarkerBeacon" Pos="(2.488; 3.248; -0.167)">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabin_cdt" _template="MarkerBeacon" Pos="(2.488; 3.248; 0.167)">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabin_cdt" _template="MarkerBeacon" Pos="(2.531; 3.245; 0)">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabin_cdt" Size="0.2" Pos="(4.518; 1.426; -0.941)" _template="IgnitionSignalOrange">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabin_cdt" Size="0.2" Pos="(4.518; 1.426; 0.941)" _template="IgnitionSignalOrange">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneMirrorR_cdt" Dir="(0.5; 0; -0.5)" Size="0.1" _template="IgnitionSignalOrange" Pos="(2.291; 2.692; -1.41)">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneMirrorL_cdt" Dir="(0.5; 0; 0.5)" Size="0.1" _template="IgnitionSignalOrange" Pos="(2.412; 2.698; 1.43)">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneMirrorR_cdt" Dir="(0.5; 0; -0.5)" Size="0.1" _template="IgnitionSignalOrange" Pos="(2.292; 2.618; -1.409)">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneMirrorL_cdt" Dir="(0.5; 0; 0.5)" Size="0.1" _template="IgnitionSignalOrange" Pos="(2.412; 2.618; 1.43)">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabin_cdt" Size="0.5" Pos="(4.196; 1.764; -0.946)" _template="Beacon">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabin_cdt" Size="0.5" Pos="(4.196; 1.764; 0.946)" _template="Beacon">
+
+                                </Flare>
+                                  <Light ParentFrame="BoneCabin_cdt" _template="IgnitionSignalWhite" Pos="(5; 1.579; -1.029)">
+
+                                  </Light>
+                                  <Light ParentFrame="BoneCabin_cdt" _template="IgnitionSignalWhite" Pos="(5; 1.579; 1.029)">
+
+                                  </Light>
+                                  <Light _template="IgnitionSignalRed" Pos="(-4.823; 1.126; 0)">
+
+                                  </Light>
+                        </Ignition>
+                        <HeadLight>
+                                  <Flare Color="g(255; 235; 205) x 0.7" ParentFrame="BoneCabin_cdt" Pos="(4.548; 1.579; -1.035)" DirAngle="135" Size=".15" _template="HeadLight">
+
+                                  </Flare>
+                                  <Flare Color="g(255; 235; 205) x 0.7" ParentFrame="BoneCabin_cdt" Pos="(4.548; 1.579; 1.035)" DirAngle="135" Size=".15" _template="HeadLight">
+
+                                  </Flare>
+                                  <Flare Color="g(255; 235; 205) x 0.7" ParentFrame="BoneCabin_cdt" Pos="(4.548; 1.579; -0.852)" DirAngle="135" Size=".15" _template="HeadLight">
+
+                                  </Flare>
+                                  <Flare Color="g(255; 235; 205) x 0.7" ParentFrame="BoneCabin_cdt" Pos="(4.548; 1.579; 0.852)" DirAngle="135" Size=".15" _template="HeadLight">
+
+                                  </Flare>
+                                  <Flare ParentFrame="BoneCabin_cdt" _template="BlueStreak" Pos="(4.551; 1.581; -1.035)">
+
+                                  </Flare>
+                                  <Flare ParentFrame="BoneCabin_cdt" _template="BlueStreak" Pos="(4.551; 1.581; 1.035)">
+
+                                  </Flare>
+                                    <Model Org="(4.59; 1.579; -1.029)" _template="HeadLightRay" ParentFrame="BoneCabin_cdt">
+
+                                    </Model>
+                                    <Model Org="(4.59; 1.579; 1.029)" _template="HeadLightRay" ParentFrame="BoneCabin_cdt">
+
+                                    </Model>
+                        </HeadLight>
+                        <ReverseSignals>
+                                    <Flare Size="0.4" _template="ReverseSignal" Pos="(-4.67; 1.234; -0.235)">
+
+                                    </Flare>
+                                    <Flare Size="0.4" _template="ReverseSignal" Pos="(-4.67; 1.234; 0.235)">
+
+                                    </Flare>
+                                    <Flare Color="g(220; 220; 255) x 0.05" Pos="(-4.67; 1.234; -0.235)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
+
+                                    </Flare>
+                                    <Flare Color="g(220; 220; 255) x 0.05" Pos="(-4.67; 1.234; 0.235)" Dir="(-1; 0; 0)" Size="0.4" _template="BlueStreak">
+
+                                    </Flare>
+                                  <Light _template="ReverseSignal" Pos="(-4.823; 1.234; 0)">
+
+                                  </Light>
+                        </ReverseSignals>
+      </ModelAttachments>
+      <PhysicsModel Mesh="trucks/pacific_p512">
+                          <NetSync Legacy="false">
+
+                          </NetSync>
+                          <Body CenterOfMassOffset="(-0.5; 0; 0)" ImpactType="Truck" NetSync="pv" ModelFrame="BoneChassis_cdt" Mass="7000">
+                                  <Body CenterOfMassOffset="(0.2; 0.7; 0)" ImpactType="Truck" NetSync="pv" ModelFrame="BoneCabin_cdt" Mass="4500">
+                                    <Constraint Type="Hinge" MaxLimit="32" PivotOffset="(0; 0; 0)" AxisLocal="(1; 0; 0)" MinLimit="-32">
+                                        <Motor Spring="500000" Type="Spring" Damping="20000">
+
+                                        </Motor>
+                                    </Constraint>
+                                        <Body Collisions="None" ModelFrame="BoneAntenna_cdt" Mass="2">
+                                          <Constraint Type="Ragdoll" PlaneAxisLocal="(0; 0; 1)" PlaneMax="10" PlaneMin="-10" Cone="10" TwistAxisLocal="(0; 1; 0)">
+                                              <PlaneMotor Spring="350" Type="Spring" Damping="7">
+
+                                              </PlaneMotor>
+                                              <ConeMotor Spring="350" Type="Spring" Damping="7">
+
+                                              </ConeMotor>
+                                          </Constraint>
+                                        </Body>
+                                        <Body _template="Mirror" ModelFrame="BoneMirrorL_cdt">
+                                          <Body _template="MirrorCord" ModelFrame="boneMirrorCordL_cdt">
+
+                                          </Body>
+                                        </Body>
+                                        <Body _template="Mirror" ModelFrame="BoneMirrorR_cdt">
+                                          <Body _template="MirrorCord" ModelFrame="boneMirrorCordR_cdt">
+
+                                          </Body>
+                                        </Body>
+                                        <Body Collisions="None" ModelFrame="BoneChain_cdt" Mass="2">
+                                          <Constraint MinLimit="-40" Type="Hinge" MaxLimit="40" AxisLocal="(1; 0; 0)">
+                                              <Motor Spring="0.05" Type="Spring" Damping="0.01">
+
+                                              </Motor>
+                                          </Constraint>
+                                        </Body>
+                                        <Body _template="TieRod" ModelFrame="BoneTieRod1_1_cdt">
+                                          <Constraint MinLimit="-27" Name="TieRodSteer" MaxLimit="27" AxisLocal="(0; 0; 1)">
+
+                                          </Constraint>
+                                        </Body>
+                                        <Body _template="TieRod" ModelFrame="BoneTieRod2_1_cdt">
+                                          <Constraint MinLimit="-20" Name="TieRodSteer2" MaxLimit="20" AxisLocal="(0; 0; 1)">
+
+                                          </Constraint>
+                                        </Body>
+                                        <Body _template="ChassisCord" ModelFrame="boneChassisCord1_cdt">
+
+                                        </Body>
+                                        <Body _template="Sunshield" ModelFrame="BoneSunshieldR_cdt">
+
+                                        </Body>
+                                        <Body _template="Sunshield" ModelFrame="BoneSunshieldL_cdt">
+
+                                        </Body>
+                                        <Body _template="Mudguard" ModelFrame="boneMudguardL_cdt">
+
+                                        </Body>
+                                        <Body _template="Mudguard" ModelFrame="boneMudguardR_cdt">
+
+                                        </Body>
+                                  </Body>
+                                  <Body _template="ChassisCord" ModelFrame="boneChassisCord2_cdt">
+                                    <Constraint MaxLimit="1" MinLimit="-0.8">
+
+                                    </Constraint>
+                                  </Body>
+                                  <Body _template="ChassisCord" ModelFrame="boneChassisCord3_cdt">
+                                    <Constraint MaxLimit="0.75" MinLimit="-0.75">
+
+                                    </Constraint>
+                                  </Body>
+                          </Body>
+      </PhysicsModel>
   </Truck>
   <_templates Include="trucks">
         <Wheel>
-            <FrontWheel SteeringJointOffset="0.25" ParentFrame="BoneCabin_cdt" SteeringCastor="5" Torque="connectable" Location="front" SteeringAngle="36">
-
-            </FrontWheel>
             <RearWheel Torque="default" Location="rear" ConnectedToHandbrake="true">
 
             </RearWheel>
+            <FrontWheel SteeringCastor="5" Torque="connectable" ParentFrame="BoneCabin_cdt" SteeringJointOffset="0.25" SteeringAngle="36" Location="front">
+
+            </FrontWheel>
         </Wheel>
         <Body>
-              <Mudguard AngularDamping="3.0" Collisions="None" Mass="10">
-                  <Constraint AxisLocal="(0; 0; 1)" MaxLimit="10" MinLimit="-35" Type="Hinge">
+              <Mudguard Collisions="None" AngularDamping="3.0" Mass="10">
+                  <Constraint MinLimit="-35" Type="Hinge" MaxLimit="10" AxisLocal="(0; 0; 1)">
 
                   </Constraint>
               </Mudguard>
-              <Mirror Mass="1" Collisions="None">
-                    <Constraint AxisLocal="(0; 1; 0)" MaxLimit="25" MinLimit="-25" Type="Hinge">
-                        <Motor Type="Spring" Spring="200" Damping=".1">
+              <ChassisCord Collisions="None" Mass="1">
+                    <Constraint MinLimit="-0.4" Type="Prismatic" MaxLimit="0.4" AxisLocal="(0; 0; 1)">
+                        <Motor Spring="0.1" Type="Spring" Damping="1">
 
                         </Motor>
                     </Constraint>
-              </Mirror>
-              <Sunshield Mass="3" Collisions="None">
-                      <Constraint AxisLocal="(0; 0; 1)" MaxLimit="5" MinLimit="-3" Type="Hinge">
-                          <Motor Type="Spring" Spring="25" Damping="0.5">
+              </ChassisCord>
+              <Sunshield Collisions="None" Mass="3">
+                      <Constraint MinLimit="-3" Type="Hinge" MaxLimit="5" AxisLocal="(0; 0; 1)">
+                          <Motor Spring="25" Type="Spring" Damping="0.5">
 
                           </Motor>
                       </Constraint>
               </Sunshield>
-              <ChassisCord Mass="1" Collisions="None">
-                        <Constraint AxisLocal="(0; 0; 1)" MaxLimit="0.4" MinLimit="-0.4" Type="Prismatic">
-                            <Motor Type="Spring" Spring="0.1" Damping="1">
+              <MirrorCord Collisions="None" Mass="1">
+                        <Constraint MinLimit="-35" Type="Hinge" MaxLimit="35" AxisLocal="(0; 0; 1)">
+                            <Motor Spring="1" Type="Spring" Damping="0.1">
 
                             </Motor>
                         </Constraint>
-              </ChassisCord>
-              <MirrorCord Mass="1" Collisions="None">
-                          <Constraint AxisLocal="(0; 0; 1)" MaxLimit="35" MinLimit="-35" Type="Hinge">
-                              <Motor Type="Spring" Spring="1" Damping="0.1">
+              </MirrorCord>
+              <Mirror Collisions="None" Mass="1">
+                          <Constraint MinLimit="-25" Type="Hinge" MaxLimit="25" AxisLocal="(0; 1; 0)">
+                              <Motor Spring="200" Type="Spring" Damping=".1">
 
                               </Motor>
                           </Constraint>
-              </MirrorCord>
+              </Mirror>
         </Body>
   </_templates>

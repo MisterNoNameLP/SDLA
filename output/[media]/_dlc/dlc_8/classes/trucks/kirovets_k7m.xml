@@ -1,649 +1,649 @@
   <Truck>
-      <ControlledConstraints>
-          <Constraint Name="ChassisSteer" IsLinkedSteering="true" Id="chassis_steer">
-
-          </Constraint>
-      </ControlledConstraints>
       <PhysicsModel Mesh="trucks/kirovets_k7m">
-            <NetSync Legacy="false">
+          <NetSync Legacy="false">
 
-            </NetSync>
-            <Body ModelFrame="BoneFront_cdt" ImpactType="Truck" Mass="4000" NetSync="pv" CenterOfMassOffset="(0.5; 1; 0)">
-                    <Body ModelFrame="BoneSteering_cdt" Mass="6700" NetSync="pv" Collisions="None" CenterOfMassOffset="(0.5; 0; 0)">
-                      <Constraint AxisLocal="(0; 1; 0)" MaxLimit="25" Name="ChassisSteer" MinLimit="-25" Type="Hinge">
-                          <Motor Type="Position" Tau="0.015" Force="135000" Damping="1.0">
+          </NetSync>
+          <Body CenterOfMassOffset="(0.5; 1; 0)" ImpactType="Truck" NetSync="pv" ModelFrame="BoneFront_cdt" Mass="4000">
+                  <Body CenterOfMassOffset="(0.5; 0; 0)" ModelFrame="BoneSteering_cdt" NetSync="pv" Collisions="None" Mass="6700">
+                    <Constraint Name="ChassisSteer" Type="Hinge" MaxLimit="25" AxisLocal="(0; 1; 0)" MinLimit="-25">
+                        <Motor Type="Position" Damping="1.0" Tau="0.015" Force="135000">
 
-                          </Motor>
-                      </Constraint>
-                      <Body ModelFrame="BoneBack_cdt" ImpactType="Truck" Mass="9000" NetSync="pv" CenterOfMassOffset="(0.5; 0; 0)">
-                            <Constraint AxisLocal="(1; 0; 0)" MaxLimit="14" MinLimit="-14" PivotOffset="(0; 0; 0)" Type="Hinge">
-                                <Motor Type="Spring" Spring="1400" Damping="800.0">
+                        </Motor>
+                    </Constraint>
+                    <Body CenterOfMassOffset="(0.5; 0; 0)" ImpactType="Truck" NetSync="pv" ModelFrame="BoneBack_cdt" Mass="9000">
+                          <Constraint Type="Hinge" MaxLimit="14" PivotOffset="(0; 0; 0)" AxisLocal="(1; 0; 0)" MinLimit="-14">
+                              <Motor Spring="1400" Type="Spring" Damping="800.0">
 
-                                </Motor>
-                            </Constraint>
-                      </Body>
+                              </Motor>
+                          </Constraint>
                     </Body>
-                    <Body ModelFrame="BoneMirrorLeft_cdt" _template="SideMirror">
+                  </Body>
+                  <Body _template="SideMirror" ModelFrame="BoneMirrorLeft_cdt">
 
-                    </Body>
-                    <Body ModelFrame="BoneMirrorRight_cdt" _template="SideMirror">
+                  </Body>
+                  <Body _template="SideMirror" ModelFrame="BoneMirrorRight_cdt">
 
-                    </Body>
-                    <Body Mass="0.2" ModelFrame="BoneKeyFob_cdt">
-                      <Constraint AxisLocal="(; 0; 1)" MaxLimit="50" MinLimit="-50" Type="Hinge">
-                          <Motor Type="Spring" Spring="0.001" Damping="0.001">
+                  </Body>
+                  <Body ModelFrame="BoneKeyFob_cdt" Mass="0.2">
+                    <Constraint MinLimit="-50" Type="Hinge" MaxLimit="50" AxisLocal="(; 0; 1)">
+                        <Motor Spring="0.001" Type="Spring" Damping="0.001">
 
-                          </Motor>
-                      </Constraint>
-                    </Body>
-            </Body>
+                        </Motor>
+                    </Constraint>
+                  </Body>
+          </Body>
       </PhysicsModel>
-      <TruckData BackSteerSpeed="0.02" DiffLockType="Always" EngineIconScale="1.6" TruckType="HEAVY" FuelCapacity="340" EngineStartDelay="0.6" SteerSpeed="0.015" ExhaustStartTime="0.6" Responsiveness="0.4" TruckImage="kirovets_k7m_mchr" EngineIconMesh="env/engine_default">
-              <Shakers>
-                  <Shaker MaxAngle="(0.4; 0.4; 0.4)" Frame="BoneExhaust" MinAngle="(0.2; 0.2; 0.2)" MaxFrequency="5">
+      <GameData Country="RU,CAS" Price="172300" ExcludeAddons="trailer_log_pole" UnlockByRank="1" UnlockByExploration="true">
+            <CustomizationCameras>
+                  <CameraPos InterestPosition="(2.514; 1.31; -0.551)" Name="addon_1" MaxXRotation="360" Position="(-7.19; 4.322; 7.256)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                  </Shaker>
-              </Shakers>
-              <Intake ParentFrame="BoneFront_cdt" Size="2" Dir="(1; 0; 0)" Origin="(-0.835; 3.938; -1.169)">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(5.759; 2.49; 0)" Name="addon_2" MaxXRotation="360" Position="(10.793; 4.409; -3.424)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-              </Intake>
-              <GearboxSocket Default="g_special_default" Type="gearboxes_special">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(3.487; 3.34; 0.516)" FOV="32.0" InterestPosition="(5.946; 2.964; 1.237)" Name="mirror_mount">
 
-              </GearboxSocket>
-              <Wheels DefaultRim="rim" DefaultWheelType="wheels_base_kirovets_k7m" DefaultTire="tire">
-                          <Wheel Pos="(1.032; 1; 1.162)" _template="FrontWheel">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(3.15; 3; -0.65)" FOV="32.0" InterestPosition="(5.946; 3.1; 1.237)" Name="curtain">
 
-                          </Wheel>
-                          <Wheel Pos="(1.032; 1; 1.162)" _template="FrontWheel" RightSide="true">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(3.451; 2.987; 0.646)" FOV="32.0" InterestPosition="(6.249; 2.736; 0.684)" Name="bubble_head">
 
-                          </Wheel>
-                          <Wheel Pos="(-2.723; 0.991; 1.162)" _template="RearWheel">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(10.575; 3.974; 0.816)" FOV="32.0" InterestPosition="(6.321; 2.828; -0.786)" Name="glass_sticker">
 
-                          </Wheel>
-                          <Wheel Pos="(-2.723; 0.991; 1.162)" _template="RearWheel" RightSide="true">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(-1.423; 1.831; -0)" Name="rear" MaxXRotation="360" Position="(-10.631; 2.524; 6.535)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                          </Wheel>
-              </Wheels>
-              <WinchUpgradeSocket Default="w_heavy_trucks_default" Type="winches_heavy_trucks" IsUpgradable="true">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(8.8; 2.523; -0.771)" FOV="32.0" InterestPosition="(7.506; 2.472; -1.037)" Name="hood_ornament">
 
-              </WinchUpgradeSocket>
-              <SteeringWheel Frame="BoneSteering">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(5.5; 8.28; -2)" FOV="32.0" InterestPosition="(3.4; 1.509; 0.5)" Name="sticker_roof">
 
-              </SteeringWheel>
-              <Damage>
-                                <DamageArea Max="(3.4; 2.2; 0.6)" ParentFrame="BoneFront_cdt" Min="(1.25; 1.2; -0.6)" Type="Engine">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(1.7; 7.5; -1)" FOV="32.0" InterestPosition="(3.7; 1.509; 1)" Name="sticker_roof_2">
 
-                                </DamageArea>
-                                <DamageArea Max="(0.17; 1.35; 0.9)" ParentFrame="BoneFront_cdt" Min="(-0.48; 0.76; -0.9)" Type="FuelTank">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(8.5; 5.28; -2)" FOV="32.0" InterestPosition="(5.2; 1.509; 0.05)" Name="sticker_capote">
 
-                                </DamageArea>
-              </Damage>
-              <LimitedFluid Center="(-2.324; 1.503; -0.021)" ParentFrame="BoneFront_cdt" Type="Box" SizeX="1.1" SizeZ="1.1" SizeY="0.23">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(1.2; 5.28; -2.5)" FOV="32.0" InterestPosition="(0.8; 1.509; -1.2)" Name="sticker_wing_l">
 
-              </LimitedFluid>
-              <EngineSocket Default="ru_kirovets_k7m_engine_0" Type="e_ru_kirovets_k7m_special">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(1; 5.28; 2.7)" FOV="32.0" InterestPosition="(2.5; 1.509; 1.5)" Name="sticker_wing_r">
 
-              </EngineSocket>
-              <OcclusionMap HalfSizeZ="2" ParentFrame="BoneBack_cdt" MaxX="3" MinX="-3">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(3.8; 2.8; 0)" FOV="32.0" InterestPosition="(6.7; 5.4; -0.1)" Name="sticker_inside_01">
 
-              </OcclusionMap>
-              <Camera Center="(-1; 0; 0)" RadiusMultiplier="1.1">
-                                      <Cockpit WindshieldShadingTexture="trucks/kirovets_k7m_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/kirovets_k7m_glass__d_a.tga" ViewPos="(-0.6; 3.185; 0)" _template="Default">
-                                            <Mirror Pos="(-0.018; 3.309; -0.347)" MeshFrame="hp_cab_mirror" FOVScale="1.2" Size="(0.27; 0.14)" ReflectionDir="(-1; -0.2; 0.22)" ClipDir="(-1; -0.2; 0.22)" ClipOffset="1">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(3.8; 3.2; -0.7)" FOV="32.0" InterestPosition="(5; 1.8; 0.8)" Name="sticker_inside_02">
 
-                                            </Mirror>
-                                            <Mirror Pos="(1.353; 3.095; 0.808)" MeshFrame="mirror_left" FOVScale="1.35" Size="(0.22; 0.4)" ReflectionDir="(-1; -0.05; 0.038)" ClipDir="(-1; -0.05; 0.038)" ClipOffset="0.05">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(4.1; 3.2; 0.5)" FOV="32.0" InterestPosition="(1; 1.2; 0.2)" Name="sticker_inside_03">
 
-                                            </Mirror>
-                                            <Mirror Pos="(1.353; 3.095; -0.849)" MeshFrame="mirror_right" FOVScale="1.35" Size="(0.22; 0.4)" ReflectionDir="(-0.996; 0; 0.087)" ClipDir="(-1; -0.05; -0.038)" ClipOffset="0.05">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(3.8; 2.8; 0)" FOV="32.0" InterestPosition="(7; 5.6; 0.5)" Name="sticker_inside_04">
 
-                                            </Mirror>
-                                          <Rear _inheritRemove="true">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(3.8; 2.8; 0)" FOV="32.0" InterestPosition="(6.7; 5.6; 1.5)" Name="sticker_inside_1x2_01">
 
-                                          </Rear>
-                                      </Cockpit>
-              </Camera>
-              <Shafts>
-                                          <Shaft SocketPointA="Shaft1a" SocketPointB="Shaft1b">
+                  </CameraPos>
+                  <CameraPos Interior="true" Position="(4.1; 3.2; 0.5)" FOV="32.0" InterestPosition="(1; 1; -0.5)" Name="sticker_inside_1x4_01">
 
-                                          </Shaft>
-                                          <Shaft SocketPointA="Shaft2a" SocketPointB="Shaft2b">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(3.874; 0.602; -0)" Name="wheels" MaxXRotation="360" Position="(7.632; 2.469; -6.129)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                                          </Shaft>
-                                          <Shaft SocketPointA="Shaft3a" SocketPointB="Shaft3b">
+                  </CameraPos>
+                  <CameraPos InterestPosition="(5.451; 1.818; 0)" Name="default" MaxXRotation="360" Position="(13.951; 1.253; -5.017)" MaxZoom="2" FOV="32.0" MaxYRotation="360">
 
-                                          </Shaft>
-              </Shafts>
-              <FuelTank DamageCapacity="50">
+                  </CameraPos>
+            </CustomizationCameras>
+                <CraneSocket Pos="(2.957; 0.833; -0.628)" ParentFrame="BoneFront_cdt">
 
-              </FuelTank>
-              <Axles>
-                                            <Axle Frame="BoneAxle1">
+                </CraneSocket>
+                <CraneSocket Pos="(2.957; 0.833; 0.628)" ParentFrame="BoneFront_cdt">
 
-                                            </Axle>
-              </Axles>
-              <SoundsWheels _template="Default">
+                </CraneSocket>
+                <CraneSocket Pos="(-3.923; 0.719; 0.005)" ParentFrame="BoneBack_cdt">
 
-              </SoundsWheels>
-              <SuspensionSocket Default="kirovets_k7m_suspension_default" MaxWheelRadiusWithoutSuspension="1" Type="s_kirovets_k7m">
+                </CraneSocket>
+                  <AddonSockets DefaultAddon="kirovets_k7m_coupler" RequiredAddonIfNoConflicts="kirovets_k7m_coupler">
+                      <Socket ParentFrame="BoneBack_cdt" Names="KirovetsK7MKung">
 
-              </SuspensionSocket>
-                                                <CompatibleWheels Scale="1" Type="wheels_base_kirovets_k7m">
+                      </Socket>
+                      <Socket ParentFrame="BoneBack_cdt" Offset="(0; 0; 0)" Names="K7MCoupler">
 
-                                                </CompatibleWheels>
-                                                <CompatibleWheels Type="wheels_extend_kirovets_k7m" Scale="1" OffsetZ="0.388">
+                      </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneBack_cdt" Offset="(-4.5; 1.21; 0)" Names="TrailerFarm">
 
-                                                </CompatibleWheels>
-              <Dashboard>
-                                                      <Gauge Mesh="trucks/arrows/kirovets_k7m_arrow_2" Org="(0.037; 2.757; 0.001)" OutputAngles="(-90; 90)" InputType="rpm" Dir="(-0.85; 1; 0)" InputRange="(0;0.75)" Damping="0.985">
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneBack_cdt" Offset="(-3.945; 0.6; 0)" Names="Trailer">
 
-                                                      </Gauge>
-                                                      <Gauge Mesh="trucks/arrows/kirovets_k7m_arrow_3" Org="(0.03; 2.751; 0.001)" OutputAngles="(238; 122)" InputType="fuel" Dir="(-0.85; 1; 0)" InputRange="(0;1)" Damping="0.98">
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK7MSticker_Capote">
 
-                                                      </Gauge>
-                                                      <Gauge Mesh="trucks/arrows/kirovets_k7m_arrow_1" Org="(0.036; 2.756; 0.054)" OutputAngles="(-140; -45)" InputType="engineEnabled" Dir="(-0.85; 1; 0)" InputRange="(0;1)" Damping="0.98">
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK7MSticker_Roof">
 
-                                                      </Gauge>
-                                                      <Gauge Mesh="trucks/arrows/kirovets_k7m_arrow_1" Org="(0.036; 2.756; -0.053)" OutputAngles="(140; 20)" InputType="engineEnabled" Dir="(-0.85; 1; 0)" InputRange="(0;1)" Damping="0.98">
-
-                                                      </Gauge>
-              </Dashboard>
-              <Sounds _template="Default" DisableReversePitch="true" ParentFrame="BoneFront_cdt" Origin="(1.8; 1.8; 0)" MinDist="15.0">
-                                                      <BrakePull Sound="trucks/kirovets_k7m/kirovets_k7m_brake_pull">
-
-                                                      </BrakePull>
-                                                      <EngineHigh Sound="trucks/kirovets_k7m/kirovets_k7m_high">
-
-                                                      </EngineHigh>
-                                                      <ChassisStress Sound="trucks/common/truck_stress_rnd_set/truck_stress_rnd">
-
-                                                      </ChassisStress>
-                                                      <HandbrakeOff Sound="trucks/kirovets_k7m/kirovets_k7m_handbrake_off">
-
-                                                      </HandbrakeOff>
-                                                      <BrakesSqueal Sound="trucks/kirovets_k7m/kirovets_k7m_brake_squeal">
-
-                                                      </BrakesSqueal>
-                                                      <AbruptStop Sound="trucks/common/truck_swing_big_old_rnd_set/truck_swing_big_old_rnd">
-
-                                                      </AbruptStop>
-                                                      <EngineTrans Sound="trucks/kirovets_k7m/kirovets_k7m_turbo">
-
-                                                      </EngineTrans>
-                                                      <EngineHeavy_2d IsSound2D="true" Sound="trucks/kirovets_k7m/kirovets_k7m_heavy_2d">
-
-                                                      </EngineHeavy_2d>
-                                                                        <Reverse _inheritRemove="true">
-
-                                                                        </Reverse>
-                                                                        <Reverse Sound="trucks/kirovets_k7m/kirovets_k7m_back_beeper">
-
-                                                                        </Reverse>
-                                                      <EngineHeavy Sound="trucks/kirovets_k7m/kirovets_k7m_heavy">
-
-                                                      </EngineHeavy>
-                                                      <EngineLow_2d IsSound2D="true" Sound="trucks/kirovets_k7m/kirovets_k7m_low_2d">
-
-                                                      </EngineLow_2d>
-                                                      <EngineHigh_2d IsSound2D="true" Sound="trucks/kirovets_k7m/kirovets_k7m_high_2d">
-
-                                                      </EngineHigh_2d>
-                                                      <EngineLow Sound="trucks/kirovets_k7m/kirovets_k7m_low">
-
-                                                      </EngineLow>
-                                                      <EngineIdle_2d IsSound2D="true" Sound="trucks/kirovets_k7m/kirovets_k7m_idle_2d">
-
-                                                      </EngineIdle_2d>
-                                                      <EngineStop Sound="trucks/kirovets_k7m/kirovets_k7m_stop">
-
-                                                      </EngineStop>
-                                                      <EngineIdle Sound="trucks/kirovets_k7m/kirovets_k7m_idle">
-
-                                                      </EngineIdle>
-                                                      <EngineRev Sound="trucks/kirovets_k7m/kirovets_k7m_rev">
-
-                                                      </EngineRev>
-                                                      <BrakeRelease Sound="trucks/common/truck_brake_release_alt2_rnd_set/truck_brake_release_alt2_rnd">
-
-                                                      </BrakeRelease>
-                                                      <Handbrake Sound="trucks/kirovets_k7m/kirovets_k7m_handbrake_on">
-
-                                                      </Handbrake>
-                                                      <Honk Sound="trucks/kirovets_k7m/kirovets_k7m_honk">
-
-                                                      </Honk>
-                                                      <EngineAccel Sound="trucks/kirovets_k7m/kirovets_k7m_acc">
-
-                                                      </EngineAccel>
-                                                      <EngineStart Sound="trucks/kirovets_k7m/kirovets_k7m_start">
-
-                                                      </EngineStart>
-              </Sounds>
-              <Driver Pos="(-0.530; 2.475; 0)" ParentFrame="BoneFront_cdt" SteeringWheelPos="(-0.15; 2.827; 0)">
-
-              </Driver>
-              <Exhaust Speed="3.00" ParentFrame="BoneFront_cdt" IsLight="true" Dir="(0; 0.5; 1)" Origin="(0.144; 3.95; 1.217)">
-
-              </Exhaust>
-              <SoundsDamage _template="Heavy">
-
-              </SoundsDamage>
-              <Steam Origin="(1.411; 1.65; 0)">
-
-              </Steam>
-      </TruckData>
-      <ModelAttachments>
-                <StopSignals>
-                    <Light Pos="(-4.248; 1.323; 0.005)" _template="StopSignal" ParentFrame="BoneBack_cdt">
-
-                    </Light>
-                        <Flare Pos="(-3.474; 1.979; 0.997)" _template="StopSignal" ParentFrame="BoneBack_cdt">
-
-                        </Flare>
-                        <Flare Pos="(-3.495; 1.99; -0.996)" _template="StopSignal" ParentFrame="BoneBack_cdt">
-
-                        </Flare>
-                </StopSignals>
-                    <Ignition>
-                      <Light ParentFrame="BoneFront_cdt" Pos="(3.172; 1.433; 0)" Dir="(1; 0.014; 0)" _template="IgnitionSignalWhite">
-
-                      </Light>
-                          <Flare Pos="(-3.482; 1.981; 1.055)" ParentFrame="BoneBack_cdt" Size="0.3" Dir="(-1; 0; 0)" Color="g(255; 0; 0) x 0.3" _template="IgnitionSignalRed">
-
-                          </Flare>
-                          <Flare Pos="(-3.482; 1.979; -1.059)" ParentFrame="BoneBack_cdt" Size="0.3" Dir="(-1; 0; 0)" Color="g(255; 0; 0) x 0.3" _template="IgnitionSignalRed">
-
-                          </Flare>
-                          <Flare Pos="(1.646; 2.053; -1.139)" ParentFrame="BoneFront_cdt" Size="0.2" Dir="(1; 0; 0)" Color="g(235; 165; 10) x 0.25" _template="IgnitionSignalOrange">
-
-                          </Flare>
-                          <Flare Pos="(1.646; 2.053; 1.141)" ParentFrame="BoneFront_cdt" Size="0.2" Dir="(1; 0; 0)" Color="g(235; 165; 10) x 0.25" _template="IgnitionSignalOrange">
-
-                          </Flare>
-                          <Flare Pos="(0.695; 3.533; 0.745)" ParentFrame="BoneFront_cdt" Size="0.3" Dir="(1; 0; 0)" Color="g(255; 235; 200) x 0.2" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                          <Flare Pos="(0.695; 3.533; 0.553)" ParentFrame="BoneFront_cdt" Size="0.3" Dir="(1; 0; 0)" Color="g(255; 235; 200) x 0.2" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                          <Flare Pos="(0.695; 3.533; -0.745)" ParentFrame="BoneFront_cdt" Size="0.3" Dir="(1; 0; 0)" Color="g(255; 235; 200) x 0.2" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                          <Flare Pos="(0.695; 3.533; -0.553)" ParentFrame="BoneFront_cdt" Size="0.3" Dir="(1; 0; 0)" Color="g(255; 235; 200) x 0.2" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                          <Flare ParentFrame="BoneFront_cdt" Size="0.2" Pos="(3.079; 2.02; -0.412)" Color="g(255; 235; 200) x 0.25" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                          <Flare ParentFrame="BoneFront_cdt" Size="0.2" Pos="(3.038; 2.02; -0.533)" Color="g(255; 235; 200) x 0.25" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                          <Flare ParentFrame="BoneFront_cdt" Size="0.2" Pos="(3.049; 2.02; 0.412)" Color="g(255; 235; 200) x 0.25" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                          <Flare ParentFrame="BoneFront_cdt" Size="0.2" Pos="(2.997; 2.02; 0.538)" Color="g(255; 235; 200) x 0.25" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                          <Flare ParentFrame="BoneFront_cdt" Size="0.2" Pos="(2.981; 1.354; -0.406)" Color="g(255; 235; 200) x 0.25" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                          <Flare ParentFrame="BoneFront_cdt" Size="0.2" Pos="(2.954; 1.356; -0.535)" Color="g(255; 235; 200) x 0.25" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                          <Flare ParentFrame="BoneFront_cdt" Size="0.2" Pos="(2.965; 1.352; 0.408)" Color="g(255; 235; 200) x 0.25" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                          <Flare ParentFrame="BoneFront_cdt" Size="0.2" Pos="(2.941; 1.347; 0.535)" Color="g(255; 235; 200) x 0.25" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                          <Flare Pos="(1.675; 2.058; -1.047)" ParentFrame="BoneFront_cdt" Size="0.3" DirAngle="20" Color="g(255; 255; 255) x 0.2" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                          <Flare Pos="(1.679; 2.06; 1.051)" ParentFrame="BoneFront_cdt" Size="0.3" DirAngle="20" Color="g(255; 255; 255) x 0.2" _template="IgnitionSignalWhite">
-
-                          </Flare>
-                          <Flare Pos="(0.713; 3.633; 0)" ParentFrame="BoneFront_cdt" Size="0.15" Dir="(1; 0; 0)" Color="g(255; 140; 0) x 0.15" _template="IgnitionSignalOrange">
-
-                          </Flare>
-                          <Flare Pos="(0.713; 3.633; -0.145)" ParentFrame="BoneFront_cdt" Size="0.15" Dir="(1; 0; 0)" Color="g(255; 140; 0) x 0.15" _template="IgnitionSignalOrange">
-
-                          </Flare>
-                          <Flare Pos="(0.713; 3.633; 0.148)" ParentFrame="BoneFront_cdt" Size="0.15" Dir="(1; 0; 0)" Color="g(255; 140; 0) x 0.15" _template="IgnitionSignalOrange">
-
-                          </Flare>
-                          <Flare DirAngle="360" Pos="(-0.645; 3.889; 0.972)" ParentFrame="BoneFront_cdt" Size="1.0" Dir="(1; 0; 0)" Color="g(255; 140; 0) x 0.15" _template="IgnitionSignalOrange">
-
-                          </Flare>
-                    </Ignition>
-                    <Ignition _template="Flasher">
-                      <Light Pos="(-0.647; 3.82; 0.962)" Dir="(-0.796; 0.222; 0.563)" ParentFrame="BoneRotator">
-
-                      </Light>
-                      <Model Dir="(-0.796; 0.222; 0.563)" Org="(-0.647; 3.82; 0.962)" ParentFrame="BoneRotator">
-
-                      </Model>
-                            <Flare Pos="(-0.647; 3.82; 0.962)" Dir="(-0.796; 0.222; 0.563)" ParentFrame="BoneRotator">
-
-                            </Flare>
-                            <Flare Pos="(-0.647; 3.82; 0.962)" Dir="(-0.796; 0.222; 0.563)" ParentFrame="BoneRotator">
-
-                            </Flare>
-                            <Flare Pos="(-0.647; 3.82; 0.962)" ParentFrame="BoneRotator">
-
-                            </Flare>
-                    </Ignition>
-                <HeadLight>
-                          <Model Org="(2.999; 1.339; -0.467)" ParentFrame="BoneFront_cdt" Dir="(0.977; -0.212; 0.014)" Color="g(235; 220; 205) x 0.35" _template="HeadLightRay">
-
-                          </Model>
-                          <Model Org="(2.994; 1.352; 0.466)" ParentFrame="BoneFront_cdt" Dir="(0.977; -0.212; 0.014)" Color="g(235; 220; 205) x 0.35" _template="HeadLightRay">
-
-                          </Model>
-                          <Model Org="(0.683; 3.533; -0.647)" ParentFrame="BoneFront_cdt" Dir="(0.955; -0.296; 0.009)" Color="g(235; 220; 205) x 0.35" _template="HeadLightRay">
-
-                          </Model>
-                          <Model Org="(0.688; 3.533; 0.652)" ParentFrame="BoneFront_cdt" Dir="(0.955; -0.296; 0.009)" Color="g(235; 220; 205) x 0.35" _template="HeadLightRay">
-
-                          </Model>
-                            <Flare Pos="(-1.170; 3.535; -0.74)" ParentFrame="BoneFront_cdt" Size="0.2" Dir="(-1; 0; 0)" Color="g(255; 235; 200) x 0.3" _template="IgnitionSignalWhite">
-
-                            </Flare>
-                            <Flare Pos="(-1.170; 3.535; -0.55)" ParentFrame="BoneFront_cdt" Size="0.2" Dir="(-1; 0; 0)" Color="g(255; 235; 200) x 0.3" _template="IgnitionSignalWhite">
-
-                            </Flare>
-                            <Flare Pos="(-1.170; 3.535; 0.55)" ParentFrame="BoneFront_cdt" Size="0.2" Dir="(-1; 0; 0)" Color="g(255; 235; 200) x 0.3" _template="IgnitionSignalWhite">
-
-                            </Flare>
-                            <Flare Pos="(-1.170; 3.535; 0.74)" ParentFrame="BoneFront_cdt" Size="0.2" Dir="(-1; 0; 0)" Color="g(255; 235; 200) x 0.3" _template="IgnitionSignalWhite">
-
-                            </Flare>
-                            <Flare Pos="(0.695; 3.532; -0.74)" ParentFrame="BoneFront_cdt" Size="0.2" Dir="(1; 0; 0)" Color="g(255; 235; 200) x 0.3" _template="IgnitionSignalWhite">
-
-                            </Flare>
-                            <Flare Pos="(0.695; 3.532; -0.55)" ParentFrame="BoneFront_cdt" Size="0.2" Dir="(1; 0; 0)" Color="g(255; 235; 200) x 0.3" _template="IgnitionSignalWhite">
-
-                            </Flare>
-                            <Flare Pos="(0.695; 3.532; 0.55)" ParentFrame="BoneFront_cdt" Size="0.2" Dir="(1; 0; 0)" Color="g(255; 235; 200) x 0.3" _template="IgnitionSignalWhite">
-
-                            </Flare>
-                            <Flare Pos="(0.695; 3.532; 0.74)" ParentFrame="BoneFront_cdt" Size="0.2" Dir="(1; 0; 0)" Color="g(255; 235; 200) x 0.3" _template="IgnitionSignalWhite">
-
-                            </Flare>
-                            <Flare Pos="(2.95; 1.351; -0.530)" ParentFrame="BoneFront_cdt" Size="0.15" Dir="(1; 0; 0)" Color="g(255; 235; 200) x 0.3" _template="IgnitionSignalWhite">
-
-                            </Flare>
-                            <Flare Pos="(3; 1.351; -0.4)" ParentFrame="BoneFront_cdt" Size="0.15" Dir="(1; 0; 0)" Color="g(255; 235; 200) x 0.3" _template="IgnitionSignalWhite">
-
-                            </Flare>
-                            <Flare Pos="(3; 1.351; 0.4)" ParentFrame="BoneFront_cdt" Size="0.15" Dir="(1; 0; 0)" Color="g(255; 235; 200) x 0.3" _template="IgnitionSignalWhite">
-
-                            </Flare>
-                            <Flare Pos="(2.95; 1.351; 0.530)" ParentFrame="BoneFront_cdt" Size="0.15" Dir="(1; 0; 0)" Color="g(255; 235; 200) x 0.3" _template="IgnitionSignalWhite">
-
-                            </Flare>
-                </HeadLight>
-                <ReverseSignals>
-                          <Light ParentFrame="BoneFront_cdt" Pos="(-1.523; 3.514; -0.034)" Dir="(-0.95; -0.313; 0)" _template="ReverseSignal">
-
-                          </Light>
-                              <Flare ParentFrame="BoneBack_cdt" Pos="(-3.478; 1.976; 1.118)" Size="0.2" _template="ReverseSignal">
-
-                              </Flare>
-                              <Flare ParentFrame="BoneBack_cdt" Pos="(-3.478; 1.976; -1.118)" Size="0.2" _template="ReverseSignal">
-
-                              </Flare>
-                              <Flare Pos="(-1.180; 3.533; 0.745)" ParentFrame="BoneFront_cdt" Size="0.3" Dir="(-1; 0; 0)" Color="g(255; 235; 200) x 0.1" _template="IgnitionSignalWhite">
-
-                              </Flare>
-                              <Flare Pos="(-1.180; 3.533; 0.553)" ParentFrame="BoneFront_cdt" Size="0.3" Dir="(-1; 0; 0)" Color="g(255; 235; 200) x 0.1" _template="IgnitionSignalWhite">
-
-                              </Flare>
-                              <Flare Pos="(-1.180; 3.533; -0.745)" ParentFrame="BoneFront_cdt" Size="0.3" Dir="(-1; 0; 0)" Color="g(255; 235; 200) x 0.1" _template="IgnitionSignalWhite">
-
-                              </Flare>
-                              <Flare Pos="(-1.180; 3.533; -0.553)" ParentFrame="BoneFront_cdt" Size="0.3" Dir="(-1; 0; 0)" Color="g(255; 235; 200) x 0.1" _template="IgnitionSignalWhite">
-
-                              </Flare>
-                </ReverseSignals>
-      </ModelAttachments>
-      <HeadLight Pos="(3.6; 1.2; 0)" _template="Default" ParentFrame="BoneFront_cdt">
-
-      </HeadLight>
-      <GameData Price="172300" Country="RU,CAS" UnlockByExploration="true" ExcludeAddons="trailer_log_pole" UnlockByRank="1">
-                      <CraneSocket Pos="(2.957; 0.833; -0.628)" ParentFrame="BoneFront_cdt">
-
-                      </CraneSocket>
-                      <CraneSocket Pos="(2.957; 0.833; 0.628)" ParentFrame="BoneFront_cdt">
-
-                      </CraneSocket>
-                      <CraneSocket Pos="(-3.923; 0.719; 0.005)" ParentFrame="BoneBack_cdt">
-
-                      </CraneSocket>
-                    <UiDesc UiIcon30x30="heavyVehicleImg30" UiName="UI_VEHICLE_KIROVETS_K7M_NAME" UiIcon328x458="shopImgKirovets_k7m" UiIconLogo="KirovetsLogo80" UiDesc="UI_VEHICLE_KIROVETS_K7M_DESC" UiIcon40x40="heavyVehicleImg">
-
-                    </UiDesc>
-                          <AddonSockets DefaultAddon="kirovets_k7m_coupler" RequiredAddonIfNoConflicts="kirovets_k7m_coupler">
-                              <Socket ParentFrame="BoneBack_cdt" Names="KirovetsK7MKung">
-
-                              </Socket>
-                              <Socket ParentFrame="BoneBack_cdt" Offset="(0; 0; 0)" Names="K7MCoupler">
-
-                              </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneBack_cdt" Offset="(-4.5; 1.21; 0)" Names="TrailerFarm">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneBack_cdt" Offset="(-3.945; 0.6; 0)" Names="Trailer">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK7MSticker_Capote">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK7MSticker_Roof">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK7MSticker_Roof_2">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneBack_cdt" Names="KirovetsK7MSticker_Wing_L">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneBack_cdt" Names="KirovetsK7MSticker_Wing_R">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK7MSticker_1x1_01" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK7MSticker_1x1_02" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK7MSticker_1x1_03" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK7MSticker_1x1_04" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK7MSticker_1x2_01" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK7MSticker_1x4_01" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneFront_cdt" Names="Kirovetsk7mSticker_GlassTop">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket ParentFrame="BoneFront_cdt" Names="StuffHoodKirovetsk7m">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(0.015; 3.281; -0.348)" ParentFrame="BoneFront_cdt" Names="StuffAirfreshener" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                          <AddonSockets>
-                            <Socket Offset="(0; 0; 0)" ParentFrame="BoneFront_cdt" Names="StuffCurtainKirovetsK7M" InCockpit="true">
-
-                            </Socket>
-                          </AddonSockets>
-                    <CustomizationCameras>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-7.19; 4.322; 7.256)" MaxXRotation="360" Name="addon_1" InterestPosition="(2.514; 1.31; -0.551)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(10.793; 4.409; -3.424)" MaxXRotation="360" Name="addon_2" InterestPosition="(5.759; 2.49; 0)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(3.487; 3.34; 0.516)" Name="mirror_mount" InterestPosition="(5.946; 2.964; 1.237)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(3.15; 3; -0.65)" Name="curtain" InterestPosition="(5.946; 3.1; 1.237)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(3.451; 2.987; 0.646)" Name="bubble_head" InterestPosition="(6.249; 2.736; 0.684)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(10.575; 3.974; 0.816)" Name="glass_sticker" InterestPosition="(6.321; 2.828; -0.786)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-10.631; 2.524; 6.535)" MaxXRotation="360" Name="rear" InterestPosition="(-1.423; 1.831; -0)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(8.8; 2.523; -0.771)" Name="hood_ornament" InterestPosition="(7.506; 2.472; -1.037)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(5.5; 8.28; -2)" Name="sticker_roof" InterestPosition="(3.4; 1.509; 0.5)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(1.7; 7.5; -1)" Name="sticker_roof_2" InterestPosition="(3.7; 1.509; 1)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(8.5; 5.28; -2)" Name="sticker_capote" InterestPosition="(5.2; 1.509; 0.05)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(1.2; 5.28; -2.5)" Name="sticker_wing_l" InterestPosition="(0.8; 1.509; -1.2)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(1; 5.28; 2.7)" Name="sticker_wing_r" InterestPosition="(2.5; 1.509; 1.5)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(3.8; 2.8; 0)" Name="sticker_inside_01" InterestPosition="(6.7; 5.4; -0.1)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(3.8; 3.2; -0.7)" Name="sticker_inside_02" InterestPosition="(5; 1.8; 0.8)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(4.1; 3.2; 0.5)" Name="sticker_inside_03" InterestPosition="(1; 1.2; 0.2)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(3.8; 2.8; 0)" Name="sticker_inside_04" InterestPosition="(7; 5.6; 0.5)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(3.8; 2.8; 0)" Name="sticker_inside_1x2_01" InterestPosition="(6.7; 5.6; 1.5)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos Interior="true" Position="(4.1; 3.2; 0.5)" Name="sticker_inside_1x4_01" InterestPosition="(1; 1; -0.5)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(7.632; 2.469; -6.129)" MaxXRotation="360" Name="wheels" InterestPosition="(3.874; 0.602; -0)" FOV="32.0">
-
-                                </CameraPos>
-                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(13.951; 1.253; -5.017)" MaxXRotation="360" Name="default" InterestPosition="(5.451; 1.818; 0)" FOV="32.0">
-
-                                </CameraPos>
-                    </CustomizationCameras>
-                              <WinchSocket Pos="(2.957; 0.833; -0.628)" ParentFrame="BoneFront_cdt">
-
-                              </WinchSocket>
-                              <WinchSocket Pos="(2.957; 0.833; 0.628)" ParentFrame="BoneFront_cdt">
-
-                              </WinchSocket>
-                              <WinchSocket Pos="(-3.923; 0.719; 0.005)" ParentFrame="BoneBack_cdt">
-
-                              </WinchSocket>
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneFront_cdt" Names="KirovetsK7MSticker_Roof_2">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneBack_cdt" Names="KirovetsK7MSticker_Wing_L">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneBack_cdt" Names="KirovetsK7MSticker_Wing_R">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneFront_cdt" InCockpit="true" Names="KirovetsK7MSticker_1x1_01">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneFront_cdt" InCockpit="true" Names="KirovetsK7MSticker_1x1_02">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneFront_cdt" InCockpit="true" Names="KirovetsK7MSticker_1x1_03">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneFront_cdt" InCockpit="true" Names="KirovetsK7MSticker_1x1_04">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneFront_cdt" InCockpit="true" Names="KirovetsK7MSticker_1x2_01">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneFront_cdt" InCockpit="true" Names="KirovetsK7MSticker_1x4_01">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneFront_cdt" Names="Kirovetsk7mSticker_GlassTop">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket ParentFrame="BoneFront_cdt" Names="StuffHoodKirovetsk7m">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket Names="StuffAirfreshener" InCockpit="true" ParentFrame="BoneFront_cdt" Offset="(0.015; 3.281; -0.348)">
+
+                    </Socket>
+                  </AddonSockets>
+                  <AddonSockets>
+                    <Socket Names="StuffCurtainKirovetsK7M" InCockpit="true" ParentFrame="BoneFront_cdt" Offset="(0; 0; 0)">
+
+                    </Socket>
+                  </AddonSockets>
+                    <WinchSocket Pos="(2.957; 0.833; -0.628)" ParentFrame="BoneFront_cdt">
+
+                    </WinchSocket>
+                    <WinchSocket Pos="(2.957; 0.833; 0.628)" ParentFrame="BoneFront_cdt">
+
+                    </WinchSocket>
+                    <WinchSocket Pos="(-3.923; 0.719; 0.005)" ParentFrame="BoneBack_cdt">
+
+                    </WinchSocket>
+            <UiDesc UiDesc="UI_VEHICLE_KIROVETS_K7M_DESC" UiIcon30x30="heavyVehicleImg30" UiName="UI_VEHICLE_KIROVETS_K7M_NAME" UiIconLogo="KirovetsLogo80" UiIcon40x40="heavyVehicleImg" UiIcon328x458="shopImgKirovets_k7m">
+
+            </UiDesc>
       </GameData>
-      <Landmark MaxScale="2.8" MinScale="1.8" Mesh="landmarks/kirovets_k7m_lmk">
+      <ControlledConstraints>
+              <Constraint Name="ChassisSteer" IsLinkedSteering="true" Id="chassis_steer">
+
+              </Constraint>
+      </ControlledConstraints>
+      <Landmark Mesh="landmarks/kirovets_k7m_lmk" MaxScale="2.8" MinScale="1.8">
 
       </Landmark>
-      <Rotator EngineTorqueFactor="0" Frame="BoneRotator" RotationSpeed="4">
+      <TruckData EngineIconMesh="env/engine_default" EngineStartDelay="0.6" TruckType="HEAVY" ExhaustStartTime="0.6" SteerSpeed="0.015" TruckImage="kirovets_k7m_mchr" DiffLockType="Always" Responsiveness="0.4" FuelCapacity="340" EngineIconScale="1.6" BackSteerSpeed="0.02">
+                  <Driver ParentFrame="BoneFront_cdt" Pos="(-0.530; 2.475; 0)" SteeringWheelPos="(-0.15; 2.827; 0)">
+
+                  </Driver>
+                  <Shafts>
+                          <Shaft SocketPointB="Shaft1b" SocketPointA="Shaft1a">
+
+                          </Shaft>
+                          <Shaft SocketPointB="Shaft2b" SocketPointA="Shaft2a">
+
+                          </Shaft>
+                          <Shaft SocketPointB="Shaft3b" SocketPointA="Shaft3a">
+
+                          </Shaft>
+                  </Shafts>
+                  <FuelTank DamageCapacity="50">
+
+                  </FuelTank>
+                  <Dashboard>
+                              <Gauge Org="(0.037; 2.757; 0.001)" OutputAngles="(-90; 90)" Mesh="trucks/arrows/kirovets_k7m_arrow_2" Damping="0.985" InputRange="(0;0.75)" InputType="rpm" Dir="(-0.85; 1; 0)">
+
+                              </Gauge>
+                              <Gauge Org="(0.03; 2.751; 0.001)" OutputAngles="(238; 122)" Mesh="trucks/arrows/kirovets_k7m_arrow_3" Damping="0.98" InputRange="(0;1)" InputType="fuel" Dir="(-0.85; 1; 0)">
+
+                              </Gauge>
+                              <Gauge Org="(0.036; 2.756; 0.054)" OutputAngles="(-140; -45)" Mesh="trucks/arrows/kirovets_k7m_arrow_1" Damping="0.98" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.85; 1; 0)">
+
+                              </Gauge>
+                              <Gauge Org="(0.036; 2.756; -0.053)" OutputAngles="(140; 20)" Mesh="trucks/arrows/kirovets_k7m_arrow_1" Damping="0.98" InputRange="(0;1)" InputType="engineEnabled" Dir="(-0.85; 1; 0)">
+
+                              </Gauge>
+                  </Dashboard>
+                  <SoundsWheels _template="Default">
+
+                  </SoundsWheels>
+                  <GearboxSocket Default="g_special_default" Type="gearboxes_special">
+
+                  </GearboxSocket>
+                  <Steam Origin="(1.411; 1.65; 0)">
+
+                  </Steam>
+                  <Sounds DisableReversePitch="true" MinDist="15.0" ParentFrame="BoneFront_cdt" Origin="(1.8; 1.8; 0)" _template="Default">
+                                    <BrakesSqueal Sound="trucks/kirovets_k7m/kirovets_k7m_brake_squeal">
+
+                                    </BrakesSqueal>
+                                    <AbruptStop Sound="trucks/common/truck_swing_big_old_rnd_set/truck_swing_big_old_rnd">
+
+                                    </AbruptStop>
+                                    <EngineLow Sound="trucks/kirovets_k7m/kirovets_k7m_low">
+
+                                    </EngineLow>
+                                    <EngineRev Sound="trucks/kirovets_k7m/kirovets_k7m_rev">
+
+                                    </EngineRev>
+                                    <EngineAccel Sound="trucks/kirovets_k7m/kirovets_k7m_acc">
+
+                                    </EngineAccel>
+                                    <Honk Sound="trucks/kirovets_k7m/kirovets_k7m_honk">
+
+                                    </Honk>
+                                    <EngineStop Sound="trucks/kirovets_k7m/kirovets_k7m_stop">
+
+                                    </EngineStop>
+                                    <Handbrake Sound="trucks/kirovets_k7m/kirovets_k7m_handbrake_on">
+
+                                    </Handbrake>
+                                    <EngineIdle_2d IsSound2D="true" Sound="trucks/kirovets_k7m/kirovets_k7m_idle_2d">
+
+                                    </EngineIdle_2d>
+                                    <HandbrakeOff Sound="trucks/kirovets_k7m/kirovets_k7m_handbrake_off">
+
+                                    </HandbrakeOff>
+                                    <EngineHeavy_2d IsSound2D="true" Sound="trucks/kirovets_k7m/kirovets_k7m_heavy_2d">
+
+                                    </EngineHeavy_2d>
+                                    <ChassisStress Sound="trucks/common/truck_stress_rnd_set/truck_stress_rnd">
+
+                                    </ChassisStress>
+                                                              <Reverse _inheritRemove="true">
+
+                                                              </Reverse>
+                                                              <Reverse Sound="trucks/kirovets_k7m/kirovets_k7m_back_beeper">
+
+                                                              </Reverse>
+                                    <EngineHigh_2d IsSound2D="true" Sound="trucks/kirovets_k7m/kirovets_k7m_high_2d">
+
+                                    </EngineHigh_2d>
+                                    <EngineIdle Sound="trucks/kirovets_k7m/kirovets_k7m_idle">
+
+                                    </EngineIdle>
+                                    <EngineStart Sound="trucks/kirovets_k7m/kirovets_k7m_start">
+
+                                    </EngineStart>
+                                    <EngineHigh Sound="trucks/kirovets_k7m/kirovets_k7m_high">
+
+                                    </EngineHigh>
+                                    <BrakePull Sound="trucks/kirovets_k7m/kirovets_k7m_brake_pull">
+
+                                    </BrakePull>
+                                    <EngineLow_2d IsSound2D="true" Sound="trucks/kirovets_k7m/kirovets_k7m_low_2d">
+
+                                    </EngineLow_2d>
+                                    <EngineHeavy Sound="trucks/kirovets_k7m/kirovets_k7m_heavy">
+
+                                    </EngineHeavy>
+                                    <BrakeRelease Sound="trucks/common/truck_brake_release_alt2_rnd_set/truck_brake_release_alt2_rnd">
+
+                                    </BrakeRelease>
+                                    <EngineTrans Sound="trucks/kirovets_k7m/kirovets_k7m_turbo">
+
+                                    </EngineTrans>
+                  </Sounds>
+                  <Intake Dir="(1; 0; 0)" Size="2" Origin="(-0.835; 3.938; -1.169)" ParentFrame="BoneFront_cdt">
+
+                  </Intake>
+                  <SoundsDamage _template="Heavy">
+
+                  </SoundsDamage>
+                  <Damage>
+                                            <DamageArea Max="(3.4; 2.2; 0.6)" Type="Engine" ParentFrame="BoneFront_cdt" Min="(1.25; 1.2; -0.6)">
+
+                                            </DamageArea>
+                                            <DamageArea Max="(0.17; 1.35; 0.9)" Type="FuelTank" ParentFrame="BoneFront_cdt" Min="(-0.48; 0.76; -0.9)">
+
+                                            </DamageArea>
+                  </Damage>
+                  <Camera Center="(-1; 0; 0)" RadiusMultiplier="1.1">
+                                            <Cockpit WindshieldShadingTexture="trucks/kirovets_k7m_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/kirovets_k7m_glass__d_a.tga" _template="Default" ViewPos="(-0.6; 3.185; 0)">
+                                                  <Mirror FOVScale="1.2" Pos="(-0.018; 3.309; -0.347)" ClipDir="(-1; -0.2; 0.22)" ReflectionDir="(-1; -0.2; 0.22)" Size="(0.27; 0.14)" ClipOffset="1" MeshFrame="hp_cab_mirror">
+
+                                                  </Mirror>
+                                                  <Mirror FOVScale="1.35" Pos="(1.353; 3.095; 0.808)" ClipDir="(-1; -0.05; 0.038)" ReflectionDir="(-1; -0.05; 0.038)" Size="(0.22; 0.4)" ClipOffset="0.05" MeshFrame="mirror_left">
+
+                                                  </Mirror>
+                                                  <Mirror FOVScale="1.35" Pos="(1.353; 3.095; -0.849)" ClipDir="(-1; -0.05; -0.038)" ReflectionDir="(-0.996; 0; 0.087)" Size="(0.22; 0.4)" ClipOffset="0.05" MeshFrame="mirror_right">
+
+                                                  </Mirror>
+                                                <Rear _inheritRemove="true">
+
+                                                </Rear>
+                                            </Cockpit>
+                  </Camera>
+                  <LimitedFluid Type="Box" SizeX="1.1" Center="(-2.324; 1.503; -0.021)" ParentFrame="BoneFront_cdt" SizeY="0.23" SizeZ="1.1">
+
+                  </LimitedFluid>
+                  <SuspensionSocket Default="kirovets_k7m_suspension_default" Type="s_kirovets_k7m" MaxWheelRadiusWithoutSuspension="1">
+
+                  </SuspensionSocket>
+                  <Wheels DefaultTire="tire" DefaultWheelType="wheels_base_kirovets_k7m" DefaultRim="rim">
+                                                    <Wheel _template="FrontWheel" Pos="(1.032; 1; 1.162)">
+
+                                                    </Wheel>
+                                                    <Wheel Pos="(1.032; 1; 1.162)" _template="FrontWheel" RightSide="true">
+
+                                                    </Wheel>
+                                                    <Wheel _template="RearWheel" Pos="(-2.723; 0.991; 1.162)">
+
+                                                    </Wheel>
+                                                    <Wheel Pos="(-2.723; 0.991; 1.162)" _template="RearWheel" RightSide="true">
+
+                                                    </Wheel>
+                  </Wheels>
+                  <Axles>
+                                                    <Axle Frame="BoneAxle1">
+
+                                                    </Axle>
+                  </Axles>
+                  <EngineSocket Default="ru_kirovets_k7m_engine_0" Type="e_ru_kirovets_k7m_special">
+
+                  </EngineSocket>
+                  <OcclusionMap HalfSizeZ="2" ParentFrame="BoneBack_cdt" MaxX="3" MinX="-3">
+
+                  </OcclusionMap>
+                  <Exhaust IsLight="true" Dir="(0; 0.5; 1)" ParentFrame="BoneFront_cdt" Origin="(0.144; 3.95; 1.217)" Speed="3.00">
+
+                  </Exhaust>
+                  <WinchUpgradeSocket Default="w_heavy_trucks_default" IsUpgradable="true" Type="winches_heavy_trucks">
+
+                  </WinchUpgradeSocket>
+                  <SteeringWheel Frame="BoneSteering">
+
+                  </SteeringWheel>
+                                                              <CompatibleWheels Scale="1" Type="wheels_base_kirovets_k7m">
+
+                                                              </CompatibleWheels>
+                                                              <CompatibleWheels OffsetZ="0.388" Scale="1" Type="wheels_extend_kirovets_k7m">
+
+                                                              </CompatibleWheels>
+                  <Shakers>
+                                                                  <Shaker MinAngle="(0.2; 0.2; 0.2)" Frame="BoneExhaust" MaxAngle="(0.4; 0.4; 0.4)" MaxFrequency="5">
+
+                                                                  </Shaker>
+                  </Shakers>
+      </TruckData>
+      <Rotator RotationSpeed="4" Frame="BoneRotator" EngineTorqueFactor="0">
 
       </Rotator>
-      <Snorkel ParentFrame="BoneFront_cdt" Origin="(-0.832; 2.45; -1.122)">
+      <HeadLight ParentFrame="BoneFront_cdt" _template="Default" Pos="(3.6; 1.2; 0)">
+
+      </HeadLight>
+      <AutomaticIK>
+                          <IKBone ParentFrame="BoneFront_cdt" ModelFrame="BoneBackPistonLBase">
+                            <IKBone AttachToFrame="BoneSteering_cdt" AttachOffset="(0; 0; 0)" ModelFrame="BoneBackPistonL">
+                                <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                </IKJoint>
+                            </IKBone>
+                            <IKJoint AxisLocal="(0; 1; 0)" Type="Hinge">
+
+                            </IKJoint>
+                          </IKBone>
+                          <IKBone ParentFrame="BoneFront_cdt" ModelFrame="BoneBackPistonRBase">
+                            <IKBone AttachToFrame="BoneSteering_cdt" AttachOffset="(0; 0; 0)" ModelFrame="BoneBackPistonR">
+                                <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                </IKJoint>
+                            </IKBone>
+                            <IKJoint AxisLocal="(0; 1; 0)" Type="Hinge">
+
+                            </IKJoint>
+                          </IKBone>
+      </AutomaticIK>
+      <Snorkel Origin="(-0.832; 2.45; -1.122)" ParentFrame="BoneFront_cdt">
 
       </Snorkel>
-      <AutomaticIK>
-                              <IKBone ModelFrame="BoneBackPistonLBase" ParentFrame="BoneFront_cdt">
-                                <IKJoint AxisLocal="(0; 1; 0)" Type="Hinge">
+      <ModelAttachments>
+                            <StopSignals>
+                                  <Flare ParentFrame="BoneBack_cdt" _template="StopSignal" Pos="(-3.474; 1.979; 0.997)">
 
-                                </IKJoint>
-                                <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneBackPistonL" AttachToFrame="BoneSteering_cdt">
-                                      <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+                                  </Flare>
+                                  <Flare ParentFrame="BoneBack_cdt" _template="StopSignal" Pos="(-3.495; 1.99; -0.996)">
 
-                                      </IKJoint>
-                                </IKBone>
-                              </IKBone>
-                              <IKBone ModelFrame="BoneBackPistonRBase" ParentFrame="BoneFront_cdt">
-                                <IKJoint AxisLocal="(0; 1; 0)" Type="Hinge">
+                                  </Flare>
+                                <Light ParentFrame="BoneBack_cdt" _template="StopSignal" Pos="(-4.248; 1.323; 0.005)">
 
-                                </IKJoint>
-                                <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneBackPistonR" AttachToFrame="BoneSteering_cdt">
-                                      <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+                                </Light>
+                            </StopSignals>
+                                <Ignition>
+                                  <Light Dir="(1; 0.014; 0)" ParentFrame="BoneFront_cdt" _template="IgnitionSignalWhite" Pos="(3.172; 1.433; 0)">
 
-                                      </IKJoint>
-                                </IKBone>
-                              </IKBone>
-      </AutomaticIK>
+                                  </Light>
+                                      <Flare Color="g(255; 0; 0) x 0.3" ParentFrame="BoneBack_cdt" Pos="(-3.482; 1.981; 1.055)" Dir="(-1; 0; 0)" Size="0.3" _template="IgnitionSignalRed">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 0; 0) x 0.3" ParentFrame="BoneBack_cdt" Pos="(-3.482; 1.979; -1.059)" Dir="(-1; 0; 0)" Size="0.3" _template="IgnitionSignalRed">
+
+                                      </Flare>
+                                      <Flare Color="g(235; 165; 10) x 0.25" ParentFrame="BoneFront_cdt" Pos="(1.646; 2.053; -1.139)" Dir="(1; 0; 0)" Size="0.2" _template="IgnitionSignalOrange">
+
+                                      </Flare>
+                                      <Flare Color="g(235; 165; 10) x 0.25" ParentFrame="BoneFront_cdt" Pos="(1.646; 2.053; 1.141)" Dir="(1; 0; 0)" Size="0.2" _template="IgnitionSignalOrange">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.2" ParentFrame="BoneFront_cdt" Pos="(0.695; 3.533; 0.745)" Dir="(1; 0; 0)" Size="0.3" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.2" ParentFrame="BoneFront_cdt" Pos="(0.695; 3.533; 0.553)" Dir="(1; 0; 0)" Size="0.3" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.2" ParentFrame="BoneFront_cdt" Pos="(0.695; 3.533; -0.745)" Dir="(1; 0; 0)" Size="0.3" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.2" ParentFrame="BoneFront_cdt" Pos="(0.695; 3.533; -0.553)" Dir="(1; 0; 0)" Size="0.3" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.25" Pos="(3.079; 2.02; -0.412)" ParentFrame="BoneFront_cdt" Size="0.2" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.25" Pos="(3.038; 2.02; -0.533)" ParentFrame="BoneFront_cdt" Size="0.2" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.25" Pos="(3.049; 2.02; 0.412)" ParentFrame="BoneFront_cdt" Size="0.2" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.25" Pos="(2.997; 2.02; 0.538)" ParentFrame="BoneFront_cdt" Size="0.2" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.25" Pos="(2.981; 1.354; -0.406)" ParentFrame="BoneFront_cdt" Size="0.2" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.25" Pos="(2.954; 1.356; -0.535)" ParentFrame="BoneFront_cdt" Size="0.2" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.25" Pos="(2.965; 1.352; 0.408)" ParentFrame="BoneFront_cdt" Size="0.2" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.25" Pos="(2.941; 1.347; 0.535)" ParentFrame="BoneFront_cdt" Size="0.2" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 255; 255) x 0.2" ParentFrame="BoneFront_cdt" Pos="(1.675; 2.058; -1.047)" DirAngle="20" Size="0.3" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 255; 255) x 0.2" ParentFrame="BoneFront_cdt" Pos="(1.679; 2.06; 1.051)" DirAngle="20" Size="0.3" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 140; 0) x 0.15" ParentFrame="BoneFront_cdt" Pos="(0.713; 3.633; 0)" Dir="(1; 0; 0)" Size="0.15" _template="IgnitionSignalOrange">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 140; 0) x 0.15" ParentFrame="BoneFront_cdt" Pos="(0.713; 3.633; -0.145)" Dir="(1; 0; 0)" Size="0.15" _template="IgnitionSignalOrange">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 140; 0) x 0.15" ParentFrame="BoneFront_cdt" Pos="(0.713; 3.633; 0.148)" Dir="(1; 0; 0)" Size="0.15" _template="IgnitionSignalOrange">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 140; 0) x 0.15" ParentFrame="BoneFront_cdt" Pos="(-0.645; 3.889; 0.972)" DirAngle="360" Dir="(1; 0; 0)" Size="1.0" _template="IgnitionSignalOrange">
+
+                                      </Flare>
+                                </Ignition>
+                                <Ignition _template="Flasher">
+                                  <Model Org="(-0.647; 3.82; 0.962)" ParentFrame="BoneRotator" Dir="(-0.796; 0.222; 0.563)">
+
+                                  </Model>
+                                      <Flare ParentFrame="BoneRotator" Pos="(-0.647; 3.82; 0.962)" Dir="(-0.796; 0.222; 0.563)">
+
+                                      </Flare>
+                                      <Flare ParentFrame="BoneRotator" Pos="(-0.647; 3.82; 0.962)" Dir="(-0.796; 0.222; 0.563)">
+
+                                      </Flare>
+                                      <Flare Pos="(-0.647; 3.82; 0.962)" ParentFrame="BoneRotator">
+
+                                      </Flare>
+                                  <Light ParentFrame="BoneRotator" Pos="(-0.647; 3.82; 0.962)" Dir="(-0.796; 0.222; 0.563)">
+
+                                  </Light>
+                                </Ignition>
+                            <HeadLight>
+                                      <Flare Color="g(255; 235; 200) x 0.3" ParentFrame="BoneFront_cdt" Pos="(-1.170; 3.535; -0.74)" Dir="(-1; 0; 0)" Size="0.2" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.3" ParentFrame="BoneFront_cdt" Pos="(-1.170; 3.535; -0.55)" Dir="(-1; 0; 0)" Size="0.2" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.3" ParentFrame="BoneFront_cdt" Pos="(-1.170; 3.535; 0.55)" Dir="(-1; 0; 0)" Size="0.2" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.3" ParentFrame="BoneFront_cdt" Pos="(-1.170; 3.535; 0.74)" Dir="(-1; 0; 0)" Size="0.2" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.3" ParentFrame="BoneFront_cdt" Pos="(0.695; 3.532; -0.74)" Dir="(1; 0; 0)" Size="0.2" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.3" ParentFrame="BoneFront_cdt" Pos="(0.695; 3.532; -0.55)" Dir="(1; 0; 0)" Size="0.2" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.3" ParentFrame="BoneFront_cdt" Pos="(0.695; 3.532; 0.55)" Dir="(1; 0; 0)" Size="0.2" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.3" ParentFrame="BoneFront_cdt" Pos="(0.695; 3.532; 0.74)" Dir="(1; 0; 0)" Size="0.2" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.3" ParentFrame="BoneFront_cdt" Pos="(2.95; 1.351; -0.530)" Dir="(1; 0; 0)" Size="0.15" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.3" ParentFrame="BoneFront_cdt" Pos="(3; 1.351; -0.4)" Dir="(1; 0; 0)" Size="0.15" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.3" ParentFrame="BoneFront_cdt" Pos="(3; 1.351; 0.4)" Dir="(1; 0; 0)" Size="0.15" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                      <Flare Color="g(255; 235; 200) x 0.3" ParentFrame="BoneFront_cdt" Pos="(2.95; 1.351; 0.530)" Dir="(1; 0; 0)" Size="0.15" _template="IgnitionSignalWhite">
+
+                                      </Flare>
+                                        <Model Color="g(235; 220; 205) x 0.35" Org="(2.999; 1.339; -0.467)" Dir="(0.977; -0.212; 0.014)" ParentFrame="BoneFront_cdt" _template="HeadLightRay">
+
+                                        </Model>
+                                        <Model Color="g(235; 220; 205) x 0.35" Org="(2.994; 1.352; 0.466)" Dir="(0.977; -0.212; 0.014)" ParentFrame="BoneFront_cdt" _template="HeadLightRay">
+
+                                        </Model>
+                                        <Model Color="g(235; 220; 205) x 0.35" Org="(0.683; 3.533; -0.647)" Dir="(0.955; -0.296; 0.009)" ParentFrame="BoneFront_cdt" _template="HeadLightRay">
+
+                                        </Model>
+                                        <Model Color="g(235; 220; 205) x 0.35" Org="(0.688; 3.533; 0.652)" Dir="(0.955; -0.296; 0.009)" ParentFrame="BoneFront_cdt" _template="HeadLightRay">
+
+                                        </Model>
+                            </HeadLight>
+                            <ReverseSignals>
+                                        <Flare ParentFrame="BoneBack_cdt" Size="0.2" Pos="(-3.478; 1.976; 1.118)" _template="ReverseSignal">
+
+                                        </Flare>
+                                        <Flare ParentFrame="BoneBack_cdt" Size="0.2" Pos="(-3.478; 1.976; -1.118)" _template="ReverseSignal">
+
+                                        </Flare>
+                                        <Flare Color="g(255; 235; 200) x 0.1" ParentFrame="BoneFront_cdt" Pos="(-1.180; 3.533; 0.745)" Dir="(-1; 0; 0)" Size="0.3" _template="IgnitionSignalWhite">
+
+                                        </Flare>
+                                        <Flare Color="g(255; 235; 200) x 0.1" ParentFrame="BoneFront_cdt" Pos="(-1.180; 3.533; 0.553)" Dir="(-1; 0; 0)" Size="0.3" _template="IgnitionSignalWhite">
+
+                                        </Flare>
+                                        <Flare Color="g(255; 235; 200) x 0.1" ParentFrame="BoneFront_cdt" Pos="(-1.180; 3.533; -0.745)" Dir="(-1; 0; 0)" Size="0.3" _template="IgnitionSignalWhite">
+
+                                        </Flare>
+                                        <Flare Color="g(255; 235; 200) x 0.1" ParentFrame="BoneFront_cdt" Pos="(-1.180; 3.533; -0.553)" Dir="(-1; 0; 0)" Size="0.3" _template="IgnitionSignalWhite">
+
+                                        </Flare>
+                                      <Light Dir="(-0.95; -0.313; 0)" ParentFrame="BoneFront_cdt" _template="ReverseSignal" Pos="(-1.523; 3.514; -0.034)">
+
+                                      </Light>
+                            </ReverseSignals>
+      </ModelAttachments>
   </Truck>
   <_templates Include="trucks">
         <Wheel>
-            <FrontWheel Location="front" Torque="default" ParentFrame="BoneFront_cdt">
-
-            </FrontWheel>
-            <RearWheel Location="rear" ParentFrame="BoneBack_cdt" Torque="default" ConnectedToHandbrake="true">
+            <RearWheel Torque="default" ConnectedToHandbrake="true" ParentFrame="BoneBack_cdt" Location="rear">
 
             </RearWheel>
+            <FrontWheel ParentFrame="BoneFront_cdt" Location="front" Torque="default">
+
+            </FrontWheel>
         </Wheel>
             <Body>
-              <SideMirror Mass="5" Collisions="None">
-                  <Constraint AxisLocal="(0; 1; 0)" MaxLimit="2" MinLimit="-2" Type="Hinge">
-                      <Motor Type="Spring" Spring="1000" Damping="50">
+              <SideMirror Collisions="None" Mass="5">
+                  <Constraint MinLimit="-2" Type="Hinge" MaxLimit="2" AxisLocal="(0; 1; 0)">
+                      <Motor Spring="1000" Type="Spring" Damping="50">
 
                       </Motor>
                   </Constraint>
               </SideMirror>
             </Body>
             <Body>
-              <Sunshield Mass="5" Collisions="None">
-                  <Constraint AxisLocal="(0; 0; 1)" MaxLimit="10" MinLimit="-5" Type="Hinge">
-                      <Motor Type="Spring" Spring="20" Damping="0.7">
+              <Sunshield Collisions="None" Mass="5">
+                  <Constraint MinLimit="-5" Type="Hinge" MaxLimit="10" AxisLocal="(0; 0; 1)">
+                      <Motor Spring="20" Type="Spring" Damping="0.7">
 
                       </Motor>
                   </Constraint>
