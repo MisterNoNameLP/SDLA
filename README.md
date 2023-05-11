@@ -34,6 +34,6 @@ Done.
 
 - The formatting in the generated `.xml` files is completely messed up.
 
-- Some trucks causing crashes at building. These have to be remove before. Known trucks are:
+- Some trucks causing crashes at building. These have to be removed before. Known trucks are:
   - zikz_566a
   - step_310e
