@@ -1,0 +1,730 @@
+  <Truck>
+      <ControlledConstraints>
+            <Constraint Name="TieRodSteer1" IsLinkedSteering="true" Id="chassis_steer">
+
+            </Constraint>
+            <Constraint Name="TieRodSteer2" IsLinkedSteering="true" Id="chassis_steer">
+
+            </Constraint>
+      </ControlledConstraints>
+      <HeadLight Pos="(3.801; 1.124; 0)" _template="Default">
+
+      </HeadLight>
+      <GameData Price="19500" Country="US" UnlockByExploration="false" UnlockByRank="1">
+                <CraneSocket Pos="(3.489; 1.111; 0.68)">
+
+                </CraneSocket>
+                <CraneSocket Pos="(3.489; 1.111; -0.68)">
+
+                </CraneSocket>
+                <CraneSocket Pos="(-4.69; 0.86; 0)">
+
+                </CraneSocket>
+                <CraneSocket Pos="(-1.492; 0.928; 0.454)">
+
+                </CraneSocket>
+                <CraneSocket Pos="(-1.492; 0.928; -0.454)">
+
+                </CraneSocket>
+              <UiDesc UiIcon30x30="heavyDutyVehicleImg30" UiName="UI_VEHICLE_CHEVROLET_KODIAKC70_NAME" UiIcon328x458="shopImgChevroletKodiakC70" UiIconLogo="ChevroletLogo80" UiDesc="UI_VEHICLE_CHEVROLET_KODIAKC70_DESC" UiIcon40x40="heavyDutyVehicleImg">
+
+              </UiDesc>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="ChevroletKodiakc70SpareWheel">
+                          <ExtraParent Frame="BoneCabin_cdt">
+
+                          </ExtraParent>
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Offset="(-2.454; 1.507; 0)" Names="Semitrailer, SemitrailerOiltank">
+
+                        </Socket>
+                        <Socket Offset="(-1.7; 1.507; 0)" Names="LargeSemitrailer, LargeSemitrailerOiltank">
+
+                        </Socket>
+                        <Socket Offset="(-4.739; 0.866; 0)" Names="Trailer">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Offset="(-0.203; -0.053; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="BunkLog, FrameAddonKung, FrameAddonTank, FrameAddon, BigCraneUs, BigCraneRu, ChevroletKodiakc70SpareWheel, LargeSemitrailerOiltank" Names="MetalDetector">
+
+                        </Socket>
+                        <Socket Offset="(0.52; 1; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="BunkLog, FrameAddonKung, FrameAddonTank, FrameAddon" Names="MinicraneUS">
+                            <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.04)">
+
+                            </ExtraParent>
+                            <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.04)">
+
+                            </ExtraParent>
+                          <AddonsShift Offset="(-0.3; 0; 0)" Types="ChevroletKodiakC70CabinProtector">
+
+                          </AddonsShift>
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Offset="(-4.642; 1.002; 0)" Names="BunkLog">
+
+                        </Socket>
+                        <Socket Offset="(-1.411; 1; 0)" NamesBlock="MinicraneUS, MetalDetector, ChevroletKodiakC70CabinProtector" Names="FrameAddonLogShort">
+
+                        </Socket>
+                        <Socket Offset="(-2.454; 1; 0)" Names="SaddleLow1">
+
+                        </Socket>
+                        <Socket Offset="(-1.7; 1; 0)" Names="SaddleHigh">
+
+                        </Socket>
+                        <Socket ParentFrame="BoneChassis_cdt" Offset="(-1.625; 1.050; 0)" Names="FrameAddon">
+                            <ExtraParent Frame="BoneChassis_cdt" Offset="(0; -0.05; 0)">
+
+                            </ExtraParent>
+                            <ExtraParent Frame="BoneChassis_cdt" Offset="(0; -0.05; 0)">
+
+                            </ExtraParent>
+                        </Socket>
+                        <Socket Offset="(-2.3; 0.9; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="MinicraneUS, MetalDetector, Trailer" Names="FrameAddonTow">
+
+                        </Socket>
+                        <Socket Offset="(-1.5; 1.08; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="ChevroletKodiakC70CabinProtector" Names="FrameAddonKung">
+                            <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.12)">
+
+                            </ExtraParent>
+                            <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.12)">
+
+                            </ExtraParent>
+                        </Socket>
+                        <Socket Offset="(-2.335; 1; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="ChevroletKodiakC70CabinProtector" Names="FrameAddonTank">
+
+                        </Socket>
+                        <Socket Offset="(-2; 1.01; 0)" NamesBlock="MinicraneUS, ChevroletKodiakC70CabinProtector" Names="BigCraneUs">
+
+                        </Socket>
+                        <Socket NamesBlock="ChevroletKodiakc70SpareWheel, MetalDetector, MinicraneUS" Offset="(0.339; 1; 0)" Names="LogLift">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="chevrolet_kodiakc70_bumper_default">
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="ChevroletKodiakC70Bumper">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="ChevroletKodiakC70Snorkel">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Offset="(0; 0; 0)" ParentFrame="BoneCabinRagdoll_cdt" NamesBlock="ChevroletKodiakC70Beacon" Names="ChevroletKodiakC70SpotLight1">
+
+                        </Socket>
+                        <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="ChevroletKodiakC70SpotLight2">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="ChevroletKodiakC70Beacon">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="chevrolet_kodiakc70_horn_default">
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="ChevroletKodiakC70Horn">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="ChevroletKodiakC70Visor">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="ChevroletKodiakC70CabinProtector">
+                          <ExtraParent Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="ChevroletKodiakC70Threshold">
+                          <ExtraParent Frame="BoneChassis_cdt">
+
+                          </ExtraParent>
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="chevrolet_kodiak_c70_transferbox_default">
+                      <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="ChevroletKodiakC70TransferBox">
+                            <ExtraParent Frame="BoneAxle1">
+
+                            </ExtraParent>
+                            <ExtraParent Frame="BoneCabin_cdt">
+
+                            </ExtraParent>
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets DefaultAddon="chevrolet_kodiakc70_diff_lock_default">
+                      <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="ChevroletKodiakC70DiffLock">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket Offset="(2.267; 2.009; -0.039)" ParentFrame="BoneCabinRagdoll_cdt" Names="StuffDashboard" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="StuffHoodChevroletKodiakC70">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="ChevroletKodiakC70Sticker_1x1_01" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="ChevroletKodiakC70Sticker_1x1_02" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="ChevroletKodiakC70Sticker_1x1_03" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="ChevroletKodiakC70Sticker_1x2_01" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="ChevroletKodiakC70Sticker_1x2_02" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="ChevroletKodiakC70Sticker_1x4_01" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                        <Socket Offset="(1.93; 2.516; 0.182)" ParentFrame="BoneCabinRagdoll_cdt" Names="StuffAirfreshener" InCockpit="true">
+
+                        </Socket>
+                        <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="StuffCurtainChevroletKodiakC70" InCockpit="true">
+
+                        </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="ChevroletKodiakC70Sticker_GlassTop" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="ChevroletKodiakC70Sticker_GlassBottom" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="ChevroletKodiakC70Sticker_Capote" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="ChevroletKodiakC70Sticker_Roof">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="ChevroletKodiakC70Sticker_Door_R">
+
+                      </Socket>
+                    </AddonSockets>
+                    <AddonSockets>
+                      <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="ChevroletKodiakC70Sticker_Door_L" InCockpit="true">
+
+                      </Socket>
+                    </AddonSockets>
+              <CustomizationCameras>
+                          <CameraPos Interior="true" Position="(6.731; 4.338; -0.568)" Name="roof_sticker" InterestPosition="(4.488; 0.725; -0.509)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos Interior="true" Position="(5.679; 2.722; -0.076)" Name="sticker_1" InterestPosition="(7.951; 0.071; -0.553)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-6.62; 4.345; 6.461)" MaxXRotation="360" Name="addon_1" InterestPosition="(1.363; 1.736; -0)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-8.093; 2.337; -6.718)" MaxXRotation="360" Name="addon_2" InterestPosition="(3.194; 1.807; 0)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos Interior="true" Position="(5.01; 2.304; -0.469)" Name="mirror_mount" InterestPosition="(7.813; 2.509; 1.573)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-0.226; 4.969; -4.508)" MaxXRotation="360" Name="side_r" InterestPosition="(4.764; 1.97; -0)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos Interior="true" Position="(5.528; 2.33; -0.123)" Name="sticker" InterestPosition="(7.813; 0.603; 1.737)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos Interior="true" Position="(8.191; 3.791; 0.714)" Name="glass_sticker" InterestPosition="(4.838; 1.262; -1.24)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos Interior="true" Position="(4.676; 1.548; 2.93)" Name="door_r_sticker" InterestPosition="(6.886; 1.337; 0.765)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos MaxZoom="2" MaxYRotation="360" Position="(10.129; 4.074; -3)" MaxXRotation="360" Name="roof" InterestPosition="(5.126; 2.129; -0)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos Interior="true" Position="(8.399; 3.409; -0.933)" Name="capote_sticker" InterestPosition="(4.884; -0.042; 0.2)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos MaxZoom="2" MaxYRotation="360" Position="(12.66; 1.456; -4.017)" MaxXRotation="360" Name="hoods" InterestPosition="(5.714; 1.419; 0)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos Interior="true" Position="(5.221; 1.595; 0.03)" Name="sticker_2" InterestPosition="(6.662; 0.61; 1.935)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos MaxZoom="2" MaxYRotation="360" Position="(9.576; 3.64; 5.115)" MaxXRotation="360" Name="side_l" InterestPosition="(5.863; 1.926; 0)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos Interior="true" Position="(5.403; 2.343; -0.205)" Name="bubble_head" InterestPosition="(7.813; 1.176; 1.573)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-1.928; 1.987; -6.241)" MaxXRotation="360" Name="wheels" InterestPosition="(4.732; 1.133; -0)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos MaxZoom="2" MaxYRotation="360" Position="(12.66; 1.456; -4.017)" MaxXRotation="360" Name="default" InterestPosition="(5.714; 1.419; 0)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos MaxZoom="2" MaxYRotation="360" Position="(2.172; 2.662; -3.629)" MaxXRotation="360" Name="rear" InterestPosition="(3.417; 0.52; 0)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos Interior="true" Position="(4.682; 1.819; -2.866)" Name="door_l_sticker" InterestPosition="(5.23; 1.235; 0)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos Interior="true" Position="(8.557; 2.245; -1.231)" Name="hood_ornament" InterestPosition="(7.506; 1.929; -1.231)" FOV="32.0">
+
+                          </CameraPos>
+                          <CameraPos Interior="true" Position="(5.01; 2.304; -0.469)" Name="curtain" InterestPosition="(7.813; 2.509; 1.573)" FOV="32.0">
+
+                          </CameraPos>
+              </CustomizationCameras>
+                        <WinchSocket Pos="(3.489; 1.111; 0.68)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(3.489; 1.111; -0.68)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(-4.69; 0.86; 0)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(-1.492; 0.928; 0.454)">
+
+                        </WinchSocket>
+                        <WinchSocket Pos="(-1.492; 0.928; -0.454)">
+
+                        </WinchSocket>
+      </GameData>
+      <Landmark MaxScale="3.8" MinScale="1.8" Mesh="landmarks/chevrolet_kodiakC70_lmk">
+
+      </Landmark>
+      <TruckData BackSteerSpeed="0.015" DiffLockType="Installed" EngineIconScale="1.2" TruckType="HEAVY_DUTY" FuelCapacity="200" EngineStartDelay="0.8" SteerSpeed="0.03" ExhaustStartTime="0.9" Responsiveness="0.15" TruckImage="chevkodiak70blazer" EngineIconMesh="env/engine_default">
+                  <Shakers>
+                        <Shaker MaxAngle="(1; 1; 1)" Frame="BoneExhaust" ParentFrame="BoneCabin_cdt" MinAngle="(0.3; 0.3; 0.3)" MaxFrequency="4">
+
+                        </Shaker>
+                        <Shaker MaxFrequency="0.1" Frame="BoneGearstick" ParentFrame="BoneCabinRagdoll_cdt" MaxAngle="(1; 1; 1)">
+
+                        </Shaker>
+                  </Shakers>
+                  <Intake Size="1" Dir="(1; 0; 0)" Origin="(3.479; 1.546; 0)">
+
+                  </Intake>
+                  <GearboxSocket Default="g_truck_default" Type="gearboxes_trucks">
+
+                  </GearboxSocket>
+                  <Wheels DefaultRim="rim_1" DefaultWheelType="wheels_medium_double" DefaultTire="highway_1">
+                              <Wheel Pos="(2.788; 0.495; 1)" _template="FrontWheel">
+
+                              </Wheel>
+                              <Wheel Pos="(2.788; 0.495; 1)" _template="FrontWheel" RightSide="true">
+
+                              </Wheel>
+                              <Wheel Pos="(-2.01; 0.514; 0.993)" _template="RearWheel">
+
+                              </Wheel>
+                              <Wheel Pos="(-2.01; 0.514; 0.993)" _template="RearWheel" RightSide="true">
+
+                              </Wheel>
+                  </Wheels>
+                  <WinchUpgradeSocket Default="w_medium_trucks_default" Type="winches_medium_trucks" IsUpgradable="true">
+
+                  </WinchUpgradeSocket>
+                  <SteeringWheel Frame="BoneSteering">
+
+                  </SteeringWheel>
+                  <Damage>
+                                    <DamageArea Max="(3.45; 2; 0.6)" ParentFrame="BoneCabin_cdt" Min="(2.4; 0.95; -0.6)" Type="Engine">
+
+                                    </DamageArea>
+                                    <DamageArea Max="(2.090; 1.07; 1.2)" ParentFrame="BoneChassis_cdt" Min="(0.5; 0.45; -1.2)" Type="FuelTank">
+
+                                    </DamageArea>
+                  </Damage>
+                                  <LimitedFluid Center="(1.599; 0.852; 0.816)" Type="Box" SizeX="0.943" SizeZ="0.553" SizeY="0.393">
+
+                                  </LimitedFluid>
+                                  <LimitedFluid Center="(1.599; 0.852; -0.816)" Type="Box" SizeX="0.943" SizeZ="0.553" SizeY="0.393">
+
+                                  </LimitedFluid>
+                  <EngineSocket Default="us_truck_old_engine_0" Type="e_us_truck_old">
+
+                  </EngineSocket>
+                  <SoundsDamage _template="Heavy">
+
+                  </SoundsDamage>
+                  <Camera Center="(-1.7; 0; 0)" ParentFrame="BoneCabin_cdt">
+                                          <Cockpit WindshieldShadingTexture="trucks/chevrolet_kodiak_c70_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/chevrolet_kodiak_c70_glass__d_a.tga" ViewPos="(1.578; 2.364; 0.457)" _template="Default">
+                                                <Mirror ClipDir="(-0.864; 0; -0.503)" MeshFrame="mirror_left" Size="(0.185; 0.423)" ClipOffset="0.2" FOVScale="2" Pos="(1.969; 2.262; 1.31)" ReflectionDir="(-0.864; 0; -0.503)" LookAtOffset="(0; 0; 0.075)">
+
+                                                </Mirror>
+                                                <Mirror Pos="(1.971; 2.26; -1.31)" MeshFrame="mirror_right" FOVScale="2.5" Size="(0.185; 0.423)" ReflectionDir="(-0.786; 0; 0.618)" ClipDir="(-0.786; 0; 0.618)" ClipOffset="0.3">
+
+                                                </Mirror>
+                                              <Rear ViewPosOffset="(-0.1; -0.1; 0.7)">
+
+                                              </Rear>
+                                          </Cockpit>
+                  </Camera>
+                  <Axles>
+                                              <Axle Frame="BoneAxle1">
+
+                                              </Axle>
+                                              <Axle Frame="BoneAxle2">
+
+                                              </Axle>
+                  </Axles>
+                  <FuelTank DamageCapacity="50">
+
+                  </FuelTank>
+                                              <CompatibleWheels Scale="0.50" Type="wheels_medium_double">
+
+                                              </CompatibleWheels>
+                                              <CompatibleWheels Type="wheels_medium_double" Scale="0.55" OffsetZ="0.02">
+
+                                              </CompatibleWheels>
+                  <SoundsWheels _template="Default">
+
+                  </SoundsWheels>
+                  <SuspensionSocket Default="chevrolet_kodiakC70_suspension_default" MaxWheelRadiusWithoutSuspension="0.35" Type="s_chevrolet_kodiakC70">
+
+                  </SuspensionSocket>
+                  <Dashboard>
+                                                        <Gauge Mesh="trucks/arrows/chevrolet_kodiakC70_arrow_01" Org="(2.235; 1.966; 0.742)" OutputAngles="(-45;-5)" InputType="engineEnabled" Dir="(-0.956; 0.185; -0.23)" InputRange="(0;1)" Damping="0.9">
+
+                                                        </Gauge>
+                                                        <Gauge Mesh="trucks/arrows/chevrolet_kodiakC70_arrow_01" Org="(2.234; 1.874; 0.742)" OutputAngles="(-150;150)" InputType="none" Dir="(-0.956; 0.185; -0.23)" InputRange="(0;1)" Damping="0.9">
+
+                                                        </Gauge>
+                                                        <Gauge Mesh="trucks/arrows/chevrolet_kodiakC70_arrow_01" Org="(2.255; 1.966; 0.655)" OutputAngles="(-45;10)" InputType="engineEnabled" Dir="(-0.956; 0.185; -0.23)" InputRange="(0;1)" Damping="0.9">
+
+                                                        </Gauge>
+                                                        <Gauge Mesh="trucks/arrows/chevrolet_kodiakC70_arrow_01" Org="(2.255; 1.874; 0.655)" OutputAngles="(-45;0)" InputType="engineEnabled" Dir="(-0.956; 0.185; -0.23)" InputRange="(0;1)" Damping="0.9994">
+
+                                                        </Gauge>
+                                                        <Gauge Mesh="trucks/arrows/chevrolet_kodiakC70_arrow_02" Org="(2.276; 1.922; 0.523)" OutputAngles="(-125;125)" InputType="speed" Dir="(-0.973; 0.231; 0.001)" InputRange="(0;160)" Damping="0.9">
+
+                                                        </Gauge>
+                                                        <Gauge Mesh="trucks/arrows/chevrolet_kodiakC70_arrow_02" Org="(2.276; 1.921; 0.376)" OutputAngles="(-125;125)" InputType="rpm" Dir="(-0.973; 0.231; 0.001)" InputRange="(0;1)" Damping="0.9">
+
+                                                        </Gauge>
+                                                        <Gauge Mesh="trucks/arrows/chevrolet_kodiakC70_arrow_02" Org="(2.26; 1.854; 0.376)" OutputAngles="(-30;30)" InputType="fuel" Dir="(-0.973; 0.231; 0.001)" InputRange="(0;1)" Damping="0.9">
+
+                                                        </Gauge>
+                  </Dashboard>
+                                                      <Steam Origin="(1.115; 1.060; 0)">
+
+                                                      </Steam>
+                                                      <Steam ParentFrame="BoneCabin_cdt" Scale="0.5" Origin="(2.816; 1.692; 0)">
+
+                                                      </Steam>
+                  <Sounds DisableReversePitch="false" ParentFrame="BoneCabin_cdt" MinDist="12.0" AirHissInterval="12.0" _template="Default" Origin="(2.5; 1.5; 0)">
+                                                          <EngineHigh Sound="trucks/chevrolet_kodiakc70/chevrolet_kodiakc70_high">
+
+                                                          </EngineHigh>
+                                                          <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
+
+                                                          </AbruptStop>
+                                                          <GearFail Sound="trucks/common/truck_gear_wrong/truck_gear_wrong_big_old">
+
+                                                          </GearFail>
+                                                          <HandbrakeOff Sound="trucks/chevrolet_kodiakc70/chevrolet_kodiakc70_handbrake_off">
+
+                                                          </HandbrakeOff>
+                                                          <BrakesSqueal Sound="trucks/chevrolet_kodiakc70/chevrolet_kodiakc70_brakes_squeal">
+
+                                                          </BrakesSqueal>
+                                                          <EngineStart Sound="trucks/chevrolet_kodiakc70/chevrolet_kodiakc70_start">
+
+                                                          </EngineStart>
+                                                          <Reverse Sound="trucks/chevrolet_kodiakc70/chevrolet_kodiakc70_reverse">
+
+                                                          </Reverse>
+                                                          <EngineHeavy_2d IsSound2D="true" Sound="">
+
+                                                          </EngineHeavy_2d>
+                                                          <EngineHeavy Sound="">
+
+                                                          </EngineHeavy>
+                                                          <EngineLow_2d IsSound2D="true" Sound="trucks/chevrolet_kodiakc70/chevrolet_kodiakc70_low_2d">
+
+                                                          </EngineLow_2d>
+                                                          <EngineHigh_2d IsSound2D="true" Sound="trucks/chevrolet_kodiakc70/chevrolet_kodiakc70_high_2d">
+
+                                                          </EngineHigh_2d>
+                                                          <EngineLow Sound="trucks/chevrolet_kodiakc70/chevrolet_kodiakc70_low">
+
+                                                          </EngineLow>
+                                                          <EngineIdle_2d IsSound2D="true" Sound="trucks/chevrolet_kodiakc70/chevrolet_kodiakc70_idle_2d">
+
+                                                          </EngineIdle_2d>
+                                                          <EngineStop Sound="trucks/chevrolet_kodiakc70/chevrolet_kodiakc70_stop">
+
+                                                          </EngineStop>
+                                                          <EngineIdle Sound="trucks/chevrolet_kodiakc70/chevrolet_kodiakc70_idle">
+
+                                                          </EngineIdle>
+                                                          <Handbrake Sound="trucks/chevrolet_kodiakc70/chevrolet_kodiakc70_handbrake_on">
+
+                                                          </Handbrake>
+                                                          <BrakeRelease Sound="trucks/common/truck_brake_release_alt2_rnd_set/truck_brake_release_alt2_rnd">
+
+                                                          </BrakeRelease>
+                                                          <EngineRev Sound="trucks/chevrolet_kodiakc70/chevrolet_kodiakc70_rev">
+
+                                                          </EngineRev>
+                                                          <EngineAccel Sound="trucks/chevrolet_kodiakc70/chevrolet_kodiakc70_acc">
+
+                                                          </EngineAccel>
+                                                          <Honk Sound="trucks/chevrolet_kodiakc70/chevrolet_kodiakc70_honk">
+
+                                                          </Honk>
+                  </Sounds>
+                  <Driver Pos="(1.601; 1.673; 0.457)" ParentFrame="BoneCabinRagdoll_cdt" SteeringWheelPos="(1.984; 2; 0.45)">
+
+                  </Driver>
+                  <Exhaust Speed="3.00" IsLight="true" Dir="(-0.406; -0.406; -0.819)" Origin="(0.74; 0.604; -0.445)">
+
+                  </Exhaust>
+                  <SteeringRack FrameSteerRight="BoneRackRight" Frame="BoneRack" FrameSteerLeft="BoneRackLeft" RackHalfSizeZ="0.782">
+
+                  </SteeringRack>
+                  <OcclusionMap MaxX="4" HalfSizeZ="1.7" MinX="-3.5">
+
+                  </OcclusionMap>
+      </TruckData>
+      <PhysicsModel Mesh="trucks/chevrolet_kodiakc70">
+                    <NetSync Legacy="false">
+
+                    </NetSync>
+                    <Body ModelFrame="BoneChassis_cdt" ImpactType="Truck" Mass="4500" NetSync="pv" CenterOfMassOffset="(-1.4; 0; 0)">
+                          <Body ModelFrame="BoneCabin_cdt" ImpactType="Truck" Mass="1500" NetSync="pv" CenterOfMassOffset="(0.4; -0.2; 0)">
+                              <Constraint AxisLocal="(1; 0; 0)" MaxLimit="1.5" MinLimit="-1.5" PivotOffset="(0; 0; 0)" Type="Hinge">
+                                  <Motor Type="Spring" Spring="240000" Damping="24000">
+
+                                  </Motor>
+                              </Constraint>
+                                  <Body ModelFrame="BoneCabinRagdoll_cdt" ImpactType="Truck" Mass="1500" CenterOfMassOffset="(-1.2; 0; 0)">
+                                    <Constraint Cone="2.5" PlaneMin="-1.5" Type="Ragdoll" TwistAxisLocal="(0; 1; 0)" PlaneMax="1.5" PlaneAxisLocal="(1; 0; 0)">
+                                        <ConeMotor Type="Spring" Spring="1500000" Damping="700000">
+
+                                        </ConeMotor>
+                                        <PlaneMotor Type="Spring" Spring="4500000" Damping="200000">
+
+                                        </PlaneMotor>
+                                    </Constraint>
+                                        <Body Mass="0.2" ModelFrame="BoneKeyFob_cdt">
+                                          <Constraint AxisLocal="(1; 0; 0)" MaxLimit="50" MinLimit="-50" PivotOffset="(0; 0; 0)" Type="Hinge">
+                                              <Motor Type="Spring" Spring="0.001" Damping="0.001">
+
+                                              </Motor>
+                                          </Constraint>
+                                        </Body>
+                                        <Body ModelFrame="BoneMirrorLeft_cdt" _template="SideMirror">
+
+                                        </Body>
+                                        <Body ModelFrame="BoneMirrorRight_cdt" _template="SideMirror">
+
+                                        </Body>
+                                        <Body ModelFrame="BoneSunshieldLeft_cdt" _template="SunShield">
+
+                                        </Body>
+                                        <Body ModelFrame="BoneSunshieldRight_cdt" _template="SunShield">
+
+                                        </Body>
+                                        <Body ModelFrame="BoneLeftMudguard_cdt" _template="Mudguard">
+                                          <Constraint AxisLocal="(1; 0; 0)" MaxLimit="35" MinLimit="-25">
+
+                                          </Constraint>
+                                        </Body>
+                                        <Body ModelFrame="BoneRightMudguard_cdt" _template="Mudguard">
+                                          <Constraint AxisLocal="(1; 0; 0)" MaxLimit="35" MinLimit="-25">
+
+                                          </Constraint>
+                                        </Body>
+                                        <Body ModelFrame="BoneBelt_cdt" ImpactType="Truck" Mass="5" Collisions="None">
+                                          <Constraint AxisLocal="(0; 1; 0)" MaxLimit="5" MinLimit="-50" Type="Hinge">
+                                              <Motor Type="Spring" Spring="1" Damping="10">
+
+                                              </Motor>
+                                          </Constraint>
+                                        </Body>
+                                  </Body>
+                                  <Body ModelFrame="BoneTieRod_Hinge_cdt" _template="TieRod">
+                                    <Constraint Name="TieRodSteer1">
+
+                                    </Constraint>
+                                    <Body ModelFrame="BoneTieRod2_Hinge_cdt" _template="TieRod">
+                                          <Constraint Name="TieRodSteer2">
+
+                                          </Constraint>
+                                    </Body>
+                                  </Body>
+                          </Body>
+                    </Body>
+      </PhysicsModel>
+      <ModelAttachments>
+                      <StopSignals>
+                          <Light Pos="(-4.815; 0.783; 0)" _template="StopSignal">
+
+                          </Light>
+                              <Flare Size="1" _template="StopSignal" Pos="(-4.504; 0.854; -0.565)">
+
+                              </Flare>
+                              <Flare Size="1" _template="StopSignal" Pos="(-4.504; 0.854; 0.565)">
+
+                              </Flare>
+                      </StopSignals>
+                      <Ignition>
+                              <Light Pos="(4; 1.013; 0.7)" _template="IgnitionSignalWhite">
+
+                              </Light>
+                              <Light Pos="(4; 1.013; -0.7)" _template="IgnitionSignalWhite">
+
+                              </Light>
+                              <Light Pos="(-4.8; 1.025; -0)" _template="IgnitionSignalRed">
+
+                              </Light>
+                                <Flare Pos="(1.871; 2.556; -0.615)" _template="MarkerBeacon" ParentFrame="BoneCabinRagdoll_cdt">
+
+                                </Flare>
+                                <Flare Pos="(1.871; 2.556; 0.615)" _template="MarkerBeacon" ParentFrame="BoneCabinRagdoll_cdt">
+
+                                </Flare>
+                                <Flare Pos="(1.871; 2.566; -0.116)" _template="MarkerBeacon" ParentFrame="BoneCabinRagdoll_cdt">
+
+                                </Flare>
+                                <Flare Pos="(1.871; 2.566; 0.116)" _template="MarkerBeacon" ParentFrame="BoneCabinRagdoll_cdt">
+
+                                </Flare>
+                                <Flare Pos="(1.871; 2.566; 0)" _template="MarkerBeacon" ParentFrame="BoneCabinRagdoll_cdt">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabinRagdoll_cdt" Pos="(3.319; 1.482; -1.037)" Size="0.5" _template="Beacon">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabinRagdoll_cdt" Pos="(3.319; 1.482; 1.037)" Size="0.5" _template="Beacon">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabinRagdoll_cdt" Pos="(3.463; 1.245; -0.761)" Size=".2" _template="IgnitionSignalWhite">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabinRagdoll_cdt" Pos="(3.463; 1.245; 0.761)" Size=".2" _template="IgnitionSignalWhite">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabinRagdoll_cdt" Pos="(3.463; 1.245; -0.604)" Size=".2" _template="IgnitionSignalWhite">
+
+                                </Flare>
+                                <Flare ParentFrame="BoneCabinRagdoll_cdt" Pos="(3.463; 1.245; 0.604)" Size=".2" _template="IgnitionSignalWhite">
+
+                                </Flare>
+                                <Flare Pos="(-4.504; 0.866; -0.565)" _template="IgnitionSignalRed">
+
+                                </Flare>
+                                <Flare Pos="(-4.504; 0.866; 0.565)" _template="IgnitionSignalRed">
+
+                                </Flare>
+                      </Ignition>
+                      <HeadLight>
+                                <Model _template="HeadLightRay" Org="(3.463; 1.245; -0.604)" ParentFrame="BoneCabinRagdoll_cdt">
+
+                                </Model>
+                                <Model _template="HeadLightRay" Org="(3.463; 1.245; 0.604)" ParentFrame="BoneCabinRagdoll_cdt">
+
+                                </Model>
+                                  <Flare Pos="(3.463; 1.245; -0.604)" ParentFrame="BoneCabinRagdoll_cdt" Size=".25" DirAngle="135" Color="g(255; 235; 205) x 0.7" _template="HeadLight">
+
+                                  </Flare>
+                                  <Flare Pos="(3.463; 1.245; 0.604)" ParentFrame="BoneCabinRagdoll_cdt" Size=".25" DirAngle="135" Color="g(255; 235; 205) x 0.7" _template="HeadLight">
+
+                                  </Flare>
+                                  <Flare Pos="(3.463; 1.245; -0.604)" _template="BlueStreak" ParentFrame="BoneCabinRagdoll_cdt">
+
+                                  </Flare>
+                                  <Flare Pos="(3.463; 1.245; 0.604)" _template="BlueStreak" ParentFrame="BoneCabinRagdoll_cdt">
+
+                                  </Flare>
+                      </HeadLight>
+                      <ReverseSignals>
+                                <Light Pos="(-4.783; 0.93; 0)" _template="ReverseSignal">
+
+                                </Light>
+                                    <Flare Size="0.4" _template="ReverseSignal" Pos="(-4.504; 0.93; -0.565)">
+
+                                    </Flare>
+                                    <Flare Size="0.4" _template="ReverseSignal" Pos="(-4.504; 0.93; 0.565)">
+
+                                    </Flare>
+                                    <Flare Pos="(-4.504; 0.915; -0.565)" Size="0.4" Dir="(-1; 0; 0)" Color="g(220; 220; 255) x 0.05" _template="BlueStreak">
+
+                                    </Flare>
+                                    <Flare Pos="(-4.504; 0.915; 0.565)" Size="0.4" Dir="(-1; 0; 0)" Color="g(220; 220; 255) x 0.05" _template="BlueStreak">
+
+                                    </Flare>
+                      </ReverseSignals>
+      </ModelAttachments>
+  </Truck>
+  <_templates Include="trucks">
+        <Wheel>
+            <FrontWheel ParentFrame="BoneCabin_cdt" SteeringCastor="8" Torque="connectable" Location="front" SteeringAngle="40">
+
+            </FrontWheel>
+            <RearWheel Torque="default" Location="rear" ConnectedToHandbrake="true">
+
+            </RearWheel>
+        </Wheel>
+        <Body>
+              <SideMirror Mass="5" Collisions="None">
+                  <Constraint AxisLocal="(0; 1; 0)" MaxLimit="15" MinLimit="-15" Type="Hinge">
+                      <Motor Type="Spring" Spring="100" Damping="0.8">
+
+                      </Motor>
+                  </Constraint>
+              </SideMirror>
+              <TieRod Mass="1">
+                    <Constraint AxisLocal="(0; 0; 1)" MaxLimit="15" MinLimit="-15" Type="Hinge">
+                        <Motor Type="Position" Tau="1" Force="6000" Damping="1.0">
+
+                        </Motor>
+                    </Constraint>
+              </TieRod>
+              <SunShield Mass="2" Collisions="None">
+                      <Constraint AxisLocal="(0; 0; 1)" MaxLimit="11" MinLimit="-1" Type="Hinge">
+                          <Motor Type="Spring" Spring="30" Damping="0.03">
+
+                          </Motor>
+                      </Constraint>
+              </SunShield>
+        </Body>
+  </_templates>

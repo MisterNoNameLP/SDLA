@@ -1,0 +1,733 @@
+  <Truck>
+      <ControlledConstraints>
+          <Constraint Name="TieRodSteer" IsLinkedSteering="true" Id="chassis_steer">
+
+          </Constraint>
+      </ControlledConstraints>
+      <PhysicsModel Mesh="trucks/international_fleetstar_f2070a">
+            <NetSync Legacy="false">
+
+            </NetSync>
+            <Body ModelFrame="BoneChassis_cdt" ImpactType="Truck" Mass="3500" NetSync="pv" CenterOfMassOffset="(-.6,0,0)">
+                  <Body ModelFrame="BoneCabin_cdt" ImpactType="Truck" Mass="1500" ForceBodyParams="true" NetSync="pv">
+                      <Constraint AxisLocal="(1; 0; 0)" MaxLimit="1.5" MinLimit="-1.5" Type="Hinge">
+                          <Motor Type="Spring" Spring="240000" Damping="24000">
+
+                          </Motor>
+                      </Constraint>
+                          <Body ModelFrame="BoneLugL_cdt" ImpactType="Truck" Mass="1" Collisions="None">
+                            <Constraint AxisLocal="(0; 0; 1)" MaxLimit="60" MinLimit="0" Type="Hinge">
+
+                            </Constraint>
+                          </Body>
+                          <Body ModelFrame="BoneLugR_cdt" ImpactType="Truck" Mass="1" Collisions="None">
+                            <Constraint AxisLocal="(0; 0; 1)" MaxLimit="60" MinLimit="0" Type="Hinge">
+
+                            </Constraint>
+                          </Body>
+                          <Body ModelFrame="BoneCabinRagdoll_cdt" ImpactType="Truck" Mass="1300" CenterOfMassOffset="(-1.2; 0; 0)">
+                            <Constraint Cone="2.5" PlaneMin="-2.5" Type="Ragdoll" TwistAxisLocal="(0; 1; 0)" PlaneMax="2.5" PlaneAxisLocal="(1; 0; 0)">
+                                <ConeMotor Type="Spring" Spring="1500000" Damping="20000">
+
+                                </ConeMotor>
+                                <PlaneMotor Type="Spring" Spring="450000" Damping="20000">
+
+                                </PlaneMotor>
+                            </Constraint>
+                                <Body Mass="0.2" ModelFrame="BoneKeyFob_cdt">
+                                  <Constraint AxisLocal="(1; 0; 0)" MaxLimit="50" MinLimit="-50" PivotOffset="(0; 0; 0)" Type="Hinge">
+                                      <Motor Type="Spring" Spring="0.001" Damping="0.001">
+
+                                      </Motor>
+                                  </Constraint>
+                                </Body>
+                                <Body Mass="1" ModelFrame="BoneWire_cdt">
+                                  <Constraint AxisLocal="(1; 0; 0)" MaxLimit="30" MinLimit="-12" Type="Hinge">
+                                      <Motor Type="Spring" Spring=".25" Damping=".25">
+
+                                      </Motor>
+                                  </Constraint>
+                                </Body>
+                                <Body ModelFrame="BoneMirrorLeft_cdt" _template="SideMirror">
+
+                                </Body>
+                                <Body ModelFrame="BoneMirrorRight_cdt" _template="SideMirror">
+
+                                </Body>
+                          </Body>
+                          <Body ModelFrame="BoneTieRod_cdt" _template="TieRod">
+                            <Constraint AxisLocal="(0; 0; 1)" MaxLimit="40" Name="TieRodSteer" MinLimit="-40">
+
+                            </Constraint>
+                          </Body>
+                  </Body>
+            </Body>
+      </PhysicsModel>
+      <TruckData BackSteerSpeed="0.025" DiffLockType="Installed" EngineIconScale="1.2" TruckType="HEAVY_DUTY" FuelCapacity="240" EngineStartDelay="0.8" SteerSpeed="0.033" ExhaustStartTime="0.9" Responsiveness="0.1" TruckImage="fleetstarF2070A1mchr" EngineIconMesh="env/engine_default">
+                <Steam Origin="(1.984; 1; 0)">
+
+                </Steam>
+                <Steam ParentFrame="BoneCabin_cdt" Scale="0.5" Origin="(3.55; 1.2; 0)">
+
+                </Steam>
+              <Intake Size="1" Dir="(1; 0; 0)" Origin="(4.207; 1.281; 0)">
+
+              </Intake>
+              <GearboxSocket Default="g_truck_default" Type="gearboxes_trucks">
+
+              </GearboxSocket>
+              <Wheels DefaultRim="rim_1" DefaultWheelType="wheels_medium_double" DefaultTire="highway_1">
+                          <Wheel Pos="(3.527; 0.523; 1.027)" _template="FrontWheel">
+
+                          </Wheel>
+                          <Wheel Pos="(3.527; 0.523; 1.027)" _template="FrontWheel" RightSide="true">
+
+                          </Wheel>
+                          <Wheel Pos="(-0.984; 0.523; 0.894)" _template="RearWheel">
+
+                          </Wheel>
+                          <Wheel Pos="(-0.984; 0.523; 0.894)" _template="RearWheel" RightSide="true">
+
+                          </Wheel>
+                          <Wheel Pos="(-2.204; 0.523; 0.894)" _template="RearWheel">
+
+                          </Wheel>
+                          <Wheel Pos="(-2.204; 0.523; 0.894)" _template="RearWheel" RightSide="true">
+
+                          </Wheel>
+              </Wheels>
+              <WinchUpgradeSocket Default="w_medium_trucks_default" Type="winches_medium_trucks" IsUpgradable="true">
+
+              </WinchUpgradeSocket>
+              <SteeringWheel Frame="BoneSteering">
+
+              </SteeringWheel>
+              <Damage>
+                                <DamageArea Max="(4.15; 2; 0.6)" ParentFrame="BoneCabin_cdt" Min="(3; 0.9; -0.6)" Type="Engine">
+
+                                </DamageArea>
+                                <DamageArea Max="(2.892; 0.972; 1.219)" ParentFrame="BoneCabin_cdt" Min="(1.35; 0.358; -1.219)" Type="FuelTank">
+
+                                </DamageArea>
+              </Damage>
+                              <LimitedFluid Center="(2.307; 0.681; -0.825)" Type="Box" SizeX="0.958" SizeZ="0.584" SizeY="0.463">
+
+                              </LimitedFluid>
+                              <LimitedFluid Center="(1.945; 0.68; 0.823)" Type="Box" SizeX="1.077" SizeZ="0.589" SizeY="0.466">
+
+                              </LimitedFluid>
+              <EngineSocket Default="us_truck_old_engine_0" Type="e_us_truck_old, e_us_truck_old_top">
+
+              </EngineSocket>
+              <SoundsDamage _template="Heavy">
+
+              </SoundsDamage>
+              <Camera Center="(-1.2; 0; 0)" ParentFrame="BoneCabin_cdt">
+                                      <Cockpit WindshieldShadingTexture="trucks/international_fleetstar_f2070a_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/international_fleetstar_f2070a_glass__d_a.tga" ViewPos="(2.21; 2.3; 0.436)" _template="Default">
+                                            <Mirror ClipDir="(-0.897; -0.055; -0.438)" MeshFrame="mirror_left" Size="(0.175; 0.42)" ClipOffset="0.125" FOVScale="2" Pos="(2.508; 2.167; 1.041)" ReflectionDir="(-0.897; -0.055; -0.438)" LookAtOffset="(0.05; 0; 0.125)">
+                                              <SecondaryView Pos="(2.505; 1.856; 1.034)" MeshFrame="mirror_left_1" FOVScale="1" Size="(0.219; 0.219)" CurveAngle="10" ClipDir="(-0.897; -0.055; -0.438)" ClipOffset="0.1">
+
+                                              </SecondaryView>
+                                            </Mirror>
+                                            <Mirror Pos="(2.495; 2.165; -1.03)" MeshFrame="mirror_right" FOVScale="2.5" Size="(0.157; 0.409)" ReflectionDir="(-0.797; -0.043; 0.603)" ClipDir="(-0.797; -0.043; 0.603)" ClipOffset="0.1">
+                                              <SecondaryView Pos="(2.481; 1.859; -1.032)" MeshFrame="mirror_right_1" FOVScale="1.2" Size="(0.219; 0.219)" CurveAngle="10" ClipDir="(-0.797; -0.043; 0.603)" ClipOffset="0.1">
+
+                                              </SecondaryView>
+                                            </Mirror>
+                                          <Rear ViewPosOffset="(0.05; -0.15; 0.7)">
+
+                                          </Rear>
+                                      </Cockpit>
+              </Camera>
+              <Shafts>
+                                        <Shaft SocketPointA="ShaftWheel2WheelA" SocketPointB="ShaftWheel2WheelB">
+
+                                        </Shaft>
+              </Shafts>
+              <FuelTank DamageCapacity="50">
+
+              </FuelTank>
+              <SoundsWheels _template="Default">
+
+              </SoundsWheels>
+              <SuspensionSocket Default="fleetstar_f2070a_suspension_default" MaxWheelRadiusWithoutSuspension="0.48" Type="s_fleetstar_f2070a">
+
+              </SuspensionSocket>
+              <Axles>
+                                                  <Axle Frame="BoneAxle1">
+
+                                                  </Axle>
+                                                  <Axle Frame="BoneAxle2">
+
+                                                  </Axle>
+                                                  <Axle Frame="BoneAxle3">
+
+                                                  </Axle>
+              </Axles>
+                                                <CompatibleWheels Scale="0.53" Type="wheels_medium_double">
+
+                                                </CompatibleWheels>
+                                                <CompatibleWheels Scale="0.57" Type="wheels_medium_double">
+
+                                                </CompatibleWheels>
+              <Sounds DisableReversePitch="false" ParentFrame="BoneChassis_cdt" MinDist="10.0" AirHissInterval="12.0" _template="Default" Origin="(3.2; 1.5; 0)">
+                                                    <BrakePull Sound="trucks/int_fleetstar_f2070a/int_fleetstar_f2070a_brake_pull">
+
+                                                    </BrakePull>
+                                                    <EngineHigh Sound="trucks/int_fleetstar_f2070a/int_fleetstar_f2070a_high">
+
+                                                    </EngineHigh>
+                                                    <ChassisStress Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
+
+                                                    </ChassisStress>
+                                                    <EngineRev Sound="trucks/int_fleetstar_f2070a/int_fleetstar_f2070a_rev">
+
+                                                    </EngineRev>
+                                                    <BrakesSqueal Sound="trucks/int_fleetstar_f2070a/int_fleetstar_f2070a_brakes_squeal">
+
+                                                    </BrakesSqueal>
+                                                    <EngineTrans Sound="">
+
+                                                    </EngineTrans>
+                                                    <Reverse Sound="trucks/int_fleetstar_f2070a/int_fleetstar_f2070a_reverse">
+
+                                                    </Reverse>
+                                                    <AbruptStop Sound="trucks/common/truck_swing_big_old_rnd_set/truck_swing_big_old_rnd">
+
+                                                    </AbruptStop>
+                                                    <EngineHeavy_2d IsSound2D="true" Sound="trucks/int_fleetstar_f2070a/int_fleetstar_f2070a_heavy_2d">
+
+                                                    </EngineHeavy_2d>
+                                                    <EngineHeavy Sound="trucks/int_fleetstar_f2070a/int_fleetstar_f2070a_heavy">
+
+                                                    </EngineHeavy>
+                                                    <EngineHigh_2d IsSound2D="true" Sound="trucks/int_fleetstar_f2070a/int_fleetstar_f2070a_high_2d">
+
+                                                    </EngineHigh_2d>
+                                                    <EngineLow Sound="trucks/int_fleetstar_f2070a/int_fleetstar_f2070a_low">
+
+                                                    </EngineLow>
+                                                    <EngineIdle_2d IsSound2D="true" Sound="trucks/int_fleetstar_f2070a/int_fleetstar_f2070a_idle_2d">
+
+                                                    </EngineIdle_2d>
+                                                    <EngineStop Sound="trucks/int_fleetstar_f2070a/int_fleetstar_f2070a_stop">
+
+                                                    </EngineStop>
+                                                    <EngineIdle Sound="trucks/int_fleetstar_f2070a/int_fleetstar_f2070a_idle">
+
+                                                    </EngineIdle>
+                                                    <BrakeRelease Sound="trucks/gmc_9500/gmc_9500_brake_release">
+
+                                                    </BrakeRelease>
+                                                    <EngineLow_2d IsSound2D="true" Sound="trucks/int_fleetstar_f2070a/int_fleetstar_f2070a_low_2d">
+
+                                                    </EngineLow_2d>
+                                                    <EngineStart Sound="trucks/int_fleetstar_f2070a/int_fleetstar_f2070a_start">
+
+                                                    </EngineStart>
+                                                    <EngineAccel Sound="trucks/int_fleetstar_f2070a/int_fleetstar_f2070a_acc">
+
+                                                    </EngineAccel>
+                                                    <Honk Sound="trucks/int_fleetstar_f2070a/int_fleetstar_f2070a_honk">
+
+                                                    </Honk>
+              </Sounds>
+              <Driver Pos="(2.285; 1.643; 0.436)" ParentFrame="BoneCabinRagdoll_cdt" SteeringWheelPos="(2.667; 1.971; 0.433)">
+
+              </Driver>
+              <Dashboard>
+                                                          <Gauge Mesh="trucks/arrows/international_fleetstar_f2070a_arrow_01" Org="(2.862; 1.961; 0.569)" OutputAngles="(-54;-5)" InputType="engineEnabled" Dir="(-0.972; 0.235; 0.008)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/international_fleetstar_f2070a_arrow_01" Org="(2.862; 1.963; 0.51)" OutputAngles="(-133;23)" InputType="engineEnabled" Dir="(-0.972; 0.235; 0.008)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/international_fleetstar_f2070a_arrow_01" Org="(2.849; 1.91; 0.539)" OutputAngles="(-54;-28)" InputType="engineEnabled" Dir="(-0.972; 0.235; 0.008)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/international_fleetstar_f2070a_arrow_02" Org="(2.86; 1.943; 0.431)" OutputAngles="(-135;135)" InputType="rpm" Dir="(-0.972; 0.235; 0.008)" InputRange="(0;1)" Damping="0.9">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/international_fleetstar_f2070a_arrow_02" Org="(2.861; 1.946; 0.339)" OutputAngles="(-121;122)" InputType="speed" Dir="(-0.972; 0.235; 0.008)" InputRange="(0;120)" Damping="0">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/international_fleetstar_f2070a_arrow_01" Org="(2.862; 1.968; 0.261)" OutputAngles="(-61;61)" InputType="fuel" Dir="(-0.972; 0.235; 0.008)" InputRange="(0;1)" Damping="0.9">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/international_fleetstar_f2070a_arrow_01" Org="(2.862; 1.968; 0.2)" OutputAngles="(-135;75)" InputType="engineEnabled" Dir="(-0.972; 0.235; 0.008)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+              </Dashboard>
+              <SteeringRack FrameSteerRight="BoneRackRight" Frame="BoneRack" FrameSteerLeft="BoneRackLeft" RackHalfSizeZ="0.828">
+
+              </SteeringRack>
+              <OcclusionMap MaxX="4.809" HalfSizeZ="2" MinX="-3.8">
+
+              </OcclusionMap>
+      </TruckData>
+      <ModelAttachments>
+                <StopSignals>
+                    <Light Pos="(-4.1; 0.671; 0)" _template="StopSignal">
+
+                    </Light>
+                        <Flare Size=".4" _template="StopSignal" Pos="(-3.987; 0.671; -0.265)">
+
+                        </Flare>
+                        <Flare Size=".4" _template="StopSignal" Pos="(-3.987; 0.671; 0.265)">
+
+                        </Flare>
+                </StopSignals>
+                <Ignition>
+                        <Light Pos="(4.55; 1.013; 0.9)" _template="IgnitionSignalWhite">
+
+                        </Light>
+                        <Light Pos="(4.55; 1.013; -0.9)" _template="IgnitionSignalWhite">
+
+                        </Light>
+                        <Light Pos="(-4.3; 1.025; -0)" _template="IgnitionSignalRed">
+
+                        </Light>
+                          <Flare Pos="(2.671; 2.586; -0.603)" _template="MarkerBeacon" ParentFrame="BoneCabinRagdoll_cdt">
+
+                          </Flare>
+                          <Flare Pos="(2.671; 2.586; 0.603)" _template="MarkerBeacon" ParentFrame="BoneCabinRagdoll_cdt">
+
+                          </Flare>
+                          <Flare Pos="(2.727; 2.618; 0)" _template="MarkerBeacon" ParentFrame="BoneCabinRagdoll_cdt">
+
+                          </Flare>
+                          <Flare Pos="(2.727; 2.614; -0.174)" _template="MarkerBeacon" ParentFrame="BoneCabinRagdoll_cdt">
+
+                          </Flare>
+                          <Flare Pos="(2.727; 2.614; 0.174)" _template="MarkerBeacon" ParentFrame="BoneCabinRagdoll_cdt">
+
+                          </Flare>
+                          <Flare ParentFrame="BoneCabinRagdoll_cdt" Pos="(4.162; 1.283; -0.949)" DirAngle="120" _template="IgnitionSignalWhite">
+
+                          </Flare>
+                          <Flare ParentFrame="BoneCabinRagdoll_cdt" Pos="(4.162; 1.283; 0.949)" DirAngle="120" _template="IgnitionSignalWhite">
+
+                          </Flare>
+                          <Flare Pos="(-3.987; 0.671; -0.265)" _template="IgnitionSignalRed">
+
+                          </Flare>
+                          <Flare Pos="(-3.987; 0.671; 0.265)" _template="IgnitionSignalRed">
+
+                          </Flare>
+                          <Flare Size="0.2" Pos="(3.621; 1.322; -1.218)" Color="g(255; 192; 0) x 0.17" _template="Beacon">
+
+                          </Flare>
+                          <Flare Size="0.2" Pos="(3.621; 1.322; 1.218)" Color="g(255; 192; 0) x 0.17" _template="Beacon">
+
+                          </Flare>
+                          <Flare Size="0.4" _template="Beacon" Pos="(3.994; 1.57; -1.042)">
+
+                          </Flare>
+                          <Flare Size="0.4" _template="Beacon" Pos="(3.994; 1.57; 1.042)">
+
+                          </Flare>
+                </Ignition>
+                <HeadLight>
+                          <Model _template="HeadLightRay" Org="(4.162; 1.283; -0.949)" ParentFrame="BoneCabin_cdt">
+
+                          </Model>
+                          <Model _template="HeadLightRay" Org="(4.162; 1.283; 0.949)" ParentFrame="BoneCabin_cdt">
+
+                          </Model>
+                            <Flare Pos="(4.162; 1.283; -0.949)" _template="HeadLight" ParentFrame="BoneCabin_cdt">
+
+                            </Flare>
+                            <Flare Pos="(4.162; 1.283; 0.949)" _template="HeadLight" ParentFrame="BoneCabin_cdt">
+
+                            </Flare>
+                            <Flare Pos="(4.162; 1.283; -0.949)" _template="BlueStreak" ParentFrame="BoneCabin_cdt">
+
+                            </Flare>
+                            <Flare Pos="(4.162; 1.283; 0.949)" _template="BlueStreak" ParentFrame="BoneCabin_cdt">
+
+                            </Flare>
+                </HeadLight>
+                <ReverseSignals>
+                          <Light Pos="(-4.4; 0.71; 0)" _template="ReverseSignal">
+
+                          </Light>
+                              <Flare Size="0.25" _template="ReverseSignal" Pos="(-3.987; 0.71; -0.265)">
+
+                              </Flare>
+                              <Flare Size="0.25" _template="ReverseSignal" Pos="(-3.987; 0.71; 0.265)">
+
+                              </Flare>
+                              <Flare Pos="(-3.987; 0.71; -0.265)" Size="0.3" Dir="(-1; 0; 0)" Color="g(220; 220; 255) x 0.05" _template="BlueStreak">
+
+                              </Flare>
+                              <Flare Pos="(-3.987; 0.71; 0.265)" Size="0.3" Dir="(-1; 0; 0)" Color="g(220; 220; 255) x 0.05" _template="BlueStreak">
+
+                              </Flare>
+                </ReverseSignals>
+      </ModelAttachments>
+      <HeadLight Pos="(4.200; 1.283; 0.949)" _template="Default">
+
+      </HeadLight>
+      <GameData Price="13800" ExcludeAddons="semitrailer_stepdeck_5, semitrailer_gooseneck_4" UnlockByExploration="false" UnlockByRank="1" Country="US">
+                      <CraneSocket Pos="(4.247; 0.887; -0.465)" ParentFrame="BoneCabin_cdt">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(4.247; 0.887; 0.465)" ParentFrame="BoneCabin_cdt">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-4.156; 0.841; 0)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(1.181; 0.887; 0.445)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(0.895; 0.887; -0.445)">
+
+                      </CraneSocket>
+                    <UiDesc UiIcon30x30="heavyDutyVehicleImg30" UiName="UI_VEHICLE_FLEETSTAR_F2070A_NAME" UiIcon328x458="shopImgInternationalF2070" UiIconLogo="InternationalNavistarLogo80" UiDesc="UI_VEHICLE_FLEETSTAR_F2070A_DESC" UiIcon40x40="heavyDutyVehicleImg">
+
+                    </UiDesc>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="InternationalFleetstarF2070aSpareWheel">
+                                <ExtraParent Frame="BoneCabin_cdt">
+
+                                </ExtraParent>
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="international_fleetstar_f2070a_bumper_default">
+                            <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="InternationalFleetstarF2070aBumper">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="InternationalFleetstarF2070aSnorkel">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="InternationalFleetstarF2070aCabinProtector">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="InternationalFleetstarF2070aHorn">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="InternationalFleetstarF2070aVisor">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Offset="(0; 0; 0)" Names="InternationalFleetstarF2070aBeacon">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="InternationalFleetstarF2070aThreshold">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="international_fleetstar_f2070a_exhaust_default">
+                            <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="InternationalFleetstarF2070aExhaust">
+                                <ExtraParent Frame="BoneChassis_cdt">
+
+                                </ExtraParent>
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="international_fleetstar_f2070a_fender_default">
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="InternationalFleetstarF2070aFender">
+                                <ExtraParent Frame="BoneCabin_cdt">
+
+                                </ExtraParent>
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                              <Socket Offset="(0.622; -0.043; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="InternationalFleetstarF2070aSpareWheel, LargeSemitrailerOiltank, FrameAddonKung, FrameAddonTank, FrameAddonMaintainer, FrameAddon, BigCraneUs, BigCraneRu" Names="MetalDetector">
+
+                              </Socket>
+                              <Socket Offset="(1.050; 1.01; 0)" NamesBlock="FrameAddonKung, FrameAddonTank" Names="MinicraneUS">
+                                <AddonsShift Offset="(-0.25; 0; 0)" Types="InternationalFleetstarF2070aCabinProtector">
+
+                                </AddonsShift>
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                              <Socket Offset="(-1.2; 1.5; 0)" Names="LargeSemitrailer">
+
+                              </Socket>
+                              <Socket Offset="(-1.2; 1.5; 0)" Names="LargeSemitrailerOiltank">
+                                <AddonsShift Types="MinicraneUS, InternationalFleetstarF2070aCabinProtector" Offset="(0; 0; 0)" TrailerNamesBlock="LargeSemitrailerOiltank">
+
+                                </AddonsShift>
+                              </Socket>
+                              <Socket Offset="(-1.5; 1.5; 0)" Names="Semitrailer, SemitrailerOiltank">
+
+                              </Socket>
+                              <Socket Offset="(-4.205; 0.841; 0)" Names="Trailer">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                              <Socket NamesBlock="MinicraneUS, MetalDetector" Offset="(-5.060; 1.015; 0)" Names="BunkLog">
+
+                              </Socket>
+                              <Socket Offset="(-0.86; 1.01; 0)" NamesBlock="MinicraneUS, MetalDetector, InternationalFleetstarF2070aFender, InternationalFleetstarF2070aCabinProtector" Names="FrameAddonLogShort">
+
+                              </Socket>
+                              <Socket Offset="(-1.5; 1.01; 0)" Names="SaddleLow1">
+
+                              </Socket>
+                              <Socket Offset="(-1.2; 1.01; 0)" Names="SaddleHigh">
+
+                              </Socket>
+                              <Socket ParentFrame="BoneChassis_cdt" Offset="(-0.95; 1.008; 0)" Names="FrameAddon">
+                                  <AddonsShift Offset="(-1; 0; 0)" Types="MinicraneUS">
+
+                                  </AddonsShift>
+                                  <AddonsShift Offset="(-0.26; 0; 0)" Types="InternationalFleetstarF2070aCabinProtector">
+
+                                  </AddonsShift>
+                              </Socket>
+                              <Socket Offset="(-1.45; 1.008; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="MinicraneUS, MetalDetector, Trailer" Names="FrameAddonTow">
+                                <AddonsShift Offset="(-.15; 0; 0)" Types="InternationalFleetstarF2070aCabinProtector">
+
+                                </AddonsShift>
+                              </Socket>
+                              <Socket ParentFrame="BoneChassis_cdt" Offset="(-1.1; 1.08; 0)" Names="FrameAddonKung">
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.1)">
+
+                                  </ExtraParent>
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.1)">
+
+                                  </ExtraParent>
+                              </Socket>
+                              <Socket ParentFrame="BoneChassis_cdt" Offset="(-1.91; 1.02; 0)" Names="FrameAddonTank">
+
+                              </Socket>
+                              <Socket Offset="(-1.754; 1.015; 0)" NamesBlock="MinicraneUS" Names="BigCraneUs">
+
+                              </Socket>
+                              <Socket NamesBlock="MetalDetector, MinicraneUS" Offset="(0.998; 1.011; 0)" Names="LogLift">
+
+                              </Socket>
+                              <Socket Offset="(-1.95; -0.022; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="Trailer, MinicraneUS" Names="FrameAddonMaintainer">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="international_fleetstar_f2070a_diff_lock_default">
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="FleetstarF2070ADiffLock">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="international_fleetstar_f2070a_transferbox_default">
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="FleetstarF2070aTransferBox">
+                                  <ExtraParent Frame="BoneCabin_cdt">
+
+                                  </ExtraParent>
+                                  <ExtraParent Frame="BoneAxle1">
+
+                                  </ExtraParent>
+                                  <ExtraParent Frame="BoneRack">
+
+                                  </ExtraParent>
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(2.933; 2.047; 0.166)" ParentFrame="BoneCabinRagdoll_cdt" Names="StuffDashboard" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="internationalFleetstarF2070aSticker_1x1_01" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="internationalFleetstarF2070aSticker_1x1_02" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="internationalFleetstarF2070aSticker_1x1_03" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="internationalFleetstarF2070aSticker_1x1_04" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneSunshieldL_cdt" Names="internationalFleetstarF2070aSticker_1x2_01" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneSunshieldR_cdt" Names="internationalFleetstarF2070aSticker_1x2_02" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                              <Socket Offset="(2.794; 2.447; 0.098)" ParentFrame="BoneCabinRagdoll_cdt" Names="StuffAirfreshener" InCockpit="true">
+
+                              </Socket>
+                              <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="StuffCurtainInternationalFleetstarF2070a" InCockpit="true">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="internationalFleetstarF2070ASticker_GlassTop" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="internationalFleetstarF2070ASticker_GlassBottom" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="internationalFleetstarF2070ASticker_Door_R">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="internationalFleetstarF2070ASticker_Door_L">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="internationalFleetstarF2070ASticker_Roof">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="internationalFleetstarF2070ASticker_Capote">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinRagdoll_cdt" Names="StuffHoodInternationalFleetstarF2070A">
+
+                            </Socket>
+                          </AddonSockets>
+                    <CustomizationCameras>
+                                <CameraPos Interior="true" Position="(6.51; 3.927; -0.632)" Name="roof_sticker" InterestPosition="(3.893; 0.209; 0.091)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(5.273; 2.205; -0.496)" Name="sticker_1" InterestPosition="(6.729; 3.04; 1.651)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-6.817; 2.946; 3.742)" MaxXRotation="360" Name="addon_1" InterestPosition="(0.576; 1.567; -0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(3.547; 1.82; -4.118)" MaxXRotation="360" Name="addon_2" InterestPosition="(5.211; 0.421; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(5.156; 2.203; -0.533)" Name="mirror_mount" InterestPosition="(6.729; 2.245; 1.407)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(2.294; 3.12; -3.71)" MaxXRotation="360" Name="side_r" InterestPosition="(4.947; 1.897; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(5.39; 2.273; 0.057)" Name="sticker" InterestPosition="(6.729; 1.105; 1.741)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(7.58; 2.856; 1.025)" Name="glass_sticker" InterestPosition="(5.823; 1.916; -1.032)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(4.53; 1.614; 2.466)" Name="door_r_sticker" InterestPosition="(5.675; 1.565; 2.281)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(9.483; 3.825; -2.677)" MaxXRotation="360" Name="roof" InterestPosition="(5.345; 1.757; -0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(8.408; 3.471; -1.141)" Name="capote_sticker" InterestPosition="(6.91; 1.652; -1.069)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(13.255; 1.454; -3.191)" MaxXRotation="360" Name="hoods" InterestPosition="(6.163; 1.735; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(2.812; 2.512; -3.826)" MaxXRotation="360" Name="spare_wheel" InterestPosition="(3.895; 0.106; -0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(5.221; 1.595; 0.03)" Name="sticker_2" InterestPosition="(6.662; 0.61; 1.935)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(9.395; 2.957; 3.542)" MaxXRotation="360" Name="side_l" InterestPosition="(6.246; 1.487; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(5.393; 2.352; -0.373)" Name="bubble_head" InterestPosition="(6.729; 1.295; 1.028)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(8.851; 0.966; -4.483)" MaxXRotation="360" Name="wheels" InterestPosition="(5.808; 0.77; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(13.255; 1.454; -3.191)" MaxXRotation="360" Name="default" InterestPosition="(6.163; 1.735; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-4.96; 2.298; 2.315)" MaxXRotation="360" Name="rear" InterestPosition="(1.652; 0.953; -0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(4.57; 1.614; -2.46)" Name="door_l_sticker" InterestPosition="(5.368; 1.565; 0.057)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(8.557; 2.245; -1.231)" Name="hood_ornament" InterestPosition="(7.506; 1.929; -1.231)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(5.156; 2.203; -0.533)" Name="curtain" InterestPosition="(6.729; 2.245; 1.407)" FOV="32.0">
+
+                                </CameraPos>
+                    </CustomizationCameras>
+                              <WinchSocket Pos="(4.247; 0.887; -0.465)" ParentFrame="BoneCabin_cdt">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(4.247; 0.887; 0.465)" ParentFrame="BoneCabin_cdt">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-4.156; 0.841; 0)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(1.181; 0.887; 0.445)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(0.895; 0.887; -0.445)">
+
+                              </WinchSocket>
+      </GameData>
+      <Landmark MaxScale="3.8" MinScale="1.8" Mesh="landmarks/international_fleetstar_f2070a_lmk">
+
+      </Landmark>
+      <AutomaticIK>
+                        <IKBone ModelFrame="BoneTieRodHinge2" ParentFrame="BoneTieRod_cdt">
+                            <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRodPrismatic" AttachToFrame="BoneRackLeft">
+                                  <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                        </IKBone>
+      </AutomaticIK>
+  </Truck>
+  <_templates Include="trucks">
+        <Wheel>
+            <FrontWheel ParentFrame="BoneCabin_cdt" SteeringCastor="8" Torque="connectable" Location="front" SteeringAngle="40">
+
+            </FrontWheel>
+            <RearWheel Torque="default" Location="rear" ConnectedToHandbrake="true">
+
+            </RearWheel>
+        </Wheel>
+        <Body>
+              <SideMirror Mass="5" Collisions="None">
+                  <Constraint AxisLocal="(0; 1; 0)" MaxLimit="15" MinLimit="-15" Type="Hinge">
+                      <Motor Type="Spring" Spring="250" Damping="1">
+
+                      </Motor>
+                  </Constraint>
+              </SideMirror>
+        </Body>
+  </_templates>

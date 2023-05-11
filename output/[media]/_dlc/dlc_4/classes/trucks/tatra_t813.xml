@@ -1,0 +1,747 @@
+  <Truck>
+      <ControlledConstraints>
+            <Constraint Name="TieRodSteer1" IsLinkedSteering="true" Id="chassis_steer">
+
+            </Constraint>
+            <Constraint Name="TieRodSteer2" IsLinkedSteering="true" Id="chassis_steer">
+
+            </Constraint>
+      </ControlledConstraints>
+      <PhysicsModel Mesh="trucks/tatra_t813">
+            <NetSync Legacy="false">
+
+            </NetSync>
+            <Body ModelFrame="BoneChassis_cdt" ImpactType="Truck" Mass="13000" NetSync="pv" CenterOfMassOffset="(-2.2; -0.5; 0)">
+                    <Body ModelFrame="BoneMirrorL_cdt" _template="SideMirror">
+
+                    </Body>
+                    <Body ModelFrame="BoneMirrorR_cdt" _template="SideMirror">
+
+                    </Body>
+                    <Body ModelFrame="BoneSunshieldL_cdt" _template="SunShield">
+
+                    </Body>
+                    <Body ModelFrame="BoneSunshieldR_cdt" _template="SunShield">
+
+                    </Body>
+                    <Body ModelFrame="BoneKatafotL_cdt" _template="Mudguard">
+                      <Constraint AxisLocal="(0; 0; 1)" MaxLimit="30" MinLimit="-30">
+
+                      </Constraint>
+                    </Body>
+                    <Body ModelFrame="BoneKatafotR_cdt" _template="Mudguard">
+                      <Constraint AxisLocal="(0; 0; 1)" MaxLimit="30" MinLimit="-30">
+
+                      </Constraint>
+                    </Body>
+                    <Body Mass="15" Collisions="None" ModelFrame="BoneWire1_cdt">
+                      <Constraint AxisLocal="(0; 0; 1)" MaxLimit="50" MinLimit="-50" PivotOffset="(0; 0; 0)" Type="Hinge">
+                          <Motor Type="Spring" Spring="30" Damping="3">
+
+                          </Motor>
+                      </Constraint>
+                    </Body>
+                    <Body ModelFrame="BoneAddonAttachment_cdt" ImpactType="Truck" Mass="1000" NetSync="pv">
+                      <Constraint AxisLocal="(1; 0; 0)" MaxLimit="5" MinLimit="-5" Type="Hinge" CenterOfMassOffset="(0,0,0)">
+                          <Motor Type="Spring" Spring="1000000" Damping="25000">
+
+                          </Motor>
+                      </Constraint>
+                    </Body>
+                    <Body ModelFrame="BoneTieRod1_cdt" _template="TieRod">
+                      <Constraint AxisLocal="(0; 1; 0)" MaxLimit="12" Name="TieRodSteer1" MinLimit="-12">
+
+                      </Constraint>
+                    </Body>
+                    <Body ModelFrame="BoneTieRod2_cdt" _template="TieRod">
+                      <Constraint AxisLocal="(0; 1; 0)" MaxLimit="14" Name="TieRodSteer2" MinLimit="-14">
+
+                      </Constraint>
+                    </Body>
+            </Body>
+      </PhysicsModel>
+      <TruckData BackSteerSpeed="0.015" DiffLockType="Installed" EngineIconScale="0.8" TruckType="HEAVY" FuelCapacity="380" EngineStartDelay="3.2" SteerSpeed="0.022" ExhaustStartTime="2.8" Responsiveness="0.2" TruckImage="tatra813mchr" EngineIconMesh="env/engine_pacific_p16">
+              <Shakers>
+                    <Shaker MaxAngle="(1; 1; 1)" Frame="BoneStickShaker1" MinAngle="(0.5; 0.5; 0.5)" MaxFrequency="4">
+
+                    </Shaker>
+                    <Shaker MaxAngle="(1; 1; 1)" Frame="BoneStickShaker2" MinAngle="(0.5; 0.5; 0.5)" MaxFrequency="4">
+
+                    </Shaker>
+                    <Shaker MaxAngle="(1; 1; 1)" Frame="BoneStickShaker3" MinAngle="(0.5; 0.5; 0.5)" MaxFrequency="4">
+
+                    </Shaker>
+                    <Shaker MaxAngle="(1; 1; 1)" Frame="BoneStickShaker4" MinAngle="(0.5; 0.5; 0.5)" MaxFrequency="4">
+
+                    </Shaker>
+              </Shakers>
+              <Intake Size="0.75" Dir="(1; 0; 0)" Origin="(4.038; 1.623; 0)">
+
+              </Intake>
+              <GearboxSocket Default="g_special_default" Type="gearboxes_special, gearboxes_special_kolob">
+
+              </GearboxSocket>
+              <Wheels DefaultRim="rim" DefaultWheelType="wheels_tatra_t813" DefaultTire="tire">
+                          <Wheel Pos="(2.474; 0.638; 1.050)" _template="FirstAxle">
+
+                          </Wheel>
+                          <Wheel Pos="(2.474; 0.638; 1.050)" _template="FirstAxle" RightSide="true">
+
+                          </Wheel>
+                          <Wheel Pos="(0.832; 0.638; 1)" _template="SecondAxle">
+
+                          </Wheel>
+                          <Wheel Pos="(0.832; 0.638; 1)" _template="SecondAxle" RightSide="true">
+
+                          </Wheel>
+                          <Wheel Pos="(-1.402; 0.638; 1)" _template="RearAxle">
+
+                          </Wheel>
+                          <Wheel Pos="(-1.402; 0.638; 1)" _template="RearAxle" RightSide="true">
+
+                          </Wheel>
+                          <Wheel Pos="(-2.844; 0.638; 1)" _template="RearAxle">
+
+                          </Wheel>
+                          <Wheel Pos="(-2.844; 0.638; 1)" _template="RearAxle" RightSide="true">
+
+                          </Wheel>
+              </Wheels>
+              <WinchUpgradeSocket Default="w_heavy_trucks_default" Type="winches_heavy_trucks" IsUpgradable="true">
+
+              </WinchUpgradeSocket>
+              <SteeringWheel Frame="BoneSteering">
+
+              </SteeringWheel>
+              <Damage>
+                                <DamageArea Min="(2.049; 0.631; -0.5)" Max="(3.705; 1.631; 0.5)" Type="Engine">
+
+                                </DamageArea>
+                                <DamageArea Min="(-1; 0.65; -1.3)" Max="(0.3; 1.358; 1.3)" Type="FuelTank">
+
+                                </DamageArea>
+              </Damage>
+                              <LimitedFluid Center="(-0.314; 0.992; 0.909)" Type="Box" SizeX="0.623" SizeZ="0.598" SizeY="0.592">
+
+                              </LimitedFluid>
+                              <LimitedFluid Center="(-0.314; 0.992; -0.909)" Type="Box" SizeX="0.623" SizeZ="0.598" SizeY="0.592">
+
+                              </LimitedFluid>
+              <EngineSocket Default="ru_special_engine_0" Type="e_ru_special">
+
+              </EngineSocket>
+              <SoundsDamage _template="Heavy">
+
+              </SoundsDamage>
+              <Camera Center="(-1.7; 0; 0)" ParentFrame="BoneChassis_cdt">
+                                      <Cockpit WindshieldShadingTexture="trucks/tatra_t813_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/tatra_t813_glass__d_a.tga" ViewPos="(2.971; 2.402; 0.722)" _template="Default">
+                                            <Mirror Pos="(3.267; 2.304; 1.181)" MeshFrame="mirror_left" FOVScale="1.2" Size="(0.18; 0.26)" ReflectionDir="(-0.921; 0.000; -0.391)" ClipDir="(-0.940; 0.000; -0.342)" ClipOffset="0.1">
+
+                                            </Mirror>
+                                            <Mirror Pos="(3.279; 2.304; -1.16)" MeshFrame="mirror_right" FOVScale="1.6" Size="(0.18; 0.26)" ReflectionDir="(-0.788; 0.000; 0.616)" ClipDir="(-0.766; 0.000; 0.643)" ClipOffset="0.1">
+
+                                            </Mirror>
+                                      </Cockpit>
+              </Camera>
+              <FuelTank DamageCapacity="100">
+
+              </FuelTank>
+              <Axles>
+                                            <Axle Frame="BoneAxle1L" IsIndependent="true">
+
+                                            </Axle>
+                                            <Axle Frame="BoneAxle1R" IsIndependent="true">
+
+                                            </Axle>
+                                            <Axle Frame="BoneAxle2L" IsIndependent="true">
+
+                                            </Axle>
+                                            <Axle Frame="BoneAxle2R" IsIndependent="true">
+
+                                            </Axle>
+                                            <Axle Frame="BoneAxle3L" IsIndependent="true">
+
+                                            </Axle>
+                                            <Axle Frame="BoneAxle3R" IsIndependent="true">
+
+                                            </Axle>
+                                            <Axle Frame="BoneAxle4L" IsIndependent="true">
+
+                                            </Axle>
+                                            <Axle Frame="BoneAxle4R" IsIndependent="true">
+
+                                            </Axle>
+              </Axles>
+              <SoundsWheels _template="Default">
+
+              </SoundsWheels>
+              <SuspensionSocket Default="tatra_t813_suspension_default" MaxWheelRadiusWithoutSuspension="0.76" Type="s_tatra_t813">
+
+              </SuspensionSocket>
+                                              <CompatibleWheels Scale="0.64" RearOffsetZ="0.04" Type="wheels_tatra_t813">
+
+                                              </CompatibleWheels>
+                                              <CompatibleWheels Scale="0.64" RearOffsetZ="0.04" Type="wheels_heavy_single">
+
+                                              </CompatibleWheels>
+              <Dashboard>
+                                                    <Gauge Mesh="trucks/arrows/tatra_t813_arrows_1" Org="(3.614; 1.976; 0.861)" OutputAngles="(-90; 42)" InputType="engineEnabled" Dir="(-0.771; 0.637; 0)" InputRange="(0;1)" Damping="0.99">
+
+                                                    </Gauge>
+                                                    <Gauge Mesh="trucks/arrows/tatra_t813_arrows_2" Org="(3.63; 2.003; 0.735)" OutputAngles="(72; 252)" InputType="rpm" Dir="(-0.761; 0.648; -0.018)" InputRange="(0;1)" Damping="0.99">
+
+                                                    </Gauge>
+                                                    <Gauge Mesh="trucks/arrows/tatra_t813_arrows_3" Org="(3.585; 1.945; 0.735)" OutputAngles="(-142; -20)" InputType="engineEnabled" Dir="(-0.759; 0.651; 0)" InputRange="(0;1)" Damping="0.99">
+
+                                                    </Gauge>
+                                                    <Gauge Org="(3.613; 1.977; 0.609)" OutputAngles="(-121; 119)" Mesh="trucks/arrows/tatra_t813_arrows_4" InputRange="(0;90)" Dir="(-0.762; 0.647; -0.001)" InputType="speed">
+
+                                                    </Gauge>
+                                                    <Gauge Mesh="trucks/arrows/tatra_t813_arrows_5" Org="(3.613; 1.977; 0.85)" OutputAngles="(-96; -77)" InputType="engineEnabled" Dir="(-0.771; 0.637; -0.001)" InputRange="(0;1)" Damping="0.99">
+
+                                                    </Gauge>
+                                                    <Gauge Mesh="trucks/arrows/tatra_t813_arrows_5" Org="(3.612; 1.976; 0.871)" OutputAngles="(67; 81)" InputType="engineEnabled" Dir="(-0.771; 0.637; 0.001)" InputRange="(0;1)" Damping="0.99">
+
+                                                    </Gauge>
+                                                    <Gauge Mesh="trucks/arrows/tatra_t813_arrows_5" Org="(3.621; 1.986; 0.861)" OutputAngles="(165; 176)" InputType="engineEnabled" Dir="(-0.771; 0.637; 0)" InputRange="(0;1)" Damping="0.99">
+
+                                                    </Gauge>
+                                                    <Gauge Mesh="trucks/arrows/tatra_t813_arrows_5" Org="(3.606; 1.969; 0.861)" OutputAngles="(-15; 14)" InputType="fuel" Dir="(-0.771; 0.637; 0)" InputRange="(0;1)" Damping="0.99">
+
+                                                    </Gauge>
+              </Dashboard>
+              <Sounds _template="Default" DisableReversePitch="true" MinDist="15.0" Origin="(0.76; 1.2; 0)">
+                                                    <EngineHigh Sound="trucks/tatra_813/tatra_813_high">
+
+                                                    </EngineHigh>
+                                                    <ChassisStress Sound="trucks/common/truck_stress_rnd_set/truck_stress_rnd">
+
+                                                    </ChassisStress>
+                                                    <HandbrakeOff Sound="trucks/tatra_813/tatra_813_handbrake_off">
+
+                                                    </HandbrakeOff>
+                                                    <BrakesSqueal Sound="trucks/tatra_813/tatra_813_brakes_squeal">
+
+                                                    </BrakesSqueal>
+                                                    <EngineStart Sound="trucks/tatra_813/tatra_813_start">
+
+                                                    </EngineStart>
+                                                    <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
+
+                                                    </AbruptStop>
+                                                    <EngineLow_2d IsSound2D="true" Sound="trucks/tatra_813/tatra_813_low_2d">
+
+                                                    </EngineLow_2d>
+                                                    <EngineHeavy_2d IsSound2D="true" Sound="trucks/tatra_813/tatra_813_heavy_2d">
+
+                                                    </EngineHeavy_2d>
+                                                    <EngineHeavy Sound="trucks/tatra_813/tatra_813_heavy">
+
+                                                    </EngineHeavy>
+                                                    <BrakeRelease Sound="trucks/tatra_813/tatra_813_brake_release">
+
+                                                    </BrakeRelease>
+                                                    <EngineHigh_2d IsSound2D="true" Sound="trucks/tatra_813/tatra_813_high_2d">
+
+                                                    </EngineHigh_2d>
+                                                    <EngineLow Sound="trucks/tatra_813/tatra_813_low">
+
+                                                    </EngineLow>
+                                                    <EngineIdle_2d IsSound2D="true" Sound="trucks/tatra_813/tatra_813_idle_2d">
+
+                                                    </EngineIdle_2d>
+                                                    <EngineStop Sound="trucks/tatra_813/tatra_813_stop">
+
+                                                    </EngineStop>
+                                                    <EngineIdle Sound="trucks/tatra_813/tatra_813_idle">
+
+                                                    </EngineIdle>
+                                                    <Reverse Sound="trucks/tatra_813/tatra_813_back_beeper">
+
+                                                    </Reverse>
+                                                    <Honk Sound="trucks/tatra_813/tatra_813_honk">
+
+                                                    </Honk>
+                                                    <EngineRev Sound="trucks/tatra_813/tatra_813_rev">
+
+                                                    </EngineRev>
+                                                    <EngineAccel Sound="trucks/tatra_813/tatra_813_acc">
+
+                                                    </EngineAccel>
+                                                    <Handbrake Sound="trucks/tatra_813/tatra_813_handbrake_on">
+
+                                                    </Handbrake>
+              </Sounds>
+              <Driver Pos="(2.907; 1.708; 0.672)" AnimationSet="HeavyTruck" SteeringWheelPos="(3.293; 2.053; 0.722)">
+
+              </Driver>
+                                                      <Steam Origin="(-0.198; 1.683; 0)">
+
+                                                      </Steam>
+                                                      <Steam Scale="0.5" Origin="(1.465; 1.083; 0)">
+
+                                                      </Steam>
+                                                        <SteeringRack FrameSteerRight="BoneAxle1Rack_R" Frame="BoneRack1" FrameSteerLeft="BoneAxle1Rack_L" RackHalfSizeZ="0.895">
+
+                                                        </SteeringRack>
+                                                        <SteeringRack FrameSteerRight="BoneAxle2Rack_R" Frame="BoneRack2" FrameSteerLeft="BoneAxle2Rack_L" RackHalfSizeZ="0.895">
+
+                                                        </SteeringRack>
+              <OcclusionMap MaxX="4.6" HalfSizeZ="2.6" MinX="-4.2">
+
+              </OcclusionMap>
+      </TruckData>
+      <ModelAttachments>
+                <StopSignals>
+                    <Light Pos="(-4.597; 0.863; 0)" _template="StopSignal">
+
+                    </Light>
+                        <Flare Size="0.2" Pos="(-3.975; 1.060; -1.089)" Color="g(255; 0; 0) x 0.7" _template="StopSignal">
+
+                        </Flare>
+                        <Flare Size="0.2" Pos="(-3.975; 1.060; 1.089)" Color="g(255; 0; 0) x 0.7" _template="StopSignal">
+
+                        </Flare>
+                </StopSignals>
+                <Ignition>
+                      <Light Pos="(-4.597; 0.863; 0)" _template="IgnitionSignalRed" Color="g(255; 0; 0)x 0.3">
+
+                      </Light>
+                          <Flare Size="0.2" Pos="(4.015; 1.54; -0.978)" Color="g(255; 140; 0) x 0.6" _template="IgnitionSignalOrange">
+
+                          </Flare>
+                          <Flare Size="0.2" Pos="(4.015; 1.54; 0.978)" Color="g(255; 140; 0) x 0.6" _template="IgnitionSignalOrange">
+
+                          </Flare>
+                          <Flare Size="0.2" Pos="(2.441; 1.67; -1.177)" Color="g(255; 140; 0) x 0.6" _template="IgnitionSignalOrange">
+
+                          </Flare>
+                          <Flare Size="0.2" Pos="(2.441; 1.67; 1.177)" Color="g(255; 140; 0) x 0.6" _template="IgnitionSignalOrange">
+
+                          </Flare>
+                          <Flare Size="0.2" _template="IgnitionSignalRed" Pos="(-3.975; 1.060; -1.089)">
+
+                          </Flare>
+                          <Flare Size="0.2" _template="IgnitionSignalRed" Pos="(-3.975; 1.060; 1.089)">
+
+                          </Flare>
+                </Ignition>
+                <ReverseSignals>
+                        <Light Pos="(-4.469; 0.899; 1.058)" InnerCone="90" OuterCone="120" Color="g(255; 230; 215) x 2" _template="ReverseSignal">
+
+                        </Light>
+                            <Flare Size="0.2" Dir="(-1; 0; 0)" Pos="(-3.962; 1.301; 1.058)" _template="ReverseSignal">
+
+                            </Flare>
+                            <Flare Size="0.6" Dir="(-1; 0; 0)" Pos="(-3.962; 1.301; 1.058)" _template="IgnitionSignalWhite">
+
+                            </Flare>
+                            <Flare Pos="(-3.984; 1.301; 1.058)" Size="0.4" Dir="(-1; 0; 0)" Color="g(220; 220; 255) x 0.05" _template="BlueStreak">
+
+                            </Flare>
+                </ReverseSignals>
+      </ModelAttachments>
+      <HeadLight Pos="(4.541; 1.196; 0)" _template="Default">
+
+      </HeadLight>
+      <GameData Price="177100" ExcludeAddons="trailer_log_pole" UnlockByExploration="false" UnlockByRank="1" Country="RU,CAS">
+                      <CraneSocket Pos="(4.091; 1.175; -0.499)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(4.091; 1.175; 0.499)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.839; 1.079; -0.509)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.839; 1.079; 0.509)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-4.309; 0.929; 0)">
+
+                      </CraneSocket>
+                    <UiDesc UiIcon30x30="heavyVehicleImg30" UiName="UI_VEHICLE_TATRA_T813_NAME" UiIcon328x458="shopImgTatra813" UiIconLogo="TatraLogo80" UiDesc="UI_VEHICLE_TATRA_T813_DESC" UiIcon40x40="heavyVehicleImg">
+
+                    </UiDesc>
+                          <AddonSockets>
+                              <Socket Offset="(-4.309; 0.929; 0)" Names="Trailer">
+
+                              </Socket>
+                              <Socket Offset="(-2.136; 1.649; 0)" Names="LargeSemitrailer, LargeSemitrailerOiltank">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                              <Socket ParentFrame="BoneAddonAttachment_cdt" Offset="(0; 0; 0)" Names="TatraT813Sideboard">
+
+                              </Socket>
+                              <Socket Offset="(-2.3; 1.08; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="Trailer, SaddleHigh, TatraT813ChassisWinch" Names="FrameAddonTow">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="TatraT813ChassisWinch">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="tatra_t813_chassis_winch" RequiredAddonIfNoConflicts="tatra_t813_chassis_winch">
+                            <Socket Offset="(-2.133; 1.184; 0)" NamesBlock="TatraT813ChassisWinch, TatraT813Sideboard, FrameAddonTowPlatform" Names="SaddleHigh">
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.06)">
+
+                                  </ExtraParent>
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.06)">
+
+                                  </ExtraParent>
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="tatra_t813_exhaust_default">
+                              <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="TatraT813ExhaustDefault">
+
+                              </Socket>
+                              <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="TatraT813Exhaust">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="tatra_t813_bumper_default">
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="TatraT813Bumper">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="TatraT813Airfilter">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="TatraT813Beacon">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="TatraT813Gabarite">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                              <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="TatraT813Horn1">
+
+                              </Socket>
+                              <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="TatraT813Horn2">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="tatra_t813_spotlight_default">
+                            <Socket Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="TatraT813Horn1, TatraT813Spotlight, TatraT813Beacon" Names="TatraT813RooftopTrunk">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="TatraT813Spotlight">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="StuffDashboard" Offset="(3.871; 2.012; 0.379)" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="StuffAirfreshener" Offset="(3.751; 2.676; 0.374)" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="TatraT813Sticker_Door_R" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="TatraT813Sticker_Door_L" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="TatraT813Sticker_GlassTop" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="TatraT813Sticker_GlassBottom" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="tatraT813Sticker_1x1_01" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="tatraT813Sticker_1x1_02" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="tatraT813Sticker_1x1_03" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="tatraT813Sticker_1x2_01" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="tatraT813Sticker_1x2_02" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="tatraT813Sticker_1x4_01" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="tatra_t813_diff_lock_default">
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="Tatra813TDiffLock">
+
+                            </Socket>
+                          </AddonSockets>
+                    <CustomizationCameras>
+                                <CameraPos Interior="true" Position="(5.976; 2.505; -0.574)" Name="sticker_1" InterestPosition="(8.177; 1.082; 3.488)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-7.274; 4.273; 9.012)" MaxXRotation="360" Name="addon_1" InterestPosition="(2.608; 1.692; -0.304)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(9.628; 4.331; 1.437)" MaxXRotation="360" Name="addon_2" InterestPosition="(3.917; 2.341; -1.149)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(5.714; 2.370; -0.507)" Name="mirror_mount" InterestPosition="(8.439; 2.177; 0.671)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(0.375; 2.349; -5.941)" MaxXRotation="360" Name="side_r" InterestPosition="(4.38; 1.459; 1.201)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(9.918; 2.816; -1.653)" MaxXRotation="360" Name="hood_ornament" InterestPosition="(6.727; 2.16; -0.851)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(5.69; 2.717; -0.795)" Name="sticker" InterestPosition="(7.9; 0.42; 2.478)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(2.991; 2.459; 4.731)" MaxXRotation="360" Name="door_r_sticker" InterestPosition="(9.181; 1.158; -0.683)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(12.239; 3.484; 2.419)" MaxXRotation="360" Name="roof" InterestPosition="(7.013; 1.785; -0.523)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Position="(11.526; 2.689; 1.541)" Name="glass_sticker" InterestPosition="(6.954; 1.622; -0.849)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(12.724; 2.120; -1.717)" MaxXRotation="360" Name="hoods" InterestPosition="(5.461; 1.397; -0.216)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(6.297; 2.323; -0.935)" Name="sticker_2" InterestPosition="(6.272; 2.277; 2.389)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-0.335; 4.157; 4.161)" MaxXRotation="360" Name="side_l" InterestPosition="(6.409; 1.497; -0.536)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(5.858; 2.511; -0.736)" Name="bubble_head" InterestPosition="(9.063; 1.381; 1.023)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(8.844; 0.97; -4.882)" MaxXRotation="360" Name="wheels" InterestPosition="(4.136; 0.634; 0.126)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(13.641; 2.738; -4.536)" MaxXRotation="360" Name="default" InterestPosition="(5.197; 1.735; -0.23)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-5.767; 1.805; 2.899)" MaxXRotation="360" Name="rear" InterestPosition="(0.479; 0.992; -0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Position="(3.501; 2.725; -5.13)" Name="door_l_sticker" InterestPosition="(5.89; 1.697; -0.956)" FOV="32.0">
+
+                                </CameraPos>
+                    </CustomizationCameras>
+                              <WinchSocket Pos="(4.091; 1.175; -0.499)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(4.091; 1.175; 0.499)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-0.839; 1.079; -0.509)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-0.839; 1.079; 0.509)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-4.309; 0.929; 0)">
+
+                              </WinchSocket>
+      </GameData>
+      <Landmark MaxScale="2.8" MinScale="1.8" Mesh="landmarks/tatra_t813_lmk">
+
+      </Landmark>
+      <MainHeadLight _template="Multiply1">
+
+      </MainHeadLight>
+      <AutomaticIK>
+                            <IKBone ModelFrame="BoneRack1_R_IK1" ParentFrame="BoneTieRod1_cdt">
+                              <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+
+                              </IKJoint>
+                              <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneRack1_R_IK2" AttachToFrame="BoneAxle1Rack_R">
+                                    <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                    </IKJoint>
+                              </IKBone>
+                            </IKBone>
+                            <IKBone ModelFrame="BoneRack1_L_IK1" ParentFrame="BoneTieRod1_cdt">
+                              <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+
+                              </IKJoint>
+                              <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneRack1_L_IK2" AttachToFrame="BoneAxle1Rack_L">
+                                    <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                    </IKJoint>
+                              </IKBone>
+                            </IKBone>
+                            <IKBone ModelFrame="BoneRackLinkIK1" ParentFrame="BoneTieRod1_cdt">
+                              <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+
+                              </IKJoint>
+                              <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneRackLinkIK2" AttachToFrame="BoneTieRod2_cdt">
+                                    <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                    </IKJoint>
+                              </IKBone>
+                            </IKBone>
+                            <IKBone ModelFrame="BoneRack2_L_IK1" ParentFrame="BoneTieRod2_cdt">
+                              <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+
+                              </IKJoint>
+                              <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneRack2_L_IK2" AttachToFrame="BoneAxle2Rack_L">
+                                    <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                    </IKJoint>
+                              </IKBone>
+                            </IKBone>
+                            <IKBone ModelFrame="BoneRack2_R_IK1" ParentFrame="BoneTieRod2_cdt">
+                              <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+
+                              </IKJoint>
+                              <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneRack2_R_IK2" AttachToFrame="BoneAxle2Rack_R">
+                                    <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                    </IKJoint>
+                              </IKBone>
+                            </IKBone>
+                            <IKBone ModelFrame="BoneAxle1L_IK_A" ParentFrame="BoneChassis_cdt">
+                              <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                              </IKJoint>
+                              <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneAxle1L_IK_B" AttachToFrame="BoneAxle1L">
+                                    <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                                    </IKJoint>
+                              </IKBone>
+                            </IKBone>
+                            <IKBone ModelFrame="BoneAxle1R_IK_A" ParentFrame="BoneChassis_cdt">
+                              <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                              </IKJoint>
+                              <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneAxle1R_IK_B" AttachToFrame="BoneAxle1R">
+                                    <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                                    </IKJoint>
+                              </IKBone>
+                            </IKBone>
+                            <IKBone ModelFrame="BoneAxle2L_IK_A" ParentFrame="BoneChassis_cdt">
+                              <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                              </IKJoint>
+                              <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneAxle2L_IK_B" AttachToFrame="BoneAxle2L">
+                                    <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                                    </IKJoint>
+                              </IKBone>
+                            </IKBone>
+                            <IKBone ModelFrame="BoneAxle2R_IK_A" ParentFrame="BoneChassis_cdt">
+                              <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                              </IKJoint>
+                              <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneAxle2R_IK_B" AttachToFrame="BoneAxle2R">
+                                    <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                                    </IKJoint>
+                              </IKBone>
+                            </IKBone>
+                            <IKBone ModelFrame="BoneAxle3L_IK_A" ParentFrame="BoneChassis_cdt">
+                              <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                              </IKJoint>
+                              <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneAxle3L_IK_B" AttachToFrame="BoneAxle3L">
+                                    <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                                    </IKJoint>
+                              </IKBone>
+                            </IKBone>
+                            <IKBone ModelFrame="BoneAxle3R_IK_A" ParentFrame="BoneChassis_cdt">
+                              <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                              </IKJoint>
+                              <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneAxle3R_IK_B" AttachToFrame="BoneAxle3R">
+                                    <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                                    </IKJoint>
+                              </IKBone>
+                            </IKBone>
+                            <IKBone ModelFrame="BoneAxle4L_IK_A" ParentFrame="BoneChassis_cdt">
+                              <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                              </IKJoint>
+                              <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneAxle4L_IK_B" AttachToFrame="BoneAxle4L">
+                                    <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                                    </IKJoint>
+                              </IKBone>
+                            </IKBone>
+                            <IKBone ModelFrame="BoneAxle4R_IK_A" ParentFrame="BoneChassis_cdt">
+                              <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                              </IKJoint>
+                              <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneAxle4R_IK_B" AttachToFrame="BoneAxle4R">
+                                    <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge">
+
+                                    </IKJoint>
+                              </IKBone>
+                            </IKBone>
+      </AutomaticIK>
+  </Truck>
+  <_templates Include="trucks">
+        <Wheel>
+            <RearAxle CamberAnglePhysics="0" Torque="default" CamberSuspensionMultiplier="1.8" CamberAngleRender="5" Location="rear" ConnectedToHandbrake="true">
+
+            </RearAxle>
+            <FirstAxle SteeringJointOffset="0.3" Location="front" CamberSuspensionMultiplier="1.8" Torque="full" CamberAnglePhysics="0" SteeringCastor="12" CamberAngleRender="9" SteeringAngle="24">
+
+            </FirstAxle>
+            <SecondAxle SteeringJointOffset="0.3" SteeringCastor="4" _template="FirstAxle" SteeringAngle="18">
+
+            </SecondAxle>
+        </Wheel>
+        <Body>
+              <SideMirror Mass="5" Collisions="None">
+                  <Constraint AxisLocal="(0; 0; 1)" MaxLimit="1" MinLimit="-1" Type="Hinge">
+                      <Motor Type="Spring" Spring="250" Damping="7.5">
+
+                      </Motor>
+                  </Constraint>
+              </SideMirror>
+              <SunShield Mass="1" Collisions="None">
+                    <Constraint AxisLocal="(0; 0; 1)" MaxLimit="5" MinLimit="-5" Type="Hinge">
+                        <Motor Type="Spring" Spring="18" Damping="0.25">
+
+                        </Motor>
+                    </Constraint>
+              </SunShield>
+        </Body>
+  </_templates>

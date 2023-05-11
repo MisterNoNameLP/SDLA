@@ -1,0 +1,660 @@
+  <Truck>
+      <ControlledConstraints>
+          <Constraint Name="TieRodSteer" IsLinkedSteering="true" Id="chassis_steer">
+
+          </Constraint>
+      </ControlledConstraints>
+      <PhysicsModel Mesh="trucks/ank_mk38_ht">
+            <NetSync Legacy="false">
+
+            </NetSync>
+            <Body ModelFrame="BoneChassis_cdt" ImpactType="Truck" Mass="5800" NetSync="pv" CenterOfMassOffset="(-0.3; 0; 0)">
+                  <Body ModelFrame="BoneCabin_cdt" ImpactType="Truck" Mass="4000" NetSync="pv" CenterOfMassOffset="(0.45; -0; 0)">
+                      <Constraint AxisLocal="(1; 0; 0)" MaxLimit="32" MinLimit="-32" PivotOffset="(0; 0; 0)" Type="Hinge">
+                          <Motor Type="Spring" Spring="500000" Damping="20000">
+
+                          </Motor>
+                      </Constraint>
+                          <Body ModelFrame="BoneMirrorLeft_cdt" _template="Mirror">
+
+                          </Body>
+                          <Body Mass="4.8" _template="Mirror" ModelFrame="BoneMirrorRight_cdt">
+
+                          </Body>
+                          <Body ModelFrame="BoneTieRod_cdt" _template="TieRod">
+                            <Constraint AxisLocal="(0; 0; 1)" MaxLimit="25" Name="TieRodSteer" MinLimit="-25">
+
+                            </Constraint>
+                          </Body>
+                          <Body Mass="0.2" Collisions="None" ModelFrame="BoneKey1_cdt">
+                            <Constraint AxisLocal="(1; 0; 0)" MaxLimit="30" MinLimit="-30" PivotOffset="(0; 0; 0)" Type="Hinge">
+                                <Motor Type="Spring" Spring="0.001" Damping="0.001">
+
+                                </Motor>
+                            </Constraint>
+                          </Body>
+                          <Body Mass="0.5" Collisions="None" ModelFrame="BoneBelt1_cdt">
+                            <Constraint AxisLocal="(1; 0; 0)" MaxLimit="0.1" MinLimit="-0.03" PivotOffset="(0; 0; 0)" Type="Prismatic">
+                                <Motor Type="Spring" Spring="1" Damping="40">
+
+                                </Motor>
+                            </Constraint>
+                          </Body>
+                          <Body Mass="0.5" Collisions="None" ModelFrame="BoneBelt2_cdt">
+                            <Constraint AxisLocal="(0; 1; 0)" MaxLimit="20" MinLimit="-55" PivotOffset="(0; 0; 0)" Type="Hinge">
+                                <Motor Type="Spring" Spring=".001" Damping="1">
+
+                                </Motor>
+                            </Constraint>
+                          </Body>
+                  </Body>
+            </Body>
+      </PhysicsModel>
+      <TruckData BackSteerSpeed="0.025" DiffLockType="Always" EngineIconScale="1.35" TruckType="OFFROAD" FuelCapacity="200" EngineStartDelay="0.8" SteerSpeed="0.03" ExhaustStartTime="0.9" Responsiveness="0.3" TruckImage="ankmk38civilmchr" EngineIconMesh="env/engine_default">
+                <Steam Origin="(0.708; 1.235; 0)">
+
+                </Steam>
+                <Steam ParentFrame="BoneCabin_cdt" Scale="0.5" Origin="(2.464; 1.307; 0)">
+
+                </Steam>
+              <Intake Size="1" Dir="(1; 0; 0)" Origin="(3.474; 1.593; 0)">
+
+              </Intake>
+              <GearboxSocket Default="g_truck_default" Type="gearboxes_trucks">
+
+              </GearboxSocket>
+              <Wheels DefaultRim="rim_1" DefaultWheelType="wheels_medium_ank_mk38" DefaultTire="offroad_ank_nk38_1">
+                          <Wheel Pos="(2.502; 0.597; 0.957)" _template="FrontWheel">
+
+                          </Wheel>
+                          <Wheel Pos="(2.502; 0.597; 0.957)" _template="FrontWheel" RightSide="true">
+
+                          </Wheel>
+                          <Wheel Pos="(-2.03; 0.597; 0.957)" _template="RearWheel">
+
+                          </Wheel>
+                          <Wheel Pos="(-2.03; 0.597; 0.957)" _template="RearWheel" RightSide="true">
+
+                          </Wheel>
+                          <Wheel Pos="(-3.418; 0.597; 0.957)" _template="RearWheel">
+
+                          </Wheel>
+                          <Wheel Pos="(-3.418; 0.597; 0.957)" _template="RearWheel" RightSide="true">
+
+                          </Wheel>
+              </Wheels>
+              <WinchUpgradeSocket Default="w_medium_trucks_default" Type="winches_medium_trucks" IsUpgradable="true">
+
+              </WinchUpgradeSocket>
+              <SteeringWheel Frame="BoneSteering">
+
+              </SteeringWheel>
+              <Damage>
+                                <DamageArea Max="(3.568; 2.115; 0.5)" ParentFrame="BoneCabin_cdt" Min="(1.455; 0.677; -0.5)" Type="Engine">
+
+                                </DamageArea>
+                                <DamageArea Max="(0.647; 1.198; 1.258)" ParentFrame="BoneChassis_cdt" Min="(-0.545; 0.566; -1.258)" Type="FuelTank">
+
+                                </DamageArea>
+              </Damage>
+                              <LimitedFluid Center="(0.015; 0.952; -0.851)" Type="Box" SizeX="1.106" SizeZ="0.609" SizeY="0.426">
+
+                              </LimitedFluid>
+                              <LimitedFluid Center="(0.015; 0.952; 0.851)" Type="Box" SizeX="1.106" SizeZ="0.609" SizeY="0.426">
+
+                              </LimitedFluid>
+              <EngineSocket Default="us_truck_old_heavy_engine_0" Type="e_us_truck_old_heavy">
+
+              </EngineSocket>
+              <SoundsDamage _template="Heavy">
+
+              </SoundsDamage>
+              <Camera Center="(-2.2; 0; 0)" ParentFrame="BoneCabin_cdt">
+                                      <Cockpit WindshieldShadingTexture="trucks/ank_mk38_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/ank_mk38_glass__d_a.tga" ViewPos="(0.933; 2.64; 0.596)" _template="Default">
+                                            <Mirror Pos="(1.593; 2.475; 1.434)" MeshFrame="mirror_left" FOVScale="2" Size="(0.22; 0.57)" ReflectionDir="(-0.921; 0; -0.391)" ClipDir="(-0.921; 0; -0.391)" ClipOffset="0.15">
+
+                                            </Mirror>
+                                            <Mirror ClipDir="(-0.888; 0.269; -0.372)" MeshFrame="mirror_left_convex" Size="(0.212; 0.212)" ClipOffset="0.1" FOVScale="2" Pos="(1.518; 2.106; 1.402)" ReflectionDir="(-0.888; 0.269; -0.372)" CurveAngle="10">
+
+                                            </Mirror>
+                                            <Mirror Pos="(1.593; 2.475; -1.434)" MeshFrame="mirror_right" FOVScale="2" Size="(0.22; 0.57)" ReflectionDir="(-0.819; 0; 0.574)" ClipDir="(-0.819; 0; 0.574)" ClipOffset="0.1">
+                                              <SecondaryView Pos="(1.534; 2.091; -1.394)" MeshFrame="mirror_right_convex" FOVScale="2" Size="(0.212; 0.212)" CurveAngle="10" ClipDir="(-0.819; 0; 0.574)" ClipOffset="0.1">
+
+                                              </SecondaryView>
+                                            </Mirror>
+                                      </Cockpit>
+              </Camera>
+              <Shafts>
+                                          <Shaft SocketPointA="ShaftWheel2WheelA" SocketPointB="ShaftWheel2WheelB">
+
+                                          </Shaft>
+                                          <Shaft SocketPointA="ShaftEngine" SocketPointB="ShaftBoxEngine">
+
+                                          </Shaft>
+                                          <Shaft SocketPointA="ShaftBoxFrontWheel" SocketPointB="ShaftFrontWheel">
+
+                                          </Shaft>
+                                          <Shaft SocketPointA="ShaftBoxRearWheel" SocketPointB="ShaftRearWheel">
+
+                                          </Shaft>
+              </Shafts>
+              <FuelTank DamageCapacity="50">
+
+              </FuelTank>
+              <SoundsWheels _template="Default">
+
+              </SoundsWheels>
+              <SuspensionSocket Default="ank_mk38_ht_suspension_default" MaxWheelRadiusWithoutSuspension="0.45" Type="s_ank_mk38_ht">
+
+              </SuspensionSocket>
+              <Axles>
+                                                  <Axle Frame="BoneAxle1">
+
+                                                  </Axle>
+                                                  <Axle Frame="BoneAxle2">
+
+                                                  </Axle>
+                                                  <Axle Frame="BoneAxle3">
+
+                                                  </Axle>
+              </Axles>
+                                                <CompatibleWheels Scale="0.6" Type="wheels_medium_ank_mk38">
+
+                                                </CompatibleWheels>
+                                                <CompatibleWheels Scale="0.6" RearOffsetZ="-0.04" Type="wheels_medium_double">
+
+                                                </CompatibleWheels>
+                                                <CompatibleWheels Scale="0.65" Type="wheels_medium_ank_mk38">
+
+                                                </CompatibleWheels>
+                                                <CompatibleWheels Scale="0.65" RearOffsetZ="-.01" Type="wheels_medium_double">
+
+                                                </CompatibleWheels>
+                                                <CompatibleWheels OffsetZ=".05" Scale="0.65" RearOffsetZ=".08" Type="wheels_medium_mudtires_ankmk38">
+
+                                                </CompatibleWheels>
+              <Sounds DisableReversePitch="false" ParentFrame="BoneCabin_cdt" MinDist="15.0" AirHissInterval="12.0" _template="Default" Origin="(2.5; 1.64; 0)">
+                                                    <BrakePull Sound="trucks/ank_mk38/ank_mk38_brake_pull">
+
+                                                    </BrakePull>
+                                                    <EngineHigh Sound="trucks/ank_mk38/ank_mk38_high">
+
+                                                    </EngineHigh>
+                                                    <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
+
+                                                    </AbruptStop>
+                                                    <GearFail Sound="trucks/common/truck_gear_wrong/truck_gear_wrong_big_old">
+
+                                                    </GearFail>
+                                                    <HandbrakeOff Sound="trucks/ank_mk38/ank_mk38_handbrake_off">
+
+                                                    </HandbrakeOff>
+                                                    <Honk Sound="trucks/ank_mk38/ank_mk38_honk">
+
+                                                    </Honk>
+                                                    <EngineStart Sound="trucks/ank_mk38/ank_mk38_start">
+
+                                                    </EngineStart>
+                                                    <EngineTurbo Sound="">
+
+                                                    </EngineTurbo>
+                                                    <Reverse Sound="trucks/ank_mk38/ank_mk38_reverse">
+
+                                                    </Reverse>
+                                                    <EngineHeavy_2d IsSound2D="true" Sound="">
+
+                                                    </EngineHeavy_2d>
+                                                    <EngineHeavy Sound="">
+
+                                                    </EngineHeavy>
+                                                    <EngineLow_2d IsSound2D="true" Sound="trucks/ank_mk38/ank_mk38_low_2d">
+
+                                                    </EngineLow_2d>
+                                                    <EngineHigh_2d IsSound2D="true" Sound="trucks/ank_mk38/ank_mk38_high_2d">
+
+                                                    </EngineHigh_2d>
+                                                    <EngineLow Sound="trucks/ank_mk38/ank_mk38_low">
+
+                                                    </EngineLow>
+                                                    <EngineIdle_2d IsSound2D="true" Sound="trucks/ank_mk38/ank_mk38_idle_2d">
+
+                                                    </EngineIdle_2d>
+                                                    <EngineStop Sound="trucks/ank_mk38/ank_mk38_stop">
+
+                                                    </EngineStop>
+                                                    <EngineIdle Sound="trucks/ank_mk38/ank_mk38_idle">
+
+                                                    </EngineIdle>
+                                                    <EngineRev Sound="trucks/ank_mk38/ank_mk38_rev">
+
+                                                    </EngineRev>
+                                                    <Handbrake Sound="trucks/ank_mk38/ank_mk38_handbrake_on">
+
+                                                    </Handbrake>
+                                                    <BrakeRelease Sound="trucks/ank_mk38/ank_mk38_brake_release">
+
+                                                    </BrakeRelease>
+                                                    <EngineAccel Sound="trucks/ank_mk38/ank_mk38_acc">
+
+                                                    </EngineAccel>
+                                                    <BrakesSqueal Sound="trucks/ank_mk38/ank_mk38_brakes_squeal">
+
+                                                    </BrakesSqueal>
+              </Sounds>
+              <Driver SteeringWheelPos="(1.494; 2.211; 0.602)" Pos="(1.111; 1.883; 0.603)" ParentFrame="BoneCabin_cdt" AnimationSet="Truck">
+
+              </Driver>
+              <Dashboard>
+                                                          <Gauge Mesh="trucks/arrows/ank_mk38_arrow_01" Org="(1.731; 2.072; 0.249)" OutputAngles="(-152; 152)" InputType="rpm" Dir="(-0.998; 0; 0.067)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/ank_mk38_arrow_01" Org="(1.721; 2.072; 0.109)" OutputAngles="(-122; 122)" InputType="speed" Dir="(-0.998; 0; 0.067)" InputRange="(0;160)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/ank_mk38_arrow_04" Org="(1.715; 2.053; -0.002)" OutputAngles="(-29; -20)" InputType="engineEnabled" Dir="(-0.998; 0; 0.067)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/ank_mk38_arrow_03" Org="(1.709; 2.073; -0.084)" OutputAngles="(-132; -50)" InputType="engineEnabled" Dir="(-0.998; 0; 0.066)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/ank_mk38_arrow_02" Org="(1.73; 1.944; 0.224)" OutputAngles="(-33; 33)" InputType="fuel" Dir="(-0.998; 0; 0.066)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/ank_mk38_arrow_02" Org="(1.724; 1.944; 0.135)" OutputAngles="(-32; 5)" InputType="engineEnabled" Dir="(-0.998; 0; 0.067)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/ank_mk38_arrow_02" Org="(1.714; 1.944; -0.002)" OutputAngles="(-28; -20)" InputType="engineEnabled" Dir="(-0.998; 0; 0.067)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/ank_mk38_arrow_03" Org="(1.709; 1.963; -0.084)" OutputAngles="(-132; -35)" InputType="engineEnabled" Dir="(-0.998; 0; 0.067)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/ank_mk38_arrow_04" Org="(1.703; 1.943; -0.167)" OutputAngles="(-29; -3)" InputType="engineEnabled" Dir="(-0.998; 0; 0.067)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+              </Dashboard>
+              <SteeringRack FrameSteerRight="BoneRackRight" Frame="BoneRack" FrameSteerLeft="BoneRackLeft" RackHalfSizeZ="0.68">
+
+              </SteeringRack>
+              <OcclusionMap MaxX="4.1" HalfSizeZ="1.7" MinX="-5">
+
+              </OcclusionMap>
+      </TruckData>
+      <ModelAttachments>
+                <HeadLight>
+                      <Model _template="HeadLightRay" Org="(3.48; 1.783; -0.681)" ParentFrame="BoneCabin_cdt">
+
+                      </Model>
+                      <Model _template="HeadLightRay" Org="(3.48; 1.783; 0.681)" ParentFrame="BoneCabin_cdt">
+
+                      </Model>
+                        <Flare ParentFrame="BoneCabin_cdt" Size=".3" Pos="(3.48; 1.783; -0.681)" Color="g(255; 235; 200) x 0.1" _template="HeadLight">
+
+                        </Flare>
+                        <Flare ParentFrame="BoneCabin_cdt" Size=".3" Pos="(3.48; 1.783; 0.681)" Color="g(255; 235; 200) x 0.1" _template="HeadLight">
+
+                        </Flare>
+                        <Flare Pos="(3.48; 1.783; -0.681)" _template="BlueStreak" ParentFrame="BoneCabin_cdt">
+
+                        </Flare>
+                        <Flare Pos="(3.48; 1.783; 0.681)" _template="BlueStreak" ParentFrame="BoneCabin_cdt">
+
+                        </Flare>
+                </HeadLight>
+                <StopSignals>
+                        <Light Pos="(-5.055; 0.921; -0.252)" _template="StopSignal">
+
+                        </Light>
+                        <Light Pos="(-5.055; 0.921; 0.252)" _template="StopSignal">
+
+                        </Light>
+                          <Flare Pos="(-5.055; 0.921; -0.252)" _template="StopSignal">
+
+                          </Flare>
+                          <Flare Pos="(-5.055; 0.921; 0.252)" _template="StopSignal">
+
+                          </Flare>
+                </StopSignals>
+                <Ignition>
+                          <Light Pos="(4.48; 1.783; -0.681)" _template="IgnitionSignalWhite" ParentFrame="BoneCabin_cdt">
+
+                          </Light>
+                          <Light Pos="(4.48; 1.783; 0.681)" _template="IgnitionSignalWhite" ParentFrame="BoneCabin_cdt">
+
+                          </Light>
+                          <Light Pos="(-4.599; 0.804; 0)" _template="IgnitionSignalRed" Color="(102; 0; 0)">
+
+                          </Light>
+                            <Flare ParentFrame="BoneCabin_cdt" Size=".4" Pos="(3.48; 1.783; -0.681)" DirAngle="120" _template="IgnitionSignalWhite">
+
+                            </Flare>
+                            <Flare ParentFrame="BoneCabin_cdt" Size=".4" Pos="(3.48; 1.783; 0.681)" DirAngle="120" _template="IgnitionSignalWhite">
+
+                            </Flare>
+                            <Flare ParentFrame="BoneCabin_cdt" Size="0.1" Pos="(3.48; 1.783; -0.681)" DirAngle="20" _template="IgnitionSignalWhite">
+
+                            </Flare>
+                            <Flare ParentFrame="BoneCabin_cdt" Size="0.1" Pos="(3.48; 1.783; 0.681)" DirAngle="20" _template="IgnitionSignalWhite">
+
+                            </Flare>
+                            <Flare Size="0.15" _template="IgnitionSignalRed" Pos="(-5.055; 0.921; -0.252)">
+
+                            </Flare>
+                            <Flare Size="0.15" _template="IgnitionSignalRed" Pos="(-5.055; 0.921; 0.252)">
+
+                            </Flare>
+                </Ignition>
+      </ModelAttachments>
+      <HeadLight Pos="(5; 1.287; 0)" _template="Default" ParentFrame="BoneCabin_cdt">
+
+      </HeadLight>
+      <GameData Price="51100" Country="US" UnlockByExploration="false" ExcludeAddons="trailer_log_pole, ank_mk38_bumper_default" UnlockByRank="1">
+                      <CraneSocket Pos="(3.687; 1.24; -0.369)" ParentFrame="BoneCabin_cdt">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(3.687; 1.24; 0.369)" ParentFrame="BoneCabin_cdt">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-4.113; 0.92; 0)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.721; 1.09; -0.429)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.721; 1.09; 0.429)">
+
+                      </CraneSocket>
+                    <UiDesc UiIcon30x30="offroadVehicleImg30" UiName="UI_VEHICLE_ANK_MK38_CIVILIAN_NAME" UiIcon328x458="shopImgAnkMk38Civil" UiIconLogo="ANKLogo80" UiDesc="UI_VEHICLE_ANK_MK38_CIVILIAN_DESC" UiIcon40x40="offroadVehicleImg">
+
+                    </UiDesc>
+                          <AddonSockets>
+                              <Socket Offset="(-5.209; 0.919; 0)" Names="Trailer">
+
+                              </Socket>
+                              <Socket Offset="(-3.25; 1.61; 0)" Names="Semitrailer, SemitrailerOiltank">
+
+                              </Socket>
+                              <Socket Offset="(-2.65; 1.77; 0)" Names="LargeSemitrailer, LargeSemitrailerOiltank">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                              <Socket Offset="(-2.55; 1.325; 0)" Names="FrameAddonKung">
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.07)">
+
+                                  </ExtraParent>
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.07)">
+
+                                  </ExtraParent>
+                              </Socket>
+                              <Socket Offset="(-3.25; 1.239; 0)" Names="SaddleLow">
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.015)">
+
+                                  </ExtraParent>
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.015)">
+
+                                  </ExtraParent>
+                              </Socket>
+                              <Socket Offset="(-2.65; 1.239; 0)" Names="SaddleHigh">
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.078)">
+
+                                  </ExtraParent>
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.078)">
+
+                                  </ExtraParent>
+                              </Socket>
+                              <Socket Offset="(-3.18; 1.24; 0)" Names="FrameAddonTank">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(0; 0; 0)" Names="AnkMk38WheelAddon">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="ank_mk38_ht_bumper_default">
+                              <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="AnkMk38HTBumper">
+
+                              </Socket>
+                              <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="AnkMk38Bumper">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="ank_mk38_snorkel_default">
+                            <Socket _template="Cabin2Chassis" Names="AnkMk38Snorkel">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="ank_mk38_exhaust_default">
+                            <Socket _template="Cabin2Chassis" Names="AnkMk38Exhaust">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket _template="Cabin2Chassis" Names="AnkMk38Spotlight, AnkMk38SpotlightBeacon">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket _template="Cabin2Chassis" Names="AnkMk38Horn">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket _template="Cabin2Chassis" Names="AnkMk38Visor">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket _template="Cabin2Chassis" Names="AnkMk38Threshold">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                              <Socket _template="Cabin2Chassis" NamesBlock="AnkMk38SpotlightBeacon" Names="AnkMk38Beacon">
+
+                              </Socket>
+                              <Socket _template="Cabin2Chassis" Names="AnkMk38BeaconGabarite">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="AnkMk38Sticker_1x1_01" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="AnkMk38Sticker_1x1_02" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="AnkMk38Sticker_1x1_03" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="AnkMk38Sticker_1x2_01" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="AnkMk38Sticker_1x2_02" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="AnkMk38Sticker_1x2_03" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="ankMk38Sticker_GlassTop" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="ankMk38Sticker_GlassBottom" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket _template="Cabin2Chassis" Names="ankMk38Sticker_Door_L">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket _template="Cabin2Chassis" Names="ankMk38Sticker_Door_R">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket _template="Cabin2Chassis" Names="ankMk38Sticker_Roof">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket _template="Cabin2Chassis" Names="ankMk38Sticker_Capote">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(1.687; 2.809; 0.37)" Names="StuffAirfreshener" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket _template="Cabin2Chassis" Names="StuffHoodAnkMk38">
+
+                            </Socket>
+                          </AddonSockets>
+                    <CustomizationCameras>
+                                <CameraPos Interior="true" Position="(7.594; 5.647; -0.316)" Name="roof_sticker" InterestPosition="(4.762; 2.313; -0.836)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(5.06; 2.61; -0.399)" Name="sticker_1" InterestPosition="(7.339; 0.501; 1.623)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-9.259; 3.714; 6.213)" MaxXRotation="360" Name="addon_1" InterestPosition="(-0.508; 2.026; -0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-0.029; 4.180; 4.334)" MaxXRotation="360" Name="addon_2" InterestPosition="(3.496; 0.486; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(4.313; 2.692; -0.74)" Name="mirror_mount" InterestPosition="(7.736; 2.482; 1.569)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(5.699; 4.407; 7.15)" MaxXRotation="360" Name="side_r" InterestPosition="(4.951; 1.688; -0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(4.566; 2.549; -0.481)" Name="sticker" InterestPosition="(7.736; 3.705; 1.492)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(9.09; 3.435; 0.833)" Name="glass_sticker" InterestPosition="(5.545; 2.453; -0.766)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(3.678; 2.332; 3.282)" Name="door_r_sticker" InterestPosition="(6.401; 1.448; 0.399)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(9.203; 4.612; -2.065)" MaxXRotation="360" Name="roof" InterestPosition="(4.325; 2.619; -0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(9.545; 5.151; -0.658)" Name="capote_sticker" InterestPosition="(6.142; 1.148; -0.636)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(12.823; 1.44; -4.73)" MaxXRotation="360" Name="hoods" InterestPosition="(5.275; 1.623; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(5.221; 1.595; 0.03)" Name="sticker_2" InterestPosition="(6.662; 0.61; 1.935)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(8.611; 4.236; -4.112)" MaxXRotation="360" Name="side_l" InterestPosition="(3.808; 1.773; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(4.313; 2.692; -0.74)" Name="bubble_head" InterestPosition="(7.736; 2.482; 1.569)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-4.539; 1.488; -5.755)" MaxXRotation="360" Name="wheels" InterestPosition="(2.46; 1.133; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(12.823; 1.44; -4.73)" MaxXRotation="360" Name="default" InterestPosition="(5.275; 1.623; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-4.567; 1.393; 2.884)" MaxXRotation="360" Name="rear" InterestPosition="(0.016; 0.823; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(3.749; 2.326; -3.379)" Name="door_l_sticker" InterestPosition="(5.152; 1.373; 0.751)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(8.557; 2.563; -1.386)" Name="hood_ornament" InterestPosition="(7.506; 2.247; -1.386)" FOV="32.0">
+
+                                </CameraPos>
+                    </CustomizationCameras>
+                              <WinchSocket Pos="(3.687; 1.24; -0.369)" ParentFrame="BoneCabin_cdt">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(3.687; 1.24; 0.369)" ParentFrame="BoneCabin_cdt">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-5.159; 0.92; 0)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(0.211; 1.264; -1.357)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(0.211; 1.264; 1.357)">
+
+                              </WinchSocket>
+      </GameData>
+      <Landmark MaxScale="3.8" MinScale="1.8" Mesh="landmarks/ank_mk38_lmk">
+
+      </Landmark>
+      <AutomaticIK>
+                          <IKBone ModelFrame="BoneTieRodHinge2" ParentFrame="BoneTieRod_cdt">
+                            <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRodPrismatic" AttachToFrame="BoneRackLeft">
+                                  <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ModelFrame="BonePistonBaseHinge2" ParentFrame="BoneCabin_cdt">
+                            <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BonePistonPrismatic" AttachToFrame="BoneRackRight">
+                                  <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+      </AutomaticIK>
+  </Truck>
+  <_templates Include="trucks">
+        <Socket>
+            <Cabin2Chassis Offset="(0; 0; 0)" ParentFrame="BoneCabin_cdt">
+                <ExtraParent Frame="BoneChassis_cdt">
+
+                </ExtraParent>
+            </Cabin2Chassis>
+        </Socket>
+        <Wheel>
+              <FrontWheel ParentFrame="BoneCabin_cdt" SteeringCastor="19" Torque="default" Location="front" SteeringAngle="30">
+
+              </FrontWheel>
+              <RearWheel Torque="default" Location="rear" ConnectedToHandbrake="true">
+
+              </RearWheel>
+        </Wheel>
+        <Body>
+                <Mirror Mass="5" Collisions="None">
+                    <Constraint AxisLocal="(0; 1; 0)" MaxLimit="45" MinLimit="-45" Type="Hinge">
+                        <Motor Type="Spring" Spring="40" Damping="1">
+
+                        </Motor>
+                    </Constraint>
+                </Mirror>
+        </Body>
+  </_templates>

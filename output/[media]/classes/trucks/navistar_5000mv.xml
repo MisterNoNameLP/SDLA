@@ -1,0 +1,722 @@
+  <Truck>
+      <ControlledConstraints>
+            <Constraint Name="TieRodSteerR" IsLinkedSteering="true" Id="chassis_steer">
+
+            </Constraint>
+            <Constraint Name="TieRodSteerL" IsLinkedSteering="true" Id="chassis_steer">
+
+            </Constraint>
+      </ControlledConstraints>
+      <PhysicsModel Mesh="trucks/navistar_5000mv">
+            <NetSync Legacy="false">
+
+            </NetSync>
+            <Body ModelFrame="BoneChassis_cdt" ImpactType="Truck" Mass="7000" NetSync="pv" CenterOfMassOffset="(-0.5; 0; 0)">
+                  <Body ModelFrame="BoneCabin_cdt" ImpactType="Truck" Mass="7000" NetSync="pv" CenterOfMassOffset="(0.5; -0.5; 0)">
+                      <Constraint AxisLocal="(1; 0; 0)" MaxLimit="3" MinLimit="-3" Type="Hinge">
+                          <Motor Type="Spring" Spring="400000" Damping="10000">
+
+                          </Motor>
+                      </Constraint>
+                          <Body ModelFrame="BoneMirrorL_cdt" _template="Mirror">
+                            <Body ModelFrame="BoneAntenna_cdt" _template="Antenna">
+
+                            </Body>
+                          </Body>
+                          <Body Mass="4.8" _template="Mirror" ModelFrame="BoneMirrorR_cdt">
+
+                          </Body>
+                          <Body ModelFrame="BoneTieRodL_cdt" _template="TieRod">
+                            <Constraint AxisLocal="(0; 0; 1)" MaxLimit="25" Name="TieRodSteerR" MinLimit="-25">
+
+                            </Constraint>
+                          </Body>
+                          <Body ModelFrame="BoneTieRodR_cdt" _template="TieRod">
+                            <Constraint AxisLocal="(0; 0; 1)" MaxLimit="25" Name="TieRodSteerL" MinLimit="-25">
+
+                            </Constraint>
+                          </Body>
+                          <Body Mass="4" ImpactType="Truck" ModelFrame="BoneWire1_cdt">
+                            <Constraint AxisLocal="(0; 0; 1)" MaxLimit="50" MinLimit="-50" Type="Hinge">
+                                <Motor Type="Spring" Spring="1" Damping="0.02">
+
+                                </Motor>
+                            </Constraint>
+                            <Body Mass="0.2" Collisions="None" ModelFrame="BoneWire2_cdt">
+                                  <Constraint LinearLimitsX="(-.2;.2)" LinearLimitsZ="(0;0)" LinearLimitsY="(-.2;.1)" Type="Fixed">
+                                      <Motor Type="Spring" Spring="70" Damping="3">
+
+                                      </Motor>
+                                  </Constraint>
+                            </Body>
+                          </Body>
+                          <Body Mass="1" Collisions="None" ModelFrame="BoneCurtain_cdt">
+                            <Constraint LinearLimitsX="(-.2;.2)" LinearLimitsZ="(-.2;.2)" LinearLimitsY="(0;0)" Type="Fixed">
+                                <Motor Type="Spring" Spring="100" Damping="5">
+
+                                </Motor>
+                            </Constraint>
+                          </Body>
+                  </Body>
+            </Body>
+      </PhysicsModel>
+      <TruckData BackSteerSpeed="0.02" DiffLockType="Installed" EngineIconScale="1.4" TruckType="HEAVY" FuelCapacity="340" EngineStartDelay="3.2" SteerSpeed="0.025" ExhaustStartTime="2.8" Responsiveness="0.45" TruckImage="navistar5000mchr" EngineIconMesh="env/engine_default">
+                <Steam Origin="(-2.126; 1.048; 0)">
+
+                </Steam>
+                <Steam Origin="(1.243; 1.048; 0)">
+
+                </Steam>
+              <Intake Size="1" Dir="(1; 0; 0)" Origin="(2.07; 1.439; 0)">
+
+              </Intake>
+              <GearboxSocket Default="g_truck_default" Type="gearboxes_trucks">
+
+              </GearboxSocket>
+              <Wheels DefaultRim="rim_5" DefaultWheelType="wheels_heavy_double1" DefaultTire="highway_1">
+                          <Wheel Pos="(1.351; 0.546; 1.03)" _template="Front">
+
+                          </Wheel>
+                          <Wheel Pos="(1.351; 0.546; 1.03)" _template="Front" RightSide="true">
+
+                          </Wheel>
+                          <Wheel Pos="(-4.042; 0.546; 0.92)" _template="Rear">
+
+                          </Wheel>
+                          <Wheel Pos="(-4.042; 0.546; 0.92)" _template="Rear" RightSide="true">
+
+                          </Wheel>
+                          <Wheel Pos="(-5.451; 0.546; 0.92)" _template="Rear">
+
+                          </Wheel>
+                          <Wheel Pos="(-5.451; 0.546; 0.92)" _template="Rear" RightSide="true">
+
+                          </Wheel>
+              </Wheels>
+              <WinchUpgradeSocket Default="w_medium_trucks_default" Type="winches_medium_trucks" IsUpgradable="true">
+
+              </WinchUpgradeSocket>
+              <SteeringWheel Frame="BoneSteering">
+
+              </SteeringWheel>
+              <Damage>
+                                <DamageArea Max="(2.093; 2.076; 0.635)" ParentFrame="BoneCabin_cdt" Min="(0.026; 0.806; -0.635)" Type="Engine">
+
+                                </DamageArea>
+                                <DamageArea Max="(-0.78; 1.193; 1.173)" ParentFrame="BoneChassis_cdt" Min="(-2.636; 0.322; -1.173)" Type="FuelTank">
+
+                                </DamageArea>
+              </Damage>
+                              <LimitedFluid RadiusY="0.395" Center="(-1.493; 0.769; 0.8)" RadiusZ="0.369" LengthX="1.416" Type="Cylinder">
+
+                              </LimitedFluid>
+                              <LimitedFluid RadiusY="0.400" Center="(-1.863; 0.769; -0.775)" RadiusZ="0.394" LengthX="1.416" Type="Cylinder">
+
+                              </LimitedFluid>
+              <EngineSocket Default="us_truck_military_navistar_0" Type="e_us_truck_military_navistar">
+
+              </EngineSocket>
+              <SoundsDamage _template="Heavy">
+
+              </SoundsDamage>
+              <Camera Center="(-3.4; 0; 0)" ParentFrame="BoneCabin_cdt">
+                                      <Cockpit WindshieldShadingTexture="trucks/navistar_5000mv_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/navistar_5000mv_glass__d_a.tga" ViewPos="(-0.65; 2.572; 0.505)" _template="Default">
+                                            <Mirror ClipDir="(-0.883; 0; -0.469)" MeshFrame="mirror_left" Size="(0.18; 0.37)" ClipOffset="0.25" FOVScale="2" Pos="(-0.279; 2.519; 1.299)" ReflectionDir="(-0.883; 0; -0.469)" LookAtOffset="(0; 0; 0.05)">
+
+                                            </Mirror>
+                                            <Mirror Pos="(-0.28; 2.177; 1.26)" MeshFrame="mirror_left_convex" FOVScale="2" Size="(0.155; 0.155)" ReflectionDir="(-0.884; 0.18; -0.432)" ClipDir="(-0.884; 0.18; -0.432)" CurveAngle="10">
+
+                                            </Mirror>
+                                            <Mirror Pos="(-0.278; 2.519; -1.298)" MeshFrame="mirror_right" FOVScale="2" Size="(0.18; 0.37)" ReflectionDir="(-0.788; 0; 0.616)" ClipDir="(-0.788; 0; 0.616)" ClipOffset="0.3">
+                                              <SecondaryView MeshFrame="mirror_right_convex" Pos="(-0.276; 2.174; -1.261)" Size="(0.155; 0.155)" FOVScale="2" ClipDir="(-0.788; 0; 0.616)" CurveAngle="10">
+
+                                              </SecondaryView>
+                                            </Mirror>
+                                          <Rear ViewPosOffset="(0.1; -0.1; 0.7)">
+
+                                          </Rear>
+                                      </Cockpit>
+              </Camera>
+              <Shafts>
+                                          <Shaft SocketPointA="ShaftEngine" SocketPointB="ShaftBoxEngine">
+
+                                          </Shaft>
+                                          <Shaft SocketPointA="ShaftBoxFrontWheel" SocketPointB="ShaftFrontWheel">
+
+                                          </Shaft>
+                                          <Shaft SocketPointA="ShaftBoxRearWheel" SocketPointB="ShaftRearWheel">
+
+                                          </Shaft>
+                                          <Shaft SocketPointA="ShaftWheel2WheelA" SocketPointB="ShaftWheel2WheelB">
+
+                                          </Shaft>
+              </Shafts>
+              <FuelTank DamageCapacity="100">
+
+              </FuelTank>
+              <SoundsWheels _template="Default">
+
+              </SoundsWheels>
+              <SuspensionSocket Default="navistar_5000mv_suspension_default" MaxWheelRadiusWithoutSuspension="0.36" Type="s_navistar_5000mv">
+
+              </SuspensionSocket>
+              <Axles>
+                                                  <Axle Frame="BoneAxle1">
+
+                                                  </Axle>
+                                                  <Axle Frame="BoneAxle3">
+
+                                                  </Axle>
+                                                  <Axle Frame="BoneAxle4">
+
+                                                  </Axle>
+              </Axles>
+                                                <CompatibleWheels Scale="0.56" Type="wheels_heavy_double1">
+
+                                                </CompatibleWheels>
+                                                <CompatibleWheels Scale="0.56" Type="wheels_heavy_double2">
+
+                                                </CompatibleWheels>
+                                                <CompatibleWheels Scale="0.62" RearOffsetZ=".02" Type="wheels_heavy_double1">
+
+                                                </CompatibleWheels>
+                                                <CompatibleWheels Scale="0.62" Type="wheels_heavy_double2">
+
+                                                </CompatibleWheels>
+              <Sounds _template="Default" DisableReversePitch="false" MinDist="15.0" Origin="(0.962; 1.636; 0)">
+                                                    <BrakePull Sound="trucks/navistar_500mv/navistar_500mv_brake_pull">
+
+                                                    </BrakePull>
+                                                    <EngineHigh Sound="trucks/navistar_500mv/navistar_500mv_high">
+
+                                                    </EngineHigh>
+                                                    <ChassisStress Sound="trucks/common/truck_stress_rnd_set/truck_stress_rnd">
+
+                                                    </ChassisStress>
+                                                    <HandbrakeOff Sound="trucks/navistar_500mv/navistar_500mv_handbrake_off">
+
+                                                    </HandbrakeOff>
+                                                    <BrakesSqueal Sound="trucks/navistar_500mv/navistar_500mv_brakes_squeal">
+
+                                                    </BrakesSqueal>
+                                                    <EngineStart Sound="trucks/navistar_500mv/navistar_500mv_start">
+
+                                                    </EngineStart>
+                                                    <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
+
+                                                    </AbruptStop>
+                                                    <Reverse Sound="trucks/navistar_500mv/navistar_500mv_reverse">
+
+                                                    </Reverse>
+                                                    <EngineHeavy_2d IsSound2D="true" Sound="trucks/navistar_500mv/navistar_500mv_heavy_2d">
+
+                                                    </EngineHeavy_2d>
+                                                    <EngineHeavy Sound="trucks/navistar_500mv/navistar_500mv_heavy">
+
+                                                    </EngineHeavy>
+                                                    <EngineLow_2d IsSound2D="true" Sound="trucks/navistar_500mv/navistar_500mv_low_2d">
+
+                                                    </EngineLow_2d>
+                                                    <EngineHigh_2d IsSound2D="true" Sound="trucks/navistar_500mv/navistar_500mv_high_2d">
+
+                                                    </EngineHigh_2d>
+                                                    <EngineLow Sound="trucks/navistar_500mv/navistar_500mv_low">
+
+                                                    </EngineLow>
+                                                    <EngineIdle_2d IsSound2D="true" Sound="trucks/navistar_500mv/navistar_500mv_idle_2d">
+
+                                                    </EngineIdle_2d>
+                                                    <EngineStop Sound="trucks/navistar_500mv/navistar_500mv_stop">
+
+                                                    </EngineStop>
+                                                    <EngineIdle Sound="trucks/navistar_500mv/navistar_500mv_idle">
+
+                                                    </EngineIdle>
+                                                    <Honk Sound="trucks/navistar_500mv/navistar_500mv_honk">
+
+                                                    </Honk>
+                                                    <BrakeRelease Sound="trucks/navistar_500mv/navistar_500mv_brake_release">
+
+                                                    </BrakeRelease>
+                                                    <Handbrake Sound="trucks/navistar_500mv/navistar_500mv_handbrake_on">
+
+                                                    </Handbrake>
+                                                    <EngineAccel Sound="trucks/navistar_500mv/navistar_500mv_acc">
+
+                                                    </EngineAccel>
+                                                    <EngineRev Sound="trucks/navistar_500mv/navistar_500mv_rev">
+
+                                                    </EngineRev>
+              </Sounds>
+              <Driver Pos="(-0.57; 1.855; 0.505)" ParentFrame="BoneCabin_cdt" SteeringWheelPos="(-0.188; 2.183; 0.498)">
+
+              </Driver>
+              <Dashboard>
+                                                          <Gauge Mesh="trucks/arrows/navistar_5000mv_arrow1" Org="(0.098; 2.203; 0.811)" OutputAngles="(-140; 17)" InputType="engineEnabled" Dir="(-0.963; 0.27; 0)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/navistar_5000mv_arrow1" Org="(0.08; 2.138; 0.811)" OutputAngles="(-55; 4)" InputType="engineEnabled" Dir="(-0.963; 0.27; 0)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/navistar_5000mv_arrow1" Org="(0.061; 2.072; 0.811)" OutputAngles="(-55; -4)" InputType="engineEnabled" Dir="(-0.963; 0.27; 0)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/navistar_5000mv_arrow1" Org="(0.098; 2.203; 0.713)" OutputAngles="(-140; -60)" InputType="engineEnabled" Dir="(-0.963; 0.27; 0)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/navistar_5000mv_arrow1" Org="(0.08; 2.138; 0.713)" OutputAngles="(-140; 60)" InputType="engineEnabled" Dir="(-0.963; 0.27; 0)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/navistar_5000mv_arrow1" Org="(0.061; 2.072; 0.713)" OutputAngles="(-140; 30)" InputType="engineEnabled" Dir="(-0.963; 0.27; 0)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/navistar_5000mv_arrow4" Org="(0.091; 2.175; 0.574)" OutputAngles="(-135;135)" InputType="rpm" Dir="(-0.963; 0.27; 0)" InputRange="(0;1)" Damping="0.8">
+
+                                                          </Gauge>
+                                                          <Gauge Org="(0.091; 2.175; 0.423)" OutputAngles="(-130;130)" Mesh="trucks/arrows/navistar_5000mv_arrow4" InputRange="(0;85)" Dir="(-0.963; 0.27; 0)" InputType="speed">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/navistar_5000mv_arrow1" Org="(0.098; 2.203; 0.282)" OutputAngles="(-140; 30)" InputType="engineEnabled" Dir="(-0.963; 0.27; 0)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/navistar_5000mv_arrow1" Org="(0.08; 2.138; 0.282)" OutputAngles="(-140; 30)" InputType="engineEnabled" Dir="(-0.963; 0.27; 0)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/navistar_5000mv_arrow1" Org="(0.061; 2.072; 0.282)" OutputAngles="(-140; 134)" InputType="fuel" Dir="(-0.963; 0.27; 0)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/navistar_5000mv_arrow1" Org="(0.098; 2.203; 0.185)" OutputAngles="(-55; -10)" InputType="engineEnabled" Dir="(-0.963; 0.27; 0)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/navistar_5000mv_arrow1" Org="(0.08; 2.138; 0.185)" OutputAngles="(-55; 10)" InputType="engineEnabled" Dir="(-0.963; 0.27; 0)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/navistar_5000mv_arrow1" Org="(0.061; 2.072; 0.185)" OutputAngles="(-55; 30)" InputType="engineEnabled" Dir="(-0.963; 0.27; 0)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/navistar_5000mv_arrow3" Org="(-0.045; 2.135; -0.142)" OutputAngles="(-140; 17)" InputType="engineEnabled" Dir="(-0.878; 0.248; 0.409)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+                                                          <Gauge Mesh="trucks/arrows/navistar_5000mv_arrow2" Org="(-0.064; 2.196; -0.224)" OutputAngles="(-50; -5)" InputType="engineEnabled" Dir="(-0.878; 0.248; 0.409)" InputRange="(0;1)" Damping="0.99">
+
+                                                          </Gauge>
+              </Dashboard>
+              <SteeringRack FrameSteerRight="BoneRackR" Frame="BoneRack" FrameSteerLeft="BoneRackL" RackHalfSizeZ="0.785">
+
+              </SteeringRack>
+              <OcclusionMap MaxX="2.8" HalfSizeZ="1.8" MinX="-6.6">
+
+              </OcclusionMap>
+      </TruckData>
+      <ModelAttachments>
+                <HeadLight>
+                      <Model _template="HeadLightRay" Org="(1.978; 1.121; -0.943)" ParentFrame="BoneCabin_cdt">
+
+                      </Model>
+                      <Model _template="HeadLightRay" Org="(1.978; 1.121; 0.943)" ParentFrame="BoneCabin_cdt">
+
+                      </Model>
+                        <Flare Pos="(1.978; 1.121; -0.943)" _template="HeadLight" ParentFrame="BoneCabin_cdt">
+
+                        </Flare>
+                        <Flare Pos="(1.978; 1.121; 0.943)" _template="HeadLight" ParentFrame="BoneCabin_cdt">
+
+                        </Flare>
+                        <Flare Pos="(1.978; 1.121; -0.943)" _template="BlueStreak" ParentFrame="BoneCabin_cdt">
+
+                        </Flare>
+                        <Flare Pos="(1.978; 1.121; 0.943)" _template="BlueStreak" ParentFrame="BoneCabin_cdt">
+
+                        </Flare>
+                </HeadLight>
+                <StopSignals>
+                        <Light Pos="(-6.5; 0.785; -0.268)" _template="StopSignal">
+
+                        </Light>
+                        <Light Pos="(-6.5; 0.785; 0.268)" _template="StopSignal">
+
+                        </Light>
+                          <Flare Pos="(-6.188; 0.785; -0.268)" _template="StopSignal">
+
+                          </Flare>
+                          <Flare Pos="(-6.188; 0.785; 0.268)" _template="StopSignal">
+
+                          </Flare>
+                </StopSignals>
+                <Ignition>
+                          <Light Pos="(1.978; 1.121; -0.943)" _template="IgnitionSignalWhite">
+
+                          </Light>
+                          <Light Pos="(1.978; 1.121; 0.943)" _template="IgnitionSignalWhite">
+
+                          </Light>
+                          <Light Pos="(-6.5; 0.785; 0)" _template="IgnitionSignalRed">
+
+                          </Light>
+                            <Flare ParentFrame="BoneCabin_cdt" Pos="(1.978; 1.121; -0.943)" DirAngle="90" Color="g(165; 149; 130) x 0.9" _template="IgnitionSignalWhite">
+
+                            </Flare>
+                            <Flare ParentFrame="BoneCabin_cdt" Pos="(1.978; 1.121; 0.943)" DirAngle="90" Color="g(165; 149; 130) x 0.9" _template="IgnitionSignalWhite">
+
+                            </Flare>
+                            <Flare DirAngle="130" _template="IgnitionSignalWhite" Pos="(1.945; 1.14; 1.134)" ParentFrame="BoneCabin_cdt" Size="0.2" Color="g(165; 149; 130) x 0.9" AspectRatio=".9">
+
+                            </Flare>
+                            <Flare DirAngle="130" _template="IgnitionSignalWhite" Pos="(1.945; 1.14; -1.134)" ParentFrame="BoneCabin_cdt" Size="0.2" Color="g(165; 149; 130) x 0.9" AspectRatio=".9">
+
+                            </Flare>
+                            <Flare Pos="(-6.188; 0.785; -0.268)" _template="IgnitionSignalRed">
+
+                            </Flare>
+                            <Flare Pos="(-6.188; 0.785; 0.268)" _template="IgnitionSignalRed">
+
+                            </Flare>
+                </Ignition>
+      </ModelAttachments>
+      <HeadLight Pos="(2; 1.121; 0)" _template="Default">
+
+      </HeadLight>
+      <GameData Price="113600" Country="US" UnlockByExploration="false" UnlockByRank="1">
+                      <CraneSocket Pos="(2.383; 0.623; -0.57)" ParentFrame="BoneCabin_cdt">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(2.383; 0.623; 0.57)" ParentFrame="BoneCabin_cdt">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-6.356; 0.887; 0)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-1.025; 0.602; -1.115)" ParentFrame="BoneCabin_cdt">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.601; 0.602; 1.133)" ParentFrame="BoneCabin_cdt">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-1.747; 3.375; 1.188)" ParentFrame="BoneCabin_cdt">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-1.747; 3.375; -1.188)" ParentFrame="BoneCabin_cdt">
+
+                      </CraneSocket>
+                    <UiDesc UiIcon30x30="heavyVehicleImg30" UiName="UI_VEHICLE_NAVISTAR_5000_NAME" UiIcon328x458="shopImgNavi500" UiIconLogo="InternationalNavistarLogo80" UiDesc="UI_VEHICLE_NAVISTAR_5000_DESC" UiIcon40x40="heavyVehicleImg">
+
+                    </UiDesc>
+                          <AddonSockets DefaultAddon="navistar_5000mv_window_mesh_default">
+                            <Socket _template="Cabin2Chassis" Names="Navistar5000mvWindowMesh">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="navistar_5000mv_snorkel_default">
+                            <Socket _template="Cabin2Chassis" Names="Navistar5000mvSnorkel">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="navistar_5000mv_fender_default">
+                            <Socket _template="Chassis2Cabin" Names="Navistar5000mvFender">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="navistar_5000mv_exhaust_default">
+                            <Socket _template="Chassis2Cabin" Names="Navistar500mvExhaust">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="navistar_5000mv_visor_default">
+                            <Socket _template="Cabin2Chassis" Names="Navistar5000mvVisor">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket _template="Cabin2Chassis" Names="Navistar5000mvLights">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket _template="Chassis2Cabin" Names="Navistar5000mvSpareWheel">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="navistar_5000mv_bumper_default">
+                            <Socket ParentFrame="BoneCabin_cdt" Names="Navistar5000mvBumper">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                              <Socket Offset="(-6.356; 0.87; 0)" Names="Trailer">
+
+                              </Socket>
+                              <Socket Offset="(-4.747; 1.47; 0)" Names="Semitrailer, SemitrailerOiltank">
+
+                              </Socket>
+                              <Socket Offset="(-4.4; 1.64; 0)" Names="LargeSemitrailer, LargeSemitrailerOiltank">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                              <Socket NamesBlock="Navistar5000mvSpareWheel" Offset="(-7.993; 1.155; 0)" Names="BunkLog">
+
+                              </Socket>
+                              <Socket Offset="(-4.747; 1.15; 0)" Names="SaddleLow">
+
+                              </Socket>
+                              <Socket Offset="(-4.4; 1.15; 0)" Names="SaddleHigh">
+
+                              </Socket>
+                              <Socket Offset="(-3.6; 1.15; 0)" Names="MinicraneNavistar">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(0.158; 2.28; 0.174)" Names="StuffDashboard" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="Navistar5000MvSticker_1x1_01" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="Navistar5000MvSticker_1x1_02" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="Navistar5000MvSticker_1x1_03" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="Navistar5000MvSticker_1x2_01" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="Navistar5000MvSticker_1x2_02" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="Navistar5000MvSticker_1x4_01" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                              <Socket Offset="(0.048; 2.788; 0.18)" Names="StuffAirfreshener" _template="Cabin2Chassis" InCockpit="true">
+
+                              </Socket>
+                              <Socket Names="StuffCurtainNavistar5000Mv" _template="Cabin2Chassis" InCockpit="true">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket _template="Cabin2Chassis" Names="Navistar5000MvSticker_Roof">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="Navistar5000MvSticker_Capote" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="Navistar5000MvSticker_Door_L" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket _template="Cabin2Chassis" Names="Navistar5000MvSticker_Door_R">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="Navistar5000MvSticker_GlassTop" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Names="Navistar5000MvSticker_GlassBottom" _template="Cabin2Chassis" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket _template="Cabin2Chassis" Names="StuffHoodNavistar5000Mv">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="zikz_5368_diff_lock_default">
+                            <Socket Names="ZiKZ5368DiffLock" Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt">
+
+                            </Socket>
+                          </AddonSockets>
+                    <CustomizationCameras>
+                                <CameraPos Interior="true" Position="(6.352; 8.039; -0.024)" Name="roof_sticker" InterestPosition="(3.245; 1.667; -0.591)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(4.273; 2.614; -0.064)" Name="sticker_1" InterestPosition="(6.912; 3.311; -1.324)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-7.032; 2.99; 3.352)" MaxXRotation="360" Name="addon_1" InterestPosition="(0.338; 1.675; -0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(10.328; 3.173; 3.632)" MaxXRotation="360" Name="addon_2" InterestPosition="(4.991; 1.77; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(4.267; 2.574; -0.656)" Name="mirror_mount" InterestPosition="(7.23; 2.74; 1.935)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-2.522; 4.197; 2.717)" MaxXRotation="360" Name="side_r" InterestPosition="(3.136; 1.986; -0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(4.672; 2.683; -0.244)" Name="sticker" InterestPosition="(6.912; 0.96; -0.108)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(8.355; 3.56; 0.681)" Name="glass_sticker" InterestPosition="(5.509; 2.532; -0.841)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(0.737; 2.674; 5.054)" Name="door_r_sticker" InterestPosition="(4.631; 2.07; 0.593)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(11.079; 3.805; -3.534)" MaxXRotation="360" Name="roof" InterestPosition="(5.282; 2.097; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(8.352; 5.900; 0.052)" Name="capote_sticker" InterestPosition="(6.811; 2.242; -0.726)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(13.555; 1.659; -2.751)" MaxXRotation="360" Name="hoods" InterestPosition="(6.412; 1.711; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(5.221; 1.595; 0.03)" Name="sticker_2" InterestPosition="(6.662; 0.61; 1.935)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(10.515; 3.331; 3.554)" MaxXRotation="360" Name="side_l" InterestPosition="(5.028; 1.776; -0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(4.552; 2.688; -0.455)" Name="bubble_head" InterestPosition="(6.759; 1.23; 1.505)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(9.377; 1.28; -4.828)" MaxXRotation="360" Name="wheels" InterestPosition="(4.569; 0.741; 1.014)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(13.555; 1.659; -2.751)" MaxXRotation="360" Name="default" InterestPosition="(6.412; 1.711; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-6.509; 1.857; 2.371)" MaxXRotation="360" Name="rear" InterestPosition="(-0.391; 1.117; -0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(0.633; 2.99; -4.873)" Name="door_l_sticker" InterestPosition="(2.79; 2.172; -0.794)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(8.557; 2.961; -1.231)" Name="hood_ornament" InterestPosition="(7.506; 2.025; -1.231)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(4.267; 2.574; -0.656)" Name="curtain" InterestPosition="(7.23; 2.74; 1.935)" FOV="32.0">
+
+                                </CameraPos>
+                    </CustomizationCameras>
+                              <WinchSocket Pos="(2.383; 0.623; -0.57)" ParentFrame="BoneCabin_cdt">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(2.383; 0.623; 0.57)" ParentFrame="BoneCabin_cdt">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-6.356; 0.887; 0)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-1.025; 0.602; -1.115)" ParentFrame="BoneCabin_cdt">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-0.601; 0.602; 1.133)" ParentFrame="BoneCabin_cdt">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-1.747; 3.375; 1.188)" ParentFrame="BoneCabin_cdt">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-1.747; 3.375; -1.188)" ParentFrame="BoneCabin_cdt">
+
+                              </WinchSocket>
+      </GameData>
+      <Landmark MaxScale="3.8" MinScale="1.8" Mesh="landmarks/navistar_5000mv_lmk">
+
+      </Landmark>
+      <AutomaticIK>
+                          <IKBone ModelFrame="BoneTieRodHinge2R" ParentFrame="BoneTieRodR_cdt">
+                            <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRodPrismaticR" AttachToFrame="BoneRackR">
+                                  <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ModelFrame="BoneTieRodHinge2L" ParentFrame="BoneTieRodL_cdt">
+                            <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRodPrismaticL" AttachToFrame="BoneRackL">
+                                  <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ModelFrame="BoneMirrorL1" ParentFrame="BoneCabin_cdt">
+                            <IKJoint AxisLocal="(0; 1; 0)" Type="Hinge">
+
+                            </IKJoint>
+                            <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneMirrorL2" AttachToFrame="BoneMirrorL_cdt">
+                                  <IKJoint AxisLocal="(0; 1; 0)" Type="Hinge">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+                          <IKBone ModelFrame="BoneMirrorR1" ParentFrame="BoneCabin_cdt">
+                            <IKJoint AxisLocal="(0; 1; 0)" Type="Hinge">
+
+                            </IKJoint>
+                            <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneMirrorR2" AttachToFrame="BoneMirrorR_cdt">
+                                  <IKJoint AxisLocal="(0; 1; 0)" Type="Hinge">
+
+                                  </IKJoint>
+                            </IKBone>
+                          </IKBone>
+      </AutomaticIK>
+  </Truck>
+  <_templates Include="trucks">
+        <Socket>
+            <Chassis2Cabin Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt">
+                <ExtraParent Frame="BoneCabin_cdt">
+
+                </ExtraParent>
+            </Chassis2Cabin>
+            <Cabin2Chassis Offset="(0; 0; 0)" ParentFrame="BoneCabin_cdt">
+                  <ExtraParent Frame="BoneChassis_cdt">
+
+                  </ExtraParent>
+            </Cabin2Chassis>
+        </Socket>
+        <Wheel>
+              <Front SteeringJointOffset="0.27" ParentFrame="BoneCabin_cdt" SteeringCastor="6" Torque="default" Location="front" SteeringAngle="28">
+
+              </Front>
+              <Rear Torque="default" Location="rear" ConnectedToHandbrake="true">
+
+              </Rear>
+        </Wheel>
+        <Body>
+                <Antenna Mass=".1" Collisions="None">
+                    <Constraint Type="Ragdoll" TwistAxisLocal="(0; 1; 0)" Cone="100" PlaneAxisLocal="(0; 0; 1)">
+                        <AllMotor Type="Spring" Spring=".8" Damping=".001">
+
+                        </AllMotor>
+                    </Constraint>
+                </Antenna>
+                <Mirror Mass="5" Collisions="None">
+                      <Constraint AxisLocal="(0; 1; 0)" MaxLimit="45" MinLimit="-45" Type="Hinge">
+                          <Motor Type="Spring" Spring="60" Damping="1">
+
+                          </Motor>
+                      </Constraint>
+                </Mirror>
+        </Body>
+  </_templates>

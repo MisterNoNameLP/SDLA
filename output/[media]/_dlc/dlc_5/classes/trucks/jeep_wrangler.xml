@@ -1,0 +1,659 @@
+  <Truck>
+      <ControlledConstraints>
+          <Constraint Name="TieRodSteer" IsLinkedSteering="true" Id="chassis_steer">
+
+          </Constraint>
+      </ControlledConstraints>
+      <PhysicsModel Mesh="trucks/jeep_wrangler">
+            <NetSync Legacy="false">
+
+            </NetSync>
+            <Body ImpactType="Truck" Mass="1000" NetSync="pv" CenterOfMassOffset="(1; -0.5; 0)">
+                    <Body ModelFrame="BoneEngine_cdt" ImpactType="Truck" Mass="1000" NetSync="pv" CenterOfMassOffset="(0; -0.5; 0)">
+                      <Constraint Type="Fixed">
+
+                      </Constraint>
+                          <Body ModelFrame="BoneMirrorLeft_cdt" _template="SideMirror">
+                            <Constraint AxisLocal="(0; 1; 0)">
+
+                            </Constraint>
+                          </Body>
+                          <Body ModelFrame="BoneMirrorRight_cdt" _template="SideMirror">
+                            <Constraint AxisLocal="(0; 1; 0)">
+
+                            </Constraint>
+                          </Body>
+                          <Body ModelFrame="BoneSunshieldLeft_cdt" _template="Sunshield">
+
+                          </Body>
+                          <Body ModelFrame="BoneSunshieldRight_cdt" _template="Sunshield">
+
+                          </Body>
+                          <Body ModelFrame="BoneAntenna_cdt" _template="Antenna">
+
+                          </Body>
+                          <Body Mass="0.2" ModelFrame="BoneKeyFob_cdt">
+                            <Constraint AxisLocal="(1; 0; 0)" MaxLimit="50" MinLimit="-50" Type="Hinge">
+                                <Motor Type="Spring" Spring="0.001" Damping="0.001">
+
+                                </Motor>
+                            </Constraint>
+                          </Body>
+                    </Body>
+                    <Body ModelFrame="BoneTieRod1_cdt" _template="TieRod">
+                      <Constraint AxisLocal="(0; 1; 0)" MaxLimit="30" Name="TieRodSteer" MinLimit="-30">
+
+                      </Constraint>
+                    </Body>
+            </Body>
+      </PhysicsModel>
+      <TruckData BackSteerSpeed="0.1" DiffLockType="Uninstalled" EngineIconScale="1.15" TruckType="SCOUT" FuelCapacity="80" EngineStartDelay="1.8" SteerSpeed="0.032" ExhaustStartTime="1.6" Responsiveness="0.6" TruckImage="JeepWranglermchr" EngineIconMesh="env/engine_small">
+              <Shakers>
+                    <Shaker MaxAngle="(1.1; 1.1; 1.1)" Frame="BoneExhaust" MaxFrequency="3">
+
+                    </Shaker>
+                    <Shaker MaxAngle="(2; 2; 2)" Frame="BoneGearstick" MaxFrequency="0.25">
+
+                    </Shaker>
+              </Shakers>
+              <GearboxSocket Default="g_scout_default" Type="gearboxes_scouts">
+
+              </GearboxSocket>
+              <Wheels DefaultRim="rim1" DefaultWheelType="wheels_scout_offroad2_jeep_wrangler" DefaultTire="tire1">
+                        <Wheel Pos="(1.736; 0.319; 0.72)" _template="FrontWheel">
+
+                        </Wheel>
+                        <Wheel Pos="(1.736; 0.319; 0.72)" _template="FrontWheel" RightSide="true">
+
+                        </Wheel>
+                        <Wheel Pos="(-0.89; 0.319; 0.72)" _template="RearWheel">
+
+                        </Wheel>
+                        <Wheel Pos="(-0.89; 0.319; 0.72)" _template="RearWheel" RightSide="true">
+
+                        </Wheel>
+              </Wheels>
+              <WinchUpgradeSocket Default="w_scout_default" Type="winches_scouts" IsUpgradable="true">
+
+              </WinchUpgradeSocket>
+              <SteeringWheel Frame="BoneSteering">
+
+              </SteeringWheel>
+              <Damage>
+                              <DamageArea Max="(2.2; 1.2; -0.4)" ParentFrame="BoneEngine_cdt" Min="(1.15; 0.433; 0.4)" Type="Engine">
+
+                              </DamageArea>
+                              <DamageArea Max="(1; 0.64; 0.6)" ParentFrame="BoneChassis_cdt" Min="(-0.5; 0.34; -0.6)" Type="FuelTank">
+
+                              </DamageArea>
+              </Damage>
+              <EngineSocket Default="us_scout_modern_engine_0" Type="e_us_scout_modern">
+
+              </EngineSocket>
+              <SoundsDamage _template="Scout">
+
+              </SoundsDamage>
+              <Axles>
+                                    <Axle Frame="BoneAxleRear">
+
+                                    </Axle>
+                                    <Axle Frame="BoneAxleFront">
+
+                                    </Axle>
+              </Axles>
+              <Camera Center="(-1.2; 0; 0)" RadiusMultiplier="0.8">
+                                    <Cockpit WindshieldShadingTexture="trucks/jeep_wrangler_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/jeep_wrangler_glass__d_a.tga" ViewPos="(0.088; 1.575; 0.364)" _template="Default">
+                                          <Mirror MeshFrame="mirror_left" Pos="(0.586; 1.39; 0.867)" Size="(0.185; 0.180)" ReflectionDir="(-0.95; 0.05; -0.31)" FOVScale="1.5" ClipDir="(-0.90; 0; -0.44)">
+
+                                          </Mirror>
+                                          <Mirror MeshFrame="mirror_right" Pos="(0.586; 1.39; -0.867)" Size="(0.185; 0.180)" ReflectionDir="(-0.85; 0.05; 0.53)" FOVScale="1.5" ClipDir="(-0.90; 0; 0.44)">
+
+                                          </Mirror>
+                                          <Mirror Pos="(0.609; 1.627; 0)" MeshFrame="hp_mirror" FOVScale="1.5" Size="(0.253; 0.064)	" ReflectionDir="(-0.96; -0.07; 0.26)" ClipDir="(-0.94; -0.33; 0)" ClipOffset="0.1">
+
+                                          </Mirror>
+                                        <Rear HorTransitionStart="-1.1" HorTransitionEnd="-1.2" ViewPosOffset="(0.2; -0.1; 0.55)">
+
+                                        </Rear>
+                                    </Cockpit>
+              </Camera>
+              <Shafts>
+                                        <Shaft SocketPointB="Shaft1b" SocketPointA="Shaft1a" Mesh="env/minishaft">
+
+                                        </Shaft>
+                                        <Shaft SocketPointB="Shaft2b" SocketPointA="Shaft2a" Mesh="env/minishaft">
+
+                                        </Shaft>
+              </Shafts>
+              <FuelTank DamageCapacity="50">
+
+              </FuelTank>
+                                        <CompatibleWheels Scale="0.41" Type="wheels_scout_offroad2_jeep_wrangler">
+
+                                        </CompatibleWheels>
+                                        <CompatibleWheels Type="wheels_scout1" Scale="0.41" OffsetZ="0.05">
+
+                                        </CompatibleWheels>
+                                        <CompatibleWheels Type="wheels_scout2" Scale="0.41" OffsetZ="0.05">
+
+                                        </CompatibleWheels>
+                                        <CompatibleWheels Type="wheels_scout2" Scale="0.46" OffsetZ="0.05">
+
+                                        </CompatibleWheels>
+              <SoundsWheels _template="Default">
+
+              </SoundsWheels>
+              <SuspensionSocket Default="jeep_wrangler_suspension_default" MaxWheelRadiusWithoutSuspension="0.38" Type="s_jeep_wrangler">
+
+              </SuspensionSocket>
+              <Dashboard>></Dashboard>
+              <Steam Origin="(1.753; 0.9; 0)">
+
+              </Steam>
+              <Sounds _template="Default" DisableReversePitch="false" MinDist="8.0" Origin="(1.35 ; 0.870; 0)">
+                                                  <BrakePull Sound="">
+
+                                                  </BrakePull>
+                                                  <EngineHigh Sound="trucks/jeep_wrangler/jeep_wrangler_high">
+
+                                                  </EngineHigh>
+                                                  <ChassisStress Sound="trucks/hummer_h2/hummer_h2_chassis">
+
+                                                  </ChassisStress>
+                                                  <GearFail Sound="trucks/common/truck_gear_wrong/truck_gear_wrong_small_modern">
+
+                                                  </GearFail>
+                                                  <HandbrakeOff Sound="trucks/jeep_wrangler/jeep_wrangler_handbrake_off">
+
+                                                  </HandbrakeOff>
+                                                  <AbruptStop Sound="">
+
+                                                  </AbruptStop>
+                                                  <BrakesSqueal Sound="trucks/jeep_wrangler/jeep_wrangler_brakes_squeal">
+
+                                                  </BrakesSqueal>
+                                                  <EngineHeavy_2d IsSound2D="true" Sound="trucks/jeep_wrangler/jeep_wrangler_heavy_2d">
+
+                                                  </EngineHeavy_2d>
+                                                  <EngineStart Sound="trucks/jeep_wrangler/jeep_wrangler_start">
+
+                                                  </EngineStart>
+                                                  <EngineHeavy Sound="trucks/jeep_wrangler/jeep_wrangler_heavy">
+
+                                                  </EngineHeavy>
+                                                  <Reverse Sound="trucks/jeep_wrangler/jeep_wrangler_reverse">
+
+                                                  </Reverse>
+                                                  <EngineHigh_2d IsSound2D="true" Sound="trucks/jeep_wrangler/jeep_wrangler_high_2d">
+
+                                                  </EngineHigh_2d>
+                                                  <EngineLow_2d IsSound2D="true" Sound="trucks/jeep_wrangler/jeep_wrangler_low_2d">
+
+                                                  </EngineLow_2d>
+                                                  <Handbrake Sound="trucks/jeep_wrangler/jeep_wrangler_handbrake_on">
+
+                                                  </Handbrake>
+                                                  <AWD Sound="trucks/jeep_wrangler/jeep_wrangler_awd">
+
+                                                  </AWD>
+                                                  <EngineLow Sound="trucks/jeep_wrangler/jeep_wrangler_low">
+
+                                                  </EngineLow>
+                                                  <EngineIdle_2d IsSound2D="true" Sound="trucks/jeep_wrangler/jeep_wrangler_idle_2d">
+
+                                                  </EngineIdle_2d>
+                                                  <EngineStop Sound="trucks/jeep_wrangler/jeep_wrangler_stop">
+
+                                                  </EngineStop>
+                                                  <EngineIdle Sound="trucks/jeep_wrangler/jeep_wrangler_idle">
+
+                                                  </EngineIdle>
+                                                  <BrakeRelease Sound="">
+
+                                                  </BrakeRelease>
+                                                  <EngineRev Sound="trucks/jeep_wrangler/jeep_wrangler_rev">
+
+                                                  </EngineRev>
+                                                  <Honk Sound="trucks/jeep_wrangler/jeep_wrangler_honk">
+
+                                                  </Honk>
+                                                  <EngineAccel Sound="trucks/jeep_wrangler/jeep_wrangler_acc">
+
+                                                  </EngineAccel>
+                                                  <Gear Sound="trucks/jeep_wrangler/jeep_wrangler_gear_shift">
+
+                                                  </Gear>
+              </Sounds>
+              <Driver Pos="(0.141; 0.89; 0.357)" AnimationSet="Scout" SteeringWheelPos="(0.446; 1.285; 0.357)">
+
+              </Driver>
+              <Exhaust Speed="2.0" IsLight="true" Dir="(-0.5; -0.87; 0)" Origin="(-1.612; 0.393; -0.51)">
+
+              </Exhaust>
+              <SteeringRack FrameSteerRight="BoneRackRight" Frame="BoneRack" FrameSteerLeft="BoneRackLeft" RackHalfSizeZ="0.698">
+
+              </SteeringRack>
+              <OcclusionMap HalfSizeZ="1.5" Texture="trucks/occlusion/chassis_small__s_d_a.tga" MaxX="2.65" MinX="-2.57">
+
+              </OcclusionMap>
+      </TruckData>
+      <ModelAttachments>
+                <StopSignals>
+                    <Light Pos="(-2.049; 0.916; 0)" _template="StopSignal">
+
+                    </Light>
+                        <Flare Pos="(-1.718; 0.899; -0.575)" _template="StopSignal">
+
+                        </Flare>
+                        <Flare Pos="(-1.718; 0.899; 0.575)" _template="StopSignal">
+
+                        </Flare>
+                </StopSignals>
+                <Ignition>
+                        <Light Pos="(2.717; 0.342; 0.425)" _template="IgnitionSignalWhite" Color="g(240; 200; 165) x 1.0">
+
+                        </Light>
+                        <Light Pos="(2.717; 0.342; -0.425)" _template="IgnitionSignalWhite" Color="g(240; 200; 165) x 1.0">
+
+                        </Light>
+                        <Light Pos="(-2.049; 0.916; 0.575)" _template="IgnitionSignalRed">
+
+                        </Light>
+                        <Light Pos="(-2.049; 0.916; -0.575)" _template="IgnitionSignalRed">
+
+                        </Light>
+                          <Flare Pos="(2.15; 0.979; 0.406)" _template="IgnitionSignalWhite" Color="g(255; 253; 246) x 0.37">
+
+                          </Flare>
+                          <Flare Pos="(2.15; 0.979; -0.406)" _template="IgnitionSignalWhite" Color="g(255; 253; 246) x 0.37">
+
+                          </Flare>
+                          <Flare Size="0.27" _template="IgnitionSignalRed" Pos="(-1.718; 0.899; 0.575)">
+
+                          </Flare>
+                          <Flare Size="0.27" _template="IgnitionSignalRed" Pos="(-1.718; 0.899; -0.575)">
+
+                          </Flare>
+                          <Flare Size="0.3" Dir="(0; 0; -1)" Pos="(2.141; 0.894; -0.862)" _template="Beacon">
+
+                          </Flare>
+                          <Flare Size="0.3" Dir="(0; 0; 1)" Pos="(2.141; 0.894; 0.862)" _template="Beacon">
+
+                          </Flare>
+                          <Flare Size="0.3" _template="Beacon" Pos="(2.238; 0.91; -0.658)">
+
+                          </Flare>
+                          <Flare Size="0.3" _template="Beacon" Pos="(2.238; 0.91; 0.658)">
+
+                          </Flare>
+                </Ignition>
+                <HeadLight>
+                          <Model _template="HeadLightRay" Org="(2.15; 0.979; -0.406)">
+
+                          </Model>
+                          <Model _template="HeadLightRay" Org="(2.15; 0.979; 0.406)">
+
+                          </Model>
+                            <Flare Size="0.4" Pos="(2.15; 0.979; -0.406)" Color="g(255; 240; 225) x 0.37" _template="HeadLight">
+
+                            </Flare>
+                            <Flare Size="0.4" Pos="(2.15; 0.979; 0.406)" Color="g(255; 240; 225) x 0.37" _template="HeadLight">
+
+                            </Flare>
+                            <Flare Size="0.7" Pos="(2.15; 0.979; -0.406)" Color="g(220; 220; 255) x 0.07" _template="BlueStreak">
+
+                            </Flare>
+                            <Flare Size="0.7" Pos="(2.15; 0.979; 0.406)" Color="g(220; 220; 255) x 0.07" _template="BlueStreak">
+
+                            </Flare>
+                </HeadLight>
+                <ReverseSignals>
+                            <Light Pos="(-1.718; 0.969; -0.575)" OuterCone="160" InnerCone="120" Dir="(-1; -0.2; 0)" Color="(80; 80; 80)" AttenEnd="2.0">
+
+                            </Light>
+                            <Light Pos="(-1.718; 0.969; 0.575)" OuterCone="160" InnerCone="120" Dir="(-1; -0.2; 0)" Color="(80; 80; 80)" AttenEnd="2.0">
+
+                            </Light>
+                              <Flare Reflections="true" Size="1.2" Dir="(-1; 0; 0)" Color="g(200; 200; 200) x 0.4" AspectRatio="1.4" Pos="(-1.718; 0.969; -0.575)" ColorMultAtDay="0.6" DirAngle="90">
+
+                              </Flare>
+                              <Flare Pos="(-1.718; 0.969; -0.575)" Size="0.4" Dir="(-1; 0; 0)" Color="g(220; 220; 255) x 0.05" _template="BlueStreak">
+
+                              </Flare>
+                              <Flare Reflections="true" Size="1.2" Dir="(-1; 0; 0)" Color="g(200; 200; 200) x 0.4" AspectRatio="1.4" Pos="(-1.718; 0.969; 0.575)" ColorMultAtDay="0.6" DirAngle="90">
+
+                              </Flare>
+                              <Flare Pos="(-1.718; 0.969; 0.575)" Size="0.4" Dir="(-1; 0; 0)" Color="g(220; 220; 255) x 0.05" _template="BlueStreak">
+
+                              </Flare>
+                </ReverseSignals>
+      </ModelAttachments>
+      <HeadLight Pos="(2.5; 0.979; 0)" _template="Default">
+
+      </HeadLight>
+      <GameData Price="2900" Country="US" UnlockByExploration="false" UnlockByRank="1" Recallable="true">
+                      <CraneSocket Pos="(2.51; 0.66; -0.398)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(2.51; 0.66; 0.398)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(0; 1.85; 0)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-2.365; 0.661; -0.532)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-2.365; 0.661; 0.532)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(0.189; 0.505; 1.025)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(0.189; 0.505; -1.025)">
+
+                      </CraneSocket>
+                    <UiDesc UiIcon30x30="scoutVehicleImg30" UiName="UI_VEHICLE_JEEP_WRANGLER_NAME" UiIcon328x458="shopImgJeepWrangler" UiIconLogo="JeepLogo80" UiDesc="UI_VEHICLE_JEEP_WRANGLER_DESC" UiIcon40x40="scoutVehicleImg">
+
+                    </UiDesc>
+                          <AddonSockets DefaultAddon="jeep_wrangler_bumper_front_default">
+                            <Socket ParentFrame="BoneEngine_cdt" Offset="(0; 0; 0)" Names="JeepWranglerFrontBumper">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="jeep_wrangler_bumper_rear_default" ParentFrame="BoneChassis_cdt">
+                              <Socket Names="JeepWranglerRearBumper">
+
+                              </Socket>
+                              <Socket Names="JeepWranglerRearBumper1">
+
+                              </Socket>
+                              <Socket Names="JeepWranglerRearBumper2">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="jeep_wrangler_treshhold_default">
+                            <Socket ParentFrame="BoneEngine_cdt" Offset="(0; 0; 0)" Names="JeepWranglerThreshold">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="jeep_wrangler_wheel_addon_default">
+                            <Socket ParentFrame="BoneChassis_cdt" NamesBlock="JeepWranglerRearBumper1" Names="JeepWranglerSpareWheel">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="JeepWranglerTrunkRoof">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="JeepWranglerFlasher" Names="JeepWranglerRoofrack">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="JeepWranglerSpotlight">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(0; 0; 0)" NamesBlock="JeepWranglerRoofrack" Names="JeepWranglerFlasher">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="JeepWranglerBeacon2" Names="JeepWranglerBeacon">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="JeepWranglerBeacon2">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="JeepWranglerSnorkel">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="JeepWranglerVisor">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="JeepWranglerSpotlight" Names="JeepWranglerHorn1">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="" Names="JeepWranglerHorn2">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(-1.85; 0.56; 0)" Names="ScautTrailer">
+                                  <AddonsShift Offset="(-0.02; 0.01; 0)" Types="JeepWranglerRearBumper1">
+
+                                  </AddonsShift>
+                                  <AddonsShift Offset="(0.045; -0.04; 0)" Types="JeepWranglerRearBumper2">
+
+                                  </AddonsShift>
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="jeep_wrangler_diff_lock_default">
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="JeepWranglerDiffLock">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(0.749; 1.356; -0.24)" ParentFrame="BoneEngine_cdt" Names="StuffDashboard" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(0; 0; 0)" ParentFrame="BoneEngine_cdt" Names="JeepWranglerSticker_1x1_01" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(0; 0; 0)" ParentFrame="BoneEngine_cdt" Names="JeepWranglerSticker_1x1_02" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(0; 0; 0)" ParentFrame="BoneEngine_cdt" Names="JeepWranglerSticker_1x1_03" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(0; 0; 0)" ParentFrame="BoneEngine_cdt" Names="JeepWranglerSticker_1x2_01" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(0; 0; 0)" ParentFrame="BoneEngine_cdt" Names="JeepWranglerSticker_1x2_02" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(0; 0; 0)" ParentFrame="BoneEngine_cdt" Names="JeepWranglerSticker_1x4_01" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(0.665; 1.674; 0)" ParentFrame="BoneEngine_cdt" Names="StuffAirfreshener" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneEngine_cdt" Names="JeepWranglerSticker_GlassTop" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneEngine_cdt" Names="JeepWranglerSticker_Door_L">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneEngine_cdt" Names="JeepWranglerSticker_Door_R">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneEngine_cdt" Names="JeepWranglerSticker_Capote">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneEngine_cdt" Names="StuffHoodJeepWrangler">
+
+                            </Socket>
+                          </AddonSockets>
+                    <CustomizationCameras>
+                                <CameraPos Interior="true" Position="(4.7; 1.651; -0.5)" Name="sticker" InterestPosition="(6.662; 0.61; 2.3)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(5.3; 1.568; -0.7)" Name="sticker_1" InterestPosition="(4.611; 1; 2.078)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(5.221; 1.595; 0.03)" Name="sticker_2" InterestPosition="(6.662; 0.61; 1.935)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(0.912; 4.08; 2.215)" MaxXRotation="360" Name="addon_1" InterestPosition="(3.896; 0.774; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(0; 3; -4)" MaxXRotation="360" Name="addon_2" InterestPosition="(4.5; 1.5; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(4.737; 1.631; -0.715)" Name="mirror_mount" InterestPosition="(7.736; 1.436; 2.408)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(9.22; 3; -2.085)" MaxXRotation="360" Name="side_r" InterestPosition="(4.679; 0.759; -0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(8.5; 3; 4)" MaxXRotation="360" Name="side_l" InterestPosition="(6.5; 1; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(10; 3.473; -2.51)" MaxXRotation="360" Name="roof" InterestPosition="(5; 1; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(8.821; 2.615; 0.877)" Name="glass_sticker" InterestPosition="(6.517; 1.5; -0.706)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(11.332; 1.526; -4.276)" MaxXRotation="360" Name="hoods" InterestPosition="(5.569; 0.976; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(5; 1.648; -0.5)" Name="bubble_head" InterestPosition="(6.662; 1.073; 1.935)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(8.421; 0.885; -3.51)" MaxXRotation="360" Name="wheels" InterestPosition="(5.421; 0.413; -0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(11.332; 1.526; -4.276)" MaxXRotation="360" Name="default" InterestPosition="(5.569; 0.976; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(1; 1.683; 3.899)" MaxXRotation="360" Name="rear" InterestPosition="(5; 0.956; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(9.299; 3.937; -0.485)" Name="capote_sticker" InterestPosition="(6.708; 0.662; -0.826)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(4.358; 1.478; 2.92)" Name="door_r_sticker" InterestPosition="(6.582; 0.793; 1.174)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(4.296; 1.361; -2.777)" Name="door_l_sticker" InterestPosition="(5.384; 0.765; 0.362)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(8.6; 1.567; -0.5)" Name="hood_ornament" InterestPosition="(7.387; 1.219; -0.964)" FOV="32.0">
+
+                                </CameraPos>
+                    </CustomizationCameras>
+                              <WinchSocket Pos="(2.356; 0.612; 0.389)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(2.356; 0.612; -0.389)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-1.651; 0.566; 0.512)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-1.651; 0.566; -0.512)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(0.422; 0.529; 0.649)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(0.422; 0.529; -0.649)">
+
+                              </WinchSocket>
+      </GameData>
+      <Landmark MaxScale="3.8" MinScale="1.8" Mesh="landmarks/jeep_wrangler_lmk">
+
+      </Landmark>
+      <Snorkel Origin="(1.754; 1.063; -0.38)">
+
+      </Snorkel>
+      <AutomaticIK>
+                          <IKBone ModelFrame="BoneTieRod2" ParentFrame="BoneTieRod1_cdt">
+                              <IKJoint AxisLocal="(0; 0; 1)" Type="Hinge2">
+
+                              </IKJoint>
+                              <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRod3" AttachToFrame="BoneRack">
+                                    <IKJoint AxisLocal="(0; 0; 1)" Type="Slider">
+
+                                    </IKJoint>
+                              </IKBone>
+                          </IKBone>
+      </AutomaticIK>
+  </Truck>
+  <_templates Include="trucks">
+        <Body>
+            <Antenna Mass="2" Collisions="None">
+                <Constraint Cone="10" PlaneMin="-10" Type="Ragdoll" TwistAxisLocal="(0; 1; 0)" PlaneMax="10" PlaneAxisLocal="(0; 0; 1)">
+                    <ConeMotor Type="Spring" Spring="120" Damping="0.1">
+
+                    </ConeMotor>
+                    <PlaneMotor Type="Spring" Spring="120" Damping="0.1">
+
+                    </PlaneMotor>
+                </Constraint>
+            </Antenna>
+            <Sunshield Mass="3" Collisions="None">
+                  <Constraint AxisLocal="(0; 0; 1)" MaxLimit="5" MinLimit="-5" Type="Hinge">
+                      <Motor Type="Spring" Spring="20" Damping="0.5">
+
+                      </Motor>
+                  </Constraint>
+            </Sunshield>
+            <Key Mass="1" Collisions="None">
+                    <Constraint AxisLocal="(0; 0; 1)" MaxLimit="30" MinLimit="-30" Type="Hinge">
+                        <Motor Type="Spring" Spring="0.005" Damping="0.005">
+
+                        </Motor>
+                    </Constraint>
+            </Key>
+            <SideMirror Mass="5" Collisions="None">
+                      <Constraint AxisLocal="(0; 1; 0)" MaxLimit="4" MinLimit="-4" Type="Hinge">
+                          <Motor Type="Spring" Spring="200" Damping="3">
+
+                          </Motor>
+                      </Constraint>
+            </SideMirror>
+        </Body>
+        <Wheel>
+              <FrontWheel SteeringCastor="8" Torque="full" Location="front" SteeringAngle="32">
+
+              </FrontWheel>
+              <RearWheel Torque="default" Location="rear" ConnectedToHandbrake="true">
+
+              </RearWheel>
+        </Wheel>
+        <Flare>
+                <Beacon SizeMultAtDay="0.5" DirAngle="180" Size="0.2" ColorMultAtDay="0.3" Color="g(169; 115; 0) x 0.6" AspectRatio="1.4">
+
+                </Beacon>
+        </Flare>
+  </_templates>

@@ -1,0 +1,736 @@
+  <Truck>
+      <ControlledConstraints>
+          <Constraint Name="TieRodSteer" IsLinkedSteering="true" Id="chassis_steer">
+
+          </Constraint>
+      </ControlledConstraints>
+      <PhysicsModel Mesh="trucks/international_transtar_4070a">
+            <NetSync Legacy="false">
+
+            </NetSync>
+            <Body ModelFrame="BoneChassis_cdt" ImpactType="Truck" Mass="3500" NetSync="pv" CenterOfMassOffset="(-1; 0; 0)">
+                  <Body ModelFrame="BoneCabin_cdt" ImpactType="Truck" Mass="2000" NetSync="pv" CenterOfMassOffset="(1; 0; 0)">
+                      <Constraint AxisLocal="(1; 0; 0)" MaxLimit="10" MinLimit="-10" PivotOffset="(0; 0; 0)" Type="Hinge">
+                          <Motor Type="Spring" Spring="200000" Damping="24000">
+
+                          </Motor>
+                      </Constraint>
+                          <Body Mass="500" ModelFrame="BoneCabinPrismatic_cdt">
+                            <Constraint AxisLocal="(0; 1; 0)" MaxLimit="0.1" MinLimit="-0.1" Type="Prismatic">
+                                <Motor Type="Spring" Spring="200000" Damping="10000">
+
+                                </Motor>
+                            </Constraint>
+                                <Body ModelFrame="BoneMirrorLeft_cdt" _template="SideMirror">
+
+                                </Body>
+                                <Body ModelFrame="BoneMirrorRight_cdt" _template="SideMirror">
+
+                                </Body>
+                                <Body Mass="0.2" ModelFrame="BoneKeyFob_cdt">
+                                  <Constraint AxisLocal="(1; 0; 0)" MaxLimit="50" MinLimit="-50" PivotOffset="(0; 0; 0)" Type="Hinge">
+                                      <Motor Type="Spring" Spring="0.001" Damping="0.001">
+
+                                      </Motor>
+                                  </Constraint>
+                                </Body>
+                                <Body Mass="10" ModelFrame="BoneVisor_cdt">
+                                  <Constraint AxisLocal="(1; 0; 0)" MaxLimit="10" MinLimit="-5" PivotOffset="(0; 0; 0)" Type="Hinge">
+                                      <Motor Type="Spring" Spring="5" Damping="1">
+
+                                      </Motor>
+                                  </Constraint>
+                                </Body>
+                                <Body Mass="2" ModelFrame="BoneWire2Hinge_cdt">
+                                  <Constraint AxisLocal="(1; 0; 0)" MaxLimit="20" MinLimit="-50" Type="Hinge">
+                                      <Motor Type="Spring" Spring="0.2" Damping="0.2">
+
+                                      </Motor>
+                                  </Constraint>
+                                </Body>
+                          </Body>
+                          <Body Mass="2" ModelFrame="BoneWire1Hinge_cdt">
+                            <Constraint AxisLocal="(1; 0; 0)" MaxLimit="20" MinLimit="-20" Type="Hinge">
+                                <Motor Type="Spring" Spring="0.2" Damping="0.2">
+
+                                </Motor>
+                            </Constraint>
+                          </Body>
+                          <Body Mass="10" ModelFrame="BoneWire3_cdt">
+                            <Constraint AxisLocal="(0; 1; 0)" MaxLimit="0.1" MinLimit="-0.1" Type="Prismatic">
+                                <Motor Type="Spring" Spring="3000" Damping="15">
+
+                                </Motor>
+                            </Constraint>
+                          </Body>
+                          <Body Mass="2" ModelFrame="BoneWire4_cdt">
+                            <Constraint AxisLocal="(0; 0; 1)" MaxLimit="0.3" MinLimit="-0.3" Type="Prismatic">
+                                <Motor Type="Spring" Spring="500" Damping="10">
+
+                                </Motor>
+                            </Constraint>
+                          </Body>
+                          <Body Mass="5" ModelFrame="BoneWire5_cdt">
+                            <Constraint AxisLocal="(0; 1; 0)" MaxLimit="0.2" MinLimit="-0.1" Type="Prismatic">
+                                <Motor Type="Spring" Spring="1000" Damping="20">
+
+                                </Motor>
+                            </Constraint>
+                          </Body>
+                          <Body Mass="6" ModelFrame="BoneWire6_cdt">
+                            <Constraint AxisLocal="(0; 0; 1)" MaxLimit="0.1" MinLimit="-0.1" Type="Prismatic">
+                                <Motor Type="Spring" Spring="1000" Damping="20">
+
+                                </Motor>
+                            </Constraint>
+                          </Body>
+                          <Body ModelFrame="BoneTieRod_cdt" _template="TieRod">
+                            <Constraint AxisLocal="(0; 0; 1)" MaxLimit="40" Name="TieRodSteer" MinLimit="-40">
+
+                            </Constraint>
+                          </Body>
+                  </Body>
+            </Body>
+      </PhysicsModel>
+      <TruckData BackSteerSpeed="0.02" DiffLockType="Uninstalled" EngineIconScale="1.3" TruckType="HIGHWAY" FuelCapacity="265" EngineStartDelay="0.8" SteerSpeed="0.03" ExhaustStartTime="0.9" Responsiveness="0.15" TruckImage="intertranstarmchr" EngineIconMesh="env/engine_default">
+              <Shakers>
+                    <Shaker MaxFrequency="1" Frame="BoneRightExhaust" ParentFrame="BoneCabin_cdt" MaxAngle="(0.5; 0.5; 0.5)">
+
+                    </Shaker>
+                    <Shaker MaxFrequency="0.1" Frame="BoneGearstick" ParentFrame="BoneCabinPrismatic_cdt" MaxAngle="(1; 1; 1)">
+
+                    </Shaker>
+                    <Shaker MaxFrequency="0.1" Frame="BoneHandle" ParentFrame="BoneCabinPrismatic_cdt" MaxAngle="(0; 0; 1)">
+
+                    </Shaker>
+              </Shakers>
+              <Intake Size="1" Dir="(1; 0; 0)" Origin="(3.335; 1.221; 0)">
+
+              </Intake>
+              <GearboxSocket Default="g_truck_default" Type="gearboxes_trucks">
+
+              </GearboxSocket>
+              <Wheels DefaultRim="rim_1" DefaultWheelType="wheels_medium_double" DefaultTire="highway_1">
+                          <Wheel Pos="(2.59; 0.561; 1)" _template="FrontWheel">
+
+                          </Wheel>
+                          <Wheel Pos="(2.59; 0.561; 1)" _template="FrontWheel" RightSide="true">
+
+                          </Wheel>
+                          <Wheel Pos="(-1.456; 0.559; 0.913)" _template="RearWheel">
+
+                          </Wheel>
+                          <Wheel Pos="(-1.456; 0.559; 0.913)" _template="RearWheel" RightSide="true">
+
+                          </Wheel>
+                          <Wheel Pos="(-2.716; 0.559; 0.913)" _template="RearWheel">
+
+                          </Wheel>
+                          <Wheel Pos="(-2.716; 0.559; 0.913)" _template="RearWheel" RightSide="true">
+
+                          </Wheel>
+              </Wheels>
+              <WinchUpgradeSocket Default="w_medium_trucks_default" Type="winches_medium_trucks" IsUpgradable="true">
+
+              </WinchUpgradeSocket>
+              <SteeringWheel Frame="BoneSteering">
+
+              </SteeringWheel>
+              <Damage>
+                                <DamageArea Max="(3.3; 1.9; 0.6)" ParentFrame="BoneCabin_cdt" Min="(1.9; 0.55; -0.6)" Type="Engine">
+
+                                </DamageArea>
+                                <DamageArea Max="(1.7; 1.1; 1.25)" ParentFrame="BoneChassis_cdt" Min="(0.6; 0.37; -1.25)" Type="FuelTank">
+
+                                </DamageArea>
+              </Damage>
+                              <LimitedFluid RadiusY="0.349" Center="(1.064; 0.735; -0.88)" RadiusZ="0.349" LengthX="0.765" Type="Cylinder">
+
+                              </LimitedFluid>
+                              <LimitedFluid RadiusY="0.349" Center="(1.064; 0.735; 0.88)" RadiusZ="0.349" LengthX="0.765" Type="Cylinder">
+
+                              </LimitedFluid>
+              <EngineSocket Default="us_truck_old_engine_0" Type="e_us_truck_old, e_us_truck_old_4070">
+
+              </EngineSocket>
+              <SoundsDamage _template="Heavy">
+
+              </SoundsDamage>
+              <Camera Center="(-1.5; 0; 0)" ParentFrame="BoneCabin_cdt">
+                                      <Cockpit WindshieldShadingTexture="trucks/international_transtar_4070a_glass__sh_d.tga" WindshieldDiffuseTexture="trucks/international_transtar_4070a_glass__d_a.tga" ViewPos="(2.245; 2.482; 0.718)" _template="Default">
+                                            <Mirror ClipDir="(-0.9; -0.006; -0.436)" MeshFrame="mirror_left" Size="(0.185; 0.397)" ClipOffset="0.075" FOVScale="1.8" Pos="(2.652; 2.385; 1.402)" ReflectionDir="(-0.9; -0.006; -0.436)" LookAtOffset="(0; 0; 0.05)">
+
+                                            </Mirror>
+                                            <Mirror Pos="(2.648; 2.382; -1.404)" MeshFrame="mirror_right" FOVScale="2.4" Size="(0.185; 0.397)" ReflectionDir="(-0.783; 0.007; 0.622)" ClipDir="(-0.783; 0.007; 0.622)" ClipOffset="0.1">
+
+                                            </Mirror>
+                                          <Rear ViewPosOffset="(0.1; -0.1; 0.7)">
+
+                                          </Rear>
+                                      </Cockpit>
+              </Camera>
+              <Shafts>
+                                          <Shaft SocketPointA="Shaft1a" SocketPointB="Shaft1b">
+
+                                          </Shaft>
+                                          <Shaft SocketPointA="Shaft2a" SocketPointB="Shaft2b">
+
+                                          </Shaft>
+              </Shafts>
+              <FuelTank DamageCapacity="50">
+
+              </FuelTank>
+              <Axles>
+                                              <Axle Frame="BoneAxle1">
+
+                                              </Axle>
+                                              <Axle Frame="BoneAxle2">
+
+                                              </Axle>
+                                              <Axle Frame="BoneAxle3">
+
+                                              </Axle>
+              </Axles>
+              <SoundsWheels _template="Default">
+
+              </SoundsWheels>
+              <SuspensionSocket Default="transtar_4070a_suspension_default" MaxWheelRadiusWithoutSuspension="0.27" Type="s_international_transtar_4070a">
+
+              </SuspensionSocket>
+                                                <CompatibleWheels Scale="0.5" Type="wheels_medium_double">
+
+                                                </CompatibleWheels>
+                                                <CompatibleWheels Scale="0.53" Type="wheels_medium_double">
+
+                                                </CompatibleWheels>
+              <Dashboard>
+                                                      <Gauge Mesh="trucks/arrows/international_transtar_4070a_arrow_01" Org="(2.968; 2.04; 0.803)" OutputAngles="(-120;120)" InputType="speed" Dir="(-0.795; 0.607; 0.001)" InputRange="(0;160)" Damping="0.9">
+
+                                                      </Gauge>
+                                                      <Gauge Mesh="trucks/arrows/international_transtar_4070a_arrow_01" Org="(2.967; 2.04; 0.63)" OutputAngles="(-130;130)" InputType="rpm" Dir="(-0.795; 0.607; 0.001)" InputRange="(0;1)" Damping="0.9">
+
+                                                      </Gauge>
+                                                      <Gauge Mesh="trucks/arrows/international_transtar_4070a_arrow_02" Org="(2.851; 1.948; 0.244)" OutputAngles="(-41;44)" InputType="fuel" Dir="(-0.901; 0.375; 0.219)" InputRange="(0;1)" Damping="0.9">
+
+                                                      </Gauge>
+                                                      <Gauge Mesh="trucks/arrows/international_transtar_4070a_arrow_02" Org="(2.851; 1.948; 0.173)" OutputAngles="(-32;5)" InputType="engineEnabled" Dir="(-0.901; 0.375; 0.219)" InputRange="(0;1)" Damping="0.9">
+
+                                                      </Gauge>
+                                                      <Gauge Mesh="trucks/arrows/international_transtar_4070a_arrow_02" Org="(2.855; 1.958; 0.106)" OutputAngles="(-130;-100)" InputType="engineEnabled" Dir="(-0.901; 0.375; 0.219)" InputRange="(0;1)" Damping="0.9">
+
+                                                      </Gauge>
+                                                      <Gauge Mesh="trucks/arrows/international_transtar_4070a_arrow_02" Org="(2.881; 2.019; 0.245)" OutputAngles="(-131;-30)" InputType="engineEnabled" Dir="(-0.901; 0.375; 0.219)" InputRange="(0;1)" Damping="0.9">
+
+                                                      </Gauge>
+                                                      <Gauge Mesh="trucks/arrows/international_transtar_4070a_arrow_02" Org="(2.881; 2.019; 0.174)" OutputAngles="(-150;90)" InputType="engineEnabled" Dir="(-0.901; 0.375; 0.219)" InputRange="(0;1)" Damping="0.9">
+
+                                                      </Gauge>
+                                                      <Gauge Mesh="trucks/arrows/international_transtar_4070a_arrow_03" Org="(2.968; 2.04; 0.63)" OutputAngles="(-130;45)" InputType="engineEnabled" Dir="(-0.795; 0.607; 0.001)" InputRange="(0;1)" Damping="0.9">
+
+                                                      </Gauge>
+                                                      <Gauge Mesh="trucks/arrows/international_transtar_4070a_arrow_03" Org="(2.969; 2.039; 0.63)" OutputAngles="(-130;85)" InputType="engineEnabled" Dir="(-0.795; 0.607; 0.001)" InputRange="(0;1)" Damping="0.9">
+
+                                                      </Gauge>
+              </Dashboard>
+              <Sounds DisableReversePitch="false" ParentFrame="BoneCabin_cdt" MinDist="10.0" AirHissInterval="12.0" _template="Default" Origin="(2.2; 1.25; 0)">
+                                                      <BrakePull Sound="trucks/int_transtar_4070a/int_transtar_4070a_brake_pull">
+
+                                                      </BrakePull>
+                                                      <EngineHigh Sound="trucks/int_transtar_4070a/int_transtar_4070a_high">
+
+                                                      </EngineHigh>
+                                                      <AbruptStop Sound="trucks/common/truck_swing_big_rnd_set/truck_swing_big_rnd">
+
+                                                      </AbruptStop>
+                                                      <HandbrakeOff Sound="trucks/int_transtar_4070a/int_transtar_4070a_handbrake_off">
+
+                                                      </HandbrakeOff>
+                                                      <BrakesSqueal Sound="trucks/int_transtar_4070a/int_transtar_4070a_brakes_squeal">
+
+                                                      </BrakesSqueal>
+                                                      <EngineStart Sound="trucks/int_transtar_4070a/int_transtar_4070a_start">
+
+                                                      </EngineStart>
+                                                      <Reverse Sound="trucks/int_transtar_4070a/int_transtar_4070a_reverse">
+
+                                                      </Reverse>
+                                                      <EngineHeavy Sound="">
+
+                                                      </EngineHeavy>
+                                                      <EngineAccel Sound="trucks/int_transtar_4070a/int_transtar_4070a_acc">
+
+                                                      </EngineAccel>
+                                                      <EngineLow_2d IsSound2D="true" Sound="trucks/int_transtar_4070a/int_transtar_4070a_low_2d">
+
+                                                      </EngineLow_2d>
+                                                      <EngineHigh_2d IsSound2D="true" Sound="trucks/int_transtar_4070a/int_transtar_4070a_high_2d">
+
+                                                      </EngineHigh_2d>
+                                                      <EngineLow Sound="trucks/int_transtar_4070a/int_transtar_4070a_low">
+
+                                                      </EngineLow>
+                                                      <EngineIdle_2d IsSound2D="true" Sound="trucks/int_transtar_4070a/int_transtar_4070a_idle_2d">
+
+                                                      </EngineIdle_2d>
+                                                      <EngineStop Sound="trucks/int_transtar_4070a/int_transtar_4070a_stop">
+
+                                                      </EngineStop>
+                                                      <EngineIdle Sound="trucks/int_transtar_4070a/int_transtar_4070a_idle">
+
+                                                      </EngineIdle>
+                                                      <EngineRev Sound="trucks/int_transtar_4070a/int_transtar_4070a_rev">
+
+                                                      </EngineRev>
+                                                      <BrakeRelease Sound="trucks/int_transtar_4070a/int_transtar_4070a_brake_release">
+
+                                                      </BrakeRelease>
+                                                      <Handbrake Sound="trucks/int_transtar_4070a/int_transtar_4070a_handbrake_on">
+
+                                                      </Handbrake>
+                                                      <Honk Sound="trucks/int_transtar_4070a/int_transtar_4070a_honk">
+
+                                                      </Honk>
+                                                      <EngineTurbo Sound="">
+
+                                                      </EngineTurbo>
+              </Sounds>
+              <Driver SteeringWheelPos="(2.793; 2.126; 0.718)" Pos="(2.406; 1.781; 0.718)" ParentFrame="BoneCabinPrismatic_cdt" AnimationSet="HeavyTruck">
+
+              </Driver>
+                                                        <Steam Origin="(1.949; 1.274; 0)">
+
+                                                        </Steam>
+                                                        <Steam ParentFrame="BoneCabin_cdt" Scale="0.5" Origin="(2.617; 0.926; 0)">
+
+                                                        </Steam>
+              <SteeringRack FrameSteerRight="BoneRackR" Frame="BoneRack" FrameSteerLeft="BoneRackL" RackHalfSizeZ="0.756">
+
+              </SteeringRack>
+              <OcclusionMap MaxX="3.8" HalfSizeZ="1.7" MinX="-3.5">
+
+              </OcclusionMap>
+      </TruckData>
+      <ModelAttachments>
+                <StopSignals>
+                    <Light Pos="(-3.376; 0.635; 0)" _template="StopSignal">
+
+                    </Light>
+                        <Flare Pos="(-3.312; 0.742; -0.273)" _template="StopSignal">
+
+                        </Flare>
+                        <Flare Pos="(-3.312; 0.742; 0.273)" _template="StopSignal">
+
+                        </Flare>
+                </StopSignals>
+                <Ignition>
+                        <Light Pos="(3.8; 1.013; 0.8)" _template="IgnitionSignalWhite">
+
+                        </Light>
+                        <Light Pos="(3.8; 1.013; -0.8)" _template="IgnitionSignalWhite">
+
+                        </Light>
+                        <Light Pos="(-3.7; 1.025; -0)" _template="IgnitionSignalRed">
+
+                        </Light>
+                          <Flare Pos="(3.2; 1.017; -0.904)" ParentFrame="BoneCabinPrismatic_cdt" Size="0.4" DirAngle="120" Color="g(165; 149; 130) x 0.9" _template="IgnitionSignalWhite">
+
+                          </Flare>
+                          <Flare Pos="(3.2; 1.017; 0.904)" ParentFrame="BoneCabinPrismatic_cdt" Size="0.4" DirAngle="120" Color="g(165; 149; 130) x 0.9" _template="IgnitionSignalWhite">
+
+                          </Flare>
+                          <Flare ParentFrame="BoneCabinPrismatic_cdt" Size="0.2" Pos="(3.26; 1.422; -0.788)" Color="g(165; 149; 130) x 0.45" _template="IgnitionSignalWhite">
+
+                          </Flare>
+                          <Flare ParentFrame="BoneCabinPrismatic_cdt" Size="0.2" Pos="(3.26; 1.422; 0.788)" Color="g(165; 149; 130) x 0.45" _template="IgnitionSignalWhite">
+
+                          </Flare>
+                          <Flare ParentFrame="BoneCabinPrismatic_cdt" Pos="(2.993; 1.666; -1.232)" Size="0.3" _template="Beacon">
+
+                          </Flare>
+                          <Flare ParentFrame="BoneCabinPrismatic_cdt" Pos="(2.993; 1.666; 1.232)" Size="0.3" _template="Beacon">
+
+                          </Flare>
+                          <Flare Size="0.12" _template="IgnitionSignalRed" Pos="(-3.312; 0.742; -0.273)">
+
+                          </Flare>
+                          <Flare Size="0.12" _template="IgnitionSignalRed" Pos="(-3.312; 0.742; 0.273)">
+
+                          </Flare>
+                </Ignition>
+                <HeadLight>
+                          <Model _template="HeadLightRay" Org="(3.182; 1.017; -0.904)" ParentFrame="BoneCabinPrismatic_cdt">
+
+                          </Model>
+                          <Model _template="HeadLightRay" Org="(3.182; 1.017; 0.904)" ParentFrame="BoneCabinPrismatic_cdt">
+
+                          </Model>
+                            <Flare Pos="(3.182; 1.017; -0.904)" _template="HeadLight" ParentFrame="BoneCabinPrismatic_cdt">
+
+                            </Flare>
+                            <Flare Pos="(3.182; 1.017; 0.904)" _template="HeadLight" ParentFrame="BoneCabinPrismatic_cdt">
+
+                            </Flare>
+                            <Flare Pos="(3.182; 1.017; -0.904)" _template="BlueStreak" ParentFrame="BoneCabinPrismatic_cdt">
+
+                            </Flare>
+                            <Flare Pos="(3.182; 1.017; 0.904)" _template="BlueStreak" ParentFrame="BoneCabinPrismatic_cdt">
+
+                            </Flare>
+                </HeadLight>
+                <ReverseSignals>
+                          <Light Pos="(-3.376; 0.635; 0)" _template="ReverseSignal">
+
+                          </Light>
+                              <Flare Size="0.4" _template="ReverseSignal" Pos="(-3.312; 0.742; -0.273)">
+
+                              </Flare>
+                              <Flare Size="0.4" _template="ReverseSignal" Pos="(-3.312; 0.742; 0.273)">
+
+                              </Flare>
+                              <Flare Pos="(-3.312; 0.742; -0.273)" Size="0.4" Dir="(-1; 0; 0)" Color="g(220; 220; 255) x 0.05" _template="BlueStreak">
+
+                              </Flare>
+                              <Flare Pos="(-3.312; 0.742; 0.273)" Size="0.4" Dir="(-1; 0; 0)" Color="g(220; 220; 255) x 0.05" _template="BlueStreak">
+
+                              </Flare>
+                </ReverseSignals>
+      </ModelAttachments>
+      <HeadLight Pos="(3.357; 0.832; 0)" _template="Default" ParentFrame="BoneCabinPrismatic_cdt">
+
+      </HeadLight>
+      <GameData Price="17900" Country="US" UnlockByExploration="false" UnlockByRank="6">
+                      <CraneSocket Pos="(3.287; 0.7; -0.45)" ParentFrame="BoneCabin_cdt">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(3.287; 0.7; 0.45)" ParentFrame="BoneCabin_cdt">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.42; 0.94; -0.44)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-0.42; 0.94; 0.44)">
+
+                      </CraneSocket>
+                      <CraneSocket Pos="(-3.285; 0.89; 0)">
+
+                      </CraneSocket>
+                    <UiDesc UiIcon30x30="highwayVehicleImg30" UiName="UI_VEHICLE_INTERNATIONAL_TRANSTAR_4070A_NAME" UiIcon328x458="shopImgTranstar4070" UiIconLogo="InternationalNavistarLogo80" UiDesc="UI_VEHICLE_INTERNATIONAL_TRANSTAR_4070A_DESC" UiIcon40x40="highwayVehicleImg">
+
+                    </UiDesc>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="InternationalTranstar4070aSpareWheel">
+                                <ExtraParent Frame="BoneCabin_cdt">
+
+                                </ExtraParent>
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                              <Socket Offset="(-1.2; 1.58; 0)" Names="LargeSemitrailer, LargeSemitrailerOiltank">
+
+                              </Socket>
+                              <Socket Offset="(-2.084; 1.58; 0)" Names="Semitrailer, SemitrailerOiltank">
+
+                              </Socket>
+                              <Socket Offset="(-3.49; 0.886; 0)" Names="Trailer">
+                                <AddonsShift Types="MinicraneUS, FrameAddon" Offset="(0; 0; 0)" TrailerNamesBlock="Trailer">
+
+                                </AddonsShift>
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                              <Socket NamesBlock="MetalDetector, MinicraneUS, InternationalTranstar4070aSpareWheel" Offset="(0.695; 1.065; 0)" Names="LogLift">
+
+                              </Socket>
+                              <Socket NamesBlock="MinicraneUS, MetalDetector" Offset="(-4.962; 1.068; 0)" Names="BunkLog">
+
+                              </Socket>
+                              <Socket Offset="(-2.084; 1.064; 0)" Names="SaddleLow1">
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.01)">
+
+                                  </ExtraParent>
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.01)">
+
+                                  </ExtraParent>
+                              </Socket>
+                              <Socket Offset="(-1.2; 1.064; 0)" Names="SaddleHigh">
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.01)">
+
+                                  </ExtraParent>
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.01)">
+
+                                  </ExtraParent>
+                              </Socket>
+                              <Socket Offset="(-1; 1.063; 0)" Names="FrameAddon">
+                                <AddonsShift Offset="(-1; 0; 0)" Types="MinicraneUS">
+
+                                </AddonsShift>
+                              </Socket>
+                              <Socket NamesBlock="MinicraneUS, MetalDetector, Trailer" Offset="(-0.5; 1.068; 0)" Names="FrameAddonTowPlatform">
+
+                              </Socket>
+                              <Socket ParentFrame="BoneChassis_cdt" Offset="(-1.62; 1.14; 0)" Names="FrameAddonKung">
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.12)">
+
+                                  </ExtraParent>
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.12)">
+
+                                  </ExtraParent>
+                              </Socket>
+                              <Socket ParentFrame="BoneChassis_cdt" Offset="(-2; 1.063; 0)" Names="FrameAddonTank">
+
+                              </Socket>
+                              <Socket Offset="(-1.682; 1.065; 0)" NamesBlock="MinicraneUS, Semitrailer" Names="BigCraneUs">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                              <Socket Offset="(0.048; 0.011; 0)" ParentFrame="BoneChassis_cdt" NamesBlock="InternationalTranstar4070aSpareWheel, FrameAddonKung, FrameAddonTank, FrameAddon, BigCraneUs, BigCraneRu, SaddleHigh" Names="MetalDetector">
+
+                              </Socket>
+                              <Socket Offset="(0.9; 1.07; 0)" NamesBlock="FrameAddonKung, FrameAddonTank" Names="MinicraneUS">
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.025)">
+
+                                  </ExtraParent>
+                                  <ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.025)">
+
+                                  </ExtraParent>
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="international_transtar_4070a_bumper_default">
+                            <Socket ParentFrame="BoneCabin_cdt" Offset="(0; 0; 0)" Names="InternationalTranstar4070Bumper">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="international_transtar_4070a_exhaust">
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="InternationalTranstar4070Exhaust">
+                                  <ExtraParent Frame="BoneCabin_cdt">
+
+                                  </ExtraParent>
+                                  <ExtraParent Frame="BoneRightExhaust">
+
+                                  </ExtraParent>
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="InternationalTranstar4070Snorkel">
+                                  <ExtraParent Frame="BoneCabin_cdt">
+
+                                  </ExtraParent>
+                                  <ExtraParent Frame="BoneRightExhaust">
+
+                                  </ExtraParent>
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="international_transtar_4070a_horn_default">
+                            <Socket ParentFrame="BoneCabinPrismatic_cdt" Offset="(0; 0; 0)" Names="InternationalTranstar4070Horn">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="international_transtar_4070a_gabarite_default">
+                            <Socket ParentFrame="BoneCabinPrismatic_cdt" Offset="(0; 0; 0)" Names="InternationalTranstar4070Gabarite">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                              <Socket ParentFrame="BoneCabinPrismatic_cdt" Offset="(0; 0; 0)" Names="InternationalTranstar4070Beacon">
+
+                              </Socket>
+                              <Socket ParentFrame="BoneCabinPrismatic_cdt" Offset="(0; 0; 0)" Names="InternationalTranstar4070AirConditioner">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinPrismatic_cdt" Offset="(0; 0; 0)" Names="InternationalTranstar4070Visor">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="international_transtar_4070a_fender_default">
+                            <Socket ParentFrame="BoneChassis_cdt" Offset="(0; 0; 0)" Names="InternationalTranstar4070Fender">
+                                <ExtraParent Frame="BoneCabin_cdt">
+
+                                </ExtraParent>
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket Offset="(3.126; 2.037; 0.508)" ParentFrame="BoneCabinPrismatic_cdt" Names="StuffDashboard" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinPrismatic_cdt" Names="internationalTranstar4070aSticker_1x1_01" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinPrismatic_cdt" Names="internationalTranstar4070aSticker_1x1_02" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinPrismatic_cdt" Names="internationalTranstar4070aSticker_1x1_03" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinPrismatic_cdt" Names="internationalTranstar4070aSticker_1x2_01" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneVisor_cdt" Names="internationalTranstar4070aSticker_1x2_02" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinPrismatic_cdt" Names="internationalTranstar4070aSticker_1x2_03" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinPrismatic_cdt" Names="internationalTranstar4070ASticker_GlassTop" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinPrismatic_cdt" Names="internationalTranstar4070ASticker_GlassBottom" InCockpit="true">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinPrismatic_cdt" Names="internationalTranstar4070ASticker_Door_R">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinPrismatic_cdt" Names="internationalTranstar4070ASticker_Door_L">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                            <Socket ParentFrame="BoneCabinPrismatic_cdt" Names="internationalTranstar4070ASticker_Roof">
+
+                            </Socket>
+                          </AddonSockets>
+                          <AddonSockets>
+                              <Socket Offset="(2.95; 2.76; 0.129)" ParentFrame="BoneCabinPrismatic_cdt" Names="StuffAirfreshener" InCockpit="true">
+
+                              </Socket>
+                              <Socket ParentFrame="BoneCabinPrismatic_cdt" Names="StuffCurtainInternationalTranstar4070a" InCockpit="true">
+
+                              </Socket>
+                          </AddonSockets>
+                          <AddonSockets DefaultAddon="zikz_5368_diff_lock_default">
+                            <Socket Names="ZiKZ5368DiffLock" Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt">
+
+                            </Socket>
+                          </AddonSockets>
+                    <CustomizationCameras>
+                                <CameraPos Interior="true" Position="(8.076; 4.463; -0.333)" Name="roof_sticker" InterestPosition="(5.503; 0.94; -0.62)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(6.339; 2.377; -0.793)" Name="sticker_1" InterestPosition="(6.177; -0.045; 2.232)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-5.538; 3.78; 6.364)" MaxXRotation="360" Name="addon_1" InterestPosition="(2.488; 1.994; -0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(10.936; 4.516; -3.212)" MaxXRotation="360" Name="addon_2" InterestPosition="(6.094; 1.716; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(6.015; 2.377; -0.793)" Name="mirror_mount" InterestPosition="(10.134; 2.791; 2.414)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(3.352; 1.747; -7.216)" MaxXRotation="360" Name="side_r" InterestPosition="(5.601; 1.97; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(6.274; 2.642; -0.04)" Name="sticker" InterestPosition="(8.263; -0.08; 2.447)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(5.762; 1.878; 2.639)" Name="door_r_sticker" InterestPosition="(8.615; 1.383; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(0.191; 4.643; 4.422)" MaxXRotation="360" Name="roof" InterestPosition="(5.735; 2.091; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(9.552; 3.16; 1.193)" Name="glass_sticker" InterestPosition="(6.058; 1.99; -1.29)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(13.213; 1.446; -3.663)" MaxXRotation="360" Name="hoods" InterestPosition="(5.997; 1.735; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(6.4; 2.197; -0.509)" Name="sticker_2" InterestPosition="(8.153; 4.391; 1.898)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(2.058; 3.425; -3.441)" MaxXRotation="360" Name="side_l" InterestPosition="(4.104; 0.673; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(6.398; 2.350; -0.905)" Name="bubble_head" InterestPosition="(9.879; 1.04; 1.374)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(8.851; 0.966; -4.483)" MaxXRotation="360" Name="wheels" InterestPosition="(5.855; 0.77; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(13.213; 1.446; -3.663)" MaxXRotation="360" Name="default" InterestPosition="(5.997; 1.735; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos MaxZoom="2" MaxYRotation="360" Position="(-5.767; 1.805; 2.899)" MaxXRotation="360" Name="rear" InterestPosition="(0.479; 0.992; -0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(5.659; 1.806; -2.543)" Name="door_l_sticker" InterestPosition="(6.502; 1.49; 0)" FOV="32.0">
+
+                                </CameraPos>
+                                <CameraPos Interior="true" Position="(6.015; 2.377; -0.793)" Name="curtain" InterestPosition="(10.134; 2.791; 2.414)" FOV="32.0">
+
+                                </CameraPos>
+                    </CustomizationCameras>
+                              <WinchSocket Pos="(3.287; 0.7; -0.45)" ParentFrame="BoneCabin_cdt">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(3.287; 0.7; 0.45)" ParentFrame="BoneCabin_cdt">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-0.42; 0.94; -0.44)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-0.42; 0.94; 0.44)">
+
+                              </WinchSocket>
+                              <WinchSocket Pos="(-3.285; 0.89; 0)">
+
+                              </WinchSocket>
+      </GameData>
+      <Landmark MaxScale="3.8" MinScale="1.8" Mesh="landmarks/international_transtar_4070a_lmk">
+
+      </Landmark>
+      <AutomaticIK>
+                        <IKBone ModelFrame="BoneTieRodHinge2" ParentFrame="BoneTieRod_cdt">
+                            <IKJoint AxisLocal="(1; 0; 0)" Type="Hinge2">
+
+                            </IKJoint>
+                            <IKBone AttachOffset="(0; 0; 0)" ModelFrame="BoneTieRodPrismatic" AttachToFrame="BoneRackL">
+                                  <IKJoint AxisLocal="(1; 0; 0)" Type="Slider">
+
+                                  </IKJoint>
+                            </IKBone>
+                        </IKBone>
+      </AutomaticIK>
+  </Truck>
+  <_templates Include="trucks">
+        <Wheel>
+            <FrontWheel SteeringJointOffset="0.16" ParentFrame="BoneCabin_cdt" SteeringCastor="2" Torque="none" Location="front" SteeringAngle="40">
+
+            </FrontWheel>
+            <RearWheel Torque="default" Location="rear" ConnectedToHandbrake="true">
+
+            </RearWheel>
+        </Wheel>
+        <Body>
+              <SideMirror Mass="5" Collisions="None">
+                  <Constraint AxisLocal="(0; 1; 0)" MaxLimit="15" MinLimit="-15" Type="Hinge">
+                      <Motor Type="Spring" Spring="250" Damping="5">
+
+                      </Motor>
+                  </Constraint>
+              </SideMirror>
+        </Body>
+  </_templates>
