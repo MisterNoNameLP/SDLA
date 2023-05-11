@@ -106,7 +106,7 @@
 		EngineIconScale="1.5"
 		EngineStartDelay="3.2"
 		ExhaustStartTime="2.8"
-		FuelCapacity="1514"
+		FuelCapacity="360"
 		Responsiveness="0.15"
 		SteerSpeed="0.024"
 		TruckImage="ws6900tweeensteermchr"
@@ -599,26 +599,6 @@
 		<CraneSocket Pos="(-7.786; 0.732; 0)" />
 		<CraneSocket Pos="(1.616; 1.71; 1.45)" />
 		<CraneSocket Pos="(1.616; 1.71; -1.45)" />
-		<AddonSockets>
-			<Socket Names="Trailer" Offset="(-7.8; 0.75; 0)" />
-			<Socket Names="Semitrailer, SemitrailerOiltank" Offset="(-7; 2.114; 0)" />
-		</AddonSockets>
-		<AddonSockets>
-			<Socket Names="SaddleLow" Offset="(-7.; 1.785; 0)">
-				<ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; -0.05)" />
-				<ExtraParent Frame="BoneChassis_cdt" Offset="(0; 0; 0.05)" />
-			</Socket>
-		</AddonSockets>
-		<AddonSockets>
-			<Socket Names="FrameAddonTank" Offset="(-1; 1.811; 0)">
-				<ExtraParent Frame="BoneChassis_cdt" Offset="(0; -0.1; 0)" />
-				<ExtraParent Frame="BoneChassis_cdt" Offset="(0; -0.1; 0)" />
-			</Socket>
-			<Socket Names="BigCraneUs" Offset="(-1; 1.811; 0)">
-				<ExtraParent Frame="BoneChassis_cdt" Offset="(0; -0.1; 0)" />
-				<ExtraParent Frame="BoneChassis_cdt" Offset="(0; -0.1; 0)" />
-			</Socket>
-		</AddonSockets>
 		<AddonSockets>
 			<Socket Names="Ws6900xdTwinSpareWheel" Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt">
 				<ExtraParent Frame="BoneCabin_cdt" />

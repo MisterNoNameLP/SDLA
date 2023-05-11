@@ -28,7 +28,7 @@
 		EngineIconScale="1.7"
 		EngineStartDelay="0.6"
 		ExhaustStartTime="0.6"
-		FuelCapacity="550"
+		FuelCapacity="340"
 		Responsiveness="0.05"
 		SteerSpeed="0.017"
 		TruckImage="cat745Cv2mchr"
@@ -344,9 +344,6 @@
 			<Socket Names="Cat745CWires" Offset="(0; 0; 0)" ParentFrame="BoneBackRot_cdt">
 				<ExtraParent Frame="BoneFront_cdt" />
 			</Socket>
-		</AddonSockets>
-		<AddonSockets>
-    		<Socket Names="Trailer" Offset="(-4.95; 1.265; 0)" ParentFrame="BoneBackRot_cdt" />
 		</AddonSockets>
 		<AddonSockets DefaultAddon="cat_745c_diff_lock_default">
 			<Socket Names="Cat745CDiffLock" Offset="(0; 0; 0)" ParentFrame="BoneChassis_cdt" />

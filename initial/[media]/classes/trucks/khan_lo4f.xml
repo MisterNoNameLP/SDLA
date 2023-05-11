@@ -6,10 +6,11 @@
 			Torque="default"
 		/>
 		<FrontWheel
+			ConnectedToHandbrake="true"
 			Location="front"
 			SteeringAngle="40"
 			SteeringCastor="8"
-			Torque="full"
+			Torque="default"
 			ParentFrame="BoneCabin_cdt"
 		/>
 	</Wheel>
@@ -29,12 +30,12 @@
 <Truck>
 	<TruckData
 		BackSteerSpeed="0.06"
-		DiffLockType="Uninstalled"
+		DiffLockType="Always"
 		EngineIconMesh="env/engine_small"
 		EngineIconScale="1.15"
 		EngineStartDelay="1.7"
 		ExhaustStartTime="1.6"
-		FuelCapacity="77"
+		FuelCapacity="80"
 		Responsiveness="0.65"
 		SteerSpeed="0.04"
 		TruckImage="KHANLo4Fmchr"
