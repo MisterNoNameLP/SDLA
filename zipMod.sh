@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd output
-zip -r ../ADiffLockForEveryTruck.zip "[media]"
+zip -r ../ADiffLockForMostTrucks.zip "[media]"
