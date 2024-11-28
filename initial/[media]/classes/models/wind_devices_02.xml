@@ -1,6 +1,0 @@
-<ModelBrand NightLightingShadowsAllowCap="true">
-    <PhysicsModel>
-		<Body Collisions="Dynamic" />
-	</PhysicsModel>
-	<Landmark Mesh="landmarks/wind_devices_02_lmk"/>
-</ModelBrand>

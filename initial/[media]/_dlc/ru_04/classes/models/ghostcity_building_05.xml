@@ -1,6 +1,0 @@
-<ModelBrand NightLightingShadowsAllowCap="true">
-	<PhysicsModel>
-		<Body Collisions="Dynamic" />
-	</PhysicsModel>
-	<Landmark Mesh="landmarks/ghostcity_building_05_lmk" />
-</ModelBrand>

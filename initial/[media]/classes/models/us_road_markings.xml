@@ -1,8 +1,0 @@
-<_templates Include="models"/>
-<ModelBrand
-	Instanced="true"
-	InstancedAsModel="true"
->
-	<PhysicsModel>
-	</PhysicsModel>
-</ModelBrand>

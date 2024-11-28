@@ -1,4 +1,4 @@
-local version = "1.1"
+local version = "1.2"
 
 package.path = package.path .. ";libs/?.lua"
 
@@ -105,11 +105,19 @@ local function addDir(path)
 		if file:sub(1, 1) ~= "." then
 			if lfs.attributes("$path/$file").mode == "file" then
 				local path, name, ending = ut.seperatePath("$path/$file")
-				local fileHandler = io.open("$outputPath/$name$ending", "w")
+				local fileHandler
+				local suc, err
 
-				outputString = addDiff("$path/$file")				
-				fileHandler:write(outputString)
-				fileHandler:flush()
+				suc, err = xpcall(addDiff, debug.traceback, "$path/$file")
+				if suc then
+					outputString = err
+					fileHandler = io.open("$outputPath/$name$ending", "w")
+					fileHandler:write(outputString)
+					fileHandler:flush()
+					fileHandler:close()
+				else
+					print("ERROR: Could not load file: $path/$file")
+				end
 			end
 		end
 	end
